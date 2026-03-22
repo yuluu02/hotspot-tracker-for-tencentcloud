@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 热点追踪 — AI Hotspot Tracker</title>
+<style>
+/* ═══════════════ Reset & Variables ═══════════════ */
+:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-card-hover: #22263a;
+  --border: #2a2e3e;
+  --text: #e4e6ed;
+  --text-dim: #8b8fa3;
+  --accent: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.3);
+  --green: #22c55e;
+  --green-dim: rgba(34, 197, 94, 0.15);
+  --orange: #f59e0b;
+  --orange-dim: rgba(245, 158, 11, 0.15);
+  --red: #ef4444;
+  --red-dim: rgba(239, 68, 68, 0.15);
+  --blue: #3b82f6;
+  --blue-dim: rgba(59, 130, 246, 0.15);
+  --purple: #a855f7;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ═══════════════ Header ═══════════════ */
+.header {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  position: sticky; top: 0; z-index: 100;
+  backdrop-filter: blur(20px);
+}
+.header-inner {
+  max-width: 1400px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-icon { font-size: 32px; }
+.logo h1 { font-size: 22px; font-weight: 700; }
+.logo p { font-size: 13px; color: var(--text-dim); margin-top: 2px; }
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.status-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  display: inline-block; margin-right: 6px;
+}
+.status-dot.green { background: var(--green); box-shadow: 0 0 8px var(--green); }
+.status-dot.orange { background: var(--orange); box-shadow: 0 0 8px var(--orange); animation: pulse 1.5s infinite; }
+.status-dot.red { background: var(--red); }
+
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+
+/* ═══════════════ Buttons ═══════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px; border-radius: var(--radius-sm);
+  border: none; cursor: pointer; font-size: 14px; font-weight: 600;
+  transition: all 0.2s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #818cf8);
+  color: #fff;
+  box-shadow: 0 2px 12px var(--accent-glow);
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 20px var(--accent-glow); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.btn-secondary {
+  background: var(--bg-card); color: var(--text); border: 1px solid var(--border);
+}
+.btn-secondary:hover { background: var(--bg-card-hover); }
+.btn-sm { padding: 6px 14px; font-size: 13px; }
+.btn-icon { padding: 8px; font-size: 18px; }
+
+/* ═══════════════ Layout ═══════════════ */
+.container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+
+/* ═══════════════ Tabs ═══════════════ */
+.tabs {
+  display: flex; gap: 4px; padding: 4px;
+  background: var(--bg-card); border-radius: var(--radius);
+  margin-bottom: 24px; overflow-x: auto;
+}
+.tab {
+  padding: 10px 20px; border-radius: var(--radius-sm);
+  border: none; background: transparent; color: var(--text-dim);
+  cursor: pointer; font-size: 14px; font-weight: 500; white-space: nowrap;
+  transition: all 0.2s;
+}
+.tab.active { background: var(--accent); color: #fff; }
+.tab:hover:not(.active) { color: var(--text); background: var(--bg-card-hover); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ═══════════════ Cards ═══════════════ */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px; margin-bottom: 16px;
+}
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.card-title { font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+
+/* ═══════════════ Stats Grid ═══════════════ */
+.stats-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px; margin-bottom: 24px;
+}
+.stat-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; text-align: center;
+  transition: transform 0.2s;
+}
+.stat-card:hover { transform: translateY(-2px); }
+.stat-value { font-size: 28px; font-weight: 700; margin: 4px 0; }
+.stat-label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-card.ai .stat-value { color: var(--purple); }
+.stat-card.cloud .stat-value { color: var(--blue); }
+.stat-card.total .stat-value { color: var(--green); }
+.stat-card.high .stat-value { color: var(--orange); }
+
+/* ═══════════════ Filters ═══════════════ */
+.filters {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; align-items: center;
+}
+.filters select, .filters input {
+  background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 8px 12px; font-size: 13px;
+}
+.filters select:focus, .filters input:focus { border-color: var(--accent); outline: none; }
+
+/* ═══════════════ Table ═══════════════ */
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.data-table th {
+  text-align: left; padding: 10px 12px; font-size: 12px;
+  color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border); position: sticky; top: 0;
+  background: var(--bg-card); white-space: nowrap;
+}
+.data-table td {
+  padding: 10px 12px; border-bottom: 1px solid var(--border);
+  vertical-align: top; max-width: 300px;
+}
+.data-table tr:hover td { background: var(--bg-card-hover); }
+.data-table .title-cell { font-weight: 500; }
+.data-table .title-cell a { color: var(--text); }
+.data-table .title-cell a:hover { color: var(--accent); }
+.table-wrapper { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
+
+/* ═══════════════ Tags ═══════════════ */
+.tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-size: 11px; font-weight: 600; margin: 1px;
+}
+.tag-ai { background: rgba(168,85,247,0.15); color: #a855f7; }
+.tag-cloud { background: var(--blue-dim); color: var(--blue); }
+.tag-p0 { background: var(--red-dim); color: var(--red); }
+.tag-p1 { background: var(--orange-dim); color: var(--orange); }
+.tag-p2 { background: rgba(100,116,139,0.2); color: #94a3b8; }
+.tag-source { background: var(--green-dim); color: var(--green); }
+.score-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 50%;
+  font-size: 12px; font-weight: 700;
+}
+.score-high { background: var(--green-dim); color: var(--green); }
+.score-mid { background: var(--orange-dim); color: var(--orange); }
+.score-low { background: rgba(100,116,139,0.2); color: #94a3b8; }
+
+/* ═══════════════ Detail Modal ═══════════════ */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7); z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+.modal-overlay.show { display: flex; align-items: center; justify-content: center; }
+.modal {
+  background: var(--bg-card); border-radius: var(--radius);
+  border: 1px solid var(--border); box-shadow: var(--shadow);
+  width: 90%; max-width: 800px; max-height: 85vh; overflow-y: auto;
+  padding: 24px;
+}
+.modal-close {
+  float: right; font-size: 24px; cursor: pointer; color: var(--text-dim);
+  border: none; background: none;
+}
+.modal-close:hover { color: var(--text); }
+.detail-grid {
+  display: grid; grid-template-columns: 120px 1fr; gap: 8px 16px;
+  margin-top: 16px; font-size: 14px;
+}
+.detail-label { color: var(--text-dim); font-weight: 500; }
+
+/* ═══════════════ Log Panel ═══════════════ */
+.log-panel {
+  background: #0a0c10; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px;
+  color: var(--green); max-height: 400px; overflow-y: auto; white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+/* ═══════════════ Markdown ═══════════════ */
+.markdown-content {
+  line-height: 1.8; font-size: 14px;
+}
+.markdown-content h1 { font-size: 24px; margin: 16px 0 8px; color: var(--accent); }
+.markdown-content h2 { font-size: 20px; margin: 20px 0 8px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.markdown-content h3 { font-size: 16px; margin: 14px 0 6px; }
+.markdown-content ul, .markdown-content ol { margin: 8px 0; padding-left: 20px; }
+.markdown-content li { margin: 4px 0; }
+.markdown-content table { border-collapse: collapse; margin: 8px 0; }
+.markdown-content th, .markdown-content td { border: 1px solid var(--border); padding: 6px 12px; font-size: 13px; }
+.markdown-content th { background: var(--bg); }
+.markdown-content blockquote { border-left: 3px solid var(--accent); padding-left: 12px; color: var(--text-dim); margin: 8px 0; }
+.markdown-content strong { color: var(--orange); }
+.markdown-content code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+.markdown-content hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+
+/* ═══════════════ Date Picker ═══════════════ */
+.date-picker {
+  display: flex; align-items: center; gap: 8px;
+}
+.date-picker select {
+  background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 8px 12px; font-size: 14px;
+}
+
+/* ═══════════════ Loading ═══════════════ */
+.spinner {
+  display: inline-block; width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.2); border-top-color: #fff;
+  border-radius: 50%; animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loading-overlay {
+  display: flex; align-items: center; justify-content: center;
+  padding: 60px; color: var(--text-dim);
+}
+
+/* ═══════════════ About ═══════════════ */
+.about-section { line-height: 1.8; }
+.about-section h3 { margin-top: 20px; color: var(--accent); }
+.tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.tech-tag {
+  padding: 6px 14px; border-radius: 20px; font-size: 13px;
+  background: var(--bg); border: 1px solid var(--border);
+}
+
+/* ═══════════════ Responsive ═══════════════ */
+@media (max-width: 768px) {
+  .header-inner { flex-direction: column; gap: 12px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .filters { flex-direction: column; }
+  .container { padding: 12px; }
+  .modal { width: 95%; padding: 16px; }
+}
+
+/* ═══════════════ Truncate ═══════════════ */
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cell-brief { max-width: 250px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-icon">🔥</span>
+      <div>
+        <h1>热点追踪 Hotspot Tracker</h1>
+        <p>AI-Powered Global Tech Trend Monitor for Tencent Cloud</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <span id="statusIndicator">
+        <span class="status-dot green"></span>
+        <span style="font-size:13px;color:var(--text-dim)">就绪</span>
+      </span>
+      <div class="date-picker">
+        <span style="font-size:13px;color:var(--text-dim)">📅</span>
+        <select id="dateSelect" onchange="loadDate(this.value)">
+          <option value="">加载中...</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" id="runBtn" onclick="runCrawl()">
+        🚀 一键采集
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Main -->
+<div class="container">
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('dashboard')">📊 数据看板</button>
+    <button class="tab" onclick="switchTab('table')">📋 全量数据</button>
+    <button class="tab" onclick="switchTab('selected')">⭐ 精选话题</button>
+    <button class="tab" onclick="switchTab('summary')">📝 每日总结</button>
+    <button class="tab" onclick="switchTab('writing')">✍️ 写作包</button>
+    <button class="tab" onclick="switchTab('console')">🖥 控制台</button>
+    <button class="tab" onclick="switchTab('about')">ℹ️ 关于</button>
+  </div>
+
+  <!-- Dashboard Tab -->
+  <div id="tab-dashboard" class="tab-content active">
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card total"><div class="stat-label">采集总量</div><div class="stat-value" id="statTotal">—</div></div>
+      <div class="stat-card ai"><div class="stat-label">AI 相关</div><div class="stat-value" id="statAI">—</div></div>
+      <div class="stat-card cloud"><div class="stat-label">云行业</div><div class="stat-value" id="statCloud">—</div></div>
+      <div class="stat-card high"><div class="stat-label">高分 (≥7.0)</div><div class="stat-value" id="statHigh">—</div></div>
+      <div class="stat-card" style="border-left:3px solid var(--red)"><div class="stat-label">P0 今天发</div><div class="stat-value" id="statP0" style="color:var(--red)">—</div></div>
+      <div class="stat-card" style="border-left:3px solid var(--orange)"><div class="stat-label">P1 本周发</div><div class="stat-value" id="statP1" style="color:var(--orange)">—</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">🏆 高分热点 TOP 10</div>
+        <button class="btn btn-secondary btn-sm" onclick="syncToDoc('all')">📤 同步到腾讯文档</button>
+      </div>
+      <div id="topItems">
+        <div class="loading-overlay"><span class="spinner"></span>&nbsp;&nbsp;加载中...</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="card">
+        <div class="card-title" style="margin-bottom:12px">📡 来源分布</div>
+        <div id="sourceChart"></div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="margin-bottom:12px">🏷️ 热门技术标签</div>
+        <div id="techChart"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table Tab -->
+  <div id="tab-table" class="tab-content">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">📋 全量热点数据</div>
+        <span style="font-size:13px;color:var(--text-dim)" id="tableCount"></span>
+      </div>
+      <div class="filters">
+        <select id="filterSource" onchange="applyFilters()">
+          <option value="">所有来源</option>
+          <option value="hackernews">HackerNews</option>
+          <option value="github">GitHub</option>
+          <option value="producthunt">ProductHunt</option>
+          <option value="huggingface">HuggingFace</option>
+          <option value="v2ex">V2EX</option>
+          <option value="36kr">36氪</option>
+          <option value="ai_newsletters">AI Newsletter</option>
+        </select>
+        <select id="filterPriority" onchange="applyFilters()">
+          <option value="">所有优先级</option>
+          <option value="P0">P0 今天发</option>
+          <option value="P1">P1 本周发</option>
+          <option value="P2">P2 观察中</option>
+        </select>
+        <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer">
+          <input type="checkbox" id="filterAI" onchange="applyFilters()"> AI 相关
+        </label>
+        <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer">
+          <input type="checkbox" id="filterCloud" onchange="applyFilters()"> 云行业
+        </label>
+        <input type="number" id="filterScore" placeholder="最低评分" min="0" max="10" step="0.5"
+               style="width:100px" onchange="applyFilters()">
+      </div>
+      <div class="table-wrapper" id="dataTableWrapper">
+        <div class="loading-overlay"><span class="spinner"></span>&nbsp;&nbsp;加载中...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selected Tab -->
+  <div id="tab-selected" class="tab-content">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">⭐ 精选话题（P0/P1 + 腾讯云高关联）</div>
+        <button class="btn btn-secondary btn-sm" onclick="syncToDoc('selected')">📤 同步精选到腾讯文档</button>
+      </div>
+      <div id="selectedItems">
+        <div class="loading-overlay"><span class="spinner"></span>&nbsp;&nbsp;加载中...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary Tab -->
+  <div id="tab-summary" class="tab-content">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">📝 每日热点趋势总结</div>
+      </div>
+      <div class="markdown-content" id="summaryContent">
+        <div class="loading-overlay"><span class="spinner"></span>&nbsp;&nbsp;加载中...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Writing Pack Tab -->
+  <div id="tab-writing" class="tab-content">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">✍️ 内容写作包</div>
+      </div>
+      <div class="markdown-content" id="writingContent">
+        <div class="loading-overlay"><span class="spinner"></span>&nbsp;&nbsp;加载中...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Console Tab -->
+  <div id="tab-console" class="tab-content">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">🖥 运行控制台</div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-primary btn-sm" id="consoleRunBtn" onclick="runCrawl()">🚀 启动采集</button>
+          <button class="btn btn-secondary btn-sm" onclick="syncToDoc('all')">📤 同步到腾讯文档</button>
+        </div>
+      </div>
+      <div style="margin-bottom:12px">
+        <span style="font-size:13px;color:var(--text-dim)">状态：</span>
+        <span id="consoleStatus" style="font-size:13px">就绪</span>
+      </div>
+      <div class="log-panel" id="consoleLog">等待操作...\n\n提示：点击「启动采集」开始抓取 7 个数据源的最新热点。\n\n数据源：HackerNews / GitHub Trending / ProductHunt / HuggingFace / V2EX / 36氪 / AI Newsletter\n\n采集完成后会自动同步到腾讯文档多维表格。</div>
+    </div>
+  </div>
+
+  <!-- About Tab -->
+  <div id="tab-about" class="tab-content">
+    <div class="card about-section">
+      <h2 style="margin-bottom:16px">🔥 热点追踪 Hotspot Tracker</h2>
+      <p style="color:var(--text-dim);font-size:15px;margin-bottom:20px">
+        AI 驱动的全球科技热点追踪工具，专为腾讯云国际站内容团队打造。自动采集 7 大平台热点，
+        深度分析关联性，生成可直接使用的写作素材。
+      </p>
+
+      <h3>✨ 核心功能</h3>
+      <ul style="margin:8px 0 16px 20px;line-height:2">
+        <li><strong>7 大数据源自动采集</strong> — HackerNews / GitHub Trending / ProductHunt / HuggingFace / V2EX / 36氪 / AI Newsletter</li>
+        <li><strong>深度内容抓取</strong> — GitHub README 全文 / 社区帖子全文 / 项目详情</li>
+        <li><strong>智能分析标注</strong> — AI相关判断 / 云行业识别 / 腾讯云产品关联 / 竞品分析</li>
+        <li><strong>自动翻译</strong> — Google Translate 英文摘要→中文</li>
+        <li><strong>腾讯文档同步</strong> — 一键写入多维表格（全量热点 + 精选话题）</li>
+        <li><strong>写作包生成</strong> — Markdown 格式，可直接用于内容创作</li>
+        <li><strong>开发者信息增强</strong> — GitHub API + 主页爬取获取公开邮箱</li>
+      </ul>
+
+      <h3>🛠 技术栈</h3>
+      <div class="tech-stack">
+        <span class="tech-tag">🐍 Python 3</span>
+        <span class="tech-tag">🌶 Flask</span>
+        <span class="tech-tag">🔍 BeautifulSoup4</span>
+        <span class="tech-tag">🌐 Requests</span>
+        <span class="tech-tag">🌍 Google Translate</span>
+        <span class="tech-tag">📊 企业微信 Webhook</span>
+        <span class="tech-tag">📄 CSV / JSON / Markdown</span>
+        <span class="tech-tag">🎨 原生 HTML/CSS/JS</span>
+      </div>
+
+      <h3>📂 项目结构</h3>
+      <div class="log-panel" style="color:var(--text-dim);max-height:200px">
+热点追踪/
+├── web_app.py                  ← Web UI 后端 (Flask)
+├── web_ui.html                 ← 前端界面
+├── run.sh                      ← 命令行一键运行
+├── setup.sh                    ← 首次安装
+├── requirements.txt            ← 依赖清单
+├── merge_master_table.py       ← 历史总表合并
+├── sync_to_wecom_sheet.py      ← 腾讯文档同步 + 每日总结
+├── scripts/                    ← 核心采集脚本
+│   ├── daily_hotspot_agent.py  ← 主流程调度
+│   ├── fetch_news.py           ← 7 大数据源爬虫
+│   ├── content_analyzer.py     ← 内容分析引擎
+│   ├── rss_parser.py           ← RSS 解析器
+│   └── wecom_doc_writer.py     ← 企业微信文档写入
+└── output/                     ← 输出目录
+      </div>
+
+      <h3 style="margin-top:20px">🚀 快速开始</h3>
+      <div class="log-panel" style="color:var(--text-dim);max-height:120px">
+# 1. 安装依赖
+./setup.sh
+
+# 2a. 命令行运行
+./run.sh
+
+# 2b. 或启动 Web UI
+python3 web_app.py
+# 然后访问 http://localhost:5088
+      </div>
+
+      <p style="margin-top:24px;color:var(--text-dim);font-size:13px;text-align:center">
+        Built with ❤️ using AI Coding &nbsp;|&nbsp; © 2026
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Detail Modal -->
+<div class="modal-overlay" id="detailModal" onclick="if(event.target===this)closeDetail()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeDetail()">×</button>
+    <h2 id="detailTitle" style="margin-bottom:4px"></h2>
+    <div id="detailBody"></div>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════
+// State
+// ════════════════════════════════════════════
+
+let currentDate = '';
+let allRecords = [];
+let pollTimer = null;
+
+// ════════════════════════════════════════════
+// Init
+// ════════════════════════════════════════════
+
+async function init() {
+  const resp = await fetch('/api/status');
+  const data = await resp.json();
+  if (!data.ok) return;
+
+  currentDate = data.today;
+
+  // Populate date select
+  const sel = document.getElementById('dateSelect');
+  sel.innerHTML = '';
+  if (data.available_dates.length === 0) {
+    sel.innerHTML = '<option value="">无数据 — 请先运行采集</option>';
+  } else {
+    for (const d of data.available_dates) {
+      const opt = document.createElement('option');
+      opt.value = d;
+      opt.textContent = d + (d === data.today ? ' (今天)' : '');
+      sel.appendChild(opt);
+    }
+    currentDate = data.available_dates[0];
+  }
+
+  if (data.running) startPolling();
+  if (currentDate) loadDate(currentDate);
+}
+
+// ════════════════════════════════════════════
+// Load Data
+// ════════════════════════════════════════════
+
+async function loadDate(dateStr) {
+  if (!dateStr) return;
+  currentDate = dateStr;
+
+  try {
+    const resp = await fetch(`/api/data/${dateStr}`);
+    const data = await resp.json();
+    if (!data.ok) {
+      allRecords = [];
+      renderDashboard({ total: 0, ai_count: 0, cloud_count: 0, sources: {} }, []);
+      return;
+    }
+
+    allRecords = data.records;
+    renderDashboard(data.stats, data.records);
+    renderTable(data.records);
+    renderSelected(data.records);
+  } catch (e) {
+    console.error('Load error:', e);
+  }
+
+  // Load summary and writing pack in parallel
+  loadSummary(dateStr);
+  loadWritingPack(dateStr);
+}
+
+function renderDashboard(stats, records) {
+  document.getElementById('statTotal').textContent = stats.total;
+  document.getElementById('statAI').textContent = stats.ai_count;
+  document.getElementById('statCloud').textContent = stats.cloud_count;
+
+  const highCount = records.filter(r => parseFloat(r['综合评分'] || 0) >= 7).length;
+  document.getElementById('statHigh').textContent = highCount;
+
+  const p0Count = records.filter(r => (r['发布优先级'] || '').startsWith('P0')).length;
+  const p1Count = records.filter(r => (r['发布优先级'] || '').startsWith('P1')).length;
+  document.getElementById('statP0').textContent = p0Count;
+  document.getElementById('statP1').textContent = p1Count;
+
+  // Top items
+  const sorted = [...records].sort((a, b) => parseFloat(b['综合评分'] || 0) - parseFloat(a['综合评分'] || 0));
+  const top10 = sorted.slice(0, 10);
+  const topHtml = top10.map((r, i) => {
+    const score = parseFloat(r['综合评分'] || 0);
+    const tcloud = parseFloat(r['与腾讯云结合度'] || 0);
+    const scoreClass = score >= 7 ? 'score-high' : score >= 5 ? 'score-mid' : 'score-low';
+    const priority = r['发布优先级'] || '';
+    const prioClass = priority.startsWith('P0') ? 'tag-p0' : priority.startsWith('P1') ? 'tag-p1' : 'tag-p2';
+    return `
+      <div style="display:flex;align-items:center;gap:12px;padding:10px;border-bottom:1px solid var(--border);cursor:pointer" onclick="showDetail(${i}, 'top')">
+        <span style="font-size:16px;font-weight:700;color:var(--text-dim);width:24px">${i+1}</span>
+        <span class="score-badge ${scoreClass}">${score.toFixed(1)}</span>
+        <div style="flex:1;min-width:0">
+          <div class="truncate" style="font-weight:500">${escHtml(r['标题'] || '')}</div>
+          <div style="font-size:12px;color:var(--text-dim);margin-top:2px" class="truncate">
+            ${escHtml((r['中文简介'] || '').substring(0, 100))}
+          </div>
+        </div>
+        <span class="tag tag-source">${escHtml(r['来源Key'] || '')}</span>
+        ${priority ? `<span class="tag ${prioClass}">${escHtml(priority.split(' ')[0])}</span>` : ''}
+        ${tcloud >= 5 ? `<span class="tag tag-cloud">☁️${tcloud}</span>` : ''}
+      </div>`;
+  }).join('');
+  document.getElementById('topItems').innerHTML = topHtml || '<div style="padding:20px;color:var(--text-dim)">暂无数据</div>';
+
+  // Source chart
+  const sourceNames = { hackernews: '🦄 HackerNews', github: '🐙 GitHub', producthunt: '🏹 ProductHunt',
+    huggingface: '📰 HuggingFace', v2ex: '🤓 V2EX', '36kr': '💰 36氪', ai_newsletters: '📬 AI Newsletter' };
+  const sourceHtml = Object.entries(stats.sources || {})
+    .sort((a,b) => b[1]-a[1])
+    .map(([s, c]) => {
+      const pct = Math.round(c / stats.total * 100);
+      return `<div style="margin:6px 0"><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:2px">
+        <span>${sourceNames[s] || s}</span><span style="color:var(--text-dim)">${c} 条 (${pct}%)</span></div>
+        <div style="height:6px;background:var(--bg);border-radius:3px;overflow:hidden">
+          <div style="height:100%;width:${pct}%;background:linear-gradient(90deg,var(--accent),#818cf8);border-radius:3px"></div>
+        </div></div>`;
+    }).join('');
+  document.getElementById('sourceChart').innerHTML = sourceHtml || '暂无数据';
+
+  // Tech chart
+  const techCounts = {};
+  records.forEach(r => {
+    (r['技术标签'] || '').split(',').forEach(t => {
+      t = t.trim();
+      if (t) techCounts[t] = (techCounts[t] || 0) + 1;
+    });
+  });
+  const techSorted = Object.entries(techCounts).sort((a,b) => b[1]-a[1]).slice(0, 10);
+  const maxTech = techSorted.length ? techSorted[0][1] : 1;
+  const techHtml = techSorted.map(([t, c]) => {
+    const pct = Math.round(c / maxTech * 100);
+    return `<div style="margin:6px 0"><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:2px">
+      <span>${escHtml(t)}</span><span style="color:var(--text-dim)">${c}</span></div>
+      <div style="height:6px;background:var(--bg);border-radius:3px;overflow:hidden">
+        <div style="height:100%;width:${pct}%;background:linear-gradient(90deg,var(--purple),#c084fc);border-radius:3px"></div>
+      </div></div>`;
+  }).join('');
+  document.getElementById('techChart').innerHTML = techHtml || '暂无数据';
+}
+
+function renderTable(records) {
+  if (!records.length) {
+    document.getElementById('dataTableWrapper').innerHTML = '<div style="padding:20px;color:var(--text-dim)">暂无数据</div>';
+    document.getElementById('tableCount').textContent = '';
+    return;
+  }
+
+  document.getElementById('tableCount').textContent = `共 ${records.length} 条`;
+
+  const html = `<table class="data-table">
+    <thead><tr>
+      <th>#</th><th>来源</th><th>标题</th><th>中文简介</th>
+      <th>评分</th><th>云关联</th><th>优先级</th><th>标签</th><th>操作</th>
+    </tr></thead>
+    <tbody>
+    ${records.map((r, i) => {
+      const score = parseFloat(r['综合评分'] || 0);
+      const tcloud = parseFloat(r['与腾讯云结合度'] || 0);
+      const scoreClass = score >= 7 ? 'score-high' : score >= 5 ? 'score-mid' : 'score-low';
+      const priority = r['发布优先级'] || '';
+      const prioTag = priority.startsWith('P0') ? 'tag-p0' : priority.startsWith('P1') ? 'tag-p1' : 'tag-p2';
+      const isAI = r['是否AI相关'] === '是';
+      const isCloud = r['是否云行业'] === '是';
+      return `<tr>
+        <td>${i+1}</td>
+        <td><span class="tag tag-source">${escHtml(r['来源Key'] || '')}</span></td>
+        <td class="title-cell" style="max-width:250px"><a href="${escHtml(r['链接'] || '#')}" target="_blank" class="truncate" style="display:block">${escHtml((r['标题'] || '').substring(0, 60))}</a></td>
+        <td><div class="cell-brief">${escHtml((r['中文简介'] || '').substring(0, 100))}</div></td>
+        <td><span class="score-badge ${scoreClass}">${score.toFixed(1)}</span></td>
+        <td>${tcloud >= 5 ? `<span class="tag tag-cloud">${tcloud}</span>` : `<span style="color:var(--text-dim)">${tcloud}</span>`}</td>
+        <td>${priority ? `<span class="tag ${prioTag}">${escHtml(priority.split(' ')[0])}</span>` : '-'}</td>
+        <td>${isAI ? '<span class="tag tag-ai">AI</span>' : ''}${isCloud ? '<span class="tag tag-cloud">Cloud</span>' : ''}</td>
+        <td><button class="btn btn-secondary btn-sm" onclick="showDetail(${i})">详情</button></td>
+      </tr>`;
+    }).join('')}
+    </tbody></table>`;
+
+  document.getElementById('dataTableWrapper').innerHTML = html;
+}
+
+function renderSelected(records) {
+  const selected = records.filter(r => {
+    const p = r['发布优先级'] || '';
+    const tc = (r['腾讯云结合点'] || '').trim();
+    return (p.startsWith('P0') || p.startsWith('P1')) && tc.length > 5 && tc !== '无';
+  }).sort((a,b) => parseFloat(b['综合评分'] || 0) - parseFloat(a['综合评分'] || 0));
+
+  if (!selected.length) {
+    document.getElementById('selectedItems').innerHTML = '<div style="padding:20px;color:var(--text-dim)">今日无满足条件的精选话题</div>';
+    return;
+  }
+
+  const html = selected.map((r, i) => {
+    const score = parseFloat(r['综合评分'] || 0);
+    const tcloud = parseFloat(r['与腾讯云结合度'] || 0);
+    const priority = r['发布优先级'] || '';
+    const prioClass = priority.startsWith('P0') ? 'tag-p0' : 'tag-p1';
+    return `
+      <div class="card" style="margin-bottom:12px;cursor:pointer" onclick="showDetailByRecord(${JSON.stringify(r).replace(/"/g, '&quot;')})">
+        <div style="display:flex;align-items:flex-start;gap:16px">
+          <div style="text-align:center">
+            <div class="score-badge score-high" style="width:48px;height:48px;font-size:16px">${score.toFixed(1)}</div>
+            <div style="font-size:11px;color:var(--text-dim);margin-top:4px">综合分</div>
+          </div>
+          <div style="flex:1">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+              <span class="tag ${prioClass}">${escHtml(priority.split(' ')[0])}</span>
+              <span class="tag tag-source">${escHtml(r['来源Key'] || '')}</span>
+              ${tcloud >= 5 ? `<span class="tag tag-cloud">☁️ 结合度 ${tcloud}</span>` : ''}
+            </div>
+            <h3 style="font-size:15px;margin-bottom:6px">
+              <a href="${escHtml(r['链接'] || '#')}" target="_blank">${escHtml(r['标题'] || '')}</a>
+            </h3>
+            <p style="font-size:13px;color:var(--text-dim);margin-bottom:8px">${escHtml((r['中文简介'] || '').substring(0, 200))}</p>
+            <div style="background:var(--blue-dim);padding:10px;border-radius:8px;font-size:13px">
+              <strong style="color:var(--blue)">☁️ 腾讯云结合点：</strong>
+              ${escHtml((r['腾讯云结合点'] || '').substring(0, 300))}
+            </div>
+            ${r['产品标签'] ? `<div style="margin-top:6px;font-size:12px"><strong>关联产品:</strong> ${escHtml(r['产品标签'])}</div>` : ''}
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+
+  document.getElementById('selectedItems').innerHTML = html;
+}
+
+// ════════════════════════════════════════════
+// Summary & Writing Pack
+// ════════════════════════════════════════════
+
+async function loadSummary(dateStr) {
+  try {
+    const resp = await fetch(`/api/summary/${dateStr}`);
+    const data = await resp.json();
+    document.getElementById('summaryContent').innerHTML = data.ok
+      ? simpleMarkdown(data.content)
+      : '<div style="color:var(--text-dim)">暂无总结 — 请先运行采集</div>';
+  } catch (e) {
+    document.getElementById('summaryContent').innerHTML = '<div style="color:var(--text-dim)">加载失败</div>';
+  }
+}
+
+async function loadWritingPack(dateStr) {
+  try {
+    const resp = await fetch(`/api/writing-pack/${dateStr}`);
+    const data = await resp.json();
+    document.getElementById('writingContent').innerHTML = data.ok
+      ? simpleMarkdown(data.content)
+      : '<div style="color:var(--text-dim)">暂无写作包 — 请先运行采集</div>';
+  } catch (e) {
+    document.getElementById('writingContent').innerHTML = '<div style="color:var(--text-dim)">加载失败</div>';
+  }
+}
+
+// ════════════════════════════════════════════
+// Filters
+// ════════════════════════════════════════════
+
+function applyFilters() {
+  const source = document.getElementById('filterSource').value;
+  const priority = document.getElementById('filterPriority').value;
+  const aiOnly = document.getElementById('filterAI').checked;
+  const cloudOnly = document.getElementById('filterCloud').checked;
+  const minScore = parseFloat(document.getElementById('filterScore').value) || 0;
+
+  let filtered = allRecords;
+  if (source) filtered = filtered.filter(r => r['来源Key'] === source);
+  if (priority) filtered = filtered.filter(r => (r['发布优先级'] || '').startsWith(priority));
+  if (aiOnly) filtered = filtered.filter(r => r['是否AI相关'] === '是');
+  if (cloudOnly) filtered = filtered.filter(r => r['是否云行业'] === '是');
+  if (minScore > 0) filtered = filtered.filter(r => parseFloat(r['综合评分'] || 0) >= minScore);
+
+  renderTable(filtered);
+}
+
+// ════════════════════════════════════════════
+// Detail Modal
+// ════════════════════════════════════════════
+
+function showDetail(index, type) {
+  const r = type === 'top'
+    ? [...allRecords].sort((a, b) => parseFloat(b['综合评分'] || 0) - parseFloat(a['综合评分'] || 0))[index]
+    : allRecords[index];
+  if (!r) return;
+  showDetailByRecord(r);
+}
+
+function showDetailByRecord(r) {
+  if (typeof r === 'string') r = JSON.parse(r);
+  document.getElementById('detailTitle').textContent = r['标题'] || '';
+
+  const fields = [
+    ['链接', r['链接'], true],
+    ['来源', r['来源Key']],
+    ['热度', r['热度']],
+    ['中文简介', r['中文简介']],
+    ['具体内容摘要', r['具体内容摘要']],
+    ['开发者/作者', r['开发者/作者']],
+    ['开发者链接', r['开发者链接'], true],
+    ['开发者邮箱', r['开发者邮箱']],
+    ['话题分类', r['话题分类']],
+    ['是否AI相关', r['是否AI相关']],
+    ['是否云行业', r['是否云行业']],
+    ['内容标注', r['内容标注']],
+    ['综合评分', r['综合评分']],
+    ['热度评分', r['热度评分']],
+    ['时效评分', r['时效评分']],
+    ['与腾讯云结合度', r['与腾讯云结合度']],
+    ['产品标签', r['产品标签']],
+    ['竞品标签', r['竞品产品标签'] || r['竞品标签']],
+    ['友商标签', r['友商标签']],
+    ['技术标签', r['技术标签']],
+    ['官方号主推产品', r['官方号主推产品']],
+    ['国际站关联类型', r['国际站关联类型']],
+    ['腾讯云结合点', r['腾讯云结合点']],
+    ['官方号写作角度', r['官方号写作角度']],
+    ['配图建议', r['配图建议']],
+    ['可用角度', r['可用角度']],
+    ['发布优先级', r['发布优先级']],
+    ['社媒结论', r['社媒结论']],
+    ['备注', r['备注']],
+  ];
+
+  const html = '<div class="detail-grid">' + fields.map(([label, val, isLink]) => {
+    if (!val || !val.trim()) return '';
+    const display = isLink
+      ? `<a href="${escHtml(val)}" target="_blank">${escHtml(val.substring(0, 80))}...</a>`
+      : escHtml(val);
+    return `<div class="detail-label">${escHtml(label)}</div><div>${display}</div>`;
+  }).filter(Boolean).join('') + '</div>';
+
+  document.getElementById('detailBody').innerHTML = html;
+  document.getElementById('detailModal').classList.add('show');
+}
+
+function closeDetail() {
+  document.getElementById('detailModal').classList.remove('show');
+}
+
+// ════════════════════════════════════════════
+// Run Crawl
+// ════════════════════════════════════════════
+
+async function runCrawl() {
+  const btn = document.getElementById('runBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> 运行中...';
+
+  try {
+    const resp = await fetch('/api/run', { method: 'POST' });
+    const data = await resp.json();
+    if (!data.ok) {
+      alert(data.error || '启动失败');
+      btn.disabled = false;
+      btn.innerHTML = '🚀 一键采集';
+      return;
+    }
+    switchTab('console');
+    startPolling();
+  } catch (e) {
+    alert('请求失败: ' + e.message);
+    btn.disabled = false;
+    btn.innerHTML = '🚀 一键采集';
+  }
+}
+
+function startPolling() {
+  if (pollTimer) return;
+  const indicator = document.getElementById('statusIndicator');
+  indicator.innerHTML = '<span class="status-dot orange"></span><span style="font-size:13px;color:var(--orange)">运行中</span>';
+
+  pollTimer = setInterval(async () => {
+    try {
+      const resp = await fetch('/api/run/log');
+      const data = await resp.json();
+      document.getElementById('consoleLog').textContent = data.log || '等待输出...';
+      document.getElementById('consoleStatus').textContent = data.progress || '';
+      document.getElementById('consoleLog').scrollTop = document.getElementById('consoleLog').scrollHeight;
+
+      if (!data.running) {
+        clearInterval(pollTimer);
+        pollTimer = null;
+        indicator.innerHTML = '<span class="status-dot green"></span><span style="font-size:13px;color:var(--text-dim)">就绪</span>';
+        document.getElementById('runBtn').disabled = false;
+        document.getElementById('runBtn').innerHTML = '🚀 一键采集';
+        // Reload data
+        init();
+      }
+    } catch (e) {
+      console.error('Poll error:', e);
+    }
+  }, 2000);
+}
+
+// ════════════════════════════════════════════
+// Sync to Doc
+// ════════════════════════════════════════════
+
+async function syncToDoc(target) {
+  const btn = event.target;
+  const origText = btn.textContent;
+  btn.textContent = '⏳ 同步中...';
+  btn.disabled = true;
+
+  try {
+    const resp = await fetch('/api/sync', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date: currentDate, target }),
+    });
+    const data = await resp.json();
+    if (data.ok) {
+      btn.textContent = '✅ 同步成功！';
+      setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 2000);
+    } else {
+      alert('同步失败: ' + (data.error || '未知错误'));
+      btn.textContent = origText;
+      btn.disabled = false;
+    }
+  } catch (e) {
+    alert('请求失败: ' + e.message);
+    btn.textContent = origText;
+    btn.disabled = false;
+  }
+}
+
+// ════════════════════════════════════════════
+// Tab Switching
+// ════════════════════════════════════════════
+
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById(`tab-${name}`).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t => {
+    if (t.getAttribute('onclick')?.includes(name)) t.classList.add('active');
+  });
+}
+
+// ════════════════════════════════════════════
+// Utils
+// ════════════════════════════════════════════
+
+function escHtml(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function simpleMarkdown(text) {
+  if (!text) return '';
+  return text
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/^\- (.+)$/gm, '<li>$1</li>')
+    .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+    .replace(/<\/ul>\s*<ul>/g, '')
+    .replace(/^\|(.+)\|$/gm, (m) => {
+      const cells = m.split('|').filter(c => c.trim());
+      if (cells.every(c => /^[-\s:]+$/.test(c))) return '';
+      const tag = cells[0]?.trim().startsWith('---') ? 'th' : 'td';
+      return '<tr>' + cells.map(c => `<${tag}>${c.trim()}</${tag}>`).join('') + '</tr>';
+    })
+    .replace(/(<tr>.*<\/tr>)/gs, '<table>$1</table>')
+    .replace(/<\/table>\s*<table>/g, '')
+    .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+    .replace(/---/g, '<hr>')
+    .replace(/\n\n/g, '<br><br>')
+    .replace(/\n/g, '<br>');
+}
+
+// Keyboard shortcut
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeDetail();
+});
+
+// Init on load
+init();
+</script>
+
+</body>
+</html>

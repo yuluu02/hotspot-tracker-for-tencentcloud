@@ -1,0 +1,736 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "jarrodwatts/claude-hud - A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+    "url": "https://github.com/jarrodwatts/claude-hud",
+    "heat": "9,914 stars",
+    "time": "Today",
+    "developer_name": "jarrodwatts",
+    "developer_url": "https://github.com/jarrodwatts",
+    "today_stars": "1,068 stars today",
+    "language": "JavaScript",
+    "summary": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+    "content": "# Claude HUD\n\nA Claude Code plugin that shows what's happening — context usage, active tools, running agents, and todo progress. Always visible below your input.\n\n[](LICENSE)\n[](https://github.com/jarrodwatts/claude-hud/stargazers)\n\n## Install\n\nInside a Claude Code instance, run the following commands:\n\n**Step 1: Add the marketplace**\n```\n/plugin marketplace add jarrodwatts/claude-hud\n```\n\n**Step 2: Install the plugin**\n\n \n  ⚠️ Linux users: Click here first  \n\nOn Linux, `/tmp` is often a separate filesystem (tmpfs), which causes plugin installation to fail with:\n```\nEXDEV: cross-device link not permitted\n```\n\n**Fix**: Set TMPDIR before installing:\n```bash\nmkdir -p ~/.cache/tmp && TMPDIR=~/.cache/tmp claude\n```\n\nThen run the install command below in that session. This is a Claude Code platform limitation.\n\n \n\n```\n/plugin install claude-hud\n```\n\n**Step 3: Configure the statusline**\n```\n/claude-hud:setup\n```\n\nDone! Restart Claude Code to load the new statusLine config, then the HUD will appear.\n\n---\n\n## What is Claude HUD?\n\nClaude HUD gives you better insights into what's happening in your Claude Code session.\n\n| What You See | Why It Matters |\n|--------------|----------------|\n| **Project path** | Know which project you're in (configurable 1-3 directory levels) |\n| **Context health** | Know exactly how full your context window is before it's too late |\n| **Tool activity** | Watch Claude read, edit, and search files as it happens |\n| **Agent tracking** | See which subagents are running and what they're doing |\n| **Todo progress** | Track task completion in real-time |\n\n## What You See\n\n### Default (2 lines)\n```\n[Opus | Max] │ my-project git:(main*)\nContext █████░░░░░ 45% │ Usage ██░░░░░░░░ 25% (1h 30m / 5h)\n```\n- **Line 1** — Model, plan name (or `Bedrock`), project path, git branch\n- **Line 2** — Context bar (green → yellow → red) and usage rate limits\n\n### Optional lines (enable via `/claude-hud:configure`)\n```\n◐ Edit: auth.ts | ✓ Read ×3 | ✓ Grep ×2        ← Tools activity\n◐ explore [haiku]: Finding auth code (2m 15s)    ← Agent status\n▸ Fix authentication bug (2/5)                   ← Todo progress\n```\n\n---\n\n## How It Works\n\nClaude HUD uses Claude Code's native **statusline API** — no separate window, no tmux required, works in any terminal.\n\n```\nClaude Code → stdin JSON → claude-hud → stdout → displayed in your terminal\n           ↘ transcript JSONL (tools, agents, todos)\n```\n\n**Key features:**\n- Native token data from Claude Code (not estimated)\n- Scales with Claude Code's reported context window size, including newer 1M-context sessions\n- Parses the transcript for tool/agent activity\n- Updates every ~300ms\n\n---\n\n## Configuration\n\nCustomize your HUD anytime:\n\n```\n/claude-hud:configure\n```\n\nThe guided flow handles layout and display toggles. Advanced overrides such as\ncustom colors and thresholds are preserved there, but you set them by editing the config file directly:\n\n- **First time setup**: Choose a preset (Full/Essential/Minimal), then fin",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "TypeScript"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "jarrodwatts/claude-hud: A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.5,
+      "tcloud_relevance": 5.4,
+      "tcloud_integration": "**claude-hud** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**claude-hud** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者"
+      ],
+      "tcloud_evidence": [
+        "agent",
+        "github.com"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**claude-hud** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「jarrodwatts/claude-hud - A Claude Code plugin tha…」涉及 Agent / TypeScript 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "围绕 Lighthouse 做内容，切入方式：「jarrodwatts/claude-hud - A Claude Code plugin tha…」涉及 Agent / TypeScript 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）。优先级 P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "结合 claude-hud 的使用场景，写一篇『用 Lighthouse 搭建 claude-hud 私有实例』的教程内容，强调轻量服务器的性价比和易用性。",
+      "visual_brief": "主视觉用 claude-hud 界面截图/Logo + Lighthouse 控制台部署界面的对比拼图，标注『一键部署→即刻运行』的流程箭头。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "结合 claude-hud 的使用场景，写一篇『用 Lighthouse 搭建 claude-hud 私有实例』的教程内容，强调轻量服务器的性价比和易用性。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 claude-hud 界面截图/Logo + Lighthouse 控制台部署界面的对比拼图，标注『一键部署→即刻运行』的流程箭头。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "jarrodwatts/claude-hud: A Claude Code plugin that shows what's happ…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "jarrodwatts/claude-hud - A Claude Code plugin that shows what's happening - context usa…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：jarrodwatts/claude-hud: A Claude Code plugin that shows what's happ…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: jarrodwatts/claude-hud - A Claude Code plugin that shows what's happening - context usa…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary. What matters more to you: deployment,…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。jarrodwatts/claude-hud: A Claude Code plugin that shows what's happ…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**claude-hud** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. jarrodwatts/claude-hud - A Claude Code plugin that shows what's happening - context usa…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：jarrodwatts/claude-hud: A Claude Code plugin that shows what's happ…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: jarrodwatts/claude-hud - A Claude Code plugin that shows what's happening - context usa…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "claude-hud：Claude Code 插件 展示 运行状态 - 上下文使用情况, 活跃工具, 运行中的 Agent, 待办进度"
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "langchain-ai/open-swe - An Open-Source Asynchronous Coding Agent",
+    "url": "https://github.com/langchain-ai/open-swe",
+    "heat": "7,796 stars",
+    "time": "Today",
+    "developer_name": "langchain-ai",
+    "developer_url": "https://github.com/langchain-ai",
+    "today_stars": "635 stars today",
+    "language": "Python",
+    "summary": "An Open-Source Asynchronous Coding Agent",
+    "content": " \n   \n     \n       \n       \n       \n     \n   \n \n\n \n   Open-source framework for building your org's internal coding agent. \n \n\n \n     \n     \n     \n     \n     \n \n\n \n\nElite engineering orgs like Stripe, Ramp, and Coinbase are building their own internal coding agents — Slackbots, CLIs, and web apps that meet engineers where they already work. These agents are connected to internal systems with the right context, permissioning, and safety boundaries to operate with minimal human oversight.\n\nOpen SWE is the open-source version of this pattern. Built on LangGraph and Deep Agents, it gives you the same architecture those companies built internally: cloud sandboxes, Slack and Linear invocation, subagent orchestration, and automatic PR creation — ready to customize for your own codebase and workflows.\n\n> [!NOTE]\n> 💬 Read the **announcement blog post here**\n\n---\n\n## Architecture\n\nOpen SWE makes the same core architectural decisions as the best internal coding agents. Here's how it maps to the patterns described in this overview of Stripe's Minions, Ramp's Inspect, and Coinbase's Cloudbot:\n\n### 1. Agent Harness — Composed on Deep Agents\n\nRather than forking an existing agent or building from scratch, Open SWE **composes** on the Deep Agents framework — similar to how Ramp built on top of OpenCode. This gives you an upgrade path (pull in upstream improvements) while letting you customize the orchestration, tools, and middleware for your org.\n\n```python\ncreate_deep_agent(\n    model=\"anthropic:claude-opus-4-6\",\n    system_prompt=construct_system_prompt(repo_dir, ...),\n    tools=[http_request, fetch_url, commit_and_open_pr, linear_comment, slack_thread_reply],\n    backend=sandbox_backend,\n    middleware=[ToolErrorMiddleware(), check_message_queue_before_model, ...],\n)\n```\n\n### 2. Sandbox — Isolated Cloud Environments\n\nEvery task runs in its own **isolated cloud sandbox** — a remote Linux environment with full shell access. The repo is cloned in, the agent gets full permissions, and the blast radius of any mistake is fully contained. No production access, no confirmation prompts.\n\nOpen SWE supports multiple sandbox providers out of the box — Modal, Daytona, Runloop, and LangSmith — and you can plug in your own. See the Customization Guide for details.\n\nThis follows the principle all three companies converge on: **isolate first, then give full permissions inside the boundary.**\n\n- Each thread gets a persistent sandbox (reused across follow-up messages)\n- Sandboxes auto-recreate if they become unreachable\n- Multiple tasks run in parallel — each in its own sandbox, no queuing\n\n### 3. Tools — Curated, Not Accumulated\n\nStripe's key insight: *tool curation matters more than tool quantity.* Open SWE follows this principle with a small, focused toolset:\n\n| Tool | Purpose |\n|---|---|\n| `execute` | Shell commands in the sandbox |\n| `fetch_url` | Fetch web pages as markdown |\n| `http_request` | API calls (GET, POST, etc.) |\n| `commit_and_open_pr` | Git commit + open a Git",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "prompt",
+        "langchain",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "LangChain"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "langchain-ai/open-swe: An Open-Source Asynchronous Coding Agent",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 6.1,
+      "tcloud_integration": "**open-swe** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**open-swe** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者"
+      ],
+      "tcloud_evidence": [
+        "agent",
+        "open-source"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**open-swe** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「langchain-ai/open-swe - An Open-Source Asynchrono…」涉及 Agent / Python 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "围绕 Lighthouse 做内容，切入方式：「langchain-ai/open-swe - An Open-Source Asynchrono…」涉及 Agent / Python 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）。优先级 P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "结合 open-swe 的使用场景，写一篇『用 Lighthouse 搭建 open-swe 私有实例』的教程内容，强调轻量服务器的性价比和易用性。",
+      "visual_brief": "主视觉用 open-swe 界面截图/Logo + Lighthouse 控制台部署界面的对比拼图，标注『一键部署→即刻运行』的流程箭头。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "结合 open-swe 的使用场景，写一篇『用 Lighthouse 搭建 open-swe 私有实例』的教程内容，强调轻量服务器的性价比和易用性。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 open-swe 界面截图/Logo + Lighthouse 控制台部署界面的对比拼图，标注『一键部署→即刻运行』的流程箭头。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "langchain-ai/open-swe: An Open-Source Asynchronous Coding Agent。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse…",
+        "x_en": "langchain-ai/open-swe - An Open-Source Asynchronous Coding Agent. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：langchain-ai/open-swe: An Open-Source Asynchronous Coding Agent。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: langchain-ai/open-swe - An Open-Source Asynchronous Coding Agent. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。langchain-ai/open-swe: An Open-Source Asynchronous Coding Agent。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**open-swe** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. langchain-ai/open-swe - An Open-Source Asynchronous Coding Agent. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：langchain-ai/open-swe: An Open-Source Asynchronous Coding Agent。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: langchain-ai/open-swe - An Open-Source Asynchronous Coding Agent. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "open-swe：开源的异步 编码 Agent"
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "obra/superpowers - An agentic skills framework & software development methodology that works.",
+    "url": "https://github.com/obra/superpowers",
+    "heat": "102,188 stars",
+    "time": "Today",
+    "developer_name": "obra",
+    "developer_url": "https://github.com/obra",
+    "today_stars": "2,819 stars today",
+    "language": "Shell",
+    "summary": "An agentic skills framework & software development methodology that works.",
+    "content": "# Superpowers\n\nSuperpowers is a complete software development workflow for your coding agents, built on top of a set of composable \"skills\" and some initial instructions that make sure your agent uses them.\n\n## How it works\n\nIt starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it *doesn't* just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do. \n\nOnce it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest. \n\nAfter you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY. \n\nNext up, once you say \"go\", it launches a *subagent-driven-development* process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.\n\nThere's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.\n\n## Sponsorship\n\nIf Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider sponsoring my opensource work.\n\nThanks! \n\n- Jesse\n\n## Installation\n\n**Note:** Installation differs by platform. Claude Code or Cursor have built-in plugin marketplaces. Codex and OpenCode require manual setup.\n\n### Claude Code Official Marketplace\n\nSuperpowers is available via the official Claude plugin marketplace\n\nInstall the plugin from Claude marketplace:\n\n```bash\n/plugin install superpowers@claude-plugins-official\n```\n\n### Claude Code (via Plugin Marketplace)\n\nIn Claude Code, register the marketplace first:\n\n```bash\n/plugin marketplace add obra/superpowers-marketplace\n```\n\nThen install the plugin from this marketplace:\n\n```bash\n/plugin install superpowers@superpowers-marketplace\n```\n\n### Cursor (via Plugin Marketplace)\n\nIn Cursor Agent chat, install from marketplace:\n\n```text\n/add-plugin superpowers\n```\n\nor search for \"superpowers\" in the plugin marketplace.\n\n### Codex\n\nTell Codex:\n\n```\nFetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md\n```\n\n**Detailed docs:** docs/README.codex.md\n\n### OpenCode\n\nTell OpenCode:\n\n```\nFetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md\n```\n\n**Detailed docs:** docs/README.opencode.md\n\n### Gemini CLI\n\n```bash\ngemini extensions install https://github.com/obra/superpowers\n```\n\nTo update:\n\n```bash\ngemini extensions update superpowers\n```\n\n### Verify Installat",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "gemini",
+        "agent",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "obra/superpowers: An agentic skills framework & software development methodology that works.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.6,
+      "tcloud_relevance": 8.9,
+      "tcloud_integration": "**superpowers** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者\n补充关联 CodeBuddy：**superpowers** 和 CodeBuddy 是同赛道竞品，可以做对比评测内容，突出 CodeBuddy 的 IDE 集成和中文优化",
+      "tcloud_products": [
+        "Lighthouse",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**superpowers** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+        "**superpowers** 和 CodeBuddy 是同赛道竞品，可以做对比评测内容，突出 CodeBuddy 的 IDE 集成和中文优化"
+      ],
+      "tcloud_evidence": [
+        "agent",
+        "github.com",
+        "coding agent",
+        "software development",
+        "cursor"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**superpowers** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者\n补充关联 CodeBuddy：**superpowers** 和 CodeBuddy 是同赛道竞品，可以做对比评测内容，突出 CodeBuddy 的 IDE 集成和中文优化",
+      "tcloud_official_matches": [
+        "Lighthouse",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse / CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「obra/superpowers - An agentic skills framework &…」涉及 Agent / Go 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "围绕 Lighthouse 做内容，切入方式：「obra/superpowers - An agentic skills framework &…」涉及 Agent / Go 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）。优先级 P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "结合 superpowers 的使用场景，写一篇『用 Lighthouse 搭建 superpowers 私有实例』的教程内容，强调轻量服务器的性价比和易用性。",
+      "visual_brief": "主视觉用 superpowers 界面截图/Logo + Lighthouse 控制台部署界面的对比拼图，标注『一键部署→即刻运行』的流程箭头。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "结合 superpowers 的使用场景，写一篇『用 Lighthouse 搭建 superpowers 私有实例』的教程内容，强调轻量服务器的性价比和易用性。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 superpowers 界面截图/Logo + Lighthouse 控制台部署界面的对比拼图，标注『一键部署→即刻运行』的流程箭头。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "obra/superpowers: An agentic skills framework & software developmen…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "obra/superpowers - An agentic skills framework & software development methodology that…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday develo…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：obra/superpowers: An agentic skills framework & software developmen…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: obra/superpowers - An agentic skills framework & software development methodology that…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy). What matters more to you: deployment, performance,…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。obra/superpowers: An agentic skills framework & software developmen…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**superpowers** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者 补充关联 CodeBuddy：**superpowers** 和 CodeBuddy 是同赛道竞品，可以做对比评测内容，突出 CodeBuddy 的 IDE 集成和中文优化",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. obra/superpowers - An agentic skills framework & software development methodology that…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：obra/superpowers: An agentic skills framework & software developmen…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: obra/superpowers - An agentic skills framework & software development methodology that…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "superpowers：Agent 技能框架 和 软件 开发方法论"
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "opendataloader-project/opendataloader-pdf - PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.",
+    "url": "https://github.com/opendataloader-project/opendataloader-pdf",
+    "heat": "7,369 stars",
+    "time": "Today",
+    "developer_name": "opendataloader-project",
+    "developer_url": "https://github.com/opendataloader-project",
+    "today_stars": "1,812 stars today",
+    "language": "Java",
+    "summary": "PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.",
+    "content": " \n\n# OpenDataLoader PDF\n\n**PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.**\n\n[](https://github.com/opendataloader-project/opendataloader-pdf/blob/main/LICENSE)\n[](https://pypi.org/project/opendataloader-pdf/)\n[](https://www.npmjs.com/package/@opendataloader/pdf)\n[](https://search.maven.org/artifact/org.opendataloader/opendataloader-pdf-core)\n[](https://github.com/opendataloader-project/opendataloader-pdf#java)\n\n   \n\n🔍 **PDF parser for AI data extraction** — Extract Markdown, JSON (with bounding boxes), and HTML from any PDF. #1 in benchmarks (0.90 overall). Deterministic local mode + AI hybrid mode for complex pages.\n\n- **How accurate is it?** — #1 in benchmarks: 0.90 overall, 0.93 table accuracy across 200 real-world PDFs including multi-column and scientific papers. Deterministic local mode + AI hybrid mode for complex pages (benchmarks)\n- **Scanned PDFs and OCR?** — Yes. Built-in OCR (80+ languages) in hybrid mode. Works with poor-quality scans at 300 DPI+ (hybrid mode)\n- **Tables, formulas, images, charts?** — Yes. Complex/borderless tables, LaTeX formulas, and AI-generated picture/chart descriptions all via hybrid mode (hybrid mode)\n- **How do I use this for RAG?** — `pip install opendataloader-pdf`, convert in 3 lines. Outputs structured Markdown for chunking, JSON with bounding boxes for source citations, and HTML. LangChain integration available. Python, Node.js, Java SDKs (quick start | LangChain)\n\n♿ **PDF accessibility automation** — The same layout analysis engine also powers auto-tagging. First open-source tool to generate Tagged PDFs end-to-end (coming Q2 2026).\n\n- **What's the problem?** — Accessibility regulations are now enforced worldwide. Manual PDF remediation costs $50–200 per document and doesn't scale (regulations)\n- **What's free?** — Layout analysis + auto-tagging (Q2 2026, Apache 2.0). Untagged PDF in → Tagged PDF out. No proprietary SDK dependency (auto-tagging preview)\n- **What about PDF/UA compliance?** — Converting Tagged PDF to PDF/UA-1 or PDF/UA-2 is an enterprise add-on. Auto-tagging generates the Tagged PDF; PDF/UA export is the final step (pipeline)\n- **Why trust this?** — Built in collaboration with PDF Association and Dual Lab (veraPDF developers). Auto-tagging follows the Well-Tagged PDF specification, validated with veraPDF (collaboration)\n\n## Get Started in 30 Seconds\n\n**Requires**: Java 11+ and Python 3.10+ (Node.js | Java also available)\n\n> Before you start: run `java -version`. If not found, install JDK 11+ from Adoptium.\n\n```bash\npip install -U opendataloader-pdf\n```\n\n```python\nimport opendataloader_pdf\n\n# Batch all files in one call — each convert() spawns a JVM process, so repeated calls are slow\nopendataloader_pdf.convert(\n    input_path=[\"file1.pdf\", \"file2.pdf\", \"folder/\"],\n    output_dir=\"output/\",\n    format=\"markdown,json\"\n)\n```\n\n*Annotated PDF output — each element (heading, paragraph, table, image) detected with bounding boxes and semantic type.*\n\n## What Problems Does T",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "rag",
+        "langchain",
+        "ocr"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "LangChain"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "RAG",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "opendataloader-project/opendataloader-pdf: PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.1,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**opendataloader-pdf** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**opendataloader-pdf** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者"
+      ],
+      "tcloud_evidence": [
+        "automation",
+        "open-source",
+        "github.com"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**opendataloader-pdf** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「opendataloader-project/opendataloader-pdf - PDF P…」涉及 RAG / Python 技术方向 + 产品关联（Lighthouse） + 教程拆解（技术科普 + 动手实操）\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "围绕 Lighthouse 做内容，切入方式：「opendataloader-project/opendataloader-pdf - PDF P…」涉及 RAG / Python 技术方向 + 产品关联（Lighthouse） + 教程拆解（技术科普 + 动手实操）。优先级 P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "结合 opendataloader-pdf 的使用场景，写一篇『用 Lighthouse 搭建 opendataloader-pdf 私有实例』的教程内容，强调轻量服务器的性价比和易用性。",
+      "visual_brief": "主视觉用 opendataloader-pdf 的产品截图/Logo + Lighthouse 服务器概念图，展示『从开源项目到私有部署』的流程。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "结合 opendataloader-pdf 的使用场景，写一篇『用 Lighthouse 搭建 opendataloader-pdf 私有实例』的教程内容，强调轻量服务器的性价比和易用性。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 opendataloader-pdf 的产品截图/Logo + Lighthouse 服务器概念图，展示『从开源项目到私有部署』的流程。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "opendataloader-project/opendataloader-pdf: PDF Parser for AI-ready…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Lighth…",
+        "x_en": "opendataloader-project/opendataloader-pdf - PDF Parser for AI-ready data. Automate PDF…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday develo…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：opendataloader-project/opendataloader-pdf: PDF Parser for AI-ready…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: opendataloader-project/opendataloader-pdf - PDF Parser for AI-ready data. Automate PDF…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。opendataloader-project/opendataloader-pdf: PDF Parser for AI-ready…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**opendataloader-pdf** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. opendataloader-project/opendataloader-pdf - PDF Parser for AI-ready data. Automate PDF…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：opendataloader-project/opendataloader-pdf: PDF Parser for AI-ready…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: opendataloader-project/opendataloader-pdf - PDF Parser for AI-ready data. Automate PDF…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "opendataloader-pdf：PDF 解析器 AI 就绪数据。自动化 PDF 可访问性"
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "newton-physics/newton - An open-source, GPU-accelerated physics simulation engine built upon NVIDIA Warp, specifically targeting roboticists and simulation researchers.",
+    "url": "https://github.com/newton-physics/newton",
+    "heat": "3,548 stars",
+    "time": "Today",
+    "developer_name": "newton-physics",
+    "developer_url": "https://github.com/newton-physics",
+    "today_stars": "266 stars today",
+    "language": "Python",
+    "summary": "An open-source, GPU-accelerated physics simulation engine built upon NVIDIA Warp, specifically targeting roboticists and simulation researchers.",
+    "content": "[](https://opensource.org/licenses/Apache-2.0)\n\n[](https://codecov.io/gh/newton-physics/newton)\n[](https://github.com/newton-physics/newton/actions/workflows/push_aws_gpu.yml)\n\n# Newton\n\nNewton is a GPU-accelerated physics simulation engine built upon NVIDIA Warp, specifically targeting roboticists and simulation researchers.\n\nNewton extends and generalizes Warp's (deprecated) `warp.sim` module, and integrates\nMuJoCo Warp as its primary backend. Newton emphasizes GPU-based computation, OpenUSD support, differentiability, and user-defined extensibility, facilitating rapid iteration and scalable robotics simulation.\n\nNewton is a Linux Foundation project that is community-built and maintained. Code is licensed under Apache-2.0. Documentation is licensed under CC-BY-4.0. Additional and third-party license texts are available in `newton/licenses`.\n\nNewton was initiated by Disney Research, Google DeepMind, and NVIDIA.\n\n## Requirements\n\n- **Python** 3.10+\n- **OS:** Linux (x86-64, aarch64), Windows (x86-64), or macOS (CPU only)\n- **GPU:** NVIDIA GPU (Maxwell or newer), driver 545 or newer (CUDA 12). No local CUDA Toolkit installation required. macOS runs on CPU.\n\nFor detailed system requirements and tested configurations, see the installation guide.\n\n## Quickstart\n\n```bash\npip install \"newton[examples]\"\npython -m newton.examples basic_pendulum\n```\n\nTo install from source with uv, see the installation guide.\n\n## Examples\n\nBefore running the examples below, install Newton with the examples extra:\n\n```bash\npip install \"newton[examples]\"\n```\n\nIf you installed from source with uv, substitute `uv run` for `python` in the commands below.\n\n \n   \n      Basic Examples  \n   \n   \n     \n       \n         \n       \n     \n     \n       \n         \n       \n     \n     \n       \n         \n       \n     \n   \n   \n     \n       python -m newton.examples basic_pendulum \n     \n     \n       python -m newton.examples basic_urdf \n     \n     \n       python -m newton.examples basic_viewer \n     \n   \n   \n     \n       \n         \n       \n     \n     \n       \n         \n       \n     \n     \n       \n         \n       \n     \n   \n   \n     \n       python -m newton.examples basic_shapes \n     \n     \n       python -m newton.examples basic_joints \n     \n     \n       python -m newton.examples basic_conveyor \n     \n   \n   \n     \n       \n         \n       \n     \n     \n       \n         \n       \n     \n     \n       \n         \n       \n     \n   \n   \n     \n       python -m newton.examples basic_heightfield \n     \n     \n       python -m newton.examples recording \n     \n     \n       python -m newton.examples replay_viewer \n     \n   \n   \n     \n       \n         \n       \n     \n      \n      \n   \n   \n     \n       python -m newton.examples basic_plotting \n     \n      \n      \n   \n   \n      Robot Examples  \n   \n   \n     \n       \n         \n       \n     \n     \n       \n         \n       \n     \n     \n       \n         \n       \n     \n   \n   \n     \n       python -m newton.examples robot_cartpole \n     \n     \n       python -m newto",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "aws",
+        "gpu"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "AWS"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "newton-physics/newton: An open-source, GPU-accelerated physics simulation engine built upon NVIDIA Warp, specifically targeting roboticists and simulation researchers.",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.4,
+      "tcloud_relevance": 5.6,
+      "tcloud_integration": "**newton** 可以克隆到 Lighthouse 上自建私有实例，数据完全自主可控",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**newton** 可以克隆到 Lighthouse 上自建私有实例，数据完全自主可控"
+      ],
+      "tcloud_evidence": [
+        "open-source",
+        "github.com"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**newton** 可以克隆到 Lighthouse 上自建私有实例，数据完全自主可控",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「newton-physics/newton - An open-source, GPU-accel…」涉及 Python 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "围绕 Lighthouse 做内容，切入方式：「newton-physics/newton - An open-source, GPU-accel…」涉及 Python 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）。优先级 P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以『在 Lighthouse 上一键部署 newton』为主题，写一篇实操教程，从镜像选择到配置完成，让读者看完就能动手。",
+      "visual_brief": "主视觉用 newton 界面截图/Logo + Lighthouse 控制台部署界面的对比拼图，标注『一键部署→即刻运行』的流程箭头。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以『在 Lighthouse 上一键部署 newton』为主题，写一篇实操教程，从镜像选择到配置完成，让读者看完就能动手。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 newton 界面截图/Logo + Lighthouse 控制台部署界面的对比拼图，标注『一键部署→即刻运行』的流程箭头。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "newton-physics/newton: An open-source, GPU-accelerated physics simu…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "newton-physics/newton - An open-source, GPU-accelerated physics simulation engine built…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：newton-physics/newton: An open-source, GPU-accelerated physics simu…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: newton-physics/newton - An open-source, GPU-accelerated physics simulation engine built…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。newton-physics/newton: An open-source, GPU-accelerated physics simu…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**newton** 可以克隆到 Lighthouse 上自建私有实例，数据完全自主可控",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. newton-physics/newton - An open-source, GPU-accelerated physics simulation engine built…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：newton-physics/newton: An open-source, GPU-accelerated physics simu…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: newton-physics/newton - An open-source, GPU-accelerated physics simulation engine built…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "newton：开源, GPU 加速的 物理仿真 引擎 基于 NVIDIA Warp, 专门面向 机器人研究者 仿真 研究者"
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "vas3k/TaxHacker - Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories",
+    "url": "https://github.com/vas3k/TaxHacker",
+    "heat": "2,104 stars",
+    "time": "Today",
+    "developer_name": "vas3k",
+    "developer_url": "https://github.com/vas3k",
+    "today_stars": "137 stars today",
+    "language": "TypeScript",
+    "summary": "Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories",
+    "content": "   \n\n \n\n \n\n# TaxHacker — self-hosted AI accountant\n\n[](https://github.com/vas3k/TaxHacker/stargazers)\n[](https://github.com/vas3k/TaxHacker/blob/main/LICENSE)\n[](https://github.com/vas3k/TaxHacker/issues)\n[](https://vas3k.com/donate/)\n\n \n\nTaxHacker is a self-hosted accounting app designed for freelancers, indie hackers, and small businesses who want to save time and automate expense and income tracking using the power of modern AI.\n\nUpload photos of receipts, invoices, or PDFs, and TaxHacker will automatically recognize and extract all the important data you need for accounting: product names, amounts, items, dates, merchants, taxes, and save it into a structured Excel-like database. You can even create custom fields with your own AI prompts to extract any specific information you need.\n\nThe app features automatic currency conversion (including crypto!) based on historical exchange rates from the transaction date. With built-in filtering, multi-project support, import/export capabilities, and custom categories, TaxHacker simplifies reporting and makes tax filing a bit easier.\n\n> 🎥 Watch demo video\n\n> \\[!IMPORTANT]\n>\n> This project is still in early development. Use at your own risk! **Star us** to get notified about new features and bugfixes ⭐️\n\n## ✨ Features\n\n### `1` Analyze photos and invoices with AI\n\nSnap a photo of any receipt or upload an invoice PDF, and TaxHacker will automatically recognize, extract, categorize, and store all the information in a structured database.\n\n- **Upload and organize your docs**: Store multiple documents in \"unsorted\" until you're ready to process them manually or with AI assistance\n- **AI data extraction**: Use AI to automatically pull key information like dates, amounts, vendors, and line items\n- **Auto-categorization**: Transactions are automatically sorted into relevant categories based on their content\n- **Item splitting**: Extract individual items from invoices and split them into separate transactions when needed\n- **Structured storage**: Everything gets saved in an organized database for easy filtering and retrieval\n- **Customizable AI providers**: Choose from OpenAI, Google Gemini, or Mistral (local LLM support coming soon)\n\nTaxHacker works with a wide variety of documents, including store receipts, restaurant bills, invoices, bank statements, letters, even handwritten receipts. It handles any language and any currency with ease.\n\n### `2` Multi-currency support with automatic conversion (even crypto!)\n\nTaxHacker automatically detects currencies in your documents and converts them to your base currency using historical exchange rates.\n\n- **Foreight currency detection**: Automatically identify the currency used in any document\n- **Historical rates**: Get conversion rates from the actual transaction date\n- **All-world coverage**: Support for 170+ world currencies and 14 popular cryptocurrencies (BTC, ETH, LTC, DOT, and more)\n- **Flexible input**: Manual entry is always available when you need more control\n\n",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "gemini",
+        "mistral",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Gemini",
+        "Mistral"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "vas3k/TaxHacker: Self-hosted AI accounting app. LLM analyzer for receipts, invoices, transactions with custom prompts and categories",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.0,
+      "tcloud_relevance": 5.4,
+      "tcloud_integration": "**TaxHacker** 支持自部署，可以用 Lighthouse 一键部署 Docker 镜像，省去运维配置",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**TaxHacker** 支持自部署，可以用 Lighthouse 一键部署 Docker 镜像，省去运维配置"
+      ],
+      "tcloud_evidence": [
+        "self-hosted",
+        "github.com"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**TaxHacker** 支持自部署，可以用 Lighthouse 一键部署 Docker 镜像，省去运维配置",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「vas3k/TaxHacker - Self-hosted AI accounting app.…」涉及 LLM 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "围绕 Lighthouse 做内容，切入方式：「vas3k/TaxHacker - Self-hosted AI accounting app.…」涉及 LLM 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）。优先级 P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以『在 Lighthouse 上一键部署 TaxHacker』为主题，写一篇实操教程，从镜像选择到配置完成，让读者看完就能动手。",
+      "visual_brief": "主视觉用 TaxHacker 的架构图/截图 + Lighthouse Docker 镜像部署流程，标注『代码→镜像→上线』三步。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以『在 Lighthouse 上一键部署 TaxHacker』为主题，写一篇实操教程，从镜像选择到配置完成，让读者看完就能动手。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 TaxHacker 的架构图/截图 + Lighthouse Docker 镜像部署流程，标注『代码→镜像→上线』三步。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "vas3k/TaxHacker: Self-hosted AI accounting app. LLM analyzer for re…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "vas3k/TaxHacker - Self-hosted AI accounting app. LLM analyzer for receipts, invoices, t…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：vas3k/TaxHacker: Self-hosted AI accounting app. LLM analyzer for re…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: vas3k/TaxHacker - Self-hosted AI accounting app. LLM analyzer for receipts, invoices, t…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。vas3k/TaxHacker: Self-hosted AI accounting app. LLM analyzer for re…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**TaxHacker** 支持自部署，可以用 Lighthouse 一键部署 Docker 镜像，省去运维配置",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. vas3k/TaxHacker - Self-hosted AI accounting app. LLM analyzer for receipts, invoices, t…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：vas3k/TaxHacker: Self-hosted AI accounting app. LLM analyzer for re…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: vas3k/TaxHacker - Self-hosted AI accounting app. LLM analyzer for receipts, invoices, t…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "TaxHacker：可自部署的AI 记账 应用。LLM 分析器 收据, 发票, 交易 自定义提示词 分类"
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "heat": "34,680 stars",
+    "time": "Today",
+    "developer_name": "TauricResearch",
+    "developer_url": "https://github.com/TauricResearch",
+    "today_stars": "433 stars today",
+    "language": "Python",
+    "summary": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "content": " \n   \n \n\n \n     \n     \n     \n     \n   \n     \n \n\n \n   \n   Deutsch  | \n   Español  | \n   français  | \n   日本語  | \n   한국어  | \n   Português  | \n   Русский  | \n   中文 \n \n\n---\n\n# TradingAgents: Multi-Agents LLM Financial Trading Framework\n\n## News\n- [2026-03] **TradingAgents v0.2.1** released with GPT-5.4, Gemini 3.1, Claude 4.6 model coverage and improved system stability.\n- [2026-02] **TradingAgents v0.2.0** released with multi-provider LLM support (GPT-5.x, Gemini 3.x, Claude 4.x, Grok 4.x) and improved system architecture.\n- [2026-01] **Trading-R1** Technical Report released, with Terminal expected to land soon.\n\n \n \n  \n    \n    \n    \n  \n \n \n\n> 🎉 **TradingAgents** officially released! We have received numerous inquiries about the work, and we would like to express our thanks for the enthusiasm in our community.\n>\n> So we decided to fully open-source the framework. Looking forward to building impactful projects with you!\n\n \n\n🚀 TradingAgents | ⚡ Installation & CLI | 🎬 Demo | 📦 Package Usage | 🤝 Contributing | 📄 Citation\n\n \n\n## TradingAgents Framework\n\nTradingAgents is a multi-agent trading framework that mirrors the dynamics of real-world trading firms. By deploying specialized LLM-powered agents: from fundamental analysts, sentiment experts, and technical analysts, to trader, risk management team, the platform collaboratively evaluates market conditions and informs trading decisions. Moreover, these agents engage in dynamic discussions to pinpoint the optimal strategy.\n\n \n   \n \n\n> TradingAgents framework is designed for research purposes. Trading performance may vary based on many factors, including the chosen backbone language models, model temperature, trading periods, the quality of data, and other non-deterministic factors. It is not intended as financial, investment, or trading advice.\n\nOur framework decomposes complex trading tasks into specialized roles. This ensures the system achieves a robust, scalable approach to market analysis and decision-making.\n\n### Analyst Team\n- Fundamentals Analyst: Evaluates company financials and performance metrics, identifying intrinsic values and potential red flags.\n- Sentiment Analyst: Analyzes social media and public sentiment using sentiment scoring algorithms to gauge short-term market mood.\n- News Analyst: Monitors global news and macroeconomic indicators, interpreting the impact of events on market conditions.\n- Technical Analyst: Utilizes technical indicators (like MACD and RSI) to detect trading patterns and forecast price movements.\n\n \n   \n \n\n### Researcher Team\n- Comprises both bullish and bearish researchers who critically assess the insights provided by the Analyst Team. Through structured debates, they balance potential gains against inherent risks.\n\n \n   \n \n\n### Trader Agent\n- Composes reports from the analysts and researchers to make informed trading decisions. It determines the timing and magnitude of trades based on comprehensive market insights.\n\n \n   \n \n\n### Risk Management and Portfolio Man",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "llm",
+        "gpt",
+        "claude",
+        "gemini",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.4,
+      "tcloud_relevance": 5.4,
+      "tcloud_integration": "**TradingAgents** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**TradingAgents** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者"
+      ],
+      "tcloud_evidence": [
+        "agent",
+        "open-source"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**TradingAgents** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "产品关联（Lighthouse）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 产品关联（Lighthouse） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「TauricResearch/TradingAgents - TradingAgents: Mul…」涉及 LLM / Agent 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "围绕 Lighthouse 做内容，切入方式：「TauricResearch/TradingAgents - TradingAgents: Mul…」涉及 LLM / Agent 技术方向 + 产品关联（Lighthouse） + 教程拆解（结合 Lighthouse 做实操内容）。优先级 P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以『在 Lighthouse 上一键部署 TradingAgents』为主题，写一篇实操教程，从镜像选择到配置完成，让读者看完就能动手。",
+      "visual_brief": "主视觉用 TradingAgents 界面截图/Logo + Lighthouse 控制台部署界面的对比拼图，标注『一键部署→即刻运行』的流程箭头。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以『在 Lighthouse 上一键部署 TradingAgents』为主题，写一篇实操教程，从镜像选择到配置完成，让读者看完就能动手。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 TradingAgents 界面截图/Logo + Lighthouse 控制台部署界面的对比拼图，标注『一键部署→即刻运行』的流程箭头。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 产品关联（Lighthouse） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + product tie-in (Lighthouse) + opinionated commentary. What matters more to you: deployment, performance, or workfl…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 产品关联（Lighthouse） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**TradingAgents** 需要 7×24 在线运行，部署到 Lighthouse 上成本低、配置简单，适合个人开发者",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + product tie-in (Lighthouse) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 产品关联（Lighthouse） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + product tie-in (Lighthouse) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "TradingAgents — 大语言模型开发框架/平台"
+  }
+]
