@@ -737,9 +737,7 @@ def sync_selected_table(output_dir, date_str, dry_run=False, force=False):
 def generate_daily_summary(output_dir, date_str):
     # type: (str, str) -> str
     """
-    生成每日热点总结报告：
-    - 市面上有哪些很火的趋势
-    - 与腾讯云国际站产品的关联
+    生成精炼版每日热点趋势总结（带洞察和行动建议）。
     """
     csv_path = find_csv_for_date(output_dir, date_str)
     if not csv_path:
@@ -749,245 +747,196 @@ def generate_daily_summary(output_dir, date_str):
     if not rows:
         return "❌ 数据为空"
 
-    # 统计数据
+    # ── 基础统计 ──
     total = len(rows)
     ai_count = sum(1 for r in rows if r.get("是否AI相关") == "是")
     cloud_count = sum(1 for r in rows if r.get("是否云行业") == "是")
 
-    # 按来源分组
-    by_source = {}  # type: Dict[str, List[Dict[str, str]]]
-    for row in rows:
-        src = row.get("来源Key", "unknown")
-        by_source.setdefault(src, []).append(row)
-
-    # 按话题分类分组
-    by_topic = {}  # type: Dict[str, int]
-    for row in rows:
-        topic = row.get("话题分类", "").strip()
-        if topic:
-            by_topic[topic] = by_topic.get(topic, 0) + 1
-
-    # 高分内容（综合评分 >= 7）
-    high_score = []
-    for row in rows:
+    def _safe_float(v):
         try:
-            score = float(row.get("综合评分", "0") or "0")
-        except ValueError:
-            score = 0
-        if score >= 7.0:
-            high_score.append(row)
-    high_score.sort(key=lambda r: float(r.get("综合评分", "0") or "0"), reverse=True)
+            return float(v or 0)
+        except (ValueError, TypeError):
+            return 0.0
 
-    # 腾讯云高关联内容
-    tcloud_related = []
-    for row in rows:
-        try:
-            relevance = float(row.get("与腾讯云结合度", "0") or "0")
-        except ValueError:
-            relevance = 0
-        if relevance >= 6.0:
-            tcloud_related.append(row)
-    tcloud_related.sort(key=lambda r: float(r.get("与腾讯云结合度", "0") or "0"), reverse=True)
+    high_score = sorted(
+        [r for r in rows if _safe_float(r.get("综合评分")) >= 7.0],
+        key=lambda r: _safe_float(r.get("综合评分")),
+        reverse=True,
+    )[:10]
 
-    # 产品标签统计
-    product_counts = {}  # type: Dict[str, int]
-    for row in rows:
-        tags = row.get("产品标签", "").strip()
-        if tags:
-            for tag in tags.split(","):
-                tag = tag.strip()
-                if tag:
-                    product_counts[tag] = product_counts.get(tag, 0) + 1
+    tcloud_related = sorted(
+        [r for r in rows if _safe_float(r.get("与腾讯云结合度")) >= 6.0],
+        key=lambda r: _safe_float(r.get("与腾讯云结合度")),
+        reverse=True,
+    )[:5]
 
-    # 友商标签统计
-    competitor_counts = {}  # type: Dict[str, int]
-    for row in rows:
-        tags = row.get("友商标签", "").strip()
-        if tags:
-            for tag in tags.split(","):
-                tag = tag.strip()
-                if tag:
-                    competitor_counts[tag] = competitor_counts.get(tag, 0) + 1
-
-    # 技术标签统计
-    tech_counts = {}  # type: Dict[str, int]
-    for row in rows:
-        tags = row.get("技术标签", "").strip()
-        if tags:
-            for tag in tags.split(","):
-                tag = tag.strip()
-                if tag:
-                    tech_counts[tag] = tech_counts.get(tag, 0) + 1
-
-    # 构建总结
-    lines = [
-        f"# 📊 每日热点趋势总结 — {date_str}",
-        "",
-        "---",
-        "",
-        "## 一、今日数据概览",
-        "",
-        f"| 指标 | 数值 |",
-        f"|------|------|",
-        f"| 采集总量 | {total} 条 |",
-        f"| AI 相关 | {ai_count} 条 ({round(ai_count/total*100)}%) |",
-        f"| 云行业相关 | {cloud_count} 条 ({round(cloud_count/total*100)}%) |",
-        f"| 高分内容 (≥7.0) | {len(high_score)} 条 |",
-        f"| 腾讯云高关联 (≥6.0) | {len(tcloud_related)} 条 |",
-        "",
-        "### 来源分布",
-        "",
-    ]
-
-    source_display = {
-        "hackernews": "🦄 HackerNews",
-        "github": "🐙 GitHub",
-        "producthunt": "🏹 ProductHunt",
-        "huggingface": "📰 HuggingFace",
-        "v2ex": "🤓 V2EX",
-        "36kr": "💰 36氪",
-        "ai_newsletters": "📬 AI Newsletter",
-    }
-
-    for src in ["hackernews", "github", "producthunt", "huggingface", "v2ex", "36kr", "ai_newsletters"]:
-        items = by_source.get(src, [])
-        display = source_display.get(src, src)
-        lines.append(f"- {display}: {len(items)} 条")
-
-    # 话题分类
-    if by_topic:
-        lines.extend([
-            "",
-            "### 话题分类分布",
-            "",
-        ])
-        for topic, count in sorted(by_topic.items(), key=lambda x: x[1], reverse=True):
-            lines.append(f"- {topic}: {count} 条")
-
-    # 热门技术趋势
-    if tech_counts:
-        lines.extend([
-            "",
-            "## 二、🔥 热门技术趋势",
-            "",
-            "今日被提及最多的技术方向：",
-            "",
-        ])
-        for tech, count in sorted(tech_counts.items(), key=lambda x: x[1], reverse=True)[:10]:
-            bar = "█" * min(count, 20)
-            lines.append(f"- **{tech}**: {count} 次 {bar}")
-
-    # 友商动态
-    if competitor_counts:
-        lines.extend([
-            "",
-            "## 三、👀 友商动态",
-            "",
-            "今日被提及的友商/竞品：",
-            "",
-        ])
-        for comp, count in sorted(competitor_counts.items(), key=lambda x: x[1], reverse=True):
-            lines.append(f"- **{comp}**: {count} 次提及")
-
-    # 高分内容
-    if high_score:
-        lines.extend([
-            "",
-            "## 四、⭐ 高分热点 TOP10",
-            "",
-            "综合评分 ≥ 7.0 的最值得关注内容：",
-            "",
-        ])
-        for i, row in enumerate(high_score[:10]):
-            score = row.get("综合评分", "")
-            tcloud = row.get("与腾讯云结合度", "")
-            title = row.get("标题", "")[:80]
-            src = row.get("来源Key", "")
-            priority = row.get("发布优先级", "")
-            lines.append(f"{i+1}. **{title}**")
-            lines.append(f"   - 来源: {src} | 综合: {score} | 腾讯云: {tcloud} | {priority}")
-            brief = row.get("中文简介", "")[:120]
-            if brief:
-                lines.append(f"   - {brief}")
-            lines.append("")
-
-    # 腾讯云关联分析
-    if tcloud_related:
-        lines.extend([
-            "",
-            "## 五、☁️ 腾讯云国际站关联分析",
-            "",
-            "与腾讯云国际站产品高度关联的热点：",
-            "",
-        ])
-        for i, row in enumerate(tcloud_related[:10]):
-            title = row.get("标题", "")[:60]
-            relevance = row.get("与腾讯云结合度", "")
-            product = row.get("产品标签", "")
-            tcloud_point = row.get("腾讯云结合点", "")[:200]
-            lines.append(f"{i+1}. **{title}**")
-            lines.append(f"   - 腾讯云结合度: {relevance}/10")
-            if product:
-                lines.append(f"   - 关联产品: {product}")
-            if tcloud_point:
-                lines.append(f"   - 💡 结合点: {tcloud_point}")
-            lines.append("")
-
-    # 产品标签热度
-    if product_counts:
-        lines.extend([
-            "",
-            "### 腾讯云产品被提及频次",
-            "",
-        ])
-        for prod, count in sorted(product_counts.items(), key=lambda x: x[1], reverse=True):
-            lines.append(f"- **{prod}**: {count} 次")
-
-    # 行动建议
     p0_items = [r for r in rows if r.get("发布优先级", "").startswith("P0")]
     p1_items = [r for r in rows if r.get("发布优先级", "").startswith("P1")]
 
-    lines.extend([
-        "",
-        "## 六、📋 行动建议",
-        "",
-        f"### 🔴 P0 今天发 ({len(p0_items)} 条)",
-        "",
-    ])
-    if p0_items:
-        for row in p0_items:
-            title = row.get("标题", "")[:60]
-            product = row.get("产品标签", "")
-            lines.append(f"- {title}")
+    # ── 标签统计 ──
+    def _count_tags(field):
+        counts = {}  # type: Dict[str, int]
+        for row in rows:
+            for tag in (row.get(field, "") or "").split(","):
+                tag = tag.strip()
+                if tag:
+                    counts[tag] = counts.get(tag, 0) + 1
+        return sorted(counts.items(), key=lambda x: -x[1])
+
+    tech_top = _count_tags("技术标签")[:8]
+    competitor_top = _count_tags("友商标签")
+    product_top = _count_tags("产品标签")[:5]
+
+    # ── 来源统计 ──
+    by_source = {}  # type: Dict[str, int]
+    for row in rows:
+        src = row.get("来源Key", "unknown")
+        by_source[src] = by_source.get(src, 0) + 1
+    top_source = max(by_source.items(), key=lambda x: x[1]) if by_source else ("", 0)
+
+    source_display = {
+        "hackernews": "HackerNews", "github": "GitHub", "producthunt": "ProductHunt",
+        "huggingface": "HuggingFace", "v2ex": "V2EX", "36kr": "36氪",
+        "ai_newsletters": "AI Newsletter",
+    }
+
+    # ── 生成今日核心洞察 ──
+    def _gen_insight():
+        insights = []
+        ai_pct = round(ai_count / total * 100) if total else 0
+        if ai_pct >= 70:
+            insights.append(f"AI 话题占比 {ai_pct}%，热度持续走高")
+        elif ai_pct >= 50:
+            insights.append(f"AI 话题占比 {ai_pct}%，仍是主流")
+
+        if tech_top:
+            top_tech_names = [t[0] for t in tech_top[:3]]
+            insights.append(f"技术热词集中在 **{' / '.join(top_tech_names)}**")
+
+        if competitor_top:
+            comp_names = [c[0] for c in competitor_top[:3]]
+            insights.append(f"友商动态：{', '.join(comp_names)} 被提及")
+
+        if len(high_score) >= 3:
+            insights.append(f"高价值内容（≥7分）有 {len(high_score)} 条，质量较好")
+        elif len(high_score) == 0:
+            insights.append("今日无高分内容（≥7分），建议人工筛选补充")
+
+        if tcloud_related:
+            insights.append(f"{len(tcloud_related)} 条内容与腾讯云产品高度关联，值得跟进")
+
+        return insights
+
+    insights = _gen_insight()
+
+    # ════════════════════════════════════════
+    # 构建 Markdown
+    # ════════════════════════════════════════
+    L = []  # type: List[str]
+
+    # ── 头部 ──
+    L.append(f"# 📊 {date_str} 热点日报")
+    L.append("")
+
+    # ── 一句话摘要 ──
+    L.append(f"> 今日采集 **{total}** 条 · AI 占比 **{round(ai_count/total*100) if total else 0}%** · "
+             f"高分 **{len(high_score)}** 条 · 可发 **{len(p0_items)}** P0 + **{len(p1_items)}** P1")
+    L.append("")
+
+    # ── 核心洞察 ──
+    if insights:
+        L.append("## 🔍 今日洞察")
+        L.append("")
+        for ins in insights:
+            L.append(f"- {ins}")
+        L.append("")
+
+    # ── 技术趋势（紧凑横排）──
+    if tech_top:
+        L.append("## 🔥 技术趋势")
+        L.append("")
+        tech_parts = [f"**{tech}**({count})" for tech, count in tech_top]
+        L.append(" · ".join(tech_parts))
+        L.append("")
+
+    # ── 高分热点 ──
+    if high_score:
+        L.append(f"## ⭐ 高分热点 TOP {len(high_score)}")
+        L.append("")
+        for i, row in enumerate(high_score):
+            score = _safe_float(row.get("综合评分"))
+            tcloud = _safe_float(row.get("与腾讯云结合度"))
+            title = (row.get("标题") or "")[:70]
+            src = source_display.get(row.get("来源Key", ""), row.get("来源Key", ""))
+            brief = (row.get("中文简介") or "")[:80]
+            priority = (row.get("发布优先级") or "").split(" ")[0]
+            cloud_badge = f" ☁️{tcloud}" if tcloud >= 5 else ""
+            prio_badge = f" 🔴{priority}" if priority.startswith("P0") else (
+                f" 🟡{priority}" if priority.startswith("P1") else "")
+            L.append(f"**{i+1}. {title}**  `{src}` `{score}分`{cloud_badge}{prio_badge}")
+            if brief:
+                L.append(f"   {brief}")
+            L.append("")
+
+    # ── 腾讯云机会 ──
+    if tcloud_related:
+        L.append("## ☁️ 腾讯云关联机会")
+        L.append("")
+        for row in tcloud_related:
+            title = (row.get("标题") or "")[:50]
+            relevance = _safe_float(row.get("与腾讯云结合度"))
+            product = (row.get("官方号主推产品") or "").strip()
+            point = (row.get("腾讯云结合点") or "").strip()
+            # 取结合点的第一句话
+            point_short = point.split("\n")[0][:120] if point else ""
+            L.append(f"- **{title}** — 结合度 {relevance}/10")
             if product:
-                lines.append(f"  - 关联产品: {product}")
+                L.append(f"  - 推荐产品：**{product}**")
+            if point_short:
+                L.append(f"  - 切入点：{point_short}")
+            L.append("")
+
+    # ── 行动清单 ──
+    if p0_items or p1_items:
+        L.append("## 📋 今日行动清单")
+        L.append("")
+        if p0_items:
+            L.append(f"**🔴 P0 今天发** ({len(p0_items)} 条)")
+            for row in p0_items:
+                title = (row.get("标题") or "")[:50]
+                product = (row.get("官方号主推产品") or "").strip()
+                platform = (row.get("适合平台") or "")[:40]
+                L.append(f"- {title}" + (f" → {product}" if product else "") + (f" | {platform}" if platform else ""))
+            L.append("")
+        if p1_items:
+            L.append(f"**🟡 P1 本周发** ({len(p1_items)} 条)")
+            for row in p1_items:
+                title = (row.get("标题") or "")[:50]
+                product = (row.get("官方号主推产品") or "").strip()
+                L.append(f"- {title}" + (f" → {product}" if product else ""))
+            L.append("")
     else:
-        lines.append("- （无 P0 内容）")
+        L.append("## 📋 今日行动清单")
+        L.append("")
+        L.append("今日无 P0/P1 内容，建议从高分列表中人工筛选。")
+        L.append("")
 
-    lines.extend([
-        "",
-        f"### 🟡 P1 本周发 ({len(p1_items)} 条)",
-        "",
-    ])
-    if p1_items:
-        for row in p1_items:
-            title = row.get("标题", "")[:60]
-            product = row.get("产品标签", "")
-            lines.append(f"- {title}")
-            if product:
-                lines.append(f"  - 关联产品: {product}")
-    else:
-        lines.append("- （无 P1 内容）")
+    # ── 来源分布（简洁版）──
+    L.append("## 📡 来源概况")
+    L.append("")
+    source_parts = []
+    for src in ["hackernews", "github", "producthunt", "huggingface", "v2ex", "36kr", "ai_newsletters"]:
+        cnt = by_source.get(src, 0)
+        if cnt > 0:
+            source_parts.append(f"{source_display.get(src, src)} {cnt}")
+    L.append(" · ".join(source_parts))
+    L.append("")
 
-    lines.extend([
-        "",
-        "---",
-        "",
-        f"> 生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
-        f"> 数据源: {os.path.basename(csv_path)}",
-    ])
+    # ── 尾部 ──
+    L.append("---")
+    L.append(f"*生成于 {datetime.now().strftime('%Y-%m-%d %H:%M')} · 数据源: {os.path.basename(csv_path)}*")
 
-    return "\n".join(lines)
+    return "\n".join(L)
 
 
 # ═══════════════════════════════════════════════════════════

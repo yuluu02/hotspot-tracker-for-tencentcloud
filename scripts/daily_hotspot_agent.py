@@ -485,11 +485,9 @@ def collect_writing_candidates(results: List[Dict[str, Any]], limit: int = 8) ->
 def build_writing_pack_markdown(results: List[Dict[str, Any]], generated_at: datetime) -> str:
     candidates = collect_writing_candidates(results)
     lines: List[str] = [
-        "# 每日热点内容写作包",
+        "# ✍️ 每日写作包",
         "",
-        f"> 生成时间：{generated_at.strftime('%Y-%m-%d %H:%M')}",
-        "> 外部依据仅使用：`https://www.tencentcloud.com/act/pro/intl-openclaw` 与 `https://www.tencentcloud.com/zh`",
-        "> 目的：把热点直接转成腾讯云国际站官方号可发的英文内容包，而不是停留在资讯整理。",
+        f"> {generated_at.strftime('%Y-%m-%d %H:%M')} · 共 {len(candidates)} 条可写热点",
         "",
     ]
 
@@ -503,42 +501,53 @@ def build_writing_pack_markdown(results: List[Dict[str, Any]], generated_at: dat
     for idx, candidate in enumerate(candidates, start=1):
         item = candidate["item"]
         analysis = candidate["analysis"]
+        title = strip_title_prefix(item.get('title', '未命名条目'), candidate['key'])
+        link = item.get('url', '') or item.get('link', '') or ''
+        product = analysis.get('official_product_focus', '') or '待人工判断'
+        priority = analysis.get('publish_priority', '')
+        platforms = analysis.get('recommended_platforms_text', '')
+        integration = analysis.get('tcloud_integration', '')
+        angle = analysis.get('official_angle_cn', '')
+        visual = analysis.get('visual_brief', '')
 
-        lines.extend([
-            f"## {idx}. {strip_title_prefix(item.get('title', '未命名条目'), candidate['key'])}",
-            "",
-            f"**来源**：{candidate['label']} / `{candidate['key']}`",
-            "",
-            f"**具体内容**：{analysis.get('detail_brief', '')}",
-            "",
-            "### 📋 精选话题结论",
-            "",
-        ])
-
-        # 输出结构化结论
-        editorial_brief = analysis.get("editorial_brief", "")
-        if editorial_brief:
-            for brief_line in editorial_brief.split("\n"):
-                if brief_line.strip():
-                    lines.append(f"- {brief_line.strip()}")
+        # 标题行（带链接）
+        if link:
+            lines.append(f"## {idx}. [{title}]({link})")
         else:
-            lines.append(f"- 话题类型：{analysis.get('topic_type', '')}")
-            lines.append(f"- 可用角度：{analysis.get('editorial_angles_text', '')}")
-            lines.append(f"- 优先级：{analysis.get('publish_priority', '')}")
-            lines.append(f"- 适合平台：{analysis.get('recommended_platforms_text', '')}")
+            lines.append(f"## {idx}. {title}")
+        lines.append("")
 
-        lines.extend([
-            "",
-            "### 🔗 腾讯云结合点",
-            "",
-            f"- 主推产品：{analysis.get('official_product_focus', '') or '待人工判断'}",
-            f"- 关联类型：{analysis.get('tcloud_relation_type', '') or '待人工判断'}",
-            f"- 结合说明：{analysis.get('tcloud_integration', '')}",
-            f"- 配图建议：{analysis.get('visual_brief', '')}",
-            "",
-            "---",
-            "",
-        ])
+        # 一行摘要：来源 + 产品 + 优先级
+        meta_parts = [f"`{candidate['key']}`"]
+        if product and product != '待人工判断':
+            meta_parts.append(f"→ **{product}**")
+        if priority:
+            prio_short = priority.split("（")[0] if "（" in priority else priority
+            meta_parts.append(prio_short)
+        if platforms:
+            meta_parts.append(platforms)
+        lines.append(" · ".join(meta_parts))
+        lines.append("")
+
+        # 结合点（最核心的信息）
+        if integration:
+            # 取第一句话，不超过 150 字
+            integration_short = integration.split("\n")[0][:150]
+            lines.append(f"**结合点**：{integration_short}")
+            lines.append("")
+
+        # 写作角度
+        if angle and "暂不建议" not in angle:
+            lines.append(f"**写作角度**：{angle}")
+            lines.append("")
+
+        # 配图建议（简短）
+        if visual:
+            lines.append(f"**配图**：{visual}")
+            lines.append("")
+
+        lines.append("---")
+        lines.append("")
 
     return "\n".join(lines)
 
