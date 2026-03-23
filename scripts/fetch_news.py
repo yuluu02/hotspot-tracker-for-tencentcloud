@@ -948,6 +948,985 @@ def fetch_essays(limit=5, keyword=None):
             all_items.extend(future.result())
     return filter_items(all_items, keyword)[:limit]
 
+
+# ════════════════════════════════════════════════════════════
+# 全网搜索采集（Web Search）
+# 5 路并行搜索渠道：行业新闻、竞品监控、技术社区、大会动态、腾讯云动态
+# 使用 DuckDuckGo HTML 搜索（无需 API Key），按关键词搜索近 7 天内容
+# ════════════════════════════════════════════════════════════
+
+WEB_SEARCH_CHANNELS = [
+    {
+        "name": "行业新闻",
+        "label": "📰 行业新闻",
+        "queries": [
+            "cloud computing news this week",
+            "AI infrastructure news 2026",
+            "serverless edge computing trend",
+            "cloud native latest developments",
+        ],
+        "relevance_keywords": [
+            "cloud", "serverless", "edge", "kubernetes", "AI", "GPU",
+            "infrastructure", "deployment", "container", "microservice",
+        ],
+    },
+    {
+        "name": "竞品监控",
+        "label": "🔍 竞品监控",
+        "queries": [
+            "AWS new service launch 2026",
+            "Azure AI update 2026",
+            "Google Cloud new feature",
+            "Cloudflare workers pages update",
+            "Vercel Netlify serverless news",
+        ],
+        "relevance_keywords": [
+            "AWS", "Azure", "GCP", "Google Cloud", "Cloudflare", "Vercel",
+            "Netlify", "DigitalOcean", "Lambda", "EC2", "Bedrock",
+        ],
+    },
+    {
+        "name": "技术社区",
+        "label": "💻 技术社区",
+        "queries": [
+            "site:dev.to cloud AI tutorial",
+            "site:medium.com serverless GPU training",
+            "site:hashnode.com cloud native deployment",
+        ],
+        "relevance_keywords": [
+            "tutorial", "guide", "deploy", "serverless", "GPU", "AI",
+            "cloud", "docker", "kubernetes", "practice",
+        ],
+    },
+    {
+        "name": "大会动态",
+        "label": "🎤 大会动态",
+        "queries": [
+            "tech conference AI cloud 2026",
+            "KubeCon CloudNativeCon 2026",
+            "AWS re:Invent Google Next Azure Build 2026",
+        ],
+        "relevance_keywords": [
+            "conference", "summit", "keynote", "announcement",
+            "launch", "preview", "GA", "release",
+        ],
+    },
+    {
+        "name": "腾讯云动态",
+        "label": "☁️ 腾讯云动态",
+        "queries": [
+            "Tencent Cloud new product update",
+            "Tencent Cloud international",
+            "腾讯云 新功能 发布",
+            "EdgeOne Lighthouse Hunyuan update",
+        ],
+        "relevance_keywords": [
+            "Tencent", "腾讯", "EdgeOne", "Lighthouse", "Hunyuan",
+            "TRTC", "COS", "TDSQL", "CodeBuddy", "SCF",
+        ],
+    },
+]
+
+
+def _duckduckgo_search(query, max_results=5):
+    """使用 DuckDuckGo HTML 搜索获取结果，不依赖 API Key。
+    
+    返回 [{title, url, snippet}] 列表。
+    """
+    items = []
+    try:
+        # DuckDuckGo HTML 搜索
+        params = {"q": query, "t": "h_", "ia": "web"}
+        resp = requests.get(
+            "https://html.duckduckgo.com/html/",
+            params=params,
+            headers={
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+            },
+            timeout=15,
+        )
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "html.parser")
+
+        for result in soup.select(".result"):
+            title_el = result.select_one(".result__a")
+            snippet_el = result.select_one(".result__snippet")
+            if not title_el:
+                continue
+            title = title_el.get_text(strip=True)
+            href = title_el.get("href", "")
+            # DuckDuckGo 的链接可能是重定向链接，提取实际 URL
+            if "uddg=" in href:
+                import urllib.parse
+                parsed = urllib.parse.parse_qs(urllib.parse.urlparse(href).query)
+                href = parsed.get("uddg", [href])[0]
+            snippet = snippet_el.get_text(strip=True) if snippet_el else ""
+            if title and href and href.startswith("http"):
+                items.append({
+                    "title": title,
+                    "url": href,
+                    "snippet": snippet,
+                })
+            if len(items) >= max_results:
+                break
+    except Exception as e:
+        import sys
+        print(f"[web_search] DuckDuckGo 搜索失败 ({query[:30]}...): {e}", file=sys.stderr)
+    return items
+
+
+def _is_relevant(item, relevance_keywords):
+    """检查搜索结果是否与相关关键词匹配（至少命中 1 个）"""
+    text = f"{item.get('title', '')} {item.get('snippet', '')}".lower()
+    for kw in relevance_keywords:
+        if kw.lower() in text:
+            return True
+    return False
+
+
+def _search_channel(channel, per_query_limit=3):
+    """搜索单个渠道的所有查询词"""
+    channel_items = []
+    seen_urls = set()
+    for query in channel["queries"]:
+        results = _duckduckgo_search(query, max_results=per_query_limit)
+        for item in results:
+            url = item["url"]
+            if url in seen_urls:
+                continue
+            # 相关性过滤
+            if not _is_relevant(item, channel["relevance_keywords"]):
+                continue
+            seen_urls.add(url)
+            channel_items.append({
+                "title": item["title"],
+                "url": item["url"],
+                "summary": item["snippet"],
+                "heat": f"web_search:{channel['name']}",
+                "time": datetime.now().strftime("%Y-%m-%d"),
+                "source": f"web_search_{channel['name']}",
+                "search_channel": channel["name"],
+            })
+        # 避免搜索过快被限流
+        time.sleep(0.5)
+    return channel_items
+
+
+def fetch_web_search(limit=10, keyword=None):
+    """全网搜索采集：5 路并行搜索，聚合结果后按相关性排序返回。
+    
+    每个渠道独立搜索 + 过滤，最终合并去重。
+    """
+    all_items = []
+    seen_urls = set()
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        futures = {
+            executor.submit(_search_channel, ch, 3): ch["name"]
+            for ch in WEB_SEARCH_CHANNELS
+        }
+        for future in concurrent.futures.as_completed(futures):
+            channel_name = futures[future]
+            try:
+                items = future.result()
+                for item in items:
+                    url = item["url"]
+                    if url not in seen_urls:
+                        seen_urls.add(url)
+                        all_items.append(item)
+                import sys
+                print(f"[web_search] {channel_name}: {len(items)} items", file=sys.stderr)
+            except Exception as e:
+                import sys
+                print(f"[web_search] {channel_name} 失败: {e}", file=sys.stderr)
+
+    # 应用关键词过滤
+    if keyword:
+        all_items = filter_items(all_items, keyword)
+
+    return all_items[:limit]
+
+
+# ════════════════════════════════════════════════════════════
+# 增强版 GitHub 开发者画像（KOC 建联基础数据）
+# 从 GitHub API + 主页 HTML 抓取开发者完整画像
+# ════════════════════════════════════════════════════════════
+
+def _fetch_github_developer_profile(username: str) -> dict:
+    """抓取单个 GitHub 用户的完整画像信息，用于 KOC 建联评估。
+
+    返回 {name, bio, company, location, blog, twitter, email, followers,
+          following, public_repos, avatar_url, social_links, profile_url}
+    """
+    profile = {
+        "github_username": username,
+        "profile_url": f"https://github.com/{username}",
+        "name": "",
+        "bio": "",
+        "company": "",
+        "location": "",
+        "blog": "",
+        "twitter_username": "",
+        "email": "",
+        "followers": 0,
+        "following": 0,
+        "public_repos": 0,
+        "avatar_url": "",
+        "social_links": [],  # [{platform, url}]
+        "is_org": False,
+    }
+    if not username:
+        return profile
+
+    gh_token = os.environ.get("GITHUB_TOKEN", "").strip()
+    headers = dict(HEADERS)
+    headers["Accept"] = "application/vnd.github.v3+json"
+    if gh_token:
+        headers["Authorization"] = f"token {gh_token}"
+
+    # 1. GitHub REST API
+    try:
+        resp = requests.get(
+            f"https://api.github.com/users/{username}",
+            headers=headers, timeout=8,
+        )
+        if resp.status_code == 200:
+            data = resp.json()
+            profile["name"] = data.get("name") or ""
+            profile["bio"] = data.get("bio") or ""
+            profile["company"] = data.get("company") or ""
+            profile["location"] = data.get("location") or ""
+            profile["blog"] = data.get("blog") or ""
+            profile["twitter_username"] = data.get("twitter_username") or ""
+            profile["email"] = data.get("email") or ""
+            profile["followers"] = data.get("followers") or 0
+            profile["following"] = data.get("following") or 0
+            profile["public_repos"] = data.get("public_repos") or 0
+            profile["avatar_url"] = data.get("avatar_url") or ""
+            profile["is_org"] = data.get("type", "").lower() == "organization"
+
+            # 从 social_accounts API 获取社交链接（GitHub 2022+ 新功能）
+            try:
+                social_resp = requests.get(
+                    f"https://api.github.com/users/{username}/social_accounts",
+                    headers=headers, timeout=5,
+                )
+                if social_resp.status_code == 200:
+                    for acc in social_resp.json():
+                        provider = acc.get("provider", "").lower()
+                        url = acc.get("url", "")
+                        if url:
+                            profile["social_links"].append({"platform": provider, "url": url})
+                            # 补充 Twitter
+                            if provider == "twitter" and not profile["twitter_username"]:
+                                # 从 URL 提取用户名
+                                tw_parts = url.rstrip("/").split("/")
+                                if tw_parts:
+                                    profile["twitter_username"] = tw_parts[-1].lstrip("@")
+            except Exception:
+                pass
+    except Exception:
+        pass
+
+    # 2. HTML 补充（如果 API 缺信息）
+    if not profile["email"] or not profile["bio"]:
+        try:
+            resp = requests.get(
+                f"https://github.com/{username}",
+                headers=HEADERS, timeout=8,
+            )
+            if resp.status_code == 200:
+                soup = BeautifulSoup(resp.text, "html.parser")
+                # bio
+                if not profile["bio"]:
+                    bio_el = soup.select_one(".user-profile-bio, [data-bio-text]")
+                    if bio_el:
+                        profile["bio"] = bio_el.get_text(strip=True)[:300]
+                # email
+                if not profile["email"]:
+                    for a_tag in soup.find_all("a", href=True):
+                        href = a_tag["href"]
+                        if href.startswith("mailto:"):
+                            email = href.replace("mailto:", "").strip()
+                            if "@" in email and "noreply" not in email.lower():
+                                profile["email"] = email
+                                break
+                # social links from HTML
+                for a_tag in soup.select('a[rel="nofollow me"]'):
+                    url = a_tag.get("href", "")
+                    if url and url.startswith("http"):
+                        platform = "unknown"
+                        if "twitter.com" in url or "x.com" in url:
+                            platform = "twitter"
+                        elif "linkedin.com" in url:
+                            platform = "linkedin"
+                        elif "youtube.com" in url:
+                            platform = "youtube"
+                        elif "mastodon" in url:
+                            platform = "mastodon"
+                        elif "reddit.com" in url:
+                            platform = "reddit"
+                        elif "discord" in url:
+                            platform = "discord"
+                        # 避免重复
+                        existing_urls = {s["url"] for s in profile["social_links"]}
+                        if url not in existing_urls:
+                            profile["social_links"].append({"platform": platform, "url": url})
+        except Exception:
+            pass
+
+    # 3. 如果还没有 email，尝试 events API
+    if not profile["email"]:
+        try:
+            resp = requests.get(
+                f"https://api.github.com/users/{username}/events/public",
+                headers=headers, timeout=5,
+            )
+            if resp.status_code == 200:
+                for event in resp.json()[:10]:
+                    if event.get("type") == "PushEvent":
+                        for commit in event.get("payload", {}).get("commits", []):
+                            email = commit.get("author", {}).get("email", "")
+                            if email and "@" in email and "noreply" not in email.lower():
+                                profile["email"] = email
+                                break
+                    if profile["email"]:
+                        break
+        except Exception:
+            pass
+
+    return profile
+
+
+def enrich_github_developer_profiles(items: list) -> list:
+    """批量增强 GitHub 开发者画像，返回 KOC 候选列表。
+
+    为每个有 developer_name 的条目抓取完整画像，
+    只返回有一定影响力的开发者（followers >= 10 或有明确联系方式）。
+    """
+    seen_users = set()
+    koc_candidates = []
+
+    for item in items:
+        dev_name = item.get("developer_name", "")
+        if not dev_name or dev_name in seen_users:
+            continue
+        seen_users.add(dev_name)
+
+        profile = _fetch_github_developer_profile(dev_name)
+        item["developer_profile"] = profile
+
+        # 补充已有字段
+        if profile["email"] and not item.get("developer_email"):
+            item["developer_email"] = profile["email"]
+
+        # KOC 候选判断：有一定影响力或有联系方式
+        has_contact = bool(profile["email"] or profile["twitter_username"] or profile["social_links"])
+        has_influence = profile["followers"] >= 10 or profile["public_repos"] >= 5
+        if has_contact or has_influence:
+            koc_candidates.append({
+                "source": "github",
+                "username": dev_name,
+                "profile": profile,
+                "associated_item": {
+                    "title": item.get("title", ""),
+                    "url": item.get("url", ""),
+                    "heat": item.get("heat", ""),
+                },
+            })
+
+        time.sleep(0.3)  # 避免 API 限流
+
+    return koc_candidates
+
+
+# ════════════════════════════════════════════════════════════
+# 社交平台帖子搜索：找到热点相关的 Twitter/Reddit 讨论帖
+# 目标：提供可直接互动的原帖链接，而非转发 GitHub
+# ════════════════════════════════════════════════════════════
+
+def search_social_posts_for_item(item: dict, source_key: str = "") -> list:
+    """为单条热点搜索 Twitter/Reddit 上的相关讨论帖。
+
+    返回 [{platform, url, title, author, author_url, snippet, search_query}]
+    """
+    title = item.get("title", "")
+    url = item.get("url", "")
+    dev_name = item.get("developer_name", "")
+
+    if not title:
+        return []
+
+    # 构建搜索词：项目名 / 标题关键词
+    search_terms = []
+    if source_key == "github" and "/" in title:
+        # GitHub 项目：用 repo 名
+        repo_name = title.split(" - ")[0].strip() if " - " in title else title.strip()
+        search_terms.append(repo_name)
+        # 也搜索 repo 的短名
+        if "/" in repo_name:
+            short_name = repo_name.split("/")[-1]
+            search_terms.append(short_name)
+    else:
+        # 通用：取标题前 6 个单词
+        words = title.split()[:6]
+        search_terms.append(" ".join(words))
+
+    if dev_name and dev_name not in str(search_terms):
+        search_terms.append(dev_name)
+
+    posts = []
+    seen_urls = set()
+
+    for term in search_terms[:2]:
+        # --- 搜索 Twitter/X 帖子 (via DuckDuckGo site:twitter.com OR site:x.com) ---
+        for site in ["site:twitter.com", "site:x.com"]:
+            query = f"{term} {site}"
+            ddg_results = _duckduckgo_search(query, max_results=3)
+            for r in ddg_results:
+                r_url = r["url"]
+                if r_url in seen_urls:
+                    continue
+                # 过滤非推文链接
+                if not any(d in r_url for d in ["twitter.com/", "x.com/"]):
+                    continue
+                if "/status/" not in r_url and "/i/" not in r_url:
+                    # 可能是用户主页，也可以作为 KOC 线索
+                    pass
+                seen_urls.add(r_url)
+                # 提取作者
+                author = ""
+                author_url = ""
+                try:
+                    import urllib.parse as _up
+                    path = _up.urlparse(r_url).path.strip("/")
+                    parts = path.split("/")
+                    if parts:
+                        author = parts[0]
+                        author_url = f"https://x.com/{author}"
+                except Exception:
+                    pass
+                posts.append({
+                    "platform": "twitter",
+                    "url": r_url,
+                    "title": r["title"],
+                    "author": author,
+                    "author_url": author_url,
+                    "snippet": r.get("snippet", ""),
+                    "search_query": query,
+                })
+
+        # --- 搜索 Reddit 帖子 (via DuckDuckGo site:reddit.com) ---
+        query = f"{term} site:reddit.com"
+        ddg_results = _duckduckgo_search(query, max_results=3)
+        for r in ddg_results:
+            r_url = r["url"]
+            if r_url in seen_urls:
+                continue
+            if "reddit.com" not in r_url:
+                continue
+            seen_urls.add(r_url)
+            # 提取 subreddit 和作者
+            author = ""
+            subreddit = ""
+            try:
+                import urllib.parse as _up
+                path = _up.urlparse(r_url).path.strip("/")
+                parts = path.split("/")
+                if len(parts) >= 2 and parts[0] == "r":
+                    subreddit = parts[1]
+                if "user" in parts:
+                    idx = parts.index("user")
+                    if idx + 1 < len(parts):
+                        author = parts[idx + 1]
+            except Exception:
+                pass
+            posts.append({
+                "platform": "reddit",
+                "url": r_url,
+                "title": r["title"],
+                "author": author,
+                "author_url": f"https://reddit.com/user/{author}" if author else "",
+                "subreddit": subreddit,
+                "snippet": r.get("snippet", ""),
+                "search_query": query,
+            })
+
+        time.sleep(0.5)  # 限流
+
+    return posts
+
+
+def batch_search_social_posts(results: list) -> dict:
+    """批量为高分热点搜索社交帖子。
+
+    返回 {item_url: [social_posts]} 映射。
+    同时从帖子中收集 KOC 候选人。
+    """
+    social_map = {}
+    koc_from_social = []
+    tasks = []
+
+    for result in results:
+        if result.get("error"):
+            continue
+        source_key = result.get("key", "")
+        for item in result.get("items", []):
+            analysis = item.get("analysis", {})
+            score = analysis.get("composite_score", 0)
+            # 只为高分条目搜索社交帖子
+            if score < 5.0:
+                continue
+            item_url = item.get("url", "")
+            if not item_url:
+                continue
+            tasks.append({"item": item, "source_key": source_key, "item_url": item_url})
+
+    print(f"[social_search] searching social posts for {len(tasks)} items...", file=sys.stderr)
+
+    for task in tasks[:15]:  # 限制最多 15 条，避免过多搜索
+        try:
+            posts = search_social_posts_for_item(task["item"], task["source_key"])
+            if posts:
+                social_map[task["item_url"]] = posts
+                # 收集 KOC 候选（来自社交帖子的作者）
+                for post in posts:
+                    if post.get("author") and post.get("author_url"):
+                        koc_from_social.append({
+                            "source": post["platform"],
+                            "username": post["author"],
+                            "profile_url": post["author_url"],
+                            "associated_post": {
+                                "title": post["title"],
+                                "url": post["url"],
+                                "snippet": post.get("snippet", ""),
+                            },
+                            "associated_hotspot": {
+                                "title": task["item"].get("title", ""),
+                                "url": task["item_url"],
+                            },
+                        })
+        except Exception as e:
+            print(f"[social_search] error for {task['item_url'][:60]}: {e}", file=sys.stderr)
+
+    print(f"[social_search] found social posts for {len(social_map)} items, {len(koc_from_social)} KOC candidates", file=sys.stderr)
+    return {"social_map": social_map, "koc_from_social": koc_from_social}
+
+
+# ════════════════════════════════════════════════════════════
+# 公开平台 KOC 发现：搜索云/AI 话题讨论者
+# 从 Twitter/Reddit 搜索云产品、腾讯云、AI 项目的活跃讨论者
+# ════════════════════════════════════════════════════════════
+
+KOC_DISCOVERY_QUERIES = [
+    # 腾讯云相关
+    {"query": "Tencent Cloud site:twitter.com", "focus": "腾讯云用户"},
+    {"query": "Tencent Cloud site:reddit.com", "focus": "腾讯云用户"},
+    {"query": "EdgeOne CDN site:twitter.com", "focus": "EdgeOne用户"},
+    {"query": "Lighthouse server deploy site:twitter.com", "focus": "Lighthouse用户"},
+    # AI 项目相关
+    {"query": "self-hosted AI deploy site:twitter.com", "focus": "AI自部署开发者"},
+    {"query": "cloud GPU training site:reddit.com", "focus": "GPU云用户"},
+    # 云产品对比/评测
+    {"query": "cloud provider comparison 2026 site:twitter.com", "focus": "云产品评测者"},
+    {"query": "AWS vs alternatives site:reddit.com", "focus": "云迁移讨论者"},
+]
+
+
+def discover_koc_from_platforms() -> list:
+    """从公开平台搜索云/AI 话题的活跃讨论者，建立 KOC 候选库。
+
+    返回 [{source, username, profile_url, focus, post_title, post_url, snippet}]
+    """
+    koc_list = []
+    seen_authors = set()
+
+    for q in KOC_DISCOVERY_QUERIES:
+        try:
+            results = _duckduckgo_search(q["query"], max_results=5)
+            for r in results:
+                r_url = r["url"]
+                author = ""
+                author_url = ""
+                platform = ""
+
+                if "twitter.com" in r_url or "x.com" in r_url:
+                    platform = "twitter"
+                    try:
+                        import urllib.parse as _up
+                        path = _up.urlparse(r_url).path.strip("/")
+                        parts = path.split("/")
+                        if parts:
+                            author = parts[0]
+                            author_url = f"https://x.com/{author}"
+                    except Exception:
+                        pass
+                elif "reddit.com" in r_url:
+                    platform = "reddit"
+                    try:
+                        import urllib.parse as _up
+                        path = _up.urlparse(r_url).path.strip("/")
+                        parts = path.split("/")
+                        # 尝试提取帖子作者（需要爬取页面或从URL中推断）
+                        if len(parts) >= 2 and parts[0] == "r":
+                            # subreddit 级别，作者需从页面获取
+                            pass
+                        if "user" in parts:
+                            idx = parts.index("user")
+                            if idx + 1 < len(parts):
+                                author = parts[idx + 1]
+                                author_url = f"https://reddit.com/user/{author}"
+                    except Exception:
+                        pass
+
+                if not author:
+                    continue
+                author_key = f"{platform}:{author.lower()}"
+                if author_key in seen_authors:
+                    continue
+                seen_authors.add(author_key)
+
+                koc_list.append({
+                    "source": platform,
+                    "username": author,
+                    "profile_url": author_url,
+                    "focus": q["focus"],
+                    "post_title": r["title"],
+                    "post_url": r_url,
+                    "snippet": r.get("snippet", ""),
+                })
+        except Exception as e:
+            print(f"[koc_discovery] error for query '{q['query'][:30]}': {e}", file=sys.stderr)
+
+        time.sleep(0.5)
+
+    print(f"[koc_discovery] discovered {len(koc_list)} KOC candidates from platforms", file=sys.stderr)
+    return koc_list
+
+
+# ════════════════════════════════════════════════════════════
+# Twitter/Reddit 作为独立数据源：采集云/AI相关的实时社媒讨论
+# 三路并行：Reddit JSON API（实时）+ HN Algolia（实时）+ DuckDuckGo 兜底
+# ════════════════════════════════════════════════════════════
+
+# Reddit 搜索话题：通过 RSS 获取子版块最新帖子 + 本地关键词过滤
+# 注意：RSS 不支持搜索，靠遍历多个子版块 + query 关键词本地匹配
+REDDIT_SEARCH_QUERIES = [
+    {"query": "cloud aws azure gcp serverless", "subreddits": ["aws", "googlecloud", "azure", "cloudcomputing", "devops"], "focus": "云服务讨论"},
+    {"query": "serverless edge CDN deploy hosting", "subreddits": ["webdev", "selfhosted", "webhosting"], "focus": "Serverless/Edge讨论"},
+    {"query": "AI GPU LLM deploy model hosting", "subreddits": ["MachineLearning", "LocalLLaMA", "artificial", "singularity"], "focus": "AI基础设施讨论"},
+    {"query": "VPS cloud provider comparison migrate", "subreddits": ["selfhosted", "webhosting", "sysadmin"], "focus": "云产品对比"},
+    {"query": "copilot cursor coding AI IDE assistant", "subreddits": ["programming", "webdev", "vim", "neovim"], "focus": "AI编码工具讨论"},
+]
+
+# HN Algolia 搜索话题（24h 内的实时讨论）
+HN_SOCIAL_QUERIES = [
+    {"query": "cloud computing deploy", "focus": "云服务讨论"},
+    {"query": "serverless edge CDN", "focus": "边缘计算讨论"},
+    {"query": "GPU cloud AI infrastructure", "focus": "AI基础设施讨论"},
+    {"query": "AWS Azure Google Cloud", "focus": "竞品动态"},
+    {"query": "self-hosted VPS alternative", "focus": "云产品对比"},
+    {"query": "AI coding assistant", "focus": "AI编码工具讨论"},
+]
+
+
+def _fetch_reddit_rss(subreddit, sort="new", limit=5):
+    """通过 Reddit RSS/Atom feed 获取子版块帖子（JSON API 已返回 403，RSS 仍可用）。
+
+    RSS 返回 Atom XML，包含最新帖子的标题、链接、作者、更新时间。
+    不支持关键词搜索，但可以遍历多个相关子版块获取实时讨论。
+    """
+    items = []
+    try:
+        url = f"https://www.reddit.com/r/{subreddit}/{sort}/.rss?limit={limit}"
+        resp = requests.get(url, headers={
+            "User-Agent": "HotspotTracker/1.0 (research bot)",
+        }, timeout=10)
+        if resp.status_code != 200:
+            print(f"[reddit_rss] r/{subreddit}: status={resp.status_code}", file=sys.stderr)
+            return items
+
+        soup = BeautifulSoup(resp.text, "html.parser")
+        for entry in soup.find_all("entry"):
+            title_tag = entry.find("title")
+            if not title_tag:
+                continue
+            title = title_tag.get_text(strip=True)
+            if not title:
+                continue
+
+            # 链接
+            link_tag = entry.find("link")
+            post_url = link_tag.get("href", "") if link_tag else ""
+
+            # 作者
+            author_tag = entry.find("author")
+            author_name = ""
+            if author_tag:
+                name_tag = author_tag.find("name")
+                author_name = name_tag.get_text(strip=True).lstrip("/u/") if name_tag else ""
+
+            # 时间
+            updated_tag = entry.find("updated") or entry.find("published")
+            time_str = ""
+            age_hours = 999
+            if updated_tag:
+                try:
+                    # Atom uses ISO 8601 format, e.g. 2026-03-23T10:30:00+00:00
+                    raw_time = updated_tag.get_text(strip=True)
+                    # Python 3.7+ fromisoformat doesn't handle trailing Z
+                    raw_time = raw_time.replace("Z", "+00:00")
+                    dt = datetime.fromisoformat(raw_time)
+                    age_hours = (time.time() - dt.timestamp()) / 3600
+                    if age_hours < 1:
+                        time_str = f"{int(age_hours * 60)}分钟前"
+                    elif age_hours < 24:
+                        time_str = f"{int(age_hours)}小时前"
+                    else:
+                        time_str = f"{int(age_hours / 24)}天前"
+                except Exception:
+                    time_str = updated_tag.get_text(strip=True)[:16]
+
+            # 过滤：只要最近 48h 的帖子
+            if age_hours > 48:
+                continue
+
+            # 内容摘要
+            content_tag = entry.find("content")
+            summary = ""
+            if content_tag:
+                content_html = content_tag.get_text(strip=True)
+                content_soup = BeautifulSoup(content_html, "html.parser")
+                summary = content_soup.get_text(separator=" ", strip=True)[:200]
+
+            items.append({
+                "source": "Twitter/Reddit",
+                "title": title,
+                "url": post_url,
+                "heat": f"r/{subreddit}",
+                "time": time_str,
+                "summary": summary,
+                "platform": "reddit",
+                "author": author_name,
+                "author_url": f"https://reddit.com/user/{author_name}" if author_name else "",
+                "developer_name": author_name or f"r/{subreddit}",
+                "developer_url": f"https://reddit.com/user/{author_name}" if author_name else f"https://reddit.com/r/{subreddit}",
+                "subreddit": subreddit,
+            })
+    except Exception as e:
+        print(f"[reddit_rss] r/{subreddit} error: {e}", file=sys.stderr)
+    return items
+
+
+def _fetch_reddit_search(query, subreddits=None, sort="new", limit=5, time_filter="day"):
+    """通过 Reddit RSS feed 获取子版块的实时帖子，并按关键词过滤。
+
+    Reddit JSON API 返回 403（需 OAuth），改用 RSS + 本地关键词匹配。
+    """
+    items = []
+    query_words = [w.lower().strip() for w in re.split(r'\s+|OR', query) if w.strip() and w.strip() != 'OR']
+
+    if subreddits:
+        for sub in subreddits[:4]:
+            try:
+                posts = _fetch_reddit_rss(sub, sort=sort, limit=limit * 2)
+                # 关键词过滤
+                for post in posts:
+                    text = f"{post['title']} {post.get('summary', '')}".lower()
+                    if any(w in text for w in query_words):
+                        items.append(post)
+            except Exception:
+                continue
+            time.sleep(0.3)
+    else:
+        # 无指定子版块时，搜索通用的技术子版块
+        fallback_subs = ["technology", "programming", "devops", "cloudcomputing"]
+        for sub in fallback_subs:
+            try:
+                posts = _fetch_reddit_rss(sub, sort=sort, limit=limit)
+                for post in posts:
+                    text = f"{post['title']} {post.get('summary', '')}".lower()
+                    if any(w in text for w in query_words):
+                        items.append(post)
+            except Exception:
+                continue
+            time.sleep(0.3)
+    return items[:limit]
+
+
+def _fetch_hn_social_search(query, focus, limit=3):
+    """通过 HN Algolia API 搜索最近 24h 的讨论（实时+可靠）"""
+    items = []
+    try:
+        timestamp_24h = int(time.time() - 24 * 3600)
+        api_url = (
+            f"http://hn.algolia.com/api/v1/search_by_date"
+            f"?tags=story&numericFilters=created_at_i>{timestamp_24h}"
+            f"&hitsPerPage={limit * 2}&query={requests.utils.quote(query)}"
+        )
+        resp = requests.get(api_url, timeout=10)
+        if resp.status_code != 200:
+            return items
+        data = resp.json()
+
+        for hit in data.get("hits", []):
+            title = hit.get("title", "")
+            if not title:
+                continue
+            hn_url = f"https://news.ycombinator.com/item?id={hit['objectID']}"
+            points = hit.get("points", 0) or 0
+            num_comments = hit.get("num_comments", 0) or 0
+            author = hit.get("author", "")
+            # 时间计算
+            created = hit.get("created_at_i", 0)
+            age_hours = (time.time() - created) / 3600 if created else 0
+            if age_hours < 1:
+                time_str = f"{int(age_hours * 60)}分钟前"
+            elif age_hours < 24:
+                time_str = f"{int(age_hours)}小时前"
+            else:
+                time_str = f"{int(age_hours / 24)}天前"
+
+            items.append({
+                "source": "Twitter/Reddit",
+                "title": title,
+                "url": hit.get("url") or hn_url,
+                "hn_url": hn_url,
+                "heat": f"↑{points} · {num_comments} comments",
+                "time": time_str,
+                "summary": "",
+                "platform": "hackernews",
+                "author": author,
+                "author_url": f"https://news.ycombinator.com/user?id={author}" if author else "",
+                "developer_name": author,
+                "developer_url": f"https://news.ycombinator.com/user?id={author}" if author else "",
+                "subreddit": "",
+                "tcloud_focus": focus,
+            })
+            if len(items) >= limit:
+                break
+    except Exception as e:
+        print(f"[hn_social] error: {e}", file=sys.stderr)
+    return items
+
+
+def fetch_twitter_reddit_tcloud(limit: int = 10, keyword=None) -> list:
+    """采集实时社媒讨论：Reddit JSON API + HN Algolia + DuckDuckGo 兜底。
+
+    三路并行，确保即使某个渠道不可用也能获取到数据。
+    聚焦当下：所有内容限制在最近 24-48h 内。
+    """
+    all_items = []
+    seen_urls = set()
+
+    # ── 路线 1: Reddit JSON API（实时，高可用）──
+    print("[twitter_reddit] fetching Reddit posts...", file=sys.stderr)
+    for q_spec in REDDIT_SEARCH_QUERIES:
+        try:
+            posts = _fetch_reddit_search(
+                q_spec["query"],
+                subreddits=q_spec.get("subreddits"),
+                limit=3,
+                time_filter="day",
+            )
+            for post in posts:
+                url = post["url"]
+                if url in seen_urls:
+                    continue
+                seen_urls.add(url)
+                post["tcloud_focus"] = q_spec["focus"]
+                all_items.append(post)
+        except Exception as e:
+            print(f"[reddit] error for '{q_spec['query'][:30]}': {e}", file=sys.stderr)
+        time.sleep(0.3)
+
+    reddit_count = len(all_items)
+    print(f"[twitter_reddit] Reddit: {reddit_count} posts", file=sys.stderr)
+
+    # ── 路线 2: HN Algolia 24h 实时讨论 ──
+    print("[twitter_reddit] fetching HN discussions...", file=sys.stderr)
+    for q_spec in HN_SOCIAL_QUERIES:
+        try:
+            posts = _fetch_hn_social_search(q_spec["query"], q_spec["focus"], limit=2)
+            for post in posts:
+                url = post.get("hn_url") or post["url"]
+                if url in seen_urls:
+                    continue
+                seen_urls.add(url)
+                all_items.append(post)
+        except Exception as e:
+            print(f"[hn_social] error for '{q_spec['query'][:30]}': {e}", file=sys.stderr)
+
+    hn_count = len(all_items) - reddit_count
+    print(f"[twitter_reddit] HN: {hn_count} posts", file=sys.stderr)
+
+    # ── 路线 3: DuckDuckGo 兜底（如果前两路数据不够） ──
+    if len(all_items) < limit // 2:
+        print("[twitter_reddit] DDG fallback...", file=sys.stderr)
+        ddg_queries = [
+            {"query": "Tencent Cloud site:x.com", "focus": "腾讯云品牌讨论"},
+            {"query": "cloud computing site:x.com", "focus": "云服务讨论"},
+            {"query": "AI deploy site:reddit.com", "focus": "AI基础设施讨论"},
+        ]
+        for q_spec in ddg_queries:
+            try:
+                results = _duckduckgo_search(q_spec["query"], max_results=3)
+                for r in results:
+                    url = r["url"]
+                    if url in seen_urls:
+                        continue
+                    seen_urls.add(url)
+                    platform = "twitter" if any(d in url for d in ["twitter.com", "x.com"]) else "reddit"
+                    author = ""
+                    try:
+                        import urllib.parse as _up
+                        path = _up.urlparse(url).path.strip("/")
+                        parts = path.split("/")
+                        if parts:
+                            author = parts[0]
+                    except Exception:
+                        pass
+                    all_items.append({
+                        "source": "Twitter/Reddit",
+                        "title": r["title"],
+                        "url": url,
+                        "heat": f"social:{q_spec['focus']}",
+                        "time": datetime.now().strftime("%Y-%m-%d"),
+                        "summary": r.get("snippet", ""),
+                        "platform": platform,
+                        "author": author,
+                        "author_url": f"https://x.com/{author}" if platform == "twitter" else "",
+                        "developer_name": author,
+                        "developer_url": f"https://x.com/{author}" if platform == "twitter" else "",
+                        "subreddit": "",
+                        "tcloud_focus": q_spec["focus"],
+                    })
+            except Exception:
+                pass
+            time.sleep(0.3)
+
+    # 按时效排序：最新的排前面
+    def _sort_key(item):
+        t = item.get("time", "")
+        if "分钟前" in t:
+            return 0
+        if "小时前" in t:
+            try:
+                return int(t.replace("小时前", ""))
+            except Exception:
+                return 50
+        if "天前" in t:
+            return 100
+        return 200
+    all_items.sort(key=_sort_key)
+
+    if keyword:
+        all_items = filter_items(all_items, keyword)
+
+    print(f"[twitter_reddit_tcloud] total: {len(all_items)} social posts (Reddit:{reddit_count}, HN:{hn_count})", file=sys.stderr)
+    return all_items[:limit]
+
+
 def create_single_rss_fetcher(url, name):
     def fetcher(limit=5, keyword=None):
         return filter_items(fetch_rss_feed(url, name, limit), keyword)[:limit]
@@ -982,6 +1961,10 @@ def main():
         'huggingface': fetch_huggingface_papers,
         'ai_newsletters': fetch_ai_newsletters, 'podcasts': fetch_podcasts,
         'essays': fetch_essays,
+        # Web Search (5-channel parallel)
+        'web_search': fetch_web_search,
+        # Twitter/Reddit Tencent Cloud discussions
+        'twitter_reddit': fetch_twitter_reddit_tcloud,
         # Standalone AI Sources
         'latentspace_ainews': fetch_latentspace_ainews,
     }

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🔥 热点追踪 — AI Hotspot Tracker</title>
-<meta name="description" content="AI 驱动的全球科技热点追踪工具，自动采集 7 大平台热点，深度分析关联性，生成可直接使用的写作素材。">
+<meta name="description" content="AI 驱动的全球科技热点追踪工具，自动采集 9 大平台热点（含 Twitter/Reddit 社媒讨论），深度分析关联性，生成可直接使用的写作素材和产品 Draft。">
 <style>
 /* ═══════════════ Reset & Variables ═══════════════ */
 :root {
@@ -101,6 +101,38 @@ a:hover { text-decoration: underline; }
 .tab:hover:not(.active) { color: var(--text); background: var(--bg-card-hover); }
 .tab-content { display: none; }
 .tab-content.active { display: block; }
+
+/* ═══════════════ Action Center Sub-tabs ═══════════════ */
+.action-subtab {
+  padding: 6px 16px; border-radius: 6px;
+  border: 1px solid var(--border); background: transparent; color: var(--text-dim);
+  cursor: pointer; font-size: 13px; font-weight: 500; white-space: nowrap;
+  transition: all 0.2s;
+}
+.action-subtab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.action-subtab:hover:not(.active) { background: var(--bg-card-hover); color: var(--text); }
+
+/* ═══════════════ KOC Cards ═══════════════ */
+.koc-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 16px; margin: 0 20px 12px; transition: all 0.2s;
+}
+.koc-card:hover { border-color: var(--accent); background: var(--bg-card-hover); }
+.koc-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.koc-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--border); object-fit: cover; }
+.koc-name { font-weight: 600; font-size: 15px; }
+.koc-score-badge {
+  display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;
+}
+.koc-score-badge.high { background: var(--green-dim); color: var(--green); }
+.koc-score-badge.mid { background: var(--orange-dim); color: var(--orange); }
+.koc-score-badge.low { background: var(--blue-dim); color: var(--blue); }
+.koc-meta { font-size: 13px; color: var(--text-dim); line-height: 1.8; }
+.koc-meta a { color: var(--accent); }
+.koc-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px;
+  background: var(--blue-dim); color: var(--blue); margin-right: 4px;
+}
 
 /* ═══════════════ Cards ═══════════════ */
 .card {
@@ -357,7 +389,8 @@ a:hover { text-decoration: underline; }
     <button class="tab" onclick="switchTab('table')">📋 全量数据</button>
     <button class="tab" onclick="switchTab('selected')">⭐ 精选话题</button>
     <button class="tab" onclick="switchTab('summary')">📝 每日总结</button>
-    <button class="tab" onclick="switchTab('writing')">✍️ 写作包</button>
+    <button class="tab" onclick="switchTab('action')">🎯 内容行动中心</button>
+    <button class="tab" onclick="switchTab('koc')">🤝 KOC 建联库</button>
     <button class="tab" onclick="switchTab('about')">ℹ️ 关于</button>
   </div>
 
@@ -398,10 +431,18 @@ a:hover { text-decoration: underline; }
     <div class="card">
       <div class="card-header">
         <div class="card-title">📋 全量热点数据</div>
-        <span style="font-size:13px;color:var(--text-dim)" id="tableCount"></span>
+        <div style="display:flex;align-items:center;gap:12px">
+          <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer">
+            <input type="checkbox" id="toggleHistory" onchange="toggleHistoryMode()"> 📚 显示历史全量
+          </label>
+          <span style="font-size:13px;color:var(--text-dim)" id="tableCount"></span>
+        </div>
       </div>
       <div class="filters">
         <input type="text" class="search-box" id="searchBox" placeholder="🔍 搜索标题 / 简介 / 标签..." oninput="applyFilters()">
+        <select id="filterDate" onchange="applyFilters()" style="display:none">
+          <option value="">所有日期</option>
+        </select>
         <select id="filterSource" onchange="applyFilters()">
           <option value="">所有来源</option>
         </select>
@@ -410,6 +451,9 @@ a:hover { text-decoration: underline; }
           <option value="P0">P0 今天发</option>
           <option value="P1">P1 本周发</option>
           <option value="P2">P2 观察中</option>
+        </select>
+        <select id="filterProduct" onchange="applyFilters()">
+          <option value="">所有产品</option>
         </select>
         <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer">
           <input type="checkbox" id="filterAI" onchange="applyFilters()"> AI 相关
@@ -432,7 +476,12 @@ a:hover { text-decoration: underline; }
     <div class="card">
       <div class="card-header">
         <div class="card-title">⭐ 精选话题（P0/P1 + 腾讯云高关联）</div>
-        <span style="font-size:13px;color:var(--text-dim)" id="selectedCount"></span>
+        <div style="display:flex;align-items:center;gap:12px">
+          <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer">
+            <input type="checkbox" id="toggleSelectedHistory" onchange="toggleSelectedHistoryMode()"> 📚 显示历史全量
+          </label>
+          <span style="font-size:13px;color:var(--text-dim)" id="selectedCount"></span>
+        </div>
       </div>
       <div id="selectedItems">
         <div class="loading-overlay"><span class="spinner"></span>&nbsp;&nbsp;加载中...</div>
@@ -452,15 +501,72 @@ a:hover { text-decoration: underline; }
     </div>
   </div>
 
-  <!-- Writing Pack Tab -->
-  <div id="tab-writing" class="tab-content">
+  <!-- Action Center Tab（合并写作包 + 产品Draft + 社媒互动） -->
+  <div id="tab-action" class="tab-content">
     <div class="card">
       <div class="card-header">
-        <div class="card-title">✍️ 内容写作包</div>
+        <div class="card-title">🎯 内容行动中心</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="action-subtab active" onclick="switchActionSubtab('writing')" id="subtab-btn-writing">📚 深度写作(教程)</button>
+          <button class="action-subtab" onclick="switchActionSubtab('drafts')" id="subtab-btn-drafts">🚀 快速发布(X/Discord)</button>
+          <button class="action-subtab" onclick="switchActionSubtab('social')" id="subtab-btn-social">💬 社媒互动(原帖)</button>
+        </div>
       </div>
-      <div class="markdown-content" id="writingContent">
+      <div class="action-hint" style="padding:0 20px;font-size:13px;color:var(--text-dim);margin-bottom:8px">
+        <span id="actionHint">深度写作 = 教程+部署实测（2-5天产出） ｜ 快速发布 = 热点+腾讯云直发X/Discord ｜ 社媒互动 = 去原帖下评论/引用</span>
+      </div>
+      <div id="action-subtab-writing" class="action-subtab-content">
+        <div class="markdown-content" id="writingContent">
+          <div class="loading-overlay"><span class="spinner"></span>&nbsp;&nbsp;加载中...</div>
+        </div>
+      </div>
+      <div id="action-subtab-drafts" class="action-subtab-content" style="display:none">
+        <div id="draftsContent">
+          <div class="loading-overlay"><span class="spinner"></span>&nbsp;&nbsp;加载中...</div>
+        </div>
+      </div>
+      <div id="action-subtab-social" class="action-subtab-content" style="display:none">
+        <div class="markdown-content" id="socialContent">
+          <div class="loading-overlay"><span class="spinner"></span>&nbsp;&nbsp;加载中...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KOC 建联库 Tab -->
+  <div id="tab-koc" class="tab-content">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">🤝 KOC 建联候选库</div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer">
+            <input type="checkbox" id="toggleKocHistory" onchange="toggleKocHistoryMode()"> 📚 显示历史全量
+          </label>
+          <span style="font-size:13px;color:var(--text-dim)" id="kocCount"></span>
+        </div>
+      </div>
+      <div style="padding:0 20px 8px;font-size:13px;color:var(--text-dim)">
+        从 GitHub 开发者 + Twitter/Reddit 讨论者中自动发现的潜在合作对象
+      </div>
+      <div class="filters" style="padding:0 20px 12px">
+        <input type="text" class="search-box" id="kocSearch" placeholder="🔍 搜索 KOC 名称 / Bio / 项目..." oninput="filterKocTable()" style="max-width:300px">
+        <select id="kocSourceFilter" onchange="filterKocTable()">
+          <option value="">所有来源</option>
+          <option value="GitHub">🐙 GitHub</option>
+          <option value="Twitter">🐦 Twitter</option>
+          <option value="Reddit">🔴 Reddit</option>
+        </select>
+        <select id="kocScoreFilter" onchange="filterKocTable()">
+          <option value="">所有评分</option>
+          <option value="6">⭐ 高价值 (≥6)</option>
+          <option value="4">中等 (≥4)</option>
+        </select>
+      </div>
+      <div class="table-wrapper" id="kocTableWrapper">
         <div class="loading-overlay"><span class="spinner"></span>&nbsp;&nbsp;加载中...</div>
       </div>
+      <!-- KOC Markdown 报告（备用） -->
+      <div id="kocMarkdownContent" style="display:none" class="markdown-content"></div>
     </div>
   </div>
 
@@ -468,82 +574,133 @@ a:hover { text-decoration: underline; }
   <div id="tab-about" class="tab-content">
     <div class="card about-section">
       <h2 style="margin-bottom:16px">🔥 热点追踪 Hotspot Tracker</h2>
-      <p style="color:var(--text-dim);font-size:15px;margin-bottom:20px">
-        AI 驱动的全球科技热点追踪工具，专为腾讯云国际站内容团队打造。自动采集 7 大平台热点，
-        深度分析关联性，生成可直接使用的写作素材。
+      <p style="color:var(--text);font-size:15px;margin-bottom:8px;line-height:1.8">
+        <strong>热点追踪</strong>是腾讯云国际站内容团队的 AI 驱动工具，<br>
+        帮助团队<strong>每天自动发现全球科技热点</strong>、<strong>识别与腾讯云产品的结合点</strong>、<strong>快速输出内容草稿</strong>，<br>
+        实现从"热点发现 → 产品关联 → 内容生产 → 社媒互动"的全链路闭环。
       </p>
 
-      <h3>✨ 核心功能</h3>
-      <ul style="margin:8px 0 16px 20px;line-height:2">
-        <li><strong>7 大数据源自动采集</strong> — HackerNews / GitHub Trending / ProductHunt / HuggingFace / V2EX / 36氪 / AI Newsletter</li>
-        <li><strong>深度内容抓取</strong> — GitHub README 全文 / 社区帖子全文 / 项目详情</li>
-        <li><strong>智能分析标注</strong> — AI相关判断 / 云行业识别 / 腾讯云产品关联 / 竞品分析</li>
-        <li><strong>自动翻译</strong> — Google Translate 英文摘要→中文</li>
-        <li><strong>腾讯文档同步</strong> — 一键写入多维表格（全量热点 + 精选话题）</li>
-        <li><strong>写作包生成</strong> — Markdown 格式，可直接用于内容创作</li>
-        <li><strong>开发者信息增强</strong> — GitHub API + 主页爬取获取公开邮箱</li>
-        <li><strong>纯静态部署</strong> — GitHub Pages 零成本托管，任何人可直接访问</li>
-      </ul>
+      <h3>🎯 我们在解决什么问题？</h3>
+      <div style="background:var(--bg);border-radius:var(--radius-sm);padding:16px;margin:8px 0 16px;line-height:2">
+        <p>腾讯云国际站需要持续产出<strong>有热点锚点的技术内容</strong>来推广产品（Lighthouse、EdgeOne、Hunyuan、CodeBuddy 等），<br>
+        但人工追踪热点→判断相关性→写作→社媒互动的链路很长、很慢。</p>
+        <p style="margin-top:8px"><strong>热点追踪系统做了什么：</strong></p>
+        <ul style="margin:4px 0 0 20px">
+          <li>🤖 <strong>自动采集</strong> — 每天从 9 大平台采集 50-80 条科技热点</li>
+          <li>🧠 <strong>智能分析</strong> — 自动判断 AI 相关性、云行业关联、腾讯云产品匹配度</li>
+          <li>📝 <strong>内容生产</strong> — 为每个关联产品生成 P0/P1 优先级的 Draft 草稿</li>
+          <li>🐦 <strong>社媒互动</strong> — 找到 Twitter/Reddit 上的真实讨论帖，提供可直接互动的链接</li>
+          <li>🤝 <strong>KOC 发现</strong> — 自动从热点中发现潜在合作者（GitHub 开发者、社媒讨论者）</li>
+        </ul>
+      </div>
+
+      <h3>📡 9 大数据源</h3>
+      <div class="tech-stack">
+        <span class="tech-tag">🦄 HackerNews — 硅谷热点</span>
+        <span class="tech-tag">🐙 GitHub Trending — 开源趋势</span>
+        <span class="tech-tag">🐱 ProductHunt — 新产品</span>
+        <span class="tech-tag">🤗 HuggingFace — AI论文</span>
+        <span class="tech-tag">🤓 V2EX — 极客社区</span>
+        <span class="tech-tag">🚀 36氪 — 创投快讯</span>
+        <span class="tech-tag">🧠 AI Newsletter — AI内参</span>
+        <span class="tech-tag">🌐 全网搜索 — 竞品/行业</span>
+        <span class="tech-tag" style="border-color:var(--accent);color:var(--accent)">🐦 Twitter/Reddit — 社媒讨论</span>
+      </div>
+
+      <h3>⚙️ 系统工作流程</h3>
+      <div class="log-panel" style="color:var(--text);max-height:260px;font-size:13px;line-height:2">
+┌─────────────────────────────────────────────────────┐
+│  1. 数据采集（9大平台 × 并行抓取）                      │
+│     └→ HackerNews / GitHub / ProductHunt / HF /      │
+│        V2EX / 36Kr / AI Newsletter / Web Search /     │
+│        Twitter/Reddit 社媒讨论                         │
+├─────────────────────────────────────────────────────┤
+│  2. 深度内容抓取                                       │
+│     └→ GitHub README / 原文页面 / 社交帖子              │
+├─────────────────────────────────────────────────────┤
+│  3. 智能分析标注（本地规则引擎，无需 LLM）               │
+│     └→ AI判断 / 云行业 / 产品匹配 / 竞品识别 /          │
+│        评分体系 / 优先级 P0/P1/P2                       │
+├─────────────────────────────────────────────────────┤
+│  4. 内容生产                                           │
+│     └→ 写作包（关联产品+写作角度+配图建议）              │
+│     └→ 产品 Draft（分产品的完整草稿，待审核）            │
+│     └→ 社媒互动（Twitter/Reddit 原帖链接+建议文案）     │
+├─────────────────────────────────────────────────────┤
+│  5. KOC 发现                                           │
+│     └→ GitHub 开发者画像 + 社交平台讨论者               │
+│     └→ 评分体系 + 合作角度建议                          │
+├─────────────────────────────────────────────────────┤
+│  6. 输出 & 分发                                        │
+│     └→ 本地文件：CSV / JSON / Markdown / Draft         │
+│     └→ 腾讯文档：多维表格自动同步                       │
+│     └→ iWiki：Draft 自动录入审核                        │
+│     └→ 静态站点：GitHub Pages 零成本部署                │
+└─────────────────────────────────────────────────────┘
+      </div>
+
+      <h3>📊 核心 Tab 功能说明</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:8px 0 16px">
+        <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px">
+          <strong style="color:var(--green)">📊 数据看板</strong>
+          <p style="font-size:13px;color:var(--text-dim);margin-top:4px">当天采集概览：总量、AI/云占比、高分热点、P0/P1数量、来源/技术标签分布</p>
+        </div>
+        <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px">
+          <strong style="color:var(--blue)">📋 全量数据</strong>
+          <p style="font-size:13px;color:var(--text-dim);margin-top:4px">所有采集到的热点完整列表，支持搜索/来源/优先级/产品/评分多维筛选，可切换历史全量模式</p>
+        </div>
+        <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px">
+          <strong style="color:var(--orange)">⭐ 精选话题</strong>
+          <p style="font-size:13px;color:var(--text-dim);margin-top:4px">P0/P1 优先级 + 腾讯云高关联度的精选内容，附带产品结合点和写作角度建议</p>
+        </div>
+        <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px">
+          <strong style="color:var(--purple)">📝 每日总结</strong>
+          <p style="font-size:13px;color:var(--text-dim);margin-top:4px">当日热点趋势的结构化总结，快速了解今天发生了什么</p>
+        </div>
+        <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px">
+          <strong style="color:var(--red)">🎯 内容行动中心</strong>
+          <p style="font-size:13px;color:var(--text-dim);margin-top:4px">三合一行动面板：深度写作包 + 分产品AI Draft(P0/P1) + 社媒互动推荐（含原帖链接）</p>
+        </div>
+        <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px">
+          <strong style="color:var(--accent)">🤝 KOC 建联库</strong>
+          <p style="font-size:13px;color:var(--text-dim);margin-top:4px">从热点中自动提取的潜在合作者库，支持搜索/来源/评分筛选，历史跨天积累</p>
+        </div>
+      </div>
 
       <h3>🛠 技术栈</h3>
       <div class="tech-stack">
         <span class="tech-tag">🐍 Python 3</span>
         <span class="tech-tag">🔍 BeautifulSoup4</span>
-        <span class="tech-tag">🌐 Requests</span>
+        <span class="tech-tag">🌐 Requests + DuckDuckGo</span>
         <span class="tech-tag">🌍 Google Translate</span>
         <span class="tech-tag">📊 企业微信 Webhook</span>
         <span class="tech-tag">📄 CSV / JSON / Markdown</span>
-        <span class="tech-tag">🎨 原生 HTML/CSS/JS</span>
-        <span class="tech-tag">🚀 GitHub Pages</span>
+        <span class="tech-tag">🎨 原生 HTML/CSS/JS（无框架）</span>
+        <span class="tech-tag">🚀 GitHub Pages 静态部署</span>
       </div>
 
-      <h3>📂 项目结构</h3>
-      <div class="log-panel" style="color:var(--text-dim);max-height:220px">
-热点追踪/
-├── index.html                  ← 前端界面（纯静态，可部署）
-├── docs/                       ← GitHub Pages 部署目录
-│   ├── index.html              ← 部署的前端页面
-│   └── data/                   ← 预生成的 JSON 数据
-│       ├── index.json          ← 日期索引
-│       └── 2026-03-22.json     ← 每日数据
-├── generate_static.py          ← 静态站点数据生成器
-├── web_app.py                  ← 本地 Web UI 后端 (Flask)
-├── web_ui.html                 ← 本地 Web UI 前端
-├── run.sh                      ← 命令行一键运行
-├── setup.sh                    ← 首次安装
-├── requirements.txt            ← 依赖清单
-├── merge_master_table.py       ← 历史总表合并
-├── sync_to_wecom_sheet.py      ← 腾讯文档同步
-├── scripts/                    ← 核心采集脚本
-│   ├── daily_hotspot_agent.py  ← 主流程调度
-│   ├── fetch_news.py           ← 7 大数据源爬虫
-│   ├── content_analyzer.py     ← 内容分析引擎
-│   ├── rss_parser.py           ← RSS 解析器
-│   └── wecom_doc_writer.py     ← 企业微信文档写入
-└── output/                     ← 数据输出目录
-      </div>
-
-      <h3>🚀 部署方式</h3>
+      <h3>🚀 运行方式</h3>
       <div class="log-panel" style="color:var(--text-dim);max-height:180px">
-# 1. 本地运行采集
-./run.sh
+# 1. 采集 + 分析 + 生成（一键）
+cd scripts && python3 daily_hotspot_agent.py --output-dir ../output
 
 # 2. 生成静态站点数据
-python3 generate_static.py
+cd .. && python3 generate_static.py
 
-# 3. 推送到 GitHub（自动部署到 GitHub Pages）
-git add docs/
-git commit -m "update hotspot data"
-git push
-
-# GitHub Pages 设置：
-# Settings → Pages → Source: Deploy from branch
-# Branch: main, Folder: /docs
+# 3. 推送到 GitHub Pages 自动部署
+git add docs/ && git commit -m "update data" && git push
       </div>
 
+      <h3>📈 数据特点</h3>
+      <ul style="margin:8px 0 16px 20px;line-height:2;font-size:14px">
+        <li><strong>全量积累</strong> — 不只是当天数据，全量数据/精选话题/KOC建联库都跨天积累</li>
+        <li><strong>纯本地规则</strong> — 分析引擎不依赖 LLM API，纯规则匹配+评分，速度快、成本零</li>
+        <li><strong>零 API Key</strong> — 所有数据源均无需付费 API Key（DuckDuckGo / GitHub 公开 API）</li>
+        <li><strong>可扩展</strong> — 新增数据源只需写一个 fetch 函数 + 注册到 SOURCE_SPECS</li>
+      </ul>
+
       <p style="margin-top:24px;color:var(--text-dim);font-size:13px;text-align:center">
-        Built with ❤️ using AI Coding &nbsp;|&nbsp; © 2026 &nbsp;|&nbsp; 
-        <a href="https://github.com" target="_blank">GitHub</a>
+        Built with ❤️ by AI Coding &nbsp;|&nbsp; Tencent Cloud International Content Team &nbsp;|&nbsp; © 2026
       </p>
     </div>
   </div>
@@ -581,6 +738,9 @@ const DATA_BASE = (function() {
 
 let currentDate = '';
 let allRecords = [];
+let historyRecords = [];
+let historyLoaded = false;
+let isHistoryMode = false;
 let currentFiltered = [];
 let dateData = null;
 const PAGE_SIZE = 25;
@@ -646,10 +806,14 @@ async function loadDate(dateStr) {
 
     renderDashboard(dateData.stats, allRecords);
     populateSourceFilter(dateData.stats.sources);
+    populateProductFilter(allRecords);
     renderTable(allRecords);
     renderSelected(dateData.selected || []);
     renderSummary(dateData.summary);
     renderWritingPack(dateData.writing_pack);
+    renderSocialActions(dateData.social_actions);
+    renderKocData(dateData.koc_data, dateData.koc_markdown);
+    renderDrafts(dateData.drafts || []);
   } catch (e) {
     console.error('Load error:', e);
     showToast('数据加载失败: ' + e.message);
@@ -663,7 +827,8 @@ function populateSourceFilter(sources) {
   const sourceNames = {
     hackernews: '🦄 HackerNews', github: '🐙 GitHub', producthunt: '🏹 ProductHunt',
     huggingface: '📰 HuggingFace', v2ex: '🤓 V2EX', '36kr': '💰 36氪',
-    ai_newsletters: '📬 AI Newsletter'
+    ai_newsletters: '📬 AI Newsletter', web_search: '🌐 全网搜索',
+    twitter_reddit: '🐦 社媒讨论'
   };
   Object.keys(sources || {}).sort().forEach(s => {
     const opt = document.createElement('option');
@@ -712,7 +877,8 @@ function renderDashboard(stats, records) {
   const sourceNames = {
     hackernews: '🦄 HackerNews', github: '🐙 GitHub', producthunt: '🏹 ProductHunt',
     huggingface: '📰 HuggingFace', v2ex: '🤓 V2EX', '36kr': '💰 36氪',
-    ai_newsletters: '📬 AI Newsletter'
+    ai_newsletters: '📬 AI Newsletter', web_search: '🌐 全网搜索',
+    twitter_reddit: '🐦 社媒讨论'
   };
   const total = stats.total || 1;
   const sourceHtml = Object.entries(stats.sources || {})
@@ -748,7 +914,7 @@ function renderTable(records) {
   const start = (currentPage - 1) * PAGE_SIZE;
   const pageRecords = records.slice(start, start + PAGE_SIZE);
 
-  document.getElementById('tableCount').textContent = `共 ${records.length} 条`;
+  document.getElementById('tableCount').textContent = `共 ${records.length} 条${isHistoryMode ? '（历史全量）' : ''}`;
 
   if (!records.length) {
     document.getElementById('dataTableWrapper').innerHTML = '<div style="padding:20px;color:var(--text-dim)">暂无数据</div>';
@@ -756,10 +922,11 @@ function renderTable(records) {
     return;
   }
 
+  const showDate = isHistoryMode;
   const html = `<table class="data-table">
     <thead><tr>
-      <th>#</th><th>来源</th><th>标题</th><th>中文简介</th>
-      <th>评分</th><th>云关联</th><th>优先级</th><th>标签</th><th>操作</th>
+      <th>#</th>${showDate ? '<th>日期</th>' : ''}<th>来源</th><th>标题</th><th>中文简介</th>
+      <th>评分</th><th>云关联</th><th>优先级</th><th>产品</th><th>标签</th><th>操作</th>
     </tr></thead>
     <tbody>
     ${pageRecords.map((r, i) => {
@@ -771,14 +938,17 @@ function renderTable(records) {
       const prioTag = priority.startsWith('P0') ? 'tag-p0' : priority.startsWith('P1') ? 'tag-p1' : 'tag-p2';
       const isAI = r['是否AI相关'] === '是';
       const isCloud = r['是否云行业'] === '是';
+      const focusProduct = r['官方号主推产品'] || '';
       return `<tr>
         <td>${idx+1}</td>
+        ${showDate ? `<td style="white-space:nowrap;font-size:12px">${esc(r['采集日期'] || '')}</td>` : ''}
         <td><span class="tag tag-source">${esc(r['来源Key'] || '')}</span></td>
         <td class="title-cell" style="max-width:250px"><a href="${esc(r['链接'] || '#')}" target="_blank" class="truncate" style="display:block">${esc((r['标题'] || '').substring(0, 60))}</a></td>
         <td><div class="cell-brief">${esc((r['中文简介'] || '').substring(0, 100))}</div></td>
         <td><span class="score-badge ${scoreClass}">${score.toFixed(1)}</span></td>
         <td>${tcloud >= 5 ? `<span class="tag tag-cloud">${tcloud}</span>` : `<span style="color:var(--text-dim)">${tcloud}</span>`}</td>
         <td>${priority ? `<span class="tag ${prioTag}">${esc(priority.split(' ')[0])}</span>` : '-'}</td>
+        <td>${focusProduct ? `<span class="tag tag-cloud" style="font-size:10px">${esc(focusProduct)}</span>` : '-'}</td>
         <td>${isAI ? '<span class="tag tag-ai">AI</span>' : ''}${isCloud ? '<span class="tag tag-cloud">Cloud</span>' : ''}</td>
         <td><button class="btn btn-secondary btn-sm" onclick="showDetailByFilteredIndex(${idx})">详情</button></td>
       </tr>`;
@@ -814,7 +984,8 @@ function goPage(p) {
 }
 
 function renderSelected(selected) {
-  document.getElementById('selectedCount').textContent = `共 ${selected.length} 条`;
+  const isHistory = document.getElementById('toggleSelectedHistory')?.checked || false;
+  document.getElementById('selectedCount').textContent = `共 ${selected.length} 条${isHistory ? '（历史全量）' : ''}`;
   if (!selected.length) {
     document.getElementById('selectedItems').innerHTML = '<div style="padding:20px;color:var(--text-dim)">今日无满足条件的精选话题</div>';
     return;
@@ -825,6 +996,7 @@ function renderSelected(selected) {
     const tcloud = pf(r['与腾讯云结合度']);
     const priority = r['发布优先级'] || '';
     const prioClass = priority.startsWith('P0') ? 'tag-p0' : 'tag-p1';
+    const dateTag = r['采集日期'] && isHistory ? `<span class="tag" style="background:rgba(99,102,241,0.1);color:var(--accent);font-size:11px">${esc(r['采集日期'])}</span>` : '';
     const globalIdx = allRecords.indexOf(r);
     return `
       <div class="card" style="margin-bottom:12px;cursor:pointer" onclick="showDetailByIndex(${globalIdx >= 0 ? globalIdx : i})">
@@ -834,10 +1006,11 @@ function renderSelected(selected) {
             <div style="font-size:11px;color:var(--text-dim);margin-top:4px">综合分</div>
           </div>
           <div style="flex:1">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
               <span class="tag ${prioClass}">${esc(priority.split(' ')[0])}</span>
               <span class="tag tag-source">${esc(r['来源Key'] || '')}</span>
               ${tcloud >= 5 ? `<span class="tag tag-cloud">☁️ 结合度 ${tcloud}</span>` : ''}
+              ${dateTag}
             </div>
             <h3 style="font-size:15px;margin-bottom:6px">
               <a href="${esc(r['链接'] || '#')}" target="_blank">${esc(r['标题'] || '')}</a>
@@ -869,6 +1042,287 @@ function renderWritingPack(content) {
     : '<div style="color:var(--text-dim)">暂无写作包</div>';
 }
 
+function renderSocialActions(content) {
+  document.getElementById('socialContent').innerHTML = content
+    ? simpleMarkdown(content)
+    : '<div style="color:var(--text-dim)">暂无社媒互动推荐（需先运行数据采集）</div>';
+}
+
+// Action Center subtab switching
+function switchActionSubtab(sub) {
+  document.querySelectorAll('.action-subtab-content').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.action-subtab').forEach(el => el.classList.remove('active'));
+  const target = document.getElementById('action-subtab-' + sub);
+  if (target) target.style.display = 'block';
+  const btn = document.getElementById('subtab-btn-' + sub);
+  if (btn) btn.classList.add('active');
+  // 更新 hint
+  const hint = document.getElementById('actionHint');
+  if (hint) {
+    const hints = {
+      writing: '深度写作 = 需配套教程/部署实测的长内容（博客、实操教程、案例分析），产出周期 2-5 天',
+      drafts: '快速发布 = 热点+腾讯云产品，直接发 X(Twitter) + Discord。文案可一键复制，P0 今天发，P1 本周发。',
+      social: '社媒互动 = 去 X / Reddit / HN 的原帖下评论/引用，不是转发 GitHub。渠道：X > Discord > Reddit。',
+    };
+    hint.textContent = hints[sub] || '';
+  }
+}
+
+// Drafts rendering — 精简卡片式，直接展示「发什么+怎么发」
+function renderDrafts(drafts) {
+  const container = document.getElementById('draftsContent');
+  if (!drafts || drafts.length === 0) {
+    container.innerHTML = '<div style="padding:40px;text-align:center;color:var(--text-dim)">暂无产品 Draft（需先运行数据采集，且热点需命中 P0/P1 产品关联）</div>';
+    return;
+  }
+
+  // 解析所有 Draft 中的条目
+  let allCards = [];
+  drafts.forEach(draft => {
+    const product = draft.product || '未知产品';
+    const content = draft.content || '';
+    // 按 ## 分割出每条内容
+    const sections = content.split(/^## /m).filter(s => s.trim());
+    sections.forEach(sec => {
+      const lines = sec.split('\n');
+      const titleLine = lines[0] || '';
+      // 提取优先级和标题
+      const prioMatch = titleLine.match(/^(\d+)\.\s*(P\d)\s*·\s*(.+)/);
+      const prio = prioMatch ? prioMatch[2] : 'P1';
+      const title = prioMatch ? prioMatch[3].trim() : titleLine.replace(/^\d+\.\s*/, '').trim();
+      if (!title || title.startsWith('#')) return;
+
+      // 提取各字段
+      let writeWhat = '', postWhere = '', copyText = '', refLink = '', refTitle = '';
+      lines.forEach(line => {
+        if (line.startsWith('**写什么**:')) writeWhat = line.replace('**写什么**:', '').trim();
+        if (line.startsWith('**发到哪**:')) postWhere = line.replace('**发到哪**:', '').trim();
+        if (line.startsWith('> ')) copyText = line.replace('> ', '').trim();
+        const refMatch = line.match(/^\*参考:\s*\[([^\]]+)\]\(([^)]+)\)\*$/);
+        if (refMatch) { refTitle = refMatch[1]; refLink = refMatch[2]; }
+      });
+
+      allCards.push({ product, prio, title, writeWhat, postWhere, copyText, refLink, refTitle });
+    });
+  });
+
+  if (allCards.length === 0) {
+    container.innerHTML = '<div style="padding:40px;text-align:center;color:var(--text-dim)">暂无可发布的内容</div>';
+    return;
+  }
+
+  // 按优先级排序 P0 > P1
+  allCards.sort((a, b) => a.prio.localeCompare(b.prio));
+
+  let html = `<div style="padding:0 20px 12px;font-size:13px;color:var(--text-dim)">
+    共 ${allCards.length} 条待发布内容，按优先级排列
+  </div>`;
+
+  allCards.forEach((card, i) => {
+    const prioClass = card.prio === 'P0' ? 'tag-p0' : 'tag-p1';
+    const prioLabel = card.prio === 'P0' ? '🔴 今天发' : '🟡 本周发';
+    html += `
+      <div class="card" style="margin:0 20px 12px;border-left:3px solid ${card.prio === 'P0' ? 'var(--red)' : 'var(--orange)'}">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+          <span class="tag ${prioClass}">${prioLabel}</span>
+          <span class="tag tag-cloud">${esc(card.product)}</span>
+          <span style="font-weight:600;font-size:14px">${esc(card.title.substring(0, 55))}</span>
+        </div>
+        ${card.writeWhat ? `<div style="margin-bottom:8px;font-size:13px"><strong style="color:var(--accent)">✍️ 写什么：</strong>${esc(card.writeWhat)}</div>` : ''}
+        ${card.postWhere ? `<div style="margin-bottom:8px;font-size:13px"><strong style="color:var(--green)">📍 发到哪：</strong>${esc(card.postWhere)}</div>` : ''}
+        ${card.copyText ? `
+          <div style="background:var(--bg);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:8px;font-size:13px;line-height:1.6;position:relative">
+            <strong style="color:var(--orange)">📋 参考文案：</strong>
+            <div style="margin-top:4px;color:var(--text)">${esc(card.copyText.substring(0, 280))}</div>
+            <button onclick="navigator.clipboard.writeText(this.parentElement.querySelector('div').textContent);showToast('✅ 已复制文案')"
+              style="position:absolute;top:8px;right:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:4px;color:var(--text-dim);cursor:pointer;padding:2px 8px;font-size:11px">复制</button>
+          </div>` : ''}
+        ${card.refLink ? `<div style="font-size:12px;color:var(--text-dim)">📎 参考热点：<a href="${esc(card.refLink)}" target="_blank">${esc(card.refTitle.substring(0, 50))}</a></div>` : ''}
+      </div>`;
+  });
+
+  container.innerHTML = html;
+}
+
+// toggleDraftExpand is no longer needed (removed in favor of flat card layout)
+
+// ════════════════════════════════════════════
+// History mode for Selected & KOC tabs
+// ════════════════════════════════════════════
+
+let historySelectedLoaded = false;
+let historySelectedRecords = [];
+let historyKocLoaded = false;
+let historyKocRecords = [];
+
+async function ensureHistoryData() {
+  // 复用全量历史数据加载逻辑
+  if (historyLoaded) return true;
+  try {
+    const resp = await fetch(DATA_BASE + 'all.json');
+    if (!resp.ok) return false;
+    const allData = await resp.json();
+    historyRecords = allData.records || [];
+    historySelectedRecords = allData.selected || [];
+    historyKocRecords = allData.koc_data || [];
+    historyLoaded = true;
+    historySelectedLoaded = true;
+    historyKocLoaded = true;
+    // 也填充日期筛选器
+    const dateSel = document.getElementById('filterDate');
+    if (dateSel.options.length <= 1) {
+      for (const d of (allData.dates || [])) {
+        const opt = document.createElement('option');
+        opt.value = d;
+        opt.textContent = d;
+        dateSel.appendChild(opt);
+      }
+    }
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+async function toggleSelectedHistoryMode() {
+  const isHistory = document.getElementById('toggleSelectedHistory').checked;
+  if (isHistory) {
+    const ok = await ensureHistoryData();
+    if (!ok) {
+      showToast('⚠️ 历史全量数据文件不存在');
+      document.getElementById('toggleSelectedHistory').checked = false;
+      return;
+    }
+    showToast(`📚 已加载 ${historySelectedRecords.length} 条历史精选话题`);
+    renderSelected(historySelectedRecords);
+  } else {
+    renderSelected(dateData?.selected || []);
+  }
+}
+
+async function toggleKocHistoryMode() {
+  const isHistory = document.getElementById('toggleKocHistory').checked;
+  if (isHistory) {
+    const ok = await ensureHistoryData();
+    if (!ok) {
+      showToast('⚠️ 历史全量数据文件不存在');
+      document.getElementById('toggleKocHistory').checked = false;
+      return;
+    }
+    showToast(`📚 已加载 ${historyKocRecords.length} 位历史 KOC 候选人`);
+    currentKocData = historyKocRecords;
+    document.getElementById('kocCount').textContent = `共 ${historyKocRecords.length} 位候选人（历史全量）`;
+    renderKocCards(historyKocRecords);
+  } else {
+    currentKocData = dateData?.koc_data || [];
+    renderKocData(dateData?.koc_data, dateData?.koc_markdown);
+  }
+}
+
+// KOC rendering
+let currentKocData = [];
+
+function renderKocData(kocData, kocMarkdown) {
+  if (kocData && Array.isArray(kocData) && kocData.length > 0) {
+    currentKocData = kocData;
+    document.getElementById('kocCount').textContent = `共 ${kocData.length} 位候选人`;
+    renderKocCards(kocData);
+  } else if (kocMarkdown) {
+    document.getElementById('kocTableWrapper').style.display = 'none';
+    const md = document.getElementById('kocMarkdownContent');
+    md.style.display = 'block';
+    md.innerHTML = simpleMarkdown(kocMarkdown);
+    document.getElementById('kocCount').textContent = '';
+  } else {
+    document.getElementById('kocTableWrapper').innerHTML =
+      '<div style="padding:40px;text-align:center;color:var(--text-dim)">暂无 KOC 数据（需先运行数据采集）</div>';
+  }
+}
+
+function renderKocCards(kocList) {
+  if (!kocList || kocList.length === 0) {
+    document.getElementById('kocTableWrapper').innerHTML =
+      '<div style="padding:40px;text-align:center;color:var(--text-dim)">暂无匹配的 KOC 候选人</div>';
+    return;
+  }
+
+  // 表格式呈现 — 信息紧凑、扫描高效
+  let html = `<table class="data-table">
+    <thead><tr>
+      <th>#</th><th>来源</th><th>名称</th><th>评分</th><th>类型</th>
+      <th>Followers</th><th>联系方式</th><th>关联项目</th><th>合作切入</th>
+    </tr></thead><tbody>`;
+
+  kocList.forEach((koc, i) => {
+    const score = parseFloat(koc.koc_score || 0);
+    const scoreClass = score >= 6 ? 'score-high' : score >= 4 ? 'score-mid' : 'score-low';
+    const platform = koc.source_platform || '';
+    const platformEmoji = platform === 'GitHub' ? '🐙' : platform === 'Twitter' ? '🐦' : platform === 'Reddit' ? '🔴' : '🌐';
+
+    // 联系方式（显示完整邮箱 + 社交链接）
+    let contactChips = '';
+    if (koc.email) contactChips += `<a href="mailto:${esc(koc.email)}" class="koc-tag" title="发送邮件">📧 ${esc(koc.email)}</a> `;
+    if (koc.twitter) contactChips += `<a href="https://x.com/${esc(koc.twitter)}" target="_blank" class="koc-tag">🐦 @${esc(koc.twitter)}</a> `;
+    if (koc.social_links && koc.social_links.length > 0) {
+      koc.social_links.slice(0, 3).forEach(sl => {
+        const e = {twitter:'🐦',linkedin:'💼',youtube:'📺',mastodon:'🦣',reddit:'🔴'}[sl.platform] || '🔗';
+        // 从 URL 中提取简短名称
+        let label = '';
+        try { label = new URL(sl.url).hostname.replace('www.','').split('.')[0]; } catch(_){}
+        contactChips += `<a href="${esc(sl.url)}" target="_blank" class="koc-tag" title="${esc(sl.url)}">${e} ${label || sl.platform}</a> `;
+      });
+    }
+    if (!contactChips) contactChips = '<span style="color:var(--text-dim)">暂无公开联系方式</span>';
+
+    // 关联项目（精简）
+    const project = koc.associated_project
+      ? `<a href="${esc(koc.associated_url || '#')}" target="_blank" style="font-size:12px">${esc(koc.associated_project.substring(0, 35))}</a>`
+      : '<span style="color:var(--text-dim)">—</span>';
+
+    // 合作切入（精简到一行）
+    const angle = koc.cooperation_angle
+      ? esc(koc.cooperation_angle.substring(0, 50))
+      : '<span style="color:var(--text-dim)">—</span>';
+
+    html += `<tr>
+      <td>${i + 1}</td>
+      <td><span class="koc-tag">${platformEmoji} ${esc(platform)}</span></td>
+      <td style="font-weight:500">
+        <a href="${esc(koc.profile_url || '#')}" target="_blank">${esc(koc.koc_name || koc.username)}</a>
+        ${koc.bio ? `<div style="font-size:11px;color:var(--text-dim);max-width:200px" class="truncate">${esc(koc.bio.substring(0, 60))}</div>` : ''}
+      </td>
+      <td><span class="score-badge ${scoreClass}" style="width:28px;height:28px;font-size:11px">${score.toFixed(1)}</span></td>
+      <td style="font-size:12px">${esc(koc.koc_type || '')}</td>
+      <td style="text-align:right">${koc.followers ? koc.followers.toLocaleString() : '—'}</td>
+      <td style="max-width:260px;white-space:normal;line-height:1.6">${contactChips}</td>
+      <td>${project}</td>
+      <td style="font-size:12px;max-width:180px">${angle}</td>
+    </tr>`;
+  });
+
+  html += '</tbody></table>';
+  document.getElementById('kocTableWrapper').innerHTML = html;
+}
+
+function filterKocTable() {
+  const search = (document.getElementById('kocSearch').value || '').toLowerCase();
+  const srcFilter = document.getElementById('kocSourceFilter').value;
+  const scoreFilter = parseFloat(document.getElementById('kocScoreFilter').value || 0);
+
+  let filtered = currentKocData.filter(koc => {
+    if (srcFilter && koc.source_platform !== srcFilter) return false;
+    if (scoreFilter && (koc.koc_score || 0) < scoreFilter) return false;
+    if (search) {
+      const text = [koc.koc_name, koc.username, koc.bio, koc.associated_project, koc.cooperation_angle].join(' ').toLowerCase();
+      if (!text.includes(search)) return false;
+    }
+    return true;
+  });
+
+  document.getElementById('kocCount').textContent = `${filtered.length} / ${currentKocData.length} 位候选人`;
+  renderKocCards(filtered);
+}
+
 // ════════════════════════════════════════════
 // Filters
 // ════════════════════════════════════════════
@@ -880,22 +1334,111 @@ function applyFilters() {
   const aiOnly = document.getElementById('filterAI').checked;
   const cloudOnly = document.getElementById('filterCloud').checked;
   const minScore = parseFloat(document.getElementById('filterScore').value) || 0;
+  const dateFilter = document.getElementById('filterDate').value;
+  const productFilter = document.getElementById('filterProduct').value;
 
-  let filtered = allRecords;
+  let baseRecords = isHistoryMode ? historyRecords : allRecords;
+  let filtered = baseRecords;
+
+  if (dateFilter) {
+    filtered = filtered.filter(r => r['采集日期'] === dateFilter);
+  }
   if (query) {
     filtered = filtered.filter(r => {
-      const searchable = [r['标题'], r['中文简介'], r['技术标签'], r['产品标签'], r['话题分类'], r['来源Key']].join(' ').toLowerCase();
+      const searchable = [r['标题'], r['中文简介'], r['技术标签'], r['产品标签'], r['话题分类'], r['来源Key'], r['腾讯云结合点'], r['官方号主推产品']].join(' ').toLowerCase();
       return searchable.includes(query);
     });
   }
   if (source) filtered = filtered.filter(r => r['来源Key'] === source);
   if (priority) filtered = filtered.filter(r => (r['发布优先级'] || '').startsWith(priority));
+  if (productFilter) {
+    filtered = filtered.filter(r => {
+      const tags = (r['产品标签'] || '') + ',' + (r['官方号主推产品'] || '');
+      return tags.includes(productFilter);
+    });
+  }
   if (aiOnly) filtered = filtered.filter(r => r['是否AI相关'] === '是');
   if (cloudOnly) filtered = filtered.filter(r => r['是否云行业'] === '是');
   if (minScore > 0) filtered = filtered.filter(r => pf(r['综合评分']) >= minScore);
 
   currentPage = 1;
   renderTable(filtered);
+}
+
+async function toggleHistoryMode() {
+  isHistoryMode = document.getElementById('toggleHistory').checked;
+  const dateSel = document.getElementById('filterDate');
+  dateSel.style.display = isHistoryMode ? 'inline-block' : 'none';
+
+  if (isHistoryMode && !historyLoaded) {
+    // 加载历史全量数据
+    document.getElementById('dataTableWrapper').innerHTML = '<div class="loading-overlay"><span class="spinner"></span>&nbsp;&nbsp;加载历史全量数据...</div>';
+    try {
+      const resp = await fetch(DATA_BASE + 'all.json');
+      if (resp.ok) {
+        const allData = await resp.json();
+        historyRecords = allData.records || [];
+        historyLoaded = true;
+        // 填充日期筛选器
+        dateSel.innerHTML = '<option value="">所有日期</option>';
+        for (const d of (allData.dates || [])) {
+          const opt = document.createElement('option');
+          opt.value = d;
+          opt.textContent = d;
+          dateSel.appendChild(opt);
+        }
+        // 填充产品筛选器
+        populateProductFilter(historyRecords);
+        showToast(`📚 已加载 ${historyRecords.length} 条历史全量数据`);
+      } else {
+        showToast('⚠️ 历史全量数据文件不存在');
+        document.getElementById('toggleHistory').checked = false;
+        isHistoryMode = false;
+        dateSel.style.display = 'none';
+      }
+    } catch (e) {
+      showToast('历史数据加载失败: ' + e.message);
+      document.getElementById('toggleHistory').checked = false;
+      isHistoryMode = false;
+      dateSel.style.display = 'none';
+    }
+  } else if (!isHistoryMode) {
+    // 切回当天数据时也要填充产品筛选器
+    populateProductFilter(allRecords);
+  }
+  currentPage = 1;
+  applyFilters();
+}
+
+function populateProductFilter(records) {
+  const sel = document.getElementById('filterProduct');
+  const current = sel.value;
+  const productSet = new Set();
+  for (const r of records) {
+    for (const tag of (r['产品标签'] || '').split(',')) {
+      const t = tag.trim();
+      if (t) productSet.add(t);
+    }
+    const focus = (r['官方号主推产品'] || '').trim();
+    if (focus) productSet.add(focus);
+  }
+  sel.innerHTML = '<option value="">所有产品</option>';
+  const tcProducts = ['Lighthouse','EdgeOne','CodeBuddy','Hunyuan','Hunyuan3D','COS','TDSQL-C','CVM','GPU CVM','TRTC','IM','ES','SCF','CDN','SMS','SES','CBS'];
+  const sorted = [...productSet].sort((a, b) => {
+    const ai = tcProducts.indexOf(a);
+    const bi = tcProducts.indexOf(b);
+    if (ai >= 0 && bi >= 0) return ai - bi;
+    if (ai >= 0) return -1;
+    if (bi >= 0) return 1;
+    return a.localeCompare(b);
+  });
+  for (const p of sorted) {
+    const opt = document.createElement('option');
+    opt.value = p;
+    opt.textContent = p;
+    sel.appendChild(opt);
+  }
+  sel.value = current;
 }
 
 // ════════════════════════════════════════════

@@ -131,6 +131,63 @@ SELECTED_TABLE_SCHEMA = {
     "f6gxJX": "备注",
 }
 
+# ── KOC 建联库表 ────────────────────────────────────────
+# ⚠️ 请替换为你的腾讯文档多维表格 KOC 子表的 Webhook URL
+# 创建方法见本文件底部 KOC_SETUP_GUIDE
+KOC_TABLE_WEBHOOK = os.environ.get(
+    "KOC_WEBHOOK_URL",
+    "",  # 留空 → 跳过 KOC 写入; 设置后自动启用
+)
+
+# KOC 表 schema: 字段ID → 中文名
+# ⚠️ 请在腾讯文档中新建 "KOC建联库" 子表，添加以下 19 个字段后，
+#     从 Webhook 设置中获取字段 ID 替换下面的占位值
+KOC_TABLE_SCHEMA = {
+    # 占位字段ID (创建子表后请替换为真实字段ID)
+    "koc_f01": "站长/KOC名称",
+    "koc_f02": "链接",
+    "koc_f03": "站长类型",
+    "koc_f04": "内容定位",
+    "koc_f05": "覆盖地域",
+    "koc_f06": "覆盖平台",
+    "koc_f07": "核心受众",
+    "koc_f08": "社媒表现",
+    "koc_f09": "联系方式",
+    "koc_f10": "导流形式",
+    "koc_f11": "内容参考",
+    "koc_f12": "当前主要推广项目",
+    "koc_f13": "已知推广激励（市场参考）",
+    "koc_f14": "备注",
+    "koc_f15": "内容相关性",
+    "koc_f16": "用户质量",
+    "koc_f17": "导流意图",
+    "koc_f18": "合作可执行性",
+    "koc_f19": "综合评分",
+}
+
+# KOC 字段类型
+KOC_FIELD_TYPES = {
+    "站长/KOC名称": "text",
+    "链接": "text",
+    "站长类型": "text",
+    "内容定位": "text",
+    "覆盖地域": "text",
+    "覆盖平台": "text",
+    "核心受众": "text",
+    "社媒表现": "text",
+    "联系方式": "text",
+    "导流形式": "text",
+    "内容参考": "text",
+    "当前主要推广项目": "text",
+    "已知推广激励（市场参考）": "text",
+    "备注": "text",
+    "内容相关性": "text",
+    "用户质量": "text",
+    "导流意图": "text",
+    "合作可执行性": "text",
+    "综合评分": "number",
+}
+
 
 # ═══════════════════════════════════════════════════════════
 # CSV 列名 → 腾讯文档字段名 的映射
@@ -198,6 +255,8 @@ COLUMN_LABEL_MAP = {
     "🤓 极客社区": "极客社区",
     "📰 HF 每日论文": "HF每日论文",
     "📬 AI 内参热点": "AI内参热点",
+    "🌐 全网搜索": "全网搜索",
+    "🐦 社媒讨论": "社媒讨论",
 }
 
 
@@ -730,6 +789,176 @@ def sync_selected_table(output_dir, date_str, dry_run=False, force=False):
 
 
 # ═══════════════════════════════════════════════════════════
+# KOC 建联库同步
+# ═══════════════════════════════════════════════════════════
+
+
+def find_koc_json_for_date(output_dir, date_str):
+    # type: (str, str) -> Optional[str]
+    """找到某天的 KOC JSON 文件"""
+    dated_file = os.path.join(output_dir, f"KOC建联候选库_{date_str}.json")
+    if os.path.exists(dated_file):
+        return dated_file
+    latest_file = os.path.join(output_dir, "今日KOC建联候选库.json")
+    if os.path.exists(latest_file):
+        return latest_file
+    return None
+
+
+def koc_record_to_doc_record(koc, field_mapping):
+    # type: (Dict[str, Any], Dict[str, tuple]) -> Optional[Dict[str, Any]]
+    """将一条 KOC JSON 记录转换为腾讯文档格式"""
+    values = {}
+
+    def add(field_name, raw_value):
+        if field_name not in field_mapping:
+            return
+        fid, dtype = field_mapping[field_name]
+        formatted = format_value(raw_value, dtype)
+        if formatted is not None:
+            values[fid] = formatted
+
+    name = koc.get("koc_name", "") or koc.get("username", "")
+    if not name:
+        return None
+
+    platform = koc.get("source_platform", "")
+    followers = koc.get("followers", 0)
+    bio = koc.get("bio", "")
+    koc_score = koc.get("koc_score", 0) or 0
+
+    social_perf = ""
+    if followers >= 1:
+        social_perf = f"{followers} followers"
+    if koc.get("public_repos"):
+        social_perf += f", {koc['public_repos']} repos"
+
+    content_relevance = "高" if koc_score >= 7 else "中" if koc_score >= 4 else "低"
+    executability = "高" if koc.get("email") else "中" if koc.get("twitter") else "低"
+
+    add("站长/KOC名称", name)
+    add("链接", koc.get("profile_url", ""))
+    add("站长类型", koc.get("koc_type", ""))
+    add("内容定位", bio[:80] if bio else "")
+    add("覆盖地域", koc.get("location", "") or "待确认")
+    add("覆盖平台", platform)
+    add("核心受众", "开发者" if platform == "GitHub" else "技术讨论者")
+    add("社媒表现", social_perf)
+    add("联系方式", koc.get("contact_info", ""))
+    add("导流形式", "技术内容/教程" if platform == "GitHub" else "社媒讨论")
+    add("内容参考", (koc.get("associated_project", "") or "")[:50])
+    add("当前主要推广项目", "")
+    add("已知推广激励（市场参考）", "")
+    add("备注", koc.get("cooperation_angle", ""))
+    add("内容相关性", content_relevance)
+    add("用户质量", "高" if followers >= 100 else "中" if followers >= 10 else "待评估")
+    add("导流意图", "高" if koc.get("email") else "中")
+    add("合作可执行性", executability)
+    add("综合评分", koc_score)
+
+    if len(values) < 3:
+        return None
+    return {"values": values}
+
+
+def sync_koc_table(output_dir, date_str, dry_run=False, force=False):
+    # type: (str, str, bool, bool) -> Dict[str, Any]
+    """同步 KOC 建联库到腾讯文档"""
+    print(f"\n{'='*55}")
+    print(f"  🤝 KOC 建联库 → 腾讯文档多维表格")
+    print(f"{'='*55}")
+    print(f"  日期: {date_str}")
+
+    if not KOC_TABLE_WEBHOOK:
+        msg = (
+            "  ⏭️  KOC Webhook 未配置，跳过写入。\n"
+            "  📌 配置方法:\n"
+            "     1. 在你的腾讯文档多维表格中新建「KOC建联库」子表\n"
+            "     2. 添加 19 个字段（见 KOC_TABLE_SCHEMA）\n"
+            "     3. 在子表「自动化」→「Webhook」中创建写入 Webhook\n"
+            "     4. 设置: export KOC_WEBHOOK_URL='你的webhook地址'\n"
+            "     5. 重新运行本脚本即可"
+        )
+        print(msg)
+        return {"success": True, "skipped": True, "message": msg}
+
+    if not force and not dry_run:
+        prev = _check_already_written(date_str, "koc")
+        if prev:
+            msg = f"  ⏭️  KOC 已于 {prev.get('written_at', '?')} 写入过 {prev.get('records_count', '?')} 条，跳过。"
+            print(msg)
+            return {"success": True, "skipped": True, "message": msg}
+
+    koc_path = find_koc_json_for_date(output_dir, date_str)
+    if not koc_path:
+        msg = f"  ❌ 未找到 {date_str} 的 KOC JSON 文件"
+        print(msg)
+        return {"success": False, "message": msg}
+
+    print(f"  数据源: {os.path.basename(koc_path)}")
+
+    try:
+        with open(koc_path, "r", encoding="utf-8") as f:
+            koc_list = json.load(f)
+    except Exception as e:
+        msg = f"  ❌ 读取 KOC JSON 失败: {e}"
+        print(msg)
+        return {"success": False, "message": msg}
+
+    if not koc_list:
+        msg = "  ℹ️  今日无 KOC 候选人"
+        print(msg)
+        return {"success": True, "records_count": 0, "message": msg}
+
+    print(f"  KOC 候选人: {len(koc_list)} 位")
+
+    title_to_id = {v: k for k, v in KOC_TABLE_SCHEMA.items()}
+    field_mapping = {}
+    for field_name, fid in title_to_id.items():
+        dtype = KOC_FIELD_TYPES.get(field_name, "text")
+        field_mapping[field_name] = (fid, dtype)
+
+    records = []
+    for koc in koc_list:
+        rec = koc_record_to_doc_record(koc, field_mapping)
+        if rec:
+            records.append(rec)
+
+    if not records:
+        msg = "  ❌ 没有有效 KOC 记录可写入"
+        print(msg)
+        return {"success": False, "message": msg}
+
+    print(f"  有效记录: {len(records)} 条")
+    for koc in koc_list[:5]:
+        score = koc.get("koc_score", 0) or 0
+        name = koc.get("koc_name", "") or koc.get("username", "")
+        platform = koc.get("source_platform", "")
+        print(f"    ⭐ {name} ({platform}, 评分:{score:.1f})")
+
+    if dry_run:
+        print(f"\n  🔍 DRY RUN - 预览前 2 条:")
+        for i, rec in enumerate(records[:2]):
+            print(f"    [{i+1}] {json.dumps(rec, ensure_ascii=False)[:200]}...")
+        return {"success": True, "dry_run": True, "records_count": len(records)}
+
+    print(f"\n  📤 正在写入 KOC 数据...")
+    written, errors = send_records_to_webhook(KOC_TABLE_WEBHOOK, records)
+
+    if written > 0:
+        _record_write(date_str, "koc", written, True)
+        msg = f"  ✅ KOC 建联库: 成功写入 {written}/{len(records)} 条"
+        if errors:
+            msg += f"\n  ⚠️  部分失败:\n    " + "\n    ".join(errors)
+        print(msg)
+        return {"success": True, "records_count": written, "total": len(records)}
+    else:
+        msg = f"  ❌ KOC 写入失败 (0/{len(records)} 条)\n    " + "\n    ".join(errors)
+        print(msg)
+        return {"success": False, "message": msg, "errors": errors}
+
+
+# ═══════════════════════════════════════════════════════════
 # 每日总结功能
 # ═══════════════════════════════════════════════════════════
 
@@ -797,7 +1026,8 @@ def generate_daily_summary(output_dir, date_str):
     source_display = {
         "hackernews": "HackerNews", "github": "GitHub", "producthunt": "ProductHunt",
         "huggingface": "HuggingFace", "v2ex": "V2EX", "36kr": "36氪",
-        "ai_newsletters": "AI Newsletter",
+        "ai_newsletters": "AI Newsletter", "web_search": "全网搜索",
+        "twitter_reddit": "社媒讨论",
     }
 
     # ── 生成今日核心洞察 ──
@@ -925,7 +1155,7 @@ def generate_daily_summary(output_dir, date_str):
     L.append("## 📡 来源概况")
     L.append("")
     source_parts = []
-    for src in ["hackernews", "github", "producthunt", "huggingface", "v2ex", "36kr", "ai_newsletters"]:
+    for src in ["hackernews", "github", "producthunt", "huggingface", "v2ex", "36kr", "ai_newsletters", "web_search", "twitter_reddit"]:
         cnt = by_source.get(src, 0)
         if cnt > 0:
             source_parts.append(f"{source_display.get(src, src)} {cnt}")
@@ -1005,6 +1235,18 @@ def main():
         default=False,
         help="不生成每日总结",
     )
+    parser.add_argument(
+        "--koc-only",
+        action="store_true",
+        default=False,
+        help="只写入 KOC 建联库表",
+    )
+    parser.add_argument(
+        "--no-koc",
+        action="store_true",
+        default=False,
+        help="不写入 KOC 建联库表",
+    )
 
     args = parser.parse_args()
 
@@ -1043,6 +1285,19 @@ def main():
         print("\n✅ 总结生成完毕（--summary-only 模式）")
         return
 
+    # 如果是 --koc-only 模式
+    if args.koc_only:
+        koc_result = sync_koc_table(
+            output_dir, date_str,
+            dry_run=args.dry_run,
+            force=args.force,
+        )
+        results["koc"] = koc_result
+        print(f"\n{'='*55}")
+        print(f"  🏁 KOC 同步完成")
+        print(f"{'='*55}")
+        return results
+
     # 写入全量热点表
     if not args.selected_only:
         full_result = sync_full_table(
@@ -1060,6 +1315,15 @@ def main():
             force=args.force,
         )
         results["selected"] = selected_result
+
+    # 写入 KOC 建联库表
+    if not args.no_koc and not args.full_only and not args.selected_only:
+        koc_result = sync_koc_table(
+            output_dir, date_str,
+            dry_run=args.dry_run,
+            force=args.force,
+        )
+        results["koc"] = koc_result
 
     # 总结
     print(f"\n{'='*55}")

@@ -203,7 +203,10 @@ PRODUCT_TAGS = {
     "ES": ["elasticsearch service", "腾讯云es"],
     "CBS": ["云硬盘", "cloud block storage"],
     "Hunyuan3D": ["hunyuan3d", "混元3d", "腾讯混元生3d"],
+    "Hunyuan": ["hunyuan", "混元", "腾讯混元"],
     "CodeBuddy": ["codebuddy"],
+    "SCF": ["scf", "云函数", "serverless cloud function"],
+    "GPU CVM": ["gpu cvm", "gpu 云服务器"],
     "云直播": ["腾讯云直播", "tencent cloud live"],
     # —— 知名 AI 产品/模型（用于产品标签） ——
     "ChatGPT": ["chatgpt"],
@@ -315,6 +318,12 @@ TCLOUD_PRODUCT_RULES: List[Dict[str, Any]] = [
         "explicit": ["lighthouse", "tencent cloud lighthouse", "轻量应用服务器"],
         "min_hits": 2,
         "score_weight": 3.2,
+        "competitors": ["DigitalOcean Droplets", "AWS Lightsail", "Vultr", "Linode"],
+        "marketing_angles": [
+            "5 分钟部署 XX 开源项目：Lighthouse 一键应用实战",
+            "自托管 AI 工具全攻略：Lighthouse + Docker Compose",
+            "Lighthouse vs DigitalOcean：开发者个人项目部署对比",
+        ],
     },
     # -- EdgeOne 边缘安全加速平台 --
     # 场景：网站/API/静态站点/Web 应用的加速与防护；前端部署
@@ -338,6 +347,12 @@ TCLOUD_PRODUCT_RULES: List[Dict[str, Any]] = [
         "explicit": ["edgeone", "tencent edgeone", "边缘安全加速平台", "edge pages"],
         "min_hits": 2,
         "score_weight": 3.0,
+        "competitors": ["Cloudflare", "AWS CloudFront + WAF", "Vercel", "Netlify", "Fastly"],
+        "marketing_angles": [
+            "EdgeOne Pages：前端项目零配置全球部署",
+            "EdgeOne vs Cloudflare：CDN + 安全一站式对比",
+            "用 EdgeOne 边缘函数实现 A/B 测试和动态路由",
+        ],
     },
     # -- CodeBuddy AI 智能编码 --
     # 场景：AI 编码工具、代码助手、IDE AI 插件（不是泛泛的"开发工具"）
@@ -404,6 +419,12 @@ TCLOUD_PRODUCT_RULES: List[Dict[str, Any]] = [
         "explicit": ["tencent cos", "腾讯云cos", "cloud object storage"],
         "min_hits": 2,
         "score_weight": 2.2,
+        "competitors": ["Amazon S3", "Azure Blob", "Google Cloud Storage", "Cloudflare R2", "阿里云 OSS"],
+        "marketing_angles": [
+            "AI 训练数据管理：用 COS 存储和版本化大规模数据集",
+            "COS vs S3：对象存储功能和价格对比",
+            "RAG 知识库文件管理：COS + 向量数据库实战",
+        ],
     },
     # -- TDSQL-C 云原生数据库 --
     # 场景：需要 MySQL/PostgreSQL 的应用后端
@@ -423,6 +444,12 @@ TCLOUD_PRODUCT_RULES: List[Dict[str, Any]] = [
         "explicit": ["tdsql", "tdsql-c"],
         "min_hits": 2,
         "score_weight": 2.2,
+        "competitors": ["Amazon Aurora", "Azure Database", "Google Cloud SQL", "PlanetScale", "Neon", "CockroachDB"],
+        "marketing_angles": [
+            "TDSQL-C vs Aurora：云原生数据库性能对比",
+            "AI 应用的数据库选型：TDSQL-C 的 Serverless 弹性实践",
+            "从 RDS 迁移到 TDSQL-C 的最佳路径",
+        ],
     },
     # -- ES Elasticsearch Service --
     # 场景：搜索、日志分析、RAG 检索
@@ -485,6 +512,12 @@ TCLOUD_PRODUCT_RULES: List[Dict[str, Any]] = [
         "explicit": ["trtc", "腾讯实时音视频"],
         "min_hits": 2,
         "score_weight": 2.2,
+        "competitors": ["Agora (声网)", "Twilio", "Vonage", "Amazon Chime SDK", "Daily.co"],
+        "marketing_angles": [
+            "TRTC 实战：30 分钟构建 AI 语音通话应用",
+            "TRTC vs Agora：实时音视频 SDK 对比评测",
+            "WebRTC 应用开发：用 TRTC 实现低延迟互动直播",
+        ],
     },
     # -- 云直播 --
     # 场景：直播推流、视频直播
@@ -540,6 +573,11 @@ TCLOUD_PRODUCT_RULES: List[Dict[str, Any]] = [
         "explicit": ["腾讯云服务器", "tencent cvm", "腾讯云cvm"],
         "min_hits": 2,
         "score_weight": 2.0,
+        "competitors": ["Amazon EC2", "Azure Virtual Machines", "GCP Compute Engine", "阿里云 ECS"],
+        "marketing_angles": [
+            "CVM 实例选型指南：从开发测试到生产环境",
+            "CVM vs EC2：云服务器性价比对比",
+        ],
     },
     # -- SMS 短信 --
     {
@@ -582,6 +620,103 @@ TCLOUD_PRODUCT_RULES: List[Dict[str, Any]] = [
         "explicit": ["腾讯云硬盘", "tencent cbs"],
         "min_hits": 1,
         "score_weight": 1.5,
+    },
+    # -- SCF 云函数 (Serverless Cloud Function) --
+    # 场景：事件驱动的函数计算、API 后端、定时任务、Webhook 处理、轻量后端
+    # 竞品：AWS Lambda, Azure Functions, Google Cloud Functions, Cloudflare Workers, Vercel Serverless
+    {
+        "short": "SCF",
+        "english_name": "Serverless Cloud Function (SCF)",
+        "evidence_type": "scenario",
+        "official_anchor": "https://www.tencentcloud.com/products/scf",
+        "description": "事件驱动的无服务器计算服务，无需管理服务器即可运行代码。按实际调用量计费，支持多语言。",
+        "angle_cn": "这个项目/场景可以用 SCF 云函数做事件驱动的无服务器后端，免运维按需计费",
+        "angle_en": "Use SCF for event-driven serverless backends — zero ops, pay-per-use.",
+        "keywords": [
+            "scf", "cloud function", "云函数",
+            # 应用场景关键词：serverless / 函数计算
+            "serverless", "function as a service", "faas",
+            "lambda", "cloud functions", "event-driven",
+            "webhook", "cron job", "scheduled task",
+            "api backend", "microservice",
+            # 竞品名（命中时说明场景匹配）
+            "aws lambda", "azure functions", "google cloud functions",
+        ],
+        "explicit": ["scf", "腾讯云函数", "tencent cloud function", "serverless cloud function"],
+        "min_hits": 2,
+        "score_weight": 2.5,
+        "competitors": ["AWS Lambda", "Azure Functions", "Google Cloud Functions", "Cloudflare Workers"],
+        "marketing_angles": [
+            "Serverless 架构实践：用 SCF 构建事件驱动后端",
+            "从 Lambda 迁移到 SCF 的最佳实践",
+            "SCF + API Gateway：快速搭建 RESTful API",
+        ],
+    },
+    # -- GPU CVM (GPU 云服务器) --
+    # 场景：AI 模型训练、推理加速、3D 渲染、科学计算、大规模并行计算
+    # 竞品：AWS EC2 P5/G6, Azure NC/ND, GCP A3/G2, Lambda Labs, CoreWeave
+    {
+        "short": "GPU CVM",
+        "english_name": "GPU Cloud Virtual Machine",
+        "evidence_type": "scenario",
+        "official_anchor": "https://www.tencentcloud.com/products/gpu",
+        "description": "搭载 NVIDIA A100/H100/H800 GPU 的高性能计算实例，适用于 AI 训练、推理、渲染等场景。",
+        "angle_cn": "AI 模型训练/推理/3D 渲染等 GPU 密集型任务可以用腾讯云 GPU 服务器",
+        "angle_en": "GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "keywords": [
+            "gpu cvm", "gpu 云服务器", "gpu server",
+            # GPU / AI 训练 / 推理场景
+            "gpu", "nvidia", "a100", "h100", "h800", "cuda",
+            "model training", "training cluster", "distributed training",
+            "gpu inference", "inference server",
+            "fine-tune", "fine-tuning", "pretraining", "pre-training",
+            "3d rendering", "rendering farm",
+            "scientific computing", "hpc", "high performance computing",
+            # 竞品信号
+            "lambda labs", "coreweave", "vast.ai", "runpod",
+        ],
+        "explicit": ["gpu cvm", "腾讯云gpu", "tencent gpu", "gpu 云服务器"],
+        "min_hits": 2,
+        "score_weight": 3.0,
+        "competitors": ["AWS EC2 P5/G6", "Azure NC/ND Series", "GCP A3/G2", "Lambda Labs", "CoreWeave"],
+        "marketing_angles": [
+            "大模型训练实战：用腾讯云 GPU CVM 跑通分布式训练",
+            "GPU 推理性价比对比：腾讯云 vs AWS vs GCP",
+            "从 RunPod/Lambda 迁移到腾讯云 GPU 的成本分析",
+        ],
+    },
+    # -- Hunyuan 腾讯混元大模型 --
+    # 场景：AI 大模型、文本生成、多模态、AI 应用开发（区别于 Hunyuan3D 的 3D 专项）
+    # 竞品：GPT-4/o, Claude, Gemini, DeepSeek, Llama, Qwen
+    {
+        "short": "Hunyuan",
+        "english_name": "Hunyuan (Tencent Cloud)",
+        "evidence_type": "scenario",
+        "official_anchor": "https://www.tencentcloud.com/products/hunyuan",
+        "description": "腾讯自研大语言模型，支持文本生成、多模态理解、代码生成、知识问答等能力。提供 API 和私有化部署。",
+        "angle_cn": "可以用腾讯混元大模型替代/对比 GPT-4/Claude 做 AI 应用开发",
+        "angle_en": "Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "keywords": [
+            "hunyuan", "混元", "腾讯混元",
+            # 大模型 / LLM 通用场景（但不包含 3D 专项，由 Hunyuan3D 规则覆盖）
+            "大模型", "llm", "large language model",
+            "text generation", "multimodal", "多模态",
+            "ai application", "ai api", "model api",
+            "chat completion", "function calling",
+            "knowledge qa", "知识问答",
+            # 竞品对比信号
+            "gpt-4", "gpt-4o", "gpt-4.1", "claude", "gemini",
+            "deepseek", "qwen", "llama",
+        ],
+        "explicit": ["hunyuan", "混元大模型", "腾讯混元", "tencent hunyuan"],
+        "min_hits": 3,  # 设高一点避免所有 AI 文章都命中
+        "score_weight": 2.8,
+        "competitors": ["GPT-4/GPT-4o (OpenAI)", "Claude (Anthropic)", "Gemini (Google)", "DeepSeek", "Qwen (Alibaba)", "Llama (Meta)"],
+        "marketing_angles": [
+            "腾讯混元 vs GPT-4o：开发者视角的对比评测",
+            "用混元大模型 API 构建智能客服/知识问答",
+            "混元 + SCF：Serverless AI 应用实战",
+        ],
     },
 ]
 
