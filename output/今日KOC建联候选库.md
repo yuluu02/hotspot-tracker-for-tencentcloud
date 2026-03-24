@@ -8,6 +8,38 @@
 
 ---
 
+## ⭐ 高价值 KOC（评分 ≥ 6）
+
+### 1. FujiwaraChoki (GitHub)
+
+- 🔗 主页：https://github.com/FujiwaraChoki
+- 📊 评分：9.0 · 类型：开源开发者
+- 👥 Followers：1667
+- 📝 Bio：hi
+- 📬 联系方式：📧 fujicodes@proton.me | 🐦 @DevBySami | 📺 https://youtube.com/@fuji_codes | 🔗 https://x.com/DevBySami | 🔗 https://samihindi.com | 🔗 https://shiori.ai
+- 💡 合作切入角度：高影响力开发者(1667 followers)，适合深度合作 | 有 Twitter(@DevBySami)，可直接 DM 建联 | 关联项目：FujiwaraChoki/MoneyPrinterV2 - Automate 
+- 🔗 关联项目：[FujiwaraChoki/MoneyPrinterV2 - Automate the proces](https://github.com/FujiwaraChoki/MoneyPrinterV2)
+
+### 2. Bytedance Inc. (GitHub)
+
+- 🔗 主页：https://github.com/bytedance
+- 📊 评分：8.5 · 类型：开源组织
+- 👥 Followers：16094
+- 📬 联系方式：🐦 @ByteDanceOSS | 🔗 https://twitter.com/ByteDanceOSS
+- 💡 合作切入角度：高影响力开发者(16094 followers)，适合深度合作 | 有 Twitter(@ByteDanceOSS)，可直接 DM 建联 | 关联项目：bytedance/deer-flow - An open-source Sup
+- 🔗 关联项目：[bytedance/deer-flow - An open-source SuperAgent ha](https://github.com/bytedance/deer-flow)
+
+### 3. Crosstalk Solutions (GitHub)
+
+- 🔗 主页：https://github.com/Crosstalk-Solutions
+- 📊 评分：6.0 · 类型：开源组织
+- 👥 Followers：187
+- 📬 联系方式：📧 info@crosstalksolutions.com | 🐦 @crosstalksol | 🔗 https://twitter.com/crosstalksol
+- 💡 合作切入角度：活跃开发者(187 followers)，适合技术内容共创 | 有 Twitter(@crosstalksol)，可直接 DM 建联 | 关联项目：Crosstalk-Solutions/project-nomad - Proj
+- 🔗 关联项目：[Crosstalk-Solutions/project-nomad - Project N.O.M.](https://github.com/Crosstalk-Solutions/project-nomad)
+
+---
+
 ## 🐙 GitHub 开源开发者
 
 - **FujiwaraChoki** (0 followers) — [FujiwaraChoki](https://github.com/FujiwaraChoki) · 📧 fujicodes@proton.me | 📺 https://youtube.com/@fuji_codes | 
