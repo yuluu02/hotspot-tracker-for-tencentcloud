@@ -1,0 +1,945 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "bytedance/deer-flow - An open-source SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
+    "url": "https://github.com/bytedance/deer-flow",
+    "heat": "43,858 stars",
+    "time": "Today",
+    "developer_name": "bytedance",
+    "developer_url": "https://github.com/bytedance",
+    "developer_email": "",
+    "today_stars": "4,346 stars today",
+    "language": "Python",
+    "summary": "An open-source SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
+    "content": "# 🦌 DeerFlow - 2.0\n\nEnglish | 中文 | 日本語 | Français | Русский\n\n[](./backend/pyproject.toml)\n[](./Makefile)\n[](./LICENSE)\n\n   \n> On February 28th, 2026, DeerFlow claimed the 🏆 #1 spot on GitHub Trending following the launch of version 2. Thanks a million to our incredible community — you made this happen! 💪🔥\n\nDeerFlow (**D**eep **E**xploration and **E**fficient **R**esearch **Flow**) is an open-source **super agent harness** that orchestrates **sub-agents**, **memory**, and **sandboxes** to do almost anything — powered by **extensible skills**.\n\nhttps://github.com/user-attachments/assets/a8bcadc4-e040-4cf2-8fda-dd768b999c18\n\n> [!NOTE]\n> **DeerFlow 2.0 is a ground-up rewrite.** It shares no code with v1. If you're looking for the original Deep Research framework, it's maintained on the `1.x` branch — contributions there are still welcome. Active development has moved to 2.0.\n\n## Official Website\n\n \n\nLearn more and see **real demos** on our **official website**.\n\n## Coding Plan from ByteDance Volcengine\n\n \n\n- We strongly recommend using Doubao-Seed-2.0-Code, DeepSeek v3.2 and Kimi 2.5 to run DeerFlow\n- Learn more\n- 中国大陆地区的开发者请点击这里\n\n## InfoQuest\n\nDeerFlow has newly integrated the intelligent search and crawling toolset independently developed by BytePlus--InfoQuest (supports free online experience)\n\n \n   \n \n\n---\n\n## Table of Contents\n\n- 🦌 DeerFlow - 2.0\n  - Official Website\n  - InfoQuest\n  - Table of Contents\n  - Quick Start\n    - Configuration\n    - Running the Application\n      - Option 1: Docker (Recommended)\n      - Option 2: Local Development\n    - Advanced\n      - Sandbox Mode\n      - MCP Server\n      - IM Channels\n  - From Deep Research to Super Agent Harness\n  - Core Features\n    - Skills \\& Tools\n      - Claude Code Integration\n    - Sub-Agents\n    - Sandbox \\& File System\n    - Context Engineering\n    - Long-Term Memory\n  - Recommended Models\n  - Embedded Python Client\n  - Documentation\n  - Contributing\n  - License\n  - Acknowledgments\n    - Key Contributors\n  - Star History\n\n## Quick Start\n\n### Configuration\n\n1. **Clone the DeerFlow repository**\n\n   ```bash\n   git clone https://github.com/bytedance/deer-flow.git\n   cd deer-flow\n   ```\n\n2. **Generate local configuration files**\n\n   From the project root directory (`deer-flow/`), run:\n\n   ```bash\n   make config\n   ```\n\n   This command creates local configuration files based on the provided example templates.\n\n3. **Configure your preferred model(s)**\n\n   Edit `config.yaml` and define at least one model:\n\n   ```yaml\n   models:\n     - name: gpt-4                       # Internal identifier\n       display_name: GPT-4               # Human-readable name\n       use: langchain_openai:ChatOpenAI  # LangChain class path\n       model: gpt-4                      # Model identifier for API\n       api_key: $OPENAI_API_KEY          # API key (recommended: use env var)\n       max_tokens: 4096                  # Maximum tokens per request\n       temperature: 0.7                  # Sampling temperature\n\n     - ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "gpt",
+        "claude",
+        "deepseek",
+        "agent",
+        "mcp",
+        "langchain",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "GPT-4",
+        "DeepSeek",
+        "LangChain"
+      ],
+      "competitors": [
+        "火山引擎"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "An open-source SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.9,
+      "tcloud_relevance": 9.0,
+      "tcloud_integration": "**deer-flow** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**deer-flow** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**deer-flow** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**deer-flow** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "gpt-4",
+        "claude",
+        "deepseek"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**deer-flow** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**deer-flow** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「bytedance/deer-flow - An open-source SuperAgent h…」（An open-source SuperAgent harness that researches, codes, a…），涉及 Agent / MCP / Python → 可写方向：**deer-flow** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**deer-flow…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「deer-flow」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 deer-flow 的核心功能（An open-source SuperAgent harness that researches, codes, and creates. With the…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 deer-flow 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 deer-flow 的核心功能（An open-source SuperAgent harness that researches, codes, and creates. With the…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 deer-flow 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "An open-source SuperAgent harness that researches, codes, and creat…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "bytedance/deer-flow - An open-source SuperAgent harness that researches, codes, and cre…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：An open-source SuperAgent harness that researches, codes, and creat…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: bytedance/deer-flow - An open-source SuperAgent harness that researches, codes, and cre…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy). What matters more to you: deployment, performance, or wo…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。An open-source SuperAgent harness that researches, codes, and creat…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**deer-flow** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**deer-flow** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. bytedance/deer-flow - An open-source SuperAgent harness that researches, codes, and cre…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：An open-source SuperAgent harness that researches, codes, and creat…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: bytedance/deer-flow - An open-source SuperAgent harness that researches, codes, and cre…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "deer-flow：一个用于研究、编码和创建的开源 SuperAgent 工具。借助沙箱、内存、工具、技能、子代理和消息网关，它可以处理可能需要几分钟到几小时的不同级别的任务。",
+    "developer_profile": {
+      "github_username": "bytedance",
+      "profile_url": "https://github.com/bytedance",
+      "name": "Bytedance Inc.",
+      "bio": "",
+      "company": "",
+      "location": "Singapore",
+      "blog": "https://opensource.bytedance.com",
+      "twitter_username": "ByteDanceOSS",
+      "email": "",
+      "followers": 16240,
+      "following": 0,
+      "public_repos": 401,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4158466?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/ByteDanceOSS"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "supermemoryai/supermemory - Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.",
+    "url": "https://github.com/supermemoryai/supermemory",
+    "heat": "18,678 stars",
+    "time": "Today",
+    "developer_name": "supermemoryai",
+    "developer_url": "https://github.com/supermemoryai",
+    "developer_email": "dhravya@supermemory.com",
+    "today_stars": "344 stars today",
+    "language": "TypeScript",
+    "summary": "Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.",
+    "content": " \n   \n     \n     \n     \n   \n \n\n \n   State-of-the-art memory and context engine for AI. \n \n\n \n   Docs  ·\n   Quickstart  ·\n   Dashboard  ·\n   Discord \n \n\n \n     \n     \n     \n \n\n---\n\nSupermemory is the memory and context layer for AI. **#1 on LongMemEval, LoCoMo, and ConvoMem** — the three major benchmarks for AI memory. \n\nWe are a research lab building the engine, plugins and tools around it.\n\nYour AI forgets everything between conversations. Supermemory fixes that.\n\nIt automatically learns from conversations, extracts facts, builds user profiles, handles knowledge updates and contradictions, forgets expired information, and delivers the right context at the right time. Full RAG, connectors, file processing — the entire context stack, one system.\n\n| | |\n|---|---|\n| 🧠 **Memory** | Extracts facts from conversations. Handles temporal changes, contradictions, and automatic forgetting. |\n| 👤 **User Profiles** | Auto-maintained user context — stable facts + recent activity. One call, ~50ms. |\n| 🔍 **Hybrid Search** | RAG + Memory in a single query. Knowledge base docs and personalized context together. |\n| 🔌 **Connectors** | Google Drive · Gmail · Notion · OneDrive · GitHub — auto-sync with real-time webhooks. |\n| 📄 **Multi-modal Extractors** | PDFs, images (OCR), videos (transcription), code (AST-aware chunking). Upload and it works. |\n\nAll of this is in our single memory structure and ontology. \n\n \n\n---\n\n## Use Supermemory\n\n \n \n \n\n 🧑‍💻 I use AI tools \n\nBuild your own personal supermemory by using our app. Builds **persistent memory graph across every conversation**.\n\nYour AI remembers your preferences, projects, past discussions — and gets smarter over time.\n\n**→ Jump to User setup**\n\n \n \n\n 🔧 I'm building AI products \n\nAdd memory, RAG, user profiles, and connectors to your agents and apps with **a single API**.\n\nNo vector DB config. No embedding pipelines. No chunking strategies.\n\n**→ Jump to developer quickstart**\n\n \n \n \n\n---\n\n## Give your AI memory\n\nThe Supermemory App, browser extension, plugins and MCP server gives any compatible AI assistant persistent memory. One install, and your AI remembers you.\n\n### The app\n\nYou can use supermemory without any code, by using our consumer-facing app for free.\n\nStart at https://app.supermemory.ai\n\n \n\nIt also comes with an agent embedded inside, which we call Nova.\n\n### Supermemory Plugins\n\nSupermemory comes built with Plugins for Claude Code, OpenCode and OpenClaw.\n\n \n\nThese plugins are implementations of the supermemory API, and they are open source! \n\nYou can find them here: \n\n- Openclaw plugin: https://github.com/supermemoryai/openclaw-supermemory\n- Claude code plugin: https://github.com/supermemoryai/claude-supermemory\n- OpenCode plugin: https://github.com/supermemoryai/opencode-supermemory\n\n### MCP - Quick install\n\n```bash\nnpx -y install-mcp@latest https://mcp.supermemory.ai/mcp --client claude --oauth=yes\n```\n\nReplace `claude` with your client: `cursor`, `windsurf`, `vscode`, etc.\n\nRead more about our MCP ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "rag",
+        "embedding",
+        "mcp",
+        "ocr"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "RAG",
+        "Agent",
+        "MCP"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "supermemoryai/supermemory: Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.4,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**supermemory** 的用户群和 CodeBuddy 高度重合 — 可以写「supermemory 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**supermemory** 的用户群和 CodeBuddy 高度重合 — 可以写「supermemory 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor",
+        "windsurf"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**supermemory** 的用户群和 CodeBuddy 高度重合 — 可以写「supermemory 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「supermemoryai/supermemory - Memory engine and app…」（supermemoryai/supermemory: Memory engine and app that is ex…），涉及 RAG / Agent / MCP → 可写方向：**supermemory** 的用户群和 CodeBuddy 高度重合 — 可以写「supermemory 用户迁移到 CodeBuddy 的体验对比」，突…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「supermemoryai/supermemory - Memory engi…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 supermemory 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 supermemory 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 supermemory 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 supermemory 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "supermemoryai/supermemory: Memory engine and app that is extremely…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "supermemoryai/supermemory - Memory engine and app that is extremely fast, scalable. The…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：supermemoryai/supermemory: Memory engine and app that is extremely…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: supermemoryai/supermemory - Memory engine and app that is extremely fast, scalable. The…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。supermemoryai/supermemory: Memory engine and app that is extremely…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**supermemory** 的用户群和 CodeBuddy 高度重合 — 可以写「supermemory 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. supermemoryai/supermemory - Memory engine and app that is extremely fast, scalable. The…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：supermemoryai/supermemory: Memory engine and app that is extremely…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: supermemoryai/supermemory - Memory engine and app that is extremely fast, scalable. The…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "supermemory：内存引擎和应用程序速度极快，可扩展。AI时代的内存API。",
+    "developer_profile": {
+      "github_username": "supermemoryai",
+      "profile_url": "https://github.com/supermemoryai",
+      "name": "supermemory",
+      "bio": "Give infinite context to your LLMs.",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://supermemory.com",
+      "twitter_username": "supermemoryai",
+      "email": "dhravya@supermemory.com",
+      "followers": 1355,
+      "following": 0,
+      "public_repos": 23,
+      "avatar_url": "https://avatars.githubusercontent.com/u/171979587?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/supermemoryai"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "FujiwaraChoki/MoneyPrinterV2 - Automate the process of making money online.",
+    "url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
+    "heat": "24,948 stars",
+    "time": "Today",
+    "developer_name": "FujiwaraChoki",
+    "developer_url": "https://github.com/FujiwaraChoki",
+    "developer_email": "fujicodes@proton.me",
+    "today_stars": "3,006 stars today",
+    "language": "Python",
+    "summary": "Automate the process of making money online.",
+    "content": "# MoneyPrinter V2\n \n> ♥︎ **Sponsor**: The Best AI Chat App: shiori.ai. Use code **MPV2** for 20% off.\n\n---\n\n> 𝕏 Also, follow me on X: @DevBySami.\n\n[](https://github.com/FujiwaraChoki/MoneyPrinterV2)\n\n[](https://www.buymeacoffee.com/fujicodes)\n[](https://github.com/FujiwaraChoki/MoneyPrinterV2/blob/main/LICENSE)\n[](https://github.com/FujiwaraChoki/MoneyPrinterV2/issues)\n[](https://github.com/FujiwaraChoki/MoneyPrinterV2/stargazers)\n[](https://dsc.gg/fuji-community)\n\nAn Application that automates the process of making money online.\nMPV2 (MoneyPrinter Version 2) is, as the name suggests, the second version of the MoneyPrinter project. It is a complete rewrite of the original project, with a focus on a wider range of features and a more modular architecture.\n\n> **Note:** MPV2 needs Python 3.12 to function effectively.\n> Watch the YouTube video here\n\n## Features\n\n- [x] Twitter Bot (with CRON Jobs => `scheduler`)\n- [x] YouTube Shorts Automater (with CRON Jobs => `scheduler`)\n- [x] Affiliate Marketing (Amazon + Twitter)\n- [x] Find local businesses & cold outreach\n\n## Versions\n\nMoneyPrinter has different versions for multiple languages developed by the community for the community. Here are some known versions:\n\n- Chinese: MoneyPrinterTurbo\n\nIf you would like to submit your own version/fork of MoneyPrinter, please open an issue describing the changes you made to the fork.\n\n## Installation\n\n> ⚠️ If you are planning to reach out to scraped businesses per E-Mail, please first install the Go Programming Language.\n\n```bash\ngit clone https://github.com/FujiwaraChoki/MoneyPrinterV2.git\n\ncd MoneyPrinterV2\n# Copy Example Configuration and fill out values in config.json\ncp config.example.json config.json\n\n# Create a virtual environment\npython -m venv venv\n\n# Activate the virtual environment - Windows\n.\\venv\\Scripts\\activate\n\n# Activate the virtual environment - Unix\nsource venv/bin/activate\n\n# Install the requirements\npip install -r requirements.txt\n```\n\n## Usage\n\n```bash\n# Run the application\npython src/main.py\n```\n\n## Documentation\n\nAll relevant document can be found here.\n\n## Scripts\n\nFor easier usage, there are some scripts in the `scripts` directory, that can be used to directly access the core functionality of MPV2, without the need of user interaction.\n\nAll scripts need to be run from the root directory of the project, e.g. `bash scripts/upload_video.sh`.\n\n## Contributing\n\nPlease read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us. Check out docs/Roadmap.md for a list of features that need to be implemented.\n\n## Code of Conduct\n\nPlease read CODE_OF_CONDUCT.md for details on our code of conduct, and the process for submitting pull requests to us.\n\n## License\n\nMoneyPrinterV2 is licensed under `Affero General Public License v3.0`. See LICENSE for more information.\n\n## Acknowledgments\n\n- KittenTTS\n- gpt4free\n\n## Disclaimer\n\nThis project is for educational purposes only. The author will not be responsible fo",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Go",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "FujiwaraChoki/MoneyPrinterV2: Automate the process of making money online.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.0,
+      "tcloud_relevance": 4.2,
+      "tcloud_integration": "**MoneyPrinterV2** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台",
+      "tcloud_products": [
+        "IM"
+      ],
+      "tcloud_reasons": [
+        "**MoneyPrinterV2** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台"
+      ],
+      "tcloud_evidence": [
+        "chat",
+        "chat app"
+      ],
+      "tcloud_primary_product": "IM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 IM：**MoneyPrinterV2** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台",
+      "tcloud_official_matches": [
+        "IM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（IM）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（IM）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「FujiwaraChoki/MoneyPrinterV2 - Automate the proce…」（FujiwaraChoki/MoneyPrinterV2: Automate the process of makin…），涉及 Go / Python → 可写方向：**MoneyPrinterV2** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flut…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「MoneyPrinterV2」涉及即时通信场景，可结合 IM 写教程或场景解读。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "IM",
+      "official_angle_cn": "围绕 MoneyPrinterV2 的核心功能（FujiwaraChoki/MoneyPrinterV2: Automate the process of making money online.），以 IM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 MoneyPrinterV2 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 IM。",
+      "platform_copies": {
+        "primary_product": "IM",
+        "product_display": "IM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 MoneyPrinterV2 的核心功能（FujiwaraChoki/MoneyPrinterV2: Automate the process of making money online.），以 IM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Instant Messaging (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 MoneyPrinterV2 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 IM。",
+        "x_cn": "FujiwaraChoki/MoneyPrinterV2: Automate the process of making money…。如果站在腾讯云国际站官方号来写，这条更适合从 IM 切入：如果以腾讯云国际站官方号来写，这条建议主推 IM：**MoneyPrin…",
+        "x_en": "FujiwaraChoki/MoneyPrinterV2 - Automate the process of making money online.. For Tencent Cloud, this fits Instant Messaging (Tencent Cloud): Build chat and messaging features with Tencent Cloud IM.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：FujiwaraChoki/MoneyPrinterV2: Automate the process of making money…。如果从腾讯云视角切，这条最适合带到 IM，重点聊 技术科普 + 教程拆解 + 产品关联（IM）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: FujiwaraChoki/MoneyPrinterV2 - Automate the process of making money online.. From a Tencent Cloud angle, the best hook is Instant Messaging (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (IM). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。FujiwaraChoki/MoneyPrinterV2: Automate the process of making money…。如果用官方号发，建议主推 IM，重点讲 技术科普 + 教程拆解 + 产品关联（IM），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 IM：**MoneyPrinterV2** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. FujiwaraChoki/MoneyPrinterV2 - Automate the process of making money online.. For Tencent Cloud, the better angle is Instant Messaging (Tencent Cloud). Build chat and messaging features with Tencent Cloud IM. The content should focus on technical explainer + hands-on walkthrough + product tie-in (IM).",
+        "reddit_title_cn": "这类热点如果从 IM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：FujiwaraChoki/MoneyPrinterV2: Automate the process of making money…。如果站在腾讯云国际站官方号视角，我会更想把它写成 IM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（IM）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Instant Messaging (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: FujiwaraChoki/MoneyPrinterV2 - Automate the process of making money online.. Instead of reposting it as news, I'd frame it through Instant Messaging (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (IM). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "MoneyPrinterV2：自动化在线赚钱的过程。",
+    "developer_profile": {
+      "github_username": "FujiwaraChoki",
+      "profile_url": "https://github.com/FujiwaraChoki",
+      "name": "",
+      "bio": "hi",
+      "company": "",
+      "location": "Zurich, Switzerland",
+      "blog": "",
+      "twitter_username": "DevBySami",
+      "email": "fujicodes@proton.me",
+      "followers": 1703,
+      "following": 46,
+      "public_repos": 146,
+      "avatar_url": "https://avatars.githubusercontent.com/u/78088687?v=4",
+      "social_links": [
+        {
+          "platform": "youtube",
+          "url": "https://youtube.com/@fuji_codes"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/DevBySami"
+        },
+        {
+          "platform": "generic",
+          "url": "https://samihindi.com"
+        },
+        {
+          "platform": "generic",
+          "url": "https://shiori.ai"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "heat": "52,756 stars",
+    "time": "Today",
+    "developer_name": "harry0703",
+    "developer_url": "https://github.com/harry0703",
+    "developer_email": "",
+    "today_stars": "728 stars today",
+    "language": "Python",
+    "summary": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+    "content": " \n MoneyPrinterTurbo 💸 \n\n \n     \n     \n     \n     \n \n \n 简体中文 |  English  \n \n     \n \n \n只需提供一个视频  主题  或  关键词  ，就可以全自动生成视频文案、视频素材、视频字幕、视频背景音乐，然后合成一个高清的短视频。\n \n\n Web界面 \n\n API界面 \n\n \n\n## 特别感谢 🙏\n\n由于该项目的 **部署** 和 **使用**，对于一些小白用户来说，还是 **有一定的门槛**，在此特别感谢\n**录咖（AI智能 多媒体服务平台）** 网站基于该项目，提供的免费`AI视频生成器`服务，可以不用部署，直接在线使用，非常方便。\n\n- 中文版：https://reccloud.cn\n- 英文版：https://reccloud.com\n\n## 感谢赞助 🙏\n\n感谢佐糖 https://picwish.cn 对该项目的支持和赞助，使得该项目能够持续的更新和维护。\n\n佐糖专注于**图像处理领域**，提供丰富的**图像处理工具**，将复杂操作极致简化，真正实现让图像处理更简单。\n\n## 功能特性 🎯\n\n- [x] 完整的 **MVC架构**，代码 **结构清晰**，易于维护，支持 `API` 和 `Web界面`\n- [x] 支持视频文案 **AI自动生成**，也可以**自定义文案**\n- [x] 支持多种 **高清视频** 尺寸\n    - [x] 竖屏 9:16，`1080x1920`\n    - [x] 横屏 16:9，`1920x1080`\n- [x] 支持 **批量视频生成**，可以一次生成多个视频，然后选择一个最满意的\n- [x] 支持 **视频片段时长** 设置，方便调节素材切换频率\n- [x] 支持 **中文** 和 **英文** 视频文案\n- [x] 支持 **多种语音** 合成，可 **实时试听** 效果\n- [x] 支持 **字幕生成**，可以调整 `字体`、`位置`、`颜色`、`大小`，同时支持`字幕描边`设置\n- [x] 支持 **背景音乐**，随机或者指定音乐文件，可设置`背景音乐音量`\n- [x] 视频素材来源 **高清**，而且 **无版权**，也可以使用自己的 **本地素材**\n- [x] 支持 **OpenAI**、**Moonshot**、**Azure**、**gpt4free**、**one-api**、**通义千问**、**Google Gemini**、**Ollama**、**DeepSeek**、 **文心一言**, **Pollinations**、**ModelScope** 等多种模型接入\n    - 中国用户建议使用 **DeepSeek** 或 **Moonshot** 作为大模型提供商（国内可直接访问，不需要VPN。注册就送额度，基本够用）\n\n### 后期计划 📅\n\n- [ ] GPT-SoVITS 配音支持\n- [ ] 优化语音合成，利用大模型，使其合成的声音，更加自然，情绪更加丰富\n- [ ] 增加视频转场效果，使其看起来更加的流畅\n- [ ] 增加更多视频素材来源，优化视频素材和文案的匹配度\n- [ ] 增加视频长度选项：短、中、长\n- [ ] 支持更多的语音合成服务商，比如 OpenAI TTS\n- [ ] 自动上传到YouTube平台\n\n## 视频演示 📺\n\n### 竖屏 9:16\n\n \n \n \n  ▶️  《如何增加生活的乐趣》 \n  ▶️  《金钱的作用》 更真实的合成声音 \n  ▶️  《生命的意义是什么》 \n \n \n \n \n    \n    \n    \n \n \n \n\n### 横屏 16:9\n\n \n \n \n  ▶️ 《生命的意义是什么》 \n  ▶️ 《为什么要运动》 \n \n \n \n \n    \n    \n \n \n \n\n## 配置要求 📦\n\n- 建议最低 CPU **4核** 或以上，内存 **4G** 或以上，显卡非必须\n- Windows 10 或 MacOS 11.0 以上系统\n\n## 快速开始 🚀\n\n### 在 Google Colab 中运行\n免去本地环境配置，点击直接在 Google Colab 中快速体验 MoneyPrinterTurbo\n\n[](https://colab.research.google.com/github/harry0703/MoneyPrinterTurbo/blob/main/docs/MoneyPrinterTurbo.ipynb)\n\n### Windows一键启动包\n\n下载一键启动包，解压直接使用（路径不要有 **中文**、**特殊字符**、**空格**）\n\n- 百度网盘（v1.2.6）: https://pan.baidu.com/s/1wg0UaIyXpO3SqIpaq790SQ?pwd=sbqx 提取码: sbqx\n- Google Drive (v1.2.6): https://drive.google.com/file/d/1HsbzfT7XunkrCrHw5ncUjFX8XX4zAuUh/view?usp=sharing\n\n下载后，建议先**双击执行** `update.bat` 更新到**最新代码**，然后双击 `start.bat` 启动\n\n启动后，会自动打开浏览器（如果打开是空白，建议换成 **Chrome** 或者 **Edge** 打开）\n\n## 安装部署 📥\n\n### 前提条件\n\n- 尽量不要使用 **中文路径**，避免出现一些无法预料的问题\n- 请确保你的 **网络** 是正常的，VPN需要打开`全局流量`模式\n\n#### ① 克隆代码\n\n```shell\ngit clone https://github.com/harry0703/MoneyPrinterTurbo.git\n```\n\n#### ② 修改配置文件（可选，建议启动后也可以在 WebUI 里面配置）\n\n- 将 `config.example.toml` 文件复制一份，命名为 `config.toml`\n- 按照 `config.toml` 文件中的说明，配置好 `pexels_api_keys` 和 `llm_provider`，并根据 llm_provider 对应的服务商，配置相关的\n  API Key\n\n### Docker部署 🐳\n\n#### ① 启动Docker\n\n如果未安装 Docker，请先安装 https://www.docker.com/products/docker-desktop/\n\n如果是Windows系统，请参考微软的文档：\n\n1. https://learn.microsoft.com/zh-cn/windows/wsl/install\n2. https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers\n\n```shell\ncd MoneyPrinterTurbo\ndocker-compose up\n```\n\n> 注意：最新版的docker安装时会自动以插件的形式安装docker compose，启动",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 4,
+      "ai_score": 8,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "azure",
+        "docker",
+        "edge",
+        "vpn"
+      ],
+      "ai_hits": [
+        "ai",
+        "大模型",
+        "llm",
+        "gpt",
+        "gemini",
+        "deepseek",
+        "openai",
+        "tts"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Gemini",
+        "DeepSeek",
+        "通义千问"
+      ],
+      "competitors": [
+        "Azure"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 10.0,
+      "tcloud_relevance": 10.0,
+      "tcloud_integration": "**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 Lighthouse：**MoneyPrinterTurbo** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+      "tcloud_products": [
+        "Hunyuan",
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**MoneyPrinterTurbo** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景"
+      ],
+      "tcloud_evidence": [
+        "docker compose",
+        "docker-compose",
+        "大模型",
+        "llm",
+        "gemini",
+        "deepseek"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 Lighthouse：**MoneyPrinterTurbo** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / Lighthouse）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / Lighthouse）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 G…」（harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate sho…），涉及 LLM → 可写方向：**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 Lighthouse：**…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「MoneyPrinterTurbo」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 MoneyPrinterTurbo 的核心功能（harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short videos with one c…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 MoneyPrinterTurbo 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 MoneyPrinterTurbo 的核心功能（harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short videos with one c…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 MoneyPrinterTurbo 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short video…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click us…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short video…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / Lighthouse）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click us…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / Lighthouse). What matters more to you: deployment, performance, or w…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short video…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / Lighthouse），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 Lighthouse：**MoneyPrinterTurbo** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click us…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / Lighthouse).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short video…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / Lighthouse）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click us…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / Lighthouse). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "MoneyPrinterTurbo：利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+    "developer_profile": {
+      "github_username": "harry0703",
+      "profile_url": "https://github.com/harry0703",
+      "name": "Harry",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 1130,
+      "following": 0,
+      "public_repos": 6,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4928832?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Crosstalk-Solutions/project-nomad - Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.",
+    "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+    "heat": "15,497 stars",
+    "time": "Today",
+    "developer_name": "Crosstalk-Solutions",
+    "developer_url": "https://github.com/Crosstalk-Solutions",
+    "developer_email": "info@crosstalksolutions.com",
+    "today_stars": "2,513 stars today",
+    "language": "TypeScript",
+    "summary": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.",
+    "content": " \n \n\n# Project N.O.M.A.D.\n### Node for Offline Media, Archives, and Data\n\n**Knowledge That Never Goes Offline**\n\n[](https://www.projectnomad.us)\n[](https://discord.com/invite/crosstalksolutions)\n[](https://benchmark.projectnomad.us)\n\n \n\n---\n\nProject N.O.M.A.D. is a self-contained, offline-first knowledge and education server packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.\n\n## Installation & Quickstart\nProject N.O.M.A.D. can be installed on any Debian-based operating system (we recommend Ubuntu). Installation is completely terminal-based, and all tools and resources are designed to be accessed through the browser, so there's no need for a desktop environment if you'd rather setup N.O.M.A.D. as a \"server\" and access it through other clients.\n\n*Note: sudo/root privileges are required to run the install script*\n\n#### Quick Install (Debian-based OS Only)\n```bash\nsudo apt-get update && sudo apt-get install -y curl && curl -fsSL https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/refs/heads/main/install/install_nomad.sh -o install_nomad.sh && sudo bash install_nomad.sh\n```\n\nProject N.O.M.A.D. is now installed on your device! Open a browser and navigate to `http://localhost:8080` (or `http://DEVICE_IP:8080`) to start exploring!\n\n### Advanced Installation\nFor more control over the installation process, copy and paste the Docker Compose template into a `docker-compose.yml` file and customize it to your liking (be sure to replace any placeholders with your actual values). Then, run `docker compose up -d` to start the Command Center and its dependencies. Note: this method is recommended for advanced users only, as it requires familiarity with Docker and manual configuration before starting.\n\n## How It Works\nN.O.M.A.D. is a management UI (\"Command Center\") and API that orchestrates a collection of containerized tools and resources via Docker. It handles installation, configuration, and updates for everything — so you don't have to.\n\n**Built-in capabilities include:**\n- **AI Chat with Knowledge Base** — local AI chat powered by Ollama, with document upload and semantic search (RAG via Qdrant)\n- **Information Library** — offline Wikipedia, medical references, ebooks, and more via Kiwix\n- **Education Platform** — Khan Academy courses with progress tracking via Kolibri\n- **Offline Maps** — downloadable regional maps via ProtoMaps\n- **Data Tools** — encryption, encoding, and analysis via CyberChef\n- **Notes** — local note-taking via FlatNotes\n- **System Benchmark** — hardware scoring with a community leaderboard\n- **Easy Setup Wizard** — guided first-time configuration with curated content collections\n\nN.O.M.A.D. also includes built-in tools like a Wikipedia content selector, ZIM library manager, and content explorer.\n\n## What's Included\n\n| Capability | Powered By | What You Get |\n|-----------|-----------|-------------|\n| Information Library | Kiwix | Offline Wikipedia, medical references, surviva",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "rag"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "RAG"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Crosstalk-Solutions/project-nomad: Project N. D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.2,
+      "tcloud_relevance": 6.1,
+      "tcloud_integration": "**project-nomad** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**project-nomad** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景"
+      ],
+      "tcloud_evidence": [
+        "docker compose",
+        "docker-compose"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**project-nomad** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Crosstalk-Solutions/project-nomad - Project N.O.M…」（Crosstalk-Solutions/project-nomad: Project N. D, is a self-…），涉及 RAG → 可写方向：**project-nomad** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「project-nomad」支持自部署，可写『Lighthouse 一键部署 project-nomad』实操教程。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 project-nomad」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 project-nomad 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 project-nomad」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 project-nomad 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "Crosstalk-Solutions/project-nomad: Project N. D, is a self-containe…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "Crosstalk-Solutions/project-nomad - Project N.O.M.A.D, is a self-contained, offline sur…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Crosstalk-Solutions/project-nomad: Project N. D, is a self-containe…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Crosstalk-Solutions/project-nomad - Project N.O.M.A.D, is a self-contained, offline sur…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary. What matters more to you: deployment,…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Crosstalk-Solutions/project-nomad: Project N. D, is a self-containe…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**project-nomad** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Crosstalk-Solutions/project-nomad - Project N.O.M.A.D, is a self-contained, offline sur…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Crosstalk-Solutions/project-nomad: Project N. D, is a self-containe…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Crosstalk-Solutions/project-nomad - Project N.O.M.A.D, is a self-contained, offline sur…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "project-nomad：Project N.D 是一款独立的离线生存计算机，配备了关键工具、知识和人工智能，可让您随时随地了解情况并获得授权。",
+    "developer_profile": {
+      "github_username": "Crosstalk-Solutions",
+      "profile_url": "https://github.com/Crosstalk-Solutions",
+      "name": "Crosstalk Solutions",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://crosstalksolutions.com",
+      "twitter_username": "crosstalksol",
+      "email": "info@crosstalksolutions.com",
+      "followers": 209,
+      "following": 0,
+      "public_repos": 4,
+      "avatar_url": "https://avatars.githubusercontent.com/u/105950641?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/crosstalksol"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "heat": "41,051 stars",
+    "time": "Today",
+    "developer_name": "TauricResearch",
+    "developer_url": "https://github.com/TauricResearch",
+    "developer_email": "",
+    "today_stars": "1,760 stars today",
+    "language": "Python",
+    "summary": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "content": " \n   \n \n\n \n     \n     \n     \n     \n   \n     \n \n\n \n   \n   Deutsch  | \n   Español  | \n   français  | \n   日本語  | \n   한국어  | \n   Português  | \n   Русский  | \n   中文 \n \n\n---\n\n# TradingAgents: Multi-Agents LLM Financial Trading Framework\n\n## News\n- [2026-03] **TradingAgents v0.2.2** released with GPT-5.4/Gemini 3.1/Claude 4.6 model coverage, five-tier rating scale, OpenAI Responses API, Anthropic effort control, and cross-platform stability.\n- [2026-02] **TradingAgents v0.2.0** released with multi-provider LLM support (GPT-5.x, Gemini 3.x, Claude 4.x, Grok 4.x) and improved system architecture.\n- [2026-01] **Trading-R1** Technical Report released, with Terminal expected to land soon.\n\n \n \n  \n    \n    \n    \n  \n \n \n\n> 🎉 **TradingAgents** officially released! We have received numerous inquiries about the work, and we would like to express our thanks for the enthusiasm in our community.\n>\n> So we decided to fully open-source the framework. Looking forward to building impactful projects with you!\n\n \n\n🚀 TradingAgents | ⚡ Installation & CLI | 🎬 Demo | 📦 Package Usage | 🤝 Contributing | 📄 Citation\n\n \n\n## TradingAgents Framework\n\nTradingAgents is a multi-agent trading framework that mirrors the dynamics of real-world trading firms. By deploying specialized LLM-powered agents: from fundamental analysts, sentiment experts, and technical analysts, to trader, risk management team, the platform collaboratively evaluates market conditions and informs trading decisions. Moreover, these agents engage in dynamic discussions to pinpoint the optimal strategy.\n\n \n   \n \n\n> TradingAgents framework is designed for research purposes. Trading performance may vary based on many factors, including the chosen backbone language models, model temperature, trading periods, the quality of data, and other non-deterministic factors. It is not intended as financial, investment, or trading advice.\n\nOur framework decomposes complex trading tasks into specialized roles. This ensures the system achieves a robust, scalable approach to market analysis and decision-making.\n\n### Analyst Team\n- Fundamentals Analyst: Evaluates company financials and performance metrics, identifying intrinsic values and potential red flags.\n- Sentiment Analyst: Analyzes social media and public sentiment using sentiment scoring algorithms to gauge short-term market mood.\n- News Analyst: Monitors global news and macroeconomic indicators, interpreting the impact of events on market conditions.\n- Technical Analyst: Utilizes technical indicators (like MACD and RSI) to detect trading patterns and forecast price movements.\n\n \n   \n \n\n### Researcher Team\n- Comprises both bullish and bearish researchers who critically assess the insights provided by the Analyst Team. Through structured debates, they balance potential gains against inherent risks.\n\n \n   \n \n\n### Trader Agent\n- Composes reports from the analysts and researchers to make informed trading decisions. It determines the timing and magnitude of trades based on comprehe",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "llm",
+        "gpt",
+        "claude",
+        "gemini",
+        "agent",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.4,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**TradingAgents** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**TradingAgents** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "llm",
+        "claude",
+        "gemini"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**TradingAgents** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "产品关联（Hunyuan）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 产品关联（Hunyuan） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「TauricResearch/TradingAgents - TradingAgents: Mul…」（TauricResearch/TradingAgents: TradingAgents: Multi-Agents L…），涉及 LLM / Agent → 可写方向：**TradingAgents** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「TradingAgents」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 TradingAgents 的核心功能（TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Financial Trading…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 TradingAgents 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 TradingAgents 的核心功能（TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Financial Trading…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 TradingAgents 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 产品关联（Hunyuan） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + product tie-in (Hunyuan) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 产品关联（Hunyuan） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**TradingAgents** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + product tie-in (Hunyuan) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 产品关联（Hunyuan） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + product tie-in (Hunyuan) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "TradingAgents：多代理LLM金融交易框架",
+    "developer_profile": {
+      "github_username": "TauricResearch",
+      "profile_url": "https://github.com/TauricResearch",
+      "name": "Tauric Research",
+      "bio": "Pioneering Trading Intelligence with AI Precision",
+      "company": "",
+      "location": "United States of America",
+      "blog": "",
+      "twitter_username": "TauricResearch",
+      "email": "",
+      "followers": 1376,
+      "following": 0,
+      "public_repos": 3,
+      "avatar_url": "https://avatars.githubusercontent.com/u/192884433?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "https://tauric.ai"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/TauricResearch"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "mvanhorn/last30days-skill - AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "heat": "5,737 stars",
+    "time": "Today",
+    "developer_name": "mvanhorn",
+    "developer_url": "https://github.com/mvanhorn",
+    "developer_email": "",
+    "today_stars": "209 stars today",
+    "language": "Python",
+    "summary": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+    "content": "# /last30days v2.9.5\n\n### Claude Code (recommended)\n```\n/plugin marketplace add mvanhorn/last30days-skill\n/plugin install last30days@last30days-skill\n```\n\n[](https://clawhub.ai/skills/last30days-official)\n\n```bash\nclawhub install last30days-official\n```\n\n**The AI world reinvents itself every month. This skill keeps you current.** /last30days researches your topic across Reddit, X, Bluesky, YouTube, TikTok, Instagram, Hacker News, Polymarket, and the web from the last 30 days, finds what the community is actually upvoting, sharing, betting on, and saying on camera, and writes you a grounded narrative with real citations. Whether it's Seedance 2.0 access, paper.design prompts, or the latest Nano Banana Pro techniques, you'll know what people who are paying attention already know.\n\n**New in v2.9.5 — Bluesky, Comparative Mode, and Config Improvements:**\n\n- **Bluesky/AT Protocol** is now a social source. Opt-in via `BSKY_HANDLE` + `BSKY_APP_PASSWORD` (create at bsky.app/settings/app-passwords). Full pipeline: search, score, dedupe, render.\n- **Comparative mode** - ask \"X vs Y\" (e.g., `/last30 cursor vs windsurf`) and get 3 parallel research passes with a side-by-side comparison: strengths, weaknesses, head-to-head table, and a data-driven verdict.\n- **Per-project .env config** - drop a `.claude/last30days.env` in your project root for per-project API keys.\n- **SessionStart config check** - validates your config automatically when a Claude Code session starts.\n- **Expanded test coverage** - 455+ tests across all modules.\n\n**New in v2.9.1 — Auto-save to ~/Documents/Last30Days/:** Every run now saves the complete briefing as a topic-named `.md` file to your Documents folder. Build a personal research library automatically. Inspired by @devin_explores.\n\n**New in v2.9 — ScrapeCreators Reddit + Top Comments + Smart Discovery:**\n\nReddit now runs on ScrapeCreators by default — one `SCRAPECREATORS_API_KEY` covers Reddit, TikTok, and Instagram (3 sources, 1 key). Smart subreddit discovery finds the right communities automatically, and top comments are elevated with a 10% scoring weight and `💬` display with upvote counts. Details below.\n\n**New in v2.8 — Instagram Reels + ScrapeCreators:**\n\nInstagram Reels is now the 8th signal source. TikTok and Instagram both run on ScrapeCreators — one API key covers both. Details below.\n\n**New in V2.5 - dramatically better results:**\n\n1. **Polymarket prediction markets and Hacker News.** See what people are betting real money on and what the technical community is actually discussing. Search \"Arizona Basketball\" and get NCAA Tournament championship odds (Arizona: 12%), #1 seed probability (88%), and Big 12 title race (69%) - pulled from 50+ open markets across 10 events, not just Reddit opinions. Search \"Iran War\" and get 15 live prediction markets with strike probabilities, regime change bets, and war declaration odds. Two-pass query expansion with tag-based domain bridging discovers markets where your topic is an outcome bu",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "render"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "mvanhorn/last30days-skill: AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.2,
+      "tcloud_relevance": 6.0,
+      "tcloud_integration": "**last30days-skill** 的用户群和 CodeBuddy 高度重合 — 可以写「last30days-skill 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**last30days-skill** 的用户群和 CodeBuddy 高度重合 — 可以写「last30days-skill 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor",
+        "windsurf"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**last30days-skill** 的用户群和 CodeBuddy 高度重合 — 可以写「last30days-skill 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「mvanhorn/last30days-skill - AI agent skill that r…」（mvanhorn/last30days-skill: AI agent skill that researches a…），涉及 Agent → 可写方向：**last30days-skill** 的用户群和 CodeBuddy 高度重合 — 可以写「last30days-skill 用户迁移到 CodeBudd…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「mvanhorn/last30days-skill - AI agent sk…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 last30days-skill 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 last30days-skill 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 last30days-skill 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 last30days-skill 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "mvanhorn/last30days-skill: AI agent skill that researches any topic…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "mvanhorn/last30days-skill - AI agent skill that researches any topic across Reddit, X,…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：mvanhorn/last30days-skill: AI agent skill that researches any topic…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: mvanhorn/last30days-skill - AI agent skill that researches any topic across Reddit, X,…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, pe…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。mvanhorn/last30days-skill: AI agent skill that researches any topic…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**last30days-skill** 的用户群和 CodeBuddy 高度重合 — 可以写「last30days-skill 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. mvanhorn/last30days-skill - AI agent skill that researches any topic across Reddit, X,…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：mvanhorn/last30days-skill: AI agent skill that researches any topic…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: mvanhorn/last30days-skill - AI agent skill that researches any topic across Reddit, X,…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "last30days-skill：AI 代理技能可研究 Reddit、X、YouTube、HN、Polymarket 和网络上的任何主题，然后综合得出有根据的摘要",
+    "developer_profile": {
+      "github_username": "mvanhorn",
+      "profile_url": "https://github.com/mvanhorn",
+      "name": "Matt Van Horn",
+      "bio": "Co-founded June (\"self-driving oven\" acquired by Weber) & the co that became Lyft. Building again, more soon. Vibe coding Last30Days research tool",
+      "company": "",
+      "location": "",
+      "blog": "mattvh.com",
+      "twitter_username": "mvanhorn",
+      "email": "",
+      "followers": 430,
+      "following": 5,
+      "public_repos": 287,
+      "avatar_url": "https://avatars.githubusercontent.com/u/455140?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/mvanhorn"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/mattvanhorn"
+        },
+        {
+          "platform": "unknown",
+          "url": "http://mattvh.com"
+        }
+      ],
+      "is_org": false
+    }
+  }
+]
