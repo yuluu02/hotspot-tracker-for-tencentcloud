@@ -1,6 +1,6 @@
 # 📋 产品 Draft 汇总 — 2026-03-26
 
-> 共 3 个产品的 P0/P1 内容草稿
+> 共 4 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
@@ -34,11 +34,40 @@
 ---
 
 
-# Hunyuan — 今日内容 (3 条)
+# EdgeOne — 今日内容 (2 条)
+
+## 1. P1 本周发 · Show HN: Nit – I rebuilt Git in Zig to save AI agents 71% on
+
+**写什么**: 从 Show HN: Nit 的性能/安全需求出发
+
+**发到哪**: LinkedIn（发观点总结文章） + X（论文快讯分享）
+
+**参考文案**:
+> ⚡ Interesting project: "Show HN: Nit – I rebuilt Git in Zig to s". For teams needing global acceleration + DDoS protection, check out EdgeOne — 3,200+ PoP nodes worldwide. #CDN #WebSecurity #EdgeComputing
+
+*参考: [Show HN: Nit – I rebuilt Git in Zig to save AI age](https://justfielding.com/blog/nit-replacing-git-with-zig)*
+
+---
+
+## 2. P1 本周发 · Apifox 遭受供应链攻击
+
+**写什么**: 从「遭受供应链攻击」话题中的性能/安全需求出发
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> ⚡ Interesting project: "Apifox 遭受供应链攻击". For teams needing global acceleration + DDoS protection, check out EdgeOne — 3,200+ PoP nodes worldwide. #CDN #WebSecurity #EdgeComputing
+
+*参考: [Apifox 遭受供应链攻击](https://www.v2ex.com/t/1201146)*
+
+---
+
+
+# Hunyuan — 今日内容 (4 条)
 
 ## 1. P0 今天发 · bytedance/deer-flow
 
-**写什么**: 围绕 deer-flow 的核心功能（An open-source SuperAgent harness that researches, codes, and
+**写什么**: 围绕 deer-flow 的核心功能（An open-source long-horizon SuperAgent harness that researche
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
@@ -72,6 +101,19 @@
 > 🧠 "ruvnet/ruflo" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
 
 *参考: [ruvnet/ruflo](https://github.com/ruvnet/ruflo)*
+
+---
+
+## 4. P1 本周发 · SpecEyes: Accelerating Agentic Multimodal LLMs via Speculati
+
+**写什么**: 围绕 SpecEyes: Accelerating Agentic Multimodal LLMs via Speculati 的核心功能（Agentic mu
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章）
+
+**参考文案**:
+> 🧠 "SpecEyes: Accelerating Agentic Multimoda" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+
+*参考: [SpecEyes: Accelerating Agentic Multimodal LLMs via](https://huggingface.co/papers/2603.23483)*
 
 ---
 

@@ -1,8 +1,8 @@
-# Hunyuan — 今日内容 (3 条)
+# Hunyuan — 今日内容 (4 条)
 
 ## 1. P0 今天发 · bytedance/deer-flow
 
-**写什么**: 围绕 deer-flow 的核心功能（An open-source SuperAgent harness that researches, codes, and
+**写什么**: 围绕 deer-flow 的核心功能（An open-source long-horizon SuperAgent harness that researche
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
@@ -36,5 +36,18 @@
 > 🧠 "ruvnet/ruflo" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
 
 *参考: [ruvnet/ruflo](https://github.com/ruvnet/ruflo)*
+
+---
+
+## 4. P1 本周发 · SpecEyes: Accelerating Agentic Multimodal LLMs via Speculati
+
+**写什么**: 围绕 SpecEyes: Accelerating Agentic Multimodal LLMs via Speculati 的核心功能（Agentic mu
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章）
+
+**参考文案**:
+> 🧠 "SpecEyes: Accelerating Agentic Multimoda" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+
+*参考: [SpecEyes: Accelerating Agentic Multimodal LLMs via](https://huggingface.co/papers/2603.23483)*
 
 ---
