@@ -47,22 +47,6 @@
 ---
 
 
-# EdgeOne — 今日内容 (1 条)
-
-## 1. P1 本周发 · Show HN: I put an AI agent on a $7/month VPS with IRC as its
-
-**写什么**: 从 Show HN: I put an AI agent on a $7/month 的性能/安全需求出发
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> ⚡ Interesting project: "Show HN: I put an AI agent on a $7/month". For teams needing global acceleration + DDoS protection, check out EdgeOne — 3,200+ PoP nodes worldwide. #CDN #WebSecurity #EdgeComputing
-
-*参考: [Show HN: I put an AI agent on a $7/month VPS with ](https://georgelarson.me/writing/2026-03-23-nullclaw-doorman/)*
-
----
-
-
 # GPU CVM — 今日内容 (1 条)
 
 ## 1. P1 本周发 · Vaibhavs10/insanely-fast-whisper
@@ -79,7 +63,7 @@
 ---
 
 
-# Hunyuan — 今日内容 (2 条)
+# Hunyuan — 今日内容 (1 条)
 
 ## 1. P0 今天发 · virattt/dexter
 
@@ -94,16 +78,19 @@
 
 ---
 
-## 2. P1 本周发 · SpecEyes: Accelerating Agentic Multimodal LLMs via Speculati
 
-**写什么**: 围绕 SpecEyes: Accelerating Agentic Multimodal LLMs via Speculati 的核心功能（Agentic mu
+# Lighthouse — 今日内容 (1 条)
 
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章）
+## 1. P1 本周发 · Dobase – Your workspace, your server
+
+**写什么**: 以「5 分钟在 Lighthouse 上部署 Dobase」为主题写一篇实操教程
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "SpecEyes: Accelerating Agentic Multimoda" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🚀 "Dobase – Your workspace, your server" caught our eye! Deploy it in minutes on Tencent Cloud Lighthouse — Docker pre-installed, global nodes, from $3.5/mo. Try it: https://www.tencentcloud.com/products/lighthouse #CloudComputing #DevOps
 
-*参考: [SpecEyes: Accelerating Agentic Multimodal LLMs via](https://huggingface.co/papers/2603.23483)*
+*参考: [Dobase – Your workspace, your server](https://dobase.co/)*
 
 ---
 
