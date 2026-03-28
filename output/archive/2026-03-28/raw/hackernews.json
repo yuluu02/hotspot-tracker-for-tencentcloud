@@ -1,0 +1,371 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Don't YOLO your file system",
+    "url": "https://jai.scs.stanford.edu/",
+    "hn_url": "https://news.ycombinator.com/item?id=47550282",
+    "heat": "94 points",
+    "time": "2 hours ago",
+    "developer_name": "mazieres",
+    "developer_url": "https://news.ycombinator.com/user?id=mazieres",
+    "content": "jai - easy containment for AI agents Skip to content jai Go hard on agents, not on your filesystem. Use jai for effortless containment of AI agents on Linux. Get Started Security Model This is not hypothetical. ​ People are already reporting lost files, emptied working trees, and wiped home directories after giving AI tools ordinary machine access. 15 years of family photos “It’s not in trash; it was done via terminal.” Nick Davidov on X ↗ Claude Code wiped a home directory “Complete loss of active development projects.” Anthropic GitHub issue #10077 ↗ Cursor emptied a working tree “Everything just gone.” Cursor Community Forum ↗ Antigravity wiped a whole drive “My whole D drive was unintentionally wiped.” Reddit post ↗ Cursor deleted 100GB “decided to delete 100GB from my computer.” Cursor Community Forum ↗ ← → There's a gap between giving an agent your real account and stopping everything to build a container or VM. jai fills that gap. One command, no images, no Dockerfiles — just a light-weight boundary for the workflows you're already running: quick coding help, one-off local tasks, running installer scripts you didn't write. Your files, your rules Use AI agents without handing over your whole account. jai gives your working directory full access and keeps the rest of your home behind a copy-on-write overlay — or hidden entirely. Stop trusting blindly One-line installer scripts, AI-generated shell commands, unfamiliar CLIs — stop running them against your real home directory. Drop jai in front and the worst case gets a lot smaller. Containment shouldn't be hard No images to build, no Dockerfiles to maintain, no 40-flag bwrap invocations. Just jai your-agent . If containment isn't easier than YOLO mode, nobody will bother. How it works ​ One command. No setup required. 1 Prefix your command jai codex , jai claude , or just jai for a shell. 2 CWD stays writable Your working directory keeps full read/write access inside the jail. 3 Home is an overlay Changes to your home directory are captured copy-on-write. Originals are untouched. 4 Rest is locked down /tmp and /var/tmp are private. All other files are read-only. Three modes ​ Pick the level of isolation that fits your workflow. Casual Strict Bare Home directory Copy-on-write overlay Empty private home Empty private home Process runs as Your user Unprivileged jai user Your user Confidentiality Weak — most files readable Strong — separate UID Medium — your UID, but home hidden Integrity Overlay protects originals Full isolation Full isolation NFS home support Yes No Yes Learn more about modes → Free software, not a funnel ​ jai is free software, brought to you by the Stanford Secure Computer Systems research group and the Future of Digital Currency Initiative . The goal is to get people using AI more safely. Versus the alternatives ​ jai is not trying to replace containers. It fills a different niche. Docker Great for reproducible, image-based environments. Heavier to set up for ad-hoc sandboxi",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "vm"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "jai - easy containment for AI agents jai Go hard on agents, not on your filesystem. Use jai for effortless containment of AI agents on Linux. Get Started Security Model This is not hypothetical. ​ People are already reporting lost files, emptied working trees, and wiped home directories after giving AI tools ordinary machine access.",
+      "heat_score": 4.0,
+      "timeliness_score": 9.0,
+      "composite_score": 6.6,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**Don't YOLO your file system** 的用户群和 CodeBuddy 高度重合 — 可以写「Don't YOLO your file system 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Don't YOLO your file system** 的用户群和 CodeBuddy 高度重合 — 可以写「Don't YOLO your file system 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Don't YOLO your file system** 的用户群和 CodeBuddy 高度重合 — 可以写「Don't YOLO your file system 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Don't YOLO your file system」（jai - easy containment for AI agents jai Go hard on agents,…），涉及 Agent / Go → 可写方向：的用户群和 CodeBuddy 高度重合 — 可以写「Don't YOLO your file system 用户迁移到 CodeBuddy 的体验对比」，突…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Don't YOLO your file system」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 Don't YOLO your file system 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用工具/框架的架构图或使用流程截图，如果有命令行输出可以截取关键操作步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Don't YOLO your file system 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用工具/框架的架构图或使用流程截图，如果有命令行输出可以截取关键操作步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "jai - easy containment for AI agents jai Go hard on agents, not on…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "Don't YOLO your file system. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：jai - easy containment for AI agents jai Go hard on agents, not on…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Don't YOLO your file system. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。jai - easy containment for AI agents jai Go hard on agents, not on…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Don't YOLO your file system** 的用户群和 CodeBuddy 高度重合 — 可以写「Don't YOLO your file system 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Don't YOLO your file system. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：jai - easy containment for AI agents jai Go hard on agents, not on…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Don't YOLO your file system. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Don't YOLO your file system：jai - 轻松遏制 AI 代理 jai 努力控制代理，而不是文件系统。使用 jai 在 Linux 上轻松遏制 AI 代理。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Fear and denial in Silicon Valley over social media addiction trial",
+    "url": "https://www.bbc.com/news/articles/c86e3eglv2go",
+    "hn_url": "https://news.ycombinator.com/item?id=47550726",
+    "heat": "91 points",
+    "time": "1 hour ago",
+    "developer_name": "1659447091",
+    "developer_url": "https://news.ycombinator.com/user?id=1659447091",
+    "content": "Silicon Valley reeling from social media addiction trial verdict Skip to content Home News US & Canada UK UK Politics England N. Ireland N. Ireland Politics Scotland Scotland Politics Wales Wales Politics Africa Asia China India Australia Europe Latin America Middle East In Pictures BBC InDepth BBC Verify Sport Business World of Business Technology of Business NYSE Opening Bell Technology Watch Documentaries Artificial Intelligence AI v the Mind Health Watch Documentaries Culture Watch Documentaries Film & TV Music Art & Design Style Books Entertainment News Arts Watch Documentaries Arts in Motion Travel Watch Documentaries Destinations Africa Antarctica Asia Australia and Pacific Caribbean & Bermuda Central America Europe Middle East North America South America World’s Table Culture & Experiences Adventures The SpeciaList Earth Watch Documentaries Science Natural Wonders Climate Solutions Sustainable Business Green Living Audio Podcast Categories Radio Audio FAQs Video Watch Documentaries BBC Maestro Discover the World Live Live News Live Sport Documentaries Home News Sport Business Technology Health Culture Arts Travel Earth Audio Video Live Documentaries Weather Newsletters Watch Live 'We're having a moment' - fear and denial in Silicon Valley over social media addiction trial 3 hours ago Share Save Lily Jamali North America Technology correspondent Share Save Getty Images Meta boss Mark Zuckerberg was on Capitol Hill on Thursday meeting Senate Majority Leader John Thune, but did not respond to questions from reporters on the social media trial Silicon Valley is reeling from the seismic verdict delivered by an LA jury on Wednesday. Tech giants Meta and YouTube were found to be liable for designing their platforms to be addictive, which harmed a 20-year-old's mental health. The plaintiff at the heart of the case was only known by her first name Kaley, and after nine days of deliberation, the jurors agreed with her on all counts. Some in the tech world have sought to downplay this case's impact, while others fear it's the beginning of a public reckoning that poses a threat - potentially an existential one - to US social media companies. As one insider who asked not to be identified told the BBC, \"we're having a moment\". The view from inside Meta The verdict has forced those inside the companies to grapple with the fact that many outsiders do not view them as favourably as they have come to view themselves. That realisation has been difficult for companies that a decade ago were hailed as critical to connecting and entertaining people, and even helping to spread democracy around the world. Meta, and YouTube owner Google, have both said they will appeal the jury's verdict, which included $3m (£2.3m) in compensation and an additional $3m in damages intended to punish the companies. Inside Meta, the verdict is viewed as a disappointment. Going into the trial, the company was confident in the strength of its position. Its argument involved laying out",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "artificial intelligence"
+      ],
+      "anxiety_hits": [],
+      "topic": "其他",
+      "topic_type": "行业观察",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "Silicon Valley reeling from social media addiction trial verdict Home News US & Canada UK UK Politics England N. Ireland N. Ireland Politics Scotland Scotland Politics Wales Wales Politics Africa Asia China India Australia Europe Latin America Middle East In Pictures BBC InDepth BBC Verify Sport Business World of Business Technology of Business NYSE Opening Bell Technology Watch Documentaries Artificial Intelligence AI v the Mind Health Watch Documentaries Culture Watch Documentaries Film & TV…",
+      "heat_score": 4.0,
+      "timeliness_score": 9.0,
+      "composite_score": 3.6,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "社区参与"
+      ],
+      "editorial_angles_text": "社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（行业观察文章）",
+        "X（摘要快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "editorial_brief": "话题类型：行业观察\n可用角度：「Fear and denial in Silicon Valley over social med…」（Silicon Valley reeling from social media addiction trial ve…）\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "social_recommendation": "「Fear and denial in Silicon Valley over…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Silicon Valley reeling from social media addiction trial verdict Ho…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Fear and denial in Silicon Valley over social media addiction trial. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Silicon Valley reeling from social media addiction trial verdict Ho…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Fear and denial in Silicon Valley over social media addiction trial. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Silicon Valley reeling from social media addiction trial verdict Ho…。如果用官方号发，建议主推 人工判断场景，重点讲 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Fear and denial in Silicon Valley over social media addiction trial. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Silicon Valley reeling from social media addiction trial verdict Ho…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Fear and denial in Silicon Valley over social media addiction trial. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Fear and denial in Silicon Valley over s：硅谷因社交媒体成瘾审判判决而感到震惊 首页 新闻 美国和加拿大 英国 英国政治 英格兰 北爱尔兰 北爱尔兰"
+  },
+  {
+    "source": "Hacker News",
+    "title": "LG's new 1Hz display is the secret behind a new laptop's battery life",
+    "url": "https://www.pcworld.com/article/3096432/lgs-new-1hz-display-is-the-secret-behind-a-new-laptops-battery-life.html",
+    "hn_url": "https://news.ycombinator.com/item?id=47495245",
+    "heat": "150 points",
+    "time": "9 hours ago",
+    "developer_name": "robotnikman",
+    "developer_url": "https://news.ycombinator.com/user?id=robotnikman",
+    "content": "LG's new 1Hz display is the secret behind a new laptop's battery life | PCWorld News All News Accessories Business Entertainment Gaming Laptops Mobile Monitors PCs & Components Security Smart Home Security Software Storage Streaming Wi-Fi & Networks Windows Best Picks All Best Picks Accessories Business Entertainment Gaming Laptops Mobile Monitors PCs & Components Security Smart Home Security Software Storage Streaming Wi-Fi & Networks Windows Reviews All Reviews Accessories Business Entertainment Gaming Laptops Mobile Monitors PCs & Components Security Smart Home Security Software Storage Streaming Wi-Fi & Networks Windows How-To All How Tos Accessories Business Entertainment Gaming Laptops Mobile Monitors PCs & Components Security Smart Home Security Software Storage Streaming Wi-Fi & Networks Windows Deals Laptops Windows Security TechHive TechHive Home Smart Home Security Streaming Cord-Cutter Confidential More Accessories Business Entertainment Gaming Mobile Monitors PCs & Components Software Storage Wi-Fi & Networks Newsletters Digital Magazine – Subscribe Digital Magazine – Info Smart Answers Client Content BrandPosts The 1Password Guide to Password Managers The Avast Online Security Buyer’s Guide The Dell 2026 buying guide: Laptops, monitors and Alienware gaming gear The 2026 ECOVACS Robot Vacuum & Window Robot Buying Guide The GIGABYTE Guide to AI Gaming Laptops The MSI Cubi Mini PC Buyer’s Guide The Norton Security Buyer’s Guide The Norton Small Business Security Buyer’s Guide The ROG Custom Gaming Keyboard Buyer’s Guide The T-Mobile 5G and Fiber Home Internet Buying Guide The ZOTAC GAMING Graphics Card & MEK PC Buyer’s Guide Skip to content Image: Foundry / Matthew Smith Summary created by Smart Answers AI In summary: PCWorld reports that LG Display’s new ‘Oxide 1Hz’ technology enables laptop displays to vary refresh rates from 1Hz to 120Hz, potentially saving up to 48% battery life. Dell has already adopted this innovative display as the default option in its XPS laptop lineup, demonstrating early market adoption. LG plans mass production of 1Hz OLED panels featuring this battery-extending technology by 2027, signaling broader availability for future laptops. Traditionally, a laptop’s battery life tends to be governed not by the microprocessor inside it, but by the display that you’re staring at for hours on end. That’s why a new “Oxide 1Hz” display technology from LG Display is so interesting. As a component maker, LG will ship the panel to various customers: laptop makers, manufacturers of external displays, and so on. It’s the refresh rate that’s of interest, though: from 1Hz all the way to 120Hz. That will help save enormous amounts of power: up to 48 percent on a single charge, LG claims. Why? Laptop panels “refresh,” or update, at various rates. Traditional TVs used panels that refreshed 60 times per second, or 60Hz. Most older laptops did too. As games became more of a focus for laptops and TVs, manufacturers turned to panels w",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "正向推广",
+      "detail_brief": "LG's new 1Hz display is the secret behind a new laptop's battery life | PCWorld News All News Accessories Business Entertainment Gaming Laptops Mobile Monitors PCs & Components Security Smart Home Security Software Storage Streaming Wi-Fi & Networks Windows Best Picks All Best Picks Accessories Business Entertainment Gaming Laptops Mobile Monitors PCs & Components Security Smart Home Security Software Storage Streaming Wi-Fi & Networks Windows Reviews All Reviews Accessories Business Entertainm…",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 3.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「LG's new 1Hz display is the secret behind a new l…」（LG's new 1Hz display is the secret behind a new laptop's ba…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「LG's new 1Hz display is the secret behi…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "LG's new 1Hz display is the secret behind a new laptop's battery li…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "LG's new 1Hz display is the secret behind a new laptop's battery life. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：LG's new 1Hz display is the secret behind a new laptop's battery li…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: LG's new 1Hz display is the secret behind a new laptop's battery life. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。LG's new 1Hz display is the secret behind a new laptop's battery li…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. LG's new 1Hz display is the secret behind a new laptop's battery life. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：LG's new 1Hz display is the secret behind a new laptop's battery li…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: LG's new 1Hz display is the secret behind a new laptop's battery life. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "LG's new 1Hz display is the secret behin：LG 新款 1Hz 显示屏是新款笔记本电脑电池续航时间的秘密 |PCWorld 新闻 所有新闻 配件 商业娱乐 游戏笔记本电脑 移动显示器 个人电脑和组件 安全 智能家居安全 软件存储流 Wi-Fi 和网络 Windows 最佳精选 所有精选 配件 商业娱乐 游戏笔记本电脑 移动显示器 个人电脑和组件 安全 智能家…"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Anatomy of the .claude/ folder",
+    "url": "https://blog.dailydoseofds.com/p/anatomy-of-the-claude-folder",
+    "hn_url": "https://news.ycombinator.com/item?id=47543139",
+    "heat": "394 points",
+    "time": "12 hours ago",
+    "developer_name": "freedomben",
+    "developer_url": "https://news.ycombinator.com/user?id=freedomben",
+    "content": "Anatomy of the .claude/ Folder - by Avi Chawla Daily Dose of Data Science Subscribe Sign in Anatomy of the .claude/ Folder A complete guide to CLAUDE.md, custom commands, skills, agents, and permissions, and how to set them up properly. Avi Chawla Mar 23, 2026 48 3 3 Share Is AI actually saving your engineering team time? Most teams have adopted AI in some form, but the gap between “using AI” and “getting measurable ROI from AI” is larger than people realize. Postman released a cost savings analysis that looks at six common API development workflows and benchmarks the actual time and cost difference when AI is built into the platform versus bolted on externally. It’s a short, data-driven read that helps engineering leads make the case for where AI-native tooling actually moves the needle. You can grab the guide for free here → Thanks to Postman for partnering today! Anatomy of the .claude/ folder Claude Code users typically treat the .claude folder like a black box. They know it exists. They’ve seen it appear in their project root. But they’ve never opened it, let alone understood what every file inside it does. That’s a missed opportunity. The .claude folder is the control center for how Claude behaves in your project. It holds your instructions, your custom commands, your permission rules, and even Claude’s memory across sessions. Once you understand what lives where and why, you can configure Claude Code to behave exactly the way your team needs it to. This newsletter walks you through the entire anatomy of the folder, from the files you’ll use daily to the ones you’ll set once and forget. Two folders, not one Before diving in, one thing worth knowing upfront: there are actually two .claude directories, not one. The first lives inside your project, and the second lives in your home directory: The project-level folder holds team configuration. You commit it to git. Everyone on the team gets the same rules, the same custom commands, the same permission policies. The global ~/.claude/ folder holds your personal preferences and machine-local state, like session history and auto-memory. CLAUDE.md: Claude’s instruction manual This is the most important file in the entire system. When you start a Claude Code session, the first thing it reads is CLAUDE.md . It loads it straight into the system prompt and keeps it in mind for the entire conversation. Simply put: whatever you write in CLAUDE.md , Claude will follow. If you tell Claude to always write tests before implementation, it will. If you say “never use console.log for error handling, always use the custom logger module,” it will respect that every time. A CLAUDE.md at your project root is the most common setup. But you can also have one in ~/.claude/CLAUDE.md for global preferences that apply across all projects, and even one inside subdirectories for folder-specific rules. Claude reads all of them and combines them. What actually belongs in CLAUDE.md Most people either write too much or too litt",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "Anatomy of the . claude/ Folder - by Avi Chawla Daily Dose of Data Science Subscribe Sign in Anatomy of the . claude/ Folder A complete guide to CLAUDE. md, custom commands, skills, agents, and permissions, and how to set them up properly.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 5.3,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**Anatomy of the .claude/ folder** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Anatomy of the .claude/ folder** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Anatomy of the .claude/ folder** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Anatomy of the .claude/ folder」（Anatomy of the . claude/ Folder - by Avi Chawla Daily Dose…） → 可写方向：涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Anatomy of the .claude/ folder」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 Anatomy of the .claude/ folder 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Anatomy of the .claude/ folder 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Anatomy of the . claude/ Folder - by Avi Chawla Daily Dose of Data…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "Anatomy of the .claude/ folder. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Anatomy of the . claude/ Folder - by Avi Chawla Daily Dose of Data…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Anatomy of the .claude/ folder. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Anatomy of the . claude/ Folder - by Avi Chawla Daily Dose of Data…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Anatomy of the .claude/ folder** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Anatomy of the .claude/ folder. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Anatomy of the . claude/ Folder - by Avi Chawla Daily Dose of Data…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Anatomy of the .claude/ folder. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Anatomy of the .claude/ folder：的解剖。claude/ 文件夹 - 作者：Avi Chawla 数据科学的每日剂量订阅登录 解剖学。"
+  }
+]
