@@ -1,1 +1,383 @@
-[]
+[
+  {
+    "source": "Hacker News",
+    "title": "Claude Code runs Git reset –hard origin/main against project repo every 10 mins",
+    "url": "https://github.com/anthropics/claude-code/issues/40710",
+    "hn_url": "https://news.ycombinator.com/item?id=47567969",
+    "heat": "139 points",
+    "time": "2 hours ago",
+    "developer_name": "mthwsjc_",
+    "developer_url": "https://news.ycombinator.com/user?id=mthwsjc_",
+    "content": "Claude Code runs git reset --hard origin/main against project repo every 10 minutes · Issue #40710 · anthropics/claude-code · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert anthropics / claude-code Public Notifications You must be signed in to change notification settings Fork 7.1k Star 84.2k Claude Code runs git reset --hard origin/main against project repo every 10 minutes #40710 New issue Copy link New issue Copy link Open Open Claude Code runs git reset --hard origin/main against project repo every 10 minutes #40710 Copy link Labels area:core bug Something isn't working Something isn't working data-loss platform:macos Issue specifically occurs on macOS Issue specifically occurs on macOS Description johnmathews opened on Mar 29, 2026 Issue body actions Summary Claude Code performs git fetch origin + git reset --hard origin/main on the user's project repo every 10 minutes via programmatic git operations (no external git binary spawned). This silently destroys all uncommitted changes to tracked files. Untracked files survive. Git worktrees are immune. Environment Claude Code version: 2.1.87 (Homebrew cask, compiled Bun binary) OS: macOS 15.4 (Darwin 25.3.0, arm64) Shell: zsh Evidence 1. Git reflog: 95+ entries at exact 10-minute intervals e8ea2c9 HEAD@{2026-03-29 22:19:09 +0200}: reset: moving to origin/main e8ea2c9 HEAD@{2026-03-29 22:09:09 +0200}: reset: moving to origin/main e8ea2c9 HEAD@{2026-03-29 21:59:09 +0200}: reset: moving to origin/main e8ea2c9 HEAD@{2026-03-29 21:49:09 +0200}: reset: moving to origin/main ... 8792b6c HEAD@{2026-03-29 16:55:41 +0200}: reset: moving to origin/main 8792b6c HEAD@{2026-03-29 16:45:41 +0200}: reset: moving to origin/main ... 32aa7c7 HEAD@{2026-03-28 15:47:36 +0100}: reset: moving to origin/main 32aa7c7 HEAD@{2026-03-28 15:37:36 +0100}: reset: moving to origin/main The second offset is consistent within each session but varies between sessions ( :08 , :36 , :41 , :09 ), confirming a timer tied to session start time with a 600-second interval. 95+ entries observed across 4 sessions over ~36 hours. 2. Live reproduction Modified src/lib/api.ts (tracked file) and created .canary-test.txt (untracked file) Monitored every 15 seconds At the next 10-minute mark, api.ts silently reverted — modification gone .canary-test.txt (untracked) survived Reproduced consistently across 4 consecutive cycles 3. fswatch caught the file operations At the exact reset time, fswatch on .git/ captured: 23:59:10.349 .git/refs/remotes/origin/HEAD.lock Created IsFile Removed AttributeModified 23:59:10.352 .git/logs/HEAD IsFile Updated 23:59:10.354 .git/refs/heads/main.lock Created IsFile Removed AttributeModified This is the classic pattern for git fetch origin + git reset --hard origin/main . 4. Only the Claude Code process",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "TypeScript"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "Claude Code runs git reset --hard origin/main against project repo every 10 minutes · Issue #40710 · anthropics/claude-code · GitHub You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session.",
+      "heat_score": 5.0,
+      "timeliness_score": 9.0,
+      "composite_score": 5.2,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**Claude Code runs Git reset –hard origin/** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Claude Code runs Git reset –hard origin/** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Claude Code runs Git reset –hard origin/** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Claude Code runs Git reset –hard origin/main agai…」（Claude Code runs git reset --hard origin/main against proje…），涉及 TypeScript → 可写方向：涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Claude Code runs Git reset –hard origin…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 Claude Code runs Git reset –hard origin/ 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Claude Code runs Git reset –hard origin/ 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Claude Code runs git reset --hard origin/main against project repo…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "Claude Code runs Git reset –hard origin/main against project repo every 10 mins. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Claude Code runs git reset --hard origin/main against project repo…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Claude Code runs Git reset –hard origin/main against project repo every 10 mins. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, performanc…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Claude Code runs git reset --hard origin/main against project repo…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Claude Code runs Git reset –hard origin/** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Claude Code runs Git reset –hard origin/main against project repo every 10 mins. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Claude Code runs git reset --hard origin/main against project repo…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Claude Code runs Git reset –hard origin/main against project repo every 10 mins. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Claude Code runs Git reset –hard origin/：Claude Code 每 10 分钟针对项目存储库运行 git reset --hard origin/main · 问题 #40710 · anthropics/claude-code · GitHub 您使用另一个选项卡或窗口登录。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "ChatGPT won't let you type until Cloudflare reads your React state",
+    "url": "https://www.buchodi.com/chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state-i-decrypted-the-program-that-does-it/",
+    "hn_url": "https://news.ycombinator.com/item?id=47566865",
+    "heat": "307 points",
+    "time": "4 hours ago",
+    "developer_name": "alberto-m",
+    "developer_url": "https://news.ycombinator.com/user?id=alberto-m",
+    "content": "ChatGPT Won't Let You Type Until Cloudflare Reads Your React State. I Decrypted the Program That Does It. Every ChatGPT message triggers a Cloudflare Turnstile program that runs silently in your browser. I decrypted 377 of these programs from network traffic and found something that goes beyond standard browser fingerprinting. The program checks 55 properties spanning three layers: your browser (GPU, screen, fonts), the Cloudflare network (your city, your IP, your region from edge headers), and the ChatGPT React application itself ( __reactRouterContext , loaderData , clientBootstrap ). Turnstile doesn't just verify that you're running a real browser. It verifies that you're running a real browser that has fully booted a specific React application. A bot that spoofs browser fingerprints but doesn't render the actual ChatGPT SPA will fail. The Encryption Was Supposed to Hide This The Turnstile bytecode arrives encrypted. The server sends a field called turnstile.dx in the prepare response: 28,000 characters of base64 that change on every request. The outer layer is XOR'd with the p token from the prepare request. Both travel in the same HTTP exchange, so decrypting it is straightforward: outer = json.loads(bytes( base64decode(dx)[i] ^ p_token[i % len(p_token)] for i in range(len(base64decode(dx))) )) # → 89 VM instructions Inside those 89 instructions, there is a 19KB encrypted blob containing the actual fingerprinting program. This inner blob uses a different XOR key that is not the p token. Initially I assumed this key was derived from performance.now() and was truly ephemeral. Then I looked at the bytecode more carefully and found the key sitting in the instructions: [41.02, 0.3, 22.58, 12.96, 97.35] The last argument, 97.35 , is the XOR key. A float literal, generated by the server, embedded in the bytecode it sent to the browser. I verified this across 50 requests. Every time, the float from the instruction decrypts the inner blob to valid JSON. 50 out of 50. The full decryption chain requires nothing beyond the HTTP request and response: 1. Read p from prepare request 2. Read turnstile.dx from prepare response 3. XOR(base64decode(dx), p) → outer bytecode 4. Find the 5-arg instruction after the 19KB blob → last arg is the key 5. XOR(base64decode(blob), str(key)) → inner program (417-580 VM instructions) The key is in the payload. What the Decrypted Program Checks Each inner program uses a custom VM with 28 opcodes (ADD, XOR, CALL, BTOA, RESOLVE, BIND_METHOD, JSON_STRINGIFY, etc.) and randomized float register addresses that change per request. I mapped the opcodes from the SDK source ( sdk.js , 1,411 lines, deobfuscated). The program collects 55 properties. No variation across 377 samples. All 55, every time, organized into three layers: Layer 1: Browser Fingerprint WebGL (8 properties): UNMASKED_VENDOR_WEBGL , UNMASKED_RENDERER_WEBGL , WEBGL_debug_renderer_info , getExtension , getParameter , getContext , canvas , webgl Screen (8): colorDept",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 5,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloudflare",
+        "edge",
+        "render",
+        "gpu",
+        "vm"
+      ],
+      "ai_hits": [
+        "chatgpt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT"
+      ],
+      "competitors": [
+        "Cloudflare"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "React"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "ChatGPT Won't Let You Type Until Cloudflare Reads Your React State. I Decrypted the Program That Does It. Every ChatGPT message triggers a Cloudflare Turnstile program that runs silently in your browser. I decrypted 377 of these programs from network traffic and found something that goes beyond standard browser fingerprinting.",
+      "heat_score": 5.0,
+      "timeliness_score": 8.0,
+      "composite_score": 6.5,
+      "tcloud_relevance": 5.3,
+      "tcloud_integration": "**ChatGPT won't let you type until Cloudfl** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_products": [
+        "CVM"
+      ],
+      "tcloud_reasons": [
+        "**ChatGPT won't let you type until Cloudfl** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "vm"
+      ],
+      "tcloud_primary_product": "CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CVM：**ChatGPT won't let you type until Cloudfl** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_official_matches": [
+        "CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CVM）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CVM） + 社区参与",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「ChatGPT won't let you type until Cloudflare reads…」（ChatGPT Won't Let You Type Until Cloudflare Reads Your Reac…），涉及 React → 可写方向：涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「ChatGPT won't let you type until Cloudfl」涉及GPU 算力场景，可结合 CVM 写教程或场景解读。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CVM",
+      "official_angle_cn": "以 ChatGPT won't let you type until Cloudfl 的算力需求为切入，写一篇在 CVM GPU 实例上跑模型训练/推理的实操内容，附硬件规格和成本估算。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CVM。",
+      "platform_copies": {
+        "primary_product": "CVM",
+        "product_display": "CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 ChatGPT won't let you type until Cloudfl 的算力需求为切入，写一篇在 CVM GPU 实例上跑模型训练/推理的实操内容，附硬件规格和成本估算。",
+        "official_angle_en": "Use Cloud Virtual Machine (CVM) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CVM。",
+        "x_cn": "ChatGPT Won't Let You Type Until Cloudflare Reads Your React State.…。如果站在腾讯云国际站官方号来写，这条更适合从 CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 CVM：**ChatGP…",
+        "x_en": "ChatGPT won't let you type until Cloudflare reads your React state. For Tencent Cloud, this fits Cloud Virtual Machine (CVM): GPU and high-performance compute for model training and large-scale services.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：ChatGPT Won't Let You Type Until Cloudflare Reads Your React State.…。如果从腾讯云视角切，这条最适合带到 CVM，重点聊 技术科普 + 教程拆解 + 产品关联（CVM） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: ChatGPT won't let you type until Cloudflare reads your React state. From a Tencent Cloud angle, the best hook is Cloud Virtual Machine (CVM), especially around technical explainer + hands-on walkthrough + product tie-in (CVM) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。ChatGPT Won't Let You Type Until Cloudflare Reads Your React State.…。如果用官方号发，建议主推 CVM，重点讲 技术科普 + 教程拆解 + 产品关联（CVM） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CVM：**ChatGPT won't let you type until Cloudfl** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. ChatGPT won't let you type until Cloudflare reads your React state. For Tencent Cloud, the better angle is Cloud Virtual Machine (CVM). GPU and high-performance compute for model training and large-scale services. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CVM) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：ChatGPT Won't Let You Type Until Cloudflare Reads Your React State.…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CVM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CVM） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Cloud Virtual Machine (CVM)?",
+        "reddit_body_en": "A recent trend caught my eye: ChatGPT won't let you type until Cloudflare reads your React state. Instead of reposting it as news, I'd frame it through Cloud Virtual Machine (CVM) and focus on technical explainer + hands-on walkthrough + product tie-in (CVM) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ChatGPT won't let you type until Cloudfl：在 Cloudflare 读取您的 React 状态之前，ChatGPT 不会让您打字。我解密了执行此操作的程序。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "The Cognitive Dark Forest",
+    "url": "https://ryelang.org/blog/posts/cognitive-dark-forest/",
+    "hn_url": "https://news.ycombinator.com/item?id=47566442",
+    "heat": "214 points",
+    "time": "5 hours ago",
+    "developer_name": "kaycebasques",
+    "developer_url": "https://news.ycombinator.com/user?id=kaycebasques",
+    "content": "The Cognitive Dark Forest | Rye blog Table of Contents thinkpad space internet enter AI platform dark forest. reaction: closing the gates reaction: innovate, resist final recursion This is somewhat of a thought experiment, thinking is still free, so let’s indulge. thinkpad # 2009, I bought a refurbished ThinkPad, installed Xubuntu, and started coding. No permission was needed, no subscription. No gatekeeper, and no middleman taking its toll, between me and the future me. Just idea, code editor, music in my ears and off I went towards a brighter future - a product market fit, or a learning experience. Sharing was cool. Source code on GitHub. Talking to peers on forums. MVPs to users. Oddball ideas on blogs. We did our thinking in public because of two assumptions: Ideas are cheap - execution is hard -and- the world ahead is ripe with opportunity. The internet (world) was a spacious bright meadow. space # Did you get to read the Liu Cixin’s second 3-body-problem novel? - The Dark Forest. Well some of you did … In it, the universe isn’t empty, it’s just silent. Because it’s a dangerous place. Every surviving civilization that reveals itself gets annihilated. So they all hide. Annihilation isn’t even malevolent, but only the most rational game-theoretic reaction to becoming aware of another civilisation. It is also asymmetric. If you announce your presence, even if 4 out of 5 civs that notice you don’t annihilate you immediately (but they probably should), the fifth might. It’s just a probability game, with permadeath. So hiding is the most rational - the only - strategy of survival. internet # The earlier internet wasn’t like that. On the contrary, the risk was being silent, disconnected, node without edges. Connecting improved your odds of success , becoming a hub lifted you to another level. Announcing, signaling your ideas offered much greater benefit than risk, because your value multiplied by connections, and execution was the moat you could stand behind. I said success above. Bright future and opportunity makes you optimize for success. But, current year 2026, the internet, by a large margin got consolidated. By corporations trying to extract your info to basically advertise you, and governments trying to kill your privacy to control you. Consolidated opportunity space and bleaker future make us scramble for survival . And when we play for survival, we already lost, the result is known, we are just playing to postpone it. enter AI # We developers knew better, it was overblown. It still is, but some code gets generated, and some code works, it’s a probability game, eventually probability rose to the level of “good enough”. If whole projects can get one-prompted or agent-teamed it becomes just the money game. You are creating your cool streaming platform in your bedroom. Nobody is stopping you, but if you succeed, if you get the signal out, if you are being noticed, the large platform with loads of cash can incorporate your specific innovations ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "The Cognitive Dark Forest | Rye blog Table of Contents thinkpad space internet enter AI platform dark forest. reaction: closing the gates reaction: innovate, resist final recursion This is somewhat of a thought experiment, thinking is still free, so let’s indulge. thinkpad # 2009, I bought a refurbished ThinkPad, installed Xubuntu, and started coding. No permission was needed, no subscription.",
+      "heat_score": 5.0,
+      "timeliness_score": 8.0,
+      "composite_score": 3.6,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「The Cognitive Dark Forest」（The Cognitive Dark Forest | Rye blog Table of Contents thin…），涉及 Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「The Cognitive Dark Forest」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "The Cognitive Dark Forest | Rye blog Table of Contents thinkpad spa…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "The Cognitive Dark Forest. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：The Cognitive Dark Forest | Rye blog Table of Contents thinkpad spa…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: The Cognitive Dark Forest. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。The Cognitive Dark Forest | Rye blog Table of Contents thinkpad spa…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. The Cognitive Dark Forest. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：The Cognitive Dark Forest | Rye blog Table of Contents thinkpad spa…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: The Cognitive Dark Forest. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "The Cognitive Dark Forest：认知黑暗森林|Rye博客目录thinkpad空间互联网进入AI平台黑暗森林。反应：关上大门 反应：创新，抵制最终递归 这有点像一个思想实验，思考仍然是自由的，所以让我们尽情享受吧。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "There is No Spoon. A software engineers primer for demystified ML",
+    "url": "https://github.com/dreddnafious/thereisnospoon",
+    "hn_url": "https://news.ycombinator.com/item?id=47568080",
+    "heat": "34 points",
+    "time": "2 hours ago",
+    "developer_name": "jmatthews",
+    "developer_url": "https://news.ycombinator.com/user?id=jmatthews",
+    "content": "GitHub - dreddnafious/thereisnospoon: A machine learning primer built from first principles. For engineers who want to reason about ML systems the way they reason about software systems. · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert dreddnafious / thereisnospoon Public Notifications You must be signed in to change notification settings Fork 5 Star 113 main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 14 Commits 14 Commits figures figures scripts scripts .gitignore .gitignore LICENSE LICENSE README.md README.md SYLLABUS.md SYLLABUS.md ml-primer.md ml-primer.md View all files Repository files navigation There Is No Spoon A machine learning primer built from first principles. Written for engineers who want to reason about ML systems the way they reason about software systems. 🎯 Who This Is For You're a strong engineer. You can draw a software system on a whiteboard from your own hard-earned mental model. You understand tradeoffs — maintenance vs elegance, performance vs complexity. You have a gut for software design. You don't have that gut for machine learning yet. You know the tools exist but you can't feel when to reach for which. This primer builds that intuition. 💡 What Makes This Different This isn't a textbook or a tutorial. It's a mental model — the abstractions you need to reason about ML systems the way you already reason about software systems. Every concept is anchored in physical and engineering analogies : Neurons as polarizing filters Depth as paper folding Gradient flow as pipeline valves The chain rule as a gear train Projections as shadows These analogies aren't decorative — they're the primary explanation, with math as the supporting detail. The focus is when to reach for which tool and why — not just what each tool does, but the design decision it represents and the tradeoffs it implies. 📐 What It Covers The primer is organized in three parts: 🧱 Part 1 — Fundamentals The neuron, composition (depth and width as paper folding), learning as optimization (derivatives, chain rule, backprop), generalization, and representation (features as directions, superposition). 🏗️ Part 2 — Architectures The combination rule family (dense, convolution, recurrence, attention, graph ops, SSMs), the transformer in depth (self-attention, FFN as volumetric lookup, residual connections), encoding, learning rules beyond backprop, training frameworks (supervised, self-supervised, RL, GANs, diffusion), and matching topology to problem. 🚦 Part 3 — Gates as Control Systems Gate primitives (scalar, vector, matrix), soft logic composition, branching and routing, recursion within a forward pass, and the geometric math toolbox (projection, masking, rota",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "machine learning",
+        "transformer",
+        "diffusion"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Transformer",
+        "Diffusion",
+        "Go"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "GitHub - dreddnafious/thereisnospoon: A machine learning primer built from first principles. For engineers who want to reason about ML systems the way they reason about software systems. · GitHub You signed in with another tab or window. Reload to refresh your session.",
+      "heat_score": 3.0,
+      "timeliness_score": 9.0,
+      "composite_score": 3.7,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「There is No Spoon. A software engineers primer fo…」（GitHub - dreddnafious/thereisnospoon: A machine learning pr…），涉及 Transformer / Diffusion / Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「There is No Spoon. A software engineers…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "GitHub - dreddnafious/thereisnospoon: A machine learning primer bui…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "There is No Spoon. A software engineers primer for demystified ML. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：GitHub - dreddnafious/thereisnospoon: A machine learning primer bui…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: There is No Spoon. A software engineers primer for demystified ML. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。GitHub - dreddnafious/thereisnospoon: A machine learning primer bui…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. There is No Spoon. A software engineers primer for demystified ML. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：GitHub - dreddnafious/thereisnospoon: A machine learning primer bui…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: There is No Spoon. A software engineers primer for demystified ML. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "There is No Spoon. A software engineers ：thereisnospoon,根据第一原理构建的机器学习入门书,下载thereisnospoon的源码_GitHub_酷徒适合想要像推理软件系统一样推理机器学习系统的工程师。"
+  }
+]
