@@ -1,1 +1,28 @@
-[2026-03-28 11:41] 每日热点追踪执行记录\n\n结论：脚本主流程执行成功，数据文件已生成；“失败”发生在最后的自动推送阶段。\n\n已成功生成的文件：\n- 每日热点汇总表_2026-03-28.csv\n- 每日热点内容写作包_2026-03-28.md\n- 热点追踪历史总表.csv\n\n本次异常/警告：\n1. 多个外部源抓取出现 HTTPS/SSL 错误\n   - DuckDuckGo 搜索失败\n   - Substack RSS 抓取失败\n   - Reddit 部分 RSS 抓取失败\n   - 日志中同时出现 urllib3 对 LibreSSL 2.8.3 的兼容性警告\n   - 影响：部分来源条目数为 0 或偏少，但整体流程未中断\n\n2. GitHub Pages 自动推送失败\n   - 失败命令：git push origin main\n   - 失败原因：远端分支存在本地尚未合并的提交，当前分支与 origin/main 已分叉\n   - 当前状态：main 相对 origin/main 为 ahead 2, behind 2\n   - Git 报错：! [rejected] main -> main (fetch first)\n\n建议处理：\n- 先执行 git pull --rebase origin main，处理完冲突后再 git push origin main\n- 如需减少抓取异常，建议升级到带 OpenSSL 1.1.1+ 的 Python 环境\n
+# 每日热点追踪错误记录
+
+## 2026-03-28 11:41
+- **结论**：脚本主流程执行成功，数据文件已生成；失败发生在最后的自动推送阶段。
+- **已生成文件**：
+  - `每日热点汇总表_2026-03-28.csv`
+  - `每日热点内容写作包_2026-03-28.md`
+  - `热点追踪历史总表.csv`
+- **异常/警告**：
+  1. 多个外部源抓取出现 HTTPS/SSL 错误（DuckDuckGo、Substack RSS、Reddit RSS），同时存在 `urllib3` 与 `LibreSSL 2.8.3` 的兼容性警告。
+  2. `git push origin main` 被拒绝，原因是远端分支存在本地尚未合并的提交，当前分支与 `origin/main` 分叉。
+- **建议处理**：
+  - 先执行 `git pull --rebase origin main`，处理冲突后再执行 `git push origin main`
+  - 如需减少抓取异常，建议升级到带 OpenSSL 1.1.1+ 的 Python 环境
+
+## 2026-03-29 13:54
+- **结论**：`run.sh` 主流程执行完成，今日数据文件与历史总表已成功生成；异常主要发生在部分外部源抓取和最后的 GitHub 推送阶段。
+- **已生成文件**：
+  - `每日热点汇总表_2026-03-29.csv`
+  - `每日热点内容写作包_2026-03-29.md`
+  - `热点追踪历史总表.csv`
+- **异常/警告**：
+  1. 多个外部源抓取出现 HTTPS/SSL 错误，日志中包含 `DuckDuckGo`、`Substack RSS`、`HuggingFace API` 相关失败信息，以及 `urllib3` 对 `LibreSSL 2.8.3` 的兼容性警告。
+  2. 部分来源条目数偏少，日志中显示 `hackernews`、`huggingface`、`v2ex` 为 `0 items`。
+  3. 自动推送 GitHub Pages 失败：`git push origin main` 返回 `! [rejected] main -> main (fetch first)`，说明远端存在尚未同步的提交。
+- **建议处理**：
+  - 先执行 `git pull --rebase origin main`，确认无冲突后再重试 `git push origin main`
+  - 建议切换到带 OpenSSL 1.1.1+ 的 Python 环境，以降低 HTTPS/SSL 报错概率
