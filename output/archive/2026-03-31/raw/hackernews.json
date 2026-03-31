@@ -4,11 +4,11 @@
     "title": "Universal Claude.md – cut Claude output tokens by 63%",
     "url": "https://github.com/drona23/claude-token-efficient",
     "hn_url": "https://news.ycombinator.com/item?id=47581701",
-    "heat": "29 points",
-    "time": "38 minutes ago",
+    "heat": "150 points",
+    "time": "2 hours ago",
     "developer_name": "killme2008",
     "developer_url": "https://news.ycombinator.com/user?id=killme2008",
-    "content": "GitHub - drona23/claude-token-efficient: Universal CLAUDE.md - cut Claude output tokens by 63%. Drop-in. No code changes. · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert drona23 / claude-token-efficient Public Notifications You must be signed in to change notification settings Fork 9 Star 151 main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 12 Commits 12 Commits examples examples profiles profiles .gitignore .gitignore BENCHMARK.md BENCHMARK.md CLAUDE.md CLAUDE.md LICENSE LICENSE README.md README.md View all files Repository files navigation claude-token-efficient One file. Drop it in your project. Cuts Claude output verbosity by ~63%. No code changes required. Note: most Claude costs come from input tokens, not output. This file targets output behavior - sycophancy, verbosity, formatting noise. It won't fix your biggest bill but it will fix your most annoying responses. Model support: benchmarks were run on Claude only. The rules are model-agnostic and should work on any model that reads context - but results on local models like llama.cpp, Mistral, or others are untested. Community results welcome. The Problem When you use Claude Code, every word Claude generates costs tokens. Most people never control how Claude responds - they just get whatever the model decides to output. By default, Claude: Opens every response with \"Sure!\", \"Great question!\", \"Absolutely!\" Ends with \"I hope this helps! Let me know if you need anything!\" Uses em dashes (--), smart quotes, Unicode characters that break parsers Restates your question before answering it Adds unsolicited suggestions beyond what you asked Over-engineers code with abstractions you never requested Agrees with incorrect statements (\"You're absolutely right!\") All of this wastes tokens. None of it adds value. The Fix Drop CLAUDE.md into your project root. Claude Code reads it automatically. Behavior changes immediately. your-project/ └── CLAUDE.md <- one file, zero setup, no code changes When This Helps vs When It Doesn't This file works best for: Automation pipelines with high output volume (resume bots, agent loops, code generation) Repeated structured tasks where Claude's default verbosity compounds across hundreds of calls Teams who need consistent, parseable output format across sessions This file is not worth it for: Single short queries - the file loads into context on every message, so on low-output exchanges it is a net token increase Casual one-off use - the overhead doesn't pay off at low volume Fixing deep failure modes like hallucinated implementations or architectural drift - those require hooks, gates, and mechanical enforcement Pipelines using multiple fresh sessions per tas",
+    "content": "GitHub - drona23/claude-token-efficient: Universal CLAUDE.md - cut Claude output tokens by 63%. Drop-in. No code changes. · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert drona23 / claude-token-efficient Public Notifications You must be signed in to change notification settings Fork 21 Star 418 main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 13 Commits 13 Commits examples examples profiles profiles .gitignore .gitignore BENCHMARK.md BENCHMARK.md CLAUDE.md CLAUDE.md LICENSE LICENSE README.md README.md View all files Repository files navigation claude-token-efficient One file. Drop it in your project. Cuts Claude output verbosity by ~63%. No code changes required. Note: most Claude costs come from input tokens, not output. This file targets output behavior - sycophancy, verbosity, formatting noise. It won't fix your biggest bill but it will fix your most annoying responses. Model support: benchmarks were run on Claude only. The rules are model-agnostic and should work on any model that reads context - but results on local models like llama.cpp, Mistral, or others are untested. Community results welcome. The Problem When you use Claude Code, every word Claude generates costs tokens. Most people never control how Claude responds - they just get whatever the model decides to output. By default, Claude: Opens every response with \"Sure!\", \"Great question!\", \"Absolutely!\" Ends with \"I hope this helps! Let me know if you need anything!\" Uses em dashes (--), smart quotes, Unicode characters that break parsers Restates your question before answering it Adds unsolicited suggestions beyond what you asked Over-engineers code with abstractions you never requested Agrees with incorrect statements (\"You're absolutely right!\") All of this wastes tokens. None of it adds value. The Fix Drop CLAUDE.md into your project root. Claude Code reads it automatically. Behavior changes immediately. your-project/ └── CLAUDE.md <- one file, zero setup, no code changes When This Helps vs When It Doesn't This file works best for: Automation pipelines with high output volume (resume bots, agent loops, code generation) Repeated structured tasks where Claude's default verbosity compounds across hundreds of calls Teams who need consistent, parseable output format across sessions This file is not worth it for: Single short queries - the file loads into context on every message, so on low-output exchanges it is a net token increase Casual one-off use - the overhead doesn't pay off at low volume Fixing deep failure modes like hallucinated implementations or architectural drift - those require hooks, gates, and mechanical enforcement Pipelines using multiple fresh sessions per ta",
     "analysis": {
       "is_cloud": false,
       "is_ai": true,
@@ -39,9 +39,9 @@
       ],
       "tone": "对比测评",
       "detail_brief": "Universal Claude.md – cut Claude output tokens by 63%: GitHub - drona23/claude-token-efficient: Universal CLAUDE. md - cut Claude output tokens by 63%. Drop-in. No code changes.",
-      "heat_score": 3.0,
-      "timeliness_score": 9.5,
-      "composite_score": 5.8,
+      "heat_score": 5.0,
+      "timeliness_score": 9.0,
+      "composite_score": 6.0,
       "tcloud_relevance": 5.0,
       "tcloud_integration": "**Universal Claude.md** 涉及代码生成能力 — CodeBuddy 在代码补全之外还提供 Agent 模式（自动拆解需求→多文件编辑→运行测试），可以做能力升级的对比",
       "tcloud_products": [
@@ -68,7 +68,7 @@
         "观点评论"
       ],
       "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
-      "publish_priority": "P2 观察中",
+      "publish_priority": "P1 本周发",
       "recommended_platforms": [
         "Reddit（直接参与讨论）",
         "LinkedIn（发教程文章）",
@@ -108,8 +108,8 @@
     "title": "Fedware: Government apps that spy harder than the apps they ban",
     "url": "https://www.sambent.com/the-white-house-app-has-huawei-spyware-and-an-ice-tip-line/",
     "hn_url": "https://news.ycombinator.com/item?id=47577761",
-    "heat": "422 points",
-    "time": "7 hours ago",
+    "heat": "473 points",
+    "time": "9 hours ago",
     "developer_name": "speckx",
     "developer_url": "https://news.ycombinator.com/user?id=speckx",
     "content": "Fedware: 13 Government Apps That Spy Harder Than the Apps They Ban White House App 3 Trackers, GPS + Biometrics Version 47.0.1 requests precise GPS, fingerprint access, storage modification, auto-start at boot, draw over apps, and Wi-Fi scanning for a news app. FBI Dashboard 4 Trackers + AdMob Ads The FBI's official app has 12 permissions, 4 trackers including Google AdMob. It serves targeted ads while reading your phone identity. FEMA App 28 Permissions 28 permissions for an app that shows weather alerts. AP News delivers the same disaster coverage with a fraction of the permissions. CBP Passport Control 7 Dangerous Permissions Background location tracking, camera, biometrics, full storage access. Faceprints retained for up to 75 years across DHS, ICE, and FBI. Mobile Fortify 200M+ Face Database ICE field agents carry this facial recognition app. Pulls from 200M+ DHS/FBI/State images plus 50B Clearview AI scraped images via $9.2M contract. SmartLINK $2.2B ICE Monitor Collects geolocation, facial images, voice prints, pregnancy data. ICE contract gives them \"unlimited rights to use, dispose of, or disclose\" all data. Venntel / Data Brokers 15B Location Points/Day DHS, FBI, DOD, and DEA buy location data from 250M+ devices without warrants, bypassing the Supreme Court's Carpenter ruling entirely. IRS-ICE Data Deal 1.28M Names Shared IRS shared tax data with ICE, erroneously included thousands who should never have been on the list. The acting IRS Commissioner resigned in protest. GAO Oversight Failure 60% Ignored Since 2010 Nearly 60% of 236 GAO privacy and security recommendations from 2010 onward remain unimplemented. Congress was told twice to pass privacy law. It has done neither. The federal government released an app yesterday, March 27th, and it's spyware. Listen to this article 0:00 --:-- 1x Failed to load audio The White House app markets itself as a way to get \"unparalleled access\" to the Trump administration, with press releases, livestreams, and policy updates. The kind of content that every RSS feed on the planet delivers with one permission: network access. But the White House app, version 47.0.1 (because subtlety died a long time ago), requests precise GPS location, biometric fingerprint access, storage modification, the ability to run at startup, draw over other apps, view your Wi-Fi connections, and read badge notifications . It also ships with 3 embedded trackers including Huawei Mobile Services Core (yes, the Chinese company the US government sanctioned, shipping tracking infrastructure inside the sitting president's official app), and it has an ICE tip line button that redirects straight to ICE's reporting page. This thing also has a \"Text the President\" button that auto-fills your message with \"Greatest President Ever!\" and then collects your name and phone number. There's no specific privacy policy for the app, just a generic whitehouse.gov policy that doesn't address any of the app's tracking capabilities. The White House ap",
@@ -189,8 +189,8 @@
     "title": "Do your own writing",
     "url": "https://alexhwoods.com/dont-let-ai-write-for-you/",
     "hn_url": "https://news.ycombinator.com/item?id=47573519",
-    "heat": "364 points",
-    "time": "8 hours ago",
+    "heat": "411 points",
+    "time": "10 hours ago",
     "developer_name": "karimf",
     "developer_url": "https://news.ycombinator.com/user?id=karimf",
     "content": "Don't Let AI Write For You ESC 2026.03 Don't Let AI Write For You 2025.10 Go does not allow truthiness 2025.10 Tightening Constraints in Postgres 2025.10 Domains in Postgres 2024.10 Unique and Exclusion Constraints in Postgres 2024.09 Types From Tables in PL/pgSQL 2024.09 Dynamic Commands in PL/pgSQL 2024.09 Trigger Execution Order in Postgres 2024.09 Inserting Data in Postgres 2024.09 Statement Triggers in Postgres 2024.08 Avoiding Unnecessarily Running Triggers in Postgres 2024.05 Simple Semaphore With a Buffered Channel in Go 2024.05 wc clone 2024.04 Two Approaches To Building A Chat Server 2024.04 Building My Own Git 2022.10 Format Strings in Rust 2022.08 Genqlient 2022.06 Structural vs. Nominal Type Systems 2022.01 🎙️, 🎙️ - Is this thing on? 2021.10 Evaluating GCP's Cloud Key Management Service 2021.07 Invert a Binary Tree 2021.07 I made a dumb linux mistake 2021.07 What happens when you go to this site? 2021.07 Running Containers on AWS 2021.07 Exploring Kubernetes Ingress 2021.07 How To Revert a Merge Commit 2021.07 How To Reverse a LinkedList 2021.06 Everything Useful I Know About kubectl 2021.05 What is a VPN? 2021.04 Lua Libraries in Istio's EnvoyFilter 2021.02 Pulumi vs Terraform 2021.01 Notes on Jan 4th, 2021 Slack Outage 2021.01 Socket Hang Ups 2020.09 Consistent Hashing 2020.09 Why spend innovation tokens on a service mesh? 2020.07 Overlays over templating 2020.05 Intro to Bigtable 2020.03 Deep Dive into Joining in Kafka Streams 2020.03 Sensible Schema Evolution 2020.02 Landing a message from Kafka 2020.02 Git home 2020.02 Choosing the right scope function in Kotlin 2020.01 Inline Functions 2020.01 Kotlin Algorithm Challenge #3 2020.01 Change Data Capture 2020.01 What do data classes give you in Kotlin? 2020.01 Kafka Hello World 2020.01 Kotlin Algorithm Challenge #2 2020.01 Kotlin's Lambda Syntax 2019.12 Kotlin Algorithm Challenge #1 2019.11 Exactly Once 2019.10 Introduction To Celery 2019.08 How the Node.js Event Loop Polls 2019.07 Asynchronous I/O 2019.07 Generators in JavaScript 2019.07 Classes in JavaScript 2019.06 Modules in Node.js 2019.06 Data Structures and Database Indexes 2019.06 HTTP Persistent Connections 2019.06 Git's DAG 2019.05 Gradle is a DAG 2019.05 What is a topological ordering? 2019.05 What is a DAG? 2019.04 Dijkstra’s Algorithm in Kotlin 2019.04 How similar is the execution of Java and JavaScript? 2015.07 Introduction to Monte Carlo Methods When you write a document or essay, you are posing a question and then answering it. For example, a PRD answers the question, “What should we build?” A technical spec answers, “How should we build it?” Sometimes the question is more difficult to answer—“What are we even trying to accomplish?” And with every attempt at answering, you reflect on whether you’re asking the right question. But now, of course, we have LLMs. I’m seeing an increasing amount of LLM-generated documents, articles, and essays. I want to caution against this. Each LLM-generated document is a missed opport",
@@ -287,11 +287,109 @@
   },
   {
     "source": "Hacker News",
+    "title": "Incident March 30th, 2026 – Accidental CDN Caching",
+    "url": "https://blog.railway.com/p/incident-report-march-30-2026-accidental-cdn-caching",
+    "hn_url": "https://news.ycombinator.com/item?id=47581721",
+    "heat": "31 points",
+    "time": "2 hours ago",
+    "developer_name": "cebert",
+    "developer_url": "https://news.ycombinator.com/user?id=cebert",
+    "content": "Incident Report: March 30th, 2026 — Authenticated user data cached Jacob Cooper Mar 30, 2026 🚄 Edits have been added to provide additional clarity as of 00:00 UTC, in addition to an update to the title for accuracy Railway experienced an incident where CDN features were accidentally enabled for some domains without users enabling them. For those affected, this may have resulted in potentially authenticated data being served to unauthenticated users. Impact On March 30, 2026 between 10:42 UTC and 11:34 UTC (52 minutes), a Railway engineer rolled out a change causing HTTP GET responses to be incorrectly cached across ~0.05% of domains on Railway with CDN disabled. During this window, cached responses may have been served to users other than the original requester, which meant potentially authenticated data is served to unauthenticated users. This meant that, your application may have served requests for one user to a different user. As a result, for those applications serving on Railway, your users may have seen pages intended for other users. We take this very seriously, and detail below what happened, how we’ve addressed it, and how we’re preventing it from happening in the future. Incident Timeline On March 30, 2026: 10:42 UTC - A Railway engineer deployed a configuration update to our CDN provider. This accidentally enabled caching for domains that had CDN turned off. 11:14 UTC - First identification of a possible issue, based on internal information + user reports 11:34 UTC - The change was fully reverted and all cached assets were purged globally. The full incident is available on our Status Page here . What Happened? A CDN (Content Delivery Network) caches your application's content at edge servers around the world so it can be served faster to users. On Railway, CDN caching is opt-in. Domains without CDN enabled will always route requests directly to your application. During this incident, a configuration update accidentally enabled caching on domains that had it disabled. As a result, responses — including authenticated ones — were stored and served from our edge cache instead of reaching your application directly. Origin Cache-Control directives were respected where provided, and Set-Cookie response headers were not cached. However, most GET responses without explicit cache headers were cached by default during this window. Users with domains affected by this incident will be notified via e-mail shortly. Preventative Measures We have already rolled out the following: Additional tests for correct/incorrect caching behaviors before changes are in production Aggressive shard-ing of CDN rollouts over hours as opposed to minutes We are deeply sorry for this grave error on our part. We have already put mitigations in place to prevent it from happening again (see below), but we realize that incidents like this damage your trust in Railway, which is of paramount importance to us. We have been working nonstop to keep up with the surge in growth we",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cdn",
+        "edge",
+        "railway"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "行业观察",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "Incident Report: March 30th, 2026 — Authenticated user data cached Jacob Cooper Mar 30, 2026 🚄 Edits have been added to provide additional clarity as of 00:00 UTC, in addition to an update to the title for accuracy Railway experienced an incident where CDN features were accidentally enabled for some domains without users enabling them. For those affected, this may have resulted in potentially authenticated data being served to unauthenticated users.",
+      "heat_score": 3.0,
+      "timeliness_score": 9.0,
+      "composite_score": 6.4,
+      "tcloud_relevance": 7.9,
+      "tcloud_integration": "**Incident March 30th, 2026** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景\n补充关联 CDN：**Incident March 30th, 2026** 与 CDN 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "EdgeOne",
+        "CDN"
+      ],
+      "tcloud_reasons": [
+        "**Incident March 30th, 2026** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
+        "**Incident March 30th, 2026** 与 CDN 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "cdn",
+        "edge",
+        "content delivery"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**Incident March 30th, 2026** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景\n补充关联 CDN：**Incident March 30th, 2026** 与 CDN 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "EdgeOne",
+        "CDN"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "产品关联（EdgeOne / CDN）",
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "产品关联（EdgeOne / CDN） + 观点评论 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（行业观察文章）",
+        "X（摘要快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "editorial_brief": "话题类型：行业观察\n可用角度：「Incident March 30th, 2026 – Accidental CDN Caching」（Incident Report: March 30th, 2026 — Authenticated user data…） → 可写方向：**Incident March 30th, 2026** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "social_recommendation": "「Incident March 30th, 2026」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P1 本周发（讨论还在活跃期），推荐平台：LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 Incident March 30th, 2026 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 Incident March 30th, 2026 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "Incident Report: March 30th, 2026 — Authenticated user data cached…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：*…",
+        "x_en": "Incident March 30th, 2026 – Accidental CDN Caching. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Incident Report: March 30th, 2026 — Authenticated user data cached…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 产品关联（EdgeOne / CDN） + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Incident March 30th, 2026 – Accidental CDN Caching. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around product tie-in (EdgeOne / CDN) + opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Incident Report: March 30th, 2026 — Authenticated user data cached…。如果用官方号发，建议主推 EdgeOne，重点讲 产品关联（EdgeOne / CDN） + 观点评论 + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**Incident March 30th, 2026** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景 补充关联 CDN：**Incident March 30th, 2026** 与 CDN 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Incident March 30th, 2026 – Accidental CDN Caching. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on product tie-in (EdgeOne / CDN) + opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Incident Report: March 30th, 2026 — Authenticated user data cached…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 产品关联（EdgeOne / CDN） + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Incident March 30th, 2026 – Accidental CDN Caching. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on product tie-in (EdgeOne / CDN) + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Incident March 30th, 2026：事件报告：2026 年 3 月 30 日 — 缓存的经过身份验证的用户数据 Jacob Cooper 2026 年 3 月 30 日 🚄 已添加编辑，以提供截至 UTC 时间 00:00 的额外清晰度，此外还更新了标题以确保准确性 Railway 经历了一次事件，即在没有用户启用的情况下意外为某些域启用了 CDN 功能。"
+  },
+  {
+    "source": "Hacker News",
     "title": "Turning a MacBook into a touchscreen with $1 of hardware (2018)",
     "url": "https://anishathalye.com/macbook-touchscreen/",
     "hn_url": "https://news.ycombinator.com/item?id=47578572",
-    "heat": "199 points",
-    "time": "6 hours ago",
+    "heat": "231 points",
+    "time": "8 hours ago",
     "developer_name": "HughParry",
     "developer_url": "https://news.ycombinator.com/user?id=HughParry",
     "content": "Turning a MacBook into a Touchscreen with $1 of Hardware We turned a MacBook into a touchscreen using only $1 of hardware and a little bit of computer vision. The proof-of-concept, dubbed “Project Sistine” after our recreation of the famous painting in the Sistine Chapel, was prototyped by me, Kevin , Guillermo , and Logan in about 16 hours. Basic Principle The basic principle behind Sistine is simple. Surfaces viewed from an angle tend to look shiny, and you can tell if a finger is touching the surface by checking if it’s touching its own reflection. Kevin, back in middle school, noticed this phenomenon and built ShinyTouch , utilizing an external webcam to build a touch input system requiring virtually no setup. We wanted to see if we could miniaturize the idea and make it work without an external webcam. Our idea was to retrofit a small mirror in front of a MacBook’s built-in webcam, so that the webcam would be looking down at the computer screen at a sharp angle. The camera would be able to see fingers hovering over or touching the screen, and we’d be able to translate the video feed into touch events using computer vision. Hardware Our hardware setup was simple. All we needed was to position a mirror at the appropriate angle in front of the webcam. Here is our bill of materials: Small mirror Rigid paper plate Door hinge Hot glue After some iteration, we settled on a design that could be assembled in minutes using a knife and a hot glue gun. Here’s the finished product: Finger Detection The first step in processing video frames is detecting the finger. Here’s a typical example of what the webcam sees: The finger detection algorithm needs to find the touch/hover point for further processing. Our current approach uses classical computer vision techniques. The processing pipeline consists of the following steps: Filter for skin colors and binary threshold Find contours Find the two largest contours and ensure that the contours overlap in the horizontal direction and the smaller one is above the larger one Identify the touch/hover point as the midpoint of the line connecting the top of the bottom contour and the bottom of the top contour Distinguish between touch and hover based on the vertical distance between the two contours Shown above is the result of applying this process to a frame from the webcam. The finger and reflection (contours) are outlined in green, the bounding box is shown in red, and the touch point is shown in magenta. Mapping and Calibration The final step in processing the input is mapping the touch/hover point from webcam coordinates to on-screen coordinates. The two are related by a homography . We compute the homography matrix through a calibration process where the user is prompted to touch specific points on the screen. After we collect data matching webcam coordinates with on-screen coordinates, we can estimate the homography robustly using RANSAC . This gives us a projection matrix that maps webcam coordinates to on-sc",
@@ -316,8 +414,8 @@
       "tone": "正向推广",
       "detail_brief": "Turning a MacBook into a Touchscreen with $1 of Hardware We turned a MacBook into a touchscreen using only $1 of hardware and a little bit of computer vision. The proof-of-concept, dubbed “Project Sistine” after our recreation of the famous painting in the Sistine Chapel, was prototyped by me, Kevin , Guillermo , and Logan in about 16 hours. Basic Principle The basic principle behind Sistine is simple.",
       "heat_score": 5.0,
-      "timeliness_score": 8.0,
-      "composite_score": 3.4,
+      "timeliness_score": 7.0,
+      "composite_score": 3.2,
       "tcloud_relevance": 0.0,
       "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
       "tcloud_products": [],
@@ -341,7 +439,7 @@
         "Discord（开发者社区互动）"
       ],
       "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
-      "editorial_brief": "话题类型：开发者话题\n可用角度：「Turning a MacBook into a touchscreen with $1 of h…」（Turning a MacBook into a Touchscreen with $1 of Hardware We…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Turning a MacBook into a touchscreen with $1 of h…」（Turning a MacBook into a Touchscreen with $1 of Hardware We…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
       "social_recommendation": "「Turning a MacBook into a touchscreen wi…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
       "official_product_focus": "",
       "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
@@ -368,204 +466,5 @@
       }
     },
     "summary_cn": "Turning a MacBook into a touchscreen wit：用 1 美元的硬件将 MacBook 变成触摸屏 我们只用 1 美元的硬件和一点计算机视觉就将 MacBook 变成了触摸屏。我、Kevin、Guillermo 和 Logan 在大约 16 小时内完成了概念验证，在我们再现了西斯廷教堂的著名画作后，被称为“西斯廷计划”。"
-  },
-  {
-    "source": "Hacker News",
-    "title": "Learn Claude Code by doing, not reading",
-    "url": "https://claude.nagdy.me/",
-    "hn_url": "https://news.ycombinator.com/item?id=47579229",
-    "heat": "151 points",
-    "time": "5 hours ago",
-    "developer_name": "taubek",
-    "developer_url": "https://news.ycombinator.com/user?id=taubek",
-    "content": "Learn Claude Code Interactively — by Ahmed Nagdy Skip to main content Navigate Jump to learning, practice, or reference tools. Learn Claude Code by doing, not reading. by Ahmed Nagdy 11 interactive modules with terminal simulators, config builders, and quizzes. No setup required. Find Your Level Jump Right In Claude Code Auto-playing... Welcome to Claude Code! > Try before you install Practice slash commands, hooks, and skills in a terminal simulator right in your browser. No setup, no API key. Build real configs Interactive forms generate CLAUDE.md, hooks, and plugin configs you can copy straight into your project. Verify understanding Each module ends with a quiz. Answer wrong and you get the explanation, not just the answer. Start with the basics 11 modules from beginner to advanced. Most people begin here. 1 Slash Commands 30 min beginner 2 Memory & CLAUDE.md 45 min beginner 3 Project Setup 45 min beginner 4 Commands Deep Dive 30 min beginner 5 Skills 1 hour intermediate See all 11 modules Explore Tools to practice, reference, and deepen your understanding. Playground Practice commands in a dedicated full-size terminal sandbox. Config Builder Generate CLAUDE.md, skills, agents, hooks, MCP servers, and plugins. Cheat Sheet Printable shortlist of the commands, shortcuts, and files you use most. Feature Index Search the full Claude Code feature list by type, level, category, and module. Resources Template packs, external guides, and community links.",
-    "analysis": {
-      "is_cloud": false,
-      "is_ai": true,
-      "is_anxiety": false,
-      "cloud_score": 0,
-      "ai_score": 2,
-      "anxiety_score": 0,
-      "cloud_hits": [],
-      "ai_hits": [
-        "claude",
-        "mcp"
-      ],
-      "anxiety_hits": [],
-      "topic": "技术分享",
-      "topic_type": "开发者话题",
-      "products": [
-        "Claude"
-      ],
-      "competitors": [],
-      "competitor_products": [],
-      "techs": [
-        "MCP"
-      ],
-      "tone": "中立资讯",
-      "detail_brief": "Learn Claude Code Interactively — by Ahmed Nagdy content Navigate Jump to learning, practice, or reference tools. Learn Claude Code by doing, not reading. by Ahmed Nagdy 11 interactive modules with terminal simulators, config builders, and quizzes. No setup required.",
-      "heat_score": 5.0,
-      "timeliness_score": 8.0,
-      "composite_score": 5.3,
-      "tcloud_relevance": 4.8,
-      "tcloud_integration": "**Learn Claude Code by doing, not reading** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
-      "tcloud_products": [
-        "CodeBuddy"
-      ],
-      "tcloud_reasons": [
-        "**Learn Claude Code by doing, not reading** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
-      ],
-      "tcloud_evidence": [
-        "claude code"
-      ],
-      "tcloud_primary_product": "CodeBuddy",
-      "tcloud_relation_type": "应用场景",
-      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Learn Claude Code by doing, not reading** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
-      "tcloud_official_matches": [
-        "CodeBuddy"
-      ],
-      "tcloud_priority_matches": [],
-      "editorial_angles": [
-        "技术科普",
-        "教程拆解",
-        "产品关联（CodeBuddy）",
-        "社区参与"
-      ],
-      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
-      "publish_priority": "P2 观察中",
-      "recommended_platforms": [
-        "Reddit（直接参与讨论）",
-        "LinkedIn（发教程文章）",
-        "Discord（开发者社区互动）"
-      ],
-      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
-      "editorial_brief": "话题类型：开发者话题\n可用角度：「Learn Claude Code by doing, not reading」（Learn Claude Code Interactively — by Ahmed Nagdy content Na…），涉及 MCP → 可写方向：涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
-      "social_recommendation": "「Learn Claude Code by doing, not reading」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
-      "official_product_focus": "CodeBuddy",
-      "official_angle_cn": "以 Learn Claude Code by doing, not reading 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
-      "visual_brief": "主视觉用工具/框架的架构图或使用流程截图，如果有命令行输出可以截取关键操作步骤。",
-      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
-      "platform_copies": {
-        "primary_product": "CodeBuddy",
-        "product_display": "CodeBuddy",
-        "relation_type": "应用场景",
-        "official_angle_cn": "以 Learn Claude Code by doing, not reading 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
-        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
-        "visual_brief": "主视觉用工具/框架的架构图或使用流程截图，如果有命令行输出可以截取关键操作步骤。",
-        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
-        "x_cn": "Learn Claude Code Interactively — by Ahmed Nagdy content Navigate J…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
-        "x_en": "Learn Claude Code by doing, not reading. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
-        "discord_cn": "今天看到一条值得开发者关注的热点：Learn Claude Code Interactively — by Ahmed Nagdy content Navigate J…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
-        "discord_en": "A developer trend worth discussing today: Learn Claude Code by doing, not reading. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
-        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Learn Claude Code Interactively — by Ahmed Nagdy content Navigate J…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Learn Claude Code by doing, not reading** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
-        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Learn Claude Code by doing, not reading. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
-        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
-        "reddit_body_cn": "看到这条热点：Learn Claude Code Interactively — by Ahmed Nagdy content Navigate J…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
-        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
-        "reddit_body_en": "A recent trend caught my eye: Learn Claude Code by doing, not reading. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
-      }
-    },
-    "summary_cn": "Learn Claude Code by doing, not reading：交互式学习 Claude 代码 — 作者：Ahmed Nagdy 内容 导航跳转至学习、练习或参考工具。通过实践而不是阅读来学习克劳德代码。"
-  },
-  {
-    "source": "Hacker News",
-    "title": "Agents of Chaos",
-    "url": "https://agentsofchaos.baulab.info/report.html",
-    "hn_url": "https://news.ycombinator.com/item?id=47547843",
-    "heat": "72 points",
-    "time": "5 hours ago",
-    "developer_name": "luu",
-    "developer_url": "https://news.ycombinator.com/user?id=luu",
-    "content": "Agents of Chaos Agents of Chaos Landing Page Report Discord Sessions Dashboard Search Created with Claude Code Agents of Chaos Natalie Shapira 1 Chris Wendler 1 Avery Yen 1 Gabriele Sarti 1 Koyena Pal 1 Olivia Floody 2 Adam Belfki 1 Alex Loftus 1 Aditya Ratan Jannali 2 Nikhil Prakash 1 Jasmine Cui 2 Giordano Rogers 1 Jannik Brinkmann 1 Can Rager 2 Amir Zur 3 Michael Ripa 1 Aruna Sankaranarayanan 8 David Atkinson 1 Rohit Gandikota 1 Jaden Fiotto-Kaufman 1 EunJeong Hwang 4,13 Hadas Orgad 5 P Sam Sahil 2 Negev Taglicht 2 Tomer Shabtay 2 Atai Ambus 2 Nitay Alon 6,7 Shiri Oron 2 Ayelet Gordon-Tapiero 6 Yotam Kaplan 6 Vered Shwartz 4,13 Tamar Rott Shaham 8 Christoph Riedl 1 Reuth Mirsky 9 Maarten Sap 10 David Manheim 11,12 Tomer Ullman 5 David Bau 1 1 Northeastern University 2 Independent Researcher 3 Stanford University 4 University of British Columbia 5 Harvard University 6 Hebrew University 7 Max Planck Institute for Biological Cybernetics 8 MIT 9 Tufts University 10 Carnegie Mellon University 11 Alter 12 Technion 13 Vector Institute Corresponding author: Natalie Shapira ( nd1234@gmail.com ) 📜 Browse Interaction Logs Abstract We report an exploratory red-teaming study of autonomous language-model–powered agents deployed in a live laboratory environment with persistent memory, email accounts, Discord access, file systems, and shell execution. Over a two-week period, twenty AI researchers interacted with the agents under benign and adversarial conditions. Focusing on failures emerging from the integration of language models with autonomy, tool use, and multi-party communication, we document eleven representative case studies. Observed behaviors include unauthorized compliance with non-owners, disclosure of sensitive information, execution of destructive system-level actions, denial-of-service conditions, uncontrolled resource consumption, identity spoofing vulnerabilities, cross-agent propagation of unsafe practices, and partial system takeover. In several cases, agents reported task completion while the underlying system state contradicted those reports. We also report on some of the failed attempts. Our findings establish the existence of security-, privacy-, and governance-relevant vulnerabilities in realistic deployment settings. These behaviors raise unresolved questions regarding accountability, delegated authority, and responsibility for downstream harms, and warrant urgent attention from legal scholars, policymakers, and researchers across disciplines. This report serves as an initial empirical contribution to that broader conversation. [1] Introduction Study Timeline — Feb 2–22, 2026 Harmful (CS1–8) Community (CS9–12) Defensive (CS13–16) LLM-powered AI agents are rapidly becoming more capable and more widely deployed [1] , [2] . Unlike conventional chat assistants, these systems are increasingly given direct access to execution tools (code, shells, filesystems, browsers, and external services), so they do not merely describe actions, they per",
-    "analysis": {
-      "is_cloud": false,
-      "is_ai": true,
-      "is_anxiety": false,
-      "cloud_score": 0,
-      "ai_score": 4,
-      "anxiety_score": 0,
-      "cloud_hits": [],
-      "ai_hits": [
-        "ai",
-        "llm",
-        "claude",
-        "agent"
-      ],
-      "anxiety_hits": [],
-      "topic": "技术分享",
-      "topic_type": "开发者话题",
-      "products": [
-        "Claude"
-      ],
-      "competitors": [],
-      "competitor_products": [],
-      "techs": [
-        "LLM",
-        "Agent"
-      ],
-      "tone": "中立资讯",
-      "detail_brief": "Agents of Chaos Agents of Chaos Landing Page Report Discord Sessions Dashboard Search Created with Claude Code Agents of Chaos Natalie Shapira 1 Chris Wendler 1 Avery Yen 1 Gabriele Sarti 1 Koyena Pal 1 Olivia Floody 2 Adam Belfki 1 Alex Loftus 1 Aditya Ratan Jannali 2 Nikhil Prakash 1 Jasmine Cui 2 Giordano Rogers 1 Jannik Brinkmann 1 Can Rager 2 Amir Zur 3 Michael Ripa 1 Aruna Sankaranarayanan 8 David Atkinson 1 Rohit Gandikota 1 Jaden Fiotto-Kaufman 1 EunJeong Hwang 4,13 Hadas Orgad 5 P Sam…",
-      "heat_score": 4.0,
-      "timeliness_score": 8.0,
-      "composite_score": 5.6,
-      "tcloud_relevance": 4.8,
-      "tcloud_integration": "**Agents of Chaos** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
-      "tcloud_products": [
-        "CodeBuddy"
-      ],
-      "tcloud_reasons": [
-        "**Agents of Chaos** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
-      ],
-      "tcloud_evidence": [
-        "claude code"
-      ],
-      "tcloud_primary_product": "CodeBuddy",
-      "tcloud_relation_type": "应用场景",
-      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Agents of Chaos** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
-      "tcloud_official_matches": [
-        "CodeBuddy"
-      ],
-      "tcloud_priority_matches": [],
-      "editorial_angles": [
-        "技术科普",
-        "教程拆解",
-        "产品关联（CodeBuddy）",
-        "社区参与"
-      ],
-      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
-      "publish_priority": "P2 观察中",
-      "recommended_platforms": [
-        "Reddit（直接参与讨论）",
-        "LinkedIn（发教程文章）",
-        "Discord（开发者社区互动）"
-      ],
-      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
-      "editorial_brief": "话题类型：开发者话题\n可用角度：「Agents of Chaos」（Agents of Chaos Agents of Chaos Landing Page Report Discord…），涉及 LLM / Agent → 可写方向：涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
-      "social_recommendation": "「Agents of Chaos」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
-      "official_product_focus": "CodeBuddy",
-      "official_angle_cn": "以 Agents of Chaos 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
-      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
-      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
-      "platform_copies": {
-        "primary_product": "CodeBuddy",
-        "product_display": "CodeBuddy",
-        "relation_type": "应用场景",
-        "official_angle_cn": "以 Agents of Chaos 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
-        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
-        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
-        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
-        "x_cn": "Agents of Chaos Agents of Chaos Landing Page Report Discord Session…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
-        "x_en": "Agents of Chaos. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
-        "discord_cn": "今天看到一条值得开发者关注的热点：Agents of Chaos Agents of Chaos Landing Page Report Discord Session…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
-        "discord_en": "A developer trend worth discussing today: Agents of Chaos. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
-        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Agents of Chaos Agents of Chaos Landing Page Report Discord Session…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Agents of Chaos** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
-        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Agents of Chaos. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
-        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
-        "reddit_body_cn": "看到这条热点：Agents of Chaos Agents of Chaos Landing Page Report Discord Session…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
-        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
-        "reddit_body_en": "A recent trend caught my eye: Agents of Chaos. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
-      }
-    },
-    "summary_cn": "Agents of Chaos：混沌特工 混沌特工登陆页面 报告 Discord 会话 仪表板搜索 用 Claude Code 创建 混沌特工 Natalie Shapira 1 Chris Wendler 1 Avery Yen 1 Gabriele Sarti 1 Koyena Pal 1 Olivia Floody 2 Adam Belfki 1 Alex Loftus 1 Aditya…"
   }
 ]

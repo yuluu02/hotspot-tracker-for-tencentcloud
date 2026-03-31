@@ -1,13 +1,26 @@
 # 📋 产品 Draft 汇总 — 2026-03-31
 
-> 共 2 个产品的 P0/P1 内容草稿
+> 共 3 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CodeBuddy — 今日内容 (3 条)
+# CodeBuddy — 今日内容 (4 条)
 
-## 1. P1 本周发 · luongnv89/claude-howto
+## 1. P1 本周发 · Universal Claude.md – cut Claude output tokens by 63%
+
+**写什么**: 以 Universal Claude.md 引发的开发者效率讨论为切入点
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "Universal Claude.md – cut Claude output " shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [Universal Claude.md – cut Claude output tokens by ](https://github.com/drona23/claude-token-efficient)*
+
+---
+
+## 2. P1 本周发 · luongnv89/claude-howto
 
 **写什么**: 以 claude-howto 引发的开发者效率讨论为切入点
 
@@ -20,7 +33,7 @@
 
 ---
 
-## 2. P1 本周发 · shanraisshan/claude-code-best-practice
+## 3. P1 本周发 · shanraisshan/claude-code-best-practice
 
 **写什么**: 以 claude-code-best-practice 引发的开发者效率讨论为切入点
 
@@ -33,7 +46,7 @@
 
 ---
 
-## 3. P1 本周发 · antigravity 额度几乎是乞丐版了， ultra 订阅也不行
+## 4. P1 本周发 · antigravity 额度几乎是乞丐版了， ultra 订阅也不行
 
 **写什么**: 借「额度几乎是乞丐版」的讨论热度写一篇 AI 编程工具选型指南
 
@@ -43,6 +56,22 @@
 > 🤖 "antigravity 额度几乎是乞丐版了， ultra 订阅也不行" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
 *参考: [antigravity 额度几乎是乞丐版了， ultra 订阅也不行](https://www.v2ex.com/t/1202215)*
+
+---
+
+
+# EdgeOne — 今日内容 (1 条)
+
+## 1. P1 本周发 · apache/superset
+
+**写什么**: 从 superset 的性能/安全需求出发
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> ⚡ Interesting project: "apache/superset". For teams needing global acceleration + DDoS protection, check out EdgeOne — 3,200+ PoP nodes worldwide. #CDN #WebSecurity #EdgeComputing
+
+*参考: [apache/superset](https://github.com/apache/superset)*
 
 ---
 
