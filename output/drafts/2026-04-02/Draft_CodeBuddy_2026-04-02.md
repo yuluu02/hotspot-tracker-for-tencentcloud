@@ -1,10 +1,3 @@
-# 📋 产品 Draft 汇总 — 2026-04-02
-
-> 共 2 个产品的 P0/P1 内容草稿
-> 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
-
----
-
 # CodeBuddy — 今日内容 (5 条)
 
 ## 1. P1 本周发 · EmDash – A spiritual successor to WordPress that solves plug
@@ -71,33 +64,3 @@
 *参考: [[求助] 公司给了 $90 刀 Claude 额度，但在境内用 cc-switch 和 env 都救](https://www.v2ex.com/t/1202778)*
 
 ---
-
-
-# Hunyuan — 今日内容 (2 条)
-
-## 1. P0 今天发 · f/prompts.chat
-
-**写什么**: 围绕 prompts.chat 的核心功能（f/prompts.chat: Awesome ChatGPT Prompts. Share, discover, 
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🧠 "f/prompts.chat" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
-
-*参考: [f/prompts.chat](https://github.com/f/prompts.chat)*
-
----
-
-## 2. P1 本周发 · 大模型中转站， Unity2.Ai 内测招募：直达源头，拒绝“掺水”！
-
-**写什么**: 以「大模型中转站内测」话题为引子
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🧠 "大模型中转站， Unity2.Ai 内测招募：直达源头，拒绝“掺水”！" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
-
-*参考: [大模型中转站， Unity2.Ai 内测招募：直达源头，拒绝“掺水”！](https://www.v2ex.com/t/1202897)*
-
----
-
