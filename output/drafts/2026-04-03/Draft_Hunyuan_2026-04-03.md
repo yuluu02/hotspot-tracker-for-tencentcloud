@@ -1,10 +1,3 @@
-# 📋 产品 Draft 汇总 — 2026-04-03
-
-> 共 1 个产品的 P0/P1 内容草稿
-> 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
-
----
-
 # Hunyuan — 今日内容 (2 条)
 
 ## 1. P0 今天发 · Google releases Gemma 4 open models
@@ -32,4 +25,3 @@
 *参考: [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks)*
 
 ---
-
