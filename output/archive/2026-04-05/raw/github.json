@@ -1,0 +1,738 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "Blaizzy/mlx-vlm - MLX-VLM is a package for inference and fine-tuning of Vision Language Models (VLMs) on your Mac using MLX.",
+    "url": "https://github.com/Blaizzy/mlx-vlm",
+    "heat": "3,651 stars",
+    "time": "Today",
+    "developer_name": "Blaizzy",
+    "developer_url": "https://github.com/Blaizzy",
+    "developer_email": "medium.com/@prince.canuma",
+    "today_stars": "343 stars today",
+    "language": "Python",
+    "summary": "MLX-VLM is a package for inference and fine-tuning of Vision Language Models (VLMs) on your Mac using MLX.",
+    "content": "[](https://github.com/Blaizzy/mlx-vlm/actions/workflows/python-publish.yml)\n# MLX-VLM\n\nMLX-VLM is a package for inference and fine-tuning of Vision Language Models (VLMs) and Omni Models (VLMs with audio and video support) on your Mac using MLX.\n\n## Table of Contents\n- Installation\n- Usage\n  - Command Line Interface (CLI)\n    - Thinking Budget\n  - Chat UI with Gradio\n  - Python Script\n- Activation Quantization (CUDA)\n- Multi-Image Chat Support\n  - Supported Models\n  - Usage Examples\n- Model-Specific Documentation\n- Vision Feature Caching\n- TurboQuant KV Cache\n- Fine-tuning\n\n## Model-Specific Documentation\n\nSome models have detailed documentation with prompt formats, examples, and best practices:\n\n| Model | Documentation |\n|-------|---------------|\n| DeepSeek-OCR | Docs |\n| DeepSeek-OCR-2 | Docs |\n| DOTS-OCR | Docs |\n| DOTS-MOCR | Docs |\n| GLM-OCR | Docs |\n| Phi-4 Reasoning Vision | Docs |\n| MiniCPM-o | Docs |\n| Phi-4 Multimodal | Docs |\n| MolmoPoint | Docs |\n| Moondream3 | Docs |\n| Gemma 4 | Docs |\n| Falcon-OCR | Docs |\n| Granite Vision 3.2 | Docs |\n| Granite 4.0 Vision | Docs |\n\n## Installation\n\nThe easiest way to get started is to install the `mlx-vlm` package using pip:\n\n```sh\npip install -U mlx-vlm\n```\n\n## Usage\n\n### Command Line Interface (CLI)\n\nGenerate output from a model using the CLI:\n\n```sh\n# Text generation\nmlx_vlm.generate --model mlx-community/Qwen2-VL-2B-Instruct-4bit --max-tokens 100 --prompt \"Hello, how are you?\"\n\n# Image generation\nmlx_vlm.generate --model mlx-community/Qwen2-VL-2B-Instruct-4bit --max-tokens 100 --temperature 0.0 --image http://images.cocodataset.org/val2017/000000039769.jpg\n\n# Audio generation (New)\nmlx_vlm.generate --model mlx-community/gemma-3n-E2B-it-4bit --max-tokens 100 --prompt \"Describe what you hear\" --audio /path/to/audio.wav\n\n# Multi-modal generation (Image + Audio)\nmlx_vlm.generate --model mlx-community/gemma-3n-E2B-it-4bit --max-tokens 100 --prompt \"Describe what you see and hear\" --image /path/to/image.jpg --audio /path/to/audio.wav\n```\n\n#### Thinking Budget\n\nFor thinking models (e.g., Qwen3.5), you can limit the number of tokens spent in the thinking block:\n\n```sh\nmlx_vlm.generate --model mlx-community/Qwen3.5-2B-4bit \\\n  --thinking-budget 50 \\\n  --thinking-start-token \" \" \\\n  --thinking-end-token \" \" \\\n  --enable-thinking \\\n  --prompt \"Solve 2+2\"\n```\n\n| Flag | Description |\n|------|-------------|\n| `--enable-thinking` | Activate thinking mode in the chat template |\n| `--thinking-budget` | Max tokens allowed inside the thinking block |\n| `--thinking-start-token` | Token that opens a thinking block (default: ` `) |\n| `--thinking-end-token` | Token that closes a thinking block (default: ` `) |\n\nWhen the budget is exceeded, the model is forced to emit `\\n ` and transition to the answer. If `--enable-thinking` is passed but the model's chat template does not support it, the budget is applied only if the model generates the start token on its own.\n\n### Chat UI with Gradio\n\nLaunch a chat interface using ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "deepseek",
+        "multimodal",
+        "prompt",
+        "inference",
+        "reasoning",
+        "ocr"
+      ],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "开发者话题",
+      "products": [
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Blaizzy/mlx-vlm: MLX-VLM is a package for inference and fine-tuning of Vision Language Models (VLMs) on your Mac using MLX.",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.2,
+      "tcloud_relevance": 8.8,
+      "tcloud_integration": "**mlx-vlm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 GPU CVM：**mlx-vlm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan",
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**mlx-vlm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**mlx-vlm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "cuda",
+        "fine-tuning",
+        "text generation",
+        "multimodal",
+        "deepseek"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**mlx-vlm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 GPU CVM：**mlx-vlm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "产品关联（Hunyuan / GPU CVM）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 产品关联（Hunyuan / GPU CVM） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Blaizzy/mlx-vlm - MLX-VLM is a package for infere…」（Blaizzy/mlx-vlm: MLX-VLM is a package for inference and fin…），涉及 Python → 可写方向：**mlx-vlm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 GPU CVM：**mlx-vlm** 与 G…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「mlx-vlm」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 mlx-vlm 的核心功能（Blaizzy/mlx-vlm: MLX-VLM is a package for inference and fine-tuning of Vision L…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 mlx-vlm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 mlx-vlm 的核心功能（Blaizzy/mlx-vlm: MLX-VLM is a package for inference and fine-tuning of Vision L…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 mlx-vlm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "Blaizzy/mlx-vlm: MLX-VLM is a package for inference and fine-tuning…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "Blaizzy/mlx-vlm - MLX-VLM is a package for inference and fine-tuning of Vision Language…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Blaizzy/mlx-vlm: MLX-VLM is a package for inference and fine-tuning…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 产品关联（Hunyuan / GPU CVM） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Blaizzy/mlx-vlm - MLX-VLM is a package for inference and fine-tuning of Vision Language…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + product tie-in (Hunyuan / GPU CVM) + opinionated commentary. What matters more to you: deployment, performance, or wo…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Blaizzy/mlx-vlm: MLX-VLM is a package for inference and fine-tuning…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 产品关联（Hunyuan / GPU CVM） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**mlx-vlm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 GPU CVM：**mlx-vlm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Blaizzy/mlx-vlm - MLX-VLM is a package for inference and fine-tuning of Vision Language…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + product tie-in (Hunyuan / GPU CVM) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Blaizzy/mlx-vlm: MLX-VLM is a package for inference and fine-tuning…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 产品关联（Hunyuan / GPU CVM） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Blaizzy/mlx-vlm - MLX-VLM is a package for inference and fine-tuning of Vision Language…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + product tie-in (Hunyuan / GPU CVM) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "MLX-VLM 是一个使用 MLX 在 Mac 上推理和微调视觉语言模型 (VLM) 的软件包。",
+    "developer_profile": {
+      "github_username": "Blaizzy",
+      "profile_url": "https://github.com/Blaizzy",
+      "name": "Prince Canuma",
+      "bio": "MLOps | LLMs | VLMs | Audio LMs | Ex - ML Research Engineer @arcee-ai ",
+      "company": "kulissiwa.com",
+      "location": "Poland",
+      "blog": "medium.com/@prince.canuma",
+      "twitter_username": "Prince_Canuma",
+      "email": "",
+      "followers": 1149,
+      "following": 27,
+      "public_repos": 104,
+      "avatar_url": "https://avatars.githubusercontent.com/u/23445657?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/Prince_Canuma"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/prince-canuma/"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@princecanuma"
+        },
+        {
+          "platform": "unknown",
+          "url": "http://medium.com/@prince.canuma"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "onyx-dot-app/onyx - Open Source AI Platform - AI Chat with advanced features that works with every LLM",
+    "url": "https://github.com/onyx-dot-app/onyx",
+    "heat": "24,363 stars",
+    "time": "Today",
+    "developer_name": "onyx-dot-app",
+    "developer_url": "https://github.com/onyx-dot-app",
+    "developer_email": "founders@onyx.app",
+    "today_stars": "1,197 stars today",
+    "language": "Python",
+    "summary": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
+    "content": "  \n\n \n        \n \n\n \n     \n         \n     \n     \n         \n     \n     \n         \n     \n     \n         \n     \n \n\n \n   \n     \n   \n \n\n# Onyx - The Open Source AI Platform\n\n**Onyx** is the application layer for LLMs - bringing a feature-rich interface that can be easily hosted by anyone.\nOnyx enables LLMs through advanced capabilities like RAG, web search, code execution, file creation, deep research and more.\n\nConnect your applications with over 50+ indexing based connectors provided out of the box or via MCP.\n\n> [!TIP]\n> Deploy with a single command:\n> ```\n> curl -fsSL https://onyx.app/install_onyx.sh | bash\n> ```\n\n---\n\n## ⭐ Features\n\n- **🔍 Agentic RAG:** Get best in class search and answer quality based on hybrid index + AI Agents for information retrieval\n  - Benchmark to release soon!\n- **🔬 Deep Research:** Get in depth reports with a multi-step research flow.\n  - Top of leaderboard as of Feb 2026.\n- **🤖 Custom Agents:** Build AI Agents with unique instructions, knowledge, and actions.\n- **🌍 Web Search:** Browse the web to get up to date information.\n  - Supports Serper, Google PSE, Brave, SearXNG, and others.\n  - Comes with an in house web crawler and support for Firecrawl/Exa.\n- **📄 Artifacts:** Generate documents, graphics, and other downloadable artifacts.\n- **▶️ Actions & MCP:** Let Onyx agents interact with external applications, comes with flexible Auth options.\n- **💻 Code Execution:** Execute code in a sandbox to analyze data, render graphs, or modify files.\n- **🎙️ Voice Mode:** Chat with Onyx via text-to-speech and speech-to-text.\n- **🎨 Image Generation:** Generate images based on user prompts.\n\nOnyx supports all major LLM providers, both self-hosted (like Ollama, LiteLLM, vLLM, etc.) and proprietary (like Anthropic, OpenAI, Gemini, etc.).\n\nTo learn more - check out our docs!\n\n---\n\n## 🚀 Deployment Modes\n\n> Onyx supports deployments in Docker, Kubernetes, Helm/Terraform and provides guides for major cloud providers.\n> Detailed deployment guides found here.\n\nOnyx supports two separate deployment options: standard and lite.\n\n#### Onyx Lite\n\nThe Lite mode can be thought of as a lightweight Chat UI. It requires less resources (under 1GB memory) and runs a less complex stack.\nIt is great for users who want to test out Onyx quickly or for teams who are only interested in the Chat UI and Agents functionalities.\n\n#### Standard Onyx\n\nThe complete feature set of Onyx which is recommended for serious users and larger teams. Additional components not included in Lite mode:\n- Vector + Keyword index for RAG.\n- Background containers to run job queues and workers for syncing knowledge from connectors.\n- AI model inference servers to run deep learning models used during indexing and inference.\n- Performance optimizations for large scale use via in memory cache (Redis) and blob store (MinIO).\n\n> [!TIP]  \n> **To try Onyx for free without deploying, visit Onyx Cloud**.\n\n---\n\n## 🏢 Onyx for Enterprise\n\nOnyx is built for teams of all sizes, from individual user",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 5,
+      "ai_score": 11,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "kubernetes",
+        "docker",
+        "render",
+        "redis"
+      ],
+      "ai_hits": [
+        "ai",
+        "deep learning",
+        "llm",
+        "gemini",
+        "rag",
+        "inference",
+        "mcp",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "Gemini"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "RAG",
+        "Agent",
+        "MCP",
+        "Kubernetes"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "onyx-dot-app/onyx: Open Source AI Platform - AI Chat with advanced features that works with every LLM",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.5,
+      "tcloud_relevance": 0.6,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「onyx-dot-app/onyx - Open Source AI Platform - AI…」（onyx-dot-app/onyx: Open Source AI Platform - AI Chat with a…），涉及 LLM / RAG / Agent → 可写方向：RAG 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「onyx-dot-app/onyx - Open Source AI Plat…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 onyx 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 onyx 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "onyx-dot-app/onyx: Open Source AI Platform - AI Chat with advanced…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "onyx-dot-app/onyx - Open Source AI Platform - AI Chat with advanced features that works…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：onyx-dot-app/onyx: Open Source AI Platform - AI Chat with advanced…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: onyx-dot-app/onyx - Open Source AI Platform - AI Chat with advanced features that works…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。onyx-dot-app/onyx: Open Source AI Platform - AI Chat with advanced…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. onyx-dot-app/onyx - Open Source AI Platform - AI Chat with advanced features that works…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：onyx-dot-app/onyx: Open Source AI Platform - AI Chat with advanced…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: onyx-dot-app/onyx - Open Source AI Platform - AI Chat with advanced features that works…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "onyx：开源 AI 平台 - AI Chat 具有适用于每个 LLM 的高级功能",
+    "developer_profile": {
+      "github_username": "onyx-dot-app",
+      "profile_url": "https://github.com/onyx-dot-app",
+      "name": "Onyx",
+      "bio": "Generative AI with Team Specific Knowledge",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://www.onyx.app/",
+      "twitter_username": "onyx_dot_app",
+      "email": "founders@onyx.app",
+      "followers": 318,
+      "following": 0,
+      "public_repos": 10,
+      "avatar_url": "https://avatars.githubusercontent.com/u/131946000?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/onyx-dot-app"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/onyx_dot_app"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Yeachan-Heo/oh-my-codex - OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.",
+    "url": "https://github.com/Yeachan-Heo/oh-my-codex",
+    "heat": "15,794 stars",
+    "time": "Today",
+    "developer_name": "Yeachan-Heo",
+    "developer_url": "https://github.com/Yeachan-Heo",
+    "developer_email": "hurrc04@gmail.com",
+    "today_stars": "1,789 stars today",
+    "language": "TypeScript",
+    "summary": "OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.",
+    "content": "# oh-my-codex (OMX)\n\n \n   \n   \n   Start Codex stronger, then let OMX add better prompts, workflows, and runtime help when the work grows. \n \n\n[](https://www.npmjs.com/package/oh-my-codex)\n[](https://opensource.org/licenses/MIT)\n[](https://nodejs.org)\n[](https://discord.gg/PUwSMR9XNk)\n\n**Website:** https://yeachan-heo.github.io/oh-my-codex-website/  \n**Docs:** Getting Started · Agents · Skills · Integrations · Demo · OpenClaw guide\n\nOMX is a workflow layer for OpenAI Codex CLI.\n\nIt keeps Codex as the execution engine and makes it easier to:\n- start a stronger Codex session by default\n- run one consistent workflow from clarification to completion\n- invoke the canonical skills with `$deep-interview`, `$ralplan`, `$team`, and `$ralph`\n- keep project guidance, plans, logs, and state in `.omx/`\n\n## Core Maintainers\n\n| Role | Name | GitHub |\n| --- | --- | --- |\n| Creator & Lead | Yeachan Heo | @Yeachan-Heo |\n| Maintainer | HaD0Yun | @HaD0Yun |\n\n## Ambassadors\n\n| Name | GitHub |\n| --- | --- |\n| Sigrid Jin | @sigridjineth |\n\n## Top Collaborators\n\n| Name | GitHub |\n| --- | --- |\n| HaD0Yun | @HaD0Yun |\n| Junho Yeo | @junhoyeo |\n| JiHongKim98 | @JiHongKim98 |\n| Lor | — |\n| HyunjunJeon | @HyunjunJeon |\n\n## Recommended default flow\n\nIf you want the default OMX experience, start here:\n\n```bash\nnpm install -g @openai/codex oh-my-codex\nomx setup\nomx --madmax --high\n```\n\nThen work normally inside Codex:\n\n```text\n$deep-interview \"clarify the authentication change\"\n$ralplan \"approve the auth plan and review tradeoffs\"\n$ralph \"carry the approved plan to completion\"\n$team 3:executor \"execute the approved plan in parallel\"\n```\n\nThat is the main path.\nStart OMX strongly, clarify first when needed, approve the plan, then choose `$team` for coordinated parallel execution or `$ralph` for the persistent completion loop.\n\n## What OMX is for\n\nUse OMX if you already like Codex and want a better day-to-day runtime around it:\n- a standard workflow built around `$deep-interview`, `$ralplan`, `$team`, and `$ralph`\n- specialist roles and supporting skills when the task needs them\n- project guidance through scoped `AGENTS.md`\n- durable state under `.omx/` for plans, logs, memory, and mode tracking\n\nIf you want plain Codex with no extra workflow layer, you probably do not need OMX.\n\n## Quick start\n\n### Requirements\n\n- Node.js 20+\n- Codex CLI installed: `npm install -g @openai/codex`\n- Codex auth configured\n- `tmux` on macOS/Linux if you later want the durable team runtime\n- `psmux` on native Windows if you later want Windows team mode\n\n### A good first session\n\nLaunch OMX the recommended way:\n\n```bash\nomx --madmax --high\n```\n\nThen try the canonical workflow:\n\n```text\n$deep-interview \"clarify the authentication change\"\n$ralplan \"approve the safest implementation path\"\n$ralph \"carry the approved plan to completion\"\n$team 3:executor \"execute the approved plan in parallel\"\n```\n\nUse `$team` when the approved plan needs coordinated parallel work, or `$ralph` when one persistent owner shoul",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "agent",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Yeachan-Heo/oh-my-codex: OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.8,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Yeachan-Heo/oh-my-codex - OmX - Oh My codeX: Your…」（Yeachan-Heo/oh-my-codex: OmX - Oh My codeX: Your codex is n…），涉及 Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Yeachan-Heo/oh-my-codex - OmX - Oh My c…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 oh-my-codex 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 oh-my-codex 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Yeachan-Heo/oh-my-codex: OmX - Oh My codeX: Your codex is not alone…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Yeachan-Heo/oh-my-codex - OmX - Oh My codeX: Your codex is not alone. Add hooks, agent…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Yeachan-Heo/oh-my-codex: OmX - Oh My codeX: Your codex is not alone…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Yeachan-Heo/oh-my-codex - OmX - Oh My codeX: Your codex is not alone. Add hooks, agent…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Yeachan-Heo/oh-my-codex: OmX - Oh My codeX: Your codex is not alone…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Yeachan-Heo/oh-my-codex - OmX - Oh My codeX: Your codex is not alone. Add hooks, agent…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Yeachan-Heo/oh-my-codex: OmX - Oh My codeX: Your codex is not alone…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Yeachan-Heo/oh-my-codex - OmX - Oh My codeX: Your codex is not alone. Add hooks, agent…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "oh-my-codex：OmX - 哦我的 codeX：你的法典并不孤单。添加挂钩、代理团队、HUD 等等。",
+    "developer_profile": {
+      "github_username": "Yeachan-Heo",
+      "profile_url": "https://github.com/Yeachan-Heo",
+      "name": "Bellman",
+      "bio": "Dedicated Algorithmic Trader\r\n\r\nLeader of Quant.start() - Korea's biggest Quant Trading Community\r\n",
+      "company": "@Layoff-Labs ",
+      "location": "Seoul ",
+      "blog": "bellman.tistory.com",
+      "twitter_username": "",
+      "email": "hurrc04@gmail.com",
+      "followers": 3176,
+      "following": 41,
+      "public_repos": 55,
+      "avatar_url": "https://avatars.githubusercontent.com/u/54757707?v=4",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "http://bellman.tistory.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "telegramdesktop/tdesktop - Telegram Desktop messaging app",
+    "url": "https://github.com/telegramdesktop/tdesktop",
+    "heat": "30,856 stars",
+    "time": "Today",
+    "developer_name": "telegramdesktop",
+    "developer_url": "https://github.com/telegramdesktop",
+    "developer_email": "",
+    "today_stars": "249 stars today",
+    "language": "C++",
+    "summary": "Telegram Desktop messaging app",
+    "content": "# [Telegram Desktop][telegram_desktop] – Official Messenger\n\nThis is the complete source code and the build instructions for the official [Telegram][telegram] messenger desktop client, based on the [Telegram API][telegram_api] and the [MTProto][telegram_proto] secure protocol.\n\n[](https://github.com/telegramdesktop/tdesktop/releases)\n[](https://github.com/telegramdesktop/tdesktop/actions)\n[](https://github.com/telegramdesktop/tdesktop/actions)\n[](https://github.com/telegramdesktop/tdesktop/actions)\n\n[![Preview of Telegram Desktop][preview_image]][preview_image_url]\n\nThe source code is published under GPLv3 with OpenSSL exception, the license is available [here][license].\n\n## Supported systems\n\nThe latest version is available for\n\n* Windows 7 and above (64 bit) (portable)\n* Windows 7 and above (32 bit) (portable)\n* macOS 10.13 and above\n* Linux static build for 64 bit\n* Snap\n* Flatpak\n\n## Old system versions\n\nVersion **4.9.9** was the last that supports older systems\n\n* macOS 10.12\n* Linux with glibc < 2.28 static build\n\nVersion **2.4.4** was the last that supports older systems\n\n* OS X 10.10 and 10.11\n* Linux static build for 32 bit\n\nVersion **1.8.15** was the last that supports older systems\n\n* Windows XP and Vista (portable)\n* OS X 10.8 and 10.9\n* OS X 10.6 and 10.7\n\n## Third-party\n\n* Qt 6 (LGPL) and Qt 5.15 (LGPL) slightly patched\n* OpenSSL 3.2.1 (Apache License 2.0)\n* WebRTC (New BSD License)\n* zlib 1.2.11 (zlib License)\n* LZMA SDK 9.20 (public domain)\n* liblzma (public domain)\n* Google Breakpad (License)\n* Google Crashpad (Apache License 2.0)\n* GYP (BSD License)\n* Ninja (Apache License 2.0)\n* OpenAL Soft (LGPL)\n* Opus codec (BSD License)\n* FFmpeg (LGPL)\n* Guideline Support Library (MIT License)\n* Range-v3 (Boost License)\n* Open Sans font (Apache License 2.0)\n* Vazirmatn font (SIL Open Font License 1.1)\n* Emoji alpha codes (MIT License)\n* xxHash (BSD License)\n* QR Code generator (MIT License)\n* CMake (New BSD License)\n* Hunspell (LGPL)\n* Ada (Apache License 2.0)\n\n## Build instructions\n\n* Windows [(32-bit)][win32] [(64-bit)][win64]\n* [macOS][mac]\n* [GNU/Linux using Docker][linux]\n\n[//]: # (LINKS)\n[telegram]: https://telegram.org\n[telegram_desktop]: https://desktop.telegram.org\n[telegram_api]: https://core.telegram.org\n[telegram_proto]: https://core.telegram.org/mtproto\n[license]: LICENSE\n[win32]: docs/building-win.md\n[win64]: docs/building-win-x64.md\n[mac]: docs/building-mac.md\n[linux]: docs/building-linux.md\n[preview_image]: https://github.com/telegramdesktop/tdesktop/blob/dev/docs/assets/preview.png \"Preview of Telegram Desktop\"\n[preview_image_url]: https://raw.githubusercontent.com/telegramdesktop/tdesktop/dev/docs/assets/preview.png",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "webrtc"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "telegramdesktop/tdesktop: Telegram Desktop messaging app",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.8,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「telegramdesktop/tdesktop - Telegram Desktop messa…」（telegramdesktop/tdesktop: Telegram Desktop messaging app） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「telegramdesktop/tdesktop - Telegram Des…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 tdesktop 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 tdesktop 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "telegramdesktop/tdesktop: Telegram Desktop messaging app。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "telegramdesktop/tdesktop - Telegram Desktop messaging app. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：telegramdesktop/tdesktop: Telegram Desktop messaging app。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: telegramdesktop/tdesktop - Telegram Desktop messaging app. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。telegramdesktop/tdesktop: Telegram Desktop messaging app。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. telegramdesktop/tdesktop - Telegram Desktop messaging app. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：telegramdesktop/tdesktop: Telegram Desktop messaging app。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: telegramdesktop/tdesktop - Telegram Desktop messaging app. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "tdesktop：Telegram 桌面消息应用程序",
+    "developer_profile": {
+      "github_username": "telegramdesktop",
+      "profile_url": "https://github.com/telegramdesktop",
+      "name": "Telegram Desktop",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://desktop.telegram.org",
+      "twitter_username": "",
+      "email": "",
+      "followers": 2675,
+      "following": 0,
+      "public_repos": 20,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6113871?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "block/goose - an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
+    "url": "https://github.com/block/goose",
+    "heat": "35,766 stars",
+    "time": "Today",
+    "developer_name": "block",
+    "developer_url": "https://github.com/block",
+    "developer_email": "opensource@block.xyz",
+    "today_stars": "935 stars today",
+    "language": "Rust",
+    "summary": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
+    "content": " \n\n# goose\n\n_a local, extensible, open source AI agent that automates engineering tasks_\n\n \n     \n     \n     \n \n \n\ngoose is your on-machine AI agent, capable of automating complex development tasks from start to finish. More than just code suggestions, goose can build entire projects from scratch, write and execute code, debug failures, orchestrate workflows, and interact with external APIs - _autonomously_.\n\nWhether you're prototyping an idea, refining existing code, or managing intricate engineering pipelines, goose adapts to your workflow and executes tasks with precision.\n\nDesigned for maximum flexibility, goose works with any LLM and supports multi-model configuration to optimize performance and cost, seamlessly integrates with MCP servers, and is available as both a desktop app as well as CLI - making it the ultimate AI assistant for developers who want to move faster and focus on innovation.\n\n[](https://youtu.be/D-DpDunrbpo)\n\n# Quick Links\n- Quickstart\n- Installation\n- Tutorials\n- Documentation\n- Governance\n- Custom Distributions - build your own goose distro with preconfigured providers, extensions, and branding\n\n## Need Help?\n- Diagnostics & Reporting\n- Known Issues\n\n# a little goose humor 🪿\n\n> Why did the developer choose goose as their AI agent?\n> \n> Because it always helps them \"migrate\" their code to production! 🚀\n\n# goose around with us  \n- Discord\n- YouTube\n- LinkedIn\n- Twitter/X\n- Bluesky\n- Nostr",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "MCP"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "block/goose: an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.3,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「block/goose - an open source, extensible AI agent…」（block/goose: an open source, extensible AI agent that goes…），涉及 LLM / Agent / MCP → 可写方向：MCP 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「block/goose - an open source, extensibl…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 goose 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 goose 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "block/goose: an open source, extensible AI agent that goes beyond c…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "block/goose - an open source, extensible AI agent that goes beyond code suggestions - i…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：block/goose: an open source, extensible AI agent that goes beyond c…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: block/goose - an open source, extensible AI agent that goes beyond code suggestions - i…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。block/goose: an open source, extensible AI agent that goes beyond c…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. block/goose - an open source, extensible AI agent that goes beyond code suggestions - i…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：block/goose: an open source, extensible AI agent that goes beyond c…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: block/goose - an open source, extensible AI agent that goes beyond code suggestions - i…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "goose：开源、可扩展的 AI 代理，超越代码建议 - 使用任何 LLM 安装、执行、编辑和测试",
+    "developer_profile": {
+      "github_username": "block",
+      "profile_url": "https://github.com/block",
+      "name": "Block Open Source",
+      "bio": "Open Source at Block, Inc.",
+      "company": "",
+      "location": "",
+      "blog": "https://opensource.block.xyz",
+      "twitter_username": "blockopensource",
+      "email": "opensource@block.xyz",
+      "followers": 1274,
+      "following": 0,
+      "public_repos": 112,
+      "avatar_url": "https://avatars.githubusercontent.com/u/185116535?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/blockopensource"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://linkedin.com/company/block-opensource"
+        },
+        {
+          "platform": "generic",
+          "url": "https://discord.gg/block-opensource"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "microsoft/agent-framework - A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET.",
+    "url": "https://github.com/microsoft/agent-framework",
+    "heat": "8,741 stars",
+    "time": "Today",
+    "developer_name": "microsoft",
+    "developer_url": "https://github.com/microsoft",
+    "developer_email": "opensource@microsoft.com",
+    "today_stars": "72 stars today",
+    "language": "Python",
+    "summary": "A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET.",
+    "content": "\n\n# Welcome to Microsoft Agent Framework!\n\n[](https://discord.gg/b5zjErwbQM)\n[](https://learn.microsoft.com/en-us/agent-framework/)\n[](https://pypi.org/project/agent-framework/)\n[](https://www.nuget.org/profiles/MicrosoftAgentFramework/)\n\nWelcome to Microsoft's comprehensive multi-language framework for building, orchestrating, and deploying AI agents with support for both .NET and Python implementations. This framework provides everything from simple chat agents to complex multi-agent workflows with graph-based orchestration.\n\n \n   \n     \n   \n \n \n   \n    Watch the full Agent Framework introduction (30 min)\n   \n \n\n## 📋 Getting Started\n\n### 📦 Installation\n\nPython\n\n```bash\npip install agent-framework\n# This will install all sub-packages, see `python/packages` for individual packages.\n# It may take a minute on first install on Windows.\n```\n\n.NET\n\n```bash\ndotnet add package Microsoft.Agents.AI\n```\n\n### 📚 Documentation\n\n- **Overview** - High level overview of the framework\n- **Quick Start** - Get started with a simple agent\n- **Tutorials** - Step by step tutorials\n- **User Guide** - In-depth user guide for building agents and workflows\n- **Migration from Semantic Kernel** - Guide to migrate from Semantic Kernel\n- **Migration from AutoGen** - Guide to migrate from AutoGen\n\nStill have questions? Join our weekly office hours or ask questions in our Discord channel to get help from the team and other users.\n\n### ✨ **Highlights**\n\n- **Graph-based Workflows**: Connect agents and deterministic functions using data flows with streaming, checkpointing, human-in-the-loop, and time-travel capabilities\n  - Python workflows | .NET workflows\n- **AF Labs**: Experimental packages for cutting-edge features including benchmarking, reinforcement learning, and research initiatives\n  - Labs directory\n- **DevUI**: Interactive developer UI for agent development, testing, and debugging workflows\n  - DevUI package\n\n \n   \n     \n   \n \n \n   \n    See the DevUI in action (1 min)\n   \n \n\n- **Python and C#/.NET Support**: Full framework support for both Python and C#/.NET implementations with consistent APIs\n  - Python packages | .NET source\n- **Observability**: Built-in OpenTelemetry integration for distributed tracing, monitoring, and debugging\n  - Python observability | .NET telemetry\n- **Multiple Agent Provider Support**: Support for various LLM providers with more being added continuously\n  - Python examples | .NET examples\n- **Middleware**: Flexible middleware system for request/response processing, exception handling, and custom pipelines\n  - Python middleware | .NET middleware\n\n### 💬 **We want your feedback!**\n\n- For bugs, please file a GitHub issue.\n\n## Quickstart\n\n### Basic Agent - Python\n\nCreate a simple Azure Responses Agent that writes a haiku about the Microsoft Agent Framework\n\n```python\n# pip install agent-framework\n# Use `az login` to authenticate with Azure CLI\nimport os\nimport asyncio\nfrom agent_framework import Agent\nfrom agent_framework.foundry import FoundryChat",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "azure",
+        "edge"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "autogen"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Azure"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "microsoft/agent-framework: A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.7,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「microsoft/agent-framework - A framework for build…」（microsoft/agent-framework: A framework for building, orches…），涉及 LLM / Agent / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「microsoft/agent-framework - A framework…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 agent-framework 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 agent-framework 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "microsoft/agent-framework: A framework for building, orchestrating…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "microsoft/agent-framework - A framework for building, orchestrating and deploying AI ag…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：microsoft/agent-framework: A framework for building, orchestrating…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: microsoft/agent-framework - A framework for building, orchestrating and deploying AI ag…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。microsoft/agent-framework: A framework for building, orchestrating…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. microsoft/agent-framework - A framework for building, orchestrating and deploying AI ag…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：microsoft/agent-framework: A framework for building, orchestrating…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: microsoft/agent-framework - A framework for building, orchestrating and deploying AI ag…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "agent-framework：用于构建、编排和部署 AI 代理和多代理工作流程的框架，支持 Python 和 .",
+    "developer_profile": {
+      "github_username": "microsoft",
+      "profile_url": "https://github.com/microsoft",
+      "name": "Microsoft",
+      "bio": "Open source projects and samples from Microsoft",
+      "company": "",
+      "location": "Redmond, WA",
+      "blog": "https://opensource.microsoft.com",
+      "twitter_username": "OpenAtMicrosoft",
+      "email": "opensource@microsoft.com",
+      "followers": 116578,
+      "following": 0,
+      "public_repos": 7739,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6154722?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/OpenAtMicrosoft"
+        }
+      ],
+      "is_org": true
+    }
+  }
+]
