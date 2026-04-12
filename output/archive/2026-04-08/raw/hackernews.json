@@ -4,7 +4,11 @@
     "title": "OpenAI says its new model GPT-2 is too dangerous to release (2019)",
     "url": "https://slate.com/technology/2019/02/openai-gpt2-text-generating-algorithm-ai-dangerous.html",
     "hn_url": "https://news.ycombinator.com/item?id=47684326",
+<<<<<<< Updated upstream
     "heat": "207 points",
+=======
+    "heat": "221 points",
+>>>>>>> Stashed changes
     "time": "1 hour ago",
     "developer_name": "surprisetalk",
     "developer_url": "https://news.ycombinator.com/user?id=surprisetalk",
@@ -93,7 +97,11 @@
     "title": "Project Glasswing: Securing critical software for the AI era",
     "url": "https://www.anthropic.com/glasswing",
     "hn_url": "https://news.ycombinator.com/item?id=47679121",
+<<<<<<< Updated upstream
     "heat": "991 points",
+=======
+    "heat": "996 points",
+>>>>>>> Stashed changes
     "time": "9 hours ago",
     "developer_name": "Ryan5453",
     "developer_url": "https://news.ycombinator.com/user?id=Ryan5453",
@@ -182,7 +190,11 @@
     "title": "Lunar Flyby",
     "url": "https://www.nasa.gov/gallery/lunar-flyby/",
     "hn_url": "https://news.ycombinator.com/item?id=47676509",
+<<<<<<< Updated upstream
     "heat": "464 points",
+=======
+    "heat": "465 points",
+>>>>>>> Stashed changes
     "time": "7 hours ago",
     "developer_name": "kipi",
     "developer_url": "https://news.ycombinator.com/user?id=kipi",
@@ -266,7 +278,11 @@
     "title": "System Card: Claude Mythos Preview [pdf]",
     "url": "https://www-cdn.anthropic.com/53566bf5440a10affd749724787c8913a2ae0841.pdf",
     "hn_url": "https://news.ycombinator.com/item?id=47679258",
+<<<<<<< Updated upstream
     "heat": "577 points",
+=======
+    "heat": "581 points",
+>>>>>>> Stashed changes
     "time": "9 hours ago",
     "developer_name": "be7a",
     "developer_url": "https://news.ycombinator.com/user?id=be7a",
@@ -346,10 +362,106 @@
   },
   {
     "source": "Hacker News",
+<<<<<<< Updated upstream
     "title": "Slightly safer vibecoding by adopting old hacker habits",
     "url": "http://addxorrol.blogspot.com/2026/03/slightly-safer-vibecoding-by-adopting.html",
     "hn_url": "https://news.ycombinator.com/item?id=47622436",
     "heat": "19 points",
+=======
+    "title": "LLM scraper bots are overloading acme.com's HTTPS server",
+    "url": "http://acme.com/updates/archive/229.html",
+    "hn_url": "https://news.ycombinator.com/item?id=47684506",
+    "heat": "13 points",
+    "time": "50 minutes ago",
+    "developer_name": "mjyut",
+    "developer_url": "https://news.ycombinator.com/user?id=mjyut",
+    "content": "ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https outage Starting on February 25th and lasting a little over a month, acme.com suffered intermittent network outages. The symptoms were very high ping times and packet drops. The outages would last a few hours and then go away for a while. The problems started right after my internet provider, Sonic, did some scheduled maintenance and switched me to a new network. I worked with Sonic support to try and figure out if their network change, or my own config changes for the new network, could have caused the problems. I did find some things I did wrong, but fixing them didn't fix the outages. A few days ago I was up at 1am, filled with anxiety at yet another outage, and decided to take a harder look at the traffic I was getting. I noticed some interesting things: Nearly all the incoming packets were web requests. Nearly all of them were for non-existent pages. Nearly all of them were on port 443 / https, not port 80 / http. Nearly all of them proudly announced in the user-agent that they were LLM scraper bots. I run two web servers on ACME, one for http that is very fast, and another for https which is kind of slow. Maybe the slow https server was falling behind? I decided to test this: I closed port 443. The problems went away immediately, and have not returned. What I think was going on: before Sonic's February 25th maintenance, my https server was probably barely keeping up. Some change during the maintenance - maybe they increased the available bandwidth? - tipped things over into the web server falling behind, some of the time. Maybe when two different bots were pounding on it simultaneously. When the server fell far enough behind, the congestion spread to natd, the Network Address Translation daemon. When natd also got saturated, bam, packets started getting delayed and dropped. Now closing https service is obviously just a temporary fix, because I do want to provide https, but it's actually not that bad. My legit web traffic is 90% http / 10% https, so I'm losing at most 10% of my traffic. But yeah, I'll be doing a better fix some time soon. Also, this is a bigger problem than just me. The LLM companies are not picking on me in particular, they are pounding every site on the net. I know of two other hobbyist-level sites which are also having problems due to this. Someone really ought to do something about it. Back to ACME Updates .",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "llm",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Go"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https outage Starting on February 25th and lasting a little over a month, acme. com suffered intermittent network outages. The symptoms were very high ping times and packet drops. The outages would last a few hours and then go away for a while.",
+      "heat_score": 3.0,
+      "timeliness_score": 9.5,
+      "composite_score": 3.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 观点评论 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「LLM scraper bots are overloading acme.com's HTTPS…」（ACME Updates - 07Apr2026 https outage ACME Updates 07Apr202…），涉及 LLM / Agent / Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「LLM scraper bots are overloading acme.c…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "LLM scraper bots are overloading acme.com's HTTPS server. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: LLM scraper bots are overloading acme.com's HTTPS server. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 观点评论 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. LLM scraper bots are overloading acme.com's HTTPS server. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: LLM scraper bots are overloading acme.com's HTTPS server. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "LLM scraper bots are overloading acme.co：ACME 更新 - 2026 年 4 月 7 日 https 中断 ACME 更新 2026 年 4 月 7 日 https 中断 从 2 月 25 日开始，持续一个多月，acme。com 遭受间歇性网络中断。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Slightly safer vibecoding by adopting old hacker habits",
+    "url": "http://addxorrol.blogspot.com/2026/03/slightly-safer-vibecoding-by-adopting.html",
+    "hn_url": "https://news.ycombinator.com/item?id=47622436",
+    "heat": "21 points",
+>>>>>>> Stashed changes
     "time": "1 hour ago",
     "developer_name": "transpute",
     "developer_url": "https://news.ycombinator.com/user?id=transpute",

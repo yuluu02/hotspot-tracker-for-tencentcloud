@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 # Hunyuan — 今日内容 (2 条)
+=======
+# Hunyuan — 今日内容 (3 条)
+>>>>>>> Stashed changes
 
 ## 1. P0 今天发 · Google releases Gemma 4 open models
 
@@ -25,3 +29,19 @@
 *参考: [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks)*
 
 ---
+<<<<<<< Updated upstream
+=======
+
+## 3. P0 今天发 · 感觉 ai agent 时代， windows 越来越不行了
+
+**写什么**: 以「感觉时代越来越不」话题为引子
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🧠 "感觉 ai agent 时代， windows 越来越不行了" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+
+*参考: [感觉 ai agent 时代， windows 越来越不行了](https://www.v2ex.com/t/1203016)*
+
+---
+>>>>>>> Stashed changes

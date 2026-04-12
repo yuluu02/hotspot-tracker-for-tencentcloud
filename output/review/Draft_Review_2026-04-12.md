@@ -1,10 +1,15 @@
 # 📋 产品 Draft 汇总 — 2026-04-12
 
+<<<<<<< Updated upstream
 > 共 5 个产品的 P0/P1 内容草稿
+=======
+> 共 1 个产品的 P0/P1 内容草稿
+>>>>>>> Stashed changes
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
+<<<<<<< Updated upstream
 # CVM — 今日内容 (1 条)
 
 ## 1. P0 今天发 · NousResearch/hermes-agent
@@ -37,6 +42,11 @@
 ---
 
 ## 2. P1 本周发 · forrestchang/andrej-karpathy-skills
+=======
+# CodeBuddy — 今日内容 (1 条)
+
+## 1. P1 本周发 · forrestchang/andrej-karpathy-skills
+>>>>>>> Stashed changes
 
 **写什么**: 以 andrej-karpathy-skills 引发的开发者效率讨论为切入点
 
@@ -49,6 +59,7 @@
 
 ---
 
+<<<<<<< Updated upstream
 ## 3. P1 本周发 · shanraisshan/claude-code-best-practice
 
 **写什么**: 以 claude-code-best-practice 引发的开发者效率讨论为切入点
@@ -110,3 +121,5 @@
 
 ---
 
+=======
+>>>>>>> Stashed changes

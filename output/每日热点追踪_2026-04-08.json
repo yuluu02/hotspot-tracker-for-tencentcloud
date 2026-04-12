@@ -1,5 +1,9 @@
 {
+<<<<<<< Updated upstream
   "generated_at": "2026-04-08T03:49:19.790051",
+=======
+  "generated_at": "2026-04-08T11:55:16.546345",
+>>>>>>> Stashed changes
   "results": [
     {
       "key": "hackernews",
@@ -11,7 +15,11 @@
           "title": "OpenAI says its new model GPT-2 is too dangerous to release (2019)",
           "url": "https://slate.com/technology/2019/02/openai-gpt2-text-generating-algorithm-ai-dangerous.html",
           "hn_url": "https://news.ycombinator.com/item?id=47684326",
+<<<<<<< Updated upstream
           "heat": "207 points",
+=======
+          "heat": "221 points",
+>>>>>>> Stashed changes
           "time": "1 hour ago",
           "developer_name": "surprisetalk",
           "developer_url": "https://news.ycombinator.com/user?id=surprisetalk",
@@ -100,7 +108,11 @@
           "title": "Project Glasswing: Securing critical software for the AI era",
           "url": "https://www.anthropic.com/glasswing",
           "hn_url": "https://news.ycombinator.com/item?id=47679121",
+<<<<<<< Updated upstream
           "heat": "991 points",
+=======
+          "heat": "996 points",
+>>>>>>> Stashed changes
           "time": "9 hours ago",
           "developer_name": "Ryan5453",
           "developer_url": "https://news.ycombinator.com/user?id=Ryan5453",
@@ -189,7 +201,11 @@
           "title": "Lunar Flyby",
           "url": "https://www.nasa.gov/gallery/lunar-flyby/",
           "hn_url": "https://news.ycombinator.com/item?id=47676509",
+<<<<<<< Updated upstream
           "heat": "464 points",
+=======
+          "heat": "465 points",
+>>>>>>> Stashed changes
           "time": "7 hours ago",
           "developer_name": "kipi",
           "developer_url": "https://news.ycombinator.com/user?id=kipi",
@@ -273,7 +289,11 @@
           "title": "System Card: Claude Mythos Preview [pdf]",
           "url": "https://www-cdn.anthropic.com/53566bf5440a10affd749724787c8913a2ae0841.pdf",
           "hn_url": "https://news.ycombinator.com/item?id=47679258",
+<<<<<<< Updated upstream
           "heat": "577 points",
+=======
+          "heat": "581 points",
+>>>>>>> Stashed changes
           "time": "9 hours ago",
           "developer_name": "be7a",
           "developer_url": "https://news.ycombinator.com/user?id=be7a",
@@ -353,10 +373,106 @@
         },
         {
           "source": "Hacker News",
+<<<<<<< Updated upstream
           "title": "Slightly safer vibecoding by adopting old hacker habits",
           "url": "http://addxorrol.blogspot.com/2026/03/slightly-safer-vibecoding-by-adopting.html",
           "hn_url": "https://news.ycombinator.com/item?id=47622436",
           "heat": "19 points",
+=======
+          "title": "LLM scraper bots are overloading acme.com's HTTPS server",
+          "url": "http://acme.com/updates/archive/229.html",
+          "hn_url": "https://news.ycombinator.com/item?id=47684506",
+          "heat": "13 points",
+          "time": "50 minutes ago",
+          "developer_name": "mjyut",
+          "developer_url": "https://news.ycombinator.com/user?id=mjyut",
+          "content": "ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https outage Starting on February 25th and lasting a little over a month, acme.com suffered intermittent network outages. The symptoms were very high ping times and packet drops. The outages would last a few hours and then go away for a while. The problems started right after my internet provider, Sonic, did some scheduled maintenance and switched me to a new network. I worked with Sonic support to try and figure out if their network change, or my own config changes for the new network, could have caused the problems. I did find some things I did wrong, but fixing them didn't fix the outages. A few days ago I was up at 1am, filled with anxiety at yet another outage, and decided to take a harder look at the traffic I was getting. I noticed some interesting things: Nearly all the incoming packets were web requests. Nearly all of them were for non-existent pages. Nearly all of them were on port 443 / https, not port 80 / http. Nearly all of them proudly announced in the user-agent that they were LLM scraper bots. I run two web servers on ACME, one for http that is very fast, and another for https which is kind of slow. Maybe the slow https server was falling behind? I decided to test this: I closed port 443. The problems went away immediately, and have not returned. What I think was going on: before Sonic's February 25th maintenance, my https server was probably barely keeping up. Some change during the maintenance - maybe they increased the available bandwidth? - tipped things over into the web server falling behind, some of the time. Maybe when two different bots were pounding on it simultaneously. When the server fell far enough behind, the congestion spread to natd, the Network Address Translation daemon. When natd also got saturated, bam, packets started getting delayed and dropped. Now closing https service is obviously just a temporary fix, because I do want to provide https, but it's actually not that bad. My legit web traffic is 90% http / 10% https, so I'm losing at most 10% of my traffic. But yeah, I'll be doing a better fix some time soon. Also, this is a bigger problem than just me. The LLM companies are not picking on me in particular, they are pounding every site on the net. I know of two other hobbyist-level sites which are also having problems due to this. Someone really ought to do something about it. Back to ACME Updates .",
+          "analysis": {
+            "is_cloud": false,
+            "is_ai": true,
+            "is_anxiety": false,
+            "cloud_score": 0,
+            "ai_score": 2,
+            "anxiety_score": 0,
+            "cloud_hits": [],
+            "ai_hits": [
+              "llm",
+              "agent"
+            ],
+            "anxiety_hits": [],
+            "topic": "行业动态",
+            "topic_type": "开发者话题",
+            "products": [],
+            "competitors": [],
+            "competitor_products": [],
+            "techs": [
+              "LLM",
+              "Agent",
+              "Go"
+            ],
+            "tone": "中立资讯",
+            "detail_brief": "ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https outage Starting on February 25th and lasting a little over a month, acme. com suffered intermittent network outages. The symptoms were very high ping times and packet drops. The outages would last a few hours and then go away for a while.",
+            "heat_score": 3.0,
+            "timeliness_score": 9.5,
+            "composite_score": 3.5,
+            "tcloud_relevance": 0.0,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "技术科普",
+              "观点评论",
+              "社区参与"
+            ],
+            "editorial_angles_text": "技术科普 + 观点评论 + 社区参与",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "Reddit（直接参与讨论）",
+              "LinkedIn（发教程文章）",
+              "Discord（开发者社区互动）"
+            ],
+            "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+            "editorial_brief": "话题类型：开发者话题\n可用角度：「LLM scraper bots are overloading acme.com's HTTPS…」（ACME Updates - 07Apr2026 https outage ACME Updates 07Apr202…），涉及 LLM / Agent / Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+            "social_recommendation": "「LLM scraper bots are overloading acme.c…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "LLM scraper bots are overloading acme.com's HTTPS server. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: LLM scraper bots are overloading acme.com's HTTPS server. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 观点评论 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. LLM scraper bots are overloading acme.com's HTTPS server. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + opinionated commentary + community conversation.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：ACME Updates - 07Apr2026 https outage ACME Updates 07Apr2026 https…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: LLM scraper bots are overloading acme.com's HTTPS server. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "LLM scraper bots are overloading acme.co：ACME 更新 - 2026 年 4 月 7 日 https 中断 ACME 更新 2026 年 4 月 7 日 https 中断 从 2 月 25 日开始，持续一个多月，acme。com 遭受间歇性网络中断。"
+        },
+        {
+          "source": "Hacker News",
+          "title": "Slightly safer vibecoding by adopting old hacker habits",
+          "url": "http://addxorrol.blogspot.com/2026/03/slightly-safer-vibecoding-by-adopting.html",
+          "hn_url": "https://news.ycombinator.com/item?id=47622436",
+          "heat": "21 points",
+>>>>>>> Stashed changes
           "time": "1 hour ago",
           "developer_name": "transpute",
           "developer_url": "https://news.ycombinator.com/user?id=transpute",
@@ -467,7 +583,11 @@
           "source": "GitHub Trending",
           "title": "google-ai-edge/gallery - A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
           "url": "https://github.com/google-ai-edge/gallery",
+<<<<<<< Updated upstream
           "heat": "18,916 stars",
+=======
+          "heat": "18,921 stars",
+>>>>>>> Stashed changes
           "time": "Today",
           "developer_name": "google-ai-edge",
           "developer_url": "https://github.com/google-ai-edge",
@@ -582,19 +702,32 @@
             "blog": "",
             "twitter_username": "",
             "email": "",
+<<<<<<< Updated upstream
             "followers": 3105,
             "following": 0,
             "public_repos": 12,
             "avatar_url": "https://avatars.githubusercontent.com/u/150697620?v=4",
             "social_links": [],
             "is_org": true
+=======
+            "followers": 0,
+            "following": 0,
+            "public_repos": 0,
+            "avatar_url": "",
+            "social_links": [],
+            "is_org": false
+>>>>>>> Stashed changes
           }
         },
         {
           "source": "GitHub Trending",
           "title": "google-ai-edge/LiteRT-LM",
           "url": "https://github.com/google-ai-edge/LiteRT-LM",
+<<<<<<< Updated upstream
           "heat": "2,630 stars",
+=======
+          "heat": "2,633 stars",
+>>>>>>> Stashed changes
           "time": "Today",
           "developer_name": "google-ai-edge",
           "developer_url": "https://github.com/google-ai-edge",
@@ -719,7 +852,11 @@
           "source": "GitHub Trending",
           "title": "NVIDIA/personaplex - PersonaPlex code.",
           "url": "https://github.com/NVIDIA/personaplex",
+<<<<<<< Updated upstream
           "heat": "8,023 stars",
+=======
+          "heat": "8,028 stars",
+>>>>>>> Stashed changes
           "time": "Today",
           "developer_name": "NVIDIA",
           "developer_url": "https://github.com/NVIDIA",
@@ -827,6 +964,7 @@
           "developer_profile": {
             "github_username": "NVIDIA",
             "profile_url": "https://github.com/NVIDIA",
+<<<<<<< Updated upstream
             "name": "NVIDIA Corporation",
             "bio": "",
             "company": "",
@@ -840,13 +978,32 @@
             "avatar_url": "https://avatars.githubusercontent.com/u/1728152?v=4",
             "social_links": [],
             "is_org": true
+=======
+            "name": "",
+            "bio": "",
+            "company": "",
+            "location": "",
+            "blog": "",
+            "twitter_username": "",
+            "email": "",
+            "followers": 0,
+            "following": 0,
+            "public_repos": 0,
+            "avatar_url": "",
+            "social_links": [],
+            "is_org": false
+>>>>>>> Stashed changes
           }
         },
         {
           "source": "GitHub Trending",
           "title": "abhigyanpatwari/GitNexus - GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration",
           "url": "https://github.com/abhigyanpatwari/GitNexus",
+<<<<<<< Updated upstream
           "heat": "24,652 stars",
+=======
+          "heat": "24,661 stars",
+>>>>>>> Stashed changes
           "time": "Today",
           "developer_name": "abhigyanpatwari",
           "developer_url": "https://github.com/abhigyanpatwari",
@@ -961,6 +1118,7 @@
           "developer_profile": {
             "github_username": "abhigyanpatwari",
             "profile_url": "https://github.com/abhigyanpatwari",
+<<<<<<< Updated upstream
             "name": "Abhigyan Patwari",
             "bio": "CS student & AI engineer who likes to dig into the guts of systems. If it's interesting, I'll probably try to build something with it.\r\n",
             "company": "",
@@ -972,6 +1130,19 @@
             "following": 5,
             "public_repos": 20,
             "avatar_url": "https://avatars.githubusercontent.com/u/126312502?v=4",
+=======
+            "name": "",
+            "bio": "CS student & AI engineer who likes to dig into the guts of systems. If it's interesting, I'll probably try to build something with it.",
+            "company": "",
+            "location": "",
+            "blog": "",
+            "twitter_username": "",
+            "email": "",
+            "followers": 0,
+            "following": 0,
+            "public_repos": 0,
+            "avatar_url": "",
+>>>>>>> Stashed changes
             "social_links": [
               {
                 "platform": "linkedin",
@@ -989,7 +1160,11 @@
           "source": "GitHub Trending",
           "title": "tobi/qmd - mini cli search engine for your docs, knowledge bases, meeting notes, whatever. Tracking current sota approaches while being all local",
           "url": "https://github.com/tobi/qmd",
+<<<<<<< Updated upstream
           "heat": "19,662 stars",
+=======
+          "heat": "19,666 stars",
+>>>>>>> Stashed changes
           "time": "Today",
           "developer_name": "tobi",
           "developer_url": "https://github.com/tobi",
@@ -1098,6 +1273,7 @@
           "developer_profile": {
             "github_username": "tobi",
             "profile_url": "https://github.com/tobi",
+<<<<<<< Updated upstream
             "name": "Tobias Lütke",
             "bio": "",
             "company": "Shopify",
@@ -1109,6 +1285,19 @@
             "following": 57,
             "public_repos": 86,
             "avatar_url": "https://avatars.githubusercontent.com/u/347?v=4",
+=======
+            "name": "",
+            "bio": "",
+            "company": "",
+            "location": "",
+            "blog": "",
+            "twitter_username": "",
+            "email": "",
+            "followers": 0,
+            "following": 0,
+            "public_repos": 0,
+            "avatar_url": "",
+>>>>>>> Stashed changes
             "social_links": [
               {
                 "platform": "unknown",
@@ -1122,7 +1311,11 @@
           "source": "GitHub Trending",
           "title": "forrestchang/andrej-karpathy-skills",
           "url": "https://github.com/forrestchang/andrej-karpathy-skills",
+<<<<<<< Updated upstream
           "heat": "8,163 stars",
+=======
+          "heat": "8,164 stars",
+>>>>>>> Stashed changes
           "time": "Today",
           "developer_name": "forrestchang",
           "developer_url": "https://github.com/forrestchang",
@@ -1220,6 +1413,7 @@
           "developer_profile": {
             "github_username": "forrestchang",
             "profile_url": "https://github.com/forrestchang",
+<<<<<<< Updated upstream
             "name": "Jiayuan Zhang",
             "bio": "Building @devv-ai ",
             "company": "@index-labs",
@@ -1239,6 +1433,27 @@
               {
                 "platform": "unknown",
                 "url": "http://blog.jiayuanzhang.com/"
+=======
+            "name": "",
+            "bio": "Building@devv-ai",
+            "company": "",
+            "location": "",
+            "blog": "",
+            "twitter_username": "",
+            "email": "jiayuan@multica.ai",
+            "followers": 0,
+            "following": 0,
+            "public_repos": 0,
+            "avatar_url": "",
+            "social_links": [
+              {
+                "platform": "unknown",
+                "url": "http://blog.jiayuanzhang.com/"
+              },
+              {
+                "platform": "twitter",
+                "url": "https://twitter.com/jiayuan_jy"
+>>>>>>> Stashed changes
               }
             ],
             "is_org": false
@@ -1248,7 +1463,11 @@
           "source": "GitHub Trending",
           "title": "elebumm/RedditVideoMakerBot - Create Reddit Videos with just✨ one command ✨",
           "url": "https://github.com/elebumm/RedditVideoMakerBot",
+<<<<<<< Updated upstream
           "heat": "10,106 stars",
+=======
+          "heat": "10,108 stars",
+>>>>>>> Stashed changes
           "time": "Today",
           "developer_name": "elebumm",
           "developer_url": "https://github.com/elebumm",
@@ -1334,6 +1553,7 @@
           "developer_profile": {
             "github_username": "elebumm",
             "profile_url": "https://github.com/elebumm",
+<<<<<<< Updated upstream
             "name": "Lewis Menelaws",
             "bio": "Dad, Husband, Coder and Creator.",
             "company": "",
@@ -1353,6 +1573,27 @@
               {
                 "platform": "unknown",
                 "url": "https://lewismenelaws.com"
+=======
+            "name": "",
+            "bio": "Dad, Husband, Coder and Creator.",
+            "company": "",
+            "location": "",
+            "blog": "",
+            "twitter_username": "",
+            "email": "hi@lewismenelaws.com",
+            "followers": 0,
+            "following": 0,
+            "public_repos": 0,
+            "avatar_url": "",
+            "social_links": [
+              {
+                "platform": "unknown",
+                "url": "https://lewismenelaws.com"
+              },
+              {
+                "platform": "twitter",
+                "url": "https://twitter.com/LewisMenelaws"
+>>>>>>> Stashed changes
               }
             ],
             "is_org": false
@@ -1362,7 +1603,11 @@
           "source": "GitHub Trending",
           "title": "HKUDS/DeepTutor - \"DeepTutor: Agent-Native Personalized Learning Assistant\"",
           "url": "https://github.com/HKUDS/DeepTutor",
+<<<<<<< Updated upstream
           "heat": "12,378 stars",
+=======
+          "heat": "12,380 stars",
+>>>>>>> Stashed changes
           "time": "Today",
           "developer_name": "HKUDS",
           "developer_url": "https://github.com/HKUDS",
@@ -1469,6 +1714,7 @@
           "developer_profile": {
             "github_username": "HKUDS",
             "profile_url": "https://github.com/HKUDS",
+<<<<<<< Updated upstream
             "name": "✨Data Intelligence Lab@HKU✨",
             "bio": "",
             "company": "",
@@ -1482,6 +1728,21 @@
             "avatar_url": "https://avatars.githubusercontent.com/u/118165258?v=4",
             "social_links": [],
             "is_org": true
+=======
+            "name": "",
+            "bio": "",
+            "company": "",
+            "location": "",
+            "blog": "",
+            "twitter_username": "",
+            "email": "",
+            "followers": 0,
+            "following": 0,
+            "public_repos": 0,
+            "avatar_url": "",
+            "social_links": [],
+            "is_org": false
+>>>>>>> Stashed changes
           }
         }
       ],
@@ -1491,6 +1752,7 @@
       "key": "36kr",
       "label": "🚀 创投快讯",
       "index": 3,
+<<<<<<< Updated upstream
       "items": [
         {
           "source": "36Kr",
@@ -2119,6 +2381,9 @@
           "summary_cn": "阿特斯：近期光伏组件价格较此前低点已有明显回升-36氪 36氪Auto 36氪出海 36氪研究院 36氪 36氪财经 AI 自助报道 城市 阿特斯：近期光伏组件价格较此前低点已有明显回升 阿特斯近日接受机构调研时表示，近期光伏组件价格较此前低点已有明显回升，既有原材料成本上涨、出口退税取消政策的驱动，也反映出行业反内卷、盈利修复的共识正在形成。 当前全球储能需求保持良好的增长态势，能源转型和能源…"
         }
       ],
+=======
+      "items": [],
+>>>>>>> Stashed changes
       "error": null
     },
     {
@@ -2383,7 +2648,11 @@
           "summary": "清明节，外地的姨回来探望，带了几样东西给我妈：俄式山羊奶营养粉、红枣核桃黄精黑芝麻丸、伊犁樱桃干、羊奶贝。我让 AI 分析了包装成分和宣传内容，结果不出所料——要么名不副实，要么成分与宣传出入较大。这类东西常见于各种养生讲座的派发品，本身价值有限，却包装得像高档补品。\r\n\r\n---\r\n\r\n## 她不是不懂\r\n\r\n我姨今年 77 岁，比我妈大 7 岁，在家族长辈里是出了名懂养生的，不是那种听广告就信的类型，是真正有研究的。所以我认为这份礼物不是无心之失——她自己不会吃这些东西，她清楚这些东西的斤两，带来给我妈，大概是觉得反正比扔掉强，收到的人还会感激她。结果我妈果然觉得姐姐对她很好，送了贵重的东西，还惦记着要给我小孩吃。\r\n\r\n---\r\n\r\n## 为什么把东西寄回去\r\n\r\n我媳妇和我姐都不同意，觉得直接扔掉就行了。我理解，但我还是寄回去了。我的想法很简单：如果她真心觉得是好东西，收到退回来的包裹应该会打电话来问，那我们就直接聊，我把看法说清楚；如果她什么反应都没有，这个沉默本身就是回答。另外，这次是我在场拦下来了，但以后类似的东西再来，我不在怎么办？我妈对\"有来源的东西\"是舍不得丢的。我想通过这次让对方清楚：我们不是好糊弄的，以后也不需要这类东西。\r\n\r\n---\r\n\r\n## 想起那次出差探望\r\n\r\n多年前我去她所在的城市出差，特地晚上抽空去探望。附近就有杂货店，但我还是徒步走了二十多分钟去商场，买了月饼和高档水果再走回来。我没想过要什么回报，去探望长辈是应该的。但现在回想，当时和现在的对比，确实让我有点难过。\r\n\r\n---\r\n\r\n## 关于远亲这件事\r\n\r\n很多亲戚关系到最后只剩血缘。一年见不了一次，来到本地也不上门坐坐，就是带点东西走个形式。我不评判，但既然平时来往这么少，起码应该真诚，而不是用廉价的东西维持\"我很关心你\"的表象。我的做法和大多数人不同，我媳妇和我姐也还是觉得我多此一举，但这件事我不后悔。\r\n\r\n---\r\n\r\n欢迎网友说说你们怎么看。\r\nhttps://i.imgur.com/ikJYS1y.jpeg",
           "developer_name": "ly1878",
           "developer_url": "https://www.v2ex.com/member/ly1878",
+<<<<<<< Updated upstream
           "content": "我把外地姨送给我妈的廉价散装保健品，快递退给姨，你怎么看？ - V2EX 首页 注册 登录 V2EX = way to explore V2EX 是一个关于分享和探索的地方 现在注册 已注册用户请 登录 V2EX › 生活 我把外地姨送给我妈的廉价散装保健品，快递退给姨，你怎么看？ ly1878 · 20 小时 53 分钟前 · 11106 次点击 清明节，外地的姨回来探望，带了几样东西给我妈：俄式山羊奶营养粉、红枣核桃黄精黑芝麻丸、伊犁樱桃干、羊奶贝。我让 AI 分析了包装成分和宣传内容，结果不出所料——要么名不副实，要么成分与宣传出入较大。这类东西常见于各种养生讲座的派发品，本身价值有限，却包装得像高档补品。 她不是不懂 我姨今年 77 岁，比我妈大 7 岁，在家族长辈里是出了名懂养生的，不是那种听广告就信的类型，是真正有研究的。所以我认为这份礼物不是无心之失——她自己不会吃这些东西，她清楚这些东西的斤两，带来给我妈，大概是觉得反正比扔掉强，收到的人还会感激她。结果我妈果然觉得姐姐对她很好，送了贵重的东西，还惦记着要给我小孩吃。 为什么把东西寄回去 我媳妇和我姐都不同意，觉得直接扔掉就行了。我理解，但我还是寄回去了。我的想法很简单：如果她真心觉得是好东西，收到退回来的包裹应该会打电话来问，那我们就直接聊，我把看法说清楚；如果她什么反应都没有，这个沉默本身就是回答。另外，这次是我在场拦下来了，但以后类似的东西再来，我不在怎么办？我妈对\"有来源的东西\"是舍不得丢的。我想通过这次让对方清楚：我们不是好糊弄的，以后也不需要这类东西。 想起那次出差探望 多年前我去她所在的城市出差，特地晚上抽空去探望。附近就有杂货店，但我还是徒步走了二十多分钟去商场，买了月饼和高档水果再走回来。我没想过要什么回报，去探望长辈是应该的。但现在回想，当时和现在的对比，确实让我有点难过。 关于远亲这件事 很多亲戚关系到最后只剩血缘。一年见不了一次，来到本地也不上门坐坐，就是带点东西走个形式。我不评判，但既然平时来往这么少，起码应该真诚，而不是用廉价的东西维持\"我很关心你\"的表象。我的做法和大多数人不同，我媳妇和我姐也还是觉得我多此一举，但这件事我不后悔。 欢迎网友说说你们怎么看。 https://i.imgur.com/ikJYS1y.jpeg 第 1 条附言  · 16 小时 57 分钟前 @ fionasit007 本来没打算这样操作，想到过往一些让人心寒事，一时大脑犯蠢，所以上面感谢被网友骂醒。我可能是有点自以为是，但是我并没有一声不说直接办了这事，听听妻子和姐的看法，虽然当时还没冷静下来，好在在 V 站被善意网友点醒，没造成不可挽回后果。 发帖时没组织好语言，偷懒语音给 AI 来整理组织，现在回头看，用词语气，甚至标题都有点过于激进，当个教训。 保健品 亲情 界限 225 条回复 • 2026-04-08 11:23:23 +08:00 1 2 3 ❮ ❯ 1 apples01 20 小时 47 分钟前 你可真行😅 2 howfree 20 小时 45 分钟前 干的漂亮 3 n0de 20 小时 42 分钟前 看名称还可以吧， 保健品哇， 吃也没有问题吧？ 只是说可能说价值 1 千， 可能实际价值 100 左右 4 aimeihe 20 小时 40 分钟前 你妈都觉得没太大问题，你觉得有问题，不吃扔掉就行了，寄过去比较尴尬啊 5 burp2019 20 小时 39 分钟前 24 她们姐妹俩的事，你的操作确实多余，就是寄 1 条破烂裤子，开心就行，人活一世，这个年纪了，有点联系来往，本就是件开心的事 6 huyu 20 小时 39 分钟前 退回去，这不是膈应人吗？断亲也不是这么断的吧 7 stinkytofux 20 小时 38 分钟前 7 千里送鹅毛礼轻情意重, 至少人家还记得带东西. 而你的想法纯粹是单方面的揣测. 而且你们两家明面上应该是没有矛盾的, 你现在这么做是什么意思呢! 8 9526666 20 小时 37 分钟前 1 思路是对的，但是在人情社会，行为不太妥 9 duanxianze 20 小时 37 分钟前 6 😅😅你有点自我意识过剩了，你妈的姐妹，怎么样轮不到你决定 10 lw10645 20 小时 37 分钟前 19 《亲戚关系到最后只剩血缘》，你做这个事之前有站在你母亲角度想过吗，她是你母亲的姐姐或妹妹，如果平时没有其他事情表明你姨对你母亲有坏心，那就是一个纯纯的误会，只能说你攻击性太强了 11 v7864007 20 小时 37 分钟前 😅我觉得你是来骗币的，我还以为来到了知乎 只谈这件事情，对一个 77 岁的老年人这样做，是有什么过节么 12 IlIl 20 小时 36 分钟前 1 我觉得你直接寄正品过去给他更有说服性，让她感受正品和假冒的差距。她自然就会明白！！！ 13 widowcat 20 小时 36 分钟前 90 妥妥纯 nt 14 stinkytofux 20 小时 34 分钟前 刷了几条评论, 看来 V 站上还是正常人占大多数. 15 cxtrinityy 20 小时 34 分钟前 via Android 1 其实这看你妈想要的是啥，七八十岁了，为了千把块钱闹的不愉快，可能之后就没啥机会和好如初了。如果你妈觉得不能让你姨糊弄你们更重要，寄回去摆个态度也没毛病，这还得是你确信你的推测是正确的情况。 人无完人。 16 abigeater 20 小时 33 分钟前 1 你可以阻止你母亲吃 但你母亲的人情方面的事情你不应该帮做决定。 17 BAT 20 小时 31 分钟前 via iPhone 1 我 6 岁不懂事的时候，隔壁邻居来我家做客。因为我不喜欢那个奶奶，所以“发挥主人权利”站起来大喊让她从我家出去。 现在回忆起来，真想给小时候的我一巴掌。人啊，很多时候不能太自命不凡了。 18 bitkuang 20 小时 30 分钟前 via Android 1 单论这件事的做法，情商也太低了点。你以为做的很对，有没有想过你妈会怎么想？单方面给你妈断亲是吧 19 lw10645 20 小时 30 分钟前 @ lw10645 试想有一天你的子女不考虑你的想法，对你的姐做这种事 20 beimenjun PRO 20 小时 28 分钟前 3 你这种对家里人控制欲太强了。是很不好的。 但是我也知道跟你说估计你也感觉不到。很多人的人生问题的答案早早就被揭示，但是他们可能到死都不知道…… 21 peteretep 20 小时 27 分钟前 2 楼主你水平太低。 你不能靠推测就给人定罪啊。 人家快 80 的人了， 可能就真的觉得这个行。 22 FaCai 20 小时 24 分钟前 2 不吃不就完了 还给人寄回去 这不是伞兵？ 23 635925926 20 小时 24 分钟前 滚出 v2 ，别来污染我的眼睛。 24 zfyime 20 小时 22 分钟前 能做出这种事 平常没少得罪人吧 25 0203 20 小时 20 分钟前 啧啧啧~~~ 26 PeiXyJ 20 小时 20 分钟前 处理不应该就让你妈处理吗? 27 thelast1 20 小时 19 分钟前 人才 28 ronyin 20 小时",
+=======
+          "content": "我把外地姨送给我妈的廉价散装保健品，快递退给姨，你怎么看？ - V2EX 首页 注册 登录 V2EX = way to explore V2EX 是一个关于分享和探索的地方 现在注册 已注册用户请 登录 V2EX › 生活 我把外地姨送给我妈的廉价散装保健品，快递退给姨，你怎么看？ ly1878 · 20 小时 58 分钟前 · 11135 次点击 清明节，外地的姨回来探望，带了几样东西给我妈：俄式山羊奶营养粉、红枣核桃黄精黑芝麻丸、伊犁樱桃干、羊奶贝。我让 AI 分析了包装成分和宣传内容，结果不出所料——要么名不副实，要么成分与宣传出入较大。这类东西常见于各种养生讲座的派发品，本身价值有限，却包装得像高档补品。 她不是不懂 我姨今年 77 岁，比我妈大 7 岁，在家族长辈里是出了名懂养生的，不是那种听广告就信的类型，是真正有研究的。所以我认为这份礼物不是无心之失——她自己不会吃这些东西，她清楚这些东西的斤两，带来给我妈，大概是觉得反正比扔掉强，收到的人还会感激她。结果我妈果然觉得姐姐对她很好，送了贵重的东西，还惦记着要给我小孩吃。 为什么把东西寄回去 我媳妇和我姐都不同意，觉得直接扔掉就行了。我理解，但我还是寄回去了。我的想法很简单：如果她真心觉得是好东西，收到退回来的包裹应该会打电话来问，那我们就直接聊，我把看法说清楚；如果她什么反应都没有，这个沉默本身就是回答。另外，这次是我在场拦下来了，但以后类似的东西再来，我不在怎么办？我妈对\"有来源的东西\"是舍不得丢的。我想通过这次让对方清楚：我们不是好糊弄的，以后也不需要这类东西。 想起那次出差探望 多年前我去她所在的城市出差，特地晚上抽空去探望。附近就有杂货店，但我还是徒步走了二十多分钟去商场，买了月饼和高档水果再走回来。我没想过要什么回报，去探望长辈是应该的。但现在回想，当时和现在的对比，确实让我有点难过。 关于远亲这件事 很多亲戚关系到最后只剩血缘。一年见不了一次，来到本地也不上门坐坐，就是带点东西走个形式。我不评判，但既然平时来往这么少，起码应该真诚，而不是用廉价的东西维持\"我很关心你\"的表象。我的做法和大多数人不同，我媳妇和我姐也还是觉得我多此一举，但这件事我不后悔。 欢迎网友说说你们怎么看。 https://i.imgur.com/ikJYS1y.jpeg 第 1 条附言  · 17 小时 2 分钟前 @ fionasit007 本来没打算这样操作，想到过往一些让人心寒事，一时大脑犯蠢，所以上面感谢被网友骂醒。我可能是有点自以为是，但是我并没有一声不说直接办了这事，听听妻子和姐的看法，虽然当时还没冷静下来，好在在 V 站被善意网友点醒，没造成不可挽回后果。 发帖时没组织好语言，偷懒语音给 AI 来整理组织，现在回头看，用词语气，甚至标题都有点过于激进，当个教训。 保健品 亲情 界限 225 条回复 • 2026-04-08 11:23:23 +08:00 1 2 3 ❮ ❯ 1 apples01 20 小时 52 分钟前 你可真行😅 2 howfree 20 小时 50 分钟前 干的漂亮 3 n0de 20 小时 47 分钟前 看名称还可以吧， 保健品哇， 吃也没有问题吧？ 只是说可能说价值 1 千， 可能实际价值 100 左右 4 aimeihe 20 小时 45 分钟前 你妈都觉得没太大问题，你觉得有问题，不吃扔掉就行了，寄过去比较尴尬啊 5 burp2019 20 小时 44 分钟前 24 她们姐妹俩的事，你的操作确实多余，就是寄 1 条破烂裤子，开心就行，人活一世，这个年纪了，有点联系来往，本就是件开心的事 6 huyu 20 小时 44 分钟前 退回去，这不是膈应人吗？断亲也不是这么断的吧 7 stinkytofux 20 小时 43 分钟前 7 千里送鹅毛礼轻情意重, 至少人家还记得带东西. 而你的想法纯粹是单方面的揣测. 而且你们两家明面上应该是没有矛盾的, 你现在这么做是什么意思呢! 8 9526666 20 小时 42 分钟前 1 思路是对的，但是在人情社会，行为不太妥 9 duanxianze 20 小时 42 分钟前 6 😅😅你有点自我意识过剩了，你妈的姐妹，怎么样轮不到你决定 10 lw10645 20 小时 42 分钟前 19 《亲戚关系到最后只剩血缘》，你做这个事之前有站在你母亲角度想过吗，她是你母亲的姐姐或妹妹，如果平时没有其他事情表明你姨对你母亲有坏心，那就是一个纯纯的误会，只能说你攻击性太强了 11 v7864007 20 小时 42 分钟前 😅我觉得你是来骗币的，我还以为来到了知乎 只谈这件事情，对一个 77 岁的老年人这样做，是有什么过节么 12 IlIl 20 小时 41 分钟前 1 我觉得你直接寄正品过去给他更有说服性，让她感受正品和假冒的差距。她自然就会明白！！！ 13 widowcat 20 小时 41 分钟前 90 妥妥纯 nt 14 stinkytofux 20 小时 39 分钟前 刷了几条评论, 看来 V 站上还是正常人占大多数. 15 cxtrinityy 20 小时 39 分钟前 via Android 1 其实这看你妈想要的是啥，七八十岁了，为了千把块钱闹的不愉快，可能之后就没啥机会和好如初了。如果你妈觉得不能让你姨糊弄你们更重要，寄回去摆个态度也没毛病，这还得是你确信你的推测是正确的情况。 人无完人。 16 abigeater 20 小时 38 分钟前 1 你可以阻止你母亲吃 但你母亲的人情方面的事情你不应该帮做决定。 17 BAT 20 小时 36 分钟前 via iPhone 1 我 6 岁不懂事的时候，隔壁邻居来我家做客。因为我不喜欢那个奶奶，所以“发挥主人权利”站起来大喊让她从我家出去。 现在回忆起来，真想给小时候的我一巴掌。人啊，很多时候不能太自命不凡了。 18 bitkuang 20 小时 35 分钟前 via Android 1 单论这件事的做法，情商也太低了点。你以为做的很对，有没有想过你妈会怎么想？单方面给你妈断亲是吧 19 lw10645 20 小时 35 分钟前 @ lw10645 试想有一天你的子女不考虑你的想法，对你的姐做这种事 20 beimenjun PRO 20 小时 33 分钟前 3 你这种对家里人控制欲太强了。是很不好的。 但是我也知道跟你说估计你也感觉不到。很多人的人生问题的答案早早就被揭示，但是他们可能到死都不知道…… 21 peteretep 20 小时 32 分钟前 2 楼主你水平太低。 你不能靠推测就给人定罪啊。 人家快 80 的人了， 可能就真的觉得这个行。 22 FaCai 20 小时 29 分钟前 2 不吃不就完了 还给人寄回去 这不是伞兵？ 23 635925926 20 小时 29 分钟前 滚出 v2 ，别来污染我的眼睛。 24 zfyime 20 小时 27 分钟前 能做出这种事 平常没少得罪人吧 25 0203 20 小时 25 分钟前 啧啧啧~~~ 26 PeiXyJ 20 小时 25 分钟前 处理不应该就让你妈处理吗? 27 thelast1 20 小时 24 分钟前 人才 28 ronyin 20 小时 ",
+>>>>>>> Stashed changes
           "analysis": {
             "is_cloud": false,
             "is_ai": true,
@@ -2467,7 +2736,11 @@
           "summary": "这几年陆续用过了 VIVO OPPO IPHONE 和小米。基本市面上常见的手机品牌和系统都体验过了。\r\n我是个强迫症，对细节比较在意。有一点让我挺有感触的。\r\n就是手机蓝牙连接车机蓝牙播放音乐时，专辑封面是否显示。\r\n经过我的实测，我发现 iPhone 的 ios 在很早的版本就可以通过蓝牙传递封面信息，且在车机上正确显示。\r\n而小米 vivo 直到最新系统版本仍然无法显示\r\n而最近换的 oppo coloros16 我惊喜的发现可以正常显示专辑封面。\r\n\r\n前部手机 vivo 的话，用 jovi in car 是可以显示的，走蓝牙协议就不行。\r\n\r\n查找资料可知：蓝牙音频播放依赖两个核心协议：\r\nA2DP：只负责传声音（音乐数据流）\r\nAVRCP：负责传控制指令 + 媒体元数据（歌名、歌手、封面）\r\n\r\n因此这个细节，依靠手机工程师应该很容易解决，但是很可惜，安卓阵营里目前只有 oppo 解决了这个问题。",
           "developer_name": "long1and",
           "developer_url": "https://www.v2ex.com/member/long1and",
+<<<<<<< Updated upstream
           "content": "最近换了 OPPO 手机，从一个细节感受到厂家对系统的用心程度。 - V2EX 首页 注册 登录 V2EX = way to explore V2EX 是一个关于分享和探索的地方 现在注册 已注册用户请 登录 V2EX › Android 最近换了 OPPO 手机，从一个细节感受到厂家对系统的用心程度。 long1and · 22 小时 24 分钟前 · 6097 次点击 这几年陆续用过了 VIVO OPPO IPHONE 和小米。基本市面上常见的手机品牌和系统都体验过了。 我是个强迫症，对细节比较在意。有一点让我挺有感触的。 就是手机蓝牙连接车机蓝牙播放音乐时，专辑封面是否显示。 经过我的实测，我发现 iPhone 的 ios 在很早的版本就可以通过蓝牙传递封面信息，且在车机上正确显示。 而小米 vivo 直到最新系统版本仍然无法显示 而最近换的 oppo coloros16 我惊喜的发现可以正常显示专辑封面。 前部手机 vivo 的话，用 jovi in car 是可以显示的，走蓝牙协议就不行。 查找资料可知：蓝牙音频播放依赖两个核心协议： A2DP：只负责传声音（音乐数据流） AVRCP：负责传控制指令 + 媒体元数据（歌名、歌手、封面） 因此这个细节，依靠手机工程师应该很容易解决，但是很可惜，安卓阵营里目前只有 oppo 解决了这个问题。 蓝牙 封面 系统 67 条回复 • 2026-04-08 11:45:50 +08:00 1 vevlins 22 小时 15 分钟前 oppo 系统做的确实不错，买了个 oppo pad3 pro 平板，改变了我过去几年认为 apple 设备无敌的想法，除了三方 app ，oppo 自家的系统比 ipad 强，以后买设备会考虑 oppo 了。 2 frantic 21 小时 34 分钟前 vivo 最新版本的蓝牙也可以显示专辑名称，周末才发现的 3 nabanbaba 21 小时 26 分钟前 oppo 对于旧旗舰的系统功能更新也还行 x9pro 的 ai\\xpan 色彩滤镜等都 x8u 更新了.只有 x9pro 核心卖点 4k live 等没下放 我上周出掉了 matepadmini 与 findx8ultra, 准备冲 21 号发布的 oppo 小平板与 x9ultra 了 4 long1and OP 21 小时 19 分钟前 @ frantic 那真是太好了，可惜没赶上好时候，用了快三年，半个月前才把 vivo 手机卖掉了 5 tyzrj766 21 小时 19 分钟前 但是 ColorOS 的字体、UI 不统一，系统更新拿 AI 来充数，开暗黑模式主题失效，应用保活差，Push 推送倒数，小窗优化稀烂又显得系统很不细节😅 6 long1and OP 21 小时 18 分钟前 @ nabanbaba oppo 小平板应该很不错，还有个耳夹耳机我也打算入手。 7 long1and OP 21 小时 15 分钟前 @ tyzrj766 你说的几个问题，除了保活差，其他的还没有感受到。特别是小窗，因为我换的是 oppo find n6 ，感觉 oppo 对折叠屏的优化还是比较好的。特别是小布记忆这个功能，我觉得 oppo 的 ai 还是有点东西的。 不过总的来看，我感觉 vivo 和 oppo 的系统都还是不错，整体流畅度好，而且用两三年都不会感觉到明显卡顿。特别是 vivo ，我的老手机更新了 origin6 后甚至比首发系统更流畅了。 8 rb6221 21 小时 6 分钟前 实际上用起来也不是完全遵守标准协议的，很多情况下都是播放源本身不提供（这你要问各大音乐 app 的开发者了） 然后手机厂商的做法一般是自己接一个第三方元数据库，但是也就是为了增强体验而已，命中率看天意了 9 lchkid 21 小时 5 分钟前 vivo 我试过 tesla 是可以显示专辑封面和歌词的，蓝牙 qq 音乐 10 yifei2 21 小时 0 分钟前 现在备用机是 vivo x100spro ，在想换 oppo x9ultra 还是 vivo x300ultra ，有无懂哥 11 loading 21 小时 0 分钟前 1 最喜欢是 ai 帮写购物评价，当然，更加不相信评价了。 12 wuliiqq 20 小时 55 分钟前 1 是的 国产安卓里，oppo 算是比较用心的 13 woodfizky 20 小时 35 分钟前 11 你以为的手机系统厂商：啊，我们团队一定要尽心尽力把每个细节做好。 实际上的手机系统厂商：团队里不知道哪个程序员刚好有技术有责任感，懂这个细节，把这个细节给做了。 以上都是我猜的，因为我觉得手机系统团队如果有产品经理，那这个产品经理大概率是不知道这种技术细节的。 手机系统涉及的面太多了，真的很难把每个细节都做好吧。。 14 liuxyon 20 小时 32 分钟前 哪个能 ROOT 解锁？ 15 ronman 20 小时 32 分钟前 1 @ woodfizky 那建议你别猜了，这些东西都要求做解读的 16 fairytale110 20 小时 19 分钟前 via Android 唯一的小问题是关于手机里面，改手机名称，是强制联网检查的，不然改不了，哈哈哈 17 Rumble66 20 小时 9 分钟前 有没有可能是车机的问题? 上面提到的某家和我的车机能显示 18 lswlray 19 小时 28 分钟前 至少小米的系统也是可以传递的，只是不同的车机才决定显示与否 19 my101du 19 小时 26 分钟前 @ long1and 我是 O 家全家桶， 从 8G 的 Oppo K12/ 一加 Ace3V 到 12G 的真我 Neo7SE 到 16G 的真我 Neo 7 Turbo . 得出结论是： CPU 的差异对性能影响，远不如运行内存。 自带 16G 的保活很强，并且不影响应用运行的流畅度。 低于这个值不管怎么进行“内存扩展”都会触发一个值后导致应用卡顿。 然后分析应用占用资源发现，淘宝占用 2G 。 特喵的赶紧退出、删除，用支付宝里的淘宝/闪购小程序替代了。 20 my101du 19 小时 23 分钟前 补充一下，虽然上面几个机器确实 CPU 有代差。 但是我用低端的 Oppo K12 时, 如果只运行微信、B 站，丝滑流畅。 完全感觉不出和新机天玑 9400 有什么大的差别。 只有随着打开应用增多使用时间变长，才会发现新机依然流畅。 21 0bit0 19 小时 20 分钟前 国产安卓有个问题就是对一些软件的兼容性不好，之前我偶然发现我一个钱包 app 支付的时候需要 passkey ，然后我怎么都找不到这个 passkey 存在哪个密钥管理器，支付的时候一直提示正在验证 passkey 就是拉不起来。还有有些地方对 bitwarden 支持的不是很好。但是用 ios 就完全没有这些问题，当然我没有用过国际版的安卓，我理解国际版应该好一点，尤其是 pixel ，全部是谷歌自家的，用一套账号体系就行。 22 ech2o 19 小时 15 分钟前 苹果切换到 oppo 的，感觉 oppo 最向苹果看齐的品牌了，UI 和",
+=======
+          "content": "最近换了 OPPO 手机，从一个细节感受到厂家对系统的用心程度。 - V2EX 首页 注册 登录 V2EX = way to explore V2EX 是一个关于分享和探索的地方 现在注册 已注册用户请 登录 V2EX › Android 最近换了 OPPO 手机，从一个细节感受到厂家对系统的用心程度。 long1and · 22 小时 30 分钟前 · 6151 次点击 这几年陆续用过了 VIVO OPPO IPHONE 和小米。基本市面上常见的手机品牌和系统都体验过了。 我是个强迫症，对细节比较在意。有一点让我挺有感触的。 就是手机蓝牙连接车机蓝牙播放音乐时，专辑封面是否显示。 经过我的实测，我发现 iPhone 的 ios 在很早的版本就可以通过蓝牙传递封面信息，且在车机上正确显示。 而小米 vivo 直到最新系统版本仍然无法显示 而最近换的 oppo coloros16 我惊喜的发现可以正常显示专辑封面。 前部手机 vivo 的话，用 jovi in car 是可以显示的，走蓝牙协议就不行。 查找资料可知：蓝牙音频播放依赖两个核心协议： A2DP：只负责传声音（音乐数据流） AVRCP：负责传控制指令 + 媒体元数据（歌名、歌手、封面） 因此这个细节，依靠手机工程师应该很容易解决，但是很可惜，安卓阵营里目前只有 oppo 解决了这个问题。 蓝牙 封面 系统 68 条回复 • 2026-04-08 11:48:42 +08:00 1 vevlins 22 小时 20 分钟前 oppo 系统做的确实不错，买了个 oppo pad3 pro 平板，改变了我过去几年认为 apple 设备无敌的想法，除了三方 app ，oppo 自家的系统比 ipad 强，以后买设备会考虑 oppo 了。 2 frantic 21 小时 39 分钟前 vivo 最新版本的蓝牙也可以显示专辑名称，周末才发现的 3 nabanbaba 21 小时 31 分钟前 oppo 对于旧旗舰的系统功能更新也还行 x9pro 的 ai\\xpan 色彩滤镜等都 x8u 更新了.只有 x9pro 核心卖点 4k live 等没下放 我上周出掉了 matepadmini 与 findx8ultra, 准备冲 21 号发布的 oppo 小平板与 x9ultra 了 4 long1and OP 21 小时 24 分钟前 @ frantic 那真是太好了，可惜没赶上好时候，用了快三年，半个月前才把 vivo 手机卖掉了 5 tyzrj766 21 小时 24 分钟前 但是 ColorOS 的字体、UI 不统一，系统更新拿 AI 来充数，开暗黑模式主题失效，应用保活差，Push 推送倒数，小窗优化稀烂又显得系统很不细节😅 6 long1and OP 21 小时 23 分钟前 @ nabanbaba oppo 小平板应该很不错，还有个耳夹耳机我也打算入手。 7 long1and OP 21 小时 20 分钟前 @ tyzrj766 你说的几个问题，除了保活差，其他的还没有感受到。特别是小窗，因为我换的是 oppo find n6 ，感觉 oppo 对折叠屏的优化还是比较好的。特别是小布记忆这个功能，我觉得 oppo 的 ai 还是有点东西的。 不过总的来看，我感觉 vivo 和 oppo 的系统都还是不错，整体流畅度好，而且用两三年都不会感觉到明显卡顿。特别是 vivo ，我的老手机更新了 origin6 后甚至比首发系统更流畅了。 8 rb6221 21 小时 12 分钟前 实际上用起来也不是完全遵守标准协议的，很多情况下都是播放源本身不提供（这你要问各大音乐 app 的开发者了） 然后手机厂商的做法一般是自己接一个第三方元数据库，但是也就是为了增强体验而已，命中率看天意了 9 lchkid 21 小时 11 分钟前 vivo 我试过 tesla 是可以显示专辑封面和歌词的，蓝牙 qq 音乐 10 yifei2 21 小时 6 分钟前 现在备用机是 vivo x100spro ，在想换 oppo x9ultra 还是 vivo x300ultra ，有无懂哥 11 loading 21 小时 5 分钟前 1 最喜欢是 ai 帮写购物评价，当然，更加不相信评价了。 12 wuliiqq 21 小时 0 分钟前 1 是的 国产安卓里，oppo 算是比较用心的 13 woodfizky 20 小时 40 分钟前 11 你以为的手机系统厂商：啊，我们团队一定要尽心尽力把每个细节做好。 实际上的手机系统厂商：团队里不知道哪个程序员刚好有技术有责任感，懂这个细节，把这个细节给做了。 以上都是我猜的，因为我觉得手机系统团队如果有产品经理，那这个产品经理大概率是不知道这种技术细节的。 手机系统涉及的面太多了，真的很难把每个细节都做好吧。。 14 liuxyon 20 小时 38 分钟前 哪个能 ROOT 解锁？ 15 ronman 20 小时 37 分钟前 1 @ woodfizky 那建议你别猜了，这些东西都要求做解读的 16 fairytale110 20 小时 25 分钟前 via Android 唯一的小问题是关于手机里面，改手机名称，是强制联网检查的，不然改不了，哈哈哈 17 Rumble66 20 小时 14 分钟前 有没有可能是车机的问题? 上面提到的某家和我的车机能显示 18 lswlray 19 小时 33 分钟前 至少小米的系统也是可以传递的，只是不同的车机才决定显示与否 19 my101du 19 小时 32 分钟前 @ long1and 我是 O 家全家桶， 从 8G 的 Oppo K12/ 一加 Ace3V 到 12G 的真我 Neo7SE 到 16G 的真我 Neo 7 Turbo . 得出结论是： CPU 的差异对性能影响，远不如运行内存。 自带 16G 的保活很强，并且不影响应用运行的流畅度。 低于这个值不管怎么进行“内存扩展”都会触发一个值后导致应用卡顿。 然后分析应用占用资源发现，淘宝占用 2G 。 特喵的赶紧退出、删除，用支付宝里的淘宝/闪购小程序替代了。 20 my101du 19 小时 28 分钟前 补充一下，虽然上面几个机器确实 CPU 有代差。 但是我用低端的 Oppo K12 时, 如果只运行微信、B 站，丝滑流畅。 完全感觉不出和新机天玑 9400 有什么大的差别。 只有随着打开应用增多使用时间变长，才会发现新机依然流畅。 21 0bit0 19 小时 26 分钟前 国产安卓有个问题就是对一些软件的兼容性不好，之前我偶然发现我一个钱包 app 支付的时候需要 passkey ，然后我怎么都找不到这个 passkey 存在哪个密钥管理器，支付的时候一直提示正在验证 passkey 就是拉不起来。还有有些地方对 bitwarden 支持的不是很好。但是用 ios 就完全没有这些问题，当然我没有用过国际版的安卓，我理解国际版应该好一点，尤其是 pixel ，全部是谷歌自家的，用一套账号体系就行。 22 ech2o 19 小时 20 分钟前 苹果切换到 oppo 的，感觉 oppo 最向苹果看齐的品牌了，UI",
+>>>>>>> Stashed changes
           "analysis": {
             "is_cloud": false,
             "is_ai": true,
@@ -2552,7 +2825,11 @@
           "summary": "咱也不预设立场说国产的差距很大之类的，前提时能让人订阅一个试试看啊？每一个进去都是售罄？都是耍猴营销还是硬件算力严重不足？\r\n\r\n另外问问用过的朋友？ GLM5 以及其他几个国内前沿的大模型能力如何？与 sonnet4.6 gpt5.4 geminipro3.1 对比起来差距如何？（就不说 opus4.6 了，纯度高，劲大，吸起来确实过瘾，就是钱包撑不住！）",
           "developer_name": "webcape233",
           "developer_url": "https://www.v2ex.com/member/webcape233",
+<<<<<<< Updated upstream
           "content": "国产大模型 coding plan 每个都是售罄？ - V2EX 首页 注册 登录 V2EX = way to explore V2EX 是一个关于分享和探索的地方 现在注册 已注册用户请 登录 • 请不要在回答技术问题时复制粘贴 AI 生成的内容 V2EX › 程序员 国产大模型 coding plan 每个都是售罄？ webcape233 · 23 小时 38 分钟前 · 6782 次点击 咱也不预设立场说国产的差距很大之类的，前提时能让人订阅一个试试看啊？每一个进去都是售罄？都是耍猴营销还是硬件算力严重不足？ 另外问问用过的朋友？ GLM5 以及其他几个国内前沿的大模型能力如何？与 sonnet4.6 gpt5.4 geminipro3.1 对比起来差距如何？（就不说 opus4.6 了，纯度高，劲大，吸起来确实过瘾，就是钱包撑不住！） 大模型 国产 能力 67 条回复 • 2026-04-08 11:22:41 +08:00 1 Gnnbb 23 小时 36 分钟前 前段时间有个套餐 40 元好像还不错。月初刚刚没了。 2 yangyaofei 23 小时 21 分钟前 你可以充 20 块钱, 先用 api 试试, glm5 能 sonnet 体感差不多,可能智商差点, 但大部分任务感觉差不多. gemini3 好与不好都没用, gemini_cli 太差了, 我一直在想, 如果 claude code 用 gemini3 pro 会不会效果好一些 3 jiirouwei 23 小时 20 分钟前 据说阿里和智谱的再国产里边算是不错的了，所以一致是售罄，我猜是算力不够吧，要保证已购买群体的效果 4 kyomio 23 小时 0 分钟前 via Android qwen kimi minimax gemini gpt Claude 都用过，glm 没用过，体感上 sonnet 最好用，指令遵循最稳，其次是 gemini 和 gpt ，再往下是 kimi 和 minimax 。qwen 只能用来对话，放 agent 里面笨的没眼看。 5 jaoyina 23 小时 0 分钟前 via Android 1 minimax 我记得有的啊 6 106npo 22 小时 37 分钟前 via Android 1 minimax kimi 都随时能买 7 webcape233 OP 22 小时 30 分钟前 via iPhone @ 106npo @ jaoyina 谢谢，这两个确实有，挑一个试试看 8 106npo 22 小时 3 分钟前 @ webcape233 kimi 每个 15 分钟都 429 minimax 目前看还比较稳定 9 wat4me 22 小时 3 分钟前 算力不够，智谱 Coding Plan 从 2 月份被骂到 3 月份，支持退款之后骂声才少了一点。 10 ebushicao 21 小时 57 分钟前 2 字节的火山应该买的到吧，不过额度很迷，看着是和别人一样的请求次数，但实际会有倍率。还有百度的可能也买的到吧，不过很容易就提示 429 。minimax 价格便宜量大管饱，可以买一个。kimi 的额度不透明，很迷。 还有个小众的，电信的天翼云，也搞了个 Coding Plan ，和智谱合作的，套餐就是智谱的套餐，随时可买，但巨坑，完全用不了，我买了，正在和客服沟通，完全是草台班子，在 ClaudeCode 刚问了个“你好”就报错，然后他们技术说我并发达到上限了...，联通云好像也有，听说也很坑。 顺便吐槽一下，我本来觉得百度云老是提示 429 已经够烂了，真没想还有天翼云这种高手。 11 webcape233 OP 21 小时 52 分钟前 @ 106npo 请问哪个套餐的情况还是都是呢？这不和 antigravity 的 AI pro 坐一桌了（订阅了天天看着额度叹气 12 webcape233 OP 21 小时 50 分钟前 @ ebushicao 看来宁愿买不到也不买这种不靠谱二道贩子 13 jackOff 21 小时 43 分钟前 不要买国产的，不知道是故意的还是用户太多了，导致现在速度非常慢，还是买外国的吧 14 HuaPai 21 小时 40 分钟前 我之前买的 ali 的。openclaw 目前接入的就是这个 15 ebushicao 21 小时 29 分钟前 @ webcape233 主要是我没想到中国电信这么大的国企，弄的云服务连用都用不了。 16 liuxingv 21 小时 17 分钟前 @ ebushicao 联通基本也一样 17 rb6221 21 小时 10 分钟前 实际用起来也就那样，kimi 的话有速度限制，minimax 则是日常干活完全不行 18 gam2046 21 小时 5 分钟前 @ yangyaofei 我试过，效果还可以，只可惜 Pro 订阅的额度太小，Gemini 3 Pro 和 Gemini 2.5 Pro 额度都不够用，我转成 Gemini 3 Flash 才勉强够用，有时候 Flash 模型会钻牛角尖，需要人工干预，除此以外，问题也不大，无非多两个轮次的事情，反之最后都能完成任务。 19 xiaomushen 21 小时 0 分钟前 GLM5 算力根本不够，总是没响应 20 imnpc 20 小时 49 分钟前 国内的几家基本都限售 限速了 21 erwin985211 20 小时 35 分钟前 1 讯飞有一个 7.9 的套餐每日限额 1000w token 。能用 glm5 22 Youweiyoyoyo 20 小时 26 分钟前 @ gam2046 请问老哥是怎么用 claude code 跑 Gemini3Pro 的，我开的网页版的那个 Pro 会员能跑嘛？ 23 banzhe 20 小时 23 分钟前 想买智谱的直接买国际站的就行了 24 gam2046 20 小时 23 分钟前 @ Youweiyoyoyo #22 可以的，用工具转一下就行，然后就是正常 ClaudeCode 配置第三方模型，记得 Antigravity 和 Gemini CLI 的额度是分开计的 https://github.com/router-for-me/CLIProxyAPI 25 Gilfoyle26 20 小时 22 分钟前 反正我又不用，售罄就售罄呗 26 edisonwong 20 小时 20 分钟前 @ ebushicao #15 都是草台班子抓紧上线，测试根本不充分 27 jark006 20 小时 6 分钟前 总体就是算力不够了，N 卡限买，国产计算卡难撑 28 jonsmith 19 小时 36 分钟前 GLM5 智力不差的，与 sonnet 差不多，比 gpt-5.4 好用（ gpt 太啰嗦）。 售罄的原因是算力不足，我用的阿里云 coding plan ，偶尔会超时无响应。相比 codex ，稳定性差点。 29 joebnb 19 小时 31 分钟前 跟算力够不够一点关系都没有，关键是，卖的这些东西根本不赚钱！电费网费可能都不够！自己跑一下 API 调用就知道了，不用什么模式，就普通聊天式修改，1 小时妥妥 ",
+=======
+          "content": "国产大模型 coding plan 每个都是售罄？ - V2EX 首页 注册 登录 V2EX = way to explore V2EX 是一个关于分享和探索的地方 现在注册 已注册用户请 登录 • 请不要在回答技术问题时复制粘贴 AI 生成的内容 V2EX › 程序员 国产大模型 coding plan 每个都是售罄？ webcape233 · 23 小时 45 分钟前 · 6821 次点击 咱也不预设立场说国产的差距很大之类的，前提时能让人订阅一个试试看啊？每一个进去都是售罄？都是耍猴营销还是硬件算力严重不足？ 另外问问用过的朋友？ GLM5 以及其他几个国内前沿的大模型能力如何？与 sonnet4.6 gpt5.4 geminipro3.1 对比起来差距如何？（就不说 opus4.6 了，纯度高，劲大，吸起来确实过瘾，就是钱包撑不住！） 大模型 国产 能力 67 条回复 • 2026-04-08 11:22:41 +08:00 1 Gnnbb 23 小时 43 分钟前 前段时间有个套餐 40 元好像还不错。月初刚刚没了。 2 yangyaofei 23 小时 27 分钟前 你可以充 20 块钱, 先用 api 试试, glm5 能 sonnet 体感差不多,可能智商差点, 但大部分任务感觉差不多. gemini3 好与不好都没用, gemini_cli 太差了, 我一直在想, 如果 claude code 用 gemini3 pro 会不会效果好一些 3 jiirouwei 23 小时 27 分钟前 据说阿里和智谱的再国产里边算是不错的了，所以一致是售罄，我猜是算力不够吧，要保证已购买群体的效果 4 kyomio 23 小时 7 分钟前 via Android qwen kimi minimax gemini gpt Claude 都用过，glm 没用过，体感上 sonnet 最好用，指令遵循最稳，其次是 gemini 和 gpt ，再往下是 kimi 和 minimax 。qwen 只能用来对话，放 agent 里面笨的没眼看。 5 jaoyina 23 小时 7 分钟前 via Android 1 minimax 我记得有的啊 6 106npo 22 小时 44 分钟前 via Android 1 minimax kimi 都随时能买 7 webcape233 OP 22 小时 37 分钟前 via iPhone @ 106npo @ jaoyina 谢谢，这两个确实有，挑一个试试看 8 106npo 22 小时 10 分钟前 @ webcape233 kimi 每个 15 分钟都 429 minimax 目前看还比较稳定 9 wat4me 22 小时 10 分钟前 算力不够，智谱 Coding Plan 从 2 月份被骂到 3 月份，支持退款之后骂声才少了一点。 10 ebushicao 22 小时 4 分钟前 2 字节的火山应该买的到吧，不过额度很迷，看着是和别人一样的请求次数，但实际会有倍率。还有百度的可能也买的到吧，不过很容易就提示 429 。minimax 价格便宜量大管饱，可以买一个。kimi 的额度不透明，很迷。 还有个小众的，电信的天翼云，也搞了个 Coding Plan ，和智谱合作的，套餐就是智谱的套餐，随时可买，但巨坑，完全用不了，我买了，正在和客服沟通，完全是草台班子，在 ClaudeCode 刚问了个“你好”就报错，然后他们技术说我并发达到上限了...，联通云好像也有，听说也很坑。 顺便吐槽一下，我本来觉得百度云老是提示 429 已经够烂了，真没想还有天翼云这种高手。 11 webcape233 OP 21 小时 58 分钟前 @ 106npo 请问哪个套餐的情况还是都是呢？这不和 antigravity 的 AI pro 坐一桌了（订阅了天天看着额度叹气 12 webcape233 OP 21 小时 57 分钟前 @ ebushicao 看来宁愿买不到也不买这种不靠谱二道贩子 13 jackOff 21 小时 49 分钟前 不要买国产的，不知道是故意的还是用户太多了，导致现在速度非常慢，还是买外国的吧 14 HuaPai 21 小时 46 分钟前 我之前买的 ali 的。openclaw 目前接入的就是这个 15 ebushicao 21 小时 36 分钟前 @ webcape233 主要是我没想到中国电信这么大的国企，弄的云服务连用都用不了。 16 liuxingv 21 小时 23 分钟前 @ ebushicao 联通基本也一样 17 rb6221 21 小时 17 分钟前 实际用起来也就那样，kimi 的话有速度限制，minimax 则是日常干活完全不行 18 gam2046 21 小时 11 分钟前 @ yangyaofei 我试过，效果还可以，只可惜 Pro 订阅的额度太小，Gemini 3 Pro 和 Gemini 2.5 Pro 额度都不够用，我转成 Gemini 3 Flash 才勉强够用，有时候 Flash 模型会钻牛角尖，需要人工干预，除此以外，问题也不大，无非多两个轮次的事情，反之最后都能完成任务。 19 xiaomushen 21 小时 7 分钟前 GLM5 算力根本不够，总是没响应 20 imnpc 20 小时 56 分钟前 国内的几家基本都限售 限速了 21 erwin985211 20 小时 42 分钟前 1 讯飞有一个 7.9 的套餐每日限额 1000w token 。能用 glm5 22 Youweiyoyoyo 20 小时 33 分钟前 @ gam2046 请问老哥是怎么用 claude code 跑 Gemini3Pro 的，我开的网页版的那个 Pro 会员能跑嘛？ 23 banzhe 20 小时 30 分钟前 想买智谱的直接买国际站的就行了 24 gam2046 20 小时 30 分钟前 @ Youweiyoyoyo #22 可以的，用工具转一下就行，然后就是正常 ClaudeCode 配置第三方模型，记得 Antigravity 和 Gemini CLI 的额度是分开计的 https://github.com/router-for-me/CLIProxyAPI 25 Gilfoyle26 20 小时 29 分钟前 反正我又不用，售罄就售罄呗 26 edisonwong 20 小时 27 分钟前 @ ebushicao #15 都是草台班子抓紧上线，测试根本不充分 27 jark006 20 小时 13 分钟前 总体就是算力不够了，N 卡限买，国产计算卡难撑 28 jonsmith 19 小时 43 分钟前 GLM5 智力不差的，与 sonnet 差不多，比 gpt-5.4 好用（ gpt 太啰嗦）。 售罄的原因是算力不足，我用的阿里云 coding plan ，偶尔会超时无响应。相比 codex ，稳定性差点。 29 joebnb 19 小时 38 分钟前 跟算力够不够一点关系都没有，关键是，卖的这些东西根本不赚钱！电费网费可能都不够！自己跑一下 API 调用就知道了，不用什么模式，就普通聊天式修改，1 小时",
+>>>>>>> Stashed changes
           "analysis": {
             "is_cloud": true,
             "is_ai": true,
@@ -2660,6 +2937,7 @@
             }
           },
           "summary_cn": "国产大模型 coding plan 每个都是售罄？: 咱也不预设立场说国产的差距很大之类的，前提时能让人订阅一个试试看啊？ 每一个进去都是售罄？ 都是耍猴营销还是硬件算力严重不足？ 另外问问用过的朋友？"
+<<<<<<< Updated upstream
         },
         {
           "source": "V2EX",
@@ -2751,6 +3029,8 @@
             }
           },
           "summary_cn": "在哪里买海外包年服务器比较便宜: 之前黑五的时候买了一台十几刀一年，2c2g 的服务器，很香，现在一台有点不够用了，想再买一台"
+=======
+>>>>>>> Stashed changes
         }
       ],
       "error": null
@@ -2793,8 +3073,13 @@
             "tone": "中立资讯",
             "detail_brief": "World models have garnered significant attention as a promising research direction in artificial intelligence, yet a clear and unified definition remains lacking. In this paper, we introduce OpenWorldLib, a comprehensive and standardized inference framework for Advanced World Models. Drawing on the evolution of world models, we propose a clear definition: a world model is a model or framework centered on perception, equipped with interaction and long-term memory capabilities, for understanding…",
             "heat_score": 5.0,
+<<<<<<< Updated upstream
             "timeliness_score": 9.0,
             "composite_score": 3.8,
+=======
+            "timeliness_score": 8.0,
+            "composite_score": 3.6,
+>>>>>>> Stashed changes
             "tcloud_relevance": 0.0,
             "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
             "tcloud_products": [],
@@ -2877,8 +3162,13 @@
             "tone": "对比测评",
             "detail_brief": "Vision-Language-Action (VLA) models achieve strong performance in robotic manipulation by leveraging pre-trained vision-language backbones. However, in downstream robotic settings, they are typically fine-tuned with limited data, leading to overfitting to specific instruction formulations and leaving robustness to paraphrased instructions underexplored. To study this gap, we introduce LIBERO-Para, a controlled benchmark that independently varies action expressions and object references for fine…",
             "heat_score": 4.0,
+<<<<<<< Updated upstream
             "timeliness_score": 9.0,
             "composite_score": 3.4,
+=======
+            "timeliness_score": 8.0,
+            "composite_score": 3.2,
+>>>>>>> Stashed changes
             "tcloud_relevance": 0.0,
             "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
             "tcloud_products": [],
@@ -2964,8 +3254,13 @@
             "tone": "正向推广",
             "detail_brief": "Extended reasoning in large language models (LLMs) creates severe KV cache memory bottlenecks. Leading KV cache compression methods estimate KV importance using attention scores from recent post-RoPE queries. However, queries rotate with position during RoPE, making representative queries very few, leading to poor top-key selection and unstable reasoning. To avoid this issue, we turn to the pre-RoPE space, where we observe that Q and K vectors are highly concentrated around fixed non-zero cente…",
             "heat_score": 4.0,
+<<<<<<< Updated upstream
             "timeliness_score": 9.0,
             "composite_score": 3.6,
+=======
+            "timeliness_score": 8.0,
+            "composite_score": 3.4,
+>>>>>>> Stashed changes
             "tcloud_relevance": 0.0,
             "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
             "tcloud_products": [],
@@ -3019,7 +3314,11 @@
           "title": "Adam's Law: Textual Frequency Law on Large Language Models",
           "url": "https://huggingface.co/papers/2604.02176",
           "github": "https://github.com/HongyuanLuke/frequencylaw",
+<<<<<<< Updated upstream
           "heat": "👍 46",
+=======
+          "heat": "👍 48",
+>>>>>>> Stashed changes
           "time": "2026-04-08",
           "summary": "While textual frequency has been validated as relevant to human cognition in reading speed, its relatedness to Large Language Models (LLMs) is seldom studied. We propose a novel research direction in terms of textual data frequency, which is an understudied topic, to the best of our knowledge. Our framework is composed of three units. First, this paper proposes Textual Frequency Law (TFL), which indicates that frequent textual data should be preferred for LLMs for both prompting and fine-tuning.…",
           "description": "Textual Frequency Law, Textual Frequency Distillation, Curriculum Textual Frequency Training, Large Language Models, prompting",
@@ -3048,8 +3347,13 @@
             "tone": "正向推广",
             "detail_brief": "While textual frequency has been validated as relevant to human cognition in reading speed, its relatedness to Large Language Models (LLMs) is seldom studied. We propose a novel research direction in terms of textual data frequency, which is an understudied topic, to the best of our knowledge. Our framework is composed of three units. First, this paper proposes Textual Frequency Law (TFL), which indicates that frequent textual data should be preferred for LLMs for both prompting and fine-tuning.",
             "heat_score": 3.0,
+<<<<<<< Updated upstream
             "timeliness_score": 9.0,
             "composite_score": 3.2,
+=======
+            "timeliness_score": 8.0,
+            "composite_score": 3.0,
+>>>>>>> Stashed changes
             "tcloud_relevance": 0.0,
             "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
             "tcloud_products": [],
@@ -3107,6 +3411,7 @@
       "index": 7,
       "items": [
         {
+<<<<<<< Updated upstream
           "source": "KDnuggets",
           "title": "Supabase vs Firebase: Which Backend Is Right for Your Next App?",
           "url": "https://www.kdnuggets.com/supabase-vs-firebase-which-backend-is-right-for-your-next-app",
@@ -3389,6 +3694,10 @@
         {
           "source": "One Useful Thing",
           "title": "<![CDATA[Claude Dispatch and the Power of Interfaces]]>",
+=======
+          "source": "One Useful Thing",
+          "title": "Claude Dispatch and the Power of Interfaces",
+>>>>>>> Stashed changes
           "url": "https://www.oneusefulthing.org/p/claude-dispatch-and-the-power-of",
           "time": "Tue, 31 Mar 2026 22:34:37 GMT",
           "heat": "",
@@ -3430,12 +3739,20 @@
             "timeliness_score": 5.0,
             "composite_score": 4.7,
             "tcloud_relevance": 5.0,
+<<<<<<< Updated upstream
             "tcloud_integration": "「<![CDATA[Claude Dispatch and the 能力 of」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+=======
+            "tcloud_integration": "「Claude Dispatch and the 能力 of Interfaces」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+>>>>>>> Stashed changes
             "tcloud_products": [
               "CodeBuddy"
             ],
             "tcloud_reasons": [
+<<<<<<< Updated upstream
               "「<![CDATA[Claude Dispatch and the 能力 of」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐"
+=======
+              "「Claude Dispatch and the 能力 of Interfaces」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐"
+>>>>>>> Stashed changes
             ],
             "tcloud_evidence": [
               "claude code",
@@ -3443,7 +3760,11 @@
             ],
             "tcloud_primary_product": "CodeBuddy",
             "tcloud_relation_type": "应用场景",
+<<<<<<< Updated upstream
             "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[Claude Dispatch and the 能力 of」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+=======
+            "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「Claude Dispatch and the 能力 of Interfaces」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+>>>>>>> Stashed changes
             "tcloud_official_matches": [
               "CodeBuddy"
             ],
@@ -3460,21 +3781,33 @@
               "LinkedIn（发教程文章）"
             ],
             "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+<<<<<<< Updated upstream
             "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[Claude Dispatch and the Power of Interfa…」（AIs are already far more capable than most people realize.…），涉及 Agent / Python → 可写方向：「<![CDATA[Claude Dispatch and the 能力 of」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
             "social_recommendation": "「<![CDATA[Claude Dispatch and the Power…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
             "official_product_focus": "CodeBuddy",
             "official_angle_cn": "借「<![CDATA[Claude Dispatch and the 能力 of」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（AIs are already far more capable than most people realize. A large part of this…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+=======
+            "editorial_brief": "话题类型：开发者话题\n可用角度：「Claude Dispatch and the Power of Interfaces」（AIs are already far more capable than most people realize.…），涉及 Agent / Python → 可写方向：「Claude Dispatch and the 能力 of Interfaces」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "social_recommendation": "「Claude Dispatch and the Power of Interf…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+            "official_product_focus": "CodeBuddy",
+            "official_angle_cn": "借「Claude Dispatch and the 能力 of Interfaces」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（AIs are already far more capable than most people realize. A large part of this…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+>>>>>>> Stashed changes
             "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
             "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
             "platform_copies": {
               "primary_product": "CodeBuddy",
               "product_display": "CodeBuddy",
               "relation_type": "应用场景",
+<<<<<<< Updated upstream
               "official_angle_cn": "借「<![CDATA[Claude Dispatch and the 能力 of」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（AIs are already far more capable than most people realize. A large part of this…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+=======
+              "official_angle_cn": "借「Claude Dispatch and the 能力 of Interfaces」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（AIs are already far more capable than most people realize. A large part of this…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+>>>>>>> Stashed changes
               "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
               "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
               "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
               "x_cn": "AIs are already far more capable than most people realize. A large…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+<<<<<<< Updated upstream
               "x_en": "<![CDATA[Claude Dispatch and the Power of Interfaces]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
               "discord_cn": "今天看到一条值得开发者关注的热点：AIs are already far more capable than most people realize. A large…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
               "discord_en": "A developer trend worth discussing today: <![CDATA[Claude Dispatch and the Power of Interfaces]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
@@ -3491,6 +3824,24 @@
         {
           "source": "One Useful Thing",
           "title": "<![CDATA[The Shape of the Thing]]>",
+=======
+              "x_en": "Claude Dispatch and the Power of Interfaces. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：AIs are already far more capable than most people realize. A large…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: Claude Dispatch and the Power of Interfaces. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。AIs are already far more capable than most people realize. A large…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「Claude Dispatch and the 能力 of Interfaces」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Claude Dispatch and the Power of Interfaces. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+              "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：AIs are already far more capable than most people realize. A large…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+              "reddit_body_en": "A recent trend caught my eye: Claude Dispatch and the Power of Interfaces. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "Claude Dispatch 和接口的力量"
+        },
+        {
+          "source": "One Useful Thing",
+          "title": "The Shape of the Thing",
+>>>>>>> Stashed changes
           "url": "https://www.oneusefulthing.org/p/the-shape-of-the-thing",
           "time": "Thu, 12 Mar 2026 14:10:07 GMT",
           "heat": "",
@@ -3531,19 +3882,31 @@
             "timeliness_score": 5.0,
             "composite_score": 4.6,
             "tcloud_relevance": 4.8,
+<<<<<<< Updated upstream
             "tcloud_integration": "「<![CDATA[The Shape of the Thing]]>」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+=======
+            "tcloud_integration": "「The Shape of the Thing」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+>>>>>>> Stashed changes
             "tcloud_products": [
               "CodeBuddy"
             ],
             "tcloud_reasons": [
+<<<<<<< Updated upstream
               "「<![CDATA[The Shape of the Thing]]>」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+=======
+              "「The Shape of the Thing」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+>>>>>>> Stashed changes
             ],
             "tcloud_evidence": [
               "claude code"
             ],
             "tcloud_primary_product": "CodeBuddy",
             "tcloud_relation_type": "应用场景",
+<<<<<<< Updated upstream
             "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[The Shape of the Thing]]>」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+=======
+            "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「The Shape of the Thing」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+>>>>>>> Stashed changes
             "tcloud_official_matches": [
               "CodeBuddy"
             ],
@@ -3560,21 +3923,33 @@
               "LinkedIn（发教程文章）"
             ],
             "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+<<<<<<< Updated upstream
             "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[The Shape of the Thing]]>」（In October of 2023, I wrote about the “Shape of the Shadow…），涉及 Agent → 可写方向：「<![CDATA[The Shape of the Thing]]>」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
             "social_recommendation": "「<![CDATA[The Shape of the Thing]]>」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
             "official_product_focus": "CodeBuddy",
             "official_angle_cn": "借「<![CDATA[The Shape of the Thing]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（In October of 2023, I wrote about the “Shape of the Shadow of the Thing,” specu…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+=======
+            "editorial_brief": "话题类型：开发者话题\n可用角度：「The Shape of the Thing」（In October of 2023, I wrote about the “Shape of the Shadow…），涉及 Agent → 可写方向：「The Shape of the Thing」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "social_recommendation": "「The Shape of the Thing」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+            "official_product_focus": "CodeBuddy",
+            "official_angle_cn": "借「The Shape of the Thing」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（In October of 2023, I wrote about the “Shape of the Shadow of the Thing,” specu…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+>>>>>>> Stashed changes
             "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
             "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
             "platform_copies": {
               "primary_product": "CodeBuddy",
               "product_display": "CodeBuddy",
               "relation_type": "应用场景",
+<<<<<<< Updated upstream
               "official_angle_cn": "借「<![CDATA[The Shape of the Thing]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（In October of 2023, I wrote about the “Shape of the Shadow of the Thing,” specu…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+=======
+              "official_angle_cn": "借「The Shape of the Thing」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（In October of 2023, I wrote about the “Shape of the Shadow of the Thing,” specu…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+>>>>>>> Stashed changes
               "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
               "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
               "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
               "x_cn": "In October of 2023, I wrote about the “Shape of the Shadow of the T…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+<<<<<<< Updated upstream
               "x_en": "<![CDATA[The Shape of the Thing]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
               "discord_cn": "今天看到一条值得开发者关注的热点：In October of 2023, I wrote about the “Shape of the Shadow of the T…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
               "discord_en": "A developer trend worth discussing today: <![CDATA[The Shape of the Thing]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
@@ -3591,6 +3966,24 @@
         {
           "source": "One Useful Thing",
           "title": "<![CDATA[A Guide to Which AI to Use in the Agentic Era]]>",
+=======
+              "x_en": "The Shape of the Thing. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：In October of 2023, I wrote about the “Shape of the Shadow of the T…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: The Shape of the Thing. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。In October of 2023, I wrote about the “Shape of the Shadow of the T…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「The Shape of the Thing」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. The Shape of the Thing. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+              "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：In October of 2023, I wrote about the “Shape of the Shadow of the T…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+              "reddit_body_en": "A recent trend caught my eye: The Shape of the Thing. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "事物的形状"
+        },
+        {
+          "source": "One Useful Thing",
+          "title": "A Guide to Which AI to Use in the Agentic Era",
+>>>>>>> Stashed changes
           "url": "https://www.oneusefulthing.org/p/a-guide-to-which-ai-to-use-in-the",
           "time": "Wed, 18 Feb 2026 01:45:41 GMT",
           "heat": "",
@@ -3634,12 +4027,20 @@
             "timeliness_score": 5.0,
             "composite_score": 4.7,
             "tcloud_relevance": 5.0,
+<<<<<<< Updated upstream
             "tcloud_integration": "「<![CDATA[A 指南 to Which AI to Use in the」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+=======
+            "tcloud_integration": "「A 指南 to Which AI to Use in the Agentic」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+>>>>>>> Stashed changes
             "tcloud_products": [
               "CodeBuddy"
             ],
             "tcloud_reasons": [
+<<<<<<< Updated upstream
               "「<![CDATA[A 指南 to Which AI to Use in the」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+=======
+              "「A 指南 to Which AI to Use in the Agentic」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+>>>>>>> Stashed changes
             ],
             "tcloud_evidence": [
               "claude code",
@@ -3647,7 +4048,11 @@
             ],
             "tcloud_primary_product": "CodeBuddy",
             "tcloud_relation_type": "应用场景",
+<<<<<<< Updated upstream
             "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[A 指南 to Which AI to Use in the」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+=======
+            "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「A 指南 to Which AI to Use in the Agentic」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+>>>>>>> Stashed changes
             "tcloud_official_matches": [
               "CodeBuddy"
             ],
@@ -3664,21 +4069,33 @@
               "LinkedIn（发教程文章）"
             ],
             "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+<<<<<<< Updated upstream
             "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[A Guide to Which AI to Use in the Agenti…」（I have written eight of these guides since ChatGPT came out…），涉及 Agent → 可写方向：「<![CDATA[A 指南 to Which AI to Use in the」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
             "social_recommendation": "「<![CDATA[A Guide to Which AI to Use in…」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
             "official_product_focus": "CodeBuddy",
             "official_angle_cn": "借「<![CDATA[A 指南 to Which AI to Use in the」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（I have written eight of these guides since ChatGPT came out, but this version r…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+=======
+            "editorial_brief": "话题类型：开发者话题\n可用角度：「A Guide to Which AI to Use in the Agentic Era」（I have written eight of these guides since ChatGPT came out…），涉及 Agent → 可写方向：「A 指南 to Which AI to Use in the Agentic」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "social_recommendation": "「A Guide to Which AI to Use in the Agent…」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+            "official_product_focus": "CodeBuddy",
+            "official_angle_cn": "借「A 指南 to Which AI to Use in the Agentic」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（I have written eight of these guides since ChatGPT came out, but this version r…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+>>>>>>> Stashed changes
             "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
             "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
             "platform_copies": {
               "primary_product": "CodeBuddy",
               "product_display": "CodeBuddy",
               "relation_type": "应用场景",
+<<<<<<< Updated upstream
               "official_angle_cn": "借「<![CDATA[A 指南 to Which AI to Use in the」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（I have written eight of these guides since ChatGPT came out, but this version r…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+=======
+              "official_angle_cn": "借「A 指南 to Which AI to Use in the Agentic」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（I have written eight of these guides since ChatGPT came out, but this version r…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+>>>>>>> Stashed changes
               "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
               "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
               "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
               "x_cn": "I have written eight of these guides since ChatGPT came out, but th…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+<<<<<<< Updated upstream
               "x_en": "<![CDATA[A Guide to Which AI to Use in the Agentic Era]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
               "discord_cn": "今天看到一条值得开发者关注的热点：I have written eight of these guides since ChatGPT came out, but th…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
               "discord_en": "A developer trend worth discussing today: <![CDATA[A Guide to Which AI to Use in the Agentic Era]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
@@ -3695,6 +4112,563 @@
         {
           "source": "Ben's Bites",
           "title": "<![CDATA[No Claude for Claws]]>",
+=======
+              "x_en": "A Guide to Which AI to Use in the Agentic Era. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：I have written eight of these guides since ChatGPT came out, but th…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: A Guide to Which AI to Use in the Agentic Era. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。I have written eight of these guides since ChatGPT came out, but th…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「A 指南 to Which AI to Use in the Agentic」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. A Guide to Which AI to Use in the Agentic Era. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+              "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：I have written eight of these guides since ChatGPT came out, but th…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+              "reddit_body_en": "A recent trend caught my eye: A Guide to Which AI to Use in the Agentic Era. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "代理时代使用人工智能的指南"
+        },
+        {
+          "source": "AI to ROI",
+          "title": "AI to ROI Reports & Data: The Future of Enterprise AI from PitchBook",
+          "url": "https://ai2roi.substack.com/p/ai-to-roi-reports-and-data-the-future",
+          "time": "Tue, 07 Apr 2026 12:32:14 GMT",
+          "heat": "",
+          "summary": "The AI Software Revolution Meets SaaS Reinvention About PitchBook and the Authors PitchBook is a Morningstar company that provides data, research, and analysis for professionals working across private markets. Its Institutional Research Group publishes analyst notes covering venture capital, private...",
+          "developer_name": "Ray Rike",
+          "content": "AI to ROI Reports & Data: The Future of Enterprise AI from PitchBook AI to ROI - By Ray Rike and Peter Buchanan Subscribe Sign in AI to ROI Reports & Data: The Future of Enterprise AI from PitchBook Two Connected Reports on the Future of Enterprise AI: SaaS Is Dead, Long Live SaS & Through the Looking Glass from PitchBook Ray Rike and Peter Buchanan Apr 07, 2026 Share The AI Software Revolution Meets SaaS Reinvention About PitchBook and the Authors PitchBook is a Morningstar company that provides data, research, and analysis for professionals working across private markets. Its Institutional Research Group publishes analyst notes covering venture capital, private equity, and emerging technology sectors. The authors are Rudy Torrijos, Director of Industry Research, and Derek Hernandez, Senior Research Analyst covering Enterprise SaaS and Infrastructure SaaS. The reports are a two-part series that delivers a connected argument about the future of enterprise software and AI. What the Reports Cover Report #1: SaaS Is Dead, Long Live SaS (February 9, 2026) The first report opens with a direct challenge to the SaaSpocalypse. PitchBook argues that: Investors panicked after Anthropic launched an AI legal services plugin, selling software positions amid the fear that generative AI models would entirely commoditize enterprise software. The real shift is not from software to AI, but from selling access to tools to selling completed work. The authors call this new model Service as Software , or SaS . Instead of charging per seat, vendors charge per outcome, per resolved ticket, per filed report, or per completed workflow. Outcome-based pricing allows software budgets to merge with payroll budgets, which PitchBook estimates represents an 8x revenue uplift per unit. The report identifies ten structural moats that protect incumbent software vendors: Distribution, data context, switching costs, workflow integration, security and compliance, AI as a revenue layer, outcome pricing, vendor consolidation, investment scale, and deep business logic. The report closes with specific playbooks for PE investors, VCs, public equity managers, SaaS founders, and IT leaders. Report #2: Through the Looking Glass (March 9, 2026) The second report moves from the strategic case to the operational mechanics of SaS (Service as Software) . It asks a harder question: What does it actually take for a vendor to deliver on the SaS promise? The answer centers on what PitchBook calls the autonomy gap. That’s the operational cost incurred every time an AI agent fails and requires a human to intervene. Until that gap closes, labor replacement stays out of reach. Closing it requires three things to happen simultaneously: Vendors must build agents that can operate reliably without constant human oversight Vendors and enterprises must work together to move to outcome-based pricing to capture the value of labor. Enterprises must stand up AgentOps functions to govern the digital workforce. To he",
+          "analysis": {
+            "is_cloud": true,
+            "is_ai": true,
+            "is_anxiety": false,
+            "cloud_score": 1,
+            "ai_score": 3,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "saas"
+            ],
+            "ai_hits": [
+              "ai",
+              "agent",
+              "anthropic"
+            ],
+            "anxiety_hits": [],
+            "topic": "行业动态",
+            "topic_type": "开发者话题",
+            "products": [],
+            "competitors": [],
+            "competitor_products": [],
+            "techs": [
+              "Agent"
+            ],
+            "tone": "中立资讯",
+            "detail_brief": "The AI Software Revolution Meets SaaS Reinvention About PitchBook and the Authors PitchBook is a Morningstar company that provides data, research, and analysis for professionals working across private markets. Its Institutional Research Group publishes analyst notes covering venture capital, private.",
+            "heat_score": 1.0,
+            "timeliness_score": 5.0,
+            "composite_score": 2.8,
+            "tcloud_relevance": 0.2,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "技术科普",
+              "观点评论"
+            ],
+            "editorial_angles_text": "技术科普 + 观点评论",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "Reddit（直接参与讨论）",
+              "LinkedIn（发教程文章）"
+            ],
+            "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "editorial_brief": "话题类型：开发者话题\n可用角度：「AI to ROI Reports & Data: The Future of Enterpris…」（The AI Software Revolution Meets SaaS Reinvention About Pit…），涉及 Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "social_recommendation": "「AI to ROI Reports & Data: The Future of…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "The AI Software Revolution Meets SaaS Reinvention About PitchBook a…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "AI to ROI Reports & Data: The Future of Enterprise AI from PitchBook. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：The AI Software Revolution Meets SaaS Reinvention About PitchBook a…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 观点评论。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: AI to ROI Reports & Data: The Future of Enterprise AI from PitchBook. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。The AI Software Revolution Meets SaaS Reinvention About PitchBook a…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. AI to ROI Reports & Data: The Future of Enterprise AI from PitchBook. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + opinionated commentary.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：The AI Software Revolution Meets SaaS Reinvention About PitchBook a…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 观点评论。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: AI to ROI Reports & Data: The Future of Enterprise AI from PitchBook. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + opinionated commentary. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "AI 到 ROI 报告和数据：来自 PitchBook 的企业 AI 的未来"
+        },
+        {
+          "source": "AI to ROI",
+          "title": "AI to ROI Big Story: Where Agentic AI is and is Not Working Well",
+          "url": "https://ai2roi.substack.com/p/ai-to-roi-big-story-where-agentic",
+          "time": "Mon, 06 Apr 2026 12:32:23 GMT",
+          "heat": "",
+          "summary": "The Most Successful Use Cases in Agentic AI and a Look at the Agentic Future Gartner predicts more than 4 0% of agentic AI projects will be canceled by the end of 2027 . That is the base case for enterprises that deploy agents without clear task boundaries, mature governance, or a realistic understa...",
+          "developer_name": "Ray Rike",
+          "content": "AI to ROI Big Story: Where Agentic AI is and is Not Working Well AI to ROI - By Ray Rike and Peter Buchanan Subscribe Sign in AI to ROI Big Story: Where Agentic AI is and is Not Working Well Four agentic AI use cases are delivering real enterprise ROI. Bigger Wins are coming. Ray Rike and Peter Buchanan Apr 06, 2026 2 Share The Most Successful Use Cases in Agentic AI and a Look at the Agentic Future Gartner predicts more than 4 0% of agentic AI projects will be canceled by the end of 2027 . That is the base case for enterprises that deploy agents without clear task boundaries, mature governance, or a realistic understanding of what agents do in production. Here’s what happens: Enterprises confuse autonomous with capable They underestimate integration complexity They skip the governance work They choose use cases where the cost of errors is high, and the definition of success is fuzzy In the “2026 State of AI in the Enterprise” report, Deloitte surveyed 3,235 global leaders to determine the scope of the agentic AI challenge: Only 23% of companies use agentic AI at least moderately. Just 21% have a mature governance model for autonomous agents – a critical capability for deploying AI agents safely at scale. The other 79% are running agents without adequate oversight . That is the definition of a governance deficit. Research from Deloitte and others shows that there are six main reasons why agentic AI use cases fail or underperform: Data quality and infrastructure challenges – Agents perform only as well as the data they access Organizational change management failures – 84% of organizations have not redesigned jobs around AI capabilities (Deloitte) Unclear task boundaries – Agents deployed on ambiguous workflows hallucinate and compound errors Lack of governance - No policies, no audit trails, no escalation paths Managing complex legacy integrations – 65% of leaders cite agentic system complexity as the top barrier (KPMG Q4 AI Pulse Survey) Hallucination occurring in an autonomous environment – Incorrect outputs trigger real actions with real consequences The Four Highest-ROI Agentic Use Cases Today Now, let’s look at the four highest ROI agentic AI use cases in production today: Coding, Customer Service, IT Operations, and Go-to-Market These use cases have six things in common: They serve one department or two closely connected departments, such as sales & marketing. They address very well-defined workflows that are similar across many industries. The level of customization is low. Customer service requires the most customization of the four, but deployment is still straightforward. The decision trees and expected outputs are very predictable. They are delivered using commercial platforms rather than custom builds, which can substantially cut implementation time and increase reliability. They leverage human-in-the-loop oversight for edge cases and high-stakes decisions. These use cases are not tip-of-the-spear ambitious, and they don’t deliver the",
+          "analysis": {
+            "is_cloud": true,
+            "is_ai": true,
+            "is_anxiety": false,
+            "cloud_score": 1,
+            "ai_score": 2,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "edge"
+            ],
+            "ai_hits": [
+              "ai",
+              "agentic"
+            ],
+            "anxiety_hits": [],
+            "topic": "部署教程",
+            "topic_type": "开发者话题",
+            "products": [],
+            "competitors": [],
+            "competitor_products": [],
+            "techs": [
+              "Agent",
+              "Go"
+            ],
+            "tone": "中立资讯",
+            "detail_brief": "The Most Successful Use Cases in Agentic AI and a Look at the Agentic Future Gartner predicts more than 4 0% of agentic AI projects will be canceled by the end of 2027 . That is the base case for enterprises that deploy agents without clear task boundaries, mature governance, or a realistic understa.",
+            "heat_score": 1.0,
+            "timeliness_score": 5.0,
+            "composite_score": 2.5,
+            "tcloud_relevance": 0.2,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "技术科普",
+              "教程拆解"
+            ],
+            "editorial_angles_text": "技术科普 + 教程拆解",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "Reddit（直接参与讨论）",
+              "LinkedIn（发教程文章）"
+            ],
+            "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "editorial_brief": "话题类型：开发者话题\n可用角度：「AI to ROI Big Story: Where Agentic AI is and is N…」（The Most Successful Use Cases in Agentic AI and a Look at t…），涉及 Agent / Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "social_recommendation": "「AI to ROI Big Story: Where Agentic AI i…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "The Most Successful Use Cases in Agentic AI and a Look at the Agent…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "AI to ROI Big Story: Where Agentic AI is and is Not Working Well. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：The Most Successful Use Cases in Agentic AI and a Look at the Agent…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: AI to ROI Big Story: Where Agentic AI is and is Not Working Well. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。The Most Successful Use Cases in Agentic AI and a Look at the Agent…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. AI to ROI Big Story: Where Agentic AI is and is Not Working Well. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：The Most Successful Use Cases in Agentic AI and a Look at the Agent…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: AI to ROI Big Story: Where Agentic AI is and is Not Working Well. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "AI 到 ROI 的大故事：Agentic AI 的现状和不足之处"
+        },
+        {
+          "source": "AI to ROI",
+          "title": "AI to ROI News & Analysis: April 3, 2026",
+          "url": "https://ai2roi.substack.com/p/ai-to-roi-news-and-analysis-april",
+          "time": "Fri, 03 Apr 2026 12:59:13 GMT",
+          "heat": "",
+          "summary": "The Biggest AI News This Week 💰 OpenAI Closes $122 Billion Round at $852 Billion Valuation - the Largest Funding Event in Silicon Valley History 🚀 SpaceX Files Confidentially for IPO at Up to $1.75 Trillion Valuation - the Largest IPO in History 🔓 Anthropic Accidentally Leaks 512,000 Lines of Claude...",
+          "developer_name": "Ray Rike",
+          "content": "AI to ROI News & Analysis: April 3, 2026 AI to ROI - By Ray Rike and Peter Buchanan Subscribe Sign in AI to ROI News & Analysis: April 3, 2026 The $1 Trillion Week: OpenAI Tops $852B Valuation, SpaceX Files for the Biggest IPO in History, Anthropic Leaks Its Own Claude Code Secrets, and More Ray Rike and Peter Buchanan Apr 03, 2026 3 2 Share The Biggest AI News This Week 💰 OpenAI Closes $122 Billion Round at $852 Billion Valuation - the Largest Funding Event in Silicon Valley History 🚀 SpaceX Files Confidentially for IPO at Up to $1.75 Trillion Valuation - the Largest IPO in History 🔓 Anthropic Accidentally Leaks 512,000 Lines of Claude Code Source Code which included the Mythos Model and ‘Kairos’ Agent 📈 Anthropic Considers October IPO at Potential $2 Trillion Valuation - Racing OpenAI to Market 🤝 Microsoft Debuts Copilot ‘Critique’ Using Anthropic and OpenAI Models in Sequence 🏗️ Oracle Cuts Up to 30,000 Jobs to Fund $50 Billion AI Data Center Push 🐉 The Chinese AI Market Accelerates as Domestic Chip Companies Gain Traction, Models Improve, and OpenClaw Enables Global Expansion 📊 US AI Adoption Is Rising, but Public Trust Is Falling - Americans are Conflicted on Regulation ⚖️ Perplexity Sued for Allegedly Sharing User Data with Meta and Google 💼 Salesforce Adds 30 AI Features to Slack as Enterprise Platforms Race to Embed Agents 🃏 Bald eagles in love, rock & pop classics as Irish folk songs (beautiful), a lovely comic about the moon, and photos that show the awesomeness of the Artemis II mission 1️⃣ OpenAI Closes $122 Billion Round at $852 Billion Valuation which is the Largest Funding Event in Silicon Valley History OpenAI closed a $122 billion funding round at an $852 billion pre-money valuation , the largest single funding event in Silicon Valley history. Investors include Amazon ($50B), Nvidia ($30B), and SoftBank ($30B), plus over $3 billion from retail investors via ARK Invest ETFs . The round came in $22 billion over its original $100 billion target. OpenAI’s pivot towards the enterprise is underway. Enterprise sales now account for 40% of OpenAI’s $2 billion monthly revenue run rate, with that figure expected to reach 50% by year-end. The Circular Funding Problem When you look into the details of the funding round, some interesting details pop out: Amazon is investing $15 billion up-front. The remaining $35 billion is contingent on OpenAI either going public or achieving artificial general intelligence. Amazon’s investment also includes a cloud agreement for hosting and distributing OpenAI’s models, meaning OpenAI will spend a significant portion of Amazon’s money back with Amazon. NVIDIA committed $30 billion. In return, OpenAI will spend $35 billion on NVIDIA products. Critics have pointed to this web of circular arrangements as a systemic risk if AI revenue growth disappoints. “AI is driving productivity gains, accelerating scientific discovery, and expanding what people and organizations can build. This funding gives us the resource",
+          "analysis": {
+            "is_cloud": true,
+            "is_ai": true,
+            "is_anxiety": false,
+            "cloud_score": 1,
+            "ai_score": 6,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "cloud"
+            ],
+            "ai_hits": [
+              "ai",
+              "claude",
+              "copilot",
+              "agent",
+              "openai",
+              "anthropic"
+            ],
+            "anxiety_hits": [],
+            "topic": "行业动态",
+            "topic_type": "开发者话题",
+            "products": [
+              "Claude",
+              "Copilot"
+            ],
+            "competitors": [],
+            "competitor_products": [],
+            "techs": [
+              "Agent"
+            ],
+            "tone": "中立资讯",
+            "detail_brief": "The Biggest AI News This Week 💰 OpenAI Closes $122 Billion Round at $852 Billion Valuation - the Largest Funding Event in Silicon Valley History 🚀 SpaceX Files Confidentially for IPO at Up to $1. 75 Trillion Valuation - the Largest IPO in History 🔓 Anthropic Accidentally Leaks 512,000 Lines of Claude.",
+            "heat_score": 1.0,
+            "timeliness_score": 5.0,
+            "composite_score": 5.2,
+            "tcloud_relevance": 5.7,
+            "tcloud_integration": "「AI to ROI」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+            "tcloud_products": [
+              "CodeBuddy"
+            ],
+            "tcloud_reasons": [
+              "「AI to ROI」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐"
+            ],
+            "tcloud_evidence": [
+              "claude code",
+              "copilot"
+            ],
+            "tcloud_primary_product": "CodeBuddy",
+            "tcloud_relation_type": "应用场景",
+            "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「AI to ROI」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+            "tcloud_official_matches": [
+              "CodeBuddy"
+            ],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "技术科普",
+              "产品关联（CodeBuddy）",
+              "观点评论"
+            ],
+            "editorial_angles_text": "技术科普 + 产品关联（CodeBuddy） + 观点评论",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "Reddit（直接参与讨论）",
+              "LinkedIn（发教程文章）"
+            ],
+            "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "editorial_brief": "话题类型：开发者话题\n可用角度：「AI to ROI News & Analysis: April 3, 2026」（The Biggest AI News This Week 💰 OpenAI Closes $122 Billion…），涉及 Agent → 可写方向：「AI to ROI」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "social_recommendation": "「AI to ROI News & Analysis: April 3, 2026」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+            "official_product_focus": "CodeBuddy",
+            "official_angle_cn": "借「AI to ROI」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（The Biggest AI News This Week 💰 OpenAI Closes $122 Billion Round at $852 Billio…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+            "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+            "platform_copies": {
+              "primary_product": "CodeBuddy",
+              "product_display": "CodeBuddy",
+              "relation_type": "应用场景",
+              "official_angle_cn": "借「AI to ROI」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（The Biggest AI News This Week 💰 OpenAI Closes $122 Billion Round at $852 Billio…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+              "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+              "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+              "x_cn": "The Biggest AI News This Week 💰 OpenAI Closes $122 Billion Round at…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+              "x_en": "AI to ROI News & Analysis: April 3, 2026. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：The Biggest AI News This Week 💰 OpenAI Closes $122 Billion Round at…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: AI to ROI News & Analysis: April 3, 2026. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。The Biggest AI News This Week 💰 OpenAI Closes $122 Billion Round at…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「AI to ROI」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. AI to ROI News & Analysis: April 3, 2026. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + product tie-in (CodeBuddy) + opinionated commentary.",
+              "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：The Biggest AI News This Week 💰 OpenAI Closes $122 Billion Round at…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+              "reddit_body_en": "A recent trend caught my eye: AI to ROI News & Analysis: April 3, 2026. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "AI 到 ROI 新闻与分析：2026 年 4 月 3 日"
+        },
+        {
+          "source": "ChinAI",
+          "title": "ChinAI #353: Year 8 of ChinAI",
+          "url": "https://chinai.substack.com/p/chinai-353-year-8-of-chinai",
+          "time": "Mon, 06 Apr 2026 11:27:17 GMT",
+          "heat": "",
+          "summary": "Greetings from a world where… ChinAI is now eight years old, which means it should know what day of the week it is, be able to tell the difference between right and left, and begin to take an interest in reading books (we were an early starter on that last one). * I want to thank the paying subscrib...",
+          "developer_name": "Jeffrey Ding",
+          "content": "ChinAI #353: Year 8 of ChinAI - by Jeffrey Ding ChinAI Newsletter Subscribe Sign in ChinAI #353: Year 8 of ChinAI Eight things I learned about China's AI ecosystem over the past year of newsletter notes Jeffrey Ding Apr 06, 2026 14 4 Share Greetings from a world where… ChinAI is now eight years old, which means it should know what day of the week it is, be able to tell the difference between right and left, and begin to take an interest in reading books (we were an early starter on that last one). * I want to thank the paying subscribers who have financially supported this work over the years, which ensures all ChinAI content is available to all. …As always, the searchable archive of all past issues is here . Please please subscribe here to support ChinAI under a Guardian /Wikipedia-style tipping model (everyone gets the same content but those who can pay support access for all AND compensation for awesome ChinAI contributors). Eight Takeaways from Year 8 of ChinAI To celebrate eight years of the ChinAI, let’s review eight key takeaways from the past 50 issues of the newsletter. They roughly map onto my favorite issues from the past year. Photo by Hudson Graves on Unsplash The China Academy of Information and Communications Technology (CAICT) has solidified its place as “ the Chinese equivalent of the AI Safety Institute .” Technically, as the linked DigiChina piece mentions, that title belongs to the China AI Safety and Development Association, which is a consortium that brings together CAICT and seven other groups. When I checked in on the organizations consistently updating their AI safety benchmarks (see ChinAI #315 below), however, CAICT stood out. They also regularly publish lengthy, in-depth AI governance reports ( ChinAI #343 ). ChinAI #315: Abandoned? Checking in on Three Key AI Safety Benchmarks Jeffrey Ding · June 9, 2025 Read full story The reality of China’s AI adoption: shallow, narrow, and slow. This shouldn’t be surprising for those familiar with the diffusion timelines of general-purpose technologies. Hopefully, by carefully tracing how DeepSeek was being disseminated (hint: it was not via software-as-a-service), this issue cut through some of the hype about China’s purported nationwide embrace of DeepSeek across hospitals and local governments. As I noted, “ Since the frenzy of reports about fast and wide DeepSeek deployment, these all-in-one machines have not diffused past early adopters and attracted few repeat customers .” ChinAI #321: Shallow, Narrow, and Slow — the reality of China's DeepSeek adoption Jeffrey Ding · July 28, 2025 Read full story There exists a massive and growing capital expenditures gap between Chinese and American tech giants. Stats from the issue: In 2020, this capital expenditure ratio of Chinese tech giant capex compared to US tech giant capex was 1:6, and by 2024, it had reached 1:10. This Jinduan Research Institute piece also called out Chinese tech giants for investing their profits in share buyback",
+          "analysis": {
+            "is_cloud": false,
+            "is_ai": true,
+            "is_anxiety": false,
+            "cloud_score": 0,
+            "ai_score": 3,
+            "anxiety_score": 0,
+            "cloud_hits": [],
+            "ai_hits": [
+              "ai",
+              "deepseek",
+              "diffusion"
+            ],
+            "anxiety_hits": [],
+            "topic": "技术分享",
+            "topic_type": "开发者话题",
+            "products": [
+              "DeepSeek"
+            ],
+            "competitors": [],
+            "competitor_products": [],
+            "techs": [
+              "Diffusion"
+            ],
+            "tone": "正向推广",
+            "detail_brief": "Greetings from a world where… ChinAI is now eight years old, which means it should know what day of the week it is, be able to tell the difference between right and left, and begin to take an interest in reading books (we were an early starter on that last one). * I want to thank the paying subscrib.",
+            "heat_score": 1.0,
+            "timeliness_score": 5.0,
+            "composite_score": 2.5,
+            "tcloud_relevance": 0.0,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "技术科普",
+              "教程拆解"
+            ],
+            "editorial_angles_text": "技术科普 + 教程拆解",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "Reddit（直接参与讨论）",
+              "LinkedIn（发教程文章）"
+            ],
+            "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "editorial_brief": "话题类型：开发者话题\n可用角度：「ChinAI #353: Year 8 of ChinAI」（Greetings from a world where… ChinAI is now eight years old…），涉及 Diffusion → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "social_recommendation": "「ChinAI #353: Year 8 of ChinAI」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "Greetings from a world where… ChinAI is now eight years old, which…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "ChinAI #353: Year 8 of ChinAI. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：Greetings from a world where… ChinAI is now eight years old, which…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: ChinAI #353: Year 8 of ChinAI. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Greetings from a world where… ChinAI is now eight years old, which…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. ChinAI #353: Year 8 of ChinAI. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：Greetings from a world where… ChinAI is now eight years old, which…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: ChinAI #353: Year 8 of ChinAI. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "中国人工智能8年"
+        },
+        {
+          "source": "ChinAI",
+          "title": "ChinAI #352: A 10,000-character treatise on China's Palantir?",
+          "url": "https://chinai.substack.com/p/chinai-352-a-10000-character-treatise",
+          "time": "Mon, 23 Mar 2026 11:37:41 GMT",
+          "heat": "",
+          "summary": "Greetings from a world where… Iowa men’s basketball is in the sweet sixteen for the first time this millennium …As always, the searchable archive of all past issues is here . Please please subscribe here to support ChinAI under a Guardian /Wikipedia-style tipping model (everyone gets the same conten...",
+          "developer_name": "Jeffrey Ding",
+          "content": "ChinAI #352: A 10,000-character treatise on China's Palantir? ChinAI Newsletter Subscribe Sign in ChinAI #352: A 10,000-character treatise on China's Palantir? An update to ChinAI issue #10, first published May 2018 Jeffrey Ding Mar 23, 2026 21 3 3 Share Greetings from a world where… Iowa men’s basketball is in the sweet sixteen for the first time this millennium …As always, the searchable archive of all past issues is here . Please please subscribe here to support ChinAI under a Guardian /Wikipedia-style tipping model (everyone gets the same content but those who can pay support access for all AND compensation for awesome ChinAI contributors). Feature Translation: A 10,000-character deconstruction of Palantir CONTEXT: For the tenth issue of ChinAI, waaaaay back in May 2018, I delved into MiningLamp [明略数据], an AI unicorn known as “China’s Palantir” that was targeting public security departments as key customers. ChinAI Newsletter #10: the company known as China’s Palantir: Mininglamp Jeffrey Ding · May 14, 2018 Read full story Now, eight years later, this Leiphone longform essay (link to original Chinese ) demonstrates that Chinese companies are still chasing Palantir — which has seen a stock increase of 15-fold since its IPO —and the gap is still very very wide. KEY TAKEAWAYS: Why do so many Chinese AI firms see Palantir as a standard-bearer? They want to emulate Palantir’s path from a government-facing business foundation (basically all of its initial clients were defense, intelligence, and law enforcement agencies) to a company that now derives 46% of its revenues from commercial businesses (To-B). A key component of the Palantir model is the forward deployed engineer (FDE). From the article: “ The FDE model also originated from Palantir’s early To-G operations: in military and government contexts—characterized by data silos and complex operational environments—conventional software development models proved ineffective. Consequently, Palantir was compelled to dispatch personnel to the front lines to gain a firsthand understanding of operational requirements, subsequently bringing those insights back to be distilled and abstracted into standardized products .” The Palantir “craze has also rapidly swept through the domestic Chinese market, “ Jiamin Zhang, the Leiphone article author, reports. “Vendors such as 4Paradigm, MiningLamp, and Deepexi [滴普科技] have rushed to benchmark against the company…’ According to industry insiders, there are three groups of competitors seeking to become China’s Palantir: The companies who mirror Palantir’s business approach (e.g., the aforementioned MiningLamp, 4Paradigm, etc.). Companies that focus on the defense + AI vertical, including Jing'an Technology [靖安科技], Utenet [渊亭科技], and Stonehenge [中科世通亨奇]. Large tech giants such as Huawei and Baidu who may be the only candidates with resources to do what Palantir does — a “heavyweight” approach with those FDEs. According to Leiphone, “ Reportedly, a team within a cer",
+          "analysis": {
+            "is_cloud": false,
+            "is_ai": true,
+            "is_anxiety": false,
+            "cloud_score": 0,
+            "ai_score": 1,
+            "anxiety_score": 0,
+            "cloud_hits": [],
+            "ai_hits": [
+              "ai"
+            ],
+            "anxiety_hits": [],
+            "topic": "技术分享",
+            "topic_type": "开发者话题",
+            "products": [],
+            "competitors": [],
+            "competitor_products": [],
+            "techs": [],
+            "tone": "对比测评",
+            "detail_brief": "Greetings from a world where… Iowa men’s basketball is in the sweet sixteen for the first time this millennium …As always, the searchable archive of all past issues is here . Please please subscribe here to support ChinAI under a Guardian /Wikipedia-style tipping model (everyone gets the same conten.",
+            "heat_score": 1.0,
+            "timeliness_score": 5.0,
+            "composite_score": 1.9,
+            "tcloud_relevance": 0.0,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "技术科普",
+              "教程拆解",
+              "观点评论"
+            ],
+            "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "Reddit（直接参与讨论）",
+              "LinkedIn（发教程文章）"
+            ],
+            "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "editorial_brief": "话题类型：开发者话题\n可用角度：「ChinAI #352: A 10,000-character treatise on China…」（Greetings from a world where… Iowa men’s basketball is in t…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "social_recommendation": "「ChinAI #352: A 10,000-character treatis…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "Greetings from a world where… Iowa men’s basketball is in the sweet…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "ChinAI #352: A 10,000-character treatise on China's Palantir?. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：Greetings from a world where… Iowa men’s basketball is in the sweet…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: ChinAI #352: A 10,000-character treatise on China's Palantir?. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Greetings from a world where… Iowa men’s basketball is in the sweet…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. ChinAI #352: A 10,000-character treatise on China's Palantir?. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：Greetings from a world where… Iowa men’s basketball is in the sweet…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: ChinAI #352: A 10,000-character treatise on China's Palantir?. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "一篇关于中国Palantir的万字论文？"
+        },
+        {
+          "source": "ChinAI",
+          "title": "ChinAI #351: CAICT launches 2026 AI Safety Evaluations",
+          "url": "https://chinai.substack.com/p/chinai-351-caict-launches-2026-ai",
+          "time": "Mon, 16 Mar 2026 11:03:50 GMT",
+          "heat": "",
+          "summary": "Greetings from a world where… it is very difficult to get tickets to go up the Washington monument …As always, the searchable archive of all past issues is here . Please please subscribe here to support ChinAI under a Guardian /Wikipedia-style tipping model (everyone gets the same content but those ...",
+          "developer_name": "Jeffrey Ding",
+          "content": "ChinAI #351: CAICT launches 2026 AI Safety Evaluations ChinAI Newsletter Subscribe Sign in ChinAI #351: CAICT launches 2026 AI Safety Evaluations Plus, what we can learn from its 2025 assessments Jeffrey Ding Mar 16, 2026 14 4 Share Greetings from a world where… it is very difficult to get tickets to go up the Washington monument …As always, the searchable archive of all past issues is here . Please please subscribe here to support ChinAI under a Guardian /Wikipedia-style tipping model (everyone gets the same content but those who can pay support access for all AND compensation for awesome ChinAI contributors). Feature Translation: AI Safety/Security Research Report (CAICT, Nov 2025) Context: The readers have spoken. The pick from last week’s Around the Horn issue is: CAICT launches its first batch of AI Safety/Security Assessments of 2026 . Based on the announcement, Chinese companies are now invited to register to have their models assessed. The evaluations take place in June and July, and then they will issue certificates and publicize results. Here are some specific tests that caught my eye, across the benchmark’s five categories: AI internal safety/security: coding LLM safety/security capabilities (see results from last year’s tests in key takeaways below). AI platform safety/security: trustworthiness of large model R&D platform AI application safety/security: AI smartphone safety/security capabilities AI-empowered safety/security capabilities: intelligent agent safety/security automation tests AI infrastructure safety/security: AI coding autonomy rate assessment (this one looks especially interesting) Recall that CAICT first launched this AI safety benchmark almost two years ago in April 2024 ( ChinAI #261 ). Last summer, I reviewed three Chinese AI safety evaluations and concluded that CAICT’s evaluation was “the clear standout in terms of regular updates.” One reason is they collaborate with the Chinese AI Industry Alliance (AIIA) to get industry players to participate. ChinAI #315: Abandoned? Checking in on Three Key AI Safety Benchmarks Jeffrey Ding · June 9, 2025 Read full story Since the announcement didn’t contain too many more details, this issue’s feature translation is CAICT’s AI Safety Security Research report published back in November 2025, which recaps some of their previous safety tests. Key Takeaways: CAICT has conducted some very intriguing tests on Chinese AI models that have identified high safety/security risks, but most of the reported results are anonymized. In July 2025, CAICT released safety/security evaluations of 15 models from three companies (2 from DeepSeek, 9 from Alibaba’s Qwen, 4 from Zhipu’s GLM). According to their classification framework, the results were: controllable risk - one model in this category, low risk - three models, medium risk - nine models, and high risk - two models. Below are the results on the different tests for the two high-risk models (Table 1): Source: AI Safety/Security Research Repo",
+          "analysis": {
+            "is_cloud": false,
+            "is_ai": true,
+            "is_anxiety": false,
+            "cloud_score": 0,
+            "ai_score": 5,
+            "anxiety_score": 0,
+            "cloud_hits": [],
+            "ai_hits": [
+              "ai",
+              "llm",
+              "qwen",
+              "deepseek",
+              "agent"
+            ],
+            "anxiety_hits": [],
+            "topic": "技术分享",
+            "topic_type": "开发者话题",
+            "products": [
+              "DeepSeek",
+              "通义千问"
+            ],
+            "competitors": [],
+            "competitor_products": [],
+            "techs": [
+              "LLM",
+              "Agent",
+              "Go"
+            ],
+            "tone": "对比测评",
+            "detail_brief": "Greetings from a world where… it is very difficult to get tickets to go up the Washington monument …As always, the searchable archive of all past issues is here . Please please subscribe here to support ChinAI under a Guardian /Wikipedia-style tipping model (everyone gets the same content but those .",
+            "heat_score": 1.0,
+            "timeliness_score": 5.0,
+            "composite_score": 3.0,
+            "tcloud_relevance": 0.0,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "技术科普",
+              "教程拆解",
+              "观点评论"
+            ],
+            "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "Reddit（直接参与讨论）",
+              "LinkedIn（发教程文章）"
+            ],
+            "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "editorial_brief": "话题类型：开发者话题\n可用角度：「ChinAI #351: CAICT launches 2026 AI Safety Evalua…」（Greetings from a world where… it is very difficult to get t…），涉及 LLM / Agent / Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "social_recommendation": "「ChinAI #351: CAICT launches 2026 AI Saf…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "Greetings from a world where… it is very difficult to get tickets t…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "ChinAI #351: CAICT launches 2026 AI Safety Evaluations. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：Greetings from a world where… it is very difficult to get tickets t…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: ChinAI #351: CAICT launches 2026 AI Safety Evaluations. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Greetings from a world where… it is very difficult to get tickets t…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. ChinAI #351: CAICT launches 2026 AI Safety Evaluations. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：Greetings from a world where… it is very difficult to get tickets t…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: ChinAI #351: CAICT launches 2026 AI Safety Evaluations. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "中国信通院启动2026年人工智能安全评估"
+        },
+        {
+          "source": "Ben's Bites",
+          "title": "No Claude for Claws",
+>>>>>>> Stashed changes
           "url": "https://www.bensbites.com/p/no-claude-for-claws",
           "time": "Tue, 07 Apr 2026 13:15:47 GMT",
           "heat": "",
@@ -3739,12 +4713,20 @@
             "timeliness_score": 5.0,
             "composite_score": 5.2,
             "tcloud_relevance": 5.7,
+<<<<<<< Updated upstream
             "tcloud_integration": "「<![CDATA[No Claude for Claws]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+=======
+            "tcloud_integration": "「No Claude for Claws」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+>>>>>>> Stashed changes
             "tcloud_products": [
               "CodeBuddy"
             ],
             "tcloud_reasons": [
+<<<<<<< Updated upstream
               "「<![CDATA[No Claude for Claws]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐"
+=======
+              "「No Claude for Claws」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐"
+>>>>>>> Stashed changes
             ],
             "tcloud_evidence": [
               "claude code",
@@ -3752,7 +4734,11 @@
             ],
             "tcloud_primary_product": "CodeBuddy",
             "tcloud_relation_type": "应用场景",
+<<<<<<< Updated upstream
             "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[No Claude for Claws]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+=======
+            "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「No Claude for Claws」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+>>>>>>> Stashed changes
             "tcloud_official_matches": [
               "CodeBuddy"
             ],
@@ -3769,21 +4755,33 @@
               "LinkedIn（发教程文章）"
             ],
             "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+<<<<<<< Updated upstream
             "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[No Claude for Claws]]>」（Anthropic cut off Claude subscription-funded usage in third…），涉及 Agent / Fine-tuning / Go → 可写方向：「<![CDATA[No Claude for Claws]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
             "social_recommendation": "「<![CDATA[No Claude for Claws]]>」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
             "official_product_focus": "CodeBuddy",
             "official_angle_cn": "借「<![CDATA[No Claude for Claws]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Anthropic cut off Claude subscription-funded usage in third-party tools like Op…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+=======
+            "editorial_brief": "话题类型：开发者话题\n可用角度：「No Claude for Claws」（Anthropic cut off Claude subscription-funded usage in third…），涉及 Agent / Fine-tuning / Go → 可写方向：「No Claude for Claws」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+            "social_recommendation": "「No Claude for Claws」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+            "official_product_focus": "CodeBuddy",
+            "official_angle_cn": "借「No Claude for Claws」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Anthropic cut off Claude subscription-funded usage in third-party tools like Op…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+>>>>>>> Stashed changes
             "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
             "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
             "platform_copies": {
               "primary_product": "CodeBuddy",
               "product_display": "CodeBuddy",
               "relation_type": "应用场景",
+<<<<<<< Updated upstream
               "official_angle_cn": "借「<![CDATA[No Claude for Claws]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Anthropic cut off Claude subscription-funded usage in third-party tools like Op…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+=======
+              "official_angle_cn": "借「No Claude for Claws」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Anthropic cut off Claude subscription-funded usage in third-party tools like Op…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+>>>>>>> Stashed changes
               "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
               "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
               "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
               "x_cn": "Anthropic cut off Claude subscription-funded usage in third-party t…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+<<<<<<< Updated upstream
               "x_en": "<![CDATA[No Claude for Claws]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
               "discord_cn": "今天看到一条值得开发者关注的热点：Anthropic cut off Claude subscription-funded usage in third-party t…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
               "discord_en": "A developer trend worth discussing today: <![CDATA[No Claude for Claws]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
@@ -3909,11 +4907,124 @@
           "summary": "Security issues are popping up all over. Railway accidentally let unauthenticated users access data that should’ve been behind an auth wall . Mercor AI has allegedly been breached . Claude Code’s source code has been leaked - and the community are going crazy saving copies on GitHub . Docs from the ...",
           "developer_name": "",
           "content": "One breach after another - Ben's Bites Subscribe Sign in One breach after another separate and sandbox your agent's access Mar 31, 2026 36 Share Security issues are popping up all over. Railway accidentally let unauthenticated users access data that should’ve been behind an auth wall . Mercor AI has allegedly been breached . Claude Code’s source code has been leaked - and the community are going crazy saving copies on GitHub . Docs from the codebase. And, Axios, with 100M weekly installs got compromised through package manager, npm when one of the lead maintainers’ GitHub accounts was hijacked. npm has removed the malicious versions now. ( Claude code uses axios ) Like manufacturing, code has a supply chain. When working with software, it relies on other software. Instead of writing all the other code into your project, you install a package through a package manager - agents do this very frequently on your behalf. One package, Axios, was compromised, which means if an agent (or you) ran the install command, a malicious package is now on your computer. This will stress the importance of sandboxes . Tools like Claude Cowork and Codex do this for you by running commands in a sandbox, a computer with a copy of your current folder isolated from your computer. So if any bad code sneaks in, it doesn’t mess up your actual stuff! I sent this to my agents this morning: there’s been a security breach https://markdown.new/socket.dev/blog/axios-npm-package-compromised make sure this computer and my mac-mini have not been compromised What am I building this week? I’m purposefully trying not to build too much (hence no Ben’s Builds email last Saturday) because I’m focusing on this course. It’s taking shape now, and I hope to send out some preview lessons asap. I’ll be presenting a version of this to Stanford students in SF next month. I really do want to finally spin up my own email client, probably by cloning this , made by a YC partner. Building security or sandbox-related developer tools or infra? I invest 👋 Ben’s Bites is brought to you by Attio , the AI CRM Honestly, no one gets excited about a CRM. But then they try Attio . It connects to Claude Code and n8n through its MCP server, completely bridging the gap between my customer data and apps. Wait, there’s more, like flagging churn risk and turning customer feedback into Linear projects. Try it now . Headlines Computer use is now in Claude Code . Claude can interact with your computer using the UI (like we do) to test apps or do tasks. Available in research preview on Pro and Max plans—expect it to be slow, clunky and expensive. Separately, Claude Code auto-fix works in the cloud, via web and mobile sessions. It watches PRs, fixes CI failures and addresses comments remotely. Projects.dev by Stripe lets agents use third-party services from the CLI. Run a command, and it creates an account, gets an API key, and sets up billing with partnered apps like Posthog, Supabase, Clerk, PlanetScale and more. Develo",
+=======
+              "x_en": "No Claude for Claws. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：Anthropic cut off Claude subscription-funded usage in third-party t…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: No Claude for Claws. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Anthropic cut off Claude subscription-funded usage in third-party t…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「No Claude for Claws」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. No Claude for Claws. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+              "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：Anthropic cut off Claude subscription-funded usage in third-party t…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+              "reddit_body_en": "A recent trend caught my eye: No Claude for Claws. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "克劳德没有利爪"
+        }
+      ],
+      "error": null
+    },
+    {
+      "key": "web_search",
+      "label": "🌐 全网搜索",
+      "index": 8,
+      "items": [
+        {
+          "title": "AWS re:Invent 2026 | Nov 30-Dec 4, 2026",
+          "url": "https://aws.amazon.com/events/reinvent/",
+          "summary": "Buildthe future with us atAWSre:Invent, Nov 30-Dec 4,2026in Las Vegas, NV. Learn new skills, take home proven strategies, make lifelong connections.",
+          "heat": "web_search:大会动态",
+          "time": "2026-04-08",
+          "source": "web_search_大会动态",
+          "search_channel": "大会动态",
+          "analysis": {
+            "is_cloud": true,
+            "is_ai": false,
+            "is_anxiety": false,
+            "cloud_score": 1,
+            "ai_score": 0,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "aws"
+            ],
+            "ai_hits": [],
+            "anxiety_hits": [],
+            "topic": "其他",
+            "topic_type": "行业观察",
+            "products": [],
+            "competitors": [
+              "AWS"
+            ],
+            "competitor_products": [],
+            "techs": [],
+            "tone": "中立资讯",
+            "detail_brief": "AWS re:Invent 2026 | Nov 30-Dec 4, 2026: Buildthe future with us atAWSre:Invent, Nov 30-Dec 4,2026in Las Vegas, NV. Learn new skills, take home proven strategies, make lifelong connections.",
+            "heat_score": 1.0,
+            "timeliness_score": 7.0,
+            "composite_score": 2.4,
+            "tcloud_relevance": 0.0,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "信息快讯"
+            ],
+            "editorial_angles_text": "信息快讯",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "LinkedIn（行业观察文章）",
+              "X（摘要快讯分享）"
+            ],
+            "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "editorial_brief": "话题类型：行业观察\n可用角度：「AWS re:Invent 2026 | Nov 30-Dec 4, 2026」（AWS re:Invent 2026 | Nov 30-Dec 4, 2026: Buildthe future wi…）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "social_recommendation": "「AWS re:Invent 2026 | Nov 30-Dec 4, 2026」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉围绕 AWS re:Invent 2026 | Nov 30-Dec 4, 2026 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉围绕 AWS re:Invent 2026 | Nov 30-Dec 4, 2026 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "AWS re:Invent 2026 | Nov 30-Dec 4, 2026: Buildthe future with us at…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "AWS re:Invent 2026 | Nov 30-Dec 4, 2026. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：AWS re:Invent 2026 | Nov 30-Dec 4, 2026: Buildthe future with us at…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 信息快讯。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: AWS re:Invent 2026 | Nov 30-Dec 4, 2026. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around quick update. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。AWS re:Invent 2026 | Nov 30-Dec 4, 2026: Buildthe future with us at…。如果用官方号发，建议主推 人工判断场景，重点讲 信息快讯，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. AWS re:Invent 2026 | Nov 30-Dec 4, 2026. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on quick update.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：AWS re:Invent 2026 | Nov 30-Dec 4, 2026: Buildthe future with us at…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 信息快讯。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: AWS re:Invent 2026 | Nov 30-Dec 4, 2026. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on quick update. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "AWS re:Invent 2026 | Nov 30-Dec 4, 2026：AWS re:Invent 2026 | AWS re:Invent 20262026 年 11 月 30 日至 12 月 4 日：2026 年 11 月 30 日至 12 月 4 日在内华达州拉斯维加斯参加 AWSre:Invent，与我们一起构建未来。学习新技能，将行之有效的策略带回家，建立终生的联系。"
+        },
+        {
+          "title": "Google Cloud Next vs AWS re:Invent: Which Should You Attend? (2026)",
+          "url": "https://vendelux.com/event-comparisons/google-cloud-next-vs-aws-reinvent",
+          "summary": "Last updated: March 24,2026GoogleCloudNextandAWSre:Inventare the two biggest cloud platform conferences of the year. Both draw enterprise technology leaders, both lean heavily into AI in2026, and both take place in Las Vegas. But they run six months apart, at very different scales, and serve distinct ecosystems.",
+          "heat": "web_search:大会动态",
+          "time": "2026-04-08",
+          "source": "web_search_大会动态",
+          "search_channel": "大会动态",
+>>>>>>> Stashed changes
           "analysis": {
             "is_cloud": true,
             "is_ai": true,
             "is_anxiety": false,
             "cloud_score": 2,
+<<<<<<< Updated upstream
             "ai_score": 4,
             "anxiety_score": 0,
             "cloud_hits": [
@@ -4046,6 +5157,32 @@
             "heat_score": 1.0,
             "timeliness_score": 5.0,
             "composite_score": 3.3,
+=======
+            "ai_score": 1,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "cloud",
+              "aws"
+            ],
+            "ai_hits": [
+              "ai"
+            ],
+            "anxiety_hits": [],
+            "topic": "观点评论",
+            "topic_type": "行业观察",
+            "products": [],
+            "competitors": [
+              "AWS",
+              "GCP"
+            ],
+            "competitor_products": [],
+            "techs": [],
+            "tone": "对比测评",
+            "detail_brief": "Last updated: March 24,2026GoogleCloudNextandAWSre:Inventare the two biggest cloud platform conferences of the year. Both draw enterprise technology leaders, both lean heavily into AI in2026, and both take place in Las Vegas. But they run six months apart, at very different scales, and serve distinct ecosystems.",
+            "heat_score": 1.0,
+            "timeliness_score": 7.0,
+            "composite_score": 2.9,
+>>>>>>> Stashed changes
             "tcloud_relevance": 0.2,
             "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
             "tcloud_products": [],
@@ -4057,6 +5194,7 @@
             "tcloud_official_matches": [],
             "tcloud_priority_matches": [],
             "editorial_angles": [
+<<<<<<< Updated upstream
               "技术科普",
               "教程拆解",
               "观点评论"
@@ -4073,6 +5211,22 @@
             "official_product_focus": "",
             "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
             "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+=======
+              "观点评论"
+            ],
+            "editorial_angles_text": "观点评论",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "LinkedIn（行业观察文章）",
+              "X（摘要快讯分享）"
+            ],
+            "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "editorial_brief": "话题类型：行业观察\n可用角度：「Google Cloud Next vs AWS re:Invent: Which Should…」（Last updated: March 24,2026GoogleCloudNextandAWSre:Inventar…）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "social_recommendation": "「Google Cloud Next vs AWS re:Invent: Whi…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉围绕 Google Cloud Next vs AWS re:Invent: Whic 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+>>>>>>> Stashed changes
             "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
             "platform_copies": {
               "primary_product": "",
@@ -4080,6 +5234,7 @@
               "relation_type": "待人工判断",
               "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
               "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+<<<<<<< Updated upstream
               "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
               "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
               "x_cn": "Having written a lot of model release blog posts, there’s something…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
@@ -4095,11 +5250,603 @@
             }
           },
           "summary_cn": "<![CDATA[Gemma 4 以及开放模型成功的原因]]>"
+=======
+              "visual_brief": "主视觉围绕 Google Cloud Next vs AWS re:Invent: Whic 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "Last updated: March 24,2026GoogleCloudNextandAWSre:Inventare the tw…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "Google Cloud Next vs AWS re:Invent: Which Should You Attend? (2026). For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：Last updated: March 24,2026GoogleCloudNextandAWSre:Inventare the tw…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 观点评论。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: Google Cloud Next vs AWS re:Invent: Which Should You Attend? (2026). From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Last updated: March 24,2026GoogleCloudNextandAWSre:Inventare the tw…。如果用官方号发，建议主推 人工判断场景，重点讲 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Google Cloud Next vs AWS re:Invent: Which Should You Attend? (2026). For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on opinionated commentary.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：Last updated: March 24,2026GoogleCloudNextandAWSre:Inventare the tw…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 观点评论。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: Google Cloud Next vs AWS re:Invent: Which Should You Attend? (2026). Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on opinionated commentary. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "Google Cloud Next vs AWS re:Invent: Whic：最后更新时间：2026 年 3 月 24 日GoogleCloudNext 和 AWSre:Invent 是年度最大的两个云平台会议。两者都吸引了企业技术领导者，都在 2026 年大力发展人工智能，而且都在拉斯维加斯举行。"
+        },
+        {
+          "title": "Google Cloud Next 2026 - Las Vegas Conference",
+          "url": "https://www.googlecloudevents.com/next-vegas",
+          "summary": "Join us forGoogleCloudNext2026in Las Vegas. Explore the latest in generative AI, infrastructure, and security. Register now for the year's premier cloud event.",
+          "heat": "web_search:大会动态",
+          "time": "2026-04-08",
+          "source": "web_search_大会动态",
+          "search_channel": "大会动态",
+          "analysis": {
+            "is_cloud": true,
+            "is_ai": true,
+            "is_anxiety": false,
+            "cloud_score": 1,
+            "ai_score": 1,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "cloud"
+            ],
+            "ai_hits": [
+              "ai"
+            ],
+            "anxiety_hits": [],
+            "topic": "学术研究",
+            "topic_type": "研究前沿",
+            "products": [],
+            "competitors": [
+              "GCP"
+            ],
+            "competitor_products": [],
+            "techs": [],
+            "tone": "中立资讯",
+            "detail_brief": "Google Cloud Next 2026 - Las Vegas Conference: Las Vegas Conference",
+            "heat_score": 1.0,
+            "timeliness_score": 7.0,
+            "composite_score": 2.7,
+            "tcloud_relevance": 0.2,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "研究解读"
+            ],
+            "editorial_angles_text": "研究解读",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "LinkedIn（发观点总结文章）",
+              "X（论文快讯分享）"
+            ],
+            "recommended_platforms_text": "LinkedIn（发观点总结文章） + X（论文快讯分享）",
+            "editorial_brief": "话题类型：研究前沿\n可用角度：「Google Cloud Next 2026 - Las Vegas Conference」（Google Cloud Next 2026 - Las Vegas Conference: Las Vegas Co…）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（发观点总结文章） + X（论文快讯分享）",
+            "social_recommendation": "「Google Cloud Next 2026 - Las Vegas Conf…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（发观点总结文章） + X（论文快讯分享）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉围绕 Google Cloud Next 2026 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉围绕 Google Cloud Next 2026 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "Google Cloud Next 2026 - Las Vegas Conference: Las Vegas Conference。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "Google Cloud Next 2026 - Las Vegas Conference. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：Google Cloud Next 2026 - Las Vegas Conference: Las Vegas Conference。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 研究解读。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: Google Cloud Next 2026 - Las Vegas Conference. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around research takeaway. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Google Cloud Next 2026 - Las Vegas Conference: Las Vegas Conference。如果用官方号发，建议主推 人工判断场景，重点讲 研究解读，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Google Cloud Next 2026 - Las Vegas Conference. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on research takeaway.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：Google Cloud Next 2026 - Las Vegas Conference: Las Vegas Conference。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 研究解读。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: Google Cloud Next 2026 - Las Vegas Conference. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on research takeaway. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "Google Cloud Next 2026 - 拉斯维加斯会议：拉斯维加斯会议"
+        },
+        {
+          "title": "Cloud Tech News | Cloud Computing News, Analysis & Events",
+          "url": "https://www.cloudcomputing-news.net/",
+          "summary": "CloudTechNewsreports on the latestcloudcomputingnewsand insights. Explore industry trends from the frontline ofcloudcomputing.",
+          "heat": "web_search:行业新闻",
+          "time": "2026-04-08",
+          "source": "web_search_行业新闻",
+          "search_channel": "行业新闻",
+          "analysis": {
+            "is_cloud": true,
+            "is_ai": false,
+            "is_anxiety": false,
+            "cloud_score": 1,
+            "ai_score": 0,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "cloud"
+            ],
+            "ai_hits": [],
+            "anxiety_hits": [],
+            "topic": "观点评论",
+            "topic_type": "行业观察",
+            "products": [],
+            "competitors": [],
+            "competitor_products": [],
+            "techs": [],
+            "tone": "中立资讯",
+            "detail_brief": "Cloud Tech News | Cloud Computing News, Analysis & Events: CloudTechNewsreports on the latestcloudcomputingnewsand insights. Explore industry trends from the frontline ofcloudcomputing.",
+            "heat_score": 1.0,
+            "timeliness_score": 7.0,
+            "composite_score": 2.4,
+            "tcloud_relevance": 0.0,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "观点评论"
+            ],
+            "editorial_angles_text": "观点评论",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "LinkedIn（行业观察文章）",
+              "X（摘要快讯分享）"
+            ],
+            "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "editorial_brief": "话题类型：行业观察\n可用角度：「Cloud Tech News | Cloud Computing News, Analysis…」（Cloud Tech News | Cloud Computing News, Analysis & Events:…）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "social_recommendation": "「Cloud Tech News | Cloud Computing News,…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉围绕 Cloud Tech News | Cloud Computing News,  的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉围绕 Cloud Tech News | Cloud Computing News,  的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "Cloud Tech News | Cloud Computing News, Analysis & Events: CloudTec…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "Cloud Tech News | Cloud Computing News, Analysis & Events. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：Cloud Tech News | Cloud Computing News, Analysis & Events: CloudTec…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 观点评论。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: Cloud Tech News | Cloud Computing News, Analysis & Events. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Cloud Tech News | Cloud Computing News, Analysis & Events: CloudTec…。如果用官方号发，建议主推 人工判断场景，重点讲 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Cloud Tech News | Cloud Computing News, Analysis & Events. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on opinionated commentary.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：Cloud Tech News | Cloud Computing News, Analysis & Events: CloudTec…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 观点评论。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: Cloud Tech News | Cloud Computing News, Analysis & Events. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on opinionated commentary. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "Cloud Tech News | Cloud Computing News, ：云科技新闻|云计算新闻、分析和活动：CloudTechNews 报道最新的云计算新闻和见解。从云计算最前沿探索行业趋势。"
+        },
+        {
+          "title": "Latest Cloud Computing News | CIO Dive",
+          "url": "https://www.ciodive.com/topic/cloud/",
+          "summary": "The latestcloudcomputingnewsand articles for CIOs",
+          "heat": "web_search:行业新闻",
+          "time": "2026-04-08",
+          "source": "web_search_行业新闻",
+          "search_channel": "行业新闻",
+          "analysis": {
+            "is_cloud": true,
+            "is_ai": false,
+            "is_anxiety": false,
+            "cloud_score": 1,
+            "ai_score": 0,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "cloud"
+            ],
+            "ai_hits": [],
+            "anxiety_hits": [],
+            "topic": "其他",
+            "topic_type": "行业观察",
+            "products": [],
+            "competitors": [],
+            "competitor_products": [],
+            "techs": [],
+            "tone": "中立资讯",
+            "detail_brief": "Latest Cloud Computing News | CIO Dive: The latestcloudcomputingnewsand articles for CIOs",
+            "heat_score": 1.0,
+            "timeliness_score": 7.0,
+            "composite_score": 2.4,
+            "tcloud_relevance": 0.0,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "信息快讯"
+            ],
+            "editorial_angles_text": "信息快讯",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "LinkedIn（行业观察文章）",
+              "X（摘要快讯分享）"
+            ],
+            "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "editorial_brief": "话题类型：行业观察\n可用角度：「Latest Cloud Computing News | CIO Dive」（Latest Cloud Computing News | CIO Dive: The latestcloudcomp…）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "social_recommendation": "「Latest Cloud Computing News | CIO Dive」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉围绕 Latest Cloud Computing News | CIO Dive 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉围绕 Latest Cloud Computing News | CIO Dive 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "Latest Cloud Computing News | CIO Dive: The latestcloudcomputingnew…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "Latest Cloud Computing News | CIO Dive. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：Latest Cloud Computing News | CIO Dive: The latestcloudcomputingnew…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 信息快讯。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: Latest Cloud Computing News | CIO Dive. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around quick update. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Latest Cloud Computing News | CIO Dive: The latestcloudcomputingnew…。如果用官方号发，建议主推 人工判断场景，重点讲 信息快讯，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Latest Cloud Computing News | CIO Dive. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on quick update.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：Latest Cloud Computing News | CIO Dive: The latestcloudcomputingnew…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 信息快讯。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: Latest Cloud Computing News | CIO Dive. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on quick update. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "Latest Cloud Computing News | CIO Dive：最新云计算新闻 |CIO Dive：面向 CIO 的最新云计算新闻和文章"
+        },
+        {
+          "title": "Cloud Computing recent news | InformationWeek",
+          "url": "https://www.informationweek.com/it-infrastructure/cloud-computing",
+          "summary": "CloudComputingNews& insights for IT execs oncloudresiliency,cloudspending, hybridcloud, tech modernization, supercomputing, and quantum evolution.",
+          "heat": "web_search:行业新闻",
+          "time": "2026-04-08",
+          "source": "web_search_行业新闻",
+          "search_channel": "行业新闻",
+          "analysis": {
+            "is_cloud": true,
+            "is_ai": false,
+            "is_anxiety": false,
+            "cloud_score": 1,
+            "ai_score": 0,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "cloud"
+            ],
+            "ai_hits": [],
+            "anxiety_hits": [],
+            "topic": "其他",
+            "topic_type": "行业观察",
+            "products": [],
+            "competitors": [],
+            "competitor_products": [],
+            "techs": [],
+            "tone": "中立资讯",
+            "detail_brief": "Cloud Computing recent news | InformationWeek: CloudComputingNews& insights for IT execs oncloudresiliency,cloudspending, hybridcloud, tech modernization, supercomputing, and quantum evolution.",
+            "heat_score": 1.0,
+            "timeliness_score": 7.0,
+            "composite_score": 2.4,
+            "tcloud_relevance": 0.0,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "信息快讯"
+            ],
+            "editorial_angles_text": "信息快讯",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "LinkedIn（行业观察文章）",
+              "X（摘要快讯分享）"
+            ],
+            "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "editorial_brief": "话题类型：行业观察\n可用角度：「Cloud Computing recent news | InformationWeek」（Cloud Computing recent news | InformationWeek: CloudComputi…）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "social_recommendation": "「Cloud Computing recent news | Informati…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉围绕 Cloud Computing recent news | Informatio 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉围绕 Cloud Computing recent news | Informatio 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "Cloud Computing recent news | InformationWeek: CloudComputingNews&…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "Cloud Computing recent news | InformationWeek. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：Cloud Computing recent news | InformationWeek: CloudComputingNews&…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 信息快讯。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: Cloud Computing recent news | InformationWeek. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around quick update. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Cloud Computing recent news | InformationWeek: CloudComputingNews&…。如果用官方号发，建议主推 人工判断场景，重点讲 信息快讯，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Cloud Computing recent news | InformationWeek. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on quick update.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：Cloud Computing recent news | InformationWeek: CloudComputingNews&…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 信息快讯。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: Cloud Computing recent news | InformationWeek. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on quick update. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "Cloud Computing recent news | Informatio：云计算最新消息|InformationWeek：为 IT 高管提供有关云弹性、云支出、混合云、技术现代化、超级计算和量子演化的云计算新闻和见解。"
+        },
+        {
+          "title": "What's new at AWS | Apr 07, 2026 - YouTube",
+          "url": "https://www.youtube.com/watch?v=RIVoLuFlbf4",
+          "summary": "ThesenewAWSservicesand features were announced on Apr 07,2026. Chapters: 0:00 - SageMaker adds Serverless Workflows to Identity Center 1:04 - ACM Native Certificate Search Feature 1:59 -AWS...",
+          "heat": "web_search:竞品监控",
+          "time": "2026-04-08",
+          "source": "web_search_竞品监控",
+          "search_channel": "竞品监控",
+          "analysis": {
+            "is_cloud": true,
+            "is_ai": false,
+            "is_anxiety": false,
+            "cloud_score": 2,
+            "ai_score": 0,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "aws",
+              "serverless"
+            ],
+            "ai_hits": [],
+            "anxiety_hits": [],
+            "topic": "行业动态",
+            "topic_type": "竞品动态",
+            "products": [],
+            "competitors": [
+              "AWS"
+            ],
+            "competitor_products": [],
+            "techs": [
+              "Serverless"
+            ],
+            "tone": "中立资讯",
+            "detail_brief": "What's new at AWS | Apr 07, 2026 - YouTube: ThesenewAWSservicesand features were announced on Apr 07,2026. Chapters: 0:00 - SageMaker adds Serverless Workflows to Identity Center 1:04 - ACM Native Certificate Search Feature 1:59 -AWS.",
+            "heat_score": 1.0,
+            "timeliness_score": 7.0,
+            "composite_score": 2.6,
+            "tcloud_relevance": 0.0,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "教程拆解",
+              "竞品对比",
+              "观点评论"
+            ],
+            "editorial_angles_text": "教程拆解 + 竞品对比 + 观点评论",
+            "publish_priority": "P0 今天发",
+            "recommended_platforms": [
+              "X（快评竞品动态）",
+              "LinkedIn（发深度对比分析文章）"
+            ],
+            "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+            "editorial_brief": "话题类型：竞品动态\n可用角度：「What's new at AWS | Apr 07, 2026 - YouTube」（What's new at AWS | Apr 07, 2026 - YouTube: ThesenewAWSserv…），涉及 Serverless\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+            "social_recommendation": "「What's new at AWS | Apr 07, 2026 - YouT…」是竞品动态，建议以行业观察视角切入，可写竞品对比或趋势点评。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉围绕 What's new at AWS | Apr 07, 2026 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉围绕 What's new at AWS | Apr 07, 2026 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "What's new at AWS | Apr 07, 2026 - YouTube: ThesenewAWSservicesand…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "What's new at AWS | Apr 07, 2026 - YouTube. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：What's new at AWS | Apr 07, 2026 - YouTube: ThesenewAWSservicesand…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 教程拆解 + 竞品对比 + 观点评论。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: What's new at AWS | Apr 07, 2026 - YouTube. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around hands-on walkthrough + 竞品对比 + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。What's new at AWS | Apr 07, 2026 - YouTube: ThesenewAWSservicesand…。如果用官方号发，建议主推 人工判断场景，重点讲 教程拆解 + 竞品对比 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. What's new at AWS | Apr 07, 2026 - YouTube. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on hands-on walkthrough + 竞品对比 + opinionated commentary.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：What's new at AWS | Apr 07, 2026 - YouTube: ThesenewAWSservicesand…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 教程拆解 + 竞品对比 + 观点评论。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: What's new at AWS | Apr 07, 2026 - YouTube. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on hands-on walkthrough + 竞品对比 + opinionated commentary. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "What's new at AWS | Apr 07, 2026：AWS 的新动态 |2026 年 4 月 7 日 - YouTube：这些新的 AWS 服务和功能已于 2026 年 4 月 7 日宣布。章节： 0:00 - SageMaker 将无服务器工作流添加到身份中心 1:04 - ACM 本机证书搜索功能 1:59 -AWS。"
+        },
+        {
+          "title": "Announcements | AWS News Blog",
+          "url": "https://aws.amazon.com/blogs/aws/category/post-types/announcements/",
+          "summary": "Here are the notable launches and updates from last week that can help you build, scale, and innovate onAWS. Last week's launches Here are the launches that got my attention this week. Let's start withnewsrelated to compute and networking infrastructure: Introducing Amazon EC2 C8id, M8id, and R8id instances: ThesenewAmazon EC2 […]",
+          "heat": "web_search:竞品监控",
+          "time": "2026-04-08",
+          "source": "web_search_竞品监控",
+          "search_channel": "竞品监控",
+          "analysis": {
+            "is_cloud": true,
+            "is_ai": false,
+            "is_anxiety": false,
+            "cloud_score": 1,
+            "ai_score": 0,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "aws"
+            ],
+            "ai_hits": [],
+            "anxiety_hits": [],
+            "topic": "其他",
+            "topic_type": "竞品动态",
+            "products": [],
+            "competitors": [
+              "AWS"
+            ],
+            "competitor_products": [
+              "Amazon EC2"
+            ],
+            "techs": [],
+            "tone": "中立资讯",
+            "detail_brief": "Here are the notable launches and updates from last week that can help you build, scale, and innovate onAWS. Last week's launches Here are the launches that got my attention this week. Let's start withnewsrelated to compute and networking infrastructure: Introducing Amazon EC2 C8id, M8id, and R8id instances: ThesenewAmazon EC2 […]",
+            "heat_score": 1.0,
+            "timeliness_score": 7.0,
+            "composite_score": 2.4,
+            "tcloud_relevance": 0.0,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "竞品对比（Amazon EC2）"
+            ],
+            "editorial_angles_text": "竞品对比（Amazon EC2）",
+            "publish_priority": "P0 今天发",
+            "recommended_platforms": [
+              "X（快评竞品动态）",
+              "LinkedIn（发深度对比分析文章）"
+            ],
+            "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+            "editorial_brief": "话题类型：竞品动态\n可用角度：「Announcements | AWS News Blog」（Here are the notable launches and updates from last week th…） → 可写方向：Amazon EC2 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+            "social_recommendation": "「Announcements | AWS News Blog」是竞品动态，建议以行业观察视角切入，可写竞品对比或趋势点评。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉围绕 Announcements | AWS News Blog 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉围绕 Announcements | AWS News Blog 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "Here are the notable launches and updates from last week that can h…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "Announcements | AWS News Blog. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：Here are the notable launches and updates from last week that can h…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 竞品对比（Amazon EC2）。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: Announcements | AWS News Blog. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around competitor comparison (Amazon EC2). What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Here are the notable launches and updates from last week that can h…。如果用官方号发，建议主推 人工判断场景，重点讲 竞品对比（Amazon EC2），并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Announcements | AWS News Blog. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on competitor comparison (Amazon EC2).",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：Here are the notable launches and updates from last week that can h…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 竞品对比（Amazon EC2）。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: Announcements | AWS News Blog. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on competitor comparison (Amazon EC2). Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "Announcements | AWS News Blog：以下是上周的重要发布和更新，可以帮助您在 AWS 上构建、扩展和创新。上周的发布 以下是本周引起我注意的发布。"
+        },
+        {
+          "title": "AWS in 2026: 5 Critical Updates & Game-Changing Services",
+          "url": "https://thinkmovesolutions.com/blogs/aws-in-2026-latest-services-updates/",
+          "summary": "Discover 5 powerful updates ofAWSin2026, including Bedrock AI, Graviton5, S3 Vectors, Sovereign Cloud, and keyserviceretirements.",
+          "heat": "web_search:竞品监控",
+          "time": "2026-04-08",
+          "source": "web_search_竞品监控",
+          "search_channel": "竞品监控",
+          "analysis": {
+            "is_cloud": true,
+            "is_ai": true,
+            "is_anxiety": false,
+            "cloud_score": 3,
+            "ai_score": 1,
+            "anxiety_score": 0,
+            "cloud_hits": [
+              "cloud",
+              "aws",
+              "s3"
+            ],
+            "ai_hits": [
+              "ai"
+            ],
+            "anxiety_hits": [],
+            "topic": "其他",
+            "topic_type": "行业观察",
+            "products": [],
+            "competitors": [
+              "AWS"
+            ],
+            "competitor_products": [],
+            "techs": [],
+            "tone": "中立资讯",
+            "detail_brief": "AWS in 2026: 5 Critical Updates & Game-Changing Services: Discover 5 powerful updates ofAWSin2026, including Bedrock AI, Graviton5, S3 Vectors, Sovereign Cloud, and keyserviceretirements.",
+            "heat_score": 1.0,
+            "timeliness_score": 7.0,
+            "composite_score": 3.3,
+            "tcloud_relevance": 0.6,
+            "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+            "tcloud_products": [],
+            "tcloud_reasons": [],
+            "tcloud_evidence": [],
+            "tcloud_primary_product": "",
+            "tcloud_relation_type": "待人工判断",
+            "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+            "tcloud_official_matches": [],
+            "tcloud_priority_matches": [],
+            "editorial_angles": [
+              "信息快讯"
+            ],
+            "editorial_angles_text": "信息快讯",
+            "publish_priority": "P2 观察中",
+            "recommended_platforms": [
+              "LinkedIn（行业观察文章）",
+              "X（摘要快讯分享）"
+            ],
+            "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "editorial_brief": "话题类型：行业观察\n可用角度：「AWS in 2026: 5 Critical Updates & Game-Changing S…」（AWS in 2026: 5 Critical Updates & Game-Changing Services: D…）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+            "social_recommendation": "「AWS in 2026: 5 Critical Updates & Game-…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+            "official_product_focus": "",
+            "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+            "visual_brief": "主视觉围绕 AWS in 2026: 5 Critical Updates & Game-C 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+            "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+            "platform_copies": {
+              "primary_product": "",
+              "product_display": "",
+              "relation_type": "待人工判断",
+              "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+              "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+              "visual_brief": "主视觉围绕 AWS in 2026: 5 Critical Updates & Game-C 的核心功能/效果做截图或信息图，优先展示实际效果而非概念拼图。",
+              "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+              "x_cn": "AWS in 2026: 5 Critical Updates & Game-Changing Services: Discover…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "x_en": "AWS in 2026: 5 Critical Updates & Game-Changing Services. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+              "discord_cn": "今天看到一条值得开发者关注的热点：AWS in 2026: 5 Critical Updates & Game-Changing Services: Discover…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 信息快讯。你更关注部署、性能还是工作流？",
+              "discord_en": "A developer trend worth discussing today: AWS in 2026: 5 Critical Updates & Game-Changing Services. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around quick update. What matters more to you: deployment, performance, or workflow?",
+              "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。AWS in 2026: 5 Critical Updates & Game-Changing Services: Discover…。如果用官方号发，建议主推 人工判断场景，重点讲 信息快讯，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+              "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. AWS in 2026: 5 Critical Updates & Game-Changing Services. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on quick update.",
+              "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+              "reddit_body_cn": "看到这条热点：AWS in 2026: 5 Critical Updates & Game-Changing Services: Discover…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 信息快讯。你觉得这种切法会更有信息量吗？",
+              "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+              "reddit_body_en": "A recent trend caught my eye: AWS in 2026: 5 Critical Updates & Game-Changing Services. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on quick update. Would that make the discussion more useful for developers?"
+            }
+          },
+          "summary_cn": "AWS in 2026: 5 Critical Updates & Game-C：2026 年的 AWS：5 个关键更新和改变游戏规则的服务：探索 2026 年 AWS 的 5 个强大更新，包括 Bedrock AI、Graviton5、S3 Vectors、Sovereign Cloud 和关键服务退役。"
+>>>>>>> Stashed changes
         }
       ],
       "error": null
     },
     {
+<<<<<<< Updated upstream
       "key": "web_search",
       "label": "🌐 全网搜索",
       "index": 8,
@@ -4107,6 +5854,8 @@
       "error": null
     },
     {
+=======
+>>>>>>> Stashed changes
       "key": "twitter_reddit",
       "label": "🐦 社媒讨论",
       "index": 9,

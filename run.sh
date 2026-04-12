@@ -93,6 +93,31 @@ python3 "${SCRIPT_DIR}/generate_static.py" --output-dir "${OUTPUT_DIR}" --site-d
 
 echo ""
 echo "=========================================="
+echo "  📊 生成 Excel 报告..."
+echo "=========================================="
+echo ""
+
+# 生成 Excel 文件
+python3 "${SCRIPT_DIR}/scripts/generate_excel.py" --output-dir "${OUTPUT_DIR}" --site-dir "${SCRIPT_DIR}/docs" || echo "⚠️ Excel 生成失败（openpyxl 可能未安装）"
+
+echo ""
+echo "=========================================="
+echo "  🚀 推送到 GitHub..."
+echo "=========================================="
+echo ""
+
+# 自动 commit + push
+cd "${SCRIPT_DIR}"
+git add docs/ output/
+if git diff --cached --quiet 2>/dev/null; then
+    echo "  ℹ️  没有新的变更需要提交"
+else
+    git commit -m "📊 daily update: ${TODAY}"
+    git push origin main && echo "  ✅ 已推送到 GitHub，网页将自动更新" || echo "  ⚠️ 推送失败，请手动 git push"
+fi
+
+echo ""
+echo "=========================================="
 echo "  📁 输出文件一览："
 echo "=========================================="
 echo ""
@@ -104,11 +129,14 @@ ls -la "${OUTPUT_DIR}/每日热点汇总表_${TODAY}.csv" 2>/dev/null || echo " 
 ls -la "${OUTPUT_DIR}/每日热点内容写作包_${TODAY}.md" 2>/dev/null || echo "    (暂无)"
 ls -la "${OUTPUT_DIR}/每日热点趋势总结_${TODAY}.md" 2>/dev/null || echo "    (暂无)"
 echo ""
+echo "  📊 Excel 报告:"
+ls -la "${SCRIPT_DIR}/docs/data/"*.xlsx 2>/dev/null || echo "    (暂无)"
+echo ""
 echo "  ☁️  腾讯文档同步:"
 echo "    全量热点表 + 精选话题表 已自动写入"
 echo ""
 echo "  🌐 静态站点:"
-echo "    docs/index.html + docs/data/*.json"
+echo "    docs/index.html + docs/data/*.json + docs/data/*.xlsx"
 echo "    推送到 GitHub 后自动部署到 GitHub Pages"
 echo ""
 echo "  📂 完整输出目录: ${OUTPUT_DIR}"

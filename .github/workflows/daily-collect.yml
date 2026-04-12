@@ -15,6 +15,10 @@ permissions:
 jobs:
   collect-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # 增加网络超时容忍度
+      PYTHONHTTPSVERIFY: '0'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,15 +37,27 @@ jobs:
           cd scripts
           python daily_hotspot_agent.py --output-dir ../output
         continue-on-error: true
+        timeout-minutes: 15
 
       - name: Merge master table
         run: |
           python merge_master_table.py --output-dir output
         continue-on-error: true
 
+      - name: Sync to WeCom sheet
+        run: |
+          python sync_to_wecom_sheet.py --output-dir output --date $(date +%Y-%m-%d) --force
+        continue-on-error: true
+        timeout-minutes: 5
+
       - name: Generate static site data
         run: |
           python generate_static.py --output-dir output --site-dir docs
+
+      - name: Generate Excel reports
+        run: |
+          python scripts/generate_excel.py --output-dir output --site-dir docs
+        continue-on-error: true
 
       - name: Commit and push updated data
         run: |

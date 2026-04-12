@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # CodeBuddy — 今日内容 (3 条)
 
 ## 1. P1 本周发 · coleam00/Archon
@@ -14,6 +15,11 @@
 ---
 
 ## 2. P1 本周发 · forrestchang/andrej-karpathy-skills
+=======
+# CodeBuddy — 今日内容 (1 条)
+
+## 1. P1 本周发 · forrestchang/andrej-karpathy-skills
+>>>>>>> Stashed changes
 
 **写什么**: 以 andrej-karpathy-skills 引发的开发者效率讨论为切入点
 
@@ -25,6 +31,7 @@
 *参考: [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)*
 
 ---
+<<<<<<< Updated upstream
 
 ## 3. P1 本周发 · shanraisshan/claude-code-best-practice
 
@@ -38,3 +45,5 @@
 *参考: [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice)*
 
 ---
+=======
+>>>>>>> Stashed changes

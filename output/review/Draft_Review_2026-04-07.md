@@ -1,10 +1,15 @@
 # 📋 产品 Draft 汇总 — 2026-04-07
 
+<<<<<<< Updated upstream
 > 共 6 个产品的 P0/P1 内容草稿
+=======
+> 共 1 个产品的 P0/P1 内容草稿
+>>>>>>> Stashed changes
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
+<<<<<<< Updated upstream
 # CVM — 今日内容 (1 条)
 
 ## 1. P0 今天发 · NousResearch/hermes-agent
@@ -26,10 +31,18 @@
 ## 1. P0 今天发 · abhigyanpatwari/GitNexus
 
 **写什么**: 以 GitNexus 引发的开发者效率讨论为切入点
+=======
+# EdgeOne — 今日内容 (1 条)
+
+## 1. P0 今天发 · Vercel vs Netlify 2025: The Truth About Edge Computing Perfo
+
+**写什么**: 从 Vercel vs Netlify 2025: The Truth About  的性能/安全需求出发
+>>>>>>> Stashed changes
 
 **发到哪**: X（快评竞品动态） + LinkedIn（发深度对比分析文章）
 
 **参考文案**:
+<<<<<<< Updated upstream
 > 🤖 "abhigyanpatwari/GitNexus" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
 *参考: [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus)*
@@ -123,6 +136,11 @@
 > 🚀 "Graph-go – zero config, full visibility" caught our eye! Deploy it in minutes on Tencent Cloud Lighthouse — Docker pre-installed, global nodes, from $3.5/mo. Try it: https://www.tencentcloud.com/products/lighthouse #CloudComputing #DevOps
 
 *参考: [Graph-go – zero config, full visibility](https://github.com/guilherme-grimm/graph-go)*
+=======
+> ⚡ Interesting project: "Vercel vs Netlify 2025: The Truth About ". For teams needing global acceleration + DDoS protection, check out EdgeOne — 3,200+ PoP nodes worldwide. #CDN #WebSecurity #EdgeComputing
+
+*参考: [Vercel vs Netlify 2025: The Truth About Edge Compu](https://dev.to/dataformathub/vercel-vs-netlify-2025-the-truth-about-edge-computing-performance-2oa0)*
+>>>>>>> Stashed changes
 
 ---
 

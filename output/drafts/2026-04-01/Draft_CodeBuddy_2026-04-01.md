@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 # CodeBuddy — 今日内容 (5 条)
+=======
+# CodeBuddy — 今日内容 (6 条)
+>>>>>>> Stashed changes
 
 ## 1. P1 本周发 · The Claude Code Source Leak: fake tools, frustration regexes
 
@@ -64,3 +68,19 @@
 *参考: [obra/superpowers](https://github.com/obra/superpowers)*
 
 ---
+<<<<<<< Updated upstream
+=======
+
+## 6. P1 本周发 · axios@1.14.1 遭遇供应链投毒：针对开发者及 MCP 用户的高隐蔽性 0-day 攻击
+
+**写什么**: 借「遭遇供应链投毒针」的讨论热度写一篇 AI 编程工具选型指南
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "axios@1.14.1 遭遇供应链投毒：针对开发者及 MCP 用户的高隐蔽性 " shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [axios@1.14.1 遭遇供应链投毒：针对开发者及 MCP 用户的高隐蔽性 0-day 攻击](https://www.v2ex.com/t/1202470)*
+
+---
+>>>>>>> Stashed changes

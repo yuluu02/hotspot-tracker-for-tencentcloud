@@ -376,6 +376,8 @@ a:hover { text-decoration: underline; }
           <option value="">加载中...</option>
         </select>
       </div>
+      <a id="downloadDailyExcel" class="btn btn-secondary" style="font-size:12px;padding:6px 12px;display:none" title="下载今日 Excel 报告">📥 日报Excel</a>
+      <a href="data/hotspot-master.xlsx" class="btn btn-secondary" style="font-size:12px;padding:6px 12px" id="downloadMasterExcel" title="下载历史总表 Excel">📥 总表Excel</a>
     </div>
   </div>
 </header>
@@ -800,6 +802,13 @@ async function loadDate(dateStr) {
       return;
     }
     dateData = await resp.json();
+    // Update daily Excel download link
+    const dailyExcelLink = document.getElementById('downloadDailyExcel');
+    if (dailyExcelLink) {
+      dailyExcelLink.href = DATA_BASE + 'hotspot-daily-' + dateStr + '.xlsx';
+      dailyExcelLink.style.display = 'inline-flex';
+      dailyExcelLink.textContent = '📥 ' + dateStr + ' Excel';
+    }
     allRecords = dateData.records || [];
     currentFiltered = allRecords;
     currentPage = 1;
@@ -983,7 +992,10 @@ function goPage(p) {
   document.getElementById('dataTableWrapper').scrollIntoView({ behavior: 'smooth' });
 }
 
+let selectedDisplayList = [];
+
 function renderSelected(selected) {
+  selectedDisplayList = selected;
   const isHistory = document.getElementById('toggleSelectedHistory')?.checked || false;
   document.getElementById('selectedCount').textContent = `共 ${selected.length} 条${isHistory ? '（历史全量）' : ''}`;
   if (!selected.length) {
@@ -997,9 +1009,8 @@ function renderSelected(selected) {
     const priority = r['发布优先级'] || '';
     const prioClass = priority.startsWith('P0') ? 'tag-p0' : 'tag-p1';
     const dateTag = r['采集日期'] && isHistory ? `<span class="tag" style="background:rgba(99,102,241,0.1);color:var(--accent);font-size:11px">${esc(r['采集日期'])}</span>` : '';
-    const globalIdx = allRecords.indexOf(r);
     return `
-      <div class="card" style="margin-bottom:12px;cursor:pointer" onclick="showDetailByIndex(${globalIdx >= 0 ? globalIdx : i})">
+      <div class="card" style="margin-bottom:12px;cursor:pointer" onclick="showDetailRecord(selectedDisplayList[${i}])">
         <div style="display:flex;align-items:flex-start;gap:16px">
           <div style="text-align:center">
             <div class="score-badge score-high" style="width:48px;height:48px;font-size:16px">${score.toFixed(1)}</div>

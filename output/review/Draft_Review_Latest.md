@@ -1,19 +1,32 @@
 # 📋 产品 Draft 汇总 — 2026-04-12
 
+<<<<<<< Updated upstream
 > 共 5 个产品的 P0/P1 内容草稿
+=======
+> 共 1 个产品的 P0/P1 内容草稿
+>>>>>>> Stashed changes
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
+<<<<<<< Updated upstream
 # CVM — 今日内容 (1 条)
 
 ## 1. P0 今天发 · NousResearch/hermes-agent
 
 **写什么**: 以 hermes-agent 的算力需求为切入
+=======
+# CodeBuddy — 今日内容 (1 条)
+
+## 1. P1 本周发 · forrestchang/andrej-karpathy-skills
+
+**写什么**: 以 andrej-karpathy-skills 引发的开发者效率讨论为切入点
+>>>>>>> Stashed changes
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
+<<<<<<< Updated upstream
 > 🔥 "NousResearch/hermes-agent" — **hermes-agent** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU. Check out Tencent Cloud CVM for a production-ready solution. #TencentCloud #CloudComputing
 
 *参考: [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)*
@@ -107,6 +120,11 @@
 > 🚀 "multica-ai/multica" caught our eye! Deploy it in minutes on Tencent Cloud Lighthouse — Docker pre-installed, global nodes, from $3.5/mo. Try it: https://www.tencentcloud.com/products/lighthouse #CloudComputing #DevOps
 
 *参考: [multica-ai/multica](https://github.com/multica-ai/multica)*
+=======
+> 🤖 "forrestchang/andrej-karpathy-skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)*
+>>>>>>> Stashed changes
 
 ---
 
