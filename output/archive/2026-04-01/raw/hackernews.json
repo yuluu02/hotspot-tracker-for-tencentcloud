@@ -1,19 +1,11 @@
 [
   {
     "source": "Hacker News",
-<<<<<<< Updated upstream
-    "title": "We intercepted the White House app's network traffic",
-    "url": "https://www.atomic.computer/blog/white-house-app-network-traffic-analysis/",
-    "hn_url": "https://news.ycombinator.com/item?id=47595865",
-    "heat": "162 points",
-    "time": "2 hours ago",
-=======
     "title": "We intercepted the White House app's traffic. 77% of requests go to 3rd parties",
     "url": "https://www.atomic.computer/blog/white-house-app-network-traffic-analysis/",
     "hn_url": "https://news.ycombinator.com/item?id=47595865",
     "heat": "44 points",
     "time": "54 minutes ago",
->>>>>>> Stashed changes
     "developer_name": "donutpepperoni",
     "developer_url": "https://news.ycombinator.com/user?id=donutpepperoni",
     "content": "We Intercepted the White House App's Network Traffic. Here's What It Sends. | atomic.computer Skip to content This is a follow-up to our static analysis of the White House iOS app . In that post, we decompiled the app and documented what the code could do. Critics fairly pointed out that compiled code doesn’t mean active code. So we set up a MITM proxy and watched what the app actually sends. Setup We installed mitmproxy on a Mac, configured an iPhone to route traffic through it, and installed the mitmproxy CA certificate on the device. Then we opened the White House app (v47.0.4, build 81) and browsed every tab: Home, News, Live, Social, and Explore. All HTTPS traffic was decrypted and logged. No modifications were made to the traffic. The app was used as any normal user would use it. What the App Contacts On a single browsing session across all tabs, the app made requests to 31 unique hosts (excluding iOS system traffic): Host Requests What It Is www.whitehouse.gov 48 WordPress API (news, home, wire, priorities, galleries, live) www.youtube.com 25 YouTube embeds phosphor.utils.elfsightcdn.com 19 Elfsight utility scripts static.elfsight.com 12 Elfsight static assets storage.elfsight.com 10 Elfsight file storage api.onesignal.com 9 OneSignal analytics and user profiling i.ytimg.com 9 YouTube video thumbnails rr6—.googlevideo.com 9 Google Video CDN scontent-lax7-1.xx.fbcdn.net 7 Facebook CDN (images) pbs.twimg.com 7 Twitter/X images apis.google.com 7 Google APIs widget-data.service.elfsight.com 6 Elfsight widget data core.service.elfsight.com 4 Elfsight boot API (the two-stage loader) video-proxy.wu.elfsightcompute.com 4 Elfsight video proxy img.youtube.com 4 YouTube thumbnails yt3.ggpht.com 3 YouTube channel avatars clients3.google.com 3 Connectivity check scontent-lax3-1.xx.fbcdn.net 3 Facebook CDN fonts.gstatic.com 2 Google Fonts jnn-pa.googleapis.com 2 Google APIs scontent-lax3-2.xx.fbcdn.net 2 Facebook CDN www.google.com 2 Google googleads.g.doubleclick.net 1 Google Ads / DoubleClick tracking static.doubleclick.net 1 Google Ads accounts.google.com 1 Google authentication universe-static.elfsightcdn.com 1 Elfsight CDN elfsightcdn.com 1 Elfsight CDN (platform.js) cdnjs.cloudflare.com 1 Cloudflare CDN ssl.gstatic.com 1 Google static yt3.googleusercontent.com 1 YouTube www.gstatic.com 1 Google static Of the 206 app-initiated requests captured (excluding iOS system traffic), only 48 (23%) went to whitehouse.gov. The other 158 (77%) went to third-party services including Elfsight, OneSignal, YouTube, Google DoubleClick, Facebook, and Twitter. What OneSignal Receives This is no longer speculation from symbol analysis. This is the actual decrypted HTTPS request body sent to api.onesignal.com on app launch: { \"properties\" : { \"language\" : \"en\" , \"timezone_id\" : \"America/[REDACTED]\" , \"country\" : \"US\" , \"first_active\" : 1774908688 , \"last_active\" : 1774909124 , \"ip\" : \"[REDACTED]\" }, \"identity\" : { \"onesignal_id\" : \"[REDACTED]\" }, \"subscriptions\" : [ {",
@@ -38,16 +30,6 @@
         "Cloudflare"
       ],
       "competitor_products": [],
-<<<<<<< Updated upstream
-      "techs": [],
-      "tone": "中立资讯",
-      "detail_brief": "We Intercepted the White House App's Network Traffic. Here's What It Sends. | atomic. computer This is a follow-up to our static analysis of the White House iOS app .",
-      "heat_score": 5.0,
-      "timeliness_score": 9.0,
-      "composite_score": 6.1,
-      "tcloud_relevance": 5.8,
-      "tcloud_integration": "**We intercepted the White House app's net** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
-=======
       "techs": [
         "Go"
       ],
@@ -58,16 +40,11 @@
       "composite_score": 5.8,
       "tcloud_relevance": 5.8,
       "tcloud_integration": "**We intercepted the White House app's tra** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
->>>>>>> Stashed changes
       "tcloud_products": [
         "EdgeOne"
       ],
       "tcloud_reasons": [
-<<<<<<< Updated upstream
-        "**We intercepted the White House app's net** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景"
-=======
         "**We intercepted the White House app's tra** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景"
->>>>>>> Stashed changes
       ],
       "tcloud_evidence": [
         "cdn",
@@ -75,11 +52,7 @@
       ],
       "tcloud_primary_product": "EdgeOne",
       "tcloud_relation_type": "应用场景",
-<<<<<<< Updated upstream
-      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**We intercepted the White House app's net** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
-=======
       "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**We intercepted the White House app's tra** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
->>>>>>> Stashed changes
       "tcloud_official_matches": [
         "EdgeOne"
       ],
@@ -91,53 +64,23 @@
         "社区参与"
       ],
       "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（EdgeOne） + 社区参与",
-<<<<<<< Updated upstream
-      "publish_priority": "P1 本周发",
-=======
       "publish_priority": "P2 观察中",
->>>>>>> Stashed changes
       "recommended_platforms": [
         "Reddit（直接参与讨论）",
         "LinkedIn（发教程文章）",
         "Discord（开发者社区互动）"
       ],
       "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
-<<<<<<< Updated upstream
-      "editorial_brief": "话题类型：开发者话题\n可用角度：「We intercepted the White House app's network traf…」（We Intercepted the White House App's Network Traffic. Here'…） → 可写方向：面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
-      "social_recommendation": "「We intercepted the White House app's net」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
-      "official_product_focus": "EdgeOne",
-      "official_angle_cn": "从 We intercepted the White House app's net 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
-=======
       "editorial_brief": "话题类型：开发者话题\n可用角度：「We intercepted the White House app's traffic. 77%…」（We intercepted the White House app's traffic. 77% of reques…），涉及 Go → 可写方向：面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
       "social_recommendation": "「We intercepted the White House app's tra」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
       "official_product_focus": "EdgeOne",
       "official_angle_cn": "从 We intercepted the White House app's tra 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
->>>>>>> Stashed changes
       "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
       "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
       "platform_copies": {
         "primary_product": "EdgeOne",
         "product_display": "EdgeOne",
         "relation_type": "应用场景",
-<<<<<<< Updated upstream
-        "official_angle_cn": "从 We intercepted the White House app's net 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
-        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
-        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
-        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
-        "x_cn": "We Intercepted the White House App's Network Traffic. Here's What I…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：…",
-        "x_en": "We intercepted the White House app's network traffic. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
-        "discord_cn": "今天看到一条值得开发者关注的热点：We Intercepted the White House App's Network Traffic. Here's What I…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 技术科普 + 教程拆解 + 产品关联（EdgeOne） + 社区参与。你更关注部署、性能还是工作流？",
-        "discord_en": "A developer trend worth discussing today: We intercepted the White House app's network traffic. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (EdgeOne) + community conversation. What matters more to you: deployment, performance, or workflow?",
-        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。We Intercepted the White House App's Network Traffic. Here's What I…。如果用官方号发，建议主推 EdgeOne，重点讲 技术科普 + 教程拆解 + 产品关联（EdgeOne） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**We intercepted the White House app's net** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
-        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. We intercepted the White House app's network traffic. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne) + community conversation.",
-        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
-        "reddit_body_cn": "看到这条热点：We Intercepted the White House App's Network Traffic. Here's What I…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（EdgeOne） + 社区参与。你觉得这种切法会更有信息量吗？",
-        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
-        "reddit_body_en": "A recent trend caught my eye: We intercepted the White House app's network traffic. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne) + community conversation. Would that make the discussion more useful for developers?"
-      }
-    },
-    "summary_cn": "We intercepted the White House app's net：我们拦截了白宫应用程序的网络流量。这是它发送的内容。"
-=======
         "official_angle_cn": "从 We intercepted the White House app's tra 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
         "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
         "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
@@ -155,20 +98,14 @@
       }
     },
     "summary_cn": "We intercepted the White House app's tra：我们拦截了白宫应用程序的流量。77% 的请求发送给第三方：我们拦截了白宫应用程序的网络流量。"
->>>>>>> Stashed changes
   },
   {
     "source": "Hacker News",
     "title": "The Claude Code Source Leak: fake tools, frustration regexes, undercover mode",
     "url": "https://alex000kim.com/posts/2026-03-31-claude-code-source-leak/",
     "hn_url": "https://news.ycombinator.com/item?id=47586778",
-<<<<<<< Updated upstream
-    "heat": "937 points",
-    "time": "11 hours ago",
-=======
     "heat": "871 points",
     "time": "10 hours ago",
->>>>>>> Stashed changes
     "developer_name": "alex000kim",
     "developer_url": "https://news.ycombinator.com/user?id=alex000kim",
     "content": "The Claude Code Source Leak: fake tools, frustration regexes, undercover mode, and more | Alex Kim's blog Table of Contents Anti-distillation: injecting fake tools to poison copycats Undercover mode: AI that hides its AI Frustration detection via regex (yes, regex) Native client attestation below the JS runtime 250,000 wasted API calls per day KAIROS: the unreleased autonomous agent mode Other stuff So what? Update: see HN discussions about this post: https://news.ycombinator.com/item?id=47586778 I use Claude Code daily, so when Chaofan Shou noticed earlier today that Anthropic had shipped a .map file alongside their Claude Code npm package, one containing the full, readable source code of the CLI tool, I immediately wanted to look inside. The package has since been pulled, but not before the code was widely mirrored, including myself and picked apart on Hacker News . This is Anthropic’s second accidental exposure in a week (the model spec leak was just days ago), and some people on Twitter are starting to wonder if someone inside is doing this on purpose. Probably not, but it’s a bad look either way. The timing is hard to ignore: just ten days ago, Anthropic sent legal threats to OpenCode , forcing them to remove built-in Claude authentication because third-party tools were using Claude Code’s internal APIs to access Opus at subscription rates instead of pay-per-token pricing. That whole saga makes some of the findings below more pointed. So I spent my morning reading through the HN comments and leaked source. Here’s what I found, roughly ordered by how “spicy” I thought it was. Anti-distillation: injecting fake tools to poison copycats # In claude.ts (line 301-313) , there’s a flag called ANTI_DISTILLATION_CC . When enabled, Claude Code sends anti_distillation: ['fake_tools'] in its API requests. This tells the server to silently inject decoy tool definitions into the system prompt. The idea: if someone is recording Claude Code’s API traffic to train a competing model, the fake tools pollute that training data. It’s gated behind a GrowthBook feature flag ( tengu_anti_distill_fake_tool_injection ) and only active for first-party CLI sessions. This was one of the first things people noticed on HN. There’s also a second anti-distillation mechanism in betas.ts (lines 279-298) , server-side connector-text summarization. When enabled, the API buffers the assistant’s text between tool calls, summarizes it, and returns the summary with a cryptographic signature. On subsequent turns, the original text can be restored from the signature. If you’re recording API traffic, you only get the summaries, not the full reasoning chain. How hard would it be to work around these? Not very. Looking at the activation logic in claude.ts , the fake tools injection requires all four conditions to be true: the ANTI_DISTILLATION_CC compile-time flag, the cli entrypoint, a first-party API provider, and the tengu_anti_distill_fake_tool_injection GrowthBook flag returning tr",
@@ -267,99 +204,11 @@
   },
   {
     "source": "Hacker News",
-<<<<<<< Updated upstream
-    "title": "Neanderthals survived on a knife's edge for 350k years",
-    "url": "https://www.science.org/content/article/neanderthals-survived-knife-s-edge-350-000-years",
-    "hn_url": "https://news.ycombinator.com/item?id=47595572",
-    "heat": "42 points",
-    "time": "2 hours ago",
-    "developer_name": "Hooke",
-    "developer_url": "https://news.ycombinator.com/user?id=Hooke",
-    "analysis": {
-      "is_cloud": true,
-      "is_ai": false,
-      "is_anxiety": false,
-      "cloud_score": 1,
-      "ai_score": 0,
-      "anxiety_score": 0,
-      "cloud_hits": [
-        "edge"
-      ],
-      "ai_hits": [],
-      "anxiety_hits": [],
-      "topic": "其他",
-      "topic_type": "行业观察",
-      "products": [],
-      "competitors": [],
-      "competitor_products": [],
-      "techs": [],
-      "tone": "中立资讯",
-      "detail_brief": "Neanderthals survived on a knife's edge ：尼安德特人在刀锋上生存了 35 万年",
-      "heat_score": 3.0,
-      "timeliness_score": 9.0,
-      "composite_score": 3.2,
-      "tcloud_relevance": 0.0,
-      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
-      "tcloud_products": [],
-      "tcloud_reasons": [],
-      "tcloud_evidence": [],
-      "tcloud_primary_product": "",
-      "tcloud_relation_type": "待人工判断",
-      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
-      "tcloud_official_matches": [],
-      "tcloud_priority_matches": [],
-      "editorial_angles": [
-        "社区参与"
-      ],
-      "editorial_angles_text": "社区参与",
-      "publish_priority": "P2 观察中",
-      "recommended_platforms": [
-        "LinkedIn（行业观察文章）",
-        "X（摘要快讯分享）"
-      ],
-      "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
-      "editorial_brief": "话题类型：行业观察\n可用角度：「Neanderthals survived on a knife's edge for 350k…」（Neanderthals survived on a knife's edge ：尼安德特人在刀锋上生存了 35 万年）\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
-      "social_recommendation": "「Neanderthals survived on a knife's edge…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
-      "official_product_focus": "",
-      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
-      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
-      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
-      "platform_copies": {
-        "primary_product": "",
-        "product_display": "",
-        "relation_type": "待人工判断",
-        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
-        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
-        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
-        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
-        "x_cn": "Neanderthals survived on a knife's edge ：尼安德特人在刀锋上生存了 35 万年。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
-        "x_en": "Neanderthals survived on a knife's edge for 350k years. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
-        "discord_cn": "今天看到一条值得开发者关注的热点：Neanderthals survived on a knife's edge ：尼安德特人在刀锋上生存了 35 万年。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 社区参与。你更关注部署、性能还是工作流？",
-        "discord_en": "A developer trend worth discussing today: Neanderthals survived on a knife's edge for 350k years. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around community conversation. What matters more to you: deployment, performance, or workflow?",
-        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Neanderthals survived on a knife's edge ：尼安德特人在刀锋上生存了 35 万年。如果用官方号发，建议主推 人工判断场景，重点讲 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
-        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Neanderthals survived on a knife's edge for 350k years. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on community conversation.",
-        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
-        "reddit_body_cn": "看到这条热点：Neanderthals survived on a knife's edge ：尼安德特人在刀锋上生存了 35 万年。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 社区参与。你觉得这种切法会更有信息量吗？",
-        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
-        "reddit_body_en": "A recent trend caught my eye: Neanderthals survived on a knife's edge for 350k years. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on community conversation. Would that make the discussion more useful for developers?"
-      }
-    },
-    "summary_cn": "Neanderthals survived on a knife's edge ：尼安德特人在刀锋上生存了 35 万年"
-  },
-  {
-    "source": "Hacker News",
-    "title": "TinyLoRA – Learning to Reason in 13 Parameters",
-    "url": "https://arxiv.org/abs/2602.04118",
-    "hn_url": "https://news.ycombinator.com/item?id=47541733",
-    "heat": "109 points",
-    "time": "5 hours ago",
-=======
     "title": "TinyLoRA – Learning to Reason in 13 Parameters",
     "url": "https://arxiv.org/abs/2602.04118",
     "hn_url": "https://news.ycombinator.com/item?id=47541733",
     "heat": "85 points",
     "time": "4 hours ago",
->>>>>>> Stashed changes
     "developer_name": "sorenjan",
     "developer_url": "https://news.ycombinator.com/user?id=sorenjan",
     "content": "[2602.04118] Learning to Reason in 13 Parameters Computer Science > Machine Learning arXiv:2602.04118 (cs) [Submitted on 4 Feb 2026] Title: Learning to Reason in 13 Parameters Authors: John X. Morris , Niloofar Mireshghallah , Mark Ibrahim , Saeed Mahloujifar View a PDF of the paper titled Learning to Reason in 13 Parameters, by John X. Morris and 3 other authors View PDF HTML (experimental) Abstract: Recent research has shown that language models can learn to \\textit{reason}, often via reinforcement learning. Some work even trains low-rank parameterizations for reasoning, but conventional LoRA cannot scale below the model dimension. We question whether even rank=1 LoRA is necessary for learning to reason and propose TinyLoRA, a method for scaling low-rank adapters to sizes as small as one parameter. Within our new parameterization, we are able to train the 8B parameter size of Qwen2.5 to 91\\% accuracy on GSM8K with only 13 trained parameters in bf16 (26 total bytes). We find this trend holds in general: we are able to recover 90\\% of performance improvements while training $1000x$ fewer parameters across a suite of more difficult learning-to-reason benchmarks such as AIME, AMC, and MATH500. Notably, we are only able to achieve such strong performance with RL: models trained using SFT require $100-1000x$ larger updates to reach the same performance. Subjects: Machine Learning (cs.LG) Cite as: arXiv:2602.04118 [cs.LG] (or arXiv:2602.04118v1 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2602.04118 Focus to learn more arXiv-issued DOI via DataCite Submission history From: John Morris [ view email ] [v1] Wed, 4 Feb 2026 01:20:04 UTC (1,595 KB) Full-text links: Access Paper: View a PDF of the paper titled Learning to Reason in 13 Parameters, by John X. Morris and 3 other authors View PDF HTML (experimental) TeX Source view license Current browse context: cs.LG < prev | next > new | recent | 2026-02 Change to browse by: cs References & Citations NASA ADS Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) Links to Code Toggle Papers with Code ( What is Papers with Code? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Space",
@@ -390,15 +239,9 @@
       ],
       "tone": "中立资讯",
       "detail_brief": "04118] Learning to Reason in 13 Parameters Computer Science > Machine Learning arXiv:2602. 04118 (cs) [Submitted on 4 Feb 2026] Title: Learning to Reason in 13 Parameters Authors: John X. Morris , Niloofar Mireshghallah , Mark Ibrahim , Saeed Mahloujifar View a PDF of the paper titled Learning to Reason in 13 Parameters, by John X. Morris and 3 other authors View PDF HTML (experimental) Abstract: Recent research has shown that language models can learn to \\textit{reason}, often via reinforcemen…",
-<<<<<<< Updated upstream
-      "heat_score": 5.0,
-      "timeliness_score": 8.0,
-      "composite_score": 4.1,
-=======
       "heat_score": 4.0,
       "timeliness_score": 8.0,
       "composite_score": 3.9,
->>>>>>> Stashed changes
       "tcloud_relevance": 0.0,
       "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
       "tcloud_products": [],
@@ -450,13 +293,6 @@
   },
   {
     "source": "Hacker News",
-<<<<<<< Updated upstream
-    "title": "Show HN: 1-Bit Bonsai, the First Commercially Viable 1-Bit LLMs",
-    "url": "https://prismml.com/",
-    "hn_url": "https://news.ycombinator.com/item?id=47593422",
-    "heat": "152 points",
-    "time": "7 hours ago",
-=======
     "title": "Ministack (Replacement for LocalStack)",
     "url": "https://ministack.org/",
     "hn_url": "https://news.ycombinator.com/item?id=47593285",
@@ -568,7 +404,6 @@
     "hn_url": "https://news.ycombinator.com/item?id=47593422",
     "heat": "120 points",
     "time": "5 hours ago",
->>>>>>> Stashed changes
     "developer_name": "PrismML",
     "developer_url": "https://news.ycombinator.com/user?id=PrismML",
     "content": "PrismML — Concentrating intelligence Now hiring Explore open roles at Prism ML Concentrating intelligence Large models can't fit on smartphones. Datacenters can't sustain them. Prism ML is building ultra dense intelligence to solve both. Launch announcement 14× less memory 8× faster 5× less energy 1-bit Bonsai 8B The first commercially viable model with 1-bit weights. Requiring only 1.15GB of memory, 1-bit Bonsai 8B was engineered for robotics, real-time agents, and edge computing. It has a 14× smaller footprint than a full-precision 8B model, runs 8× faster, and is 5× more energy efficient, while matching leading 8B models on benchmarks. This results in over 10× the intelligence density of full-precision 8B models ¹ . Download model 1-bit Bonsai 4B Requiring just 0.57GB of memory, 1-bit Bonsai 4B delivers exceptional speed, reaching 132 tokens per second on an M4 Pro. It pairs strong accuracy with outstanding energy efficiency, making it ideal for workloads that demand both performance and speed ¹ . Download model 1-bit Bonsai 1.7B With a footprint of only 0.24GB of memory, 1-bit Bonsai 1.7B pushes the limits of on-device speed, reaching 130 tokens per second on an iPhone 17 Pro Max. Combining industry-leading energy efficiency with solid accuracy, it’s a lightweight model built for heavyweight tasks ¹ . Download model Supported by: Supported by: Benchmark palette Intelligence density Negative log of the model's error rate divided by the model size For detailed evaluation approach, please refer to our whitepaper . Model benchmark comparison Average score (IFEval, GSM8K, HumanEval+, BFCL, MuSR, MMLU-Redux) Benchmark ← → For detailed evaluation approach, please refer to our whitepaper . Throughput Tokens per second across hardware platforms (higher is better) For detailed evaluation approach, please refer to our whitepaper . Performance vs. size Average score (IFEval, GSM8K, HumanEval+, BFCL, MuSR, MMLU-Redux) For detailed evaluation approach, please refer to our whitepaper . Bonsai 8B canopy Average score (IFEval, GSM8K, HumanEval+, BFCL, MuSR, MMLU-Redux) For detailed evaluation approach, please refer to our whitepaper . Energy consumption Milliwatt-hours per token across hardware (lower is better) For detailed evaluation approach, please refer to our whitepaper . 16.0 GB 16-bit (standard) 1-bit Bonsai 8B Centering AI research on efficiency Successful artificial intelligence isn’t just about making models larger, but also smarter. Utilizing breakthrough research at Caltech, Prism ML is pushing the frontier of intelligence density by reshaping how models are designed, prioritizing intelligence per bit over sheer parameter count. Get started Join the team We are looking for engineers looking to push the frontier of intelligence density. Staff AI/ML Engineer – Large-Scale Systems Pasadena or San Francisco Full-time See details Staff AI/ML Engineer – Edge & Consumer AI Pasadena or San Francisco Full-time See details Join the team Select role... Staf",
@@ -596,13 +431,8 @@
       "tone": "对比测评",
       "detail_brief": "PrismML — Concentrating intelligence Now hiring Explore open roles at Prism ML Concentrating intelligence Large models can't fit on smartphones. Datacenters can't sustain them. Prism ML is building ultra dense intelligence to solve both. Launch announcement 14× less memory 8× faster 5× less energy 1-bit Bonsai 8B The first commercially viable model with 1-bit weights.",
       "heat_score": 5.0,
-<<<<<<< Updated upstream
-      "timeliness_score": 7.0,
-      "composite_score": 5.7,
-=======
       "timeliness_score": 8.0,
       "composite_score": 5.9,
->>>>>>> Stashed changes
       "tcloud_relevance": 5.9,
       "tcloud_integration": "**Show HN: 1-Bit Bonsai, the First Commerc** 的网站/API 可以用 EdgeOne 做全球加速（3,200+ 节点）和安全防护（DDoS + WAF + Bot 管理）",
       "tcloud_products": [
@@ -634,13 +464,8 @@
         "X（摘要快讯分享）"
       ],
       "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
-<<<<<<< Updated upstream
-      "editorial_brief": "话题类型：行业观察\n可用角度：「Show HN: 1-Bit Bonsai, the First Commercially Via…」（PrismML — Concentrating intelligence Now hiring Explore ope…） → 可写方向：的网站/API 可以用 EdgeOne 做全球加速（3,200+ 节点）和安全防护（DDoS + WAF + Bot 管理）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
-      "social_recommendation": "「Show HN: 1-Bit Bonsai, the First Commerc」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P1 本周发（仍有时效价值），推荐平台：LinkedIn（行业观察文章） + X（摘要快讯分享）。",
-=======
       "editorial_brief": "话题类型：行业观察\n可用角度：「Show HN: 1-Bit Bonsai, the First Commercially Via…」（PrismML — Concentrating intelligence Now hiring Explore ope…） → 可写方向：的网站/API 可以用 EdgeOne 做全球加速（3,200+ 节点）和安全防护（DDoS + WAF + Bot 管理）\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
       "social_recommendation": "「Show HN: 1-Bit Bonsai, the First Commerc」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P1 本周发（讨论还在活跃期），推荐平台：LinkedIn（行业观察文章） + X（摘要快讯分享）。",
->>>>>>> Stashed changes
       "official_product_focus": "EdgeOne",
       "official_angle_cn": "从 Show HN: 1-Bit Bonsai, the First Commerc 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
       "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",

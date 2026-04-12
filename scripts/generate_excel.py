@@ -149,7 +149,7 @@ def create_daily_excel(date_str, csv_path, output_path):
             cell.border = THIN_BORDER
 
         # P0/P1 行高亮
-        priority = row.get("发布优先级", "")
+        priority = row.get("发布优先级", "") or ""
         if priority.startswith("P0"):
             for ci in range(1, len(cols) + 1):
                 ws.cell(row=ri, column=ci).fill = P0_FILL
@@ -163,9 +163,9 @@ def create_daily_excel(date_str, csv_path, output_path):
     # === Sheet 2: 精选话题 ===
     ws2 = wb.create_sheet("精选话题")
     selected = [r for r in rows
-                if (r.get("发布优先级", "").startswith("P0") or r.get("发布优先级", "").startswith("P1"))
-                and len((r.get("腾讯云结合点", "") or "").strip()) > 5
-                and (r.get("腾讯云结合点", "") or "").strip() != "无"]
+                if ((r.get("发布优先级") or "").startswith("P0") or (r.get("发布优先级") or "").startswith("P1"))
+                and len((r.get("腾讯云结合点") or "").strip()) > 5
+                and (r.get("腾讯云结合点") or "").strip() != "无"]
 
     # 精选表头
     selected_cols = ["标题", "来源Key", "综合评分", "与腾讯云结合度", "发布优先级",
@@ -229,7 +229,7 @@ def create_master_excel(output_dir, output_path):
             cell.alignment = Alignment(vertical="top", wrap_text=True)
             cell.border = THIN_BORDER
 
-        priority = row.get("发布优先级", "")
+        priority = row.get("发布优先级", "") or ""
         if priority.startswith("P0"):
             for ci in range(1, len(cols) + 1):
                 ws.cell(row=ri, column=ci).fill = P0_FILL

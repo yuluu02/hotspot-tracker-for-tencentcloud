@@ -3,11 +3,7 @@
     "source": "GitHub Trending",
     "title": "anthropics/claude-code - Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
     "url": "https://github.com/anthropics/claude-code",
-<<<<<<< Updated upstream
-    "heat": "102,131 stars",
-=======
     "heat": "102,217 stars",
->>>>>>> Stashed changes
     "time": "Today",
     "developer_name": "anthropics",
     "developer_url": "https://github.com/anthropics",
@@ -114,21 +110,6 @@
     "developer_profile": {
       "github_username": "anthropics",
       "profile_url": "https://github.com/anthropics",
-<<<<<<< Updated upstream
-      "name": "Anthropic",
-      "bio": "",
-      "company": "",
-      "location": "United States of America",
-      "blog": "https://anthropic.com",
-      "twitter_username": "",
-      "email": "",
-      "followers": 44025,
-      "following": 0,
-      "public_repos": 78,
-      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
-      "social_links": [],
-      "is_org": true
-=======
       "name": "",
       "bio": "",
       "company": "",
@@ -142,18 +123,13 @@
       "avatar_url": "",
       "social_links": [],
       "is_org": false
->>>>>>> Stashed changes
     }
   },
   {
     "source": "GitHub Trending",
     "title": "microsoft/VibeVoice - Open-Source Frontier Voice AI",
     "url": "https://github.com/microsoft/VibeVoice",
-<<<<<<< Updated upstream
-    "heat": "34,584 stars",
-=======
     "heat": "34,595 stars",
->>>>>>> Stashed changes
     "time": "Today",
     "developer_name": "microsoft",
     "developer_url": "https://github.com/microsoft",
@@ -243,19 +219,6 @@
     "developer_profile": {
       "github_username": "microsoft",
       "profile_url": "https://github.com/microsoft",
-<<<<<<< Updated upstream
-      "name": "Microsoft",
-      "bio": "Open source projects and samples from Microsoft",
-      "company": "",
-      "location": "Redmond, WA",
-      "blog": "https://opensource.microsoft.com",
-      "twitter_username": "OpenAtMicrosoft",
-      "email": "opensource@microsoft.com",
-      "followers": 116324,
-      "following": 0,
-      "public_repos": 7728,
-      "avatar_url": "https://avatars.githubusercontent.com/u/6154722?v=4",
-=======
       "name": "",
       "bio": "",
       "company": "",
@@ -267,138 +230,20 @@
       "following": 0,
       "public_repos": 0,
       "avatar_url": "",
->>>>>>> Stashed changes
       "social_links": [
         {
           "platform": "twitter",
           "url": "https://x.com/OpenAtMicrosoft"
         }
       ],
-<<<<<<< Updated upstream
-      "is_org": true
-    }
-  },
-  {
-    "source": "GitHub Trending",
-    "title": "google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
-    "url": "https://github.com/google-research/timesfm",
-    "heat": "12,300 stars",
-    "time": "Today",
-    "developer_name": "google-research",
-    "developer_url": "https://github.com/google-research",
-    "developer_email": "",
-    "today_stars": "380 stars today",
-    "language": "Python",
-    "summary": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
-    "content": "# TimesFM\n\nTimesFM (Time Series Foundation Model) is a pretrained time-series foundation\nmodel developed by Google Research for time-series forecasting.\n\n*   Paper:\n    A decoder-only foundation model for time-series forecasting,\n    ICML 2024.\n*   All checkpoints:\n    TimesFM Hugging Face Collection.\n*   Google Research blog.\n*   TimesFM in BigQuery:\n    an official Google product.\n\nThis open version is not an officially supported Google product.\n\n**Latest Model Version:** TimesFM 2.5\n\n**Archived Model Versions:**\n\n-   1.0 and 2.0: relevant code archived in the sub directory `v1`. You can `pip\n    install timesfm==1.3.0` to install an older version of this package to load\n    them.\n\n## Update - Mar. 19, 2026\n\nHuge shoutout to @borealBytes! TimesFM SKILLS.md is out.\n\n## Update - Oct. 29, 2025\n\nAdded back the covariate support through XReg for TimesFM 2.5.\n\n## Update - Sept. 15, 2025\n\nTimesFM 2.5 is out!\n\nComparing to TimesFM 2.0, this new 2.5 model:\n\n-   uses 200M parameters, down from 500M.\n-   supports up to 16k context length, up from 2048.\n-   supports continuous quantile forecast up to 1k horizon via an optional 30M\n    quantile head.\n-   gets rid of the `frequency` indicator.\n-   has a couple of new forecasting flags.\n\nAlong with the model upgrade we have also upgraded the inference API. This repo\nwill be under construction over the next few weeks to\n\n1.  add support for an upcoming Flax version of the model (faster inference).\n2.  add back covariate support.\n3.  populate more docstrings, docs and notebook.\n\n### Install\n\n1.  Clone the repository:\n    ```shell\n    git clone https://github.com/google-research/timesfm.git\n    cd timesfm\n    ```\n\n2.  Create a virtual environment and install dependencies using `uv`:\n    ```shell\n    # Create a virtual environment\n    uv venv\n    \n    # Activate the environment\n    source .venv/bin/activate\n    \n    # Install the package in editable mode with torch\n    uv pip install -e .[torch]\n    # Or with flax\n    uv pip install -e .[flax]\n    # Or XReg is needed\n    uv pip install -e .[xreg]\n    ```\n\n3. [Optional] Install your preferred `torch` / `jax` backend based on your OS and accelerators\n(CPU, GPU, TPU or Apple Silicon).:\n\n-   Install PyTorch.\n-   Install Jax\n    for Flax.\n\n### Code Example\n\n```python\nimport torch\nimport numpy as np\nimport timesfm\n\ntorch.set_float32_matmul_precision(\"high\")\n\nmodel = timesfm.TimesFM_2p5_200M_torch.from_pretrained(\"google/timesfm-2.5-200m-pytorch\")\n\nmodel.compile(\n    timesfm.ForecastConfig(\n        max_context=1024,\n        max_horizon=256,\n        normalize_inputs=True,\n        use_continuous_quantile_head=True,\n        force_flip_invariance=True,\n        infer_is_positive=True,\n        fix_quantile_crossing=True,\n    )\n)\npoint_forecast, quantile_forecast = model.forecast(\n    horizon=12,\n    inputs=[\n        np.linspace(0, 1, 100),\n        np.sin(np.linspace(0, 20, 67)),\n    ],  # Two dummy inputs\n)\npoint_forecast.shape  # (2, 12)\nquantile_forecast.shape  # (2, 12, 10",
-    "analysis": {
-      "is_cloud": true,
-      "is_ai": true,
-      "is_anxiety": false,
-      "cloud_score": 1,
-      "ai_score": 1,
-      "anxiety_score": 0,
-      "cloud_hits": [
-        "gpu"
-      ],
-      "ai_hits": [
-        "inference"
-      ],
-      "anxiety_hits": [],
-      "topic": "技术分享",
-      "topic_type": "开发者话题",
-      "products": [
-        "HuggingFace"
-      ],
-      "competitors": [],
-      "competitor_products": [],
-      "techs": [
-        "Python"
-      ],
-      "tone": "中立资讯",
-      "detail_brief": "google-research/timesfm: TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
-      "heat_score": 9.0,
-      "timeliness_score": 10.0,
-      "composite_score": 4.9,
-      "tcloud_relevance": 0.2,
-      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
-      "tcloud_products": [],
-      "tcloud_reasons": [],
-      "tcloud_evidence": [],
-      "tcloud_primary_product": "",
-      "tcloud_relation_type": "待人工判断",
-      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
-      "tcloud_official_matches": [],
-      "tcloud_priority_matches": [],
-      "editorial_angles": [
-        "技术科普",
-        "教程拆解"
-      ],
-      "editorial_angles_text": "技术科普 + 教程拆解",
-      "publish_priority": "P2 观察中",
-      "recommended_platforms": [
-        "Reddit（直接参与讨论）",
-        "LinkedIn（发教程文章）",
-        "Discord（开发者社区互动）"
-      ],
-      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
-      "editorial_brief": "话题类型：开发者话题\n可用角度：「google-research/timesfm - TimesFM (Time Series Fo…」（google-research/timesfm: TimesFM (Time Series Foundation Mo…），涉及 Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
-      "social_recommendation": "「google-research/timesfm - TimesFM (Time…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
-      "official_product_focus": "",
-      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
-      "visual_brief": "主视觉用 timesfm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
-      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
-      "platform_copies": {
-        "primary_product": "",
-        "product_display": "",
-        "relation_type": "待人工判断",
-        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
-        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
-        "visual_brief": "主视觉用 timesfm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
-        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
-        "x_cn": "google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
-        "x_en": "google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
-        "discord_cn": "今天看到一条值得开发者关注的热点：google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
-        "discord_en": "A developer trend worth discussing today: google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
-        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
-        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
-        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
-        "reddit_body_cn": "看到这条热点：google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
-        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
-        "reddit_body_en": "A recent trend caught my eye: google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
-      }
-    },
-    "summary_cn": "TimesFM（时间序列基础模型）是 Google Research 开发的用于时间序列预测的预训练时间序列基础模型。",
-    "developer_profile": {
-      "github_username": "google-research",
-      "profile_url": "https://github.com/google-research",
-      "name": "Google Research",
-      "bio": "",
-      "company": "",
-      "location": "Earth",
-      "blog": "https://research.google",
-      "twitter_username": "",
-      "email": "",
-      "followers": 14996,
-      "following": 0,
-      "public_repos": 342,
-      "avatar_url": "https://avatars.githubusercontent.com/u/43830688?v=4",
-      "social_links": [],
-      "is_org": true
-=======
       "is_org": false
->>>>>>> Stashed changes
     }
   },
   {
     "source": "GitHub Trending",
     "title": "luongnv89/claude-howto - A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
     "url": "https://github.com/luongnv89/claude-howto",
-<<<<<<< Updated upstream
-    "heat": "15,887 stars",
-=======
     "heat": "15,910 stars",
->>>>>>> Stashed changes
     "time": "Today",
     "developer_name": "luongnv89",
     "developer_url": "https://github.com/luongnv89",
@@ -499,21 +344,6 @@
     "developer_profile": {
       "github_username": "luongnv89",
       "profile_url": "https://github.com/luongnv89",
-<<<<<<< Updated upstream
-      "name": "Luong NGUYEN",
-      "bio": "Hi, I am Luong",
-      "company": "",
-      "location": "Paris, France",
-      "blog": "https://luongnv.com",
-      "twitter_username": "luongnv89",
-      "email": "",
-      "followers": 400,
-      "following": 20,
-      "public_repos": 114,
-      "avatar_url": "https://avatars.githubusercontent.com/u/3288457?v=4",
-      "social_links": [
-        {
-=======
       "name": "",
       "bio": "Hi, I am Luong",
       "company": "",
@@ -531,19 +361,12 @@
           "url": "https://luongnv.com"
         },
         {
->>>>>>> Stashed changes
           "platform": "twitter",
           "url": "https://x.com/luongnv89"
         },
         {
           "platform": "linkedin",
           "url": "https://linkedin.com/in/luongnv89"
-<<<<<<< Updated upstream
-        },
-        {
-          "platform": "unknown",
-          "url": "https://luongnv.com"
-=======
 >>>>>>> Stashed changes
         }
       ],
@@ -554,11 +377,7 @@
     "source": "GitHub Trending",
     "title": "axios/axios - Promise based HTTP client for the browser and node.js",
     "url": "https://github.com/axios/axios",
-<<<<<<< Updated upstream
-    "heat": "108,890 stars",
-=======
     "heat": "108,891 stars",
->>>>>>> Stashed changes
     "time": "Today",
     "developer_name": "axios",
     "developer_url": "https://github.com/axios",
@@ -644,21 +463,6 @@
     "developer_profile": {
       "github_username": "axios",
       "profile_url": "https://github.com/axios",
-<<<<<<< Updated upstream
-      "name": "axios",
-      "bio": "",
-      "company": "",
-      "location": "",
-      "blog": "https://axios-http.com",
-      "twitter_username": "",
-      "email": "",
-      "followers": 2325,
-      "following": 0,
-      "public_repos": 4,
-      "avatar_url": "https://avatars.githubusercontent.com/u/32372333?v=4",
-      "social_links": [],
-      "is_org": true
-=======
       "name": "",
       "bio": "",
       "company": "",
@@ -672,18 +476,13 @@
       "avatar_url": "",
       "social_links": [],
       "is_org": false
->>>>>>> Stashed changes
     }
   },
   {
     "source": "GitHub Trending",
     "title": "openai/codex - Lightweight coding agent that runs in your terminal",
     "url": "https://github.com/openai/codex",
-<<<<<<< Updated upstream
-    "heat": "71,946 stars",
-=======
     "heat": "71,958 stars",
->>>>>>> Stashed changes
     "time": "Today",
     "developer_name": "openai",
     "developer_url": "https://github.com/openai",
@@ -789,21 +588,6 @@
     "developer_profile": {
       "github_username": "openai",
       "profile_url": "https://github.com/openai",
-<<<<<<< Updated upstream
-      "name": "OpenAI",
-      "bio": "",
-      "company": "",
-      "location": "",
-      "blog": "https://openai.com/",
-      "twitter_username": "",
-      "email": "",
-      "followers": 117034,
-      "following": 0,
-      "public_repos": 238,
-      "avatar_url": "https://avatars.githubusercontent.com/u/14957082?v=4",
-      "social_links": [],
-      "is_org": true
-=======
       "name": "",
       "bio": "",
       "company": "",
@@ -817,18 +601,13 @@
       "avatar_url": "",
       "social_links": [],
       "is_org": false
->>>>>>> Stashed changes
     }
   },
   {
     "source": "GitHub Trending",
     "title": "f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
     "url": "https://github.com/f/prompts.chat",
-<<<<<<< Updated upstream
-    "heat": "156,165 stars",
-=======
     "heat": "156,180 stars",
->>>>>>> Stashed changes
     "time": "Today",
     "developer_name": "f",
     "developer_url": "https://github.com/f",
@@ -948,21 +727,6 @@
     "developer_profile": {
       "github_username": "f",
       "profile_url": "https://github.com/f",
-<<<<<<< Updated upstream
-      "name": "Fatih Kadir Akın",
-      "bio": "Building prompts.chat — JavaScript Developer. Ruby Lover. Author. — @GitHub Star.",
-      "company": "@Teknasyon ",
-      "location": "Istanbul, Turkey",
-      "blog": "http://fka.dev",
-      "twitter_username": "fkadev",
-      "email": "",
-      "followers": 10850,
-      "following": 159,
-      "public_repos": 289,
-      "avatar_url": "https://avatars.githubusercontent.com/u/196477?v=4",
-      "social_links": [
-        {
-=======
       "name": "",
       "bio": "Building prompts.chat — JavaScript Developer. Ruby Lover. Author. —@githubStar.",
       "company": "",
@@ -980,7 +744,6 @@
           "url": "http://fka.dev"
         },
         {
->>>>>>> Stashed changes
           "platform": "twitter",
           "url": "https://x.com/fkadev"
         },
@@ -989,25 +752,12 @@
           "url": "https://linkedin.com/in/fatihkadirakin"
         },
         {
-<<<<<<< Updated upstream
-          "platform": "instagram",
-          "url": "https://instagram.com/fkadev"
-        },
-        {
-          "platform": "bluesky",
-          "url": "https://bsky.app/profile/fka.dev"
-        },
-        {
-          "platform": "unknown",
-          "url": "http://fka.dev"
-=======
           "platform": "unknown",
           "url": "https://instagram.com/fkadev"
         },
         {
           "platform": "unknown",
           "url": "https://bsky.app/profile/fka.dev"
->>>>>>> Stashed changes
         }
       ],
       "is_org": false

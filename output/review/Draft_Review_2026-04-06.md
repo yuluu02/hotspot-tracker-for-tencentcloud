@@ -73,28 +73,9 @@
 ---
 
 
-<<<<<<< Updated upstream
-# Hunyuan — 今日内容 (4 条)
-
-## 1. P1 本周发 · Gemma 4 on iPhone
-
-**写什么**: 围绕 Gemma 4 on iPhone 的核心功能（‎Google AI Edge Gallery-app - App Store Google AI Edg
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🧠 "Gemma 4 on iPhone" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
-
-*参考: [Gemma 4 on iPhone](https://apps.apple.com/nl/app/google-ai-edge-gallery/id6749645337)*
-
----
-
-## 2. P1 本周发 · google-ai-edge/gallery
-=======
 # Hunyuan — 今日内容 (3 条)
 
 ## 1. P1 本周发 · google-ai-edge/gallery
->>>>>>> Stashed changes
 
 **写什么**: 围绕 gallery 的核心功能（google-ai-edge/gallery: A gallery that showcases on-device ML/G
 
@@ -107,11 +88,7 @@
 
 ---
 
-<<<<<<< Updated upstream
-## 3. P0 今天发 · Blaizzy/mlx-vlm
-=======
 ## 2. P0 今天发 · Blaizzy/mlx-vlm
->>>>>>> Stashed changes
 
 **写什么**: 围绕 mlx-vlm 的核心功能（Blaizzy/mlx-vlm: MLX-VLM is a package for inference and fine-tu
 
@@ -124,11 +101,7 @@
 
 ---
 
-<<<<<<< Updated upstream
-## 4. P0 今天发 · google-ai-edge/LiteRT-LM
-=======
 ## 3. P0 今天发 · google-ai-edge/LiteRT-LM
->>>>>>> Stashed changes
 
 **写什么**: 围绕 LiteRT-LM 的核心功能（# LiteRT-LM LiteRT-LM is Google's production-ready, high-perf
 

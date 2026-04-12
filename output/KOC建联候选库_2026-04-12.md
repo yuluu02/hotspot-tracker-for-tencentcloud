@@ -14,108 +14,63 @@
 
 - 🔗 主页：https://github.com/microsoft
 - 📊 评分：10.0 · 类型：开源组织
-<<<<<<< Updated upstream
-- 👥 Followers：117216
-- 📝 Bio：Open source projects and samples from Microsoft
-- 📬 联系方式：📧 opensource@microsoft.com | 🐦 @OpenAtMicrosoft | 🔗 https://x.com/OpenAtMicrosoft
-- 💡 合作切入角度：高影响力开发者(117216 followers)，适合深度合作 | 有 Twitter(@OpenAtMicrosoft)，可直接 DM 建联 | 关联项目：microsoft/markitdown - Python tool for c
-=======
 - 👥 Followers：117205
 - 📝 Bio：Open source projects and samples from Microsoft
 - 📬 联系方式：📧 opensource@microsoft.com | 🐦 @OpenAtMicrosoft | 🔗 https://x.com/OpenAtMicrosoft
 - 💡 合作切入角度：高影响力开发者(117205 followers)，适合深度合作 | 有 Twitter(@OpenAtMicrosoft)，可直接 DM 建联 | 关联项目：microsoft/markitdown - Python tool for c
->>>>>>> Stashed changes
 - 🔗 关联项目：[microsoft/markitdown - Python tool for converting ](https://github.com/microsoft/markitdown)
 
 ### 2. Jiayuan Zhang (GitHub)
 
 - 🔗 主页：https://github.com/forrestchang
 - 📊 评分：9.0 · 类型：开源开发者
-<<<<<<< Updated upstream
-- 👥 Followers：1122
-- 📝 Bio：Building @multica-ai 
-- 📬 联系方式：📧 jiayuan@multica.ai | 🐦 @jiayuan_jy | 🔗 https://twitter.com/jiayuan_jy | 🔗 http://blog.jiayuanzhang.com/
-- 💡 合作切入角度：高影响力开发者(1122 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@jiayuan_jy)，可直接 DM 建联
-=======
 - 👥 Followers：1117
 - 📝 Bio：Building @multica-ai 
 - 📬 联系方式：📧 jiayuan@multica.ai | 🐦 @jiayuan_jy | 🔗 https://twitter.com/jiayuan_jy | 🔗 http://blog.jiayuanzhang.com/
 - 💡 合作切入角度：高影响力开发者(1117 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@jiayuan_jy)，可直接 DM 建联
->>>>>>> Stashed changes
 - 🔗 关联项目：[forrestchang/andrej-karpathy-skills - A single CLA](https://github.com/forrestchang/andrej-karpathy-skills)
 
 ### 3. OpenBMB (GitHub)
 
 - 🔗 主页：https://github.com/OpenBMB
 - 📊 评分：9.0 · 类型：开源组织
-<<<<<<< Updated upstream
-- 👥 Followers：6056
-- 📝 Bio：OpenBMB (Open Lab for Big Model Base) aims to build foundation models and systems towards AGI.
-- 📬 联系方式：📧 openbmb@gmail.com | 🐦 @OpenBMB | 🔗 https://twitter.com/OpenBMB | 🔗 https://space.bilibili.com/493282299
-- 💡 合作切入角度：高影响力开发者(6056 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@OpenBMB)，可直接 DM 建联
-=======
 - 👥 Followers：6055
 - 📝 Bio：OpenBMB (Open Lab for Big Model Base) aims to build foundation models and systems towards AGI.
 - 📬 联系方式：📧 openbmb@gmail.com | 🐦 @OpenBMB | 🔗 https://twitter.com/OpenBMB | 🔗 https://space.bilibili.com/493282299
 - 💡 合作切入角度：高影响力开发者(6055 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@OpenBMB)，可直接 DM 建联
->>>>>>> Stashed changes
 - 🔗 关联项目：[OpenBMB/VoxCPM - VoxCPM2: Tokenizer-Free TTS for M](https://github.com/OpenBMB/VoxCPM)
 
 ### 4. Nous Research (GitHub)
 
 - 🔗 主页：https://github.com/NousResearch
 - 📊 评分：7.5 · 类型：开源组织
-<<<<<<< Updated upstream
-- 👥 Followers：2426
-- 📬 联系方式：🐦 @nousresearch | 🔗 https://twitter.com/nousresearch
-- 💡 合作切入角度：高影响力开发者(2426 followers)，适合深度合作 | 有 Twitter(@nousresearch)，可直接 DM 建联 | 关联项目：NousResearch/hermes-agent - The agent th
-=======
 - 👥 Followers：2414
 - 📬 联系方式：🐦 @nousresearch | 🔗 https://twitter.com/nousresearch
 - 💡 合作切入角度：高影响力开发者(2414 followers)，适合深度合作 | 有 Twitter(@nousresearch)，可直接 DM 建联 | 关联项目：NousResearch/hermes-agent - The agent th
->>>>>>> Stashed changes
 - 🔗 关联项目：[NousResearch/hermes-agent - The agent that grows w](https://github.com/NousResearch/hermes-agent)
 
 ### 5. Cole Medin (GitHub)
 
 - 🔗 主页：https://github.com/coleam00
 - 📊 评分：6.5 · 类型：开源开发者
-<<<<<<< Updated upstream
-- 👥 Followers：6578
-- 📝 Bio：Generative AI specialist with a wide range of experience developing AI Agents, RAG solutions, local 
-- 📬 联系方式：📺 https://www.youtube.com/@ColeMedin | 🔗 https://dynamous.youcanbook.me/
-- 💡 合作切入角度：高影响力开发者(6578 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 关联项目：coleam00/Archon - The first open-source 
-=======
 - 👥 Followers：6576
 - 📝 Bio：Generative AI specialist with a wide range of experience developing AI Agents, RAG solutions, local 
 - 📬 联系方式：📺 https://www.youtube.com/@ColeMedin | 🔗 https://dynamous.youcanbook.me/
 - 💡 合作切入角度：高影响力开发者(6576 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 关联项目：coleam00/Archon - The first open-source 
->>>>>>> Stashed changes
 - 🔗 关联项目：[coleam00/Archon - The first open-source harness bu](https://github.com/coleam00/Archon)
 
 ### 6. Shayan Rais (GitHub)
 
 - 🔗 主页：https://github.com/shanraisshan
 - 📊 评分：6.0 · 类型：开源开发者
-<<<<<<< Updated upstream
-- 👥 Followers：751
-- 📝 Bio：Software Engineer
-- 📬 联系方式：🐦 @shanraisshan | 🔗 https://twitter.com/shanraisshan | 💼 http://linkedin.com/in/shanraisshan/
-- 💡 合作切入角度：活跃开发者(751 followers)，适合技术内容共创 | 有 Twitter(@shanraisshan)，可直接 DM 建联 | 关联项目：shanraisshan/claude-code-best-practice -
-=======
 - 👥 Followers：749
 - 📝 Bio：Software Engineer
 - 📬 联系方式：🐦 @shanraisshan | 🔗 https://twitter.com/shanraisshan | 💼 http://linkedin.com/in/shanraisshan/
 - 💡 合作切入角度：活跃开发者(749 followers)，适合技术内容共创 | 有 Twitter(@shanraisshan)，可直接 DM 建联 | 关联项目：shanraisshan/claude-code-best-practice -
->>>>>>> Stashed changes
 - 🔗 关联项目：[shanraisshan/claude-code-best-practice - practice ](https://github.com/shanraisshan/claude-code-best-practice)
 
 ---
 
 ## 🐙 GitHub 开源开发者
 
-<<<<<<< Updated upstream
-- **multica-ai** (75 followers) — [multica-ai](https://github.com/multica-ai) · 暂无公开联系方式
-=======
 - **multica-ai** (74 followers) — [multica-ai](https://github.com/multica-ai) · 暂无公开联系方式
->>>>>>> Stashed changes
