@@ -1,6 +1,6 @@
 # 🤝 KOC 建联候选库
 
-> 2026-04-13 · 共发现 6 位 KOC 候选人
+> 2026-04-13 · 共发现 8 位 KOC 候选人
 
 **用途**：以下是从今日热点中自动提取的潜在合作对象，
 包括 GitHub 开源开发者、Twitter/Reddit 活跃讨论者。
@@ -8,11 +8,70 @@
 
 ---
 
+## ⭐ 高价值 KOC（评分 ≥ 6）
+
+### 1. Microsoft (GitHub)
+
+- 🔗 主页：https://github.com/microsoft
+- 📊 评分：10.0 · 类型：开源组织
+- 👥 Followers：117321
+- 📝 Bio：Open source projects and samples from Microsoft
+- 📬 联系方式：📧 opensource@microsoft.com | 🐦 @OpenAtMicrosoft | 🔗 https://x.com/OpenAtMicrosoft
+- 💡 合作切入角度：高影响力开发者(117321 followers)，适合深度合作 | 有 Twitter(@OpenAtMicrosoft)，可直接 DM 建联 | 关联项目：microsoft/markitdown - Python tool for c
+- 🔗 关联项目：[microsoft/markitdown - Python tool for converting ](https://github.com/microsoft/markitdown)
+
+### 2. Jiayuan Zhang (GitHub)
+
+- 🔗 主页：https://github.com/forrestchang
+- 📊 评分：9.0 · 类型：开源开发者
+- 👥 Followers：1195
+- 📝 Bio：Building @multica-ai 
+- 📬 联系方式：📧 jiayuan@multica.ai | 🐦 @jiayuan_jy | 🔗 https://twitter.com/jiayuan_jy | 🔗 http://blog.jiayuanzhang.com/
+- 💡 合作切入角度：高影响力开发者(1195 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@jiayuan_jy)，可直接 DM 建联
+- 🔗 关联项目：[forrestchang/andrej-karpathy-skills - A single CLA](https://github.com/forrestchang/andrej-karpathy-skills)
+
+### 3. OpenBMB (GitHub)
+
+- 🔗 主页：https://github.com/OpenBMB
+- 📊 评分：9.0 · 类型：开源组织
+- 👥 Followers：6070
+- 📝 Bio：OpenBMB (Open Lab for Big Model Base) aims to build foundation models and systems towards AGI.
+- 📬 联系方式：📧 openbmb@gmail.com | 🐦 @OpenBMB | 🔗 https://twitter.com/OpenBMB | 🔗 https://space.bilibili.com/493282299
+- 💡 合作切入角度：高影响力开发者(6070 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@OpenBMB)，可直接 DM 建联
+- 🔗 关联项目：[OpenBMB/VoxCPM - VoxCPM2: Tokenizer-Free TTS for M](https://github.com/OpenBMB/VoxCPM)
+
+### 4. Nous Research (GitHub)
+
+- 🔗 主页：https://github.com/NousResearch
+- 📊 评分：7.5 · 类型：开源组织
+- 👥 Followers：2580
+- 📬 联系方式：🐦 @nousresearch | 🔗 https://twitter.com/nousresearch
+- 💡 合作切入角度：高影响力开发者(2580 followers)，适合深度合作 | 有 Twitter(@nousresearch)，可直接 DM 建联 | 关联项目：NousResearch/hermes-agent - The agent th
+- 🔗 关联项目：[NousResearch/hermes-agent - The agent that grows w](https://github.com/NousResearch/hermes-agent)
+
+### 5. Cole Medin (GitHub)
+
+- 🔗 主页：https://github.com/coleam00
+- 📊 评分：6.5 · 类型：开源开发者
+- 👥 Followers：6596
+- 📝 Bio：Generative AI specialist with a wide range of experience developing AI Agents, RAG solutions, local 
+- 📬 联系方式：📺 https://www.youtube.com/@ColeMedin | 🔗 https://dynamous.youcanbook.me/
+- 💡 合作切入角度：高影响力开发者(6596 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 关联项目：coleam00/Archon - The first open-source 
+- 🔗 关联项目：[coleam00/Archon - The first open-source harness bu](https://github.com/coleam00/Archon)
+
+### 6. Shayan Rais (GitHub)
+
+- 🔗 主页：https://github.com/shanraisshan
+- 📊 评分：6.0 · 类型：开源开发者
+- 👥 Followers：788
+- 📝 Bio：Software Engineer
+- 📬 联系方式：🐦 @shanraisshan | 🔗 https://twitter.com/shanraisshan | 💼 http://linkedin.com/in/shanraisshan/
+- 💡 合作切入角度：活跃开发者(788 followers)，适合技术内容共创 | 有 Twitter(@shanraisshan)，可直接 DM 建联 | 关联项目：shanraisshan/claude-code-best-practice -
+- 🔗 关联项目：[shanraisshan/claude-code-best-practice - practice ](https://github.com/shanraisshan/claude-code-best-practice)
+
+---
+
 ## 🐙 GitHub 开源开发者
 
-- **forrestchang** (0 followers) — [forrestchang](https://github.com/forrestchang) · 📧 jiayuan@multica.ai | 🔗 http://blog.jiayuanzhang.com/ | 🔗 h
-- **microsoft** (0 followers) — [microsoft](https://github.com/microsoft) · 📧 opensource@microsoft.com | 🔗 https://x.com/OpenAtMicrosoft
-- **OpenBMB** (0 followers) — [OpenBMB](https://github.com/OpenBMB) · 📧 openbmb@gmail.com | 🔗 https://twitter.com/OpenBMB | 🔗 http
-- **NousResearch** (0 followers) — [NousResearch](https://github.com/NousResearch) · 🔗 https://twitter.com/nousresearch
-- **coleam00** (0 followers) — [coleam00](https://github.com/coleam00) · 🔗 https://dynamous.youcanbook.me/ | 📺 https://www.youtube.co
-- **shanraisshan** (0 followers) — [shanraisshan](https://github.com/shanraisshan) · 💼 http://linkedin.com/in/shanraisshan/ | 🔗 https://twitter.c
+- **ShiYu** (500 followers) — [shiyu-coder](https://github.com/shiyu-coder) · 暂无公开联系方式
+- **multica-ai** (90 followers) — [multica-ai](https://github.com/multica-ai) · 暂无公开联系方式
