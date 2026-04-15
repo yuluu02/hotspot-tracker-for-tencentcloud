@@ -1,0 +1,464 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Claude Code Routines",
+    "url": "https://code.claude.com/docs/en/routines",
+    "hn_url": "https://news.ycombinator.com/item?id=47768133",
+    "heat": "487 points",
+    "time": "11 hours ago",
+    "developer_name": "matthieu_bl",
+    "developer_url": "https://news.ycombinator.com/user?id=matthieu_bl",
+    "content": "Automate work with routines - Claude Code Docs Skip to main content Claude Code Docs home page English Search... ⌘ K Ask AI Search... Navigation Claude Code on the web Automate work with routines Getting started Build with Claude Code Deployment Administration Configuration Reference Agent SDK What's New Resources Getting started Overview Quickstart Changelog Core concepts How Claude Code works Extend Claude Code Explore the .claude directory Explore the context window Use Claude Code Store instructions and memories Permission modes Common workflows Best practices Platforms and integrations Overview Remote Control Claude Code on the web Get started Reference Routines Plan in the cloud Claude Code on desktop Chrome extension (beta) Computer use (preview) Visual Studio Code JetBrains IDEs Code review & CI/CD Claude Code in Slack On this page Example use cases Create a routine Create from the web Create from the CLI Create from the Desktop app Configure triggers Add a schedule trigger Add an API trigger Trigger a routine API reference Add a GitHub trigger Supported events Filter pull requests How sessions map to events Manage routines View and interact with runs Edit and control routines Repositories and branch permissions Connectors Environments Usage and limits Related resources Routines are in research preview. Behavior, limits, and the API surface may change. A routine is a saved Claude Code configuration: a prompt, one or more repositories, and a set of connectors , packaged once and run automatically. Routines execute on Anthropic-managed cloud infrastructure, so they keep working when your laptop is closed. Each routine can have one or more triggers attached to it: Scheduled : run on a recurring cadence like hourly, nightly, or weekly API : trigger on demand by sending an HTTP POST to a per-routine endpoint with a bearer token GitHub : run automatically in response to repository events such as pull requests, pushes, issues, or workflow runs A single routine can combine triggers. For example, a PR review routine can run nightly, trigger from a deploy script, and also react to every new PR. Routines are available on Pro, Max, Team, and Enterprise plans with Claude Code on the web enabled. Create and manage them at claude.ai/code/routines , or from the CLI with /schedule . This page covers creating a routine, configuring each trigger type, managing runs, and how usage limits apply. ​ Example use cases Each example pairs a trigger type with the kind of work routines are suited to: unattended, repeatable, and tied to a clear outcome. Backlog maintenance. A schedule trigger runs every weeknight against your issue tracker via a connector. The routine reads issues opened since the last run, applies labels, assigns owners based on the area of code referenced, and posts a summary to Slack so the team starts the day with a groomed queue. Alert triage. Your monitoring tool calls the routine’s API endpoint when an error threshold is crossed, passing the a",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "prompt",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "React"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Automate work with routines - Claude Code Docs content Claude Code Docs home page English Search. ⌘ K Ask AI Search. claude directory Explore the context window Use Claude Code Store instructions and memories Permission modes Common workflows Best practices Platforms and integrations Overview Remote Control Claude Code on the web Get started Reference Routines Plan in the cloud Claude Code on desktop Chrome extension (beta) Computer use (preview) Visual Studio Code JetBrains IDEs Code review &…",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 6.3,
+      "tcloud_relevance": 5.5,
+      "tcloud_integration": "**Claude Code Routines** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Claude Code Routines** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Claude Code Routines** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Claude Code Routines」（Automate work with routines - Claude Code Docs content Clau…），涉及 Agent / React → 可写方向：涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Claude Code Routines」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 Claude Code Routines 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Claude Code Routines 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Automate work with routines - Claude Code Docs content Claude Code…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "Claude Code Routines. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Automate work with routines - Claude Code Docs content Claude Code…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Claude Code Routines. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Automate work with routines - Claude Code Docs content Claude Code…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Claude Code Routines** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Claude Code Routines. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Automate work with routines - Claude Code Docs content Claude Code…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Claude Code Routines. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Claude Code Routines：使用例程实现自动化工作 - Claude Code Docs 内容 Claude Code Docs 主页英文搜索。⌘ K 询问 AI 搜索。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "A communist Apple II and fourteen years of not knowing what you're testing",
+    "url": "https://llama.gs/blog/index.php/2026/04/10/friday-archaeology-a-communist-apple-ii-and-fourteen-years-of-not-knowing-what-youre-testing/",
+    "hn_url": "https://news.ycombinator.com/item?id=47724571",
+    "heat": "71 points",
+    "time": "5 hours ago",
+    "developer_name": "major4x",
+    "developer_url": "https://news.ycombinator.com/user?id=major4x",
+    "content": "Friday Archaeology: A Communist Apple II and Fourteen Years of Not Knowing What You’re Testing – Alexander Feldman's Blog Friday Archaeology: A Communist Apple II and Fourteen Years of Not Knowing What You’re Testing Written by alex in Engineering Archaeology , Projects It is Friday. KPMG , the consultancy behemoth that delivers business Venn diagrams for outrageous prices, informs us that 70 percent of UK business leaders will keep spending on AI even when they can’t prove it does anything — the consultancy helpfully suggests we stop calling it “investment” and start calling it a “strategic enabler for enterprise-wide transformation,” which is the corporate equivalent of renaming a hole in the ground a “subterranean opportunity space.” Meanwhile, OpenAI has put Stargate UK on ice , citing the cost of electricity and the regulatory environment, mere months after announcing it during a Trump state visit — one assumes the due diligence was conducted with the same rigour as the naming convention. AMD’s AI director reports that Claude Code has become “dumber and lazier” since February, based on analysis of 6,852 sessions and 234,760 tool calls, which is the most thorough performance review any AI has received and rather more than most human employees get. One notes that the AWS CEO, asked whether AI is overhyped , described the question as “one of the funnier questions I get” and then asked a room full of people who had each paid $4,000 to attend an AI conference whether they believed in AI. Asking turkeys to vote on Christmas, as it were. In this climate of expensive credulity naïveté, I thought we might spend a Friday doing something that we do on Fridays: looking backwards. Reverse engineering — the art of taking something apart to understand what it does — is the intellectual opposite of the current AI approach to technology, which is to build something enormous, declare it transformative, and hope nobody asks what it actually computes. The Правец (Pravetz): Bulgaria’s Apple II, Give or Take an Iron Curtain I grew up using Правец (Pravetz) computers — forgive the Cyrillic, but we Bulgarians invented the alphabet, even though half the Slavic world claims the credit, and besides, it makes any noun look like classified military hardware. Every Bulgarian of a certain age used one. The Правец 82 was the machine in my school, with its yellow plastic case, black keyboard, red RESET key, and the unmistakable aura of a computer that had been reverse-engineered from a capitalist original by engineers who had never seen Cupertino and didn’t need to. My first encounter with a personal computer was typing in a BASIC program that drew Lissajous figures in hi-res graphics. I was in the fourth grade. It was 1987. But I am digressing. IMKO-1 PC The story of the Bulgarian computer is worth telling properly. In 1979, engineer Ivan Marangozov at the Institute of Technical Cybernetics and Robotics (ИТКР) in Sofia built the IMKO-1 — the first Bulgarian personal comput",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "aws"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [
+        "AWS"
+      ],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "Friday Archaeology: A Communist Apple II and Fourteen Years of Not Knowing What You’re Testing – Alexander Feldman's Blog Friday Archaeology: A Communist Apple II and Fourteen Years of Not Knowing What You’re Testing Written by alex in Engineering Archaeology , Projects It is Friday. KPMG , the consultancy behemoth that delivers business Venn diagrams for outrageous prices, informs us that 70 percent of UK business leaders will keep spending on AI even when they can’t prove it does anything — t…",
+      "heat_score": 4.0,
+      "timeliness_score": 8.0,
+      "composite_score": 5.8,
+      "tcloud_relevance": 5.5,
+      "tcloud_integration": "**A communist Apple II and fourteen years ** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**A communist Apple II and fourteen years ** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**A communist Apple II and fourteen years ** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「A communist Apple II and fourteen years of not kn…」（Friday Archaeology: A Communist Apple II and Fourteen Years…） → 可写方向：涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「A communist Apple II and fourteen years…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 A communist Apple II and fourteen years  引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 A communist Apple II and fourteen years  引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Friday Archaeology: A Communist Apple II and Fourteen Years of Not…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "A communist Apple II and fourteen years of not knowing what you're testing. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Friday Archaeology: A Communist Apple II and Fourteen Years of Not…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: A communist Apple II and fourteen years of not knowing what you're testing. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Friday Archaeology: A Communist Apple II and Fourteen Years of Not…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**A communist Apple II and fourteen years ** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. A communist Apple II and fourteen years of not knowing what you're testing. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Friday Archaeology: A Communist Apple II and Fourteen Years of Not…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: A communist Apple II and fourteen years of not knowing what you're testing. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "A communist Apple II and fourteen years ：星期五考古学：共产主义苹果 II 和十四年不知道你在测试什么 – 亚历山大·费尔德曼的博客 星期五考古学：共产主义苹果 II 和十四年不知道你在测试什么由亚历克斯在工程考古学，项目中撰写，今天是星期五。毕马威 (KPMG) 是一家以高得离谱的价格提供商业维恩图的咨询巨头，它告诉我们，70% 的英国商界领袖将继续在人…"
+  },
+  {
+    "source": "Hacker News",
+    "title": "The Orange Pi 6 Plus",
+    "url": "https://taoofmac.com/space/reviews/2026/04/11/1900",
+    "hn_url": "https://news.ycombinator.com/item?id=47732535",
+    "heat": "137 points",
+    "time": "9 hours ago",
+    "developer_name": "rcarmo",
+    "developer_url": "https://news.ycombinator.com/user?id=rcarmo",
+    "content": "The Orange Pi 6 Plus - Tao of Mac ⚲ Rui Carmo Tao of Mac Apr 11 th 2026 · 24 min read · #ai #arm #cix-p1 #hardware #linux #npu #orangepi #reviews #sbc The Orange Pi 6 Plus This was a long one–I spent a fair bit of time with the Orange Pi 6 Plus over the past few months, and what I expected to be a quick look at another fast ARM board turned into one of those test runs where the hardware looks promising on paper, the software is wonky in exactly the wrong places, and you end up diving far more into boot chains, vendor GPU blobs and inference runtimes than you ever intended. The Orange Pi 6+ on a corner of my desk Unlike most of the ARM boards I’ve reviewed until now, this one is not an RK3588 board: The Orange Pi 6 Plus uses the CIX P1 (CD8180/CD8160), with 12 CPU cores, a Mali G720 GPU, a dedicated NPU and a wild set of specs for the form factor. Boards like this promise everything at once–homelab, edge AI, dual 5GbE, low power–but they only matter if the software gets out of the way. Disclaimer: Orange Pi supplied me with a 6 Plus free of charge, and, as usual, this article follows my review policy . And, for a change, I decided to make sure the software did exactly that, and made it my concern from the start–i.e., I built my own OS images for it (a fork of orangepi-build ) and went in a bit deeper than usual, spending around two months taking notes, benchmark logs and even Graphite telemetry as I went along. Hardware The Orange Pi 6 Plus board (image: Orange Pi) One of the reasons I wanted to test this board is that the SoC is the CIX P1 , which Orange Pi bills as a 12-core part with a combined 45 TOPS across CPU, GPU and NPU. The machine I tested came with: CIX P1 (CD8180/CD8160), 4×Cortex-A520 plus 8×Cortex-A720 cores 16GiB of RAM (roughly 14GiB visible to Linux) dual Realtek RTL8126 5GbE Realtek RTL8852BE Wi-Fi and Bluetooth card Mali G720 / Immortalis-class GPU A three-core Zhouyi NPU And if you’ve been paying attention to all my homelab testing, those two 5GbE ports alone make this more interesting than most hobbyist SBCs. But, of course, there is a lot more to expandability than that: Annotated board layout showing ports, headers and key components (image: Orange Pi) Hardware Info The CPU is interesting in itself–the fastest A720 cluster reaches about 2.6GHz, the A520s top out around 1.8GHz, so like many other big.LITTLE ARM architectures you get asymmetric clusters rather than a uniform twelve-core machine: Architecture: aarch64 CPU op-mode ( s ) : 64 -bit Byte Order: Little Endian CPU ( s ) : 12 On-line CPU ( s ) list: 0 -11 Vendor ID: ARM Model name: Cortex-A520 Core ( s ) per socket: 4 CPU max MHz: 1799 .9980 CPU min MHz: 799 .9990 ... Model name: Cortex-A720 Core ( s ) per socket: 8 CPU max MHz: 2600 .1980 CPU min MHz: 799 .8400 lspci is a bit more revealing, especially because you get to see where the dual 5GbE setup and Wi-Fi controller are placed–each seems to get its own PCI bridge: 0000 :60:00.0 PCI bridge: CIX Technology Group ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "edge",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "对比测评",
+      "detail_brief": "The Orange Pi 6 Plus - Tao of Mac ⚲ Rui Carmo Tao of Mac Apr 11 th 2026 · 24 min read · #ai #arm #cix-p1 #hardware #linux #npu #orangepi #reviews #sbc The Orange Pi 6 Plus This was a long one–I spent a fair bit of time with the Orange Pi 6 Plus over the past few months, and what I expected to be a quick look at another fast ARM board turned into one of those test runs where the hardware looks promising on paper, the software is wonky in exactly the wrong places, and you end up diving far more i…",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 4.0,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「The Orange Pi 6 Plus」（The Orange Pi 6 Plus - Tao of Mac ⚲ Rui Carmo Tao of Mac Ap…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「The Orange Pi 6 Plus」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "The Orange Pi 6 Plus - Tao of Mac ⚲ Rui Carmo Tao of Mac Apr 11 th…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "The Orange Pi 6 Plus. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：The Orange Pi 6 Plus - Tao of Mac ⚲ Rui Carmo Tao of Mac Apr 11 th…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: The Orange Pi 6 Plus. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。The Orange Pi 6 Plus - Tao of Mac ⚲ Rui Carmo Tao of Mac Apr 11 th…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. The Orange Pi 6 Plus. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：The Orange Pi 6 Plus - Tao of Mac ⚲ Rui Carmo Tao of Mac Apr 11 th…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: The Orange Pi 6 Plus. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "The Orange Pi 6 Plus：Orange Pi 6 Plus - Mac 的道 ⚲ Mac 的 Rui Carmo Tao 2026 年 4 月 11 日 · 24 分钟阅读 · #ai #arm #cix-p1 #hardware #linux #npu #orangepi #reviews #sbc Orange Pi 6 Plus 这是一篇很长的文章 – 在过去的几个月里，我…"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Stop Flock",
+    "url": "https://stopflock.com",
+    "hn_url": "https://news.ycombinator.com/item?id=47772012",
+    "heat": "452 points",
+    "time": "5 hours ago",
+    "developer_name": "cdrnsf",
+    "developer_url": "https://news.ycombinator.com/user?id=cdrnsf",
+    "content": "Stop Flock TL;DR (Summary) Flock Safety markets AI surveillance that goes far beyond reading license plates; color, bumper stickers, dents, and other features are used to build databases and identify movement patterns. These systems are spreading rapidly, often without oversight, and are accessible to police without a warrant. They raise serious privacy and legal concerns, and contribute to a nationwide trend toward mass surveillance. While this and other systems like it claim to reduce crime, there is little evidence to support that claim - and significant risk of abuse. Real public safety comes from investing in communities, not stalking them. What Are Flock Cameras? Flock Safety markets its devices as \"AI-powered precision policing technology\" - far beyond basic license plate readers (ALPRs) ( Flock Safety ). The system uses AI to create a \"Vehicle Fingerprint\" - identifying cars not only by license plate, but also by color, make and model, roof racks, dents/damage, wheel type, and more. Even bumper sticker placement is analyzed. This lets law enforcement search for a \"blue sedan with damage on the left side\" even without a license plate. But the surveillance goes deeper. Using a feature called \"Convoy Analysis\" , the system can detect vehicles that frequently appear near each other - suggesting associations between drivers or accomplices. The platform can also flag vehicles that routinely travel to the same locations across time. Flock describes this as a way to \"identify suspect vehicles traveling together\" or \"pinpoint associates\" - functionality confirmed in both their marketing and police testimonials ( GovTech , ACLU ). The data is logged and made searchable across a nationwide law enforcement network - which officers in subscribing agencies can access without a warrant. According to Flock, the system can automatically flag a vehicle based on its history, route, or presence in multiple locations linked to a crime ( Flock HOA Marketing ). While these tools may aid in locating stolen cars or missing persons, they also create a detailed record of everyone's movements, associations, and routines. That data has already been misused - like when a Kansas police chief used Flock cameras 228 times to stalk an ex-girlfriend and her new partner without cause ( Local12 ). The scope of this tracking becomes clear when you see real-world examples. In 2025, a journalist drove 300 miles across rural Virginia and was captured by nearly 50 surveillance cameras operated by 15 different law enforcement agencies. When he requested his own surveillance footage, he discovered the cameras had documented patterns that made his behavior \"predictable to anyone looking at it.\" Most troubling: while the journalist couldn't remember specific dates he'd made certain trips, police would know instantly - without any warrant or suspicion of wrongdoing ( Cardinal News ). See also: EFF: How ALPRs Work , The Secure Dad on Flock Cameras , Compass IT: \"Privacy Concerns with F",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "观点评论",
+      "topic_type": "行业观察",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "Stop Flock TL;DR (Summary) Flock Safety markets AI surveillance that goes far beyond reading license plates; color, bumper stickers, dents, and other features are used to build databases and identify movement patterns. These systems are spreading rapidly, often without oversight, and are accessible to police without a warrant. They raise serious privacy and legal concerns, and contribute to a nationwide trend toward mass surveillance.",
+      "heat_score": 5.0,
+      "timeliness_score": 8.0,
+      "composite_score": 3.4,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "观点评论 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（行业观察文章）",
+        "X（摘要快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "editorial_brief": "话题类型：行业观察\n可用角度：「Stop Flock」（Stop Flock TL;DR (Summary) Flock Safety markets AI surveill…）\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "social_recommendation": "「Stop Flock」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Stop Flock TL;DR (Summary) Flock Safety markets AI surveillance tha…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Stop Flock. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Stop Flock TL;DR (Summary) Flock Safety markets AI surveillance tha…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Stop Flock. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Stop Flock TL;DR (Summary) Flock Safety markets AI surveillance tha…。如果用官方号发，建议主推 人工判断场景，重点讲 观点评论 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Stop Flock. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Stop Flock TL;DR (Summary) Flock Safety markets AI surveillance tha…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Stop Flock. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Stop Flock TL;DR（摘要）Flock Safety 市场的人工智能监控远远超出了读取车牌的范围；颜色、保险杠贴纸、凹痕和其他特征用于构建数据库并识别运动模式。这些系统正在迅速传播，通常没有监督，并且警察无需搜查令即可访问。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Ask HN: Easiest UX for Seniors",
+    "url": "https://news.ycombinator.com/item?id=47729327",
+    "hn_url": "https://news.ycombinator.com/item?id=47729327",
+    "heat": "37 points",
+    "time": "4 hours ago",
+    "developer_name": "khoury",
+    "developer_url": "https://news.ycombinator.com/user?id=khoury",
+    "content": "Ask HN: Easiest UX for Seniors | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Ask HN: Easiest UX for Seniors 37 points by khoury 4 hours ago | hide | past | favorite | 26 comments I have been running a SaaS for ~10 years used heavily by people 65+ and a lot of them are tired and frustrated about remembering the domain/path to login screen and then which email/password they used, having to go through the whole forgot-password-flow, etc. I have tried simplifying this as much as i can but I feel like there must be better options. Google sigin in is confusing for them because they get thrown into Googles horrible UX flow where they might have multiple accounts and they don't like when the website suddenly changes. In general, what is the best way to simplify the auth UX for this group of users? Is there any UI libraries out there targeting this group more specifically? Any good web examples you know of? thx help protocolture 13 minutes ago | next [–] When I did phone support for the fruit company there was a woman who would come back to me time and again with roughly the same issue. She had some form of extreme palsy, and her kids lived on a different continent. What she needed, was someone to talk to her as she tried to input her password the 10 or so times it would take her to get it entered correctly. If she did it herself, she would become unsure that she was using the correct password, and give up because she was second guessing herself. If she asked a nurse to help, the nurse would need to bail halfway through the process and address some other requirement. In a separate incarnation, I was helping a 90 year old gentleman, who was providing free legal support for the organisation, to log on to his laptop. We had a 60 day password reset cycle. This gentleman would only attend the office every month. So every other visit required a password reset. He would berate me as he went, like the guy was a massive d bag. But my understanding was that he had chronic arthritis in his hands, so this process was very painful for him. I think the best workflow would be to use login codes and eschew passwords entirely. Definitely dont have mandatory password resets. I think the initial Passcode enrollment step might rule passcodes out but I have only really dealt with them on the MS side. That said, you need a really good non password backstop for login codes, because in my experience, elderly people tend to replace phones/numbers/laptops/email addresses quite frequently too. I used to keep a folder in my password vault for my grandmother so I could recover her email/facebook, but not before she ended up with 3 email accounts and facebook pages. Biometric Authenticator App? IE key recovery / load to a new phone is biometric, but otherwise it just prompts a 6 digit code on login? I think younger generations have a better sense of \"I am X, but my email controls Y\" where older people are like \"I am me, so give me my emails\" and so",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "saas"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Ask HN: Easiest UX for Seniors | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Ask HN: Easiest UX for Seniors 37 points by khoury 4 hours ago | hide | past | favorite | 26 comments I have been running a SaaS for ~10 years used heavily by people 65+ and a lot of them are tired and frustrated about remembering the domain/path to login screen and then which email/password they used, having to go through the whole forgot-password-flow, etc.",
+      "heat_score": 3.0,
+      "timeliness_score": 8.0,
+      "composite_score": 3.0,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Ask HN: Easiest UX for Seniors」（Ask HN: Easiest UX for Seniors | Hacker News Hacker News ne…），涉及 Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Ask HN: Easiest UX for Seniors」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Ask HN: Easiest UX for Seniors | Hacker News Hacker News new | past…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Ask HN: Easiest UX for Seniors. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Ask HN: Easiest UX for Seniors | Hacker News Hacker News new | past…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Ask HN: Easiest UX for Seniors. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Ask HN: Easiest UX for Seniors | Hacker News Hacker News new | past…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Ask HN: Easiest UX for Seniors. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Ask HN: Easiest UX for Seniors | Hacker News Hacker News new | past…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Ask HN: Easiest UX for Seniors. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Ask HN: Easiest UX for Seniors：询问 HN：老年人最简单的用户体验 |黑客新闻 黑客新闻 新 |过去|评论 |问 |显示|职位 |提交登录 问 HN：老年人最简单的用户体验 37 分 by khoury 4 小时前 |隐藏 |过去|最喜欢 |26 条评论 我运行 SaaS 已经有大约 10 年了，被 65 岁以上的人大量使用，他们中的很多人都对记住登录屏幕的域/路径…"
+  }
+]
