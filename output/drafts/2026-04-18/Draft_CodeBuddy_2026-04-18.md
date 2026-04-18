@@ -1,10 +1,3 @@
-# 📋 产品 Draft 汇总 — 2026-04-18
-
-> 共 2 个产品的 P0/P1 内容草稿
-> 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
-
----
-
 # CodeBuddy — 今日内容 (3 条)
 
 ## 1. P1 本周发 · Claude Design
@@ -45,20 +38,3 @@
 *参考: [lukilabs/craft-agents-oss](https://github.com/lukilabs/craft-agents-oss)*
 
 ---
-
-
-# Hunyuan — 今日内容 (1 条)
-
-## 1. P1 本周发 · lsdefine/GenericAgent
-
-**写什么**: 围绕 GenericAgent 的核心功能（lsdefine/GenericAgent: Self-evolving agent: grows skill tr
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🧠 "lsdefine/GenericAgent" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
-
-*参考: [lsdefine/GenericAgent](https://github.com/lsdefine/GenericAgent)*
-
----
-
