@@ -1,0 +1,973 @@
+[
+  {
+    "source": "KDnuggets",
+    "title": "I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics From Call Recordings",
+    "url": "https://www.kdnuggets.com/vibe-coded-tool-analyzes-customer-sentiment-and-topics-from-call-recordings",
+    "time": "Fri, 17 Apr 2026 14:00:54 +0000",
+    "heat": "",
+    "summary": "",
+    "developer_name": "Shittu Olumide",
+    "content": "I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics From Call Recordings - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics From Call Recordings Build an AI customer sentiment analyzer for call recordings using Whisper, BERTopic & Streamlit with this open-source step-by-step guide with code. By Shittu Olumide , Technical Content Specialist on April 17, 2026 in Programming Image by Author # Introduction Every day, customer service centers record thousands of conversations. Hidden in those audio files are goldmines of information. Are customers satisfied? What problems do they mention most often? How do emotions shift during a call? Manually analyzing these recordings is challenging. However, with modern artificial intelligence (AI), we can automatically transcribe calls, detect emotions, and extract recurring topics — all offline and with open-source tools. In this article, I will walk you through a complete customer sentiment analyzer project. You will learn how to: Transcribing audio files to text using Whisper Detecting sentiment (positive, negative, neutral) and emotions (frustration, satisfaction, urgency) Extracting topics automatically using BERTopic Displaying results in an interactive dashboard The best part is that everything runs locally. Your sensitive customer data never leaves your machine. Fig 1: Dashboard overview showing sentiment gauge, emotion radar, and topic distribution # Understanding Why Local AI Matters for Customer Data Cloud-based AI services like OpenAI's API are powerful, but they come with concerns such as privacy issues, where customer calls often contain personal information; high cost, where you pay per-API-call pricing, which adds up quickly for high volumes; and dependency on internet rate limits. By running locally, it is easier to meet data residency requirements. This local AI speech-to-text tutorial keeps everything on your hardware. Models download once and run offline forever. Fig 2: System Architecture Overview showing how each component handles one task well. This modular design makes the system easy to understand, test, and extend // Prerequisites Before starting, make sure you have the following: Python 3.9+ is installed on your machine. You should have FFmpeg installed for audio processing. You should have basic familiarity with Python and machine learning concepts. You need about 2GB of disk space for AI models. // Setting Up Your Project Clone the repository and set up your environment: git clone https://github.com/zenUnicorn/Customer-Sentiment-analyzer.git Create a virtual environment: python -m venv venv Activate (Windows): .\\venv\\Scripts\\Activate Activate (Mac/Linux): source venv/bin/activate Install dependenc",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai",
+        "artificial intelligence",
+        "machine learning",
+        "nlp",
+        "openai",
+        "speech",
+        "computer vision"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics From Call Recordings - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics From Call Recordings Build an AI customer sentiment analyzer for call recordings u…",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 3.3,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「I Vibe Coded a Tool to That Analyzes Customer Sen…」（I Vibe Coded a Tool to That Analyzes Customer Sentiment and…），涉及 Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「I Vibe Coded a Tool to That Analyzes Cu…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics From Call Recordings. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics From Call Recordings. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics From Call Recordings. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: I Vibe Coded a Tool to That Analyzes Customer Sentiment and Topics From Call Recordings. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "I Vibe 编写了一个工具，可以分析客户情绪和通话录音中的主题"
+  },
+  {
+    "source": "KDnuggets",
+    "title": "5 Useful Python Scripts for Advanced Data Validation & Quality Checks",
+    "url": "https://www.kdnuggets.com/5-useful-python-scripts-for-advanced-data-validation-quality-checks",
+    "time": "Fri, 17 Apr 2026 12:00:58 +0000",
+    "heat": "",
+    "summary": "",
+    "developer_name": "Bala Priya C",
+    "content": "5 Useful Python Scripts for Advanced Data Validation & Quality Checks - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter 5 Useful Python Scripts for Advanced Data Validation & Quality Checks From missing values to schema mismatches, data issues appear in many forms. These five Python scripts provide smart, automated validation for modern data workflows. By Bala Priya C , KDnuggets Contributing Editor & Technical Content Specialist on April 17, 2026 in Python Image by Author # Introduction Data validation doesn't stop at checking for missing values or duplicate records. Real-world datasets have issues that basic quality checks miss entirely. You’ll run into semantic inconsistencies, time-series data with impossible sequences, format drift where data changes subtly over time, and many more. These advanced validation problems are insidious. They pass basic quality checks because individual values look fine, but the underlying logic is broken. Manual inspection of these issues is challenging. You need automated scripts that understand context, business rules, and the relationships between data points. This article covers five advanced Python validation scripts that catch the subtle problems basic checks miss. You can get the code on GitHub . # 1. Validating Time-Series Continuity and Patterns // The Pain Point Your time-series data should follow predictable patterns. But sometimes gaps appear where there shouldn't be any. You’ll run into timestamps that jump forward or backward unexpectedly, sensor readings with missing intervals, event sequences that occur out of order, and more. These temporal anomalies corrupt forecasting models and trend analysis. // What the Script Does Validates temporal integrity of time-series datasets. Detects missing timestamps in expected sequences, identifies temporal gaps and overlaps, flags out-of-sequence records, validates seasonal patterns and expected frequencies. It also checks for timestamp manipulation or backdating. The script also detects impossible velocities where values change faster than physically or logically possible. // How It Works The script analyzes timestamp columns to infer expected frequency, identifies gaps in expected continuous sequences. It validates that event sequences follow logical ordering rules, applies domain-specific velocity checks, and detects seasonality violations. It also generates detailed reports showing temporal anomalies with business impact assessment. ⏩ Get the time-series continuity validator script # 2. Checking Semantic Validity with Business Rules // The Pain Point Individual fields pass type validation but the combination makes no sense. Here are some examples: a purchase order from the future with a completed delivery date in the past. An account marked as \"new ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "machine learning",
+        "nlp",
+        "computer vision"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "5 Useful Python Scripts for Advanced Data Validation & Quality Checks - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter 5 Useful Python Scripts for Advanced Data Validation & Quality Checks From missing values to schema mismatches, data issues appear in many forms.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 2.7,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「5 Useful Python Scripts for Advanced Data Validat…」（5 Useful Python Scripts for Advanced Data Validation & Qual…），涉及 Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「5 Useful Python Scripts for Advanced Da…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "5 Useful Python Scripts for Advanced Data Validation & Quality Chec…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "5 Useful Python Scripts for Advanced Data Validation & Quality Checks. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：5 Useful Python Scripts for Advanced Data Validation & Quality Chec…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 5 Useful Python Scripts for Advanced Data Validation & Quality Checks. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。5 Useful Python Scripts for Advanced Data Validation & Quality Chec…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 5 Useful Python Scripts for Advanced Data Validation & Quality Checks. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：5 Useful Python Scripts for Advanced Data Validation & Quality Chec…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: 5 Useful Python Scripts for Advanced Data Validation & Quality Checks. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "5 个用于高级数据验证和质量检查的有用 Python 脚本"
+  },
+  {
+    "source": "KDnuggets",
+    "title": "Python Project Setup 2026: uv + Ruff + Ty + Polars",
+    "url": "https://www.kdnuggets.com/python-project-setup-2026-uv-ruff-ty-polars",
+    "time": "Thu, 16 Apr 2026 14:00:35 +0000",
+    "heat": "",
+    "summary": "",
+    "developer_name": "Kanwal Mehreen",
+    "content": "Python Project Setup 2026: uv + Ruff + Ty + Polars - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter Python Project Setup 2026: uv + Ruff + Ty + Polars This one simple Python stack will make your projects faster, cleaner, and easier to maintain. By Kanwal Mehreen , KDnuggets Technical Editor & Content Specialist on April 16, 2026 in Python Image by Editor # Introduction Python project setup used to mean making a dozen small decisions before you wrote your first useful line of code. Which environment manager? Which dependency tool? Which formatter? Which linter? Which type checker? And if your project touched data, were you supposed to start with pandas , DuckDB , or something newer? In 2026, that setup can be much simpler. For most new projects, the cleanest default stack is: uv for Python installation, environments, dependency management, locking, and command running. Ruff for linting and formatting. Ty for type checking. Polars for dataframe work. This stack is fast, modern, and notably coherent. Three of the four tools (uv, Ruff, and Ty) actually come from the same company, Astral , which means they integrate seamlessly with each other and with your pyproject.toml . # Understanding Why This Stack Works Older setups often looked like this: pyenv + pip + venv + pip-tools or Poetry + Black + isort + Flake8 + mypy + pandas This worked, but it created significant overlap, inconsistency, and maintenance overhead. You had separate tools for environment setup, dependency locking, formatting, import sorting, linting, and typing. Every new project started with a choice explosion. The 2026 default stack collapses all of that. The end result is fewer tools, fewer configuration files, and less friction when onboarding contributors or wiring up continuous integration (CI). Before jumping into setup, let’s take a quick look at what each tool in the 2026 stack is doing: uv: This is the base of your project setup. It creates the project, manages versions, handles dependencies, and runs your code. Instead of manually setting up virtual environments and installing packages, uv handles the heavy lifting. It keeps your environment consistent using a lockfile and ensures everything is correct before running any command. Ruff: This is your all-in-one tool for code quality. It is extremely fast, checks for issues, fixes many of them automatically, and also formats your code. You can use it instead of tools like Black, isort, Flake8, and others. Ty: This is a newer tool for type checking. It helps catch errors by checking types in your code and works with various editors. While newer than tools like mypy or Pyright , it is optimized for modern workflows. Polars: This is a modern library for working with dataframes. It focuses on efficient data processing using",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "machine learning",
+        "nlp",
+        "computer vision"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Python Project Setup 2026: uv + Ruff + Ty + Polars - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter Python Project Setup 2026: uv + Ruff + Ty + Polars This one simple Python stack will make your projects faster, cleaner, and easier to maintain.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 2.7,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Python Project Setup 2026: uv + Ruff + Ty + Polars」（Python Project Setup 2026: uv + Ruff + Ty + Polars - KDnugg…），涉及 Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「Python Project Setup 2026: uv + Ruff +…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Python Project Setup 2026: uv + Ruff + Ty + Polars - KDnuggets Blog…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Python Project Setup 2026: uv + Ruff + Ty + Polars. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Python Project Setup 2026: uv + Ruff + Ty + Polars - KDnuggets Blog…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Python Project Setup 2026: uv + Ruff + Ty + Polars. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Python Project Setup 2026: uv + Ruff + Ty + Polars - KDnuggets Blog…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Python Project Setup 2026: uv + Ruff + Ty + Polars. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Python Project Setup 2026: uv + Ruff + Ty + Polars - KDnuggets Blog…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Python Project Setup 2026: uv + Ruff + Ty + Polars. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Python Project Setup 2026: uv + Ruff + Ty + Polars"
+  },
+  {
+    "source": "One Useful Thing",
+    "title": "<![CDATA[Claude Dispatch and the Power of Interfaces]]>",
+    "url": "https://www.oneusefulthing.org/p/claude-dispatch-and-the-power-of",
+    "time": "Tue, 31 Mar 2026 22:34:37 GMT",
+    "heat": "",
+    "summary": "AIs are already far more capable than most people realize. A large part of this so-called capability overhang comes not from the limits of AI (though, of course, they still have many limits), but from how people interact with it. The vast majority of people access AI through chatbots, and usually th...",
+    "developer_name": "Ethan Mollick",
+    "content": "Claude Dispatch and the Power of Interfaces One Useful Thing Subscribe Sign in Claude Dispatch and the Power of Interfaces We often lack the tools for the job, even if the AI is capable enough Ethan Mollick Mar 31, 2026 744 58 42 Share AIs are already far more capable than most people realize. A large part of this so-called capability overhang comes not from the limits of AI (though, of course, they still have many limits), but from how people interact with it. The vast majority of people access AI through chatbots, and usually the free versions with less capable models. A chatbot is fine for a quick question, but it is a bad way to get real work done. In fact, recent research suggests that we pay a mental tax when using chatbot interfaces for work. A new paper had a small group of financial professionals do a complex valuation task with GPT-4o 1 and measured their cognitive load from the transcripts, turn by turn. People did see a productivity gain from using AI, but some of that seemed to be offset by the fact that the AI presented information in a way that completely overwhelmed people: giant walls of text, offers to pursue new topics, and sprawling discussions. The chatbot interface appeared to be the obstacle, not the work. And once a conversation got messy, it stayed messy. The AI, optimized to be helpful, just mirrored back whatever disorganized structure the user provided while the user, overwhelmed, didn’t reorganize. Both sides kept compounding the problem. The people hurt most were less experienced workers, exactly the people who could benefit the most from AI… if they could keep track of what they were doing with it This shouldn’t be a surprise to you if you have used a chatbot to get things done. You ask a specific question and get five paragraphs that contain the answer (somewhere!) while the AI also offers three new things you didn’t ask about. The interface itself creates cognitive costs that overwhelm the benefits of the AI’s intelligence. So what does a better interface look like? Specialized interfaces One option is to build specific interfaces for specific jobs or tasks. Of all the specialized AI interfaces, the only really complete ones are for programming. This is exactly what you would expect, the AI labs are staffed by programmers, the models are trained extensively on code, and the people building these tools are often building them for themselves. I’ve written before about Claude Code, Anthropic’s coding agent that can work for hours autonomously. OpenAI’s Codex and Google’s Antigravity do similar things. I have used Claude Code for everything from making (a small amount of) money to making games , never touching any code at all. I also find Codex incredibly useful as well, with a similar level of capability. These tools are terrific, but they are really built for programmers. They assume you know Python and Git. Their interfaces look like a 1980s computer lab. For the 99% of knowledge workers who are not developers, the",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "claude",
+        "agent",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "GPT-4"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "AIs are already far more capable than most people realize. A large part of this so-called capability overhang comes not from the limits of AI (though, of course, they still have many limits), but from how people interact with it. The vast majority of people access AI through chatbots, and usually th.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 4.7,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "「<![CDATA[Claude Dispatch and the 能力 of」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「<![CDATA[Claude Dispatch and the 能力 of」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[Claude Dispatch and the 能力 of」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[Claude Dispatch and the Power of Interfa…」（AIs are already far more capable than most people realize.…），涉及 Agent / Python → 可写方向：「<![CDATA[Claude Dispatch and the 能力 of」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「<![CDATA[Claude Dispatch and the Power…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「<![CDATA[Claude Dispatch and the 能力 of」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（AIs are already far more capable than most people realize. A large part of this…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「<![CDATA[Claude Dispatch and the 能力 of」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（AIs are already far more capable than most people realize. A large part of this…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "AIs are already far more capable than most people realize. A large…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "<![CDATA[Claude Dispatch and the Power of Interfaces]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：AIs are already far more capable than most people realize. A large…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[Claude Dispatch and the Power of Interfaces]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。AIs are already far more capable than most people realize. A large…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[Claude Dispatch and the 能力 of」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[Claude Dispatch and the Power of Interfaces]]>. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：AIs are already far more capable than most people realize. A large…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[Claude Dispatch and the Power of Interfaces]]>. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[Claude Dispatch 和接口的力量]]>"
+  },
+  {
+    "source": "One Useful Thing",
+    "title": "<![CDATA[The Shape of the Thing]]>",
+    "url": "https://www.oneusefulthing.org/p/the-shape-of-the-thing",
+    "time": "Thu, 12 Mar 2026 14:10:07 GMT",
+    "heat": "",
+    "summary": "In October of 2023, I wrote about the “Shape of the Shadow of the Thing,” speculating on the Thing that AI might turn into in the coming years. I think we can see the Thing much more clearly now, and some of the consequences that come with it. As I have been discussing in recent posts, we have enter...",
+    "developer_name": "Ethan Mollick",
+    "content": "The Shape of the Thing - by Ethan Mollick One Useful Thing Subscribe Sign in The Shape of the Thing Where we are right now, and what likely happens next Ethan Mollick Mar 12, 2026 964 71 87 Share In October of 2023, I wrote about the “Shape of the Shadow of the Thing,” speculating on the Thing that AI might turn into in the coming years. I think we can see the Thing much more clearly now, and some of the consequences that come with it. As I have been discussing in recent posts, we have entered a new phase of AI. After ChatGPT was introduced, human-AI work took the form of what I called co-intelligence, where humans would prompt AI back-and-forth to get help on tasks. Starting in late 2025, we entered a new era thanks to AI agents like Claude Code , OpenAI’s Codex, and OpenClaw. These are AI systems that you can just give work to, sometimes hours of human work, and get back reasonable and useful results in minutes. This is an era of managing AIs, rather than working with them. This new approach to AI is the outcome of the rapid exponential improvement in AI abilities. That means you can’t understand where we are, and where we might be going, without understanding the increasing capability of AI. Riding up the Exponential Exponential improvements are hard to visualize, so rather than charts or graphs, I want to start with otters. If you have followed my writing on AI, you know about my Otter Test , where I challenge various AI image models to show a picture of an “otter on a plane using wifi.” As you can see below, the progress from 2022 (the year ChatGPT launched) to 2025 was rapid and remarkable. So, what has happened in the time since that April, 2025 image? With nearly perfect images, video has become the new frontier and has also seen exponential gains. To demonstrate, I gave the most advanced (and still unreleased in the US) AI video model from TikTok maker Bytedance, the prompt: A documentary about how otters view Ethan Mollick's \"Otter Test\" which judges AIs by their ability to create images of otters sitting in planes . This is the very first result — definitely turn on your sound: Aside from a single pronunciation mistake, this is pretty perfect, down to the fact that the otters are animated to have human-like expressions. Of course, video models are cool, but they are not necessarily indicative of what useful agentic AI can do. So, what if we look at the benchmarks of AI ability, do we see the same exponential curve? We certainly do in the most famous evaluation in AI today, the METR Long Tasks graph . It tries to measure AI progress by seeing how much human work an AI can complete autonomously with some measure of reliability. It has attracted its share of critics, and even METR has pointed out potential issues . But if you don’t like the METR graph, you will find most graphs of AI ability have that same curve. As an example, I picked four hard and diverse AI tests and graphed progress over time in the image below. In the upper left are",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "chatgpt",
+        "claude",
+        "prompt",
+        "openai",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "In October of 2023, I wrote about the “Shape of the Shadow of the Thing,” speculating on the Thing that AI might turn into in the coming years. I think we can see the Thing much more clearly now, and some of the consequences that come with it. As I have been discussing in recent posts, we have enter.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 4.6,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "「<![CDATA[The Shape of the Thing]]>」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「<![CDATA[The Shape of the Thing]]>」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[The Shape of the Thing]]>」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[The Shape of the Thing]]>」（In October of 2023, I wrote about the “Shape of the Shadow…），涉及 Agent → 可写方向：「<![CDATA[The Shape of the Thing]]>」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「<![CDATA[The Shape of the Thing]]>」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「<![CDATA[The Shape of the Thing]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（In October of 2023, I wrote about the “Shape of the Shadow of the Thing,” specu…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「<![CDATA[The Shape of the Thing]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（In October of 2023, I wrote about the “Shape of the Shadow of the Thing,” specu…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "In October of 2023, I wrote about the “Shape of the Shadow of the T…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "<![CDATA[The Shape of the Thing]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：In October of 2023, I wrote about the “Shape of the Shadow of the T…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[The Shape of the Thing]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。In October of 2023, I wrote about the “Shape of the Shadow of the T…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[The Shape of the Thing]]>」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[The Shape of the Thing]]>. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：In October of 2023, I wrote about the “Shape of the Shadow of the T…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[The Shape of the Thing]]>. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[事物的形状]]>"
+  },
+  {
+    "source": "One Useful Thing",
+    "title": "<![CDATA[A Guide to Which AI to Use in the Agentic Era]]>",
+    "url": "https://www.oneusefulthing.org/p/a-guide-to-which-ai-to-use-in-the",
+    "time": "Wed, 18 Feb 2026 01:45:41 GMT",
+    "heat": "",
+    "summary": "I have written eight of these guides since ChatGPT came out, but this version represents a very large break with the past, because what it means to “use AI” has changed dramatically. Until a few months ago, for the vast majority of people, “using AI” meant talking to a chatbot in a back-and-forth co...",
+    "developer_name": "Ethan Mollick",
+    "content": "A Guide to Which AI to Use in the Agentic Era One Useful Thing Subscribe Sign in A Guide to Which AI to Use in the Agentic Era It's not just chatbots anymore Ethan Mollick Feb 18, 2026 1,903 130 202 Share I have written eight of these guides since ChatGPT came out, but this version represents a very large break with the past, because what it means to “use AI” has changed dramatically. Until a few months ago, for the vast majority of people, “using AI” meant talking to a chatbot in a back-and-forth conversation. But over the past few months, it has become practical to use AI as an agent: you can assign them to a task and they do them, using tools as appropriate. Because of this change, you have to consider three things when deciding what AI to use: Models, Apps, and Harnesses. The exact same model, Claude Opus 4.6, asked the exact same question, “Compare ChatGPT and Claude and Gemini” in three different apps and harnesses. With no harness the information is out of date, on the Claude.ai site I get updated information and verifiable sources, using Claude Cowork, I get a sophisticated analysis and well-formatted head-to-head comparisons Models are the underlying AI brains, and the big three are GPT-5.2/5.3, Claude Opus 4.6, and Gemini 3 Pro (the companies are releasing new models much more rapidly than the past, so version numbers may change in the coming weeks). These are what determine how smart the system is, how well it reasons, how good it is at writing or coding or analyzing a spreadsheet, and how well it can see images or create them. Models are what the benchmarks measure and what the AI companies race to improve. When people say “Claude is better at writing” or “ChatGPT is better at math,” they’re talking about models. Apps are the products you actually use to talk to a model, and which let models do real work for you. The most common app is the website for each of these models: chatgpt.com, claude.ai, gemini.google.com (or else their equivalent application on your phone). Increasingly, there are other apps made by each of these AI companies as well, including coding tools like OpenAI Codex or Claude Code, and desktop tools like Claude Cowork. Harnesses are what let the power of AI models do real work, like a horse harness takes the raw power of the horse and lets it pull a cart or plow. A harness is a system that lets the AI use tools, take actions, and complete multi-step tasks on its own. Apps come with a harness. Claude on the website has a harness that lets Claude 4.6 Opus do web searches and write code but also has instructions about how to approach various problems like creating spreadsheets or doing graphic design work. Claude Code has an even more extensive harness: it gives Claude 4.6 Opus a virtual computer, a web browser, a code terminal, and the ability to string these together to actually do stuff like researching, building, and testing your new website from scratch. Manus (recently acquired by Meta) was essentially a standalo",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 8,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "chatgpt",
+        "claude",
+        "gemini",
+        "agent",
+        "openai",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "I have written eight of these guides since ChatGPT came out, but this version represents a very large break with the past, because what it means to “use AI” has changed dramatically. Until a few months ago, for the vast majority of people, “using AI” meant talking to a chatbot in a back-and-forth co.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 4.7,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "「<![CDATA[A 指南 to Which AI to Use in the」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「<![CDATA[A 指南 to Which AI to Use in the」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding tool"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[A 指南 to Which AI to Use in the」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[A Guide to Which AI to Use in the Agenti…」（I have written eight of these guides since ChatGPT came out…），涉及 Agent → 可写方向：「<![CDATA[A 指南 to Which AI to Use in the」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「<![CDATA[A Guide to Which AI to Use in…」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「<![CDATA[A 指南 to Which AI to Use in the」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（I have written eight of these guides since ChatGPT came out, but this version r…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「<![CDATA[A 指南 to Which AI to Use in the」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（I have written eight of these guides since ChatGPT came out, but this version r…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "I have written eight of these guides since ChatGPT came out, but th…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "<![CDATA[A Guide to Which AI to Use in the Agentic Era]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：I have written eight of these guides since ChatGPT came out, but th…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[A Guide to Which AI to Use in the Agentic Era]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。I have written eight of these guides since ChatGPT came out, but th…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[A 指南 to Which AI to Use in the」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[A Guide to Which AI to Use in the Agentic Era]]>. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：I have written eight of these guides since ChatGPT came out, but th…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[A Guide to Which AI to Use in the Agentic Era]]>. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[代理时代使用人工智能指南]]>"
+  },
+  {
+    "source": "Ben's Bites",
+    "title": "<![CDATA[My cheatsheet for a clean context]]>",
+    "url": "https://www.bensbites.com/p/my-cheatsheet-for-a-clean-context",
+    "time": "Thu, 16 Apr 2026 13:20:49 GMT",
+    "heat": "",
+    "summary": "Hey folks Boarding my flight to SF very shortly, and I got an email to let me know - no WiFi today. Uh oh. I was kinda hoping my 11 hours uninterrupted hours without the kids would be productive for once (I’m usually a very OOO long-hauler, no internet). But I still have some work to polish this tal...",
+    "developer_name": "",
+    "content": "My cheatsheet for a clean context - Ben's Bites Subscribe Sign in My cheatsheet for a clean context fast intelligence, managed infra and desktop apps Apr 16, 2026 98 1 1 Share Hey folks Boarding my flight to SF very shortly, and I got an email to let me know - no WiFi today. Uh oh. I was kinda hoping my 11 hours uninterrupted hours without the kids would be productive for once (I’m usually a very OOO long-hauler, no internet). But I still have some work to polish this talk I’m giving on Tuesday. I’m also in town looking to deploy $100k cheques to dev tools and infra founders, plus see some of my wonderful LPs and meeting new ones. Ben’s Bites Fund II has already started investing. So my flight… I’ve had to hurriedly download a few local models so I can use my agents offline and I think, so far, Gemma 4: 26b is going to be my choice. We’re so spoiled today with fast intelligence at our fingertips and it’s funny how used to the new intelligence levels we get Local models are slow to boot up (you’ve got to be more mindful of what context is being loaded on startup (so I’m running with no-skills to get it to go faster, I can call the skills when I want — maybe I’d actually prefer to do that generally 🤔). And they feel pretty slow to do work, but only because of said spoils. I’ve been in the weeds of context management recently because of the course I’m working on. And it’s been useful to just remind myself about how prickly it can be; If an agent runs web searches - presumably you didn’t read them, its gobbling up context from content you do not know is 1. right, 2. not ai-slop, and 3. by a source you’d recommend. Little (or big) lines of slop, misdirection, misinformation slip in to the context and compound over time Reaching ~60% of a context window is probably the limit of where you want to be Use other sessions as context-gathering sessions, if there’s lots of documents then create one summary file with the information (and try to read or at least skim it! - I am trying, promise) I don’t trust 1M context windows, there’s a great post by Thariq from Anthropic below about this window. I shouldn’t need my context for my tasks to need perfect recall beyond ~150k tokens, that’s a lot of words. Only until 1M context windows are the norm, the models dont forget anything and help clean polluted context along the way! Anyway, got to head to the gate! This was a little different of an intro, let me know if you liked it. I need to share more as I’m learning (or diving deeper). Ben’s Bites is brought to you by Attio , the AI CRM Honestly, no one gets excited about a CRM. But then they try Attio . It connects to Claude Code and n8n through its MCP server, completely bridging the gap between my customer data and apps. Wait, there's more, like flagging churn risk and turning customer feedback into Linear projects. Try it now . Headlines Claude Code’s desktop got a redesign . Brings many CLI-only features and more (like split windows for multiple sessions) to th",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "mcp",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Go"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Hey folks Boarding my flight to SF very shortly, and I got an email to let me know - no WiFi today. I was kinda hoping my 11 hours uninterrupted hours without the kids would be productive for once (I’m usually a very OOO long-hauler, no internet). But I still have some work to polish this tal.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 4.6,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "「<![CDATA[My cheatsheet for a clean cont」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「<![CDATA[My cheatsheet for a clean cont」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[My cheatsheet for a clean cont」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[My cheatsheet for a clean context]]>」（Hey folks Boarding my flight to SF very shortly, and I got…），涉及 Agent / MCP / Go → 可写方向：「<![CDATA[My cheatsheet for a clean cont」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「<![CDATA[My cheatsheet for a clean cont…」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「<![CDATA[My cheatsheet for a clean cont」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Hey folks Boarding my flight to SF very shortly, and I got an email to let me k…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「<![CDATA[My cheatsheet for a clean cont」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Hey folks Boarding my flight to SF very shortly, and I got an email to let me k…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Hey folks Boarding my flight to SF very shortly, and I got an email…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "<![CDATA[My cheatsheet for a clean context]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Hey folks Boarding my flight to SF very shortly, and I got an email…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[My cheatsheet for a clean context]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Hey folks Boarding my flight to SF very shortly, and I got an email…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[My cheatsheet for a clean cont」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[My cheatsheet for a clean context]]>. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Hey folks Boarding my flight to SF very shortly, and I got an email…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[My cheatsheet for a clean context]]>. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[我的干净上下文备忘单]]>"
+  },
+  {
+    "source": "Ben's Bites",
+    "title": "<![CDATA[Big lab leaks]]>",
+    "url": "https://www.bensbites.com/p/big-lab-leaks",
+    "time": "Tue, 14 Apr 2026 13:10:46 GMT",
+    "heat": "",
+    "summary": "Hey folks, I’ll be heading to SF on Thursday — speaking at Stanford the week after. I’ll be delivering live the ‘how to use agents if you’re not technical’ course I’ve been working on (ahem, still working on). I’ll be in town chatting to LPs (my 2 prev funds; 2.3x MOIC, 43% IRR (2023), and 4x MOIC, ...",
+    "developer_name": "",
+    "content": "Big lab leaks - Ben's Bites Subscribe Sign in Big lab leaks Headless software Apr 14, 2026 105 Share Hey folks, I’ll be heading to SF on Thursday — speaking at Stanford the week after. I’ll be delivering live the ‘how to use agents if you’re not technical’ course I’ve been working on (ahem, still working on). I’ll be in town chatting to LPs (my 2 prev funds; 2.3x MOIC, 43% IRR (2023), and 4x MOIC, 28% IRR (2020)) and founders (I invest in AI dev tools and infra!) - let me know who I should try and meet or any cool things going on. The latest leak from Claude-land shows Anthropic is adding lovable-like features for building full-stack apps right inside Claude. Codex apparently had a similar leak (since deleted). There’s a new term going around for products that agents can use - headless SaaS. Box’s CEO says that “Enterprises will kick out vendors that don’t make it easy/economical for agents to use their product”. And you can’t just wrap your APIs into MCP/CLIs and call it a day. Talks at AI Engineer were across the spectrum from “code is a liability” to “slow the fuck down”. Alex has a good recap . Ben’s Bites is brought to you by Cloudera AI is booming, but ROI is lagging. The problem isn’t AI—it’s data readiness . Most enterprises aren’t as prepared as they think. See where things really stand in Cloudera’s Data Readiness Index . Headlines Claude Cowork is now generally available - out of research preview after 12 weeks with millions of users. Also, Claude for Word is in beta - draft, edit, and revise documents from the Word sidebar with edits showing up as tracked changes. (Team and Enterprise plans) New Claude Code features - /ultraplan lets you build and edit a plan on the web, then run it in your terminal. The Monitor tool lets Claude watch for events in the background instead of constantly checking - saves a lot of tokens. Plus, an advisor strategy on the Claude dev platform that pairs Opus with Sonnet for better performance at similar/cheaper costs. OpenAI added a new $100 plan . Their own wording is too complex, so I’m stealing Theo’s . Basically, $100 plan = 5x compute, $200 = 10x compute (where $20 plan = 1x). The bigger plans have 2x boost till May 31st, so effectively, $100 = 10x and $200 = 20x compute. LlamaParse was built to tackle your most complex PDFs with the highest accuracy & the lowest cost. Now we want to put that to the test. Submit your ugliest PDF (dense contracts, financial tables, etc.), and judge the output vs your current OCR to win a Mac Mini. Can your doc outsmart LlamaParse? * Subscribe My feed Anyone can make a game now. Yoroll turns a rough idea into a branching, playable video-native game. Join waitlist to try. * Cursor cloud agents can now attach screenshots and demos to PRs they open. Your team reviews the artifacts directly in GitHub. Shopify AI Toolkit - manage your Shopify store with your favourite agent. Works with Claude Code, Codex, Cursor, VS Code, and more. ( docs ) Open Agents by Vercel - open-source",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "saas",
+        "vercel"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "mcp",
+        "openai",
+        "anthropic",
+        "ocr"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "竞品动态",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [
+        "Vercel"
+      ],
+      "competitor_products": [
+        "Vercel"
+      ],
+      "techs": [
+        "Agent",
+        "MCP"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Hey folks, I’ll be heading to SF on Thursday — speaking at Stanford the week after. I’ll be delivering live the ‘how to use agents if you’re not technical’ course I’ve been working on (ahem, still working on). I’ll be in town chatting to LPs (my 2 prev funds; 2. 3x MOIC, 43% IRR (2023), and 4x MOIC, .",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 5.8,
+      "tcloud_relevance": 6.1,
+      "tcloud_integration": "「<![CDATA[Big lab leaks]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「<![CDATA[Big lab leaks]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[Big lab leaks]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "竞品对比（Vercel）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "教程拆解 + 产品关联（CodeBuddy） + 竞品对比（Vercel） + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「<![CDATA[Big lab leaks]]>」（Hey folks, I’ll be heading to SF on Thursday — speaking at…），涉及 Agent / MCP → 可写方向：Vercel 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P2 观察中（可择机再发）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「<![CDATA[Big lab leaks]]>」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P2 观察中（可择机再发），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「<![CDATA[Big lab leaks]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Hey folks, I’ll be heading to SF on Thursday — speaking at Stanford the week af…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「<![CDATA[Big lab leaks]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Hey folks, I’ll be heading to SF on Thursday — speaking at Stanford the week af…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Hey folks, I’ll be heading to SF on Thursday — speaking at Stanford…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "<![CDATA[Big lab leaks]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Hey folks, I’ll be heading to SF on Thursday — speaking at Stanford…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 教程拆解 + 产品关联（CodeBuddy） + 竞品对比（Vercel） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[Big lab leaks]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around hands-on walkthrough + product tie-in (CodeBuddy) + competitor comparison (Vercel) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Hey folks, I’ll be heading to SF on Thursday — speaking at Stanford…。如果用官方号发，建议主推 CodeBuddy，重点讲 教程拆解 + 产品关联（CodeBuddy） + 竞品对比（Vercel） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[Big lab leaks]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[Big lab leaks]]>. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on hands-on walkthrough + product tie-in (CodeBuddy) + competitor comparison (Vercel) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Hey folks, I’ll be heading to SF on Thursday — speaking at Stanford…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 教程拆解 + 产品关联（CodeBuddy） + 竞品对比（Vercel） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[Big lab leaks]]>. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on hands-on walkthrough + product tie-in (CodeBuddy) + competitor comparison (Vercel) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[重大实验室泄露]]>"
+  },
+  {
+    "source": "Ben's Bites",
+    "title": "<![CDATA[Anthropic built a model too risky to release]]>",
+    "url": "https://www.bensbites.com/p/anthropic-built-a-model-too-risky",
+    "time": "Thu, 09 Apr 2026 13:05:10 GMT",
+    "heat": "",
+    "summary": "Hey folks, Keshav here. Ben is at AI Engineer this week, so I’m covering the intro. A mis-timed blog last week leaked Anthropic’s next model - Claude Mythos. Well, it is real and has massive improvements on benchmarks over Opus 4.6: 53.4% → 77.8% on SWE-bench Pro 65.4% → 82% on Terminal-Bench 2.0 bu...",
+    "developer_name": "",
+    "content": "Anthropic built a model too risky to release - Ben's Bites Subscribe Sign in Anthropic built a model too risky to release and Meta makes an unexpected entry Apr 09, 2026 98 1 Share Hey folks, Keshav here. Ben is at AI Engineer this week, so I’m covering the intro. A mis-timed blog last week leaked Anthropic’s next model - Claude Mythos. Well, it is real and has massive improvements on benchmarks over Opus 4.6: 53.4% → 77.8% on SWE-bench Pro 65.4% → 82% on Terminal-Bench 2.0 but we are not getting access to it anytime soon. Why? because it is really good at finding and exploiting software vulnerabilities. On Firefox exploit generation, Opus managed 2 working exploits out of hundreds of attempts. Mythos hit 181. It found many-decades-old bugs in critical software projects like OpenBSD (27-year-old bug), FFmpeg (16-year-old bug) and more. Instead of releasing it publicly, Anthropic is giving 12 companies access to a preview version of Mythos under “ Project Glasswing ” to find vulnerabilities in critical software. Anthropic is committing $100M in model usage credits and $4M in donations to open-source security orgs under this project. Theo made a video on this, and I like his point: “Mythos is to Opus what Opus is to Sonnet.” I tweeted a list of companies that Meta has acquired in the past year without anything to show for it, and soon after, Meta released details about their latest model - Muse Spark . At a glance, it sits somewhere between Sonnet 4.6 and Opus 4.6. Not usable yet: API access is coming, and there are promises about open-source too (rip llama). Many people are dunking on Meta for its not-so-frontier model release after spending billions and a year of silence, but I think it’s a good step ahead. Plus, have you used Instagram search over the past couple of months? It’s gotten really good courtesy of AI. As always, good recap from Ethan Mollick on the state of frontier models : Google, OpenAI and Anthropic lead, Meta joins the pack for now while xAI has fallen off, and the best Chinese models are still 7-9 months behind. ps: Factory’s desktop app is now out of beta. It comes with a cloud computer, the ability to use other apps on your device, and, of course, the ability to run and manage multiple Droid sessions easily. Ben’s Bites is brought to you by Attio , the AI CRM Honestly, no one gets excited about a CRM. But then they try Attio . It connects to Claude Code and n8n through its MCP server, completely bridging the gap between my customer data and apps. Wait, there's more, like flagging churn risk and turning customer feedback into Linear projects. Try it now . Headlines Claude Managed Agents - You can use Claude’s developer console to build and deploy agents and let anthropic handle the infra for it, vs building it yourself. For example, Notion is using managed agents to build a “delegate tasks to Claude” feature. (Anthropic’s engineering blog on building this). Cursor has a new design mode to annotate and target UI elements in the",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "llama",
+        "mcp",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Llama",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "MCP"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Hey folks, Keshav here. Ben is at AI Engineer this week, so I’m covering the intro. A mis-timed blog last week leaked Anthropic’s next model - Claude Mythos. Well, it is real and has massive improvements on benchmarks over Opus 4.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 5.2,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "「<![CDATA[Anthropic built a 模型 too risky」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「<![CDATA[Anthropic built a 模型 too risky」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[Anthropic built a 模型 too risky」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[Anthropic built a model too risky to rel…」（Hey folks, Keshav here. Ben is at AI Engineer this week, so…），涉及 MCP → 可写方向：「<![CDATA[Anthropic built a 模型 too risky」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「<![CDATA[Anthropic built a model too ri…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「<![CDATA[Anthropic built a 模型 too risky」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Hey folks, Keshav here. Ben is at AI Engineer this week, so I’m covering the in…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「<![CDATA[Anthropic built a 模型 too risky」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Hey folks, Keshav here. Ben is at AI Engineer this week, so I’m covering the in…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Hey folks, Keshav here. Ben is at AI Engineer this week, so I’m cov…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "<![CDATA[Anthropic built a model too risky to release]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Hey folks, Keshav here. Ben is at AI Engineer this week, so I’m cov…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[Anthropic built a model too risky to release]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Hey folks, Keshav here. Ben is at AI Engineer this week, so I’m cov…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[Anthropic built a 模型 too risky」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[Anthropic built a model too risky to release]]>. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Hey folks, Keshav here. Ben is at AI Engineer this week, so I’m cov…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[Anthropic built a model too risky to release]]>. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[Anthropic 构建的模型风险太大，无法发布]]>"
+  },
+  {
+    "source": "Interconnects",
+    "title": "<![CDATA[My bets on open models, mid-2026]]>",
+    "url": "https://www.interconnects.ai/p/my-bets-on-open-models-mid-2026",
+    "time": "Wed, 15 Apr 2026 18:20:00 GMT",
+    "heat": "",
+    "summary": "We’re living through the period of time when we’ll learn if open models can keep up with closed labs. The obvious answer is that no, they won’t. This answer is a form of saying they won’t keep up in every area . This framing closes off a popular prediction where the open models completely catch up ,...",
+    "developer_name": "Nathan Lambert",
+    "content": "My bets on open models, mid-2026 - by Nathan Lambert Subscribe Sign in My bets on open models, mid-2026 What I expect to come next and why, focused on the open-closed gap. Nathan Lambert Apr 15, 2026 90 24 6 Share Article voiceover 0:00 -6:56 Audio playback is not supported on your browser. Please upgrade. We’re living through the period of time when we’ll learn if open models can keep up with closed labs. The obvious answer is that no, they won’t. This answer is a form of saying they won’t keep up in every area . This framing closes off a popular prediction where the open models completely catch up , as in all models saturate and open and closed models only become increasingly similar. In living through this, it’s evidently very unclear when the longer-term stable balance of capabilities will solidify. This is a very complex dynamic, where the core point we monitor is a capability gap between models . At the same time, this gap is intertwined with evolving dynamics in the funding of open models, who builds open models, how techniques like distillation that enable fast-following translate through new application domains, potential regulation hampering the open-source AI ecosystem, and of course who actually uses open models. The capabilities gap is one signal in a complex sea of forces, pushing supply and demand into different shapes. In many cases the demand — where obviously tons of individuals, organizations, and sovereigns want, or need, open models — is largely separated from supply. Supply is fully dictated by economics. The question of “which business strategies support releasing open models” is still at stake. Interconnects AI is a reader-supported publication. To receive new posts and support my work, consider becoming a subscriber. Subscribe With this complexity, I wanted to distill my key beliefs down into a clear list. These are downstream of 10+ pieces I’ve written or recorded on open models this spring (which are linked throughout). It’s surprising that the top closed models did not show a growing capability margin over open models , based on compute differences for training and research, especially in the second half of 2025 and through today. Open model labs are technically very strong at keeping pace on well-established benchmarks. This will continue and reflects a balance of abundant talent and sufficient computing power. Chinese open-weight labs focus slightly more on benchmark scores than comparable closed labs in the U.S. Distillation helps the Chinese LLM companies do so, but it’s not a panacea. Changes in the distillation dynamic (e.g. regulation) will not be a determining factor on the balance of capabilities. This increase in focus is a natural evolution of their incentives in keeping the narrative on keeping up with the frontier alive, which is crucial to fundraising and adoption. To date, closed models tend to be more robust and generally useful than similarly scoring open models . Closed models have certain hard-to-mea",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "We’re living through the period of time when we’ll learn if open models can keep up with closed labs. The obvious answer is that no, they won’t. This answer is a form of saying they won’t keep up in every area . This framing closes off a popular prediction where the open models completely catch up ,.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 2.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[My bets on open models, mid-2026]]>」（We’re living through the period of time when we’ll learn if…），涉及 LLM → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「<![CDATA[My bets on open models, mid-20…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "We’re living through the period of time when we’ll learn if open mo…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "<![CDATA[My bets on open models, mid-2026]]>. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：We’re living through the period of time when we’ll learn if open mo…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[My bets on open models, mid-2026]]>. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。We’re living through the period of time when we’ll learn if open mo…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[My bets on open models, mid-2026]]>. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：We’re living through the period of time when we’ll learn if open mo…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[My bets on open models, mid-2026]]>. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[我对开放模型的赌注，2026 年中期]]>"
+  }
+]
