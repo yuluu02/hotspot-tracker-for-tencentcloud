@@ -1,0 +1,913 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "zilliztech/claude-context - Code search MCP for Claude Code. Make entire codebase the context for any coding agent.",
+    "url": "https://github.com/zilliztech/claude-context",
+    "heat": "7,715 stars",
+    "time": "Today",
+    "developer_name": "zilliztech",
+    "developer_url": "https://github.com/zilliztech",
+    "developer_email": "info@zilliz.com",
+    "today_stars": "871 stars today",
+    "language": "TypeScript",
+    "summary": "Code search MCP for Claude Code. Make entire codebase the context for any coding agent.",
+    "content": "\n\n> 🆕 **Looking for persistent memory for Claude Code?** Check out memsearch Claude Code plugin — a markdown-first memory system that gives your AI agent long-term memory across sessions.\n\n### Your entire codebase as Claude's context\n\n[](https://opensource.org/licenses/MIT)\n[](https://nodejs.org/)\n[](docs/)\n[](https://marketplace.visualstudio.com/items?itemName=zilliz.semanticcodesearch)\n[](https://www.npmjs.com/package/@zilliz/claude-context-core)\n[](https://www.npmjs.com/package/@zilliz/claude-context-mcp)\n[](https://twitter.com/zilliz_universe)\n[](https://deepwiki.com/zilliztech/claude-context)\n   \n \n\n**Claude Context** is an MCP plugin that adds semantic code search to Claude Code and other AI coding agents, giving them deep context from your entire codebase.\n\n🧠 **Your Entire Codebase as Context**: Claude Context uses semantic search to find all relevant code from millions of lines. No multi-round discovery needed. It brings results straight into the Claude's context.\n\n💰 **Cost-Effective for Large Codebases**: Instead of loading entire directories into Claude for every request, which can be very expensive, Claude Context efficiently stores your codebase in a vector database and only uses related code in context to keep your costs manageable.\n\n---\n\n## 🚀 Demo\n\nModel Context Protocol (MCP) allows you to integrate Claude Context with your favorite AI coding assistants, e.g. Claude Code.\n\n## Quick Start\n\n### Prerequisites\n\n \n Get a free vector database on Zilliz Cloud 👈 \n\nClaude Context needs a vector database. You can sign up on Zilliz Cloud to get an API key.\n\nCopy your Personal Key to replace `your-zilliz-cloud-api-key` in the configuration examples.\n \n\n \n Get OpenAI API Key for embedding model \n\nYou need an OpenAI API key for the embedding model. You can get one by signing up at OpenAI.  \n\nYour API key will look like this: it always starts with `sk-`.  \nCopy your key and use it in the configuration examples below as `your-openai-api-key`.\n\n \n\n### Configure MCP for Claude Code\n\n**System Requirements:**\n\n- Node.js >= 20.0.0 and   Claude Context is not compatible with Node.js 24.0.0, you need downgrade it first if your node version is greater or equal to 24.\n\n#### Configuration\n\nUse the command line interface to add the Claude Context MCP server:\n\n```bash\nclaude mcp add claude-context \\\n  -e OPENAI_API_KEY=sk-your-openai-api-key \\\n  -e MILVUS_ADDRESS=your-zilliz-cloud-public-endpoint \\\n  -e MILVUS_TOKEN=your-zilliz-cloud-api-key \\\n  -- npx @zilliz/claude-context-mcp@latest\n```\n\nSee the Claude Code MCP documentation for more details about MCP server management.\n\n### Other MCP Client Configurations\n\n \n  OpenAI Codex CLI  \n\nCodex CLI uses TOML configuration files:\n\n1. Create or edit the `~/.codex/config.toml` file.\n\n2. Add the following configuration:\n\n```toml\n# IMPORTANT: the top-level key is `mcp_servers` rather than `mcpServers`.\n[mcp_servers.claude-context]\ncommand = \"npx\"\nargs = [\"@zilliz/claude-context-mcp@latest\"]\nenv = { \"OPENAI_API_KEY\" = \"",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "embedding",
+        "mcp",
+        "openai",
+        "vector database"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Vector DB"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "zilliztech/claude-context: Code search MCP for Claude Code. Make entire codebase the context for any coding agent.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 6.0,
+      "tcloud_integration": "**claude-context** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs claude-context 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**claude-context** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs claude-context 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**claude-context** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs claude-context 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「zilliztech/claude-context - Code search MCP for C…」（zilliztech/claude-context: Code search MCP for Claude Code.…），涉及 Agent / MCP / Vector DB → 可写方向：**claude-context** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs claude-context 的横向对比：CodeBudd…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「zilliztech/claude-context - Code search…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 claude-context 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 claude-context 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 claude-context 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 claude-context 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "zilliztech/claude-context: Code search MCP for Claude Code. Make en…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "zilliztech/claude-context - Code search MCP for Claude Code. Make entire codebase the c…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：zilliztech/claude-context: Code search MCP for Claude Code. Make en…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: zilliztech/claude-context - Code search MCP for Claude Code. Make entire codebase the c…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。zilliztech/claude-context: Code search MCP for Claude Code. Make en…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**claude-context** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs claude-context 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. zilliztech/claude-context - Code search MCP for Claude Code. Make entire codebase the c…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：zilliztech/claude-context: Code search MCP for Claude Code. Make en…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: zilliztech/claude-context - Code search MCP for Claude Code. Make entire codebase the c…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "claude-context：代码搜索 MCP 以获得克劳德代码。使整个代码库成为任何编码代理的上下文。",
+    "developer_profile": {
+      "github_username": "zilliztech",
+      "profile_url": "https://github.com/zilliztech",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "info@zilliz.com",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/zilliz_universe"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Fincept-Corporation/FinceptTerminal - FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
+    "url": "https://github.com/Fincept-Corporation/FinceptTerminal",
+    "heat": "13,297 stars",
+    "time": "Today",
+    "developer_name": "Fincept-Corporation",
+    "developer_url": "https://github.com/Fincept-Corporation",
+    "developer_email": "support@fincept.in",
+    "today_stars": "1,772 stars today",
+    "language": "Python",
+    "summary": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
+    "content": "# Fincept Terminal\n\n \n\n[](https://github.com/Fincept-Corporation/FinceptTerminal/blob/main/LICENSE)\n[](https://isocpp.org/)\n[](https://www.qt.io/)\n[](https://www.python.org/)\n[](https://hits.sh/github.com/Fincept-Corporation/FinceptTerminal/)\n\n   \n\n[](https://github.com/Fincept-Corporation/FinceptTerminal/stargazers)\n[](https://github.com/Fincept-Corporation/FinceptTerminal/network/members)\n[](https://github.com/Fincept-Corporation/FinceptTerminal/watchers)\n[](https://github.com/Fincept-Corporation/FinceptTerminal/releases)\n[](https://github.com/Fincept-Corporation/FinceptTerminal/issues)\n\n[](https://twitter.com/intent/tweet?text=Check%20out%20FinceptTerminal&url=https%3A//github.com/Fincept-Corporation/FinceptTerminal/) [](https://www.linkedin.com/sharing/share-offsite/?url=https%3A//github.com/Fincept-Corporation/FinceptTerminal/) [](https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/Fincept-Corporation/FinceptTerminal/) [](https://www.reddit.com/submit?url=https%3A//github.com/Fincept-Corporation/FinceptTerminal/&title=FinceptTerminal) [](https://api.whatsapp.com/send?text=Check%20out%20FinceptTerminal%3A%20https%3A//github.com/Fincept-Corporation/FinceptTerminal/)\n\n### **Your Thinking is the Only Limit. The Data Isn't.**\n\nState-of-the-art financial intelligence platform with CFA-level analytics, AI automation, and unlimited data connectivity.\n\n📥 Download · 📚 Docs · 💬 Discussions · 💬 Discord · 🤝 Partner\n\n \n   \n           Equity Research   \n           Portfolio   \n           News   \n           Node Editor   \n   \n \n\n \n\n---\n\n## About\n\n**Fincept Terminal v4** is a pure native C++20 desktop application. It uses **Qt6** for UI and rendering, embedded **Python** for analytics, and delivers Bloomberg-terminal-class performance in a single native binary.\n\n---\n\n## Features\n\n| **Feature** | **Description** |\n|-------------|-----------------|\n| 📊 **CFA-Level Analytics** | DCF models, portfolio optimization, risk metrics (VaR, Sharpe), derivatives pricing via embedded Python |\n| 🤖 **AI Agents** | 37 agents across Trader/Investor (Buffett, Graham, Lynch, Munger, Klarman, Marks…), Economic, and Geopolitics frameworks; local LLM support; multi-provider (OpenAI, Anthropic, Gemini, Groq, DeepSeek, MiniMax, OpenRouter, Ollama) |\n| 🌐 **100+ Data Connectors** | DBnomics, Polygon, Kraken, Yahoo Finance, FRED, IMF, World Bank, AkShare, government APIs, plus optional alternative-data overlays such as Adanos market sentiment for equity research |\n| 📈 **Real-Time Trading** | Crypto (Kraken/HyperLiquid WebSocket), equity, algo trading, paper trading engine, 16 broker integrations (Zerodha, Angel One, Upstox, Fyers, Dhan, Groww, Kotak, IIFL, 5paisa, AliceBlue, Shoonya, Motilal, IBKR, Alpaca, Tradier, Saxo) |\n| 🔬 **QuantLib Suite** | 18 quantitative analysis modules — pricing, risk, stochastic, volatility, fixed income |\n| 🚢 **Global Intelligence** | Maritime tracking, geopolitical analysis, relationship mapping, satellite data |\n| 🎨 **Visual Workflows** | ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "gemini",
+        "deepseek",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "开发者话题",
+      "products": [
+        "Gemini",
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.4,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**FinceptTerminal** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**FinceptTerminal** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "llm",
+        "gemini",
+        "deepseek"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**FinceptTerminal** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "产品关联（Hunyuan）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 产品关联（Hunyuan） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Fincept-Corporation/FinceptTerminal - FinceptTerm…」（FinceptTerminal is a modern finance application offering ad…），涉及 LLM / Python → 可写方向：**FinceptTerminal** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「FinceptTerminal」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 FinceptTerminal 的核心功能（FinceptTerminal is a modern finance application offering advanced market analyt…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 FinceptTerminal 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 FinceptTerminal 的核心功能（FinceptTerminal is a modern finance application offering advanced market analyt…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 FinceptTerminal 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "FinceptTerminal is a modern finance application offering advanced m…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "Fincept-Corporation/FinceptTerminal - FinceptTerminal is a modern finance application o…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：FinceptTerminal is a modern finance application offering advanced m…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 产品关联（Hunyuan） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Fincept-Corporation/FinceptTerminal - FinceptTerminal is a modern finance application o…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + product tie-in (Hunyuan) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。FinceptTerminal is a modern finance application offering advanced m…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 产品关联（Hunyuan） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**FinceptTerminal** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Fincept-Corporation/FinceptTerminal - FinceptTerminal is a modern finance application o…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + product tie-in (Hunyuan) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：FinceptTerminal is a modern finance application offering advanced m…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 产品关联（Hunyuan） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Fincept-Corporation/FinceptTerminal - FinceptTerminal is a modern finance application o…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + product tie-in (Hunyuan) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "FinceptTerminal 是一款现代金融应用程序，提供先进的市场分析、投资研究和经济数据工具，专为在用户友好的环境中进行交互式探索和数据驱动的决策而设计。",
+    "developer_profile": {
+      "github_username": "Fincept-Corporation",
+      "profile_url": "https://github.com/Fincept-Corporation",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "support@fincept.in",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/finceptcorp"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/finceptcorp"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.instagram.com/finceptcorp/"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@finceptcorp"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "koala73/worldmonitor - Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+    "url": "https://github.com/koala73/worldmonitor",
+    "heat": "51,761 stars",
+    "time": "Today",
+    "developer_name": "koala73",
+    "developer_url": "https://github.com/koala73",
+    "developer_email": "",
+    "today_stars": "424 stars today",
+    "language": "TypeScript",
+    "summary": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+    "content": "# World Monitor\n\n**Real-time global intelligence dashboard** — AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface.\n\n[](https://github.com/koala73/worldmonitor/stargazers)\n[](https://github.com/koala73/worldmonitor/network/members)\n[](https://discord.gg/re63kWKxaz)\n[](https://www.gnu.org/licenses/agpl-3.0)\n[](https://www.typescriptlang.org/)\n[](https://github.com/koala73/worldmonitor/commits/main)\n[](https://github.com/koala73/worldmonitor/releases/latest)\n\n \n     &nbsp;\n     &nbsp;\n     &nbsp;\n     &nbsp;\n     \n \n\n \n     &nbsp;\n     &nbsp;\n     &nbsp;\n     \n \n\n \n    Documentation   &nbsp;·&nbsp;\n    Releases   &nbsp;·&nbsp;\n    Contributing  \n \n\n---\n\n## What It Does\n\n- **500+ curated news feeds** across 15 categories, AI-synthesized into briefs\n- **Dual map engine** — 3D globe (globe.gl) and WebGL flat map (deck.gl) with 45 data layers\n- **Cross-stream correlation** — military, economic, disaster, and escalation signal convergence\n- **Country Intelligence Index** — composite risk scoring across 12 signal categories\n- **Finance radar** — 92 stock exchanges, commodities, crypto, and 7-signal market composite\n- **Local AI** — run everything with Ollama, no API keys required\n- **5 site variants** from a single codebase (world, tech, finance, commodity, happy)\n- **Native desktop app** (Tauri 2) for macOS, Windows, and Linux\n- **21 languages** with native-language feeds and RTL support\n\nFor the full feature list, architecture, data sources, and algorithms, see the **documentation**.\n\n---\n\n## Quick Start\n\n```bash\ngit clone https://github.com/koala73/worldmonitor.git\ncd worldmonitor\nnpm install\nnpm run dev\n```\n\nOpen localhost:5173. No environment variables required for basic operation.\n\nFor variant-specific development:\n\n```bash\nnpm run dev:tech       # tech.worldmonitor.app\nnpm run dev:finance    # finance.worldmonitor.app\nnpm run dev:commodity  # commodity.worldmonitor.app\nnpm run dev:happy      # happy.worldmonitor.app\n```\n\nSee the **self-hosting guide** for deployment options (Vercel, Docker, static).\n\n---\n\n## Tech Stack\n\n| Category | Technologies |\n|----------|-------------|\n| **Frontend** | Vanilla TypeScript, Vite, globe.gl + Three.js, deck.gl + MapLibre GL |\n| **Desktop** | Tauri 2 (Rust) with Node.js sidecar |\n| **AI/ML** | Ollama / Groq / OpenRouter, Transformers.js (browser-side) |\n| **API Contracts** | Protocol Buffers (92 protos, 22 services), sebuf HTTP annotations |\n| **Deployment** | Vercel Edge Functions (60+), Railway relay, Tauri, PWA |\n| **Caching** | Redis (Upstash), 3-tier cache, CDN, service worker |\n\nFull stack details in the **architecture docs**.\n\n---\n\n## Flight Data\n\nFlight data provided gracefully by Wingbits, the most advanced ADS-B flight data solution.\n\n---\n\n## Data Sources\n\nWorldMonitor aggregates 65+ external data sources across geopolitics, finance, energy, climate, aviation, cyber, military, infrastructure, and news intelligence. See the full da",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 6,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "cdn",
+        "edge",
+        "vercel",
+        "railway",
+        "redis"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "竞品动态",
+      "products": [],
+      "competitors": [
+        "Vercel"
+      ],
+      "competitor_products": [
+        "Vercel"
+      ],
+      "techs": [
+        "3D Generation",
+        "Rust",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "koala73/worldmonitor: Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.3,
+      "tcloud_relevance": 6.6,
+      "tcloud_integration": "**worldmonitor** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
+      "tcloud_products": [
+        "EdgeOne"
+      ],
+      "tcloud_reasons": [
+        "**worldmonitor** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景"
+      ],
+      "tcloud_evidence": [
+        "cdn",
+        "edge",
+        "edge function"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**worldmonitor** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
+      "tcloud_official_matches": [
+        "EdgeOne"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "产品关联（EdgeOne）",
+        "竞品对比（Vercel）"
+      ],
+      "editorial_angles_text": "教程拆解 + 产品关联（EdgeOne） + 竞品对比（Vercel）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「koala73/worldmonitor - Real-time global intellige…」（koala73/worldmonitor: Real-time global intelligence dashboa…），涉及 3D Generation / Rust / TypeScript → 可写方向：Vercel 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「worldmonitor」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 worldmonitor 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉用 worldmonitor 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 worldmonitor 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 worldmonitor 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "koala73/worldmonitor: Real-time global intelligence dashboard. AI-p…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：…",
+        "x_en": "koala73/worldmonitor - Real-time global intelligence dashboard. AI-powered news aggrega…. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：koala73/worldmonitor: Real-time global intelligence dashboard. AI-p…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 教程拆解 + 产品关联（EdgeOne） + 竞品对比（Vercel）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: koala73/worldmonitor - Real-time global intelligence dashboard. AI-powered news aggrega…. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around hands-on walkthrough + product tie-in (EdgeOne) + competitor comparison (Vercel). What matters more to you: deployment, performance, or wor…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。koala73/worldmonitor: Real-time global intelligence dashboard. AI-p…。如果用官方号发，建议主推 EdgeOne，重点讲 教程拆解 + 产品关联（EdgeOne） + 竞品对比（Vercel），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**worldmonitor** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. koala73/worldmonitor - Real-time global intelligence dashboard. AI-powered news aggrega…. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on hands-on walkthrough + product tie-in (EdgeOne) + competitor comparison (Vercel).",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：koala73/worldmonitor: Real-time global intelligence dashboard. AI-p…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 教程拆解 + 产品关联（EdgeOne） + 竞品对比（Vercel）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: koala73/worldmonitor - Real-time global intelligence dashboard. AI-powered news aggrega…. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on hands-on walkthrough + product tie-in (EdgeOne) + competitor comparison (Vercel). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "worldmonitor：实时全球情报仪表板。在统一的态势感知界面中进行人工智能驱动的新闻聚合、地缘政治监控和基础设施跟踪",
+    "developer_profile": {
+      "github_username": "koala73",
+      "profile_url": "https://github.com/koala73",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://www.x.com/eliehabib"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "langfuse/langfuse - 🪢 Open source LLM engineering platform: LLM Observability, metrics, evals, prompt management, playground, datasets. Integrates with OpenTelemetry, Langchain, OpenAI SDK, LiteLLM, and more. 🍊YC W23",
+    "url": "https://github.com/langfuse/langfuse",
+    "heat": "25,717 stars",
+    "time": "Today",
+    "developer_name": "langfuse",
+    "developer_url": "https://github.com/langfuse",
+    "developer_email": "contact@langfuse.com",
+    "today_stars": "149 stars today",
+    "language": "TypeScript",
+    "summary": "🪢 Open source LLM engineering platform: LLM Observability, metrics, evals, prompt management, playground, datasets. Integrates with OpenTelemetry, Langchain, OpenAI SDK, LiteLLM, and more. 🍊YC W23",
+    "content": " \n\n \n    \n       \n         \n             Langfuse Is Doubling Down On Open Source \n              \n          \n             Langfuse Cloud \n           · \n          \n             Self Host \n           · \n          \n             Demo \n          \n       \n    \n\n    \n        Docs   ·\n        Report Bug   ·\n        Feature Request   ·\n        Changelog   ·\n        Roadmap   ·\n    \n    \n    Langfuse uses   GitHub Discussions    for Support and Feature Requests. \n    \n     We're hiring.    Join us   in product engineering and technical go-to-market roles. \n    \n    \n    \n    \n \n\n \n    \n    \n    \n      \n    \n     \n      \n      \n    \n    \n     \n    \n     \n    \n     \n    \n     \n    \n     \n    \n     \n    \n     \n \n\n \n     \n     \n     \n     \n \n\n \n     Proudly made with ClickHouse open source database  \n \n\nLangfuse is an **open source LLM engineering** platform. It helps teams collaboratively\n**develop, monitor, evaluate,** and **debug** AI applications. Langfuse can be **self-hosted in minutes** and is **battle-tested**.\n\n[](https://langfuse.com/watch-demo)\n\n## ✨ Core Features\n\n \n\n- LLM Application Observability: Instrument your app and start ingesting traces to Langfuse, thereby tracking LLM calls and other relevant logic in your app such as retrieval, embedding, or agent actions. Inspect and debug complex logs and user sessions. Try the interactive demo to see this in action.\n\n- Prompt Management helps you centrally manage, version control, and collaboratively iterate on your prompts. Thanks to strong caching on server and client side, you can iterate on prompts without adding latency to your application.\n\n- Evaluations are key to the LLM application development workflow, and Langfuse adapts to your needs. It supports LLM-as-a-judge, user feedback collection, manual labeling, and custom evaluation pipelines via APIs/SDKs.\n\n- Datasets enable test sets and benchmarks for evaluating your LLM application. They support continuous improvement, pre-deployment testing, structured experiments, flexible evaluation, and seamless integration with frameworks like LangChain and LlamaIndex.\n\n- LLM Playground is a tool for testing and iterating on your prompts and model configurations, shortening the feedback loop and accelerating development. When you see a bad result in tracing, you can directly jump to the playground to iterate on it.\n\n- Comprehensive API: Langfuse is frequently used to power bespoke LLMOps workflows while using the building blocks provided by Langfuse via the API. OpenAPI spec, Postman collection, and typed SDKs for Python, JS/TS are available.\n\n## 📦 Deploy Langfuse\n\n \n\n### Langfuse Cloud\n\nManaged deployment by the Langfuse team, generous free-tier, no credit card required.\n\n \n     \n         \n     \n \n\n### Self-Host Langfuse\n\nRun Langfuse on your own infrastructure:\n\n- Local (docker compose): Run Langfuse on your own machine in 5 minutes using Docker Compose.\n\n  ```bash\n  # Get a copy of the latest Langfuse repository\n  git clone https://github.com/langfus",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 8,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "embedding",
+        "prompt",
+        "langchain",
+        "llamaindex",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "LangChain"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Go",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "langfuse/langfuse: 🪢 Open source LLM engineering platform: LLM Observability, metrics, evals, prompt management, playground, datasets. Integrates with OpenTelemetry, Langchain, OpenAI SDK, LiteLLM, and more.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.2,
+      "tcloud_relevance": 6.1,
+      "tcloud_integration": "**langfuse** 明确支持自托管部署（langfuse/langfuse: 🪢 Open source LLM engineering platform: L），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**langfuse** 明确支持自托管部署（langfuse/langfuse: 🪢 Open source LLM engineering platform: L），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行"
+      ],
+      "tcloud_evidence": [
+        "self-hosted",
+        "docker compose"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**langfuse** 明确支持自托管部署（langfuse/langfuse: 🪢 Open source LLM engineering platform: L），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「langfuse/langfuse - 🪢 Open source LLM engineering…」（langfuse/langfuse: 🪢 Open source LLM engineering platform:…），涉及 LLM / Agent / Go → 可写方向：**langfuse** 明确支持自托管部署（langfuse/langfuse: 🪢 Open source LLM engineering platfor…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「langfuse」支持自部署，可写『Lighthouse 一键部署 langfuse』实操教程。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 langfuse」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 langfuse 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 langfuse」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 langfuse 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "langfuse/langfuse: 🪢 Open source LLM engineering platform: LLM Obse…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "langfuse/langfuse - 🪢 Open source LLM engineering platform: LLM Observability, metrics,…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：langfuse/langfuse: 🪢 Open source LLM engineering platform: LLM Obse…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: langfuse/langfuse - 🪢 Open source LLM engineering platform: LLM Observability, metrics,…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary. What matters more to you: deployment,…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。langfuse/langfuse: 🪢 Open source LLM engineering platform: LLM Obse…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**langfuse** 明确支持自托管部署（langfuse/langfuse: 🪢 Open source LLM engineering platform: L），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. langfuse/langfuse - 🪢 Open source LLM engineering platform: LLM Observability, metrics,…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：langfuse/langfuse: 🪢 Open source LLM engineering platform: LLM Obse…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: langfuse/langfuse - 🪢 Open source LLM engineering platform: LLM Observability, metrics,…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "langfuse：🪢 开源LLM工程平台：LLM可观察性、指标、评估、提示管理、游乐场、数据集。与 OpenTelemetry、Langchain、OpenAI SDK、LiteLLM 等集成。",
+    "developer_profile": {
+      "github_username": "langfuse",
+      "profile_url": "https://github.com/langfuse",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "contact@langfuse.com",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/langfuse"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/langfuse"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "KeygraphHQ/shannon - Shannon Lite is an autonomous, white-box AI pentester for web applications and APIs. It analyzes your source code, identifies attack vectors, and executes real exploits to prove vulnerabilities before they reach production.",
+    "url": "https://github.com/KeygraphHQ/shannon",
+    "heat": "39,696 stars",
+    "time": "Today",
+    "developer_name": "KeygraphHQ",
+    "developer_url": "https://github.com/KeygraphHQ",
+    "developer_email": "shannon@keygraph.io",
+    "today_stars": "372 stars today",
+    "language": "TypeScript",
+    "summary": "Shannon Lite is an autonomous, white-box AI pentester for web applications and APIs. It analyzes your source code, identifies attack vectors, and executes real exploits to prove vulnerabilities before they reach production.",
+    "content": ">[!NOTE]\n> **📢 Sunsetting Router Mode (claude-code-router)`. →**\n\n \n\n \n\n# Shannon — AI Pentester by Keygraph\n\n   \n\nShannon is an autonomous, white-box AI pentester for web applications and APIs.  \nIt analyzes your source code, identifies attack vectors, and executes real exploits to prove vulnerabilities before they reach production.\n\n---\n\n   \n   \n\n---\n \n\n## What is Shannon?\n\nShannon is an AI pentester developed by Keygraph. It performs white-box security testing of web applications and their underlying APIs by combining source code analysis with live exploitation.\n\nShannon analyzes your web application's source code to identify potential attack vectors, then uses browser automation and command-line tools to execute real exploits (injection attacks, authentication bypass, SSRF, XSS) against the running application and its APIs. Only vulnerabilities with a working proof-of-concept are included in the final report.\n\n**Why Shannon Exists**\n\nThanks to tools like Claude Code and Cursor, your team ships code non-stop. But your penetration test? That happens once a year. This creates a *massive* security gap. For the other 364 days, you could be unknowingly shipping vulnerabilities to production.\n\nShannon closes that gap by providing on-demand, automated penetration testing that can run against every build or release.\n\n## Shannon in Action\n\nShannon identified 20+ vulnerabilities in OWASP Juice Shop, including authentication bypass and database exfiltration. Full report →\n\n## Features\n\n- **Fully Autonomous Operation**: A single command launches the full pentest. Shannon handles 2FA/TOTP logins (including SSO), browser navigation, exploitation, and report generation without manual intervention.\n- **Reproducible Proof-of-Concept Exploits**: The final report contains only proven, exploitable findings with copy-and-paste PoCs. Vulnerabilities that cannot be exploited are not reported.\n- **OWASP Vulnerability Coverage**: Identifies and validates Injection, XSS, SSRF, and Broken Authentication/Authorization, with additional categories in development.\n- **Code-Aware Dynamic Testing**: Analyzes source code to guide attack strategy, then validates findings with live browser and CLI-based exploits against the running application.\n- **Integrated Security Tooling**: Leverages Nmap, Subfinder, WhatWeb, and Schemathesis during reconnaissance and discovery phases.\n- **Parallel Processing**: Vulnerability analysis and exploitation phases run concurrently across all attack categories.\n\n## Product Line\n\nShannon is developed by Keygraph and available in two editions:\n\n| Edition | License | Best For |\n|---------|---------|----------|\n| **Shannon Lite** | AGPL-3.0 | Local testing of your own applications. |\n| **Shannon Pro** | Commercial | Organizations needing a single AppSec platform (SAST, SCA, secrets, business logic testing, autonomous pentesting) with CI/CD integration and self-hosted deployment. |\n\n> **This repository contains Shannon Lite,** the core autonomous AI pe",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "正向推广",
+      "detail_brief": "Shannon Lite is an autonomous, white-box AI pentester for web applications and APIs. It analyzes your source code, identifies attack vectors, and executes real exploits to prove vulnerabilities before they reach production.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.8,
+      "tcloud_relevance": 8.5,
+      "tcloud_integration": "**shannon** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示\n补充关联 CodeBuddy：**shannon** 的用户群和 CodeBuddy 高度重合 — 可以写「shannon 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "EdgeOne",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**shannon** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+        "**shannon** 的用户群和 CodeBuddy 高度重合 — 可以写「shannon 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "security",
+        "web app",
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**shannon** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示\n补充关联 CodeBuddy：**shannon** 的用户群和 CodeBuddy 高度重合 — 可以写「shannon 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "EdgeOne",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（EdgeOne / CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「KeygraphHQ/shannon - Shannon Lite is an autonomou…」（Shannon Lite is an autonomous, white-box AI pentester for w…） → 可写方向：**shannon** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「shannon」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 shannon 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉用 shannon 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 shannon 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 shannon 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "Shannon Lite is an autonomous, white-box AI pentester for web appli…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：…",
+        "x_en": "KeygraphHQ/shannon - Shannon Lite is an autonomous, white-box AI pentester for web appl…. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Shannon Lite is an autonomous, white-box AI pentester for web appli…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: KeygraphHQ/shannon - Shannon Lite is an autonomous, white-box AI pentester for web appl…. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy). What matters more to you: deployment, performance, or wo…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Shannon Lite is an autonomous, white-box AI pentester for web appli…。如果用官方号发，建议主推 EdgeOne，重点讲 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**shannon** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示 补充关联 CodeBuddy：**shannon** 的用户群和 CodeBuddy 高度重合 — 可以写「shannon 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. KeygraphHQ/shannon - Shannon Lite is an autonomous, white-box AI pentester for web appl…. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Shannon Lite is an autonomous, white-box AI pentester for web appli…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: KeygraphHQ/shannon - Shannon Lite is an autonomous, white-box AI pentester for web appl…. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Shannon Lite 是一个用于 Web 应用程序和 API 的自主白盒 AI 渗透测试程序。它会分析您的源代码，识别攻击向量，并执行真正的漏洞利用，以在漏洞到达生产环境之前证明它们。",
+    "developer_profile": {
+      "github_username": "KeygraphHQ",
+      "profile_url": "https://github.com/KeygraphHQ",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "shannon@keygraph.io",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/keygraph"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/KeygraphHQ"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "ruvnet/RuView - π RuView: WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital sign monitoring, and presence detection — all without a single pixel of video.",
+    "url": "https://github.com/ruvnet/RuView",
+    "heat": "49,431 stars",
+    "time": "Today",
+    "developer_name": "ruvnet",
+    "developer_url": "https://github.com/ruvnet",
+    "developer_email": "",
+    "today_stars": "565 stars today",
+    "language": "Rust",
+    "summary": "π RuView: WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital sign monitoring, and presence detection — all without a single pixel of video.",
+    "content": "# π RuView\n\n \n   \n     \n   \n \n\n> **Beta Software** — Under active development. APIs and firmware may change. Known limitations:\n> - ESP32-C3 and original ESP32 are not supported (single-core, insufficient for CSI DSP)\n> - Single ESP32 deployments have limited spatial resolution — use 2+ nodes or add a Cognitum Seed for best results\n> - Camera-free pose accuracy is limited — use camera ground-truth training for 92.9% PCK@20\n>\n> Contributions and bug reports welcome at Issues.\n\n## **See through walls with WiFi** ##\n\n**Turn ordinary WiFi into a sensing system.** Detect people, measure breathing and heart rate, track movement, and monitor rooms — through walls, in the dark, with no cameras or wearables. Just physics.\n\n### π RuView is a WiFi sensing platform that turns radio signals into spatial intelligence.\n\nEvery WiFi router already fills your space with radio waves. When people move, breathe, or even sit still, they disturb those waves in measurable ways. RuView captures these disturbances using Channel State Information (CSI) from low-cost ESP32 sensors and turns them into actionable data: who's there, what they're doing, and whether they're okay.\n\n**What it senses:**\n- **Presence and occupancy** — detect people through walls, count them, track entries and exits\n- **Vital signs** — breathing rate and heart rate, contactless, while sleeping or sitting\n- **Activity recognition** — walking, sitting, gestures, falls — from temporal CSI patterns\n- **Environment mapping** — RF fingerprinting identifies rooms, detects moved furniture, spots new objects\n- **Sleep quality** — overnight monitoring with sleep stage classification and apnea screening\n\nBuilt on RuVector and Cognitum Seed, RuView runs entirely on edge hardware — an ESP32 mesh (as low as $9 per node) paired with a Cognitum Seed for persistent memory, cryptographic attestation, and AI integration. No cloud, no cameras, no internet required.\n\nThe system learns each environment locally using spiking neural networks that adapt in under 30 seconds, with multi-frequency mesh scanning across 6 WiFi channels that uses your neighbors' routers as free radar illuminators. Every measurement is cryptographically attested via an Ed25519 witness chain.\n\nRuView also supports pose estimation (17 COCO keypoints via the WiFlow architecture), trained entirely without cameras using 10 sensor signals — a technique pioneered from the original *DensePose From WiFi* research at Carnegie Mellon University.\n\n### Built for low-power edge applications\n\nEdge modules are small programs that run directly on the ESP32 sensor — no internet needed, no cloud fees, instant response.\n\n[](https://www.rust-lang.org/)\n[](https://opensource.org/licenses/MIT)\n[](https://github.com/ruvnet/RuView)\n[](https://hub.docker.com/r/ruvnet/wifi-densepose)\n[](#vital-sign-detection)\n[](#esp32-s3-hardware-pipeline)\n[](https://crates.io/crates/wifi-densepose-ruvector)\n\n \n> | What | How | Speed |\n> |------|-----|-------|\n> | **Pose estimation** | CSI ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 4,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "docker",
+        "edge",
+        "s3"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "3D Generation",
+        "Rust"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "ruvnet/RuView: π RuView: WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.8,
+      "tcloud_relevance": 0.6,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「ruvnet/RuView - π RuView: WiFi DensePose turns co…」（ruvnet/RuView: π RuView: WiFi DensePose turns commodity WiF…），涉及 3D Generation / Rust → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「ruvnet/RuView - π RuView: WiFi DensePos…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 RuView 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 RuView 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "ruvnet/RuView: π RuView: WiFi DensePose turns commodity WiFi signal…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "ruvnet/RuView - π RuView: WiFi DensePose turns commodity WiFi signals into real-time hu…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：ruvnet/RuView: π RuView: WiFi DensePose turns commodity WiFi signal…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: ruvnet/RuView - π RuView: WiFi DensePose turns commodity WiFi signals into real-time hu…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。ruvnet/RuView: π RuView: WiFi DensePose turns commodity WiFi signal…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. ruvnet/RuView - π RuView: WiFi DensePose turns commodity WiFi signals into real-time hu…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：ruvnet/RuView: π RuView: WiFi DensePose turns commodity WiFi signal…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: ruvnet/RuView - π RuView: WiFi DensePose turns commodity WiFi signals into real-time hu…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "π RuView：WiFi DensePose 将商用 WiFi 信号转化为实时人体姿势估计、生命体征监测和存在检测 - 所有这些都无需视频像素。",
+    "developer_profile": {
+      "github_username": "ruvnet",
+      "profile_url": "https://github.com/ruvnet",
+      "name": "",
+      "bio": "Unicorn Breeder.",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "http://Cognitum.One"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/ruv"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://ruv.io"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "HKUDS/RAG-Anything - \"RAG-Anything: All-in-One RAG Framework\"",
+    "url": "https://github.com/HKUDS/RAG-Anything",
+    "heat": "17,652 stars",
+    "time": "Today",
+    "developer_name": "HKUDS",
+    "developer_url": "https://github.com/HKUDS",
+    "developer_email": "",
+    "today_stars": "786 stars today",
+    "language": "Python",
+    "summary": "\"RAG-Anything: All-in-One RAG Framework\"",
+    "content": " \n\n \n   \n \n\n# 🚀 RAG-Anything: All-in-One RAG Framework\n\n   \n\n \n   \n \n\n \n   \n     \n         \n         \n         \n     \n     \n         \n       \n         \n         \n     \n     \n         \n         \n     \n     \n         \n         \n     \n   \n \n\n \n\n \n    \n \n\n \n   \n     \n   \n \n\n---\n\n \n   \n     \n       \n         \n       \n       \n         \n           \n         \n       \n     \n   \n \n\n---\n\n## 🎉 News\n- [X] [2025.10]🎯📢 🚀 We have released the technical report of RAG-Anything. Access it now to explore our latest research findings.\n- [X] [2025.08]🎯📢 🔍 RAG-Anything now features **VLM-Enhanced Query** mode! When documents include images, the system seamlessly integrates them into VLM for advanced multimodal analysis, combining visual and textual context for deeper insights.\n- [X] [2025.07]🎯📢 RAG-Anything now features a context configuration module, enabling intelligent integration of relevant contextual information to enhance multimodal content processing.\n- [X] [2025.07]🎯📢 🚀 RAG-Anything now supports multimodal query capabilities, enabling enhanced RAG with seamless processing of text, images, tables, and equations.\n- [X] [2025.07]🎯📢 🎉 RAG-Anything has reached 1k🌟 stars on GitHub! Thank you for your incredible support and valuable contributions to the project.\n\n---\n\n## 🌟 System Overview\n\n*Next-Generation Multimodal Intelligence*\n\n \n\nModern documents increasingly contain diverse multimodal content—text, images, tables, equations, charts, and multimedia—that traditional text-focused RAG systems cannot effectively process. **RAG-Anything** addresses this challenge as a comprehensive **All-in-One Multimodal Document Processing RAG system** built on LightRAG.\n\nAs a unified solution, RAG-Anything **eliminates the need for multiple specialized tools**. It provides **seamless processing and querying across all content modalities** within a single integrated framework. Unlike conventional RAG approaches that struggle with non-textual elements, our all-in-one system delivers **comprehensive multimodal retrieval capabilities**.\n\nUsers can query documents containing **interleaved text**, **visual diagrams**, **structured tables**, and **mathematical formulations** through **one cohesive interface**. This consolidated approach makes RAG-Anything particularly valuable for academic research, technical documentation, financial reports, and enterprise knowledge management where rich, mixed-content documents demand a **unified processing framework**.\n\n \n\n \n\n### 🎯 Key Features\n\n \n\n- **🔄 End-to-End Multimodal Pipeline** - Complete workflow from document ingestion and parsing to intelligent multimodal query answering\n- **📄 Universal Document Support** - Seamless processing of PDFs, Office documents, images, and diverse file formats\n- **🧠 Specialized Content Analysis** - Dedicated processors for images, tables, mathematical equations, and heterogeneous content types\n- **🔗 Multimodal Knowledge Graph** - Automatic entity extraction and cross-modal relationship discovery for enhanced under",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "rag",
+        "multimodal",
+        "knowledge graph"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "RAG"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "HKUDS/RAG-Anything: \"RAG-Anything: All-in-One RAG Framework\"",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.0,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「HKUDS/RAG-Anything - \"RAG-Anything: All-in-One RA…」（HKUDS/RAG-Anything: \"RAG-Anything: All-in-One RAG Framework\"），涉及 RAG → 可写方向：RAG 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「HKUDS/RAG-Anything - \"RAG-Anything: All…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 RAG-Anything 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 RAG-Anything 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "HKUDS/RAG-Anything: \"RAG-Anything: All-in-One RAG Framework\"。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "HKUDS/RAG-Anything - \"RAG-Anything: All-in-One RAG Framework\". For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：HKUDS/RAG-Anything: \"RAG-Anything: All-in-One RAG Framework\"。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: HKUDS/RAG-Anything - \"RAG-Anything: All-in-One RAG Framework\". From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。HKUDS/RAG-Anything: \"RAG-Anything: All-in-One RAG Framework\"。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. HKUDS/RAG-Anything - \"RAG-Anything: All-in-One RAG Framework\". For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：HKUDS/RAG-Anything: \"RAG-Anything: All-in-One RAG Framework\"。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: HKUDS/RAG-Anything - \"RAG-Anything: All-in-One RAG Framework\". Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "“RAG-Anything：一体化 RAG 框架”",
+    "developer_profile": {
+      "github_username": "HKUDS",
+      "profile_url": "https://github.com/HKUDS",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [],
+      "is_org": false
+    }
+  }
+]
