@@ -1,0 +1,304 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Using \"underdrawings\" for accurate text and numbers",
+    "url": "https://samcollins.blog/underdrawings/",
+    "hn_url": "https://news.ycombinator.com/item?id=47977990",
+    "heat": "90 points",
+    "time": "5 hours ago",
+    "developer_name": "samcollins",
+    "developer_url": "https://news.ycombinator.com/user?id=samcollins",
+    "content": "Using “underdrawings” for accurate text and numbers ← samcollins.blog Using “underdrawings” for accurate text and numbers Sam Collins • Apr 30, 2026 • LLM I discovered a technique for generating reliable text and numbers in AI generated images. For example, the following image is considered impossible with state of the art image models. But I made this with Gemini 3.0 Pro (plus one extra step I’m going to explain below). The Underdrawing Method I’m totally naming it like it’s a thing but it does seem to be a thing. Here’s a simple a/b test showing the results without and with this method. Make an image of a game board with 50 stepping stones arranged in a spiral, winding counter-clockwise inward from start at the outside (1) to finish at the centre (50). Each stone is clearly numbered consecutively from 1 to 50. Style: claymation diorama, studio-lit, candy-bright, soft bokeh background. ❌ Gemini 3 Pro (without underdrawing) As expected. Impressive at first glance but falls apart once you start reading. ❌ ChatGPT Images 2 (without underdrawing) I was so impressed with ChatGPT-Images-2 release I expected it to get this . Very surprising to see it fail similar to Gemini. ✅ Gemini 3.0 Pro (with the underdrawing method) Bingo. Correct numbers, correct number and sequencing of buttons, correct spiral shape So how does it work? I came up with this pattern while trying to figure out how to generate an image of a 100-step adventure board for my kid. Use deterministic and generative machines for what they’re good at SVG/HTML makes dry visuals but with excellent math and precision Image Gen models make stunning visuals but with unreliable math and text “Give it an outline. Ask it to paint on top” Layer 1: The “underdrawing” (deterministic) : Layout the numbers and text in the correct positions and orientations in whatever language/format you prefer (svg, python, mermaid) — you just need to export an image of it with the pixels of the numbers/text. Layer 2: The “painting” (generative): Using a multi-modal image model like Gemini 3.0 Pro (you need image+text input → image output), pass your underdrawing image along with your text prompt. Example Step 1 of 2: generate the numbers/text outline with SVG Make an SVG of 50 stepping stones arranged in a spiral, winding counter-clockwise inward from start at the outside (1) to finish at the centre (50), each stone numbered consecutively from 1 to 50. Each stone is a different shape: circle, square, triangle, hexagon. Step 2 of 2: Use the underdrawing to do image-to-image generation Transform this image into a photographed claymation diorama of assorted artisan chocolates and candies, arranged in a spiral path winding counter-clockwise inward from start (1) at the outside to finish (50) at the centre, viewed from a low-angle tilted perspective. That’s it It isn’t hard. By now claude code or codex can do every step of that for you. Note: it’s good, but it won’t be perfect every time. Thank you for the reality check, 7",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "chatgpt",
+        "claude",
+        "gemini",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Using “underdrawings” for accurate text and numbers ← samcollins. blog Using “underdrawings” for accurate text and numbers Sam Collins • Apr 30, 2026 • LLM I discovered a technique for generating reliable text and numbers in AI generated images. For example, the following image is considered impossible with state of the art image models. But I made this with Gemini 3.",
+      "heat_score": 4.0,
+      "timeliness_score": 8.0,
+      "composite_score": 7.1,
+      "tcloud_relevance": 8.3,
+      "tcloud_integration": "**Using \"underdrawings\" for accurate text ** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**Using \"underdrawings\" for accurate text ** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Using \"underdrawings\" for accurate text ** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**Using \"underdrawings\" for accurate text ** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "llm",
+        "claude",
+        "gemini"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**Using \"underdrawings\" for accurate text ** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**Using \"underdrawings\" for accurate text ** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 社区参与",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Using \"underdrawings\" for accurate text and numbe…」（Using “underdrawings” for accurate text and numbers ← samco…），涉及 LLM / Python → 可写方向：与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy： 涉及 AI 编码场景，CodeBuddy 提供…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Using \"underdrawings\" for accurate text 」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 Using \"underdrawings\" for accurate text  的核心功能（Using “underdrawings” for accurate text and numbers ← samcollins. blog Using “u…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 Using \"underdrawings\" for accurate text  的核心功能（Using “underdrawings” for accurate text and numbers ← samcollins. blog Using “u…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "Using “underdrawings” for accurate text and numbers ← samcollins. b…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "Using \"underdrawings\" for accurate text and numbers. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Using “underdrawings” for accurate text and numbers ← samcollins. b…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Using \"underdrawings\" for accurate text and numbers. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Using “underdrawings” for accurate text and numbers ← samcollins. b…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**Using \"underdrawings\" for accurate text ** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**Using \"underdrawings\" for accurate text ** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互…",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Using \"underdrawings\" for accurate text and numbers. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Using “underdrawings” for accurate text and numbers ← samcollins. b…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Using \"underdrawings\" for accurate text and numbers. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Using \"underdrawings\" for accurate text ：使用“underdrawings”来获得准确的文本和数字← samcollins。博客 使用“underdrawings”获得准确的文本和数字 Sam Collins • 2026 年 4 月 30 日 • 法学硕士 我发现了一种在人工智能生成的图像中生成可靠文本和数字的技术。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "DeepClaude – Claude Code agent loop with DeepSeek V4 Pro, 17x cheaper",
+    "url": "https://github.com/aattaran/deepclaude",
+    "hn_url": "https://news.ycombinator.com/item?id=48002136",
+    "heat": "252 points",
+    "time": "6 hours ago",
+    "developer_name": "alattaran",
+    "developer_url": "https://news.ycombinator.com/user?id=alattaran",
+    "content": "GitHub - aattaran/deepclaude: Use Claude Code's autonomous agent loop with DeepSeek V4 Pro, OpenRouter, or any Anthropic-compatible backend. Same UX, 17x cheaper. · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert aattaran / deepclaude Public Notifications You must be signed in to change notification settings Fork 14 Star 237 main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 13 Commits 13 Commits proxy proxy screenshots screenshots LICENSE LICENSE README.md README.md deepclaude.ps1 deepclaude.ps1 deepclaude.sh deepclaude.sh View all files Repository files navigation deepclaude Use Claude Code's autonomous agent loop with DeepSeek V4 Pro , OpenRouter , or any Anthropic-compatible backend. Same UX, 17x cheaper. What this does Claude Code is the best autonomous coding agent — but it costs $200/month with usage caps. DeepSeek V4 Pro scores 96.4% on LiveCodeBench and costs $0.87/M output tokens. deepclaude swaps the brain while keeping the body: Your terminal +-- Claude Code CLI (tool loop, file editing, bash, git - unchanged) +-- API calls -> DeepSeek V4 Pro ($0.87/M) instead of Anthropic ($15/M) Everything works: file reading, editing, bash execution, subagent spawning, autonomous multi-step coding loops. The only difference is which model thinks. Quick start (2 minutes) 1. Get a DeepSeek API key Sign up at platform.deepseek.com , add $5 credit, copy your API key. 2. Set environment variables Windows (PowerShell): setx DEEPSEEK_API_KEY \" sk-your-key-here \" macOS/Linux: echo ' export DEEPSEEK_API_KEY=\"sk-your-key-here\" ' >> ~ /.bashrc source ~ /.bashrc 3. Install Windows: # Copy the script to a directory in your PATH Copy-Item deepclaude.ps1 \" $ env: USERPROFILE \\.local\\bin\\deepclaude.ps1 \" # Or add the repo directory to PATH setx PATH \" $ env: PATH ;C:\\path\\to\\deepclaude \" macOS/Linux: chmod +x deepclaude.sh sudo ln -s \" $( pwd ) /deepclaude.sh \" /usr/local/bin/deepclaude 4. Use it deepclaude # Launch Claude Code with DeepSeek V4 Pro deepclaude --status # Show available backends and keys deepclaude --backend or # Use OpenRouter (cheapest, $0.44/M input) deepclaude --backend fw # Use Fireworks AI (fastest, US servers) deepclaude --backend anthropic # Normal Claude Code (when you need Opus) deepclaude --cost # Show pricing comparison deepclaude --benchmark # Latency test across all providers deepclaude --switch ds # Switch backend mid-session (no restart) How it works Claude Code reads these environment variables to determine where to send API calls: Variable What it does ANTHROPIC_BASE_URL API endpoint (default: api.anthropic.com) ANTHROPIC_AUTH_TOKEN API key for the backend ANTHROPIC_DEFAULT_OPUS_MODEL Model name for Opus-tier tasks ANTHROPIC_DE",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "deepseek",
+        "agent",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "GitHub - aattaran/deepclaude: Use Claude Code's autonomous agent loop with DeepSeek V4 Pro, OpenRouter, or any Anthropic-compatible backend. Same UX, 17x cheaper. · GitHub You signed in with another tab or window. Reload to refresh your session.",
+      "heat_score": 5.0,
+      "timeliness_score": 8.0,
+      "composite_score": 6.1,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**DeepClaude** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs DeepClaude 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**DeepClaude** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs DeepClaude 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**DeepClaude** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs DeepClaude 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「DeepClaude – Claude Code agent loop with DeepSeek…」（GitHub - aattaran/deepclaude: Use Claude Code's autonomous…），涉及 Agent / Go → 可写方向：**DeepClaude** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs DeepClaude 的横向对比：CodeBuddy 覆盖需求→设…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「DeepClaude – Claude Code agent loop wit…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 DeepClaude 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 DeepClaude 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "GitHub - aattaran/deepclaude: Use Claude Code's autonomous agent lo…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "DeepClaude – Claude Code agent loop with DeepSeek V4 Pro, 17x cheaper. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：GitHub - aattaran/deepclaude: Use Claude Code's autonomous agent lo…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: DeepClaude – Claude Code agent loop with DeepSeek V4 Pro, 17x cheaper. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, performance, or work…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。GitHub - aattaran/deepclaude: Use Claude Code's autonomous agent lo…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**DeepClaude** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs DeepClaude 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. DeepClaude – Claude Code agent loop with DeepSeek V4 Pro, 17x cheaper. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：GitHub - aattaran/deepclaude: Use Claude Code's autonomous agent lo…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: DeepClaude – Claude Code agent loop with DeepSeek V4 Pro, 17x cheaper. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "deepclaude,将 Claude Code 的自主代理循环与 DeepSeek V4 Pro、OpenRouter 或任何 Anthropic 兼容的后端结合使用,下载deepclaude的源码_GitHub_帮酷相同的用户体验，便宜 17 倍。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "The 'Hidden' Costs of Great Abstractions",
+    "url": "https://jdgr.net/the-hidden-costs-of-great-abstractions",
+    "hn_url": "https://news.ycombinator.com/item?id=48002607",
+    "heat": "96 points",
+    "time": "5 hours ago",
+    "developer_name": "jdgr",
+    "developer_url": "https://news.ycombinator.com/user?id=jdgr",
+    "content": "The 'Hidden' Costs of Great Abstractions - James Ludwell-Grymes In the world of computing, we tend to abstract away complexity. Doing so seems liberating. It enables us to focus on the bigger picture. Unfortunately, in doing so, the fidelity of our understanding often decreases. We sometimes end up blinding ourselves. Historically, running computer programs was expensive and time consuming. Errors were far more costly than they are today. Knowing the intricacies of how the machine operated was essential. Otherwise, you wouldn't be able to get it to do much at all. Then the barrier of entry lowered. Memory and computation power grew. People ceased thinking about how to save a few bytes or CPU cycles. Many developers simply couldn't . They imported libraries maintained by others, unsure of their quality and not fully understanding when or where to use the functions provided. This became the new normal. As the required prerequisite knowledge decreased and developer velocity increased. The quantity of software grew, but much of it slow and buggy, more so than before. Now, with the advent of LLMs, almost anyone can craft a prompt that produces something functional. It may even be pretty. It is unlikely that it will be good. Discerning good from bad requires expertise. The inexperienced prospector often mistakes pyrite for gold. You can purchase something that looks and feels like steel from Alibaba. It may seem like an excellent deal, but I would not advise you to build a skyscraper with it. The reality is that which isn't \"good\" is sometimes sufficient. Wonder Bread isn't artisan sourdough. It's cheaper and it's filling. It may not be as healthy, but it's all some know. Why bother typing all of this? Why take on the role of Captain Obvious? My \"copium\" reserves are running low. After sustaining injuries that preclude physically laborious work, my options to earn a living are limited. As a child, I spent nights reading manuals, running services, writing scripts to automate away toil, tinkering with values in flash games using memory editors like Cheat Engine, and analyzing malware by stepping through it's instructions in OllyDbg. I was thrilled that people would pay me to do similar things. Now, I am a father with a son who depends on me. I've been unemployed since July of 2025. I have spent months adjusting my resume, applying for all jobs where my skill set may be of use, building proof-of-concepts using Claude, and doing cold outreach to anyone who may be interested in my potential products or my services. The well has gone dry. Want to talk? Schedule time with me",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "The 'Hidden' Costs of Great Abstractions - James Ludwell-Grymes In the world of computing, we tend to abstract away complexity. Doing so seems liberating. It enables us to focus on the bigger picture. Unfortunately, in doing so, the fidelity of our understanding often decreases.",
+      "heat_score": 4.0,
+      "timeliness_score": 8.0,
+      "composite_score": 3.4,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「The 'Hidden' Costs of Great Abstractions」（The 'Hidden' Costs of Great Abstractions - James Ludwell-Gr…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「The 'Hidden' Costs of Great Abstractions」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "The 'Hidden' Costs of Great Abstractions - James Ludwell-Grymes In…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "The 'Hidden' Costs of Great Abstractions. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：The 'Hidden' Costs of Great Abstractions - James Ludwell-Grymes In…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: The 'Hidden' Costs of Great Abstractions. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。The 'Hidden' Costs of Great Abstractions - James Ludwell-Grymes In…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. The 'Hidden' Costs of Great Abstractions. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：The 'Hidden' Costs of Great Abstractions - James Ludwell-Grymes In…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: The 'Hidden' Costs of Great Abstractions. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "The 'Hidden' Costs of Great Abstractions：伟大抽象的“隐藏”成本 - James Ludwell-Grymes 在计算领域，我们倾向于抽象掉复杂性。这样做似乎是一种解放。"
+  }
+]
