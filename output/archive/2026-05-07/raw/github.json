@@ -1,0 +1,947 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "Hmbown/DeepSeek-TUI - Coding agent for DeepSeek models that runs in your terminal",
+    "url": "https://github.com/Hmbown/DeepSeek-TUI",
+    "heat": "15,245 stars",
+    "time": "Today",
+    "developer_name": "Hmbown",
+    "developer_url": "https://github.com/Hmbown",
+    "developer_email": "",
+    "today_stars": "6,175 stars today",
+    "language": "Rust",
+    "summary": "Coding agent for DeepSeek models that runs in your terminal",
+    "content": "# DeepSeek TUI\n\n> Terminal coding agent for DeepSeek V4. It runs from the `deepseek` command, streams reasoning blocks, edits local workspaces with approval gates, and includes an auto mode that chooses both model and thinking level per turn.\n\n简体中文 README\n\n## Install\n\n`deepseek` is distributed as Rust binaries: the dispatcher command\n(`deepseek`) and the companion TUI runtime (`deepseek-tui`). Pick whichever\ninstall path you already use; they all put the same commands on your `PATH`.\nThe npm package is an installer/wrapper for the release binaries, not the\nagent runtime itself.\n\n```bash\n# 1. npm — easiest if you already use Node. The package downloads the\n#    matching prebuilt Rust binaries from GitHub Releases.\nnpm install -g deepseek-tui\n\n# 2. Cargo — no Node needed.\ncargo install deepseek-tui-cli --locked   # `deepseek` (entry point)\ncargo install deepseek-tui     --locked   # `deepseek-tui` (TUI binary)\n\n# 3. Homebrew — macOS package manager.\nbrew tap Hmbown/deepseek-tui\nbrew install deepseek-tui\n\n# 4. Direct download — no package manager or toolchain.\n#    https://github.com/Hmbown/DeepSeek-TUI/releases\n#    Prebuilt for Linux x64/ARM64, macOS x64/ARM64, Windows x64.\n```\n\n> In mainland China, speed up the npm path with\n> `--registry=https://registry.npmmirror.com`, or use the\n> Cargo mirror below.\n\n[](https://github.com/Hmbown/DeepSeek-TUI/actions/workflows/ci.yml)\n[](https://www.npmjs.com/package/deepseek-tui)\n[](https://crates.io/crates/deepseek-tui-cli)\nDeepWiki project index\n\n---\n\n## What Is It?\n\nDeepSeek TUI is a coding agent that runs in your terminal. It can read and edit files, run shell commands, search the web, manage git, and coordinate sub-agents from a keyboard-driven TUI.\n\nIt is built around DeepSeek V4 (`deepseek-v4-pro` / `deepseek-v4-flash`), including 1M-token context windows, streaming reasoning blocks, and prefix-cache-aware cost reporting.\n\n### Key Features\n\n- **Auto mode** — `--model auto` / `/model auto` chooses both the model and thinking level for each turn\n- **Thinking-mode streaming** — see DeepSeek reasoning blocks as the model works\n- **Full tool suite** — file ops, shell execution, git, web search/browse, apply-patch, sub-agents, MCP servers\n- **1M-token context** — context tracking, manual or configured compaction, and prefix-cache telemetry\n- **Three modes** — Plan (read-only explore), Agent (interactive with approval), YOLO (auto-approved)\n- **Reasoning-effort tiers** — cycle through `off → high → max` with `Shift + Tab`\n- **Session save/resume** — checkpoint and resume long-running sessions\n- **Workspace rollback** — side-git pre/post-turn snapshots with `/restore` and `revert_turn`, without touching your repo's `.git`\n- **Durable task queue** — background tasks can survive restarts\n- **HTTP/SSE runtime API** — `deepseek serve --http` for headless agent workflows\n- **MCP protocol** — connect to Model Context Protocol servers for extended tooling; please see docs/MCP.md\n- **Native RLM** (`rlm_query`) — run b",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "deepseek",
+        "agent",
+        "mcp",
+        "reasoning"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Rust"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that runs in your terminal",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.3,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Hmbown/DeepSeek-TUI - Coding agent for DeepSeek m…」（Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that…），涉及 Agent / MCP / Rust → 可写方向：MCP 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Hmbown/DeepSeek-TUI - Coding agent for…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 DeepSeek-TUI 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 DeepSeek-TUI 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that runs in…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Hmbown/DeepSeek-TUI - Coding agent for DeepSeek models that runs in your terminal. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that runs in…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Hmbown/DeepSeek-TUI - Coding agent for DeepSeek models that runs in your terminal. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that runs in…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Hmbown/DeepSeek-TUI - Coding agent for DeepSeek models that runs in your terminal. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that runs in…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Hmbown/DeepSeek-TUI - Coding agent for DeepSeek models that runs in your terminal. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "DeepSeek-TUI：在终端中运行的 DeepSeek 模型的编码代理",
+    "developer_profile": {
+      "github_username": "Hmbown",
+      "profile_url": "https://github.com/Hmbown",
+      "name": "Hunter Bown",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "huntermbown",
+      "email": "",
+      "followers": 491,
+      "following": 288,
+      "public_repos": 69,
+      "avatar_url": "https://avatars.githubusercontent.com/u/101357273?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/huntermbown"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.",
+    "url": "https://github.com/addyosmani/agent-skills",
+    "heat": "31,058 stars",
+    "time": "Today",
+    "developer_name": "addyosmani",
+    "developer_url": "https://github.com/addyosmani",
+    "developer_email": "",
+    "today_stars": "800 stars today",
+    "language": "Shell",
+    "summary": "Production-grade engineering skills for AI coding agents.",
+    "content": "# Agent Skills\n\n**Production-grade engineering skills for AI coding agents.**\n\nSkills encode the workflows, quality gates, and best practices that senior engineers use when building software. These ones are packaged so AI agents follow them consistently across every phase of development.\n\n```\n  DEFINE          PLAN           BUILD          VERIFY         REVIEW          SHIP\n ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐\n │ Idea │ ───▶ │ Spec │ ───▶ │ Code │ ───▶ │ Test │ ───▶ │  QA  │ ───▶ │  Go  │\n │Refine│      │  PRD │      │ Impl │      │Debug │      │ Gate │      │ Live │\n └──────┘      └──────┘      └──────┘      └──────┘      └──────┘      └──────┘\n  /spec          /plan          /build        /test         /review       /ship\n```\n\n---\n\n## Commands\n\n7 slash commands that map to the development lifecycle. Each one activates the right skills automatically.\n\n| What you're doing | Command | Key principle |\n|-------------------|---------|---------------|\n| Define what to build | `/spec` | Spec before code |\n| Plan how to build it | `/plan` | Small, atomic tasks |\n| Build incrementally | `/build` | One slice at a time |\n| Prove it works | `/test` | Tests are proof |\n| Review before merge | `/review` | Improve code health |\n| Simplify the code | `/code-simplify` | Clarity over cleverness |\n| Ship to production | `/ship` | Faster is safer |\n\nSkills also activate automatically based on what you're doing — designing an API triggers `api-and-interface-design`, building UI triggers `frontend-ui-engineering`, and so on.\n\n---\n\n## Quick Start\n\n \n  Claude Code (recommended)  \n\n**Marketplace install:**\n\n```\n/plugin marketplace add addyosmani/agent-skills\n/plugin install agent-skills@addy-agent-skills\n```\n\n> **SSH errors?** The marketplace clones repos via SSH. If you don't have SSH keys set up on GitHub, either add your SSH key or use the full HTTPS URL to force the HTTPS cloning:\n> ```bash\n> /plugin marketplace add https://github.com/addyosmani/agent-skills.git\n> /plugin install agent-skills@addy-agent-skills\n> ```\n\n**Local / development:**\n\n```bash\ngit clone https://github.com/addyosmani/agent-skills.git\nclaude --plugin-dir /path/to/agent-skills\n```\n\n \n\n \n  Cursor  \n\nCopy any `SKILL.md` into `.cursor/rules/`, or reference the full `skills/` directory. See docs/cursor-setup.md.\n\n \n\n \n  Gemini CLI  \n\nInstall as native skills for auto-discovery, or add to `GEMINI.md` for persistent context. See docs/gemini-cli-setup.md.\n\n**Install from the repo:**\n\n```bash\ngemini skills install https://github.com/addyosmani/agent-skills.git --path skills\n```\n\n**Install from a local clone:**\n\n```bash\ngemini skills install ./agent-skills/skills/\n```\n\n \n\n \n  Windsurf  \n\nAdd skill contents to your Windsurf rules configuration. See docs/windsurf-setup.md.\n\n \n\n \n  OpenCode  \n\nUses agent-driven skill execution via AGENTS.md and the `skill` tool.\n\nSee docs/opencode-setup.md.\n\n \n\n \n  GitHub Copilot  \n\nUse agent definitions from `agents/` as Copilot ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "addyosmani/agent-skills: Production-grade engineering skills for AI coding agents.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.5,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "coding agent",
+        "copilot",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「addyosmani/agent-skills - Production-grade engine…」（addyosmani/agent-skills: Production-grade engineering skill…），涉及 Agent / Go → 可写方向：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「addyosmani/agent-skills - Production-gr…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 agent-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 agent-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 agent-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 agent-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "addyosmani/agent-skills: Production-grade engineering skills for AI…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：addyosmani/agent-skills: Production-grade engineering skills for AI…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。addyosmani/agent-skills: Production-grade engineering skills for AI…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：addyosmani/agent-skills: Production-grade engineering skills for AI…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "agent-skills：AI 编码代理的生产级工程技能。",
+    "developer_profile": {
+      "github_username": "addyosmani",
+      "profile_url": "https://github.com/addyosmani",
+      "name": "Addy Osmani",
+      "bio": "Director at Google working on Gemini and  Google Cloud",
+      "company": "Google",
+      "location": "Sunnyvale, California",
+      "blog": "https://www.addyosmani.com",
+      "twitter_username": "addyosmani",
+      "email": "",
+      "followers": 47712,
+      "following": 266,
+      "public_repos": 355,
+      "avatar_url": "https://avatars.githubusercontent.com/u/110953?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/addyosmani"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/addyosmani/"
+        },
+        {
+          "platform": "bluesky",
+          "url": "https://bsky.app/profile/addyosmani.bsky.social"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/addyist/"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.addyosmani.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "PriorLabs/TabPFN - ⚡ TabPFN: Foundation Model for Tabular Data ⚡",
+    "url": "https://github.com/PriorLabs/TabPFN",
+    "heat": "6,627 stars",
+    "time": "Today",
+    "developer_name": "PriorLabs",
+    "developer_url": "https://github.com/PriorLabs",
+    "developer_email": "",
+    "today_stars": "218 stars today",
+    "language": "Python",
+    "summary": "⚡ TabPFN: Foundation Model for Tabular Data ⚡",
+    "content": "# TabPFN\n\n[](https://badge.fury.io/py/tabpfn)\n[](https://pepy.tech/project/tabpfn)\n[](https://discord.gg/BHnX2Ptf4j)\n[](https://priorlabs.ai/docs)\n[](https://colab.research.google.com/github/PriorLabs/TabPFN/blob/main/examples/notebooks/TabPFN_Demo_Local.ipynb)\n[](https://pypi.org/project/tabpfn/)\n\n \n\n## Quick Start\n\n### Interactive Notebook Tutorial\n> [!TIP]\n>\n> Dive right in with our interactive Colab notebook! It's the best way to get a hands-on feel for TabPFN, walking you through installation, classification, and regression examples.\n>\n> [](https://colab.research.google.com/github/PriorLabs/TabPFN/blob/main/examples/notebooks/TabPFN_Demo_Local.ipynb)\n\n> ⚡ **GPU Recommended**:\n> For optimal performance, use a GPU (even older ones with ~8GB VRAM work well; 16GB needed for some large datasets).\n> On CPU, only small datasets (≲1000 samples) are feasible.\n> No GPU? Use our free hosted inference via TabPFN Client.\n\n### Installation\nOfficial installation (pip)\n```bash\npip install tabpfn\n```\nOR installation from source\n```bash\npip install \"tabpfn @ git+https://github.com/PriorLabs/TabPFN.git\"\n```\nOR local development installation: First install uv (version 0.10.0 or higher recommended), which we use for development, then run\n```bash\ngit clone https://github.com/PriorLabs/TabPFN.git --depth 1\ncd TabPFN\nuv sync\n```\n\n### Basic Usage\n\nTo use our default TabPFN-2.6 model, trained purely on synthetic data:\n\n```python\nfrom tabpfn import TabPFNClassifier, TabPFNRegressor\n\nclf = TabPFNClassifier()\nclf.fit(X_train, y_train)  # downloads checkpoint on first use\npredictions = clf.predict(X_test)\n\nreg = TabPFNRegressor()\nreg.fit(X_train, y_train)  # downloads checkpoint on first use\npredictions = reg.predict(X_test)\n```\n\nTo use other model versions (e.g. TabPFN-2.5):\n\n```python\nfrom tabpfn import TabPFNClassifier, TabPFNRegressor\nfrom tabpfn.constants import ModelVersion\n\nclassifier = TabPFNClassifier.create_default_for_version(ModelVersion.V2_5)\nregressor = TabPFNRegressor.create_default_for_version(ModelVersion.V2_5)\n```\n\nFor complete examples, see the tabpfn_for_binary_classification.py, tabpfn_for_multiclass_classification.py, and tabpfn_for_regression.py files.\n\n### Usage Tips\n\n- **Use batch prediction mode**: Each `predict` call recomputes the training set. Calling `predict` on 100 samples separately is almost 100 times slower and more expensive than a single call. If the test set is very large, split it into chunks of 1000 samples each.\n- **Avoid data preprocessing**: Do not apply data scaling or one-hot encoding when feeding data to the model.\n- **Use a GPU**: TabPFN is slow to execute on a CPU. Ensure a GPU is available for better performance.\n- **Mind the dataset size**: TabPFN works best on datasets with fewer than 100,000 samples and 2000 features. For larger datasets, we recommend looking at the Large datasets guide.\n\n## TabPFN Ecosystem\n\nChoose the right TabPFN implementation for your needs:\n\n- **TabPFN Client**\n  Simple API client for using TabPFN",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "PriorLabs/TabPFN: ⚡ TabPFN: Foundation Model for Tabular Data ⚡",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.6,
+      "tcloud_relevance": 4.9,
+      "tcloud_integration": "**TabPFN** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_products": [
+        "CVM"
+      ],
+      "tcloud_reasons": [
+        "**TabPFN** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "training"
+      ],
+      "tcloud_primary_product": "CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CVM：**TabPFN** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_official_matches": [
+        "CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CVM）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CVM）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「PriorLabs/TabPFN - ⚡ TabPFN: Foundation Model for…」（PriorLabs/TabPFN: ⚡ TabPFN: Foundation Model for Tabular Da…），涉及 Python → 可写方向：**TabPFN** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「TabPFN」涉及GPU 算力场景，可结合 CVM 写教程或场景解读。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CVM",
+      "official_angle_cn": "以 TabPFN 的算力需求为切入，写一篇在 CVM GPU 实例上跑模型训练/推理的实操内容，附硬件规格和成本估算。",
+      "visual_brief": "主视觉用 TabPFN 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CVM。",
+      "platform_copies": {
+        "primary_product": "CVM",
+        "product_display": "CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 TabPFN 的算力需求为切入，写一篇在 CVM GPU 实例上跑模型训练/推理的实操内容，附硬件规格和成本估算。",
+        "official_angle_en": "Use Cloud Virtual Machine (CVM) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 TabPFN 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CVM。",
+        "x_cn": "PriorLabs/TabPFN: ⚡ TabPFN: Foundation Model for Tabular Data ⚡。如果站在腾讯云国际站官方号来写，这条更适合从 CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 CVM：**TabPFN** 涉及…",
+        "x_en": "PriorLabs/TabPFN - ⚡ TabPFN: Foundation Model for Tabular Data ⚡. For Tencent Cloud, this fits Cloud Virtual Machine (CVM): GPU and high-performance compute for model training and large-scale services.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：PriorLabs/TabPFN: ⚡ TabPFN: Foundation Model for Tabular Data ⚡。如果从腾讯云视角切，这条最适合带到 CVM，重点聊 技术科普 + 教程拆解 + 产品关联（CVM）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: PriorLabs/TabPFN - ⚡ TabPFN: Foundation Model for Tabular Data ⚡. From a Tencent Cloud angle, the best hook is Cloud Virtual Machine (CVM), especially around technical explainer + hands-on walkthrough + product tie-in (CVM). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。PriorLabs/TabPFN: ⚡ TabPFN: Foundation Model for Tabular Data ⚡。如果用官方号发，建议主推 CVM，重点讲 技术科普 + 教程拆解 + 产品关联（CVM），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CVM：**TabPFN** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. PriorLabs/TabPFN - ⚡ TabPFN: Foundation Model for Tabular Data ⚡. For Tencent Cloud, the better angle is Cloud Virtual Machine (CVM). GPU and high-performance compute for model training and large-scale services. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CVM).",
+        "reddit_title_cn": "这类热点如果从 CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：PriorLabs/TabPFN: ⚡ TabPFN: Foundation Model for Tabular Data ⚡。如果站在腾讯云国际站官方号视角，我会更想把它写成 CVM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CVM）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Cloud Virtual Machine (CVM)?",
+        "reddit_body_en": "A recent trend caught my eye: PriorLabs/TabPFN - ⚡ TabPFN: Foundation Model for Tabular Data ⚡. Instead of reposting it as news, I'd frame it through Cloud Virtual Machine (CVM) and focus on technical explainer + hands-on walkthrough + product tie-in (CVM). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "⚡ TabPFN：表格数据的基础模型 ⚡",
+    "developer_profile": {
+      "github_username": "PriorLabs",
+      "profile_url": "https://github.com/PriorLabs",
+      "name": "Prior Labs",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://www.priorlabs.ai",
+      "twitter_username": "prior_labs",
+      "email": "",
+      "followers": 311,
+      "following": 0,
+      "public_repos": 8,
+      "avatar_url": "https://avatars.githubusercontent.com/u/144344393?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "https://discord.com/channels/1285598202732482621/"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/prior_labs"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/104781346"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "docusealco/docuseal - Open source DocuSign alternative. Create, fill, and sign digital documents ✍️",
+    "url": "https://github.com/docusealco/docuseal",
+    "heat": "15,024 stars",
+    "time": "Today",
+    "developer_name": "docusealco",
+    "developer_url": "https://github.com/docusealco",
+    "developer_email": "hi@docuseal.com",
+    "today_stars": "774 stars today",
+    "language": "Ruby",
+    "summary": "Open source DocuSign alternative. Create, fill, and sign digital documents ✍️",
+    "content": " \n   \n     \n       \n       \n     \n    DocuSeal\n   \n \n \n  Open source document filling and signing\n \n \n   \n     \n   \n   \n     \n   \n   \n     \n   \n \n \nDocuSeal is an open source platform that provides secure and efficient digital document signing and processing. Create PDF forms to have them filled and signed online on any device with an easy-to-use, mobile-optimized web tool.\n \n \n   ✨ Live Demo \n   | \n   ☁️ Try in Cloud \n \n\n[](https://demo.docuseal.tech)\n\n## Features\n- PDF form fields builder (WYSIWYG)\n- 12 field types available (Signature, Date, File, Checkbox etc.)\n- Multiple submitters per document\n- Automated emails via SMTP\n- Files storage on disk or AWS S3, Google Storage, Azure Cloud\n- Automatic PDF eSignature\n- PDF signature verification\n- Users management\n- Mobile-optimized\n- 7 UI languages with signing available in 14 languages\n- API and Webhooks for integrations\n- Easy to deploy in minutes\n\n## Pro Features\n- Company logo and white-label\n- User roles\n- Automated reminders\n- Invitation and identify verification via SMS\n- Conditional fields and formulas\n- Bulk send with CSV, XLSX spreadsheet import\n- SSO / SAML\n- Template creation with HTML API (Guide)\n- Template creation with PDF or DOCX and field tags API (Guide)\n- Embedded signing form (React, Vue, Angular or JavaScript)\n- Embedded document form builder (React, Vue, Angular or JavaScript)\n- Learn more\n\n## Deploy\n\n|Heroku|Railway|\n|:--:|:---:|\n|   |  |\n|**DigitalOcean**|**Render**|\n|   |  \n\n#### Docker\n\n```sh\ndocker run --name docuseal -p 3000:3000 -v.:/data docuseal/docuseal\n```\n\nBy default DocuSeal docker container uses an SQLite database to store data and configurations. Alternatively, it is possible use PostgreSQL or MySQL databases by specifying the `DATABASE_URL` env variable.\n\n#### Docker Compose\n\nDownload docker-compose.yml into your private server:\n```sh\ncurl https://raw.githubusercontent.com/docusealco/docuseal/master/docker-compose.yml > docker-compose.yml\n```\n\nRun the app under a custom domain over https using docker compose (make sure your DNS points to the server to automatically issue ssl certs with Caddy):\n```sh\nsudo HOST=your-domain-name.com docker compose up\n```\n\n## For Businesses\n### Integrate seamless document signing into your web or mobile apps with DocuSeal\n\nAt DocuSeal we have expertise and technologies to make documents creation, filling, signing and processing seamlessly integrated with your product. We specialize in working with various industries, including **Banking, Healthcare, Transport, Real Estate, eCommerce, KYC, CRM, and other software products** that require bulk document signing. By leveraging DocuSeal, we can assist in reducing the overall cost of developing and processing electronic documents while ensuring security and compliance with local electronic document laws.\n\nBook a Meeting\n\n## License\n\nDistributed under the AGPLv3 License with Section 7(b) Additional Terms. See LICENSE and LICENSE_ADDITIONAL_TERMS for more information.\nUnless otherwise note",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 11,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "aws",
+        "azure",
+        "docker",
+        "s3",
+        "render",
+        "railway",
+        "mysql"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "AWS",
+        "Azure",
+        "DigitalOcean"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "React",
+        "Vue"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "docusealco/docuseal: Open source DocuSign alternative. Create, fill, and sign digital documents ✍️",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.9,
+      "tcloud_relevance": 9.5,
+      "tcloud_integration": "**docuseal** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景\n补充关联 EdgeOne：**docuseal** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+      "tcloud_products": [
+        "Lighthouse",
+        "EdgeOne",
+        "TDSQL-C"
+      ],
+      "tcloud_reasons": [
+        "**docuseal** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+        "**docuseal** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+        "**docuseal** 需要数据库后端 — TDSQL-C 云原生数据库兼容 MySQL/PostgreSQL，支持秒级扩缩容 + Serverless 按量付费，适合从个人项目到企业级的弹性场景"
+      ],
+      "tcloud_evidence": [
+        "docker compose",
+        "docker-compose",
+        "security",
+        "ssl",
+        "database",
+        "mysql",
+        "postgresql"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**docuseal** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景\n补充关联 EdgeOne：**docuseal** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+      "tcloud_official_matches": [
+        "Lighthouse",
+        "EdgeOne",
+        "TDSQL-C"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse / EdgeOne）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse / EdgeOne）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「docusealco/docuseal - Open source DocuSign altern…」（docusealco/docuseal: Open source DocuSign alternative. Crea…），涉及 React / Vue → 可写方向：**docuseal** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「docuseal」支持自部署，可写『Lighthouse 一键部署 docuseal』实操教程。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 docuseal」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 docuseal 的文档解析效果对比图（原始 PDF vs 结构化输出），直观展示工具价值。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 docuseal」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 docuseal 的文档解析效果对比图（原始 PDF vs 结构化输出），直观展示工具价值。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "docusealco/docuseal: Open source DocuSign alternative. Create, fill…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "docusealco/docuseal - Open source DocuSign alternative. Create, fill, and sign digital…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday develo…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：docusealco/docuseal: Open source DocuSign alternative. Create, fill…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse / EdgeOne）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: docusealco/docuseal - Open source DocuSign alternative. Create, fill, and sign digital…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse / EdgeOne). What matters more to you: deployment, performance, or…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。docusealco/docuseal: Open source DocuSign alternative. Create, fill…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse / EdgeOne），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**docuseal** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景 补充关联 EdgeOne：**docuseal** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. docusealco/docuseal - Open source DocuSign alternative. Create, fill, and sign digital…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse / EdgeOne).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：docusealco/docuseal: Open source DocuSign alternative. Create, fill…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse / EdgeOne）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: docusealco/docuseal - Open source DocuSign alternative. Create, fill, and sign digital…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse / EdgeOne). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "docuseal：开源 DocuSign 替代方案。创建、填写和签署数字文档 ✍️",
+    "developer_profile": {
+      "github_username": "docusealco",
+      "profile_url": "https://github.com/docusealco",
+      "name": "DocuSeal",
+      "bio": "Open source DocuSign alternative",
+      "company": "",
+      "location": "",
+      "blog": "https://www.docuseal.com",
+      "twitter_username": "",
+      "email": "hi@docuseal.com",
+      "followers": 192,
+      "following": 0,
+      "public_repos": 32,
+      "avatar_url": "https://avatars.githubusercontent.com/u/138379721?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "LearningCircuit/local-deep-research - ~95% on SimpleQA (e.g. Qwen3.6-27B on a 3090). Supports all local and cloud LLMs (llama.cpp, Ollama, Google, ...). 10+ search engines - arXiv, PubMed, your private documents. Everything Local & Encrypted.",
+    "url": "https://github.com/LearningCircuit/local-deep-research",
+    "heat": "5,764 stars",
+    "time": "Today",
+    "developer_name": "LearningCircuit",
+    "developer_url": "https://github.com/LearningCircuit",
+    "developer_email": "",
+    "today_stars": "532 stars today",
+    "language": "Python",
+    "summary": "~95% on SimpleQA (e.g. Qwen3.6-27B on a 3090). Supports all local and cloud LLMs (llama.cpp, Ollama, Google, ...). 10+ search engines - arXiv, PubMed, your private documents. Everything Local & Encrypted.",
+    "content": "# Local Deep Research\n\n \n\n[](https://github.com/LearningCircuit/local-deep-research/stargazers)\n[](https://hub.docker.com/r/localdeepresearch/local-deep-research)\n[](https://pypi.org/project/local-deep-research/)\n\n[](https://trendshift.io/repositories/14116)\n\n[](https://github.com/LearningCircuit/local-deep-research/commits/main)\n[](https://github.com/LearningCircuit/local-deep-research/commits/main)\n\n[](https://huggingface.co/datasets/local-deep-research/ldr-benchmarks)\n[](docs/SQLCIPHER_INSTALL.md)\n\n \n[](https://securityscorecards.dev/viewer/?uri=github.com/LearningCircuit/local-deep-research)\n[](https://github.com/LearningCircuit/local-deep-research/security/code-scanning)\n[](https://github.com/LearningCircuit/local-deep-research/actions/workflows/semgrep.yml)\n\n[](https://github.com/LearningCircuit/local-deep-research/actions/workflows/pre-commit.yml)\n\n[](https://github.com/LearningCircuit/local-deep-research/actions/workflows/docker-publish.yml)\n[](https://github.com/LearningCircuit/local-deep-research/actions/workflows/publish.yml)\n\n[](https://discord.gg/ttcqQeFcJ3)\n[](https://www.reddit.com/r/LocalDeepResearch/)\n[](https://www.youtube.com/@local-deep-research)\n\n**AI-powered research assistant for deep, agentic research**\n\n*Performs deep, agentic research using multiple LLMs and search engines with proper citations*\n\n \n  ▶️ Watch Review by The Art Of The Terminal\n \n\n \n\n## 🚀 What is Local Deep Research?\n\nAI research assistant you control. Run locally for privacy, use any LLM and build your own searchable knowledge base. You own your data and see exactly how it works.\n\n## ⚡ Quick Start\n\n**Option 1: Docker Run (Linux)**\n```bash\n# Step 1: Pull and run Ollama\ndocker run -d -p 11434:11434 --name ollama ollama/ollama\ndocker exec ollama ollama pull gpt-oss:20b\n\n# Step 2: Pull and run SearXNG for optimal search results\ndocker run -d -p 8080:8080 --name searxng searxng/searxng\n\n# Step 3: Pull and run Local Deep Research\ndocker run -d -p 5000:5000 --network host \\\n  --name local-deep-research \\\n  --volume \"deep-research:/data\" \\\n  -e LDR_DATA_DIR=/data \\\n  localdeepresearch/local-deep-research\n```\n\n**Option 2: Docker Compose**\n\nCPU-only (all platforms):\n```bash\ncurl -O https://raw.githubusercontent.com/LearningCircuit/local-deep-research/main/docker-compose.yml && docker compose up -d\n```\n\nWith NVIDIA GPU (Linux):\n```bash\ncurl -O https://raw.githubusercontent.com/LearningCircuit/local-deep-research/main/docker-compose.yml && \\\ncurl -O https://raw.githubusercontent.com/LearningCircuit/local-deep-research/main/docker-compose.gpu.override.yml && \\\ndocker compose -f docker-compose.yml -f docker-compose.gpu.override.yml up -d\n```\n\nOpen http://localhost:5000 after ~30 seconds. For GPU setup, environment variables, and more, see the Docker Compose Guide.\n\n**Option 3: pip install**\n```bash\npip install local-deep-research\n```\n> Works on Windows, macOS, and Linux. SQLCipher encryption is included via pre-built wheels — no compilation needed.\n> PDF export on Wind",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 4,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "docker",
+        "oss",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "gpt",
+        "llama",
+        "huggingface",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "Llama",
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "LearningCircuit/local-deep-research: ~95% on SimpleQA (e. 6-27B on a 3090). Supports all local and cloud LLMs (llama. cpp, Ollama, Google, .",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.6,
+      "tcloud_relevance": 10.0,
+      "tcloud_integration": "**local-deep-research** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景\n补充关联 GPU CVM：**local-deep-research** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Lighthouse",
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**local-deep-research** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+        "**local-deep-research** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "docker compose",
+        "docker-compose",
+        "gpu",
+        "nvidia"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**local-deep-research** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景\n补充关联 GPU CVM：**local-deep-research** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Lighthouse",
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse / GPU CVM）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse / GPU CVM）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「LearningCircuit/local-deep-research - ~95% on Sim…」（LearningCircuit/local-deep-research: ~95% on SimpleQA (e. 6…），涉及 LLM / Agent → 可写方向：**local-deep-research** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「local-deep-research」支持自部署，可写『Lighthouse 一键部署 local-deep-research』实操教程。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 local-deep-research」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 local-deep-research 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 local-deep-research」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 local-deep-research 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "LearningCircuit/local-deep-research: ~95% on SimpleQA (e. 6-27B on…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Lighth…",
+        "x_en": "LearningCircuit/local-deep-research - ~95% on SimpleQA (e.g. Qwen3.6-27B on a 3090). Su…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：LearningCircuit/local-deep-research: ~95% on SimpleQA (e. 6-27B on…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse / GPU CVM）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: LearningCircuit/local-deep-research - ~95% on SimpleQA (e.g. Qwen3.6-27B on a 3090). Su…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse / GPU CVM). What matters more to you: deployment, performance, o…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。LearningCircuit/local-deep-research: ~95% on SimpleQA (e. 6-27B on…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse / GPU CVM），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**local-deep-research** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景 补充关联 GPU CVM：**local-deep-research** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. LearningCircuit/local-deep-research - ~95% on SimpleQA (e.g. Qwen3.6-27B on a 3090). Su…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse / GPU CVM).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：LearningCircuit/local-deep-research: ~95% on SimpleQA (e. 6-27B on…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse / GPU CVM）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: LearningCircuit/local-deep-research - ~95% on SimpleQA (e.g. Qwen3.6-27B on a 3090). Su…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse / GPU CVM). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "local-deep-research：SimpleQA 上约为 95%（例如 3090 上的 6-27B）。",
+    "developer_profile": {
+      "github_username": "LearningCircuit",
+      "profile_url": "https://github.com/LearningCircuit",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 94,
+      "following": 44,
+      "public_repos": 9,
+      "avatar_url": "https://avatars.githubusercontent.com/u/185559241?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "InsForge/InsForge - InsForge is a Postgres-based backend with auth, storage, compute, hosting, and AI gateway. Built for coding agents.",
+    "url": "https://github.com/InsForge/InsForge",
+    "heat": "8,537 stars",
+    "time": "Today",
+    "developer_name": "InsForge",
+    "developer_url": "https://github.com/InsForge",
+    "developer_email": "",
+    "today_stars": "230 stars today",
+    "language": "TypeScript",
+    "summary": "InsForge is a Postgres-based backend with auth, storage, compute, hosting, and AI gateway. Built for coding agents.",
+    "content": " \n   \n     \n       \n       \n       \n     \n   \n\n   \n    The backend platform for AI-native developers. \n   \n\n   \n       \n       \n       \n       \n       \n     \n       \n     \n   \n   \n       \n       \n       \n   \n   \n     \n   \n    \n   \n     \n   \n \n\n \n  ⭐  Help us reach more developers and grow the InsForge community. Star this repo! \n \n\n## InsForge\nInsForge is a backend development platform built for AI coding agents and AI code editors. It exposes backend primitives like databases, auth, storage, and functions through a semantic layer that agents can understand, reason about, and operate end to end.\n\n \n    \n \n\n### How it works\nInsForge acts as a semantic layer between AI coding agents and backend primitives. It performs backend context engineering so agents can understand, operate, and inspect backend systems.\n\n- **Fetch backend context**: Agents can fetch documentation and available operations for the backend primitives they use.\n- **Configure primitives**: Agents can configure backend primitives directly.\n- **Inspect backend state**: Backend state and logs are exposed through structured schemas.\n\n```mermaid\ngraph TB\n\n    subgraph TOP[\" \"]\n        AG[AI Coding Agents]\n    end\n\n    subgraph MID[\" \"]\n        SL[InsForge Semantic Layer]\n    end\n\n    AG --> SL\n\n    SL --> AUTH[Authentication]\n    SL --> DB[Database]\n    SL --> ST[Storage]\n    SL --> EF[Edge Functions]\n    SL --> MG[Model Gateway]\n    SL --> CP[Compute]\n    SL --> DEP[Deployment]\n\n    classDef bar fill:#0b0f14,stroke:#30363d,stroke-width:1px,color:#ffffff\n    classDef card fill:#161b22,stroke:#30363d,stroke-width:1px,color:#ffffff\n\n    class AG,SL bar\n    class AUTH,DB,ST,EF,MG,CP,DEP card\n\n    style TOP fill:transparent,stroke:transparent\n    style MID fill:transparent,stroke:transparent\n\n    linkStyle default stroke:#30363d,stroke-width:1px\n```\n\n### Core Products:\n- **Authentication**: User management, authentication, and sessions\n- **Database**: Postgres relational database\n- **Storage**: S3 compatible file storage\n- **Model Gateway**: OpenAI compatible API across multiple LLM providers\n- **Edge Functions**: Serverless code running on the edge\n- **Compute** (private preview): Long-running container services on Fly.io with public URLs (docs)\n- **Site Deployment**: Site build and deployment\n\n## ⭐️ Star the Repository\n\n \n   \n \n\nIf you find InsForge useful or interesting, a GitHub Star ⭐️ would be greatly appreciated.\n\n## Quickstart\n\n### Cloud-hosted: insforge.dev\n\n   \n\n### Self-hosted: Docker Compose\n\nPrerequisites: Docker + Node.js\n\n#### 1. Setup\n\nYou can run InsForge locally using Docker Compose. This will start a local InsForge instance on your machine.\n\n[![Deploy on Docker][docker-btn]][docker-deploy]\n\nOr run from source:\n```bash\n# Run with Docker\ngit clone https://github.com/insforge/insforge.git\ncd insforge\ncp .env.example .env\ndocker compose -f docker-compose.prod.yml up\n```\n\n#### 2. Connect InsForge MCP\n\nOpen http://localhost:7130\n\nFollow the steps to connect InsForge MCP Server\n",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 6,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "serverless",
+        "docker",
+        "edge",
+        "s3",
+        "fly.io"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "mcp",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Fly.io"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "MCP",
+        "Serverless"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "InsForge/InsForge: InsForge is a Postgres-based backend with auth, storage, compute, hosting, and AI gateway. Built for coding agents.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.6,
+      "tcloud_relevance": 10.0,
+      "tcloud_integration": "**InsForge** 明确支持自托管部署（InsForge/InsForge: InsForge is a Postgres-based backend with），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行\n补充关联 CodeBuddy：**InsForge** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs InsForge 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "Lighthouse",
+        "CodeBuddy",
+        "EdgeOne"
+      ],
+      "tcloud_reasons": [
+        "**InsForge** 明确支持自托管部署（InsForge/InsForge: InsForge is a Postgres-based backend with），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+        "**InsForge** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs InsForge 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "**InsForge** 涉及前端/静态站点，EdgeOne Pages 支持 Git 自动部署 + 全球 CDN + 边缘函数，类似 Vercel/Netlify 但自带安全防护"
+      ],
+      "tcloud_evidence": [
+        "self-hosted",
+        "docker compose",
+        "docker-compose",
+        "edge",
+        "edge function",
+        "ai coding",
+        "coding agent",
+        "ai code editor"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**InsForge** 明确支持自托管部署（InsForge/InsForge: InsForge is a Postgres-based backend with），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行\n补充关联 CodeBuddy：**InsForge** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs InsForge 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "Lighthouse",
+        "CodeBuddy",
+        "EdgeOne"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse / CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「InsForge/InsForge - InsForge is a Postgres-based…」（InsForge/InsForge: InsForge is a Postgres-based backend wit…），涉及 LLM / MCP / Serverless → 可写方向：**InsForge** 明确支持自托管部署（InsForge/InsForge: InsForge is a Postgres-based backend…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「InsForge」支持自部署，可写『Lighthouse 一键部署 InsForge』实操教程。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 InsForge」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 InsForge 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 InsForge」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 InsForge 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "InsForge/InsForge: InsForge is a Postgres-based backend with auth,…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Lighth…",
+        "x_en": "InsForge/InsForge - InsForge is a Postgres-based backend with auth, storage, compute, h…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：InsForge/InsForge: InsForge is a Postgres-based backend with auth,…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: InsForge/InsForge - InsForge is a Postgres-based backend with auth, storage, compute, h…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy). What matters more to you: deployment, performance,…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。InsForge/InsForge: InsForge is a Postgres-based backend with auth,…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**InsForge** 明确支持自托管部署（InsForge/InsForge: InsForge is a Postgres-based backend with），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行 补充关联 CodeBuddy：**InsForge** 是 AI 编程赛道产品 — 可以做 Cod…",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. InsForge/InsForge - InsForge is a Postgres-based backend with auth, storage, compute, h…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：InsForge/InsForge: InsForge is a Postgres-based backend with auth,…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: InsForge/InsForge - InsForge is a Postgres-based backend with auth, storage, compute, h…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "InsForge 是一个基于 Postgres 的后端，具有身份验证、存储、计算、托管和 AI 网关。专为编码代理而设计。",
+    "developer_profile": {
+      "github_username": "InsForge",
+      "profile_url": "https://github.com/InsForge",
+      "name": "",
+      "bio": "The backend platform for AI-native developers",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 112,
+      "following": 0,
+      "public_repos": 26,
+      "avatar_url": "https://avatars.githubusercontent.com/u/198419463?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "virattt/dexter - An autonomous agent for deep financial research",
+    "url": "https://github.com/virattt/dexter",
+    "heat": "24,446 stars",
+    "time": "Today",
+    "developer_name": "virattt",
+    "developer_url": "https://github.com/virattt",
+    "developer_email": "",
+    "today_stars": "666 stars today",
+    "language": "TypeScript",
+    "summary": "An autonomous agent for deep financial research",
+    "content": "# Dexter 🤖\n\nDexter is an autonomous financial research agent that thinks, plans, and learns as it works. It performs analysis using task planning, self-reflection, and real-time market data. Think Claude Code, but built specifically for financial research.\n\n \n\n## Table of Contents\n\n- 👋 Overview\n- ✅ Prerequisites\n- 💻 How to Install\n- 🚀 How to Run\n- 📊 How to Evaluate\n- 🐛 How to Debug\n- 📱 How to Use with WhatsApp\n- 🤝 How to Contribute\n- 📄 License\n\n## 👋 Overview\n\nDexter takes complex financial questions and turns them into clear, step-by-step research plans. It runs those tasks using live market data, checks its own work, and refines the results until it has a confident, data-backed answer.  \n\n**Key Capabilities:**\n- **Intelligent Task Planning**: Automatically decomposes complex queries into structured research steps\n- **Autonomous Execution**: Selects and executes the right tools to gather financial data\n- **Self-Validation**: Checks its own work and iterates until tasks are complete\n- **Real-Time Financial Data**: Access to income statements, balance sheets, and cash flow statements\n- **Safety Features**: Built-in loop detection and step limits to prevent runaway execution\n\n[](https://twitter.com/virattt) [](https://discord.gg/jpGHv2XB6T)\n\n \n\n## ✅ Prerequisites\n\n- Bun runtime (v1.0 or higher)\n- OpenAI API key (get here)\n- Financial Datasets API key (get here)\n- Exa API key (get here) - optional, for web search\n\n#### Installing Bun\n\nIf you don't have Bun installed, you can install it using curl:\n\n**macOS/Linux:**\n```bash\ncurl -fsSL https://bun.com/install | bash\n```\n\n**Windows:**\n```bash\npowershell -c \"irm bun.sh/install.ps1|iex\"\n```\n\nAfter installation, restart your terminal and verify Bun is installed:\n```bash\nbun --version\n```\n\n## 💻 How to Install\n\n1. Clone the repository:\n```bash\ngit clone https://github.com/virattt/dexter.git\ncd dexter\n```\n\n2. Install dependencies with Bun:\n```bash\nbun install\n```\n\n3. Set up your environment variables:\n```bash\n# Copy the example environment file\ncp env.example .env\n\n# Edit .env and add your API keys (if using cloud providers)\n# OPENAI_API_KEY=your-openai-api-key\n# ANTHROPIC_API_KEY=your-anthropic-api-key (optional)\n# GOOGLE_API_KEY=your-google-api-key (optional)\n# XAI_API_KEY=your-xai-api-key (optional)\n# OPENROUTER_API_KEY=your-openrouter-api-key (optional)\n\n# Institutional-grade market data for agents\n# FINANCIAL_DATASETS_API_KEY=your-financial-datasets-api-key\n\n# (Optional) If using Ollama locally\n# OLLAMA_BASE_URL=http://127.0.0.1:11434\n\n# Web Search (Exa preferred, Tavily fallback)\n# EXASEARCH_API_KEY=your-exa-api-key\n# TAVILY_API_KEY=your-tavily-api-key\n```\n\n## 🚀 How to Run\n\nRun Dexter in interactive mode:\n```bash\nbun start\n```\n\nOr with watch mode for development:\n```bash\nbun dev\n```\n\n## 📊 How to Evaluate\n\nDexter includes an evaluation suite that tests the agent against a dataset of financial questions. Evals use LangSmith for tracking and an LLM-as-judge approach for scoring correctness.\n\n**Run on all q",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "llm",
+        "claude",
+        "agent",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "virattt/dexter: An autonomous agent for deep financial research",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.9,
+      "tcloud_relevance": 9.0,
+      "tcloud_integration": "**dexter** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**dexter** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**dexter** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**dexter** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "llm",
+        "ai api",
+        "claude"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**dexter** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**dexter** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「virattt/dexter - An autonomous agent for deep fin…」（virattt/dexter: An autonomous agent for deep financial rese…），涉及 LLM / Agent / TypeScript → 可写方向：**dexter** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**dexter** 涉及…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「dexter」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 dexter 的核心功能（virattt/dexter: An autonomous agent for deep financial research），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 dexter 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 dexter 的核心功能（virattt/dexter: An autonomous agent for deep financial research），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 dexter 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "virattt/dexter: An autonomous agent for deep financial research。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**dex…",
+        "x_en": "virattt/dexter - An autonomous agent for deep financial research. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：virattt/dexter: An autonomous agent for deep financial research。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: virattt/dexter - An autonomous agent for deep financial research. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。virattt/dexter: An autonomous agent for deep financial research。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**dexter** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**dexter** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. virattt/dexter - An autonomous agent for deep financial research. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：virattt/dexter: An autonomous agent for deep financial research。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: virattt/dexter - An autonomous agent for deep financial research. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "dexter：深度金融研究的自主代理",
+    "developer_profile": {
+      "github_username": "virattt",
+      "profile_url": "https://github.com/virattt",
+      "name": "Virat Singh",
+      "bio": "Building 🎧",
+      "company": "",
+      "location": "New York, NY",
+      "blog": "",
+      "twitter_username": "virattt",
+      "email": "",
+      "followers": 3716,
+      "following": 2,
+      "public_repos": 59,
+      "avatar_url": "https://avatars.githubusercontent.com/u/901795?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/virattt"
+        }
+      ],
+      "is_org": false
+    }
+  }
+]
