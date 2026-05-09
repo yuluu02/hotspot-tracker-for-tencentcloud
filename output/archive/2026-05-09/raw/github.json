@@ -1,0 +1,1020 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "anthropics/financial-services",
+    "url": "https://github.com/anthropics/financial-services",
+    "heat": "15,657 stars",
+    "time": "Today",
+    "developer_name": "anthropics",
+    "developer_url": "https://github.com/anthropics",
+    "developer_email": "",
+    "today_stars": "3,660 stars today",
+    "language": "Python",
+    "content": "# Claude for Financial Services\n\nReference agents, skills, and data connectors for the financial-services workflows we see most — investment banking, equity research, private equity, and wealth management.\n\nEverything here is available **two ways from one source**: install it as a Claude Cowork plugin, or deploy it through the Claude Managed Agents API behind your own workflow engine. Same system prompt, same skills — you choose where it runs.\n\n> [!IMPORTANT]\n> Nothing in this repository constitutes investment, legal, tax, or accounting advice. These agents draft analyst work product — models, memos, research notes, reconciliations — for review by a qualified professional. They do not make investment recommendations, execute transactions, bind risk, post to a ledger, or approve onboarding; every output is staged for human sign-off. You are responsible for verifying outputs and for compliance with the laws and regulations that apply to your firm.\n\nWhat's in the repo:\n\n- **Agents** — named, end-to-end workflow agents (Pitch Agent, Market Researcher, GL Reconciler, …). Each ships as a Cowork plugin **and** as a Claude Managed Agent template you deploy via `/v1/agents`.\n- **Vertical plugins** — the underlying skills, slash commands, and data connectors, bundled by FSI vertical. Install these on their own if you just want `/comps`, `/dcf`, `/earnings` and the connectors without a full agent.\n\n## Agents\n\nEach agent is named for the workflow it runs. They're starting points: install the ones that match your work, then tune the prompts, skills, and connectors to how your firm does it.\n\nEach agent plugin is **self-contained** — it bundles the skills it uses, so installing the agent is all you need.\n\n| Function | Agent | What it does |\n|---|---|---|\n| **Coverage & advisory** | **Pitch Agent** | Comps, precedents, LBO → branded pitch deck, end to end |\n| | **Meeting Prep Agent** | Briefing pack before every client meeting |\n| **Research & modeling** | **Market Researcher** | Sector or theme → industry overview, competitive landscape, peer comps, ideas shortlist |\n| | **Earnings Reviewer** | Earnings call + filings → model update → note draft |\n| | **Model Builder** | DCF, LBO, 3-statement, comps — live in Excel |\n| **Fund admin & finance ops** | **Valuation Reviewer** | Ingests GP packages, runs valuation template, stages LP reporting |\n| | **GL Reconciler** | Finds breaks, traces root cause, routes for sign-off |\n| | **Month-End Closer** | Accruals, roll-forwards, variance commentary |\n| | **Statement Auditor** | Audits LP statements before distribution |\n| **Operations & onboarding** | **KYC Screener** | Parses onboarding docs, runs the rules engine, flags gaps |\n\nFor Managed Agent deployment — `agent.yaml`, leaf-worker subagents, steering-event examples, and per-agent security notes — see **managed-agent-cookbooks/**.\n\n## Repository Layout\n\n```\nplugins/\n  agent-plugins/               # Named agents — one self-contained plugin each\n  vertical-plugins/    ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "# Claude for Financial Services Reference agents, skills, and data connectors for the financial-services workflows we see most — investment banking, equity research, private equity, and wealth management. Everything here is available **two ways from one source**: install it as a Claude Cowork plugin, or deploy it through the Claude Managed Agents API behind your own workflow engine. Same system prompt, same skills — you choose where it runs.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.0,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「anthropics/financial-services」（# Claude for Financial Services Reference agents, skills, a…），涉及 Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「anthropics/financial-services」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 financial-services 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 financial-services 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "# Claude for Financial Services Reference agents, skills, and data…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "anthropics/financial-services. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：# Claude for Financial Services Reference agents, skills, and data…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: anthropics/financial-services. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。# Claude for Financial Services Reference agents, skills, and data…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. anthropics/financial-services. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：# Claude for Financial Services Reference agents, skills, and data…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: anthropics/financial-services. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "financial-services：# Claude for Financial Services 参考我们最常见的金融服务工作流程的代理、技能和数据连接器——投资银行、股权研究、私募股权和财富管理。这里的所有内容都可用**一源二用**：将其安装为 Claude Cowork 插件，或通过您自己的工作流引擎后面的 Claude Managed Agents API 进行部署。",
+    "developer_profile": {
+      "github_username": "anthropics",
+      "profile_url": "https://github.com/anthropics",
+      "name": "Anthropic",
+      "bio": "",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://anthropic.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 56178,
+      "following": 0,
+      "public_repos": 83,
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.",
+    "url": "https://github.com/addyosmani/agent-skills",
+    "heat": "35,886 stars",
+    "time": "Today",
+    "developer_name": "addyosmani",
+    "developer_url": "https://github.com/addyosmani",
+    "developer_email": "",
+    "today_stars": "1,893 stars today",
+    "language": "Shell",
+    "summary": "Production-grade engineering skills for AI coding agents.",
+    "content": "# Agent Skills\n\n**Production-grade engineering skills for AI coding agents.**\n\nSkills encode the workflows, quality gates, and best practices that senior engineers use when building software. These ones are packaged so AI agents follow them consistently across every phase of development.\n\n```\n  DEFINE          PLAN           BUILD          VERIFY         REVIEW          SHIP\n ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐\n │ Idea │ ───▶ │ Spec │ ───▶ │ Code │ ───▶ │ Test │ ───▶ │  QA  │ ───▶ │  Go  │\n │Refine│      │  PRD │      │ Impl │      │Debug │      │ Gate │      │ Live │\n └──────┘      └──────┘      └──────┘      └──────┘      └──────┘      └──────┘\n  /spec          /plan          /build        /test         /review       /ship\n```\n\n---\n\n## Commands\n\n7 slash commands that map to the development lifecycle. Each one activates the right skills automatically.\n\n| What you're doing | Command | Key principle |\n|-------------------|---------|---------------|\n| Define what to build | `/spec` | Spec before code |\n| Plan how to build it | `/plan` | Small, atomic tasks |\n| Build incrementally | `/build` | One slice at a time |\n| Prove it works | `/test` | Tests are proof |\n| Review before merge | `/review` | Improve code health |\n| Simplify the code | `/code-simplify` | Clarity over cleverness |\n| Ship to production | `/ship` | Faster is safer |\n\nSkills also activate automatically based on what you're doing — designing an API triggers `api-and-interface-design`, building UI triggers `frontend-ui-engineering`, and so on.\n\n---\n\n## Quick Start\n\n \n  Claude Code (recommended)  \n\n**Marketplace install:**\n\n```\n/plugin marketplace add addyosmani/agent-skills\n/plugin install agent-skills@addy-agent-skills\n```\n\n> **SSH errors?** The marketplace clones repos via SSH. If you don't have SSH keys set up on GitHub, either add your SSH key or use the full HTTPS URL to force the HTTPS cloning:\n> ```bash\n> /plugin marketplace add https://github.com/addyosmani/agent-skills.git\n> /plugin install agent-skills@addy-agent-skills\n> ```\n\n**Local / development:**\n\n```bash\ngit clone https://github.com/addyosmani/agent-skills.git\nclaude --plugin-dir /path/to/agent-skills\n```\n\n \n\n \n  Cursor  \n\nCopy any `SKILL.md` into `.cursor/rules/`, or reference the full `skills/` directory. See docs/cursor-setup.md.\n\n \n\n \n  Gemini CLI  \n\nInstall as native skills for auto-discovery, or add to `GEMINI.md` for persistent context. See docs/gemini-cli-setup.md.\n\n**Install from the repo:**\n\n```bash\ngemini skills install https://github.com/addyosmani/agent-skills.git --path skills\n```\n\n**Install from a local clone:**\n\n```bash\ngemini skills install ./agent-skills/skills/\n```\n\n \n\n \n  Windsurf  \n\nAdd skill contents to your Windsurf rules configuration. See docs/windsurf-setup.md.\n\n \n\n \n  OpenCode  \n\nUses agent-driven skill execution via AGENTS.md and the `skill` tool.\n\nSee docs/opencode-setup.md.\n\n \n\n \n  GitHub Copilot  \n\nUse agent definitions from `agents/` as Copilot ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "addyosmani/agent-skills: Production-grade engineering skills for AI coding agents.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.5,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "coding agent",
+        "copilot",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「addyosmani/agent-skills - Production-grade engine…」（addyosmani/agent-skills: Production-grade engineering skill…），涉及 Agent / Go → 可写方向：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「addyosmani/agent-skills - Production-gr…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 agent-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 agent-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 agent-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 agent-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "addyosmani/agent-skills: Production-grade engineering skills for AI…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：addyosmani/agent-skills: Production-grade engineering skills for AI…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。addyosmani/agent-skills: Production-grade engineering skills for AI…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：addyosmani/agent-skills: Production-grade engineering skills for AI…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "agent-skills：AI 编码代理的生产级工程技能。",
+    "developer_profile": {
+      "github_username": "addyosmani",
+      "profile_url": "https://github.com/addyosmani",
+      "name": "Addy Osmani",
+      "bio": "Director at Google working on Gemini and  Google Cloud",
+      "company": "Google",
+      "location": "Sunnyvale, California",
+      "blog": "https://www.addyosmani.com",
+      "twitter_username": "addyosmani",
+      "email": "",
+      "followers": 47973,
+      "following": 266,
+      "public_repos": 355,
+      "avatar_url": "https://avatars.githubusercontent.com/u/110953?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/addyosmani"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/addyosmani/"
+        },
+        {
+          "platform": "bluesky",
+          "url": "https://bsky.app/profile/addyosmani.bsky.social"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/addyist/"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.addyosmani.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Hmbown/DeepSeek-TUI - Coding agent for DeepSeek models that runs in your terminal",
+    "url": "https://github.com/Hmbown/DeepSeek-TUI",
+    "heat": "22,165 stars",
+    "time": "Today",
+    "developer_name": "Hmbown",
+    "developer_url": "https://github.com/Hmbown",
+    "developer_email": "",
+    "today_stars": "3,731 stars today",
+    "language": "Rust",
+    "summary": "Coding agent for DeepSeek models that runs in your terminal",
+    "content": "# DeepSeek TUI\n\n> Terminal coding agent for DeepSeek V4. It runs from the `deepseek` command, streams reasoning blocks, edits local workspaces with approval gates, and includes an auto mode that chooses both model and thinking level per turn.\n\n简体中文 README\n\n## Install\n\n`deepseek` is distributed as Rust binaries: the dispatcher command\n(`deepseek`) and the companion TUI runtime (`deepseek-tui`). Pick whichever\ninstall path you already use; they all put the same commands on your `PATH`.\nThe npm package is an installer/wrapper for the release binaries, not the\nagent runtime itself.\n\n```bash\n# 1. npm — easiest if you already use Node. The package downloads the\n#    matching prebuilt Rust binaries from GitHub Releases.\nnpm install -g deepseek-tui\n\n# 2. Cargo — no Node needed.\ncargo install deepseek-tui-cli --locked   # `deepseek` (entry point)\ncargo install deepseek-tui     --locked   # `deepseek-tui` (TUI binary)\n\n# 3. Homebrew — macOS package manager.\nbrew tap Hmbown/deepseek-tui\nbrew install deepseek-tui\n\n# 4. Direct download — no package manager or toolchain.\n#    https://github.com/Hmbown/DeepSeek-TUI/releases\n#    Prebuilt for Linux x64/ARM64, macOS x64/ARM64, Windows x64.\n\n# 5. Docker — prebuilt release image.\ndocker run --rm -it \\\n  -e DEEPSEEK_API_KEY \\\n  -v \"$PWD:/workspace\" \\\n  ghcr.io/hmbown/deepseek-tui:latest\n```\n\n> In mainland China, speed up the npm path with\n> `--registry=https://registry.npmmirror.com`, or use the\n> Cargo mirror below.\n\n[](https://github.com/Hmbown/DeepSeek-TUI/actions/workflows/ci.yml)\n[](https://www.npmjs.com/package/deepseek-tui)\n[](https://crates.io/crates/deepseek-tui-cli)\nDeepWiki project index\n\n---\n\n## What Is It?\n\nDeepSeek TUI is a coding agent that runs in your terminal. It can read and edit files, run shell commands, search the web, manage git, and coordinate sub-agents from a keyboard-driven TUI.\n\nIt is built around DeepSeek V4 (`deepseek-v4-pro` / `deepseek-v4-flash`), including 1M-token context windows, streaming reasoning blocks, and prefix-cache-aware cost reporting.\n\n### Key Features\n\n- **Auto mode** — `--model auto` / `/model auto` chooses both the model and thinking level for each turn\n- **Thinking-mode streaming** — see DeepSeek reasoning blocks as the model works\n- **Full tool suite** — file ops, shell execution, git, web search/browse, apply-patch, sub-agents, MCP servers\n- **1M-token context** — context tracking, manual or configured compaction, and prefix-cache telemetry\n- **Three modes** — Plan (read-only explore), Agent (interactive with approval), YOLO (auto-approved)\n- **Reasoning-effort tiers** — cycle through `off → high → max` with `Shift + Tab`\n- **Session save/resume** — checkpoint and resume long-running sessions\n- **Workspace rollback** — side-git pre/post-turn snapshots with `/restore` and `revert_turn`, without touching your repo's `.git`\n- **Durable task queue** — background tasks can survive restarts\n- **HTTP/SSE runtime API** — `deepseek serve --http` for headless agent workflows",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "deepseek",
+        "agent",
+        "mcp",
+        "reasoning"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Rust"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that runs in your terminal",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.6,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Hmbown/DeepSeek-TUI - Coding agent for DeepSeek m…」（Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that…），涉及 Agent / MCP / Rust → 可写方向：MCP 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Hmbown/DeepSeek-TUI - Coding agent for…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 DeepSeek-TUI 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 DeepSeek-TUI 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that runs in…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Hmbown/DeepSeek-TUI - Coding agent for DeepSeek models that runs in your terminal. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that runs in…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Hmbown/DeepSeek-TUI - Coding agent for DeepSeek models that runs in your terminal. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that runs in…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Hmbown/DeepSeek-TUI - Coding agent for DeepSeek models that runs in your terminal. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Hmbown/DeepSeek-TUI: Coding agent for DeepSeek models that runs in…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Hmbown/DeepSeek-TUI - Coding agent for DeepSeek models that runs in your terminal. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "DeepSeek-TUI：在终端中运行的 DeepSeek 模型的编码代理",
+    "developer_profile": {
+      "github_username": "Hmbown",
+      "profile_url": "https://github.com/Hmbown",
+      "name": "Hunter Bown",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "huntermbown",
+      "email": "",
+      "followers": 672,
+      "following": 291,
+      "public_repos": 70,
+      "avatar_url": "https://avatars.githubusercontent.com/u/101357273?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/huntermbown"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "z-lab/dflash - DFlash: Block Diffusion for Flash Speculative Decoding",
+    "url": "https://github.com/z-lab/dflash",
+    "heat": "3,895 stars",
+    "time": "Today",
+    "developer_name": "z-lab",
+    "developer_url": "https://github.com/z-lab",
+    "developer_email": "",
+    "today_stars": "379 stars today",
+    "language": "Python",
+    "summary": "DFlash: Block Diffusion for Flash Speculative Decoding",
+    "content": "# DFlash: Block Diffusion for Flash Speculative Decoding\n**Paper** | **Blog** | **Models**\n\n**DFlash** is a lightweight **block diffusion** model designed for speculative decoding. It enables efficient and high-quality parallel drafting.\n\nhttps://github.com/user-attachments/assets/5b29cabb-eb95-44c9-8ffe-367c0758de8c\n\n## Supported Models\n\n| Model | DFlash Draft |\n|---|---|\n| gemma-4-26B-A4B-it | z-lab/gemma-4-26B-A4B-it-DFlash |\n| gemma-4-31B-it | z-lab/gemma-4-31B-it-DFlash |\n| Qwen3.6-27B | z-lab/Qwen3.6-27B-DFlash |\n| Qwen3.6-35B-A3B | z-lab/Qwen3.6-35B-A3B-DFlash |\n| MiniMax-M2.5 (Preview) | z-lab/MiniMax-M2.5-DFlash |\n| Kimi-K2.5 | z-lab/Kimi-K2.5-DFlash |\n| Qwen3.5-4B | z-lab/Qwen3.5-4B-DFlash |\n| Qwen3.5-9B | z-lab/Qwen3.5-9B-DFlash |\n| Qwen3.5-27B | z-lab/Qwen3.5-27B-DFlash |\n| Qwen3.5-35B-A3B | z-lab/Qwen3.5-35B-A3B-DFlash |\n| Qwen3.5-122B-A10B | z-lab/Qwen3.5-122B-A10B-DFlash |\n| Qwen3-Coder-Next | z-lab/Qwen3-Coder-Next-DFlash |\n| Qwen3-Coder-30B-A3B | z-lab/Qwen3-Coder-30B-A3B-DFlash |\n| gpt-oss-20b | z-lab/gpt-oss-20b-DFlash |\n| gpt-oss-120b | z-lab/gpt-oss-120b-DFlash |\n| Qwen3-4B (non-thinking) | z-lab/Qwen3-4B-DFlash-b16 |\n| Qwen3-8B (non-thinking) | z-lab/Qwen3-8B-DFlash-b16 |\n| Llama-3.1-8B-Instruct | z-lab/LLaMA3.1-8B-Instruct-DFlash-UltraChat |\n| DeepSeek-V4-Flash | Coming soon |\n| DeepSeek-V4-Pro | Coming soon |\n| MiniMax-M2.7 | Coming soon |\n| GLM-5.1 | Coming soon |\n\n> Feel free to open a GitHub issue to request support for additional models. We will also open-source the training recipe soon, so you can train your own DFlash draft model to accelerate any LLM.\n\n## 📦 Installation\n\nUse a separate virtual environment for each to avoid conflict.\n\n| Backend | Install command |\n|---|---|\n| **Transformers** | `uv pip install -e \".[transformers]\"` |\n| **SGLang** | `uv pip install -e \".[sglang]\"` |\n| **vLLM** | See below |\n| **MLX** (Apple Silicon) | `pip install -e \".[mlx]\"` |\n\n**vLLM:** vLLM v0.20.1+ includes core DFlash support. Use the standard install for most models:\n```bash\nuv pip install -e \".[vllm]\"\n```\n\nGemma4 DFlash currently needs our temporary vLLM Gemma4 build. Docker is recommended:\n```bash\ndocker pull ghcr.io/z-lab/vllm-openai:gemma4-dflash-cu130\n```\n\nSource fallback for Gemma4:\n```bash\nuv pip install -U --torch-backend=auto \\\n  \"vllm @ git+https://github.com/vllm-project/vllm.git@refs/pull/41703/head\"\n```\n\nNewer non-Gemma4 SWA draft models use the SWA support branch:\n```bash\nuv pip install -U --torch-backend=auto \\\n  \"vllm @ git+https://github.com/vllm-project/vllm.git@refs/pull/40898/head\"\n```\n\n## 🚀 Quick Start\n\n### vLLM\n\nGemma4 with Docker:\n```bash\ndocker run --rm -it \\\n  --gpus all \\\n  --ipc=host \\\n  --shm-size=16g \\\n  -p 8000:8000 \\\n  -v ~/.cache/huggingface:/root/.cache/huggingface \\\n  ghcr.io/z-lab/vllm-openai:gemma4-dflash-cu130 \\\n  google/gemma-4-26B-A4B-it \\\n  --host 0.0.0.0 \\\n  --port 8000 \\\n  --speculative-config '{\"method\": \"dflash\", \"model\": \"z-lab/gemma-4-26B-A4B-it-DFlash\", \"num_speculative_tokens\": 15",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "oss"
+      ],
+      "ai_hits": [
+        "llm",
+        "gpt",
+        "llama",
+        "deepseek",
+        "diffusion",
+        "huggingface",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "DeepSeek",
+        "Llama",
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Diffusion"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "z-lab/dflash: DFlash: Block Diffusion for Flash Speculative Decoding",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.8,
+      "tcloud_relevance": 6.0,
+      "tcloud_integration": "**dflash** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**dflash** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "llm",
+        "deepseek",
+        "llama"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**dflash** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「z-lab/dflash - DFlash: Block Diffusion for Flash…」（z-lab/dflash: DFlash: Block Diffusion for Flash Speculative…），涉及 LLM / Diffusion → 可写方向：**dflash** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「dflash」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 dflash 的核心功能（z-lab/dflash: DFlash: Block Diffusion for Flash Speculative Decoding），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 dflash 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 dflash 的核心功能（z-lab/dflash: DFlash: Block Diffusion for Flash Speculative Decoding），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 dflash 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "z-lab/dflash: DFlash: Block Diffusion for Flash Speculative Decoding。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "z-lab/dflash - DFlash: Block Diffusion for Flash Speculative Decoding. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：z-lab/dflash: DFlash: Block Diffusion for Flash Speculative Decoding。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: z-lab/dflash - DFlash: Block Diffusion for Flash Speculative Decoding. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。z-lab/dflash: DFlash: Block Diffusion for Flash Speculative Decoding。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**dflash** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. z-lab/dflash - DFlash: Block Diffusion for Flash Speculative Decoding. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：z-lab/dflash: DFlash: Block Diffusion for Flash Speculative Decoding。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: z-lab/dflash - DFlash: Block Diffusion for Flash Speculative Decoding. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "DFlash：用于闪存推测解码的块扩散",
+    "developer_profile": {
+      "github_username": "z-lab",
+      "profile_url": "https://github.com/z-lab",
+      "name": "Z Lab",
+      "bio": "Efficient AI. PI: Zhijian Liu",
+      "company": "",
+      "location": "",
+      "blog": "https://z-lab.ai",
+      "twitter_username": "zhijianliu_",
+      "email": "",
+      "followers": 175,
+      "following": 0,
+      "public_repos": 4,
+      "avatar_url": "https://avatars.githubusercontent.com/u/11654557?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "https://hf.co/z-lab"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/zhijianliu_"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@z-lab-ai"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "decolua/9router - Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gemini via 40+ providers. Auto-fallback, RTK -40% tokens, never hit limits.",
+    "url": "https://github.com/decolua/9router",
+    "heat": "5,768 stars",
+    "time": "Today",
+    "developer_name": "decolua",
+    "developer_url": "https://github.com/decolua",
+    "developer_email": "",
+    "today_stars": "1,052 stars today",
+    "language": "JavaScript",
+    "summary": "Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gemini via 40+ providers. Auto-fallback, RTK -40% tokens, never hit limits.",
+    "content": " \n   \n  \n  # 9Router - FREE AI Router & Token Saver\n  \n  **Never stop coding. Save 20-40% tokens with RTK + auto-fallback to FREE & cheap AI models.**\n  \n  **Connect All AI Code Tools (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) to 40+ AI Providers & 100+ Models.**\n  \n  [](https://www.npmjs.com/package/9router)\n  [](https://www.npmjs.com/package/9router)\n  [](https://github.com/decolua/9router/blob/main/LICENSE)\n\n     \n  \n  🚀 Quick Start • 💡 Features • 📖 Setup • 🌐 Website\n\n  🇻🇳 Tiếng Việt • 🇨🇳 中文 • 🇯🇵 日本語\n \n\n---\n\n## 🤔 Why 9Router?\n\n**Stop wasting money, tokens and hitting limits:**\n\n- ❌ Subscription quota expires unused every month\n- ❌ Rate limits stop you mid-coding\n- ❌ Tool outputs (git diff, grep, ls...) burn tokens fast\n- ❌ Expensive APIs ($20-50/month per provider)\n- ❌ Manual switching between providers\n\n**9Router solves this:**\n\n- ✅ **RTK Token Saver** - Auto-compress tool_result content, save 20-40% tokens per request\n- ✅ **Maximize subscriptions** - Track quota, use every bit before reset\n- ✅ **Auto fallback** - Subscription → Cheap → Free, zero downtime\n- ✅ **Multi-account** - Round-robin between accounts per provider\n- ✅ **Universal** - Works with Claude Code, Codex, Cursor, Cline, any CLI tool\n\n---\n\n## 🔄 How It Works\n\n```\n┌─────────────┐\n│  Your CLI   │  (Claude Code, Codex, OpenClaw, Cursor, Cline...)\n│   Tool      │\n└──────┬──────┘\n       │ http://localhost:20128/v1\n       ↓\n┌─────────────────────────────────────────────┐\n│           9Router (Smart Router)            │\n│  • RTK Token Saver (cut tool_result tokens) │\n│  • Format translation (OpenAI ↔ Claude)     │\n│  • Quota tracking                           │\n│  • Auto token refresh                       │\n└──────┬──────────────────────────────────────┘\n       │\n       ├─→ [Tier 1: SUBSCRIPTION] Claude Code, Codex, GitHub Copilot\n       │   ↓ quota exhausted\n       ├─→ [Tier 2: CHEAP] GLM ($0.6/1M), MiniMax ($0.2/1M)\n       │   ↓ budget limit\n       └─→ [Tier 3: FREE] Kiro, OpenCode Free, Vertex ($300 credits)\n\nResult: Never stop coding, minimal cost + 20-40% token savings via RTK\n```\n\n---\n\n## ⚡ Quick Start\n\n**1. Install globally:**\n\n```bash\nnpm install -g 9router\n9router\n```\n\n🎉 Dashboard opens at `http://localhost:20128`\n\n**2. Connect a FREE provider (no signup needed):**\n\nDashboard → Providers → Connect **Kiro AI** (free Claude unlimited) or **OpenCode Free** (no auth) → Done!\n\n**3. Use in your CLI tool:**\n\n```\nClaude Code/Codex/OpenClaw/Cursor/Cline Settings:\n  Endpoint: http://localhost:20128/v1\n  API Key: [copy from dashboard]\n  Model: kr/claude-sonnet-4.5\n```\n\n**That's it!** Start coding with FREE AI models.\n\n**Alternative: run from source (this repository):**\n\nThis repository package is private (`9router-app`), so source/Docker execution is the expected local development path.\n\n```bash\ncp .env.example .env\nnpm install\nPORT=20128 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run dev\n```\n\nProduction mode:\n\n```bash\nnpm run build\nPORT",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "claude",
+        "gemini",
+        "copilot",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "decolua/9router: Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline, Copilot, Antigravity to FREE Claude/GPT/Gemini via 40+ providers. Auto-fallback, RTK -40% tokens, never hit limits.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.8,
+      "tcloud_relevance": 6.4,
+      "tcloud_integration": "**9router** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs 9router 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**9router** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs 9router 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "copilot",
+        "cursor",
+        "cline"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**9router** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs 9router 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「decolua/9router - Unlimited FREE AI coding. Conne…」（decolua/9router: Unlimited FREE AI coding. Connect Claude C…） → 可写方向：**9router** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs 9router 的横向对比：CodeBuddy 覆盖需求→设计→编码→测…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「decolua/9router - Unlimited FREE AI cod…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 9router 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 9router 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 9router 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 9router 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "decolua/9router: Unlimited FREE AI coding. Connect Claude Code, Cod…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "decolua/9router - Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline,…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：decolua/9router: Unlimited FREE AI coding. Connect Claude Code, Cod…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: decolua/9router - Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline,…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。decolua/9router: Unlimited FREE AI coding. Connect Claude Code, Cod…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**9router** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs 9router 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. decolua/9router - Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline,…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：decolua/9router: Unlimited FREE AI coding. Connect Claude Code, Cod…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: decolua/9router - Unlimited FREE AI coding. Connect Claude Code, Codex, Cursor, Cline,…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "9router：无限免费人工智能编码。通过 40 多个提供商将 Claude Code、Codex、Cursor、Cline、Copilot、Antigravity 连接到免费的 Claude/GPT/Gemini。",
+    "developer_profile": {
+      "github_username": "decolua",
+      "profile_url": "https://github.com/decolua",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 134,
+      "following": 8,
+      "public_repos": 5,
+      "avatar_url": "https://avatars.githubusercontent.com/u/8282593?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "CloakHQ/CloakBrowser - Stealth Chromium that passes every bot detection test. Drop-in Playwright replacement with source-level fingerprint patches. 30/30 tests passed.",
+    "url": "https://github.com/CloakHQ/CloakBrowser",
+    "heat": "3,262 stars",
+    "time": "Today",
+    "developer_name": "CloakHQ",
+    "developer_url": "https://github.com/CloakHQ",
+    "developer_email": "cloakhq@pm.me",
+    "today_stars": "526 stars today",
+    "language": "Python",
+    "summary": "Stealth Chromium that passes every bot detection test. Drop-in Playwright replacement with source-level fingerprint patches. 30/30 tests passed.",
+    "content": " \n \n \n\n \n   \n   \n   \n   \n \n   \n   \n   \n   \n \n\n \n   \n \n\n \n\n Stealth Chromium that passes every bot detection test. \n\n   \nNot a patched config. Not a JS injection. A real Chromium binary with fingerprints modified at the C++ source level. Antibot systems score it as a normal browser — because it  is  a normal browser.\n   \n\n \n\n \n \n  Cloudflare Turnstile — 3 live tests passing (headed mode, macOS) \n \n\n \n\n \nDrop-in Playwright/Puppeteer replacement for Python and JavaScript. \nSame API, same code — just swap the import.  3 lines of code, 30 seconds to unblock. \n \n\n- **49 source-level C++ patches** — canvas, WebGL, audio, fonts, GPU, screen, WebRTC, network timing, automation signals, CDP input behavior\n- **`humanize=True`** — human-like mouse curves, keyboard timing, and scroll patterns. One flag, behavioral detection passes\n- **0.9 reCAPTCHA v3 score** — human-level, server-verified\n- **Passes Cloudflare Turnstile**, FingerprintJS, BrowserScan — tested against 30+ detection sites\n- **Auto-updating binary** — background update checks, always on the latest stealth build\n- **`pip install cloakbrowser`** or **`npm install cloakbrowser`** — binary auto-downloads, zero config\n- **Free and open source** — no subscriptions, no usage limits\n\n**Try it now** — no install needed:\n```bash\ndocker run --rm cloakhq/cloakbrowser cloaktest\n```\n\n**Python:**\n```python\nfrom cloakbrowser import launch\n\nbrowser = launch()\npage = browser.new_page()\npage.goto(\"https://protected-site.com\")  # no more blocks\nbrowser.close()\n```\n\n**JavaScript (Playwright):**\n```javascript\nimport { launch } from 'cloakbrowser';\n\nconst browser = await launch();\nconst page = await browser.newPage();\nawait page.goto('https://protected-site.com');\nawait browser.close();\n```\n\nAlso works with Puppeteer: `import { launch } from 'cloakbrowser/puppeteer'` (details)\n\n## Install\n\n**Python:**\n```bash\npip install cloakbrowser\n```\n\n**JavaScript / Node.js:**\n```bash\n# With Playwright\nnpm install cloakbrowser playwright-core\n\n# With Puppeteer\nnpm install cloakbrowser puppeteer-core\n```\n\nOn first run, the stealth Chromium binary is automatically downloaded (~200MB, cached locally).\n\n**Optional:** Auto-detect timezone/locale from proxy IP:\n```bash\npip install cloakbrowser[geoip]\n```\n\n**Migrating from Playwright?** One-line change:\n\n```diff\n- from playwright.sync_api import sync_playwright\n- pw = sync_playwright().start()\n- browser = pw.chromium.launch()\n+ from cloakbrowser import launch\n+ browser = launch()\n\npage = browser.new_page()\npage.goto(\"https://example.com\")\n# ... rest of your code works unchanged\n```\n\n> ⭐ **Star** to show support — **Watch releases** to get notified when new builds drop.\n\n## Browser Profile Manager\n\nSelf-hosted alternative to Multilogin, GoLogin, and AdsPower. Create browser profiles with unique fingerprints, proxies, and persistent sessions. Launch and interact with them in your browser via noVNC.\n\n```bash\ndocker run -p 8080:8080 -v cloakprofiles:/data cloakhq/cloakbrowser-manager\n```\n\nOp",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 4,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "cloudflare",
+        "webrtc",
+        "gpu"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Cloudflare"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "CloakHQ/CloakBrowser: Stealth Chromium that passes every bot detection test. Drop-in Playwright replacement with source-level fingerprint patches. 30/30 tests passed.",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.7,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**CloakBrowser** 涉及音视频场景 — TRTC 提供实时音视频通话 + 互动直播能力，1 分钟跑通 Demo、30 分钟上线",
+      "tcloud_products": [
+        "TRTC"
+      ],
+      "tcloud_reasons": [
+        "**CloakBrowser** 涉及音视频场景 — TRTC 提供实时音视频通话 + 互动直播能力，1 分钟跑通 Demo、30 分钟上线"
+      ],
+      "tcloud_evidence": [
+        "webrtc",
+        "audio"
+      ],
+      "tcloud_primary_product": "TRTC",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 TRTC：**CloakBrowser** 涉及音视频场景 — TRTC 提供实时音视频通话 + 互动直播能力，1 分钟跑通 Demo、30 分钟上线",
+      "tcloud_official_matches": [
+        "TRTC"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（TRTC）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（TRTC）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「CloakHQ/CloakBrowser - Stealth Chromium that pass…」（CloakHQ/CloakBrowser: Stealth Chromium that passes every bo…），涉及 Python → 可写方向：**CloakBrowser** 涉及音视频场景 — TRTC 提供实时音视频通话 + 互动直播能力，1 分钟跑通 Demo、30 分钟上线\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「CloakBrowser」涉及实时音视频场景，可结合 TRTC 写教程或场景解读。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "TRTC",
+      "official_angle_cn": "围绕 CloakBrowser 的核心功能（CloakHQ/CloakBrowser: Stealth Chromium that passes every bot detection test. Dr…），以 TRTC 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 CloakBrowser 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 TRTC。",
+      "platform_copies": {
+        "primary_product": "TRTC",
+        "product_display": "TRTC",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 CloakBrowser 的核心功能（CloakHQ/CloakBrowser: Stealth Chromium that passes every bot detection test. Dr…），以 TRTC 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use TRTC (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 CloakBrowser 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 TRTC。",
+        "x_cn": "CloakHQ/CloakBrowser: Stealth Chromium that passes every bot detect…。如果站在腾讯云国际站官方号来写，这条更适合从 TRTC 切入：如果以腾讯云国际站官方号来写，这条建议主推 TRTC：**Cloa…",
+        "x_en": "CloakHQ/CloakBrowser - Stealth Chromium that passes every bot detection test. Drop-in P…. For Tencent Cloud, this fits TRTC (Tencent Cloud): Build voice/video calls and interactive live streaming with TRTC.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：CloakHQ/CloakBrowser: Stealth Chromium that passes every bot detect…。如果从腾讯云视角切，这条最适合带到 TRTC，重点聊 技术科普 + 教程拆解 + 产品关联（TRTC）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: CloakHQ/CloakBrowser - Stealth Chromium that passes every bot detection test. Drop-in P…. From a Tencent Cloud angle, the best hook is TRTC (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (TRTC). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。CloakHQ/CloakBrowser: Stealth Chromium that passes every bot detect…。如果用官方号发，建议主推 TRTC，重点讲 技术科普 + 教程拆解 + 产品关联（TRTC），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 TRTC：**CloakBrowser** 涉及音视频场景 — TRTC 提供实时音视频通话 + 互动直播能力，1 分钟跑通 Demo、30 分钟上线",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. CloakHQ/CloakBrowser - Stealth Chromium that passes every bot detection test. Drop-in P…. For Tencent Cloud, the better angle is TRTC (Tencent Cloud). Build voice/video calls and interactive live streaming with TRTC. The content should focus on technical explainer + hands-on walkthrough + product tie-in (TRTC).",
+        "reddit_title_cn": "这类热点如果从 TRTC 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：CloakHQ/CloakBrowser: Stealth Chromium that passes every bot detect…。如果站在腾讯云国际站官方号视角，我会更想把它写成 TRTC 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（TRTC）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through TRTC (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: CloakHQ/CloakBrowser - Stealth Chromium that passes every bot detection test. Drop-in P…. Instead of reposting it as news, I'd frame it through TRTC (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (TRTC). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "CloakBrowser：Stealth Chromium 通过了所有机器人检测测试。使用源级指纹补丁替换 Playwright。",
+    "developer_profile": {
+      "github_username": "CloakHQ",
+      "profile_url": "https://github.com/CloakHQ",
+      "name": "CloakHQ",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "cloakhq@pm.me",
+      "followers": 41,
+      "following": 0,
+      "public_repos": 6,
+      "avatar_url": "https://avatars.githubusercontent.com/u/263128610?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "awslabs/aidlc-workflows - AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rules for AI coding agents",
+    "url": "https://github.com/awslabs/aidlc-workflows",
+    "heat": "1,812 stars",
+    "time": "Today",
+    "developer_name": "awslabs",
+    "developer_url": "https://github.com/awslabs",
+    "developer_email": "",
+    "today_stars": "58 stars today",
+    "language": "Python",
+    "summary": "AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rules for AI coding agents",
+    "content": "# AI-DLC (AI-Driven Development Life Cycle)\n\n> [!IMPORTANT]\n> Generative AI can make mistakes. You should consider reviewing all output and costs generated by your chosen AI model and agentic coding assistant. See AWS Responsible AI Policy.\n\n \nAI-DLC is an intelligent software development workflow that adapts to your needs, maintains quality standards, and keeps you in control of the process. For learning more about AI-DLC Methodology, read this blog and the Method Definition Paper referred in it.\n\n## Table of Contents\n\n- Common\n- Platform-Specific Setup\n- Usage\n- Three-Phase Adaptive Workflow\n- Key Features\n- Extensions\n- Tenets\n- Prerequisites\n- Troubleshooting\n- Version Control Recommendations\n- Additional Resources\n- Generated aidlc-docs/ Reference\n- Experimental: AI-Assisted Setup (Release Download)\n- Contributing\n- License\n\n---\n\n## Common\n\n1. Download the latest release zip file named `ai-dlc-rules-v .zip` from the Releases page to a folder **outside** your project directory (e.g., `~/Downloads`).\n2. Extract the zip. It contains an `aidlc-rules/` folder with two subdirectories:\n   - `aws-aidlc-rules/` — the core AI-DLC workflow rules\n   - `aws-aidlc-rule-details/` — detailed rules conditionally referenced by the core rules\n3. Follow the setup instructions for your coding agent and platform below.\n\n---\n\n## Platform-Specific Setup\n\n- Kiro\n- Amazon Q Developer IDE Plugin\n- Cursor IDE\n- Cline\n- Claude Code\n- GitHub Copilot\n- OpenAI Codex\n- Other Agents\n\n---\n\n### Kiro\n\nAI-DLC uses Kiro Steering Files within your project workspace.  \n\nThe commands below assume you extracted the zip to your `Downloads` folder. If you used a different location, replace `Downloads` with your actual folder path.\n\nOn macOS/Linux:\n\n```bash\nmkdir -p .kiro/steering\ncp -R ~/Downloads/aidlc-rules/aws-aidlc-rules .kiro/steering/\ncp -R ~/Downloads/aidlc-rules/aws-aidlc-rule-details .kiro/\n```\n\nOn Windows (PowerShell):\n\n```powershell\nNew-Item -ItemType Directory -Force -Path \".kiro\\steering\"\nCopy-Item -Recurse \"$env:USERPROFILE\\Downloads\\aidlc-rules\\aws-aidlc-rules\" \".kiro\\steering\\\"\nCopy-Item -Recurse \"$env:USERPROFILE\\Downloads\\aidlc-rules\\aws-aidlc-rule-details\" \".kiro\\\"\n```\n\nOn Windows (CMD):\n\n```cmd\nmkdir .kiro\\steering\nxcopy %USERPROFILE%\\Downloads\\aidlc-rules\\aws-aidlc-rules .kiro\\steering\\aws-aidlc-rules\\ /E /I\nxcopy %USERPROFILE%\\Downloads\\aidlc-rules\\aws-aidlc-rule-details .kiro\\aws-aidlc-rule-details\\ /E /I\n```\n\nYour project should look like:\n\n```text\n /\n    ├── .kiro/\n    │     ├── steering/\n    │     │      ├── aws-aidlc-rules/\n    │     ├── aws-aidlc-rule-details/\n```\n\nTo verify the rules are loaded:\n\n#### Verify in Kiro IDE\n\nOpen the steering files panel and confirm you see an entry for `core-workflow` under `Workspace` as shown in the screenshot below.\n\n \n\nWe use Kiro IDE in Vibe mode to run the AI-DLC workflow. This ensures that AI-DLC workflow guides the development workflow in Kiro. At times, Kiro may nudge you to switch to spec mode. Select `No` to such pr",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "aws"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "copilot",
+        "agent",
+        "openai",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [
+        "AWS"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "awslabs/aidlc-workflows: AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rules for AI coding agents",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.6,
+      "tcloud_relevance": 6.4,
+      "tcloud_integration": "**aidlc-workflows** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs aidlc-workflows 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**aidlc-workflows** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs aidlc-workflows 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "coding agent",
+        "copilot",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**aidlc-workflows** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs aidlc-workflows 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「awslabs/aidlc-workflows - AI-Driven Life Cycle (A…」（awslabs/aidlc-workflows: AI-Driven Life Cycle (AI-DLC) adap…），涉及 Agent → 可写方向：**aidlc-workflows** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs aidlc-workflows 的横向对比：CodeBu…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「awslabs/aidlc-workflows - AI-Driven Lif…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 aidlc-workflows 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 aidlc-workflows 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 aidlc-workflows 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 aidlc-workflows 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "awslabs/aidlc-workflows: AI-Driven Life Cycle (AI-DLC) adaptive wor…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "awslabs/aidlc-workflows - AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rule…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：awslabs/aidlc-workflows: AI-Driven Life Cycle (AI-DLC) adaptive wor…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: awslabs/aidlc-workflows - AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rule…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。awslabs/aidlc-workflows: AI-Driven Life Cycle (AI-DLC) adaptive wor…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**aidlc-workflows** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs aidlc-workflows 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. awslabs/aidlc-workflows - AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rule…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：awslabs/aidlc-workflows: AI-Driven Life Cycle (AI-DLC) adaptive wor…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: awslabs/aidlc-workflows - AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rule…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "aidlc-workflows：适用于 AI 编码代理的 AI 驱动生命周期 (AI-DLC) 自适应工作流引导规则",
+    "developer_profile": {
+      "github_username": "awslabs",
+      "profile_url": "https://github.com/awslabs",
+      "name": "Amazon Web Services - Labs",
+      "bio": "AWS Labs",
+      "company": "",
+      "location": "Seattle, WA",
+      "blog": "http://amazon.com/aws/",
+      "twitter_username": "",
+      "email": "",
+      "followers": 10843,
+      "following": 0,
+      "public_repos": 1004,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3299148?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "HKUDS/AI-Trader - \"AI-Trader: 100% Fully-Automated Agent-Native Trading\"",
+    "url": "https://github.com/HKUDS/AI-Trader",
+    "heat": "14,785 stars",
+    "time": "Today",
+    "developer_name": "HKUDS",
+    "developer_url": "https://github.com/HKUDS",
+    "developer_email": "",
+    "today_stars": "202 stars today",
+    "language": "Python",
+    "summary": "\"AI-Trader: 100% Fully-Automated Agent-Native Trading\"",
+    "content": " \n   \n \n\n \n\n# AI-Trader: 100% Fully-Automated Agent-Native Trading\n\n   \n\n[](LICENSE)\n[](https://github.com/HKUDS/AI-Trader)\n     \n     \n\n \n\nJust like humans have their trading platforms, **AI agents need their own**.\n\n**AI-Trader** is an **Agent-Native Trading Platform**: Exchange ideas and sharpen trading skills through AI agents!\n\nAny AI agent joins the **AI-Trader** platform in seconds -- Simply send this message to your agent.\n\n```\nRead https://ai4trade.ai/SKILL.md and register. \n```\n\n \n\n## Live Trading Platform *Click Here*\n\n \n\nSupports all major AI agents, including OpenClaw, nanobot, Claude Code, Codex, Cursor, and more.\n\n---\n\n## 🚀 Latest Updates:\n\n- **2026-04-10**: **Production stability hardening**. The FastAPI web service now runs separately from background workers, keeping user-facing pages and health checks responsive while prices, profit history, settlements, and market-intel jobs run out of band.\n- **2026-04-09**: **Major codebase streamlining for agent-native development**. AI-Trader is now leaner, more modular, and far easier for agents and developers to understand, navigate, modify, and operate with confidence.\n- **2026-03-21**: Launched new **Dashboard** page (https://ai4trade.ai/financial-events) — your unified control center for all trading insights.\n- **2026-03-03**: **Polymarket paper trading** now live with real market data + simulated execution. Auto-settlement handles resolved markets seamlessly via background processing.\n\n---\n\n## Key Features of AI-Trader\n\n- **🤖 Instant Agent Integration**  \nConnect any AI agent instantly by sending it one simple message.\n\n- **💬 Collective Intelligence Trading**  \nAgents collaborate and debate to surface the best trading ideas automatically.\n\n- **📡 Cross-Platform Signal Sync**  \nKeep your broker, sync your trades, share signals seamlessly.\n\n- **📊 One-Click Copy Trading**  \nFollow top performers and mirror their positions in real-time.\n\n- **🌐 Universal Market Access**  \nTrade across all major markets: Stocks, Crypto, Forex, Options, Futures.\n\n- **🎯 Three Signal Types**  \nStrategies for discussion, Operations for copying, Discussions for collaboration.\n\n- **⭐ Reward System**  \nEarn points for publishing signals and gaining followers.\n\n---\n\n## Two Ways to Join AI-Trader\n\n### 🤖 For Agent Traders\n\nConnect any AI agent instantly by sending it this message:\n\n```\nRead https://ai4trade.ai/skill/ai4trade and register on the platform. Compatibility alias: https://ai4trade.ai/SKILL.md\n```\n\nThe agent will automatically:\n- 1. Read the integration guide\n- 2. Install necessary components\n- 3. Register itself on the platform\n\nOnce joined, your agent can:\n- Publish trading signals and strategies\n- Participate in community discussions\n- Copy trades from top performers\n- Sync signals across multiple brokers\n- Earn points for successful predictions\n- Access real-time market data feeds\n\n### 👤 For Human Traders\nJoin directly in 3 simple steps:\n- Visit https://ai4trade.ai\n- Sign up with your email\n- Start tradi",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "HKUDS/AI-Trader: \"AI-Trader: 100% Fully-Automated Agent-Native Trading\"",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.8,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**AI-Trader** 的用户群和 CodeBuddy 高度重合 — 可以写「AI-Trader 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**AI-Trader** 的用户群和 CodeBuddy 高度重合 — 可以写「AI-Trader 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**AI-Trader** 的用户群和 CodeBuddy 高度重合 — 可以写「AI-Trader 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「HKUDS/AI-Trader - \"AI-Trader: 100% Fully-Automate…」（HKUDS/AI-Trader: \"AI-Trader: 100% Fully-Automated Agent-Nat…），涉及 Agent → 可写方向：**AI-Trader** 的用户群和 CodeBuddy 高度重合 — 可以写「AI-Trader 用户迁移到 CodeBuddy 的体验对比」，突出 Co…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「HKUDS/AI-Trader - \"AI-Trader: 100% Full…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 AI-Trader 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 AI-Trader 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 AI-Trader 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 AI-Trader 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "HKUDS/AI-Trader: \"AI-Trader: 100% Fully-Automated Agent-Native Trad…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "HKUDS/AI-Trader - \"AI-Trader: 100% Fully-Automated Agent-Native Trading\". For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：HKUDS/AI-Trader: \"AI-Trader: 100% Fully-Automated Agent-Native Trad…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: HKUDS/AI-Trader - \"AI-Trader: 100% Fully-Automated Agent-Native Trading\". From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。HKUDS/AI-Trader: \"AI-Trader: 100% Fully-Automated Agent-Native Trad…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**AI-Trader** 的用户群和 CodeBuddy 高度重合 — 可以写「AI-Trader 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. HKUDS/AI-Trader - \"AI-Trader: 100% Fully-Automated Agent-Native Trading\". For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：HKUDS/AI-Trader: \"AI-Trader: 100% Fully-Automated Agent-Native Trad…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: HKUDS/AI-Trader - \"AI-Trader: 100% Fully-Automated Agent-Native Trading\". Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "“AI-Trader：100%全自动代理原生交易”",
+    "developer_profile": {
+      "github_username": "HKUDS",
+      "profile_url": "https://github.com/HKUDS",
+      "name": "✨Data Intelligence Lab@HKU✨",
+      "bio": "",
+      "company": "",
+      "location": "Hong Kong",
+      "blog": "https://sites.google.com/view/chaoh",
+      "twitter_username": "",
+      "email": "",
+      "followers": 10638,
+      "following": 0,
+      "public_repos": 87,
+      "avatar_url": "https://avatars.githubusercontent.com/u/118165258?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  }
+]
