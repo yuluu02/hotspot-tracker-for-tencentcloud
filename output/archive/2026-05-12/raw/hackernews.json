@@ -1,0 +1,673 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Postmortem: TanStack npm supply-chain compromise",
+    "url": "https://tanstack.com/blog/npm-supply-chain-compromise-postmortem",
+    "hn_url": "https://news.ycombinator.com/item?id=48100706",
+    "heat": "632 points",
+    "time": "7 hours ago",
+    "developer_name": "varunsharma07",
+    "developer_url": "https://news.ycombinator.com/user?id=varunsharma07",
+    "content": "Postmortem: TanStack npm supply-chain compromise | TanStack Blog TanStack Search... K Auto Log In Start RC Start RC Router Router Query Query Table Table DB beta DB beta AI alpha AI alpha Form new Form new Virtual Virtual Pacer beta Pacer beta Hotkeys alpha Hotkeys alpha Store alpha Store alpha Devtools alpha Devtools alpha CLI alpha CLI alpha Intent alpha Intent alpha More Libraries More Libraries Builder Alpha Builder Alpha Blog Blog Maintainers Maintainers Partners Partners Showcase Showcase Learn NEW Learn NEW Stats Stats YouTube YouTube Discord Discord Merch Merch Support Support GitHub GitHub Ethos Ethos Tenets Tenets Brand Guide Brand Guide Blog On this page Postmortem: TanStack npm supply-chain compromise Copy page by Tanner Linsley on May 11, 2026. Last updated: 2026-05-11 TL;DR # On 2026-05-11 between 19:20 and 19:26 UTC, an attacker published 84 malicious versions across 42 @tanstack/* npm packages by combining: the pull_request_target \"Pwn Request\" pattern, GitHub Actions cache poisoning across the fork↔base trust boundary, and runtime memory extraction of an OIDC token from the GitHub Actions runner process. No npm tokens were stolen and the npm publish workflow itself was not compromised. The malicious versions were detected publicly within 20 minutes by an external researcher ashishkurmi working for stepsecurity . All affected versions have been deprecated; npm security has been engaged to pull tarballs from the registry. We have no evidence of npm credentials being stolen, but we strongly recommend that anyone who installed an affected version on 2026-05-11 rotate AWS, GCP, Kubernetes, Vault, GitHub, npm, and SSH credentials reachable from the install host. Tracking issue: TanStack/router#7383 GitHub Security Advisory: GHSA-g7cv-rxg3-hmpx Impact # Packages affected # 42 packages, 84 versions (two per package, published roughly 6 minutes apart). See the tracking issue for the full table. Confirmed-clean families: @tanstack/query* , @tanstack/table* , @tanstack/form* , @tanstack/virtual* , @tanstack/store , @tanstack/start (the meta-package, not @tanstack/start-* ). What the malware does # When a developer or CI environment runs npm install , pnpm install , or yarn install against any affected version, npm resolves the malicious optionalDependencies entry, fetches the orphan payload commit from the fork network, runs its prepare lifecycle script, and executes a ~2.3 MB obfuscated router_init.js smuggled into the affected tarball. The script: Harvests credentials from common locations: AWS IMDS / Secrets Manager, GCP metadata, Kubernetes service-account tokens, Vault tokens, ~/.npmrc , GitHub tokens (env, gh CLI, .git-credentials ), SSH private keys Exfiltrates over the Session/Oxen messenger file-upload network ( filev2.getsession.org , seed{1,2,3}.getsession.org ) — end-to-end encrypted with no attacker-controlled C2, so blocking by IP/domain is the only network mitigation Self-propagates: enumerates other packages the victim maint",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "aws",
+        "gcp",
+        "kubernetes"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "产品发布",
+      "topic_type": "产品动态",
+      "products": [],
+      "competitors": [
+        "AWS",
+        "GCP"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Kubernetes"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Postmortem: TanStack npm supply-chain compromise | TanStack Blog TanStack Search. K Auto Log In Start RC Start RC Router Router Query Query Table Table DB beta DB beta AI alpha AI alpha Form new Form new Virtual Virtual Pacer beta Pacer beta Hotkeys alpha Hotkeys alpha Store alpha Store alpha Devtools alpha Devtools alpha CLI alpha CLI alpha Intent alpha Intent alpha More Libraries More Libraries Builder Alpha Builder Alpha Blog Blog Maintainers Maintainers Partners Partners Showcase Showcase L…",
+      "heat_score": 6.0,
+      "timeliness_score": 7.0,
+      "composite_score": 4.3,
+      "tcloud_relevance": 0.6,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "X（产品上新快讯）",
+        "LinkedIn（产品功能深度解读）"
+      ],
+      "recommended_platforms_text": "X（产品上新快讯） + LinkedIn（产品功能深度解读）",
+      "editorial_brief": "话题类型：产品动态\n可用角度：「Postmortem: TanStack npm supply-chain compromise」（Postmortem: TanStack npm supply-chain compromise | TanStack…），涉及 Kubernetes\n优先级：P1 本周发（仍有时效价值）\n适合平台：X（产品上新快讯） + LinkedIn（产品功能深度解读）",
+      "social_recommendation": "「Postmortem: TanStack npm supply-chain c…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 X（产品上新快讯） + LinkedIn（产品功能深度解读）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Postmortem: TanStack npm supply-chain compromise | TanStack Blog Ta…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Postmortem: TanStack npm supply-chain compromise. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Postmortem: TanStack npm supply-chain compromise | TanStack Blog Ta…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Postmortem: TanStack npm supply-chain compromise. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Postmortem: TanStack npm supply-chain compromise | TanStack Blog Ta…。如果用官方号发，建议主推 人工判断场景，重点讲 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Postmortem: TanStack npm supply-chain compromise. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Postmortem: TanStack npm supply-chain compromise | TanStack Blog Ta…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Postmortem: TanStack npm supply-chain compromise. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Postmortem: TanStack npm supply-chain co：事后分析：TanStack npm 供应链妥协 |TanStack 博客 TanStack 搜索。K 自动登录 启动 RC 启动 RC 路由器 路由器查询 查询表 DB beta DB beta AI alpha AI alpha Form new Form new Virtual Virtual Pacer be…"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Claude Platform on AWS",
+    "url": "https://claude.com/blog/claude-platform-on-aws",
+    "hn_url": "https://news.ycombinator.com/item?id=48103042",
+    "heat": "63 points",
+    "time": "3 hours ago",
+    "developer_name": "matrixhelix",
+    "developer_url": "https://news.ycombinator.com/user?id=matrixhelix",
+    "content": "Introducing the Claude Platform on AWS | Claude Explore here Introducing the Claude Platform on AWS Category Product announcements Product Claude Platform Date May 11, 2026 Reading time 5 min Share Copy link https://claude.com/blog/claude-platform-on-aws The Claude Platform on AWS is now generally available, offering a new way for AWS customers to access the full set of Claude Platform features with AWS authentication, billing, and commitment retirement. Claude also remains available on Amazon Bedrock, where AWS is the data processor. Starting today, Claude Platform on AWS customers can deploy agents at scale with Claude Managed Agents and build with tools like code execution, skills, the advisor strategy, and more. Access the complete Claude Platform via AWS The Claude Platform on AWS brings the full set of Claude API features to AWS customers for the first time, with all new features and betas shipping the same day they go live on the native Claude API. Authentication runs through AWS IAM, audit logging through CloudTrail, and billing through a single AWS invoice that fully retires against existing commitments. Customers use their existing AWS credentials and IAM policies, so teams stay within the tools and permissions they already manage. Claude Platform on AWS will be available in most AWS commercial regions and support global and U.S. inference geographies. “Claude Platform on AWS helped simplify how we access Claude, improved the experience for key users like our Claude Code engineers, and gave us a practical path to integrate further frontier AI capabilities into our cybersecurity and engineering workflows, while staying within our existing cloud operating model. The Anthropic team was engaged, collaborative, and gave us confidence as we expanded usage.” Jonathan Echavarria, Principal Research Scientist “Using Claude Platform on AWS gives OpenRouter and our users direct access to the latest and greatest features of the native Claude API; everything our cutting edge customers and use cases need is available and we control access through the same AWS IAM credentials we use for other AWS services. It has delivered consistent performance on uptime, latency, and throughput, and working directly with the Anthropic team has helped us move faster.” Tomas Oliva, AI Platform Engineer “Claude Platform on AWS gives us the canonical Anthropic API with AWS as the access layer, so we get full feature parity and day-one access to new model capabilities. Support has been one of the best parts, and it felt like one team across both companies, not two separate relationships. That kind of collaboration during scale-up is rare, and it's a big reason we've been able to keep moving as fast as we have.” Avinash Vishwakarma, Chief Architect Prev Prev 0 / 5 Next Next eBook What's included The Claude Platform on AWS includes native platform features, like: Claude Managed Agents (beta) to build and deploy agents at scale Advisor strategy (beta) to give agents an inte",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "aws",
+        "edge"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "inference",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "竞品动态",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [
+        "AWS"
+      ],
+      "competitor_products": [
+        "Amazon Bedrock"
+      ],
+      "techs": [
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Introducing the Claude Platform on AWS | Claude Explore here Introducing the Claude Platform on AWS Category Product announcements Product Claude Platform Date May 11, 2026 Reading time 5 min Copy link https://claude. com/blog/claude-platform-on-aws The Claude Platform on AWS is now generally available, offering a new way for AWS customers to access the full set of Claude Platform features with AWS authentication, billing, and commitment retirement.",
+      "heat_score": 4.0,
+      "timeliness_score": 8.0,
+      "composite_score": 7.9,
+      "tcloud_relevance": 9.3,
+      "tcloud_integration": "**Claude Platform on AWS** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景\n补充关联 CodeBuddy：**Claude Platform on AWS** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "EdgeOne",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Claude Platform on AWS** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
+        "**Claude Platform on AWS** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "edge",
+        "latency",
+        "claude code"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**Claude Platform on AWS** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景\n补充关联 CodeBuddy：**Claude Platform on AWS** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "EdgeOne",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "产品关联（EdgeOne / CodeBuddy）",
+        "竞品对比（Amazon Bedrock）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 竞品对比（Amazon Bedrock） + 社区参与",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「Claude Platform on AWS」（Introducing the Claude Platform on AWS | Claude Explore her…），涉及 Go → 可写方向：Amazon Bedrock 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「Claude Platform on AWS」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 Claude Platform on AWS 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 Claude Platform on AWS 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "Introducing the Claude Platform on AWS | Claude Explore here Introd…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：…",
+        "x_en": "Claude Platform on AWS. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Introducing the Claude Platform on AWS | Claude Explore here Introd…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 竞品对比（Amazon Bedrock） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Claude Platform on AWS. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy) + competitor comparison (Amazon Bedrock) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Introducing the Claude Platform on AWS | Claude Explore here Introd…。如果用官方号发，建议主推 EdgeOne，重点讲 教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 竞品对比（Amazon Bedrock） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**Claude Platform on AWS** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景 补充关联 CodeBuddy：**Claude Platform on AWS** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对…",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Claude Platform on AWS. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy) + competitor comparison (Amazon Bedrock) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Introducing the Claude Platform on AWS | Claude Explore here Introd…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 竞品对比（Amazon Bedrock） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Claude Platform on AWS. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy) + competitor comparison (Amazon Bedrock) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Claude Platform on AWS：AWS 上的 Claude 平台简介 |Claude 在此处探索 AWS 上的 Claude 平台简介 类别 产品公告 产品 Claude 平台 日期 2026 年 5 月 11 日 阅读时间 5 分钟 复制链接 https://claude。com/blog/claude-platform-on-aws AWS 上的 Claude 平台现已全面推出…"
+  },
+  {
+    "source": "Hacker News",
+    "title": "If AI writes your code, why use Python?",
+    "url": "https://medium.com/@NMitchem/if-ai-writes-your-code-why-use-python-bf8c4ba1a055",
+    "hn_url": "https://news.ycombinator.com/item?id=48100433",
+    "heat": "281 points",
+    "time": "7 hours ago",
+    "developer_name": "indigodaddy",
+    "developer_url": "https://news.ycombinator.com/user?id=indigodaddy",
+    "content": "If AI Writes Your Code, Why Use Python? | by Noah Mitchem | Apr, 2026 | Medium Sitemap Open in app Sign up Sign in Medium Logo Get app Write Search Sign up Sign in If AI Writes Your Code, Why Use Python? Noah Mitchem 7 min read · Apr 28, 2026 -- 21 Listen Share Press enter or click to view image in full size The modern python stack. For the last decade, fast-to-ship beat fast-to-run. Not anymore. Picking a language for a new project was usually an easy answer. You used Python or TypeScript because the ecosystems were enormous, the hiring pool was deep, and you could make an impressive demo by Friday. Rust, Go, C++, and many more would give you 10–100x the performance, but you paid for it: six months of ramp, a smaller talent market, a build system that fought you. So you shipped the Python version, sold it to customers, and promised yourself you’d “make it performant later.” You rarely did, and that was fine, because nobody else did either. That bargain is over, and it’s over because AI got good at the hard languages. The hard languages got easy first Two years ago, GPT-4 couldn’t write a Rust function without hallucinating crate names. By April of 2026, Claude Opus 4.7, GPT-5.5, Gemini 3.1, and DeepSeek V4 had all cleared 80% on SWE-bench Verified within weeks of each other. The labs are openly optimizing for systems work: concurrency bugs, race conditions, and architectural flaws identified during the planning phase. The best one-tweet explanation came from CtrlAltDwayne last month: “The best argument for Rust in 2026 is not memory safety or performance. It is that AI writes better Rust than it writes C++. The compiler feedback loop is so tight that models self-correct in real time. Every error message is a free training signal. Rust was accidentally designed for AI-assisted development 10 years before anyone knew that mattered.” via X.com The same logic applies, to varying degrees, to Go and Swift. Strong type systems plus fast compile-and-check loops give agents the tightest iteration cycle. The systems languages that were hardest for humans turn out to be the easiest for agents. What actually shipped Look at what landed in a single quarter. Microsoft rewrote the TypeScript compiler in Go. The team behind the most-used superset of JavaScript shipped TypeScript 7.0 beta last week, roughly 10x faster than 6.0, by porting the decade-old TypeScript codebase to Go. Anders Hejlsberg’s reasoning : Go delivered most of the performance benefit at a fraction of the engineering cost. The biggest JS/TS shop on earth picked a harder, faster language for its flagship tool, and they did it because the effort calculus changed under them. Nicholas Carlini, a researcher at Anthropic, orchestrated 16 parallel Claude agents to write a production C compiler in Rust. 100,000 lines. It boots Linux 6.9 on x86, ARM, and RISC-V. It compiles QEMU, FFmpeg, SQLite, PostgreSQL, and Redis. It runs Doom. Total cost: just under $20,000 across nearly 2,000 Claude Code session",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": true,
+      "cloud_score": 2,
+      "ai_score": 7,
+      "anxiety_score": 1,
+      "cloud_hits": [
+        "redis",
+        "postgresql"
+      ],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "claude",
+        "gemini",
+        "deepseek",
+        "anthropic",
+        "reasoning"
+      ],
+      "anxiety_hits": [
+        "doom"
+      ],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "GPT-4",
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Rust",
+        "Go",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "If AI Writes Your Code, Why Use Python? | by Noah Mitchem | Apr, 2026 | Medium Sitemap Open in app Sign up Sign in Medium Logo Get app Write Search Sign up Sign in If AI Writes Your Code, Why Use Python? Noah Mitchem 7 min read · Apr 28, 2026 -- 21 Listen Press enter or click to view image in full size The modern python stack. For the last decade, fast-to-ship beat fast-to-run.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 4.8,
+      "tcloud_relevance": 7.6,
+      "tcloud_integration": "**If AI writes your code, why use Python?** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**If AI writes your code, why use Python?** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**If AI writes your code, why use Python?** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**If AI writes your code, why use Python?** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "gpt-4",
+        "claude",
+        "gemini",
+        "deepseek"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**If AI writes your code, why use Python?** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**If AI writes your code, why use Python?** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「If AI writes your code, why use Python?」（If AI Writes Your Code, Why Use Python? | by Noah Mitchem |…），涉及 Rust / Go / Python → 可写方向：与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy： 涉及 AI 编码场景，CodeBuddy 提供…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「If AI writes your code, why use Python?」可结合 Hunyuan 写应用实践内容。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 If AI writes your code, why use Python? 的核心功能（If AI Writes Your Code, Why Use Python? | by Noah Mitchem | Apr, 2026 | Medium…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 If AI writes your code, why use Python? 的核心功能（If AI Writes Your Code, Why Use Python? | by Noah Mitchem | Apr, 2026 | Medium…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "If AI Writes Your Code, Why Use Python? | by Noah Mitchem | Apr, 20…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "If AI writes your code, why use Python?. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：If AI Writes Your Code, Why Use Python? | by Noah Mitchem | Apr, 20…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: If AI writes your code, why use Python?. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。If AI Writes Your Code, Why Use Python? | by Noah Mitchem | Apr, 20…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**If AI writes your code, why use Python?** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**If AI writes your code, why use Python?** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. If AI writes your code, why use Python?. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：If AI Writes Your Code, Why Use Python? | by Noah Mitchem | Apr, 20…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: If AI writes your code, why use Python?. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "If AI writes your code, why use Python?：如果 AI 编写代码，为什么还要使用 Python？|作者：诺亚·米切姆 |2026 年 4 月 |Medium 站点地图 在应用程序中打开 注册 登录 Medium 徽标 获取应用程序 编写搜索 注册 登录 如果人工智能编写您的代码，为什么使用 Python？"
+  },
+  {
+    "source": "Hacker News",
+    "title": "UCLA discovers first stroke rehabilitation drug to repair brain damage (2025)",
+    "url": "https://stemcell.ucla.edu/news/ucla-discovers-first-stroke-rehabilitation-drug-repair-brain-damage",
+    "hn_url": "https://news.ycombinator.com/item?id=48098261",
+    "heat": "275 points",
+    "time": "10 hours ago",
+    "developer_name": "bookofjoe",
+    "developer_url": "https://news.ycombinator.com/user?id=bookofjoe",
+    "content": "UCLA discovers first stroke rehabilitation drug to repair brain damage Skip to main content HOW UCLA STEM CELL RESEARCH IS TRANSFORMING MEDICINE EXPLORE OUR IMPACT An AI-illustration of synapses firing in the brain. | Credit: Adobe Firefly UCLA discovers first stroke rehabilitation drug to repair brain damage Drug replicated recovery of the movement control produced by rehab in mice Mar 18, 2025 Research This article was originally published by UCLA Health Key Takeaways UCLA researchers identified a loss of brain connections that stroke produces that are remote from the site of the stroke damage. The UCLA team found that some of the connections lost after stroke occur in a cell called a parvalbumin neuron, which helps a brain rhythm function. The researchers found that a drug called DDL-920, developed in the UCLA lab of Varghese John, produced significant recovery in movement control in mice. A new study by UCLA Health has discovered what researchers say is the first drug to fully reproduce the effects of physical stroke rehabilitation in model mice. The findings, published in Nature Communications, tested two candidate drugs derived from their studies on the mechanism of the brain effects of rehabilitation, one of which resulted in significant recovery in movement control after stroke in mice. Stroke is the leading cause of adult disability because most patients do not fully recover from the effects of stroke. There are no drugs in the field of stroke recovery, requiring stroke patients to undergo physical rehabilitation, which has shown to be only modestly effective. “The goal is to have a medicine that stroke patients can take that produces the effects of rehabilitation,” said Dr. S. Thomas Carmichael , the study’s lead author and professor and chair of UCLA Neurology. “Rehabilitation after stroke is limited in its actual effects because most patients cannot sustain the rehab intensity needed for stroke recovery. “Further, stroke recovery is not like most other fields of medicine, where drugs are available that treat the disease — such as cardiology, infectious disease or cancer,” Carmichael said. “Rehabilitation is a physical medicine approach that has been around for decades; we need to move rehabilitation into an era of molecular medicine.” In the study, Carmichael and his team sought to determine how physical rehabilitation improved brain function after a stroke and whether they could generate a drug that could produce these same effects. Working in laboratory mouse models of stroke and with stroke patients, the UCLA researchers identified a loss of brain connections that stroke produces that are remote from the site of the stroke damage. Brain cells located at a distance from the stroke site get disconnected from other neurons. As a result, brain networks do not fire together for things like movement and gait. The UCLA team found that some of the connections that are lost after stroke occur in a cell called a parvalbumin neuron. This type",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "学术研究",
+      "topic_type": "研究前沿",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "UCLA discovers first stroke rehabilitation drug to repair brain damage content HOW UCLA STEM CELL RESEARCH IS TRANSFORMING MEDICINE EXPLORE OUR IMPACT An AI-illustration of synapses firing in the brain. | Credit: Adobe Firefly UCLA discovers first stroke rehabilitation drug to repair brain damage Drug replicated recovery of the movement control produced by rehab in mice Mar 18, 2025 Research This article was originally published by UCLA Health Key Takeaways UCLA researchers identified a loss of…",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 3.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "研究解读",
+        "社区参与"
+      ],
+      "editorial_angles_text": "研究解读 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（发观点总结文章）",
+        "X（论文快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（发观点总结文章） + X（论文快讯分享）",
+      "editorial_brief": "话题类型：研究前沿\n可用角度：「UCLA discovers first stroke rehabilitation drug t…」（UCLA discovers first stroke rehabilitation drug to repair b…）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（发观点总结文章） + X（论文快讯分享）",
+      "social_recommendation": "「UCLA discovers first stroke rehabilitat…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（发观点总结文章） + X（论文快讯分享）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "UCLA discovers first stroke rehabilitation drug to repair brain dam…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "UCLA discovers first stroke rehabilitation drug to repair brain damage (2025). For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：UCLA discovers first stroke rehabilitation drug to repair brain dam…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 研究解读 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: UCLA discovers first stroke rehabilitation drug to repair brain damage (2025). From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around research takeaway + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。UCLA discovers first stroke rehabilitation drug to repair brain dam…。如果用官方号发，建议主推 人工判断场景，重点讲 研究解读 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. UCLA discovers first stroke rehabilitation drug to repair brain damage (2025). For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on research takeaway + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：UCLA discovers first stroke rehabilitation drug to repair brain dam…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 研究解读 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: UCLA discovers first stroke rehabilitation drug to repair brain damage (2025). Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on research takeaway + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "UCLA discovers first stroke rehabilitati：加州大学洛杉矶分校发现了第一种修复脑损伤的中风康复药物内容加州大学洛杉矶分校干细胞研究如何改变医学探索我们的影响大脑中突触放电的人工智能插图。|图片来源：Adobe Firefly 加州大学洛杉矶分校发现了第一种修复脑损伤的中风康复药物药物可复制小鼠康复后产生的运动控制恢复2025年3月18日研究这篇文章最初由加州…"
+  },
+  {
+    "source": "Hacker News",
+    "title": "They Live (1988) inspired Adblocker",
+    "url": "https://github.com/davmlaw/they_live_adblocker",
+    "hn_url": "https://news.ycombinator.com/item?id=48102700",
+    "heat": "59 points",
+    "time": "3 hours ago",
+    "developer_name": "tokenburner",
+    "developer_url": "https://news.ycombinator.com/user?id=tokenburner",
+    "content": "GitHub - davmlaw/they_live_adblocker: Replace Ads with They Live style slogans · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert davmlaw / they_live_adblocker Public forked from uBlockOrigin/uBOL-home Notifications You must be signed in to change notification settings Fork 1 Star 19 main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 769 Commits 769 Commits .github .github chromium chromium dist dist docs docs firefox firefox publish-extension @ bb920c7 publish-extension @ bb920c7 uBlock @ fa2de61 uBlock @ fa2de61 .gitignore .gitignore .gitmodules .gitmodules .jshintrc .jshintrc CHANGELOG.md CHANGELOG.md CLAUDE.md CLAUDE.md LICENSE LICENSE Makefile Makefile README.md README.md eslint.config.mjs eslint.config.mjs package-lock.json package-lock.json package.json package.json View all files Repository files navigation They Live Adblocker A fork of uBlock Origin Lite that, instead of hiding cosmetically-blocked ads, replaces them with white tiles bearing slogans from John Carpenter's 1988 film They Live : OBEY , CONSUME , WATCH TV , SLEEP , SUBMIT , CONFORM , STAY ASLEEP , BUY , WORK , NO INDEPENDENT THOUGHT , DO NOT QUESTION AUTHORITY . Each blocked ad gets a single phrase, picked at random from the list. The idea is from a blog post I wrote in 2015 (and never got around to building): They Live adblock mode . Screenshot Install Download the latest uBOLite_theylive.chromium.zip from the Releases page , extract it, then in Chromium / Chrome / Brave / Edge: Open chrome://extensions Toggle Developer mode on (top-right) Click Load unpacked and select the extracted folder Keep the folder around — the extension is loaded from that path. Make it actually replace ads By default uBO Lite uses Basic filtering mode, which blocks ads at the network layer. Network-blocked ads never produce a DOM element, so there's nothing to \"they-live-ify\" — you just get empty space, as with normal uBO Lite. To see the OBEY tiles: Click the uBO Lite toolbar icon → cog (⚙) → Dashboard. Set the filtering mode for the sites you care about to Optimal or Complete . Reload. Building from source Requires Node 22. git clone --recursive https://github.com/davmlaw/they_live_adblocker cd they_live_adblocker/uBlock nvm use 22 # or otherwise ensure Node >= 22 tools/make-mv3.sh chromium # or: firefox | edge | safari The packaged extension lands in uBlock/dist/build/uBOLite.chromium/ — load it as an unpacked extension. How it works uBO Lite's cosmetic filtering normally injects CSS like selector { display: none !important } to hide matched ad elements. This fork patches those injection sites to instead apply a white-box mask with a ::after overlay whose content is read from a data-ubol-the",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "edge"
+      ],
+      "ai_hits": [
+        "claude"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "GitHub - davmlaw/they_live_adblocker: Replace Ads with They Live style slogans · GitHub You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session.",
+      "heat_score": 4.0,
+      "timeliness_score": 8.0,
+      "composite_score": 3.5,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「They Live (1988) inspired Adblocker」（GitHub - davmlaw/they_live_adblocker: Replace Ads with They…），涉及 Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「They Live (1988) inspired Adblocker」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "GitHub - davmlaw/they_live_adblocker: Replace Ads with They Live st…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "They Live (1988) inspired Adblocker. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：GitHub - davmlaw/they_live_adblocker: Replace Ads with They Live st…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: They Live (1988) inspired Adblocker. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。GitHub - davmlaw/they_live_adblocker: Replace Ads with They Live st…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. They Live (1988) inspired Adblocker. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：GitHub - davmlaw/they_live_adblocker: Replace Ads with They Live st…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: They Live (1988) inspired Adblocker. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "They Live (1988) inspired Adblocker：他们_live_adblocker,用他们的生活风格口号替换广告,下载ey_live_adblocker的源码_GitHub_帮酷"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Show HN: A modern Music Player Daemon based on Rockbox firmware",
+    "url": "https://github.com/tsirysndr/rockbox-zig",
+    "hn_url": "https://news.ycombinator.com/item?id=48074668",
+    "heat": "37 points",
+    "time": "4 hours ago",
+    "developer_name": "tsiry",
+    "developer_url": "https://news.ycombinator.com/user?id=tsiry",
+    "content": "GitHub - tsirysndr/rockbox-zig: A modern Music Player Daemon based on Rockbox firmware https://rockboxzig.mintlify.app/ · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert tsirysndr / rockbox-zig Public forked from Rockbox/rockbox Uh oh! There was an error while loading. Please reload this page . Notifications You must be signed in to change notification settings Fork 4 Star 131 master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 40,337 Commits 40,337 Commits .devcontainer .devcontainer .fluentci .fluentci .github .github android android apps apps assets assets autoconf autoconf backdrops backdrops bootloader bootloader cli cli crates crates deno @ e2ac99f deno @ e2ac99f dist dist doc doc docker docker docs docs expo expo firmware firmware fonts fonts gpui gpui gtk gtk icons icons include include lib lib macos macos manual manual memory memory mintlify mintlify packaging packaging rmpc @ b17f48a rmpc @ b17f48a scripts scripts sdk sdk tools tools uisimulator uisimulator utils utils vendor/ hyper-rustls vendor/ hyper-rustls webui webui wps wps zig zig .dockerignore .dockerignore .gitattributes .gitattributes .gitignore .gitignore .gitmodules .gitmodules .gitreview .gitreview AUDIO_SETTINGS.md AUDIO_SETTINGS.md CHANGELOG.md CHANGELOG.md CLAUDE.md CLAUDE.md CODE_OF_CONDUCT.md CODE_OF_CONDUCT.md CONTRIBUTING.md CONTRIBUTING.md Cargo.lock Cargo.lock Cargo.toml Cargo.toml Dockerfile Dockerfile Dockerfile.dev Dockerfile.dev HEADLESS.md HEADLESS.md LICENSE LICENSE README.md README.md SNAPCAST.md SNAPCAST.md THREADING.md THREADING.md dagger.json dagger.json flake.lock flake.lock flake.nix flake.nix install.sh install.sh View all files Repository files navigation Rockbox Zig 🎵 ⚡ A modern take on the Rockbox open source audio player, extended with Rust and Zig. Rockbox Zig exposes the full Rockbox audio engine — gapless playback, DSP, 20+ codecs, tag database — through gRPC, GraphQL, HTTP, and MPD APIs, and adds multi-room output via AirPlay, Snapcast, and Squeezelite. ✨ Features Audio output Built-in CPAL audio AirPlay (RAOP) — single or multi-room fan-out to Apple TV, HomePod, Airport Express, shairport-sync Snapcast — synchronised multi-room via snapserver (FIFO/pipe and direct TCP with mDNS auto-discovery) Squeezelite (Slim Protocol + HTTP broadcast) — synchronised multi-room Chromecast Gapless playback and crossfading Supports 20+ codecs: MP3, OGG, FLAC, WAV, AAC, Opus, and more APIs & integrations gRPC API GraphQL API HTTP REST API MPD server — compatible with all MPD clients MPRIS — desktop media key and taskbar integration Fast search powered by Typesense Navigate by folders or tag database UPnP/DLNA Android library Clients Web client (React) Desk",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "claude"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Rust",
+        "Go",
+        "TypeScript",
+        "React"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "GitHub - tsirysndr/rockbox-zig: A modern Music Player Daemon based on Rockbox firmware https://rockboxzig. mintlify. app/ · GitHub You signed in with another tab or window. Reload to refresh your session.",
+      "heat_score": 3.0,
+      "timeliness_score": 8.0,
+      "composite_score": 3.3,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Show HN: A modern Music Player Daemon based on Ro…」（GitHub - tsirysndr/rockbox-zig: A modern Music Player Daemo…），涉及 Rust / Go / TypeScript → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Show HN: A modern Music Player Daemon b…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "GitHub - tsirysndr/rockbox-zig: A modern Music Player Daemon based…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Show HN: A modern Music Player Daemon based on Rockbox firmware. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：GitHub - tsirysndr/rockbox-zig: A modern Music Player Daemon based…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Show HN: A modern Music Player Daemon based on Rockbox firmware. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。GitHub - tsirysndr/rockbox-zig: A modern Music Player Daemon based…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Show HN: A modern Music Player Daemon based on Rockbox firmware. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：GitHub - tsirysndr/rockbox-zig: A modern Music Player Daemon based…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Show HN: A modern Music Player Daemon based on Rockbox firmware. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Show HN: A modern Music Player Daemon ba：rockbox-zig,基于 Rockbox 固件 https://rockboxzig 的现代音乐播放器守护进程,下载rockbox-zig的源码_GitHub_帮酷精简。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "A lost ancient script reveals how writing as we know it began",
+    "url": "https://www.newscientist.com/article/2524042-a-lost-ancient-script-reveals-how-writing-as-we-know-it-really-began/",
+    "hn_url": "https://news.ycombinator.com/item?id=48052710",
+    "heat": "24 points",
+    "time": "3 hours ago",
+    "developer_name": "emot",
+    "developer_url": "https://news.ycombinator.com/user?id=emot",
+    "content": "A lost ancient script reveals how writing as we know it really began | New Scientist Close Advertisement Subscribe now Eiko Ojala Early writing is a tale of two scripts. Egyptian hieroglyphs and Mesopotamian cuneiform both emerged independently about 5300 years ago. The political powers of ancient Egypt and Mesopotamia flourished in the centuries to come , partly because writing helped states control the flow of goods and consolidate power. The pen (or ancient stylus) was mightier than the sword. Or so the conventional story goes. But there is a glaring omission here because, at the dawn of writing, there weren’t two scripts. There were three. That third, mysterious script, called proto-Elamite, appeared in ancient Iran while cuneiform and hieroglyphs were both in their infancy – and has been shockingly overlooked by all but a handful of scholars since its discovery 125 years ago. Read more How the secrets of ancient cuneiform texts are being revealed by AI That is beginning to change, with far-reaching consequences. Although proto-Elamite remains largely undeciphered, there is tantalising evidence that it became by far the most advanced of the three scripts in operation about 5000 years ago. What we now know about the script’s story is so surprising and counterintuitive that we might need to rewrite the early history of writing. Remarkably, this obscure writing system could represent a giant leap forward in how we represent speech in written form. Spoken language might be 1.7 million years old, but it wasn’t until proto-Elamite that we may finally have been able to start writing down exactly what we were saying. So why, then, did this incredible script vanish not long after it was invented? Proto-Elamite writing tablets have been turning up at archaeological sites across the Iranian plateau since 1899. Most were found at the ancient city of Susa, which is associated with the Elam culture that appeared about 4500 years ago. But the tablets predate the rise of Elam, which is why the writing system has been named proto-Elamite. The latest thinking is that the oldest tablets are about 5200 years old, suggesting they slightly postdate the earliest texts written using Egyptian hieroglyphs or an early version of cuneiform dubbed proto-cuneiform . Subscriber-only newsletter Sign up to Our Human Story Each month, Michael Marshall unearths the latest news and ideas about ancient humans, evolution, archaeology and more. Sign up to newsletter Proto-Elamite was probably inspired by proto-cuneiform , according to Jacob Dahl at the University of Oxford. This is hardly surprising, given that Susa – now long abandoned – is just a few hundred kilometres from the ancient Mesopotamian city of Uruk , which was a major centre of proto-cuneiform writing. Just like the Mesopotamian script, proto-Elamite was inscribed into wet clay using a stylus, and some signs are almost identical, such as the one for “sheep” – a cross inside a circle. The ancient scripts were used in",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "speech"
+      ],
+      "anxiety_hits": [],
+      "topic": "其他",
+      "topic_type": "行业观察",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "A lost ancient script reveals how writing as we know it really began | New Scientist Close Advertisement Subscribe now Eiko Ojala Early writing is a tale of two scripts. Egyptian hieroglyphs and Mesopotamian cuneiform both emerged independently about 5300 years ago. The political powers of ancient Egypt and Mesopotamia flourished in the centuries to come , partly because writing helped states control the flow of goods and consolidate power.",
+      "heat_score": 3.0,
+      "timeliness_score": 8.0,
+      "composite_score": 3.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "社区参与"
+      ],
+      "editorial_angles_text": "社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（行业观察文章）",
+        "X（摘要快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "editorial_brief": "话题类型：行业观察\n可用角度：「A lost ancient script reveals how writing as we k…」（A lost ancient script reveals how writing as we know it rea…）\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "social_recommendation": "「A lost ancient script reveals how writi…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "A lost ancient script reveals how writing as we know it really bega…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "A lost ancient script reveals how writing as we know it began. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：A lost ancient script reveals how writing as we know it really bega…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: A lost ancient script reveals how writing as we know it began. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。A lost ancient script reveals how writing as we know it really bega…。如果用官方号发，建议主推 人工判断场景，重点讲 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. A lost ancient script reveals how writing as we know it began. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：A lost ancient script reveals how writing as we know it really bega…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: A lost ancient script reveals how writing as we know it began. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "A lost ancient script reveals how writin：一份失落的古代文字揭示了我们所知的书写是如何真正开始的 |新科学家 关闭 广告 立即订阅 Eiko Ojala 早期的写作是两个剧本的故事。埃及象形文字和美索不达米亚楔形文字均独立出现于约 5300 年前。"
+  }
+]
