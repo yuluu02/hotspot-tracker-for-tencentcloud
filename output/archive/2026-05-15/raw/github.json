@@ -1,0 +1,1020 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "ruvnet/RuView - π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+    "url": "https://github.com/ruvnet/RuView",
+    "heat": "56,316 stars",
+    "time": "Today",
+    "developer_name": "ruvnet",
+    "developer_url": "https://github.com/ruvnet",
+    "developer_email": "",
+    "today_stars": "1,715 stars today",
+    "language": "Rust",
+    "summary": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+    "content": "# π RuView\n\n \n   \n     \n   \n \n\n> **Beta Software** — Under active development. APIs and firmware may change. Known limitations:\n> - ESP32-C3 and original ESP32 are not supported (single-core, insufficient for CSI DSP)\n> - Single ESP32 deployments have limited spatial resolution — use 2+ nodes or add a Cognitum Seed for best results\n> - Camera-free pose accuracy is limited (PCK@20 ≈ 2.5% with proxy labels) — camera ground-truth training targets **35%+ PCK@20**; the pipeline is implemented, but the data-collection and evaluation phases (ADR-079 P7–P9) are still pending, so no measured camera-supervised PCK@20 has been published yet\n>\n> Contributions and bug reports welcome at Issues.\n\n## **See through walls with WiFi** ##\n\n**Turn ordinary WiFi into a spatial intelligence / sensing system.** Detect people, measure breathing and heart rate, track movement, and monitor rooms — through walls, in the dark, with no cameras or wearables. Just physics.\n\n### π RuView is a WiFi sensing platform that turns radio signals into spatial intelligence.\n\nEvery WiFi router already fills your space with radio waves. When people move, breathe, or even sit still, they disturb those waves in measurable ways. RuView captures these disturbances using Channel State Information (CSI) from low-cost ESP32 sensors and turns them into actionable data: who's there, what they're doing, and whether they're okay.\n\n**What it senses:**\n- **Presence and occupancy** — detect people through walls, count them, track entries and exits\n- **Vital signs** — breathing rate and heart rate, contactless, while sleeping or sitting\n- **Activity recognition** — walking, sitting, gestures, falls — from temporal CSI patterns\n- **Environment mapping** — RF fingerprinting identifies rooms, detects moved furniture, spots new objects\n- **Sleep quality** — overnight monitoring with sleep stage classification and apnea screening\n\nBuilt on RuVector and Cognitum Seed, RuView runs entirely on edge hardware — an ESP32 mesh (as low as $9 per node) paired with a Cognitum Seed for persistent memory, cryptographic attestation, and AI integration. No cloud, no cameras, no internet required.\n\nThe system learns each environment locally using spiking neural networks that adapt in under 30 seconds, with multi-frequency mesh scanning across 6 WiFi channels that uses your neighbors' routers as free radar illuminators. Every measurement is cryptographically attested via an Ed25519 witness chain.\n\nRuView also supports pose estimation (17 COCO keypoints via the WiFlow architecture), trained entirely without cameras using 10 sensor signals — a technique pioneered from the original *DensePose From WiFi* research at Carnegie Mellon University.\n\n### Built for low-power edge applications\n\nEdge modules are small programs that run directly on the ESP32 sensor — no internet needed, no cloud fees, instant response.\n\n[](https://www.rust-lang.org/)\n[](https://opensource.org/licenses/MIT)\n[](https://github.com/ruvnet/RuView)\n[](https://",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "edge"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "3D Generation",
+        "Rust"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "ruvnet/RuView: π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.3,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「ruvnet/RuView - π RuView turns commodity WiFi sig…」（ruvnet/RuView: π RuView turns commodity WiFi signals into r…），涉及 3D Generation / Rust → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「ruvnet/RuView - π RuView turns commodit…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 RuView 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 RuView 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "ruvnet/RuView: π RuView turns commodity WiFi signals into real-time…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "ruvnet/RuView - π RuView turns commodity WiFi signals into real-time spatial intelligen…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：ruvnet/RuView: π RuView turns commodity WiFi signals into real-time…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: ruvnet/RuView - π RuView turns commodity WiFi signals into real-time spatial intelligen…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。ruvnet/RuView: π RuView turns commodity WiFi signals into real-time…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. ruvnet/RuView - π RuView turns commodity WiFi signals into real-time spatial intelligen…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：ruvnet/RuView: π RuView turns commodity WiFi signals into real-time…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: ruvnet/RuView - π RuView turns commodity WiFi signals into real-time spatial intelligen…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "π RuView 将商用 WiFi 信号转化为实时空间智能、生命体征监测和存在检测 - 所有这些都无需视频像素。",
+    "developer_profile": {
+      "github_username": "ruvnet",
+      "profile_url": "https://github.com/ruvnet",
+      "name": "rUv",
+      "bio": "Unicorn Breeder. ",
+      "company": "Not a Bot",
+      "location": "0x",
+      "blog": "Cognitum.One",
+      "twitter_username": "ruv",
+      "email": "",
+      "followers": 7890,
+      "following": 44,
+      "public_repos": 175,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2934394?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/ruv"
+        },
+        {
+          "platform": "generic",
+          "url": "https://rUv.io"
+        },
+        {
+          "platform": "unknown",
+          "url": "http://Cognitum.One"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "tinyhumansai/openhuman - Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+    "url": "https://github.com/tinyhumansai/openhuman",
+    "heat": "7,986 stars",
+    "time": "Today",
+    "developer_name": "tinyhumansai",
+    "developer_url": "https://github.com/tinyhumansai",
+    "developer_email": "contact@tinyhumans.ai",
+    "today_stars": "3,329 stars today",
+    "language": "Rust",
+    "summary": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+    "content": " OpenHuman \n\n \n  \n \n\n \n  \n   \n  \n \n\n \n  OpenHuman is your Personal AI super intelligence. Private, Simple and extremely powerful. \n \n\n \n  Discord  •\n  Reddit  •\n  X/Twitter  •\n  Docs  •\n  Follow @senamakel (Creator) \n \n\n \n  \n    \n \n\n> **Early Beta**: Under active development. Expect rough edges.\n\nTo install or get started, either download from the website over at tinyhumans.ai/openhuman or run\n\n```\n# Download DMG, EXEs over at https://tinyhumans.ai/openhuman?utm_source=github&utm_medium=readme or run in from your terminal\n\n# For macOS or Linux x64\ncurl -fsSL https://raw.githubusercontent.com/tinyhumansai/openhuman/main/scripts/install.sh | bash\n\n# For Windows\nirm https://raw.githubusercontent.com/tinyhumansai/openhuman/main/scripts/install.ps1 | iex\n```\n\n# What is OpenHuman?\n\nOpenHuman is an open-source agentic assistant designed to integrate with you in your daily life. Each bullet links to the deeper writeup in the docs.\n\n- **Simple, UI-first & Human** A clean desktop experience and short onboarding paths take you from install to a working agent in a few clicks — no config-first setup, no terminal required. The agent has a face: a desktop mascot that speaks, reacts to its surroundings, joins your Google Meets as a real participant, remembers you across weeks, and keeps thinking in the background even when you've stopped typing.\n\n- **118+ third-party integrations with auto-fetch**: plug into Gmail, Notion, GitHub, Slack, Stripe, Calendar, Drive, Linear, Jira and the rest of your stack with **one-click OAuth**. Every connection is exposed to the agent as a typed tool, and every twenty minutes the core walks each active connection and pulls fresh data into the memory tree. No prompts, no polling loops you have to write, so the agent already has tomorrow's context this morning.\n\n- **Memory Tree + Obsidian Wiki**: a local-first knowledge base built from your data and your activity. Everything you connect is canonicalized into ≤3k-token Markdown chunks, scored, and folded into hierarchical summary trees stored in **SQLite on your machine**. The same chunks land as `.md` files in an Obsidian-compatible vault you can open, browse and edit, inspired by Karpathy's obsidian-wiki workflow.\n\n- **Batteries included**: web search, a web-fetch scraper, a full coder toolset (filesystem, git, lint, test, grep), and native voice (STT in, ElevenLabs TTS out, mascot lip-sync, live Google Meet agent) are wired in by default. Model routing sends each task to the right LLM (reasoning, fast, or vision) under one subscription. No \"install a plugin to read files\" friction. Optional local AI via Ollama for on-device workloads.\n\n- **Smart token compression (TokenJuice)**: every tool call, scrape result, email body, and search payload is run through a token compression layer before it touches any LLM Model. HTML is converted to Markdown, long URLs are shortened, non-ASCII characters are removed etc... You get the same information but at a fraction of the tokens. Reducing co",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "agentic",
+        "reasoning",
+        "tts"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "tinyhumansai/openhuman: Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.3,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「tinyhumansai/openhuman - Your Personal AI super i…」（tinyhumansai/openhuman: Your Personal AI super intelligence…），涉及 LLM / Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「tinyhumansai/openhuman - Your Personal…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 openhuman 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 openhuman 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "tinyhumansai/openhuman: Your Personal AI super intelligence. Privat…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "tinyhumansai/openhuman - Your Personal AI super intelligence. Private, Simple and extre…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：tinyhumansai/openhuman: Your Personal AI super intelligence. Privat…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: tinyhumansai/openhuman - Your Personal AI super intelligence. Private, Simple and extre…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。tinyhumansai/openhuman: Your Personal AI super intelligence. Privat…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. tinyhumansai/openhuman - Your Personal AI super intelligence. Private, Simple and extre…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：tinyhumansai/openhuman: Your Personal AI super intelligence. Privat…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: tinyhumansai/openhuman - Your Personal AI super intelligence. Private, Simple and extre…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "openhuman：您的个人人工智能超级智能。私密、简单且极其强大。",
+    "developer_profile": {
+      "github_username": "tinyhumansai",
+      "profile_url": "https://github.com/tinyhumansai",
+      "name": "Tiny Humans",
+      "bio": "Building AI-powered tiny humans for everyone",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://tinyhumans.ai/",
+      "twitter_username": "tinyhumansai",
+      "email": "contact@tinyhumans.ai",
+      "followers": 129,
+      "following": 0,
+      "public_repos": 11,
+      "avatar_url": "https://avatars.githubusercontent.com/u/246003628?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/tinyhumansai"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "rohitg00/agentmemory - #1 Persistent memory for AI coding agents based on real-world benchmarks",
+    "url": "https://github.com/rohitg00/agentmemory",
+    "heat": "9,130 stars",
+    "time": "Today",
+    "developer_name": "rohitg00",
+    "developer_url": "https://github.com/rohitg00",
+    "developer_email": "ghumare64@gmail.com",
+    "today_stars": "1,879 stars today",
+    "language": "TypeScript",
+    "summary": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
+    "content": " \n   \n \n\n \n   \n    Your coding agent remembers everything. No more re-explaining.\n    Built on  iii engine \n    \n  Persistent memory for Claude Code, Cursor, Gemini CLI, Codex CLI, Hermes, OpenClaw, pi, OpenCode, and any MCP client.\n \n\n \n     \n \n\n \n   \n     \n       \n       \n       \n     \n   \n \n\n \n     \n \n\n \n   The gist extends Karpathy's LLM Wiki pattern with confidence scoring, lifecycle, knowledge graphs, and hybrid search: agentmemory is the implementation. \n \n\n \n     \n     \n     \n     \n \n\n \n      \n      \n      \n      \n      \n      \n \n\n \n   \n \n\n \n   Quick Start  &bull;\n   Benchmarks  &bull;\n   vs Competitors  &bull;\n   Agents  &bull;\n   How It Works  &bull;\n   MCP  &bull;\n   Viewer  &bull;\n   iii Console  &bull;\n   Powered by iii  &bull;\n   Config  &bull;\n   API \n \n\n---\n\n      \n\nagentmemory works with any agent that supports hooks, MCP, or REST API. All agents share the same memory server.\n\n \n \n \n    \n Claude Code  \n 12 hooks + MCP + skills \n \n \n    \n OpenClaw  \n MCP +  plugin  \n \n \n    \n Hermes  \n MCP +  plugin  \n \n \n    \n Cursor  \n MCP server \n \n \n    \n Gemini CLI  \n MCP server \n \n \n    \n OpenCode  \n MCP server \n \n \n    \n Codex CLI  \n 6 hooks + MCP + skills \n \n \n    \n Cline  \n MCP server \n \n \n \n \n    \n Goose  \n MCP server \n \n \n    \n Kilo Code  \n MCP server \n \n \n    \n Aider  \n REST API \n \n \n    \n Claude Desktop  \n MCP server \n \n \n    \n Windsurf  \n MCP server \n \n \n    \n Roo Code  \n MCP server \n \n \n    \n Claude SDK  \n AgentSDKProvider \n \n \n  \n Any agent  \n REST API \n \n \n \n\n \n   Works with  any  agent that speaks MCP or HTTP. One server, memories shared across all of them. \n \n\n---\n\nYou explain the same architecture every session. You re-discover the same bugs. You re-teach the same preferences. Built-in memory (CLAUDE.md, .cursorrules) caps out at 200 lines and goes stale. agentmemory fixes this. It silently captures what your agent does, compresses it into searchable memory, and injects the right context when the next session starts. One command. Works across agents.\n\n**What changes:** Session 1 you set up JWT auth. Session 2 you ask for rate limiting. The agent already knows your auth uses jose middleware in `src/middleware/auth.ts`, your tests cover token validation, and you chose jose over jsonwebtoken for Edge compatibility. No re-explaining. No copy-pasting. The agent just *knows*.\n\n```bash\nnpx @agentmemory/agentmemory\n```\n\n> **New in v0.9.0** — Landing site at agent-memory.dev, filesystem connector (`@agentmemory/fs-watcher`), standalone MCP now proxies to the running server so hooks and the viewer agree, audit policy codified across every delete path, health stops flagging `memory_critical` on tiny Node processes. Full notes in CHANGELOG.md.\n\n---\n\n      \n\n \n \n \n\n### Retrieval Accuracy\n\n**LongMemEval-S** (ICLR 2025, 500 questions)\n\n| System | R@5 | R@10 | MRR |\n|---|---|---|---|\n| **agentmemory** | **95.2%** | **98.6%** | **88.2%** |\n| BM25-only fallback | 86.2% | 94.6% | 71.5% |\n\n \n \n\n### Token Savings\n\n| Approach | Tokens/yr | Cost/yr |",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "edge"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "gemini",
+        "agent",
+        "mcp",
+        "knowledge graph"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "MCP",
+        "TypeScript"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "rohitg00/agentmemory: #1 Persistent memory for AI coding agents based on real-world benchmarks",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.1,
+      "tcloud_relevance": 9.9,
+      "tcloud_integration": "**agentmemory** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agentmemory 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件\n补充关联 Hunyuan：**agentmemory** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**agentmemory** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agentmemory 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "**agentmemory** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "coding agent",
+        "cursor",
+        "aider",
+        "llm",
+        "claude",
+        "gemini"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**agentmemory** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agentmemory 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件\n补充关联 Hunyuan：**agentmemory** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy / Hunyuan）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「rohitg00/agentmemory - #1 Persistent memory for A…」（rohitg00/agentmemory: #1 Persistent memory for AI coding ag…），涉及 LLM / Agent / MCP → 可写方向：**agentmemory** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agentmemory 的横向对比：CodeBuddy 覆盖需求…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「rohitg00/agentmemory - #1 Persistent me…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 agentmemory 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 agentmemory 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 agentmemory 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 agentmemory 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "rohitg00/agentmemory: #1 Persistent memory for AI coding agents bas…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "rohitg00/agentmemory - #1 Persistent memory for AI coding agents based on real-world be…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：rohitg00/agentmemory: #1 Persistent memory for AI coding agents bas…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: rohitg00/agentmemory - #1 Persistent memory for AI coding agents based on real-world be…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan) + opinionated commentary. What matters more to you: dep…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。rohitg00/agentmemory: #1 Persistent memory for AI coding agents bas…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**agentmemory** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agentmemory 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件 补充关联 Hunyuan：**agentmemory** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. rohitg00/agentmemory - #1 Persistent memory for AI coding agents based on real-world be…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：rohitg00/agentmemory: #1 Persistent memory for AI coding agents bas…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: rohitg00/agentmemory - #1 Persistent memory for AI coding agents based on real-world be…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "agentmemory：#1 基于真实世界基准的人工智能编码代理的持久内存",
+    "developer_profile": {
+      "github_username": "rohitg00",
+      "profile_url": "https://github.com/rohitg00",
+      "name": "Rohit Ghumare",
+      "bio": "Principal Product Evangelist | DevRel | GDE @Google Cloud | CNCF Ambassador | Docker Captain | AWS CommunityBuilder | Ex - Solo.io, Cerbos, Oracle, Reliance Jio",
+      "company": "iii.dev",
+      "location": "London, UK",
+      "blog": "https://www.devrelasservice.com/",
+      "twitter_username": "ghumare64",
+      "email": "ghumare64@gmail.com",
+      "followers": 2705,
+      "following": 51,
+      "public_repos": 297,
+      "avatar_url": "https://avatars.githubusercontent.com/u/48523873?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/ghumare64"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/rohit-ghumare/"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@ghumare64"
+        },
+        {
+          "platform": "generic",
+          "url": "http://medium.com/@ghumare64"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.devrelasservice.com/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "obra/superpowers - An agentic skills framework & software development methodology that works.",
+    "url": "https://github.com/obra/superpowers",
+    "heat": "191,516 stars",
+    "time": "Today",
+    "developer_name": "obra",
+    "developer_url": "https://github.com/obra",
+    "developer_email": "",
+    "today_stars": "1,780 stars today",
+    "language": "Shell",
+    "summary": "An agentic skills framework & software development methodology that works.",
+    "content": "# Superpowers\n\nSuperpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.\n\n## Quickstart\n\nGive your agent Superpowers: Claude Code, Codex CLI, Codex App, Factory Droid, Gemini CLI, OpenCode, Cursor, GitHub Copilot CLI.\n\n## How it works\n\nIt starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it *doesn't* just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do. \n\nOnce it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest. \n\nAfter you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY. \n\nNext up, once you say \"go\", it launches a *subagent-driven-development* process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.\n\nThere's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.\n\n## Sponsorship\n\nIf Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider sponsoring my opensource work.\n\nThanks! \n\n- Jesse\n\n## Installation\n\nInstallation differs by harness. If you use more than one, install Superpowers separately for each one.\n\n### Claude Code\n\nSuperpowers is available via the official Claude plugin marketplace\n\n#### Official Marketplace\n\n- Install the plugin from Anthropic's official marketplace:\n\n  ```bash\n  /plugin install superpowers@claude-plugins-official\n  ```\n\n#### Superpowers Marketplace\n\nThe Superpowers marketplace provides Superpowers and some other related plugins for Claude Code.\n\n- Register the marketplace:\n\n  ```bash\n  /plugin marketplace add obra/superpowers-marketplace\n  ```\n\n- Install the plugin from this marketplace:\n\n  ```bash\n  /plugin install superpowers@superpowers-marketplace\n  ```\n\n### Codex CLI\n\nSuperpowers is available via the official Codex plugin marketplace.\n\n- Open the plugin search interface:\n\n  ```bash\n  /plugins\n  ```\n\n- Search for Superpowers:\n\n  ```bash\n  superpowers\n  ```\n\n- Select `Install Plugin`.\n\n### Codex App\n\nSuperpowers is available via the official Codex plugin marketplace.\n\n- In the Codex app, click on Plugins in the sidebar.\n- You should see `Superpowers` in the Coding section.\n- Click the `+` next to Superpowers and follow the prompts.\n\n### Factory Droid\n\n- Register the marketplace:\n\n  ```b",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "anthropic",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "obra/superpowers: An agentic skills framework & software development methodology that works.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent",
+        "copilot",
+        "cursor",
+        "github copilot"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「obra/superpowers - An agentic skills framework &…」（obra/superpowers: An agentic skills framework & software de…），涉及 Agent / Go → 可写方向：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「obra/superpowers - An agentic skills fr…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 superpowers 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 superpowers 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 superpowers 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 superpowers 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "obra/superpowers: An agentic skills framework & software developmen…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "obra/superpowers - An agentic skills framework & software development methodology that…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：obra/superpowers: An agentic skills framework & software developmen…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: obra/superpowers - An agentic skills framework & software development methodology that…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。obra/superpowers: An agentic skills framework & software developmen…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. obra/superpowers - An agentic skills framework & software development methodology that…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：obra/superpowers: An agentic skills framework & software developmen…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: obra/superpowers - An agentic skills framework & software development methodology that…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "superpowers：有效的代理技能框架和软件开发方法。",
+    "developer_profile": {
+      "github_username": "obra",
+      "profile_url": "https://github.com/obra",
+      "name": "Jesse Vincent",
+      "bio": "",
+      "company": "Prime Radiant",
+      "location": "Berkeley, CA 94703",
+      "blog": "http://fsck.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 5827,
+      "following": 93,
+      "public_repos": 211,
+      "avatar_url": "https://avatars.githubusercontent.com/u/45416?v=4",
+      "social_links": [
+        {
+          "platform": "mastodon",
+          "url": "https://metasocial.com/@jesse"
+        },
+        {
+          "platform": "bluesky",
+          "url": "https://bsky.app/profile/s.ly"
+        },
+        {
+          "platform": "generic",
+          "url": "https://www.threads.com/@obrajesse"
+        },
+        {
+          "platform": "generic",
+          "url": "https://blog.fsck.com"
+        },
+        {
+          "platform": "unknown",
+          "url": "http://fsck.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "K-Dense-AI/scientific-agent-skills - A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "heat": "21,916 stars",
+    "time": "Today",
+    "developer_name": "K-Dense-AI",
+    "developer_url": "https://github.com/K-Dense-AI",
+    "developer_email": "contact@k-dense.ai",
+    "today_stars": "654 stars today",
+    "language": "Python",
+    "summary": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
+    "content": "# Scientific Agent Skills\n\n> **🔔 Claude Scientific Skills is now Scientific Agent Skills.** Same skills, broader compatibility — now works with any AI agent that supports the open Agent Skills standard, not just Claude.\n\n> **New: K-Dense BYOK** — A free, open-source AI co-scientist that runs on your desktop, powered by Scientific Agent Skills. Bring your own API keys, pick from 40+ models, and get a full research workspace with web search, file handling, 100+ scientific databases, and access to all 135 skills in this repo. Your data stays on your computer, and you can optionally scale to cloud compute via Modal for heavy workloads. Get started here.\n\n[](LICENSE.md)\n[](#whats-included)\n[](#whats-included)\n[](https://agentskills.io/)\n[](#getting-started)\n[](https://x.com/k_dense_ai)\n[](https://www.linkedin.com/company/k-dense-inc)\n[](https://www.youtube.com/@K-Dense-Inc)\n\nA comprehensive collection of **135 ready-to-use scientific and research skills** (covering cancer genomics, drug-target binding, molecular dynamics, RNA velocity, geospatial science, time series forecasting, scientific ML resource discovery via Hugging Science, 78+ scientific databases, and more) for any AI agent that supports the open Agent Skills standard, created by K-Dense. Works with **Cursor, Claude Code, Codex, and more**. Transform your AI agent into a research assistant capable of executing complex multi-step scientific workflows across biology, chemistry, medicine, and beyond.\n\n---\n\nThese skills enable your AI agent to seamlessly work with specialized scientific libraries, databases, and tools across multiple scientific domains. While the agent can use any Python package or API on its own, these explicitly defined skills provide curated documentation and examples that make it significantly stronger and more reliable for the workflows below:\n- 🧬 Bioinformatics & Genomics - Sequence analysis, single-cell RNA-seq, gene regulatory networks, variant annotation, phylogenetic analysis\n- 🧪 Cheminformatics & Drug Discovery - Molecular property prediction, virtual screening, ADMET analysis, molecular docking, lead optimization\n- 🔬 Proteomics & Mass Spectrometry - LC-MS/MS processing, peptide identification, spectral matching, protein quantification\n- 🏥 Clinical Research & Precision Medicine - Clinical trials, pharmacogenomics, variant interpretation, drug safety, clinical decision support, treatment planning\n- 🧠 Healthcare AI & Clinical ML - EHR analysis, physiological signal processing, medical imaging, clinical prediction models\n- 🖼️ Medical Imaging & Digital Pathology - DICOM processing, whole slide image analysis, computational pathology, radiology workflows\n- 🤖 Machine Learning & AI - Deep learning, reinforcement learning, time series analysis, model interpretability, Bayesian methods\n- 🔮 Materials Science & Chemistry - Crystal structure analysis, phase diagrams, metabolic modeling, computational chemistry\n- 🌌 Physics & Astronomy - Astronomical data analysis, coordinate tran",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai",
+        "machine learning",
+        "deep learning",
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "K-Dense-AI/scientific-agent-skills: A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.8,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**scientific-agent-skills** 的用户群和 CodeBuddy 高度重合 — 可以写「scientific-agent-skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**scientific-agent-skills** 的用户群和 CodeBuddy 高度重合 — 可以写「scientific-agent-skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**scientific-agent-skills** 的用户群和 CodeBuddy 高度重合 — 可以写「scientific-agent-skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「K-Dense-AI/scientific-agent-skills - A set of rea…」（K-Dense-AI/scientific-agent-skills: A set of ready to use A…），涉及 Agent / Python → 可写方向：**scientific-agent-skills** 的用户群和 CodeBuddy 高度重合 — 可以写「scientific-agent-skills…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「K-Dense-AI/scientific-agent-skills - A…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 scientific-agent-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 scientific-agent-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 scientific-agent-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 scientific-agent-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "K-Dense-AI/scientific-agent-skills: A set of ready to use Agent Ski…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "K-Dense-AI/scientific-agent-skills - A set of ready to use Agent Skills for research, s…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：K-Dense-AI/scientific-agent-skills: A set of ready to use Agent Ski…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: K-Dense-AI/scientific-agent-skills - A set of ready to use Agent Skills for research, s…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。K-Dense-AI/scientific-agent-skills: A set of ready to use Agent Ski…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**scientific-agent-skills** 的用户群和 CodeBuddy 高度重合 — 可以写「scientific-agent-skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. K-Dense-AI/scientific-agent-skills - A set of ready to use Agent Skills for research, s…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：K-Dense-AI/scientific-agent-skills: A set of ready to use Agent Ski…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: K-Dense-AI/scientific-agent-skills - A set of ready to use Agent Skills for research, s…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "scientific-agent-skills：一组用于研究、科学、工程、分析、金融和写作的现成可用的代理技能。",
+    "developer_profile": {
+      "github_username": "K-Dense-AI",
+      "profile_url": "https://github.com/K-Dense-AI",
+      "name": "K-Dense",
+      "bio": "",
+      "company": "",
+      "location": "United States of America",
+      "blog": "www.k-dense.ai",
+      "twitter_username": "k_dense_ai",
+      "email": "contact@k-dense.ai",
+      "followers": 948,
+      "following": 0,
+      "public_repos": 10,
+      "avatar_url": "https://avatars.githubusercontent.com/u/238572432?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/k-dense-inc"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/k_dense_ai"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "shiyu-coder/Kronos - Kronos: A Foundation Model for the Language of Financial Markets",
+    "url": "https://github.com/shiyu-coder/Kronos",
+    "heat": "24,905 stars",
+    "time": "Today",
+    "developer_name": "shiyu-coder",
+    "developer_url": "https://github.com/shiyu-coder",
+    "developer_email": "",
+    "today_stars": "363 stars today",
+    "language": "Python",
+    "summary": "Kronos: A Foundation Model for the Language of Financial Markets",
+    "content": " \r\n    Kronos: A Foundation Model for the Language of Financial Markets   \r\n \r\n\r\n\r\n \r\n\r\n  \r\n  \r\n  \r\n  \r\n     \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n \r\n\r\n \r\n\r\n \r\n   \r\n   Deutsch  | \r\n   Español  | \r\n   Français  | \r\n   日本語  | \r\n   한국어  | \r\n   Português  | \r\n   Русский  | \r\n   中文 \r\n \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n> Kronos is the **first open-source foundation model** for financial candlesticks (K-lines), \r\n> trained on data from over **45 global exchanges**.\r\n\r\n\r\n \r\n\r\n## 📰 News\r\n*   🚩 **[2025.11.10]** Kronos has been accpeted by AAAI 2026.\r\n*   🚩 **[2025.08.17]** We have released the scripts for fine-tuning! Check them out to adapt Kronos to your own tasks.\r\n*   🚩 **[2025.08.02]** Our paper is now available on arXiv!\r\n\r\n \r\n\r\n## 📜 Introduction\r\n\r\n**Kronos** is a family of decoder-only foundation models, pre-trained specifically for the \"language\" of financial markets—K-line sequences. Unlike general-purpose TSFMs, Kronos is designed to handle the unique, high-noise characteristics of financial data. It leverages a novel two-stage framework: \r\n1. A specialized tokenizer first quantizes continuous, multi-dimensional K-line data (OHLCV) into **hierarchical discrete tokens**. \r\n2. A large, autoregressive Transformer is then pre-trained on these tokens, enabling it to serve as a unified model for diverse quantitative tasks.\r\n\r\n \r\n     \r\n \r\n\r\n## ✨ Live Demo \r\nWe have set up a live demo to visualize Kronos's forecasting results. The webpage showcases a forecast for the **BTC/USDT** trading pair over the next 24 hours. \r\n\r\n**👉 Access the Live Demo Here** \r\n\r\n## 📦 Model Zoo \r\nWe release a family of pre-trained models with varying capacities to suit different computational and application needs. All models are readily accessible from the Hugging Face Hub.\r\n\r\n| Model        | Tokenizer                                                                       | Context length | Params  | Open-source                                                               |\r\n|--------------|---------------------------------------------------------------------------------| -------------- | ------ |---------------------------------------------------------------------------|\r\n| Kronos-mini  | Kronos-Tokenizer-2k     | 2048           | 4.1M   | ✅ NeoQuasar/Kronos-mini  |\r\n| Kronos-small | Kronos-Tokenizer-base | 512            | 24.7M  | ✅ NeoQuasar/Kronos-small |\r\n| Kronos-base  | Kronos-Tokenizer-base | 512            | 102.3M | ✅ NeoQuasar/Kronos-base   |\r\n| Kronos-large | Kronos-Tokenizer-base | 512            | 499.2M | ❌                                                                         |\r\n\r\n\r\n## 🚀 Getting Started\r\n\r\n### Installation\r\n\r\n1. Install Python 3.10+, and then install the dependencies:\r\n\r\n```shell\r\npip install -r requirements.txt\r\n```\r\n\r\n### 📈 Making Forecasts\r\n\r\nForecasting with Kronos is straightforward using the `KronosPredictor` class. It handles data preprocessing, normalization, prediction, and inverse normalization, allowing you to get from raw data to forec",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "transformer"
+      ],
+      "anxiety_hits": [],
+      "topic": "学术研究",
+      "topic_type": "开发者话题",
+      "products": [
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Transformer",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "shiyu-coder/Kronos: Kronos: A Foundation Model for the Language of Financial Markets",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "研究解读"
+      ],
+      "editorial_angles_text": "技术科普 + 研究解读",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「shiyu-coder/Kronos - Kronos: A Foundation Model f…」（shiyu-coder/Kronos: Kronos: A Foundation Model for the Lang…），涉及 Transformer / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「shiyu-coder/Kronos - Kronos: A Foundati…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 Kronos 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 Kronos 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "shiyu-coder/Kronos: Kronos: A Foundation Model for the Language of…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "shiyu-coder/Kronos - Kronos: A Foundation Model for the Language of Financial Markets. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：shiyu-coder/Kronos: Kronos: A Foundation Model for the Language of…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 研究解读。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: shiyu-coder/Kronos - Kronos: A Foundation Model for the Language of Financial Markets. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + research takeaway. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。shiyu-coder/Kronos: Kronos: A Foundation Model for the Language of…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 研究解读，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. shiyu-coder/Kronos - Kronos: A Foundation Model for the Language of Financial Markets. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + research takeaway.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：shiyu-coder/Kronos: Kronos: A Foundation Model for the Language of…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 研究解读。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: shiyu-coder/Kronos - Kronos: A Foundation Model for the Language of Financial Markets. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + research takeaway. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Kronos：金融市场语言的基础模型",
+    "developer_profile": {
+      "github_username": "shiyu-coder",
+      "profile_url": "https://github.com/shiyu-coder",
+      "name": "ShiYu",
+      "bio": "Nanjing University(bachelor)           \r\n - Tsinghua University(doctoral student)",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 684,
+      "following": 3,
+      "public_repos": 7,
+      "avatar_url": "https://avatars.githubusercontent.com/u/65760973?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "roboflow/supervision - We write your reusable computer vision tools. 💜",
+    "url": "https://github.com/roboflow/supervision",
+    "heat": "38,960 stars",
+    "time": "Today",
+    "developer_name": "roboflow",
+    "developer_url": "https://github.com/roboflow",
+    "developer_email": "hello@roboflow.com",
+    "today_stars": "83 stars today",
+    "language": "Python",
+    "summary": "We write your reusable computer vision tools. 💜",
+    "content": " \n   \n     \n       \n     \n   \n\n \n\nnotebooks | inference | autodistill | maestro\n\n \n\n[](https://badge.fury.io/py/supervision)\n[](https://pypistats.org/packages/supervision)\n[](https://snyk.io/advisor/python/supervision)\n[](https://github.com/roboflow/supervision/blob/main/LICENSE.md)\n[](https://badge.fury.io/py/supervision)\n[](https://colab.research.google.com/github/roboflow/supervision/blob/main/demo.ipynb)\n[](https://huggingface.co/spaces/Roboflow/Annotators)\n[](https://discord.gg/GbfgXGJ8Bk)\n[](https://squidfunk.github.io/mkdocs-material/)\n\n   \n       \n   \n\n \n\n## 👋 hello\n\n**We write your reusable computer vision tools.** Whether you need to load your dataset from your hard drive, draw detections on an image or video, or count how many detections are in a zone. You can count on us! 🤝\n\n## 💻 install\n\nPip install the supervision package in a\n**Python>=3.9** environment.\n\n```bash\npip install supervision\n```\n\nRead more about conda, mamba, and installing from source in our guide.\n\n## 🔥 quickstart\n\n### models\n\nSupervision was designed to be model agnostic. Just plug in any classification, detection, or segmentation model. For your convenience, we have created connectors for the most popular libraries like Ultralytics, Transformers, or MMDetection.\n\n```python\nimport cv2\nimport supervision as sv\nfrom ultralytics import YOLO\n\nimage = cv2.imread(...)\nmodel = YOLO(\"yolov8s.pt\")\nresult = model(image)[0]\ndetections = sv.Detections.from_ultralytics(result)\n\nlen(detections)\n# 5\n```\n\n \n 👉 more model connectors \n\n- inference\n\n  Running with Inference requires a Roboflow API KEY.\n\n  ```python\n  import cv2\n  import supervision as sv\n  from inference import get_model\n\n  image = cv2.imread(...)\n  model = get_model(model_id=\"yolov8s-640\", api_key= )\n  result = model.infer(image)[0]\n  detections = sv.Detections.from_inference(result)\n\n  len(detections)\n  # 5\n  ```\n\n \n\n### annotators\n\nSupervision offers a wide range of highly customizable annotators, allowing you to compose the perfect visualization for your use case.\n\n```python\nimport cv2\nimport supervision as sv\n\nimage = cv2.imread(...)\ndetections = sv.Detections(...)\n\nbox_annotator = sv.BoxAnnotator()\nannotated_frame = box_annotator.annotate(\n  scene=image.copy(),\n  detections=detections)\n```\n\nhttps://github.com/roboflow/supervision/assets/26109316/691e219c-0565-4403-9218-ab5644f39bce\n\n### datasets\n\nSupervision provides a set of utils that allow you to load, split, merge, and save datasets in one of the supported formats.\n\n```python\nimport supervision as sv\nfrom roboflow import Roboflow\n\nproject = Roboflow().workspace( ).project( )\ndataset = project.version( ).download(\"coco\")\n\nds = sv.DetectionDataset.from_coco(\n    images_directory_path=f\"{dataset.location}/train\",\n    annotations_path=f\"{dataset.location}/train/_annotations.coco.json\",\n)\n\npath, image, annotation = ds[0]\n    # loads image on demand\n\nfor path, image, annotation in ds:\n    # loads image on demand\n```\n\n \n 👉 more dataset utils \n\n- load\n\n  ```python\n  ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "inference",
+        "huggingface",
+        "computer vision"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "roboflow/supervision: We write your reusable computer vision tools.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.0,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「roboflow/supervision - We write your reusable com…」（roboflow/supervision: We write your reusable computer visio…），涉及 Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「roboflow/supervision - We write your re…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 supervision 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 supervision 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "roboflow/supervision: We write your reusable computer vision tools.。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "roboflow/supervision - We write your reusable computer vision tools. 💜. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：roboflow/supervision: We write your reusable computer vision tools.。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: roboflow/supervision - We write your reusable computer vision tools. 💜. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。roboflow/supervision: We write your reusable computer vision tools.。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. roboflow/supervision - We write your reusable computer vision tools. 💜. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：roboflow/supervision: We write your reusable computer vision tools.。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: roboflow/supervision - We write your reusable computer vision tools. 💜. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "supervision：我们为您编写可重复使用的计算机视觉工具。",
+    "developer_profile": {
+      "github_username": "roboflow",
+      "profile_url": "https://github.com/roboflow",
+      "name": "Roboflow",
+      "bio": "",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://roboflow.com",
+      "twitter_username": "roboflow",
+      "email": "hello@roboflow.com",
+      "followers": 4770,
+      "following": 0,
+      "public_repos": 160,
+      "avatar_url": "https://avatars.githubusercontent.com/u/53104118?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/roboflow"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "influxdata/telegraf - Agent for collecting, processing, aggregating, and writing metrics, logs, and other arbitrary data.",
+    "url": "https://github.com/influxdata/telegraf",
+    "heat": "17,247 stars",
+    "time": "Today",
+    "developer_name": "influxdata",
+    "developer_url": "https://github.com/influxdata",
+    "developer_email": "contact@influxdb.com",
+    "today_stars": "215 stars today",
+    "language": "Go",
+    "summary": "Agent for collecting, processing, aggregating, and writing metrics, logs, and other arbitrary data.",
+    "content": "#  Telegraf\n\n[](https://godoc.org/github.com/influxdata/telegraf)\n[](https://hub.docker.com/_/telegraf/)\n[](https://goreportcard.com/report/github.com/influxdata/telegraf)\n[](https://circleci.com/gh/influxdata/telegraf)\n\nTelegraf is an agent for collecting, processing, aggregating, and writing\nmetrics, logs, and other arbitrary data.\n\n* Offers a comprehensive suite of over 300 plugins, covering a wide range of\n  functionalities including system monitoring, cloud services, and message\n  passing\n* Enables the integration of user-defined code to collect, transform, and\n  transmit data efficiently\n* Compiles into a standalone static binary without any external dependencies,\n  ensuring a streamlined deployment process\n* Utilizes TOML for configuration, providing a user-friendly and unambiguous\n  setup experience\n* Developed with contributions from a diverse community of over 1,200\n  contributors\n\nUsers can choose plugins from a wide range of topics, including but not limited\nto:\n\n* Devices: [OPC UA][], [Modbus][]\n* Logs: [File][], [Tail][], [Directory Monitor][]\n* Messaging: [AMQP][], [Kafka][], [MQTT][]\n* Monitoring: [OpenTelemetry][], [Prometheus][]\n* Networking: [Cisco TelemetryMDT][], [gNMI][]\n* System monitoring: [CPU][], [Memory][], [Disk][], [Network][], [SMART][],\n  [Docker][], [Nvidia SMI][], etc.\n* Universal: [Exec][], [HTTP][], [HTTP Listener][], [SNMP][], [SQL][]\n* Windows: [Event Log][], [Management Instrumentation][],\n  [Performance Counters][]\n\n## 🔨 Installation\n\nFor binary builds, Docker images, RPM & DEB packages, and other builds of\nTelegraf, please see the install guide.\n\nSee the releases documentation for details on versioning\nand when releases are made.\n\n## 💻 Usage\n\nUsers define a TOML configuration with the plugins and settings they wish to\nuse, then pass that configuration to Telegraf. The Telegraf agent then\ncollects data from inputs at each interval and sends data to outputs at each\nflush interval.\n\nFor a basic walkthrough see quick start.\n\n## 📖 Documentation\n\nFor a full list of documentation including tutorials, reference and other\nmaterial, start with the /docs directory.\n\nAdditionally, each plugin has its own README that includes details about how to\nconfigure, use, and sometimes debug or troubleshoot. Look under the\n/plugins directory for specific plugins.\n\nHere are some commonly used documents:\n\n* Changelog\n* Configuration\n* FAQ\n* Releases\n* Security\n\n## ❤️ Contribute\n\n[](https://github.com/influxdata/telegraf/blob/master/CONTRIBUTING.md)\n\nWe love our community of over 1,200 contributors! Many of the plugins included\nin Telegraf were originally contributed by community members. Check out\nour contributing guide if you are interested in helping out.\nAlso, join us on our Community Slack or\nCommunity Forums if you have questions or\ncomments for our engineering teams.\n\nIf you are completely new to Telegraf and InfluxDB, you can also enroll for free\nat InfluxDB university to take courses\nto learn more.\n\n## ℹ️ Support\n\n[](https:",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "docker"
+      ],
+      "ai_hits": [
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "influxdata/telegraf: Agent for collecting, processing, aggregating, and writing metrics, logs, and other arbitrary data.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.1,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「influxdata/telegraf - Agent for collecting, proce…」（influxdata/telegraf: Agent for collecting, processing, aggr…），涉及 Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「influxdata/telegraf - Agent for collect…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 telegraf 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 telegraf 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "influxdata/telegraf: Agent for collecting, processing, aggregating,…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "influxdata/telegraf - Agent for collecting, processing, aggregating, and writing metric…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：influxdata/telegraf: Agent for collecting, processing, aggregating,…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: influxdata/telegraf - Agent for collecting, processing, aggregating, and writing metric…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。influxdata/telegraf: Agent for collecting, processing, aggregating,…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. influxdata/telegraf - Agent for collecting, processing, aggregating, and writing metric…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：influxdata/telegraf: Agent for collecting, processing, aggregating,…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: influxdata/telegraf - Agent for collecting, processing, aggregating, and writing metric…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "telegraf：用于收集、处理、聚合和写入指标、日志和其他任意数据的代理。",
+    "developer_profile": {
+      "github_username": "influxdata",
+      "profile_url": "https://github.com/influxdata",
+      "name": "InfluxData",
+      "bio": "",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://influxdata.com",
+      "twitter_username": "InfluxDB",
+      "email": "contact@influxdb.com",
+      "followers": 1035,
+      "following": 0,
+      "public_repos": 221,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5713248?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/InfluxDB"
+        }
+      ],
+      "is_org": true
+    }
+  }
+]
