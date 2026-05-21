@@ -1,0 +1,1042 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "colbymchenry/codegraph - Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, and OpenCode — fewer tokens, fewer tool calls, 100% local",
+    "url": "https://github.com/colbymchenry/codegraph",
+    "heat": "10,473 stars",
+    "time": "Today",
+    "developer_name": "colbymchenry",
+    "developer_url": "https://github.com/colbymchenry",
+    "developer_email": "",
+    "today_stars": "2,123 stars today",
+    "language": "TypeScript",
+    "summary": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, and OpenCode — fewer tokens, fewer tool calls, 100% local",
+    "content": " \n\n# CodeGraph\n\n### Supercharge Claude Code, Cursor, Codex, and OpenCode with Semantic Code Intelligence\n\n**~35% cheaper · ~70% fewer tool calls · 100% local**\n\n[](https://www.npmjs.com/package/@colbymchenry/codegraph)\n[](https://opensource.org/licenses/MIT)\n[](https://nodejs.org/)\n\n[](#)\n[](#)\n[](#)\n\n[](#)\n[](#)\n[](#)\n[](#)\n\n \n\n### Get Started\n\n```bash\nnpx @colbymchenry/codegraph\n```\n\n Interactive installer auto-configures your agent(s) — Claude Code, Cursor, Codex CLI, opencode \n\n#### Initialize Projects\n\n```bash\ncd your-project\ncodegraph init -i\n```\n\n \n\n---\n\n## Why CodeGraph?\n\nWhen Claude Code explores a codebase, it spawns **Explore agents** that scan files with grep, glob, and Read — consuming tokens on every tool call.\n\n**CodeGraph gives those agents a pre-indexed knowledge graph** — symbol relationships, call graphs, and code structure. Agents query the graph instantly instead of scanning files.\n\n### Benchmark Results\n\nTested across **7 real-world open-source codebases** spanning 7 languages, comparing an agent (Claude Code, headless) answering one architecture question **with** and **without** CodeGraph. Each cell is the savings at the **median of 4 runs per arm**.\n\n> **Average: 35% cheaper · 59% fewer tokens · 49% faster · 70% fewer tool calls**\n\n| Codebase | Language | Cost | Tokens | Time | Tool calls |\n|----------|----------|------|--------|------|------------|\n| **VS Code** | TypeScript · ~10k files | 35% cheaper | 73% fewer | 41% faster | 72% fewer |\n| **Excalidraw** | TypeScript · ~600 | 47% cheaper | 73% fewer | 60% faster | 86% fewer |\n| **Django** | Python · ~2.7k | 34% cheaper | 64% fewer | 59% faster | 81% fewer |\n| **Tokio** | Rust · ~700 | 52% cheaper | 81% fewer | 63% faster | 89% fewer |\n| **OkHttp** | Java · ~640 | 17% cheaper | 41% fewer | 36% faster | 64% fewer |\n| **Gin** | Go · ~150 | 22% cheaper | 23% fewer | 34% faster | 19% fewer |\n| **Alamofire** | Swift · ~100 | 38% cheaper | 59% fewer | 51% faster | 77% fewer |\n\nThe gains scale with codebase size: on large repos the agent answers from the index in a handful of calls with **zero file reads**, while the no-CodeGraph agent fans out across grep/find/Read (and the sub-agents it spawns). On a small repo like Gin (~150 files) native search is already cheap, so the margin narrows.\n\n \n  Full benchmark details  \n\n**Methodology.** Each arm is `claude -p` (Claude Opus 4.7, Claude Code v2.1.145) run headlessly against the repo with `--strict-mcp-config`: **WITH** = CodeGraph's MCP server enabled, **WITHOUT** = an empty MCP config. Built-in Read/Grep/Bash stay available to both. Same question per repo, **4 runs per arm, median reported**. Cost = the run's `total_cost_usd`; Tokens = total tokens processed (input incl. cached + output); Time = wall-clock; Tool calls = every tool invocation, including those inside any sub-agents the model spawns. Repos cloned at `--depth 1` and indexed by the same CodeGraph build that served them.\n\n**Queries:**\n| Codebase | Query |\n|----------|-",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "agent",
+        "mcp",
+        "knowledge graph"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Rust",
+        "Go",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "colbymchenry/codegraph: Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, and OpenCode — fewer tokens, fewer tool calls, 100% local",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.0,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**codegraph** 的用户群和 CodeBuddy 高度重合 — 可以写「codegraph 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**codegraph** 的用户群和 CodeBuddy 高度重合 — 可以写「codegraph 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**codegraph** 的用户群和 CodeBuddy 高度重合 — 可以写「codegraph 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「colbymchenry/codegraph - Pre-indexed code knowled…」（colbymchenry/codegraph: Pre-indexed code knowledge graph fo…），涉及 Agent / MCP / Rust → 可写方向：**codegraph** 的用户群和 CodeBuddy 高度重合 — 可以写「codegraph 用户迁移到 CodeBuddy 的体验对比」，突出 Co…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「colbymchenry/codegraph - Pre-indexed co…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 codegraph 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 codegraph 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 codegraph 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 codegraph 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "colbymchenry/codegraph: Pre-indexed code knowledge graph for Claude…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "colbymchenry/codegraph - Pre-indexed code knowledge graph for Claude Code, Codex, Curso…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：colbymchenry/codegraph: Pre-indexed code knowledge graph for Claude…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: colbymchenry/codegraph - Pre-indexed code knowledge graph for Claude Code, Codex, Curso…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。colbymchenry/codegraph: Pre-indexed code knowledge graph for Claude…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**codegraph** 的用户群和 CodeBuddy 高度重合 — 可以写「codegraph 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. colbymchenry/codegraph - Pre-indexed code knowledge graph for Claude Code, Codex, Curso…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：colbymchenry/codegraph: Pre-indexed code knowledge graph for Claude…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: colbymchenry/codegraph - Pre-indexed code knowledge graph for Claude Code, Codex, Curso…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "codegraph：Claude Code、Codex、Cursor 和 OpenCode 的预索引代码知识图 — 更少的标记、更少的工具调用、100% 本地化",
+    "developer_profile": {
+      "github_username": "colbymchenry",
+      "profile_url": "https://github.com/colbymchenry",
+      "name": "Colby Mchenry",
+      "bio": "15+ years of experience building software. ",
+      "company": "",
+      "location": "",
+      "blog": "https://colbymchenry.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 113,
+      "following": 0,
+      "public_repos": 19,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18431132?v=4",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "https://colbymchenry.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Imbad0202/academic-research-skills - Academic Research Skills for Claude Code: research → write → review → revise → finalize",
+    "url": "https://github.com/Imbad0202/academic-research-skills",
+    "heat": "16,693 stars",
+    "time": "Today",
+    "developer_name": "Imbad0202",
+    "developer_url": "https://github.com/Imbad0202",
+    "developer_email": "",
+    "today_stars": "1,667 stars today",
+    "language": "Python",
+    "summary": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
+    "content": "# Academic Research Skills for Claude Code\n\n[](https://github.com/Imbad0202/academic-research-skills/releases/tag/v3.9.4.2)\n[](https://creativecommons.org/licenses/by-nc/4.0/)\n[](https://buymeacoffee.com/crucify020v)\n\n简体中文版 | 繁體中文版 | 日本語版\n\nA comprehensive suite of Claude Code skills for academic research, covering the full pipeline from research to publication.\n\n**Install in 30 seconds** (Claude Code CLI / VS Code / JetBrains, v3.7.0+):\n\n```text\n/plugin marketplace add Imbad0202/academic-research-skills\n/plugin install academic-research-skills\n```\n\nThen try `/ars-plan` to walk through your paper structure via Socratic dialogue, or jump to Quick install for prerequisites and the traditional symlink flow.\n\n> **AI is your copilot, not the pilot.** This tool won't write your paper for you. It handles the grunt work — hunting down references, formatting citations, verifying data, checking logical consistency — so you can focus on the parts that actually require your brain: defining the question, choosing the method, interpreting what the data means, and writing the sentence after \"I argue that.\"\n>\n> Unlike a humanizer, this tool doesn't help you hide the fact that you used AI. It helps you write better. Style Calibration learns your voice from past work. Writing Quality Check catches the patterns that make prose feel machine-generated. The goal is quality, not cheating.\n\n### Why human-in-the-loop, not full automation?\n\nLu et al. (2026, *Nature* 651:914-919) built **The AI Scientist** — the first fully autonomous AI research system to publish a paper through blind peer review at a top-tier ML venue (ICLR 2025 workshop, score 6.33/10 vs workshop average 4.87). Their Limitations section enumerates the failure modes that any fully-autonomous AI research pipeline inherits: implementation bugs, hallucinated results, shortcut reliance, bug-as-insight reframing, methodology fabrication, frame-lock, citation hallucinations.\n\nARS is built on the premise that **a human researcher augmented by AI avoids these failure modes better than either alone**. Stage 2.5 and Stage 4.5 integrity gates run a 7-mode blocking checklist (see `academic-pipeline/references/ai_research_failure_modes.md`); the reviewer offers an opt-in calibration mode that measures its own FNR/FPR against a user-supplied gold set.\n\n**Zhao et al.** (2026-05) audited 111M references across 2.5M papers on arXiv, bioRxiv, SSRN, and PMC. Their conservative estimate is 146,932 hallucinated citations for 2025 alone, with an observed mid-2024 inflection; for the bioRxiv-to-PMC pairing they report 85.3% preprint-to-published persistence. The paper describes \"real citations deployed to support claims the cited references do not actually make\" as an open challenge. ARS v3.7.1 added trust-chain frontmatter for source provenance; v3.7.3 added locator infrastructure (three-layer citation anchors) for future claim-level audits and surfaces advisory risk signals at cite time (ARS labels the claim-faithfulness gap ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "copilot"
+      ],
+      "anxiety_hits": [],
+      "topic": "学术研究",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Copilot"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "对比测评",
+      "detail_brief": "Imbad0202/academic-research-skills: Academic Research Skills for Claude Code: research → write → review → revise → finalize",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.8,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**academic-research-skills** 的用户群和 CodeBuddy 高度重合 — 可以写「academic-research-skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**academic-research-skills** 的用户群和 CodeBuddy 高度重合 — 可以写「academic-research-skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "copilot"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**academic-research-skills** 的用户群和 CodeBuddy 高度重合 — 可以写「academic-research-skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "产品关联（CodeBuddy）",
+        "观点评论",
+        "研究解读"
+      ],
+      "editorial_angles_text": "技术科普 + 产品关联（CodeBuddy） + 观点评论 + 研究解读",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Imbad0202/academic-research-skills - Academic Res…」（Imbad0202/academic-research-skills: Academic Research Skill…） → 可写方向：**academic-research-skills** 的用户群和 CodeBuddy 高度重合 — 可以写「academic-research-skill…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Imbad0202/academic-research-skills - Ac…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 academic-research-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 academic-research-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 academic-research-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 academic-research-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Imbad0202/academic-research-skills: Academic Research Skills for Cl…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "Imbad0202/academic-research-skills - Academic Research Skills for Claude Code: research…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Imbad0202/academic-research-skills: Academic Research Skills for Cl…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 产品关联（CodeBuddy） + 观点评论 + 研究解读。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Imbad0202/academic-research-skills - Academic Research Skills for Claude Code: research…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + product tie-in (CodeBuddy) + opinionated commentary + research takeaway. What matters more to you: deployment, perf…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Imbad0202/academic-research-skills: Academic Research Skills for Cl…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 产品关联（CodeBuddy） + 观点评论 + 研究解读，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**academic-research-skills** 的用户群和 CodeBuddy 高度重合 — 可以写「academic-research-skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Imbad0202/academic-research-skills - Academic Research Skills for Claude Code: research…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + product tie-in (CodeBuddy) + opinionated commentary + research takeaway.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Imbad0202/academic-research-skills: Academic Research Skills for Cl…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 产品关联（CodeBuddy） + 观点评论 + 研究解读。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Imbad0202/academic-research-skills - Academic Research Skills for Claude Code: research…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + product tie-in (CodeBuddy) + opinionated commentary + research takeaway. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "academic-research-skills：克劳德·代码的学术研究技巧：研究→写作→审阅→修改→定稿",
+    "developer_profile": {
+      "github_username": "Imbad0202",
+      "profile_url": "https://github.com/Imbad0202",
+      "name": "Edward Cheng-I Wu",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 282,
+      "following": 5,
+      "public_repos": 14,
+      "avatar_url": "https://avatars.githubusercontent.com/u/132531341?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/cheng-i-wu-874026aa/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "tinyhumansai/openhuman - Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+    "url": "https://github.com/tinyhumansai/openhuman",
+    "heat": "23,946 stars",
+    "time": "Today",
+    "developer_name": "tinyhumansai",
+    "developer_url": "https://github.com/tinyhumansai",
+    "developer_email": "contact@tinyhumans.ai",
+    "today_stars": "3,394 stars today",
+    "language": "Rust",
+    "summary": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+    "content": " OpenHuman \n\n \n  \n \n\n \n  \n   \n   \n &nbsp;\n  \n   \n  \n \n \n \n \n  OpenHuman is your Personal AI super intelligence. Private, Simple and extremely powerful. \n \n\n \n  Discord  •\n  Reddit  •\n  X/Twitter  •\n  Docs  •\n  Follow @senamakel (Creator) \n \n\n \n  🇺🇸  English  | 🇨🇳  简体中文  | 🇯🇵  日本語  | 🇰🇷  한국어  | 🇩🇪  Deutsch \n \n\n \n  \n    \n    \n    \n    \n    \n    \n    \n \n\n> **Early Beta**: Under active development. Expect rough edges.\n\nTo install or get started, either download from the website over at tinyhumans.ai/openhuman or run\n\n```bash\n# Download DMG, EXEs over at https://tinyhumans.ai/openhuman or run in from your terminal\n\n# For macOS or Linux x64\ncurl -fsSL https://raw.githubusercontent.com/tinyhumansai/openhuman/main/scripts/install.sh | bash\n\n# For Windows\nirm https://raw.githubusercontent.com/tinyhumansai/openhuman/main/scripts/install.ps1 | iex\n```\n\n# What is OpenHuman?\n\nOpenHuman is an open-source agentic assistant designed to integrate with you in your daily life. Each bullet links to the deeper writeup in the docs.\n\n- **Simple, UI-first & Human** A clean desktop experience and short onboarding paths take you from install to a working agent in a few clicks — no config-first setup, no terminal required. The agent has a face: a desktop mascot that speaks, reacts to its surroundings, joins your Google Meets as a real participant, remembers you across weeks, and keeps thinking in the background even when you've stopped typing.\n\n- **118+ third-party integrations with auto-fetch**: plug into Gmail, Notion, GitHub, Slack, Stripe, Calendar, Drive, Linear, Jira and the rest of your stack with **one-click OAuth**. Every connection is exposed to the agent as a typed tool, and every twenty minutes the core walks each active connection and pulls fresh data into the memory tree. No prompts, no polling loops you have to write, so the agent already has tomorrow's context this morning.\n\n  Managed integrations are backend-proxied through OpenHuman's Composio connector layer. If you want to run Composio directly instead of using the managed backend path, configure direct mode with your own Composio API key; real-time trigger webhooks then need to be hosted and wired by you.\n\n- **Memory Tree + Obsidian Wiki**: a local-first knowledge base built from your data and your activity. Everything you connect is canonicalized into ≤3k-token Markdown chunks, scored, and folded into hierarchical summary trees stored in **SQLite on your machine**. The same chunks land as `.md` files in an Obsidian-compatible vault you can open, browse and edit, inspired by Karpathy's obsidian-wiki workflow.\n\n- **Batteries included**: web search, a web-fetch scraper, a full coder toolset (filesystem, git, lint, test, grep), and native voice (STT in, ElevenLabs TTS out, mascot lip-sync, live Google Meet agent) are wired in by default. Model routing sends each task to the right LLM (reasoning, fast, or vision) under one subscription. No \"install a plugin to read files\" friction. Optional local AI via Ol",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "agentic",
+        "reasoning",
+        "tts"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "tinyhumansai/openhuman: Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「tinyhumansai/openhuman - Your Personal AI super i…」（tinyhumansai/openhuman: Your Personal AI super intelligence…），涉及 LLM / Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「tinyhumansai/openhuman - Your Personal…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 openhuman 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 openhuman 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "tinyhumansai/openhuman: Your Personal AI super intelligence. Privat…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "tinyhumansai/openhuman - Your Personal AI super intelligence. Private, Simple and extre…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：tinyhumansai/openhuman: Your Personal AI super intelligence. Privat…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: tinyhumansai/openhuman - Your Personal AI super intelligence. Private, Simple and extre…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。tinyhumansai/openhuman: Your Personal AI super intelligence. Privat…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. tinyhumansai/openhuman - Your Personal AI super intelligence. Private, Simple and extre…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：tinyhumansai/openhuman: Your Personal AI super intelligence. Privat…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: tinyhumansai/openhuman - Your Personal AI super intelligence. Private, Simple and extre…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "openhuman：您的个人人工智能超级智能。私密、简单且极其强大。",
+    "developer_profile": {
+      "github_username": "tinyhumansai",
+      "profile_url": "https://github.com/tinyhumansai",
+      "name": "Tiny Humans",
+      "bio": "Building AI-powered tiny humans for everyone",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://tinyhumans.ai/",
+      "twitter_username": "tinyhumansai",
+      "email": "contact@tinyhumans.ai",
+      "followers": 351,
+      "following": 0,
+      "public_repos": 11,
+      "avatar_url": "https://avatars.githubusercontent.com/u/246003628?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/tinyhumansai"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "multica-ai/andrej-karpathy-skills - A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+    "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+    "heat": "141,389 stars",
+    "time": "Today",
+    "developer_name": "multica-ai",
+    "developer_url": "https://github.com/multica-ai",
+    "developer_email": "",
+    "today_stars": "2,679 stars today",
+    "language": "",
+    "summary": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+    "content": "# Karpathy-Inspired Claude Code Guidelines\n\n> Check out my new project Multica — an open-source platform for running and managing coding agents with reusable skills.\n>\n> Follow me on X: https://x.com/jiayuan_jy\n\nA single `CLAUDE.md` file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.\n\nEnglish | 简体中文\n\n## The Problems\n\nFrom Andrej's post:\n\n> \"The models make wrong assumptions on your behalf and just run along with them without checking. They don't manage their confusion, don't seek clarifications, don't surface inconsistencies, don't present tradeoffs, don't push back when they should.\"\n\n> \"They really like to overcomplicate code and APIs, bloat abstractions, don't clean up dead code... implement a bloated construction over 1000 lines when 100 would do.\"\n\n> \"They still sometimes change/remove comments and code they don't sufficiently understand as side effects, even if orthogonal to the task.\"\n\n## The Solution\n\nFour principles in one file that directly address these issues:\n\n| Principle | Addresses |\n|-----------|-----------|\n| **Think Before Coding** | Wrong assumptions, hidden confusion, missing tradeoffs |\n| **Simplicity First** | Overcomplication, bloated abstractions |\n| **Surgical Changes** | Orthogonal edits, touching code you shouldn't |\n| **Goal-Driven Execution** | Leverage through tests-first, verifiable success criteria |\n\n## The Four Principles in Detail\n\n### 1. Think Before Coding\n\n**Don't assume. Don't hide confusion. Surface tradeoffs.**\n\nLLMs often pick an interpretation silently and run with it. This principle forces explicit reasoning:\n\n- **State assumptions explicitly** — If uncertain, ask rather than guess\n- **Present multiple interpretations** — Don't pick silently when ambiguity exists\n- **Push back when warranted** — If a simpler approach exists, say so\n- **Stop when confused** — Name what's unclear and ask for clarification\n\n### 2. Simplicity First\n\n**Minimum code that solves the problem. Nothing speculative.**\n\nCombat the tendency toward overengineering:\n\n- No features beyond what was asked\n- No abstractions for single-use code\n- No \"flexibility\" or \"configurability\" that wasn't requested\n- No error handling for impossible scenarios\n- If 200 lines could be 50, rewrite it\n\n**The test:** Would a senior engineer say this is overcomplicated? If yes, simplify.\n\n### 3. Surgical Changes\n\n**Touch only what you must. Clean up only your own mess.**\n\nWhen editing existing code:\n\n- Don't \"improve\" adjacent code, comments, or formatting\n- Don't refactor things that aren't broken\n- Match existing style, even if you'd do it differently\n- If you notice unrelated dead code, mention it — don't delete it\n\nWhen your changes create orphans:\n\n- Remove imports/variables/functions that YOUR changes made unused\n- Don't remove pre-existing dead code unless asked\n\n**The test:** Every changed line should trace directly to the user's request.\n\n### 4. Goal-Driven Execution\n\n**Define success criteria",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "reasoning"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "multica-ai/andrej-karpathy-skills: A single CLAUDE. md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.2,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**andrej-karpathy-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs andrej-karpathy-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**andrej-karpathy-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs andrej-karpathy-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**andrej-karpathy-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs andrej-karpathy-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「multica-ai/andrej-karpathy-skills - A single CLAU…」（multica-ai/andrej-karpathy-skills: A single CLAUDE. md file…），涉及 LLM → 可写方向：**andrej-karpathy-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs andrej-karpathy-skill…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「multica-ai/andrej-karpathy-skills - A s…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 andrej-karpathy-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 andrej-karpathy-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 andrej-karpathy-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 andrej-karpathy-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "multica-ai/andrej-karpathy-skills: A single CLAUDE. md file to impr…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "multica-ai/andrej-karpathy-skills - A single CLAUDE.md file to improve Claude Code beha…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：multica-ai/andrej-karpathy-skills: A single CLAUDE. md file to impr…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: multica-ai/andrej-karpathy-skills - A single CLAUDE.md file to improve Claude Code beha…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。multica-ai/andrej-karpathy-skills: A single CLAUDE. md file to impr…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**andrej-karpathy-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs andrej-karpathy-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. multica-ai/andrej-karpathy-skills - A single CLAUDE.md file to improve Claude Code beha…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：multica-ai/andrej-karpathy-skills: A single CLAUDE. md file to impr…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: multica-ai/andrej-karpathy-skills - A single CLAUDE.md file to improve Claude Code beha…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "andrej-karpathy-skills：一个单独的克劳德。md 文件来改进 Claude 代码行为，源自 Andrej Karpathy 对 LLM 编码陷阱的观察。",
+    "developer_profile": {
+      "github_username": "multica-ai",
+      "profile_url": "https://github.com/multica-ai",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 539,
+      "following": 0,
+      "public_repos": 4,
+      "avatar_url": "https://avatars.githubusercontent.com/u/254743058?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "rohitg00/ai-engineering-from-scratch - Learn it. Build it. Ship it for others.",
+    "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+    "heat": "9,850 stars",
+    "time": "Today",
+    "developer_name": "rohitg00",
+    "developer_url": "https://github.com/rohitg00",
+    "developer_email": "",
+    "today_stars": "765 stars today",
+    "language": "Python",
+    "summary": "Learn it. Build it. Ship it for others.",
+    "content": " \n   \n \n\n \n     \n     \n     \n     \n     \n \n\n```\n░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒\n```\n\n> **84% of students already use AI tools. Only 18% feel prepared to use them\n> professionally.** This curriculum closes that gap.\n>\n> 435 lessons. 20 phases. ~320 hours. Python, TypeScript, Rust, Julia. Every lesson ships\n> a reusable artifact: a prompt, a skill, an agent, an MCP server. Free, open source, MIT.\n>\n> You don't just learn AI. You build it. End-to-end. By hand.\n\n## How this works\n\nMost AI material teaches in scattered pieces. A paper here, a fine-tuning post there, a\nflashy agent demo somewhere else. The pieces rarely line up. You ship a chatbot but can't\nexplain its loss curve. You hook a function to an agent but can't say what attention does\ninside the model that's calling it.\n\nThis curriculum is the spine. 20 phases, 435 lessons, four languages: Python, TypeScript,\nRust, Julia. Linear algebra at one end, autonomous swarms at the other. Every algorithm\ngets built from raw math first. Backprop. Tokenizer. Attention. Agent loop. By the time\nPyTorch shows up, you already know what it's doing under the hood.\n\nEach lesson runs the same loop: read the problem, derive the math, write the code, run\nthe test, keep the artifact. No five-minute videos, no copy-paste deploys, no hand-holding.\nFree, open source, and built to run on your own laptop.\n\n```\n░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒\n```\n\n## The shape of the curriculum\n\nTwenty phases stack on top of each other. Math is the floor. Agents and production are the roof.\nSkip ahead if you already know the lower layers, but don't skip and then wonder why something at\nthe top is breaking.\n\n```mermaid\n%%{init: {'theme':'base','themeVariables':{'primaryColor':'#fafaf5','primaryTextColor':'#1a1a1a','primaryBorderColor':'#3553ff','lineColor':'#3553ff','fontFamily':'JetBrains Mono','fontSize':'12px'}}}%%\nflowchart TB\n  P0[\"Phase 0 — Setup &amp; Tooling\"] --> P1[\"Phase 1 — Math Foundations\"]\n  P1 --> P2[\"Phase 2 — ML Fundamentals\"]\n  P2 --> P3[\"Phase 3 — Deep Learning Core\"]\n  P3 --> P4[\"Phase 4 — Vision\"]\n  P3 --> P5[\"Phase 5 — NLP\"]\n  P3 --> P6[\"Phase 6 — Speech &amp; Audio\"]\n  P3 --> P9[\"Phase 9 — RL\"]\n  P5 --> P7[\"Phase 7 — Transformers\"]\n  P7 --> P8[\"Phase 8 — GenAI\"]\n  P7 --> P10[\"Phase 10 — LLMs from Scratch\"]\n  P10 --> P11[\"Phase 11 — LLM Engineering\"]\n  P10 --> P12[\"Phase 12 — Multimodal\"]\n  P11 --> P13[\"Phase 13 — Tools &amp; Protocols\"]\n  P13 --> P14[\"Phase 14 — Agent Engineering\"]\n  P14 --> P15[\"Phase 15 — Autonomous Systems\"]\n  P15 --> P16[\"Phase 16 — Multi-Agent &amp; Swarms\"]\n  P14 --> P17[\"Phase 17 — Infrastructure &amp; Production\"]\n  P15 --> P18[\"Phase 18 — Ethics &amp; Alignment\"]\n  P16 --> P19[\"Phase 19 — Capstone Projects\"]\n  P17 --> P19\n  P18 --> P19\n```\n\n```\n░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒\n```\n\n## The shape of a lesson\n\nEach le",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 9,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "deep learning",
+        "llm",
+        "agent",
+        "multimodal",
+        "nlp",
+        "prompt",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "MCP",
+        "Rust",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "热点事件",
+      "detail_brief": "rohitg00/ai-engineering-from-scratch: Learn it. Build it. Ship it for others.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.3,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「rohitg00/ai-engineering-from-scratch - Learn it.…」（rohitg00/ai-engineering-from-scratch: Learn it. Build it. S…），涉及 LLM / Agent / MCP → 可写方向：MCP 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「rohitg00/ai-engineering-from-scratch -…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 ai-engineering-from-scratch 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 ai-engineering-from-scratch 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "rohitg00/ai-engineering-from-scratch: Learn it. Build it. Ship it f…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "rohitg00/ai-engineering-from-scratch - Learn it. Build it. Ship it for others.. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：rohitg00/ai-engineering-from-scratch: Learn it. Build it. Ship it f…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: rohitg00/ai-engineering-from-scratch - Learn it. Build it. Ship it for others.. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。rohitg00/ai-engineering-from-scratch: Learn it. Build it. Ship it f…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. rohitg00/ai-engineering-from-scratch - Learn it. Build it. Ship it for others.. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：rohitg00/ai-engineering-from-scratch: Learn it. Build it. Ship it f…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: rohitg00/ai-engineering-from-scratch - Learn it. Build it. Ship it for others.. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ai-engineering-from-scratch：学习它。建造它。",
+    "developer_profile": {
+      "github_username": "rohitg00",
+      "profile_url": "https://github.com/rohitg00",
+      "name": "Rohit Ghumare",
+      "bio": "Engineer | DevRel | GDE @Google Cloud | CNCF Ambassador | Docker Captain | AWS CommunityBuilder | Ex - Solo.io, Cerbos, Oracle, Reliance Jio",
+      "company": "iii.dev",
+      "location": "London, UK",
+      "blog": "https://www.devrelasservice.com/",
+      "twitter_username": "ghumare64",
+      "email": "",
+      "followers": 2979,
+      "following": 54,
+      "public_repos": 298,
+      "avatar_url": "https://avatars.githubusercontent.com/u/48523873?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/ghumare64"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/rohit-ghumare/"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@ghumare64"
+        },
+        {
+          "platform": "generic",
+          "url": "http://medium.com/@ghumare64"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.devrelasservice.com/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "HKUDS/CLI-Anything - \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https://clianything.cc/",
+    "url": "https://github.com/HKUDS/CLI-Anything",
+    "heat": "38,655 stars",
+    "time": "Today",
+    "developer_name": "HKUDS",
+    "developer_url": "https://github.com/HKUDS",
+    "developer_email": "",
+    "today_stars": "890 stars today",
+    "language": "Python",
+    "summary": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https://clianything.cc/",
+    "content": "  &nbsp; CLI-Anything: Making ALL Software Agent-Native \n\n \n   \n \n\n \n   Today's Software Serves Humans👨‍💻. Tomorrow's Users will be Agents🤖. \nCLI-Anything: Bridging the Gap Between AI Agents and the World's Software  \n \n\n**🌐 CLI-Hub**: `pip install cli-anything-hub` then `cli-hub install  ` — browse, install, and manage all community-built CLIs. Want to add your own? Open a PR — the hub updates instantly.\n\n**🎬 See Demos**: Watch AI agents use generated CLIs plus preview, live preview, and trajectory loops to produce real artifacts — CAD builds, 3D scenes, diagrams, gameplay, subtitles, and more.\n\n**🙋 [Become a Contributor, or Request a CLI]**: Join us! Sign up to build a new CLI harness — once reviewed and merged, you'll gain access as one of our community contributors! Wish CLI-Anything supported a specific software or service? Submit a wishlist request!\n\n \n     \n     \n     \n     \n     \n \n\n \n   \n   \n   \n   \n   \n     \n   \n \n\n**One Command Line**: Make any software agent-ready for Pi, OpenClaw, nanobot, Cursor, Claude Code, etc.&nbsp;&nbsp;**中文文档** | **日本語ドキュメント**\n\n \n   \n \n\n \n   \n \n\n---\n\n## 📰 News\n\n> Thanks to all invaluable efforts from the community! More updates continuously on the way everyday..\n\n- **2026-05-20** 🎛️ **Rekordbox CLI** merged (#252) with guarded SQLCipher write paths, backup-required forced writes, smoke coverage, and root skill sync. 📚 **Calibre CLI** merged (#223) with library/search/metadata/conversion/export workflows, 41 unit tests, real-Calibre E2E evidence, and root skill validation. 🧊 **3MF CLI** merged (#209) with mesh inspection, hole resizing, repair, comparison, and preserved triangle attributes. 🎙️ **MiniMax CLI** merged (#189) with chat/TTS workflows, JSON-safe model/voice listing, REPL quote handling, and smoke/E2E coverage. 🎮 **UEAtelier** joined the registry (#297) as an Unreal Editor MCP self-extension workbench with a Python CLI proxy.\n\n- **2026-05-19** 🛠️ Existing harnesses got a quality/security pass — **Zoom** downloads recordings from direct URLs (#294), **Obsidian** search now uses the Local REST API vendor content types (#289), **LibreOffice** headless conversion is more robust on macOS (#290), and XML/SVG/ODF/MLT/MusicXML/CSL parsing now routes untrusted input through `defusedxml` (#296).\n\n- **2026-05-18** 📈 README presentation refreshed with the Trendshift badge and centered project header polish (#285, #286), keeping the landing section focused on discovery and project momentum.\n\n- **2026-05-17** 🌐 **CLI-Hub** registry handling was hardened (#281) — registry entries are now copied before `_source` tagging, preventing cached or mocked registry data from being mutated in place.\n\n- **2026-05-16** 🔧 **n8n** received the REPL banner crash fix that later merged into main (#280), restoring the no-subcommand interactive startup path with regression coverage.\n\n \n Earlier news (Apr 10–18) \n\n- **2026-04-18** 🧩 **All SKILL.md files are now being unified under the top-level `skills/` directory** — every CLI skill ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "mcp",
+        "tts"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "3D Generation",
+        "Python"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https://clianything.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.3,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**CLI-Anything** 的用户群和 CodeBuddy 高度重合 — 可以写「CLI-Anything 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**CLI-Anything** 的用户群和 CodeBuddy 高度重合 — 可以写「CLI-Anything 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**CLI-Anything** 的用户群和 CodeBuddy 高度重合 — 可以写「CLI-Anything 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「HKUDS/CLI-Anything - \"CLI-Anything: Making ALL So…」（HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agen…），涉及 Agent / MCP / 3D Generation → 可写方向：**CLI-Anything** 的用户群和 CodeBuddy 高度重合 — 可以写「CLI-Anything 用户迁移到 CodeBuddy 的体验对比」…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「HKUDS/CLI-Anything - \"CLI-Anything: Mak…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 CLI-Anything 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 CLI-Anything 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 CLI-Anything 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 CLI-Anything 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agent-Native…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "HKUDS/CLI-Anything - \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https:…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agent-Native…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: HKUDS/CLI-Anything - \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https:…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agent-Native…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**CLI-Anything** 的用户群和 CodeBuddy 高度重合 — 可以写「CLI-Anything 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. HKUDS/CLI-Anything - \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https:…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agent-Native…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: HKUDS/CLI-Anything - \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https:…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "“CLI-Anything：使所有软件代理原生”--CLI-Hub：https://clianything。",
+    "developer_profile": {
+      "github_username": "HKUDS",
+      "profile_url": "https://github.com/HKUDS",
+      "name": "✨Data Intelligence Lab@HKU✨",
+      "bio": "",
+      "company": "",
+      "location": "Hong Kong",
+      "blog": "https://sites.google.com/view/chaoh",
+      "twitter_username": "",
+      "email": "",
+      "followers": 11088,
+      "following": 0,
+      "public_repos": 87,
+      "avatar_url": "https://avatars.githubusercontent.com/u/118165258?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "can1357/oh-my-pi - ⌥ AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more",
+    "url": "https://github.com/can1357/oh-my-pi",
+    "heat": "5,525 stars",
+    "time": "Today",
+    "developer_name": "can1357",
+    "developer_url": "https://github.com/can1357",
+    "developer_email": "",
+    "today_stars": "270 stars today",
+    "language": "TypeScript",
+    "summary": "⌥ AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more",
+    "content": " \n   \n \n\n \n   A coding agent with the IDE wired in. \n    omp.sh  \n \n\n \n     \n     \n     \n     \n     \n     \n     \n     \n \n\n \n  Fork of  Pi  by  @mariozechner  \n \n\nThe most capable agent surface that ships. Continuously tuned by real-world use — complete out of the box, open all the way down.\n\n**40+** providers · **32** built-in tools · **13** lsp ops · **27** dap ops · **~27k** lines of Rust core.\n\n## Install\n\n**macOS · Linux**\n\n```sh\ncurl -fsSL https://omp.sh/install | sh\n```\n\n**Bun (recommended)**\n\n```sh\nbun install -g @oh-my-pi/pi-coding-agent\n```\n\n**Windows (PowerShell)**\n\n```powershell\nirm https://omp.sh/install.ps1 | iex\n```\n\n**Pinned versions (mise)**\n\n```sh\nmise use -g github:can1357/oh-my-pi\n```\n\nmacOS · Linux · Windows · bun ≥ 1.3.14\n\n## Every tool, _benchmaxxed_.\n\nEdits that land on the first attempt. Reads that summarize files instead of dumping their content. Searches that return instantly. Pick any model — omp will get it right.\n\n| model            | metric       | what                                                                  |\n| ---------------- | ------------ | --------------------------------------------------------------------- |\n| Grok Code Fast 1 | 6.7% → 68.3% | Tenfold lift the moment the edit format stops eating the model alive. |\n| Gemini 3 Flash   | +5 pp        | Over str_replace — beats Google's own best attempt at the format.     |\n| Grok 4 Fast      | −61% tokens  | Output collapses once the retry loop on bad diffs disappears.         |\n| MiniMax          | 2.1×         | Pass rate more than doubles. Same weights, same prompt.               |\n\n- `read` : summarized snippets · ideal defaults · selector hit rate\n- `search` : fastest in the west\n- `lsp` : everything your IDE knows, the agent knows\n- `prompts` : adjusted relentlessly for each model\n\nRead the full post ↗\n\n## The Pi _you love_, with **batteries included**.\n\nOriginally built on Mario Zechner's wonderful Pi, omp adds everything you're missing.\n\n### 01 · Code execution w/ tool-calling\n\nMost harnesses give the agent a Python sandbox and call it done. Ours runs persistent Python and a Bun worker, and either kernel can call back into the agent's own tools — read, search, task — over a loopback bridge. The agent loads a CSV with tool.read from inside Python, charts it from JavaScript, and never leaves the cell.\n\n### 02 · LSP wired into every write\n\nAsk for a rename and you get a rename. The call goes through workspace/willRenameFiles, so re-exports, barrel files, and aliased imports update before the file moves. Everything your IDE knows, the agent knows.\n\n### 03 · Drives a real debugger\n\nA C binary segfaults: the agent attaches lldb, steps to the bad pointer, reads the frame. A Go service hangs: it attaches dlv and walks the goroutines. A Python process is wedged: debugpy, pause, inspect, evaluate. Most agents are still sprinkling print statements.\n\n_Watch the capture ↗_\n\n### 04 · Time-traveling stream rules\n\nYour rules sit dormant until the model goes off",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "gemini",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Gemini"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Rust",
+        "Go",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "can1357/oh-my-pi: ⌥ AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.8,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**oh-my-pi** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs oh-my-pi 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**oh-my-pi** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs oh-my-pi 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "ai coding",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**oh-my-pi** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs oh-my-pi 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「can1357/oh-my-pi - ⌥ AI Coding agent for the term…」（can1357/oh-my-pi: ⌥ AI Coding agent for the terminal — hash…），涉及 Agent / Rust / Go → 可写方向：**oh-my-pi** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs oh-my-pi 的横向对比：CodeBuddy 覆盖需求→设计→编码…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「can1357/oh-my-pi - ⌥ AI Coding agent fo…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 oh-my-pi 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 oh-my-pi 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 oh-my-pi 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 oh-my-pi 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "can1357/oh-my-pi: ⌥ AI Coding agent for the terminal — hash-anchore…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "can1357/oh-my-pi - ⌥ AI Coding agent for the terminal — hash-anchored edits, optimized…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：can1357/oh-my-pi: ⌥ AI Coding agent for the terminal — hash-anchore…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: can1357/oh-my-pi - ⌥ AI Coding agent for the terminal — hash-anchored edits, optimized…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。can1357/oh-my-pi: ⌥ AI Coding agent for the terminal — hash-anchore…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**oh-my-pi** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs oh-my-pi 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. can1357/oh-my-pi - ⌥ AI Coding agent for the terminal — hash-anchored edits, optimized…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：can1357/oh-my-pi: ⌥ AI Coding agent for the terminal — hash-anchore…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: can1357/oh-my-pi - ⌥ AI Coding agent for the terminal — hash-anchored edits, optimized…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "oh-my-pi：⌥ 终端的 AI 编码代理 — 哈希锚定编辑、优化工具工具、LSP、Python、浏览器、子代理等",
+    "developer_profile": {
+      "github_username": "can1357",
+      "profile_url": "https://github.com/can1357",
+      "name": "Can Bölük",
+      "bio": "Security researcher and reverse engineer. \r\n\r\nInterested in Windows kernel development, low-level programming, static program analysis and cryptography.",
+      "company": "",
+      "location": "The Netherlands",
+      "blog": "https://can.ac/",
+      "twitter_username": "_can1357",
+      "email": "",
+      "followers": 2471,
+      "following": 46,
+      "public_repos": 52,
+      "avatar_url": "https://avatars.githubusercontent.com/u/11807264?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/_can1357"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://can.ac/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "obra/superpowers - An agentic skills framework & software development methodology that works.",
+    "url": "https://github.com/obra/superpowers",
+    "heat": "200,342 stars",
+    "time": "Today",
+    "developer_name": "obra",
+    "developer_url": "https://github.com/obra",
+    "developer_email": "",
+    "today_stars": "1,743 stars today",
+    "language": "Shell",
+    "summary": "An agentic skills framework & software development methodology that works.",
+    "content": "# Superpowers\n\nSuperpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.\n\n## Quickstart\n\nGive your agent Superpowers: Claude Code, Codex CLI, Codex App, Factory Droid, Gemini CLI, OpenCode, Cursor, GitHub Copilot CLI.\n\n## How it works\n\nIt starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it *doesn't* just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do. \n\nOnce it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest. \n\nAfter you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY. \n\nNext up, once you say \"go\", it launches a *subagent-driven-development* process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.\n\nThere's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.\n\n## Sponsorship\n\nIf Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider sponsoring my opensource work.\n\nThanks! \n\n- Jesse\n\n## Installation\n\nInstallation differs by harness. If you use more than one, install Superpowers separately for each one.\n\n### Claude Code\n\nSuperpowers is available via the official Claude plugin marketplace\n\n#### Official Marketplace\n\n- Install the plugin from Anthropic's official marketplace:\n\n  ```bash\n  /plugin install superpowers@claude-plugins-official\n  ```\n\n#### Superpowers Marketplace\n\nThe Superpowers marketplace provides Superpowers and some other related plugins for Claude Code.\n\n- Register the marketplace:\n\n  ```bash\n  /plugin marketplace add obra/superpowers-marketplace\n  ```\n\n- Install the plugin from this marketplace:\n\n  ```bash\n  /plugin install superpowers@superpowers-marketplace\n  ```\n\n### Codex CLI\n\nSuperpowers is available via the official Codex plugin marketplace.\n\n- Open the plugin search interface:\n\n  ```bash\n  /plugins\n  ```\n\n- Search for Superpowers:\n\n  ```bash\n  superpowers\n  ```\n\n- Select `Install Plugin`.\n\n### Codex App\n\nSuperpowers is available via the official Codex plugin marketplace.\n\n- In the Codex app, click on Plugins in the sidebar.\n- You should see `Superpowers` in the Coding section.\n- Click the `+` next to Superpowers and follow the prompts.\n\n### Factory Droid\n\n- Register the marketplace:\n\n  ```b",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "anthropic",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "obra/superpowers: An agentic skills framework & software development methodology that works.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent",
+        "copilot",
+        "cursor",
+        "github copilot"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「obra/superpowers - An agentic skills framework &…」（obra/superpowers: An agentic skills framework & software de…），涉及 Agent / Go → 可写方向：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「obra/superpowers - An agentic skills fr…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 superpowers 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 superpowers 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 superpowers 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 superpowers 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "obra/superpowers: An agentic skills framework & software developmen…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "obra/superpowers - An agentic skills framework & software development methodology that…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：obra/superpowers: An agentic skills framework & software developmen…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: obra/superpowers - An agentic skills framework & software development methodology that…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。obra/superpowers: An agentic skills framework & software developmen…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. obra/superpowers - An agentic skills framework & software development methodology that…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：obra/superpowers: An agentic skills framework & software developmen…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: obra/superpowers - An agentic skills framework & software development methodology that…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "superpowers：有效的代理技能框架和软件开发方法。",
+    "developer_profile": {
+      "github_username": "obra",
+      "profile_url": "https://github.com/obra",
+      "name": "Jesse Vincent",
+      "bio": "",
+      "company": "Prime Radiant",
+      "location": "Berkeley, CA 94703",
+      "blog": "http://fsck.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 6056,
+      "following": 93,
+      "public_repos": 212,
+      "avatar_url": "https://avatars.githubusercontent.com/u/45416?v=4",
+      "social_links": [
+        {
+          "platform": "mastodon",
+          "url": "https://metasocial.com/@jesse"
+        },
+        {
+          "platform": "bluesky",
+          "url": "https://bsky.app/profile/s.ly"
+        },
+        {
+          "platform": "generic",
+          "url": "https://www.threads.com/@obrajesse"
+        },
+        {
+          "platform": "generic",
+          "url": "https://blog.fsck.com"
+        },
+        {
+          "platform": "unknown",
+          "url": "http://fsck.com"
+        }
+      ],
+      "is_org": false
+    }
+  }
+]
