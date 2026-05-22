@@ -1,0 +1,455 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD",
+    "url": "https://crocidb.com/post/this-blog-ran-on-ubuntu-16-04-for-10-years-i-migrated-it-to-freebsd/",
+    "hn_url": "https://news.ycombinator.com/item?id=48227397",
+    "heat": "211 points",
+    "time": "10 hours ago",
+    "developer_name": "speckx",
+    "developer_url": "https://news.ycombinator.com/user?id=speckx",
+    "content": "This blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD - Bruno Croci This blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD May 21, 2026 This blog has been running on a Digital Ocean VPS for over ten years. A machine hosted in New York City, running Ubuntu 16.04 LTS . An LTS that hasn’t been in support for at least 5 years. It was about time to change it. After some considerations, I migrated to a Hetzner virtual machine that is way better than my old Ubuntu one, less than half the price of what I used to pay, and just across the country from me. Not only that, but I took the challenge to move my stack to FreeBSD . It’s a long text, but stay for a cool introduction of FreeBSD Jails with Bastille and some interesting site load benchmarks. Motivation If you know how releases on Ubuntu work (I’m not very familiar myself), once the release is out of support, the apt package repository is out, so you can’t get any updates from it anymore. There are several implications of running such an outdated system, and the most obvious is that your server is just not as secure anymore. There might be several bots out there just trying to find nodes with vulnerabilities to introduce malicious stuff onto them. Luckily (I think), nothing ever happened. Not that there was anything important to be stolen in there either way. But I remember a long time ago, one WordPress blog that I had, which was also running on an old VPS, randomly got a lot of very suspicious links to casino and gambling spread across the text in the posts. I was already using a Hetzner VPS as a remote development machine, where I SSH into from anywhere, and it’s been a reliable good VPS for the price. So I decided to start by comparing the specs. This was the droplet running my blog and my other websites: My old Digital Ocean server That has 2GB of RAM, one vCPU, 50GB disk, 2TB of monthly traffic and runs Ubuntu 16.04 x64. It’s located in their datacenter in New York City. That’s probably why it’s so expensive, I was paying $13 monthly for that. Hetzner is an established European IT company and has big data-centers in Germany, where I live. The cheapest Hetzner server I could get, at only 3.56 euros is already way better than my old one: A cup of coffee per month Double the memory and CPU, slightly less storage space, but ten times more traffic. But I decided to go with a beefier setup, for less than €6 a month: A fancier cup of coffee per month It might even be a bit overkill for my sites, but why not? The old setup My old setup was serving a few more sites than just this blog. Nothing too popular; this blog, the most popular of all sites in there, wouldn’t get more than a couple thousand page views a month. Except when a couple of posts went viral on Hacker News, there wasn’t a lot of traffic. In the end, the machine was basically serving static sites, no fancy CGI or custom code running. The stack was simple. Everything was served with nginx/1.10.3 , statically. So I",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "vps"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "DigitalOcean"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Go"
+      ],
+      "tone": "热点事件",
+      "detail_brief": "Blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD: This blog ran on Ubuntu 16. 04 for 10 years. I migrated it to FreeBSD - Bruno Croci This blog ran on Ubuntu 16. 04 for 10 years.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 3.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Blog ran on Ubuntu 16.04 for 10 years. I migrated…」（Blog ran on Ubuntu 16.04 for 10 years. I migrated it to Fre…），涉及 Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Blog ran on Ubuntu 16.04 for 10 years.…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD: Th…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD: Th…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD: Th…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD: Th…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Blog ran on Ubuntu 16.04 for 10 years. I migrated it to FreeBSD. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Blog ran on Ubuntu 16.04 for 10 years. I：Blog 在 Ubuntu 16.04 上运行了 10 年。我将其迁移到 FreeBSD：该博客在 Ubuntu 16 上运行。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Samsung chip workers will get an average $340k bonus as AI profits soar",
+    "url": "https://qz.com/samsung-chip-workers-bonus-ai-profits-052126",
+    "hn_url": "https://news.ycombinator.com/item?id=48230892",
+    "heat": "151 points",
+    "time": "3 hours ago",
+    "developer_name": "carabiner",
+    "developer_url": "https://news.ycombinator.com/user?id=carabiner",
+    "content": "Samsung chip workers to get $340,000 average bonus in AI boom",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "其他",
+      "topic_type": "行业观察",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "Samsung chip workers will get an average $340k bonus as AI profits soar: Samsung chip workers to get $340,000 average bonus in AI boom",
+      "heat_score": 5.0,
+      "timeliness_score": 8.0,
+      "composite_score": 3.4,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "社区参与"
+      ],
+      "editorial_angles_text": "社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（行业观察文章）",
+        "X（摘要快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "editorial_brief": "话题类型：行业观察\n可用角度：「Samsung chip workers will get an average $340k bo…」（Samsung chip workers will get an average $340k bonus as AI…）\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "social_recommendation": "「Samsung chip workers will get an averag…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Samsung chip workers will get an average $340k bonus as AI profits…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Samsung chip workers will get an average $340k bonus as AI profits soar. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Samsung chip workers will get an average $340k bonus as AI profits…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Samsung chip workers will get an average $340k bonus as AI profits soar. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Samsung chip workers will get an average $340k bonus as AI profits…。如果用官方号发，建议主推 人工判断场景，重点讲 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Samsung chip workers will get an average $340k bonus as AI profits soar. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Samsung chip workers will get an average $340k bonus as AI profits…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Samsung chip workers will get an average $340k bonus as AI profits soar. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Samsung chip workers will get an average：随着人工智能利润飙升，三星芯片工人将平均获得 34 万美元奖金：人工智能热潮中，三星芯片工人平均获得 34 万美元奖金"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Using Kagi Search with Low Vision",
+    "url": "https://veroniiiica.com/using-kagi-search-with-low-vision/",
+    "hn_url": "https://news.ycombinator.com/item?id=48227860",
+    "heat": "167 points",
+    "time": "9 hours ago",
+    "developer_name": "speckx",
+    "developer_url": "https://news.ycombinator.com/user?id=speckx",
+    "content": "Using Kagi Search With Low Vision | Veronica With Four Eyes Skip to content Veronica With Four Eyes My Experience Using Kagi Search With Low Vision When I was using a search engine to find resources for a class, I noticed that I was taking a lot more vision breaks and struggling with visual fatigue more often than before. A major reason for this was the visually cluttered search results page, which was filled with AI summaries, low-quality content, ads, auto-play content that ignored my device settings, and a condensed visual layout that made it more challenging to read individual results. I was using so much of my energy to look at useless content that it made it challenging to focus on the things that I actually needed. Strategies like text-to-speech help with reading, but I was still encountering issues with browsing search results. I noticed a huge improvement when I switched to using Kagi, a paid search engine that offers ad-free search and a wide variety of customizations and accessibility features as part of their user-focused search experience. I hadn’t realized how much the visual clutter from search engine pages was weighing on me until it was eliminated, and I have been mentioning Kagi to almost everyone I know since then. Here is an overview of my experience using Kagi Search with low vision, including tips for using Kagi search tools and information about Kagi accessibility for low vision. Disclaimer: This post is not sponsored by Kagi and I have no affiliation with the company; Kagi does not have referral links or affiliate links. I personally pay for my own Kagi subscription and discovered while writing this post that someone else had included Veroniiiica in Kagi’s Small Web list of curated links, which was a lovely surprise! Overview of Kagi and pricing Kagi is a paid, ad-free search engine funded entirely by user subscriptions rather than advertisers, which means results are ranked on quality instead of spamming SEO keywords or paid link placements. Because there are no ads and no tracking-based monetization, the results page is dramatically less cluttered compared to free search engines, making it easier to find relevant information and providing users with control over their browsing experience. Kagi is often shared as a Google search alternative or Bing search alternative. Kagi offers a free trial and several paid plan tiers, including: Trial (free): 100 total searches and standard AI access. Starter ($5/month): 300 searches per month and Kagi Assistant with Quick mode. Professional ($10/month): Unlimited searches and a larger monthly Kagi Assistant allowance with Quick mode. Ultimate ($25/month): Everything in Professional, plus Kagi Assistant with Research mode and access to flagship AI models. Family and Team plans are also available for households and organizations respectively. In addition to offering discounted annual plans, Kagi has a “Fair Pricing” policy. If a user doesn’t use Kagi searches or AI tools during a given ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "speech"
+      ],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "行业观察",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "Using Kagi Search With Low Vision | Veronica With Four Eyes Veronica With Four Eyes My Experience Using Kagi Search With Low Vision When I was using a search engine to find resources for a class, I noticed that I was taking a lot more vision breaks and struggling with visual fatigue more often than before. A major reason for this was the visually cluttered search results page, which was filled with AI summaries, low-quality content, ads, auto-play content that ignored my device settings, and a…",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 3.4,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "观点评论 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（行业观察文章）",
+        "X（摘要快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "editorial_brief": "话题类型：行业观察\n可用角度：「Using Kagi Search with Low Vision」（Using Kagi Search With Low Vision | Veronica With Four Eyes…）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "social_recommendation": "「Using Kagi Search with Low Vision」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Using Kagi Search With Low Vision | Veronica With Four Eyes Veronic…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Using Kagi Search with Low Vision. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Using Kagi Search With Low Vision | Veronica With Four Eyes Veronic…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Using Kagi Search with Low Vision. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Using Kagi Search With Low Vision | Veronica With Four Eyes Veronic…。如果用官方号发，建议主推 人工判断场景，重点讲 观点评论 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Using Kagi Search with Low Vision. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Using Kagi Search With Low Vision | Veronica With Four Eyes Veronic…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Using Kagi Search with Low Vision. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Using Kagi Search with Low Vision：低视力患者使用 Kagi 搜索 |四眼维罗妮卡 四眼维罗妮卡 我在低视力情况下使用 Kagi 搜索的经验 当我使用搜索引擎查找课程资源时，我注意到我的视力中断次数比以前多得多，并且比以前更频繁地与视觉疲劳作斗争。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Was my $48K GPU server worth it?",
+    "url": "https://rosmine.ai/2026/05/13/was-my-48k-gpu-worth-it/",
+    "hn_url": "https://news.ycombinator.com/item?id=48184402",
+    "heat": "356 points",
+    "time": "12 hours ago",
+    "developer_name": "apwheele",
+    "developer_url": "https://news.ycombinator.com/user?id=apwheele",
+    "content": "Was my $48K GPU server worth it? – Rosmine ML Blog Was my $48K GPU server worth it? In 2024 I quit my FAANG job to become an independent researcher. To do this I needed GPUs, so I built “grumbl”, a 6x 6000 Ada GPU server. This blog describes the build, some of the issues I faced, and answers the question “was it worth it to build the server myself, or should I have rented cloud GPUs?” (It’s called “grumbl” because apparently I cannot spell “GPUs”) GPUs as an investment This rig cost me $48K. That sounds expensive, but it’s way less expensive than quitting my job. Because of the loss of income, if more powerful GPUs could help me make my work be successful just 2 months earlier than I would have with a smaller machine, then buying a more powerful server would be worth it. So I decided to buy the most powerful server that I could run in my apartment. Choosing the GPUs I found Tim Dettmers’ guide to choosing a GPU helpful. From that I narrowed it down to A100’s, H100’s or RTX 6000 Ada. A100’s don’t support FP8 and have slower inference performance than the newer GPUs, and I’m going to be doing a lot of inference (RL), so narrowed it down to 6000 Ada vs H100. Looking at the price/throughput ratios of 6000 Ada vs H100 vs A100, I went with the 6000 Ada GPUs. Power Constraints I live in an apartment and don’t have the option to upgrade my electrical circuits to support standard datacenter servers. 6 GPUs requires too much power for a single apartment circuit to handle, so I had to get 2 power supplies, and plug the power supplies into 2 outlets in separate circuits. If you google “plugging a PC into multiple outlets”, you get lots of warnings that if you even consider such a setup you will instantly burst into flames. So I hired a professional PC builder make sure it was safe. This is more expensive than doing everything myself, but it’s less expensive than doing something wrong and burning down my apartment. Ironically, after designing the entire build around apartment power constraints, I ended up moving grumbl to my parents’ basement, where I could upgrade the circuits anyway. Building my own GPU server vs. using a Cloud Provider Is it better to buy my own GPUs or should I have rented from a cloud provider? I decided to measure this by calculating how much I used the GPUs, and comparing that to how much it would’ve cost to rent equivalent compute in the cloud. In 2024 I calculated at the then current GPU rental rates, it would take me about a year of close to 85%+ utilization to match cloud rental rates. That should be easy to do, but for a full analysis, I need to also account for electricity and the fact that as more powerful GPUs become available, the cost to rent equivalent compute will decrease. To be thorough, I wrote a script that would log the usage of each gpu every minute. I also logged the power usage in watts so I could calculate how much I spent on electricity. In this analysis, I only compared against on-demand pricing. There are also p",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "gpu"
+      ],
+      "ai_hits": [
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "行业观察",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "对比测评",
+      "detail_brief": "Was my $48K GPU server worth it? – Rosmine ML Blog Was my $48K GPU server worth it? In 2024 I quit my FAANG job to become an independent researcher. To do this I needed GPUs, so I built “grumbl”, a 6x 6000 Ada GPU server.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 6.8,
+      "tcloud_relevance": 8.9,
+      "tcloud_integration": "**Was my $48K GPU server worth it?** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CVM：**Was my $48K GPU server worth it?** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_products": [
+        "GPU CVM",
+        "CVM"
+      ],
+      "tcloud_reasons": [
+        "**Was my $48K GPU server worth it?** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**Was my $48K GPU server worth it?** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "gpu server",
+        "a100",
+        "h100"
+      ],
+      "tcloud_primary_product": "GPU CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**Was my $48K GPU server worth it?** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CVM：**Was my $48K GPU server worth it?** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_official_matches": [
+        "GPU CVM",
+        "CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "产品关联（GPU CVM / CVM）",
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "产品关联（GPU CVM / CVM） + 观点评论 + 社区参与",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "LinkedIn（行业观察文章）",
+        "X（摘要快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "editorial_brief": "话题类型：行业观察\n可用角度：「Was my $48K GPU server worth it?」（Was my $48K GPU server worth it? – Rosmine ML Blog Was my $…） → 可写方向：与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CVM： 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA…\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "social_recommendation": "「Was my $48K GPU server worth it?」可结合 GPU CVM 写应用实践内容。P1 本周发（仍有时效价值），推荐平台：LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+      "official_product_focus": "GPU CVM",
+      "official_angle_cn": "围绕 Was my $48K GPU server worth it? 的核心功能（Was my $48K GPU server worth it? – Rosmine ML Blog Was my $48K GPU server worth…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+      "platform_copies": {
+        "primary_product": "GPU CVM",
+        "product_display": "GPU CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 Was my $48K GPU server worth it? 的核心功能（Was my $48K GPU server worth it? – Rosmine ML Blog Was my $48K GPU server worth…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use GPU Cloud Virtual Machine as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+        "x_cn": "Was my $48K GPU server worth it? – Rosmine ML Blog Was my $48K GPU…。如果站在腾讯云国际站官方号来写，这条更适合从 GPU CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：*…",
+        "x_en": "Was my $48K GPU server worth it?. For Tencent Cloud, this fits GPU Cloud Virtual Machine: GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Was my $48K GPU server worth it? – Rosmine ML Blog Was my $48K GPU…。如果从腾讯云视角切，这条最适合带到 GPU CVM，重点聊 产品关联（GPU CVM / CVM） + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Was my $48K GPU server worth it?. From a Tencent Cloud angle, the best hook is GPU Cloud Virtual Machine, especially around product tie-in (GPU CVM / CVM) + opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Was my $48K GPU server worth it? – Rosmine ML Blog Was my $48K GPU…。如果用官方号发，建议主推 GPU CVM，重点讲 产品关联（GPU CVM / CVM） + 观点评论 + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**Was my $48K GPU server worth it?** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CVM：**Was my $48K GPU server worth it?** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Was my $48K GPU server worth it?. For Tencent Cloud, the better angle is GPU Cloud Virtual Machine. GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering. The content should focus on product tie-in (GPU CVM / CVM) + opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 GPU CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Was my $48K GPU server worth it? – Rosmine ML Blog Was my $48K GPU…。如果站在腾讯云国际站官方号视角，我会更想把它写成 GPU CVM 相关内容，重点是 产品关联（GPU CVM / CVM） + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through GPU Cloud Virtual Machine?",
+        "reddit_body_en": "A recent trend caught my eye: Was my $48K GPU server worth it?. Instead of reposting it as news, I'd frame it through GPU Cloud Virtual Machine and focus on product tie-in (GPU CVM / CVM) + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Was my $48K GPU server worth it?：我价值 48,000 美元的 GPU 服务器值得吗？– Rosmine ML 博客 我价值 48,000 美元的 GPU 服务器值得吗？"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Indexing a year of video locally on a 2021 MacBook with Gemma4-31B (50GB swap)",
+    "url": "https://blog.simbastack.com/indexed-a-year-of-video-locally/",
+    "hn_url": "https://news.ycombinator.com/item?id=48222733",
+    "heat": "324 points",
+    "time": "14 hours ago",
+    "developer_name": "asenna",
+    "developer_url": "https://news.ycombinator.com/user?id=asenna",
+    "content": "While I slept, my 5-year-old MacBook ran Gemma 4 locally and indexed a year of video — simbastack I'm in the Maasai Mara about half the year, in three-month stretches. Animals out the front of the lodge, motorcycles, friends in the Maasai villages, kids who think a drone is the funniest thing they have ever seen. That's one half of my year. The other half is sixteen-hour days in front of a terminal, Silicon Valley hacker brain on Africa time. Both real, both consuming attention. The first half is a constant flood of footage from the iPhone, the DJI Pocket, the drone, the Nikon Z8, and lately the Ray-Ban Metas too. There's always something being recorded. Every photographer or videographer I know is sitting on the same problem: an archive that grows faster than they can edit it. The second half is why mine never gets touched. Airport security somewhere between Nairobi and Spain. Two trays of cameras, headphones, drone bits, batteries, SSDs, more cables than anyone needs. Most of it records something. Almost none of what they record gets touched again any time soon. Three months ago the lodge's social channels went dark. Not for lack of content; the lodge has years of raw footage across multiple SSDs. The bottleneck was editing time , and my time disappeared. Claude Code with Opus 4.5 (and then 4.6) hit the point in February where you could leave agents running for hours and come back to merged PRs. KaribuKit was going live with its first paying property in the same window. I stopped sleeping properly, started running three or four agents in parallel in the background, and the months when I would have cut reels turned into months when I shipped software instead. So one weekend I sat down to fix it. The first thing I tried was wrong. The wrong layer The initial pitch (to myself, after about an hour of research) was a SaaS stack: Eddie AI for iterative editing, Higgsfield MCP for generative B-roll, Submagic for captions, Buffer for cross-posting. About $140 a month, slick on paper. Two problems showed up before I ran any of it. First, generative AI video has no place on a real travel brand. Guests pay $300 a night and up to see the actual place , and mislabeled AI shots equals TripAdvisor crucifixion. Higgsfield out. Second, 3-5 posts a week was aggressive for me, and the realistic floor was more like 2-3. The pitch was optimistic in a way that would have me failing by week two. Then I remembered I already own DaVinci Resolve Studio, and Resolve 21 ships IntelliSearch (semantic clip search), Smart Bins (auto-organizing folders), and Voice to Subtitle that produces 90-95% accurate captions on the timeline. That's roughly 70% of what Eddie sells, so Eddie was out too. What I was left with was Claude Code driving Resolve via the open-source DaVinci Resolve MCP, with ElevenLabs handling voiceover on informational clips where it earned its place, and the cost had dropped from $140 a month to $22. But the deeper thing only landed once I tried to actually u",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "saas"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "学术研究",
+      "topic_type": "研究前沿",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "MCP"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "While I slept, my 5-year-old MacBook ran Gemma 4 locally and indexed a year of video — simbastack I'm in the Maasai Mara about half the year, in three-month stretches. Animals out the front of the lodge, motorcycles, friends in the Maasai villages, kids who think a drone is the funniest thing they have ever seen. That's one half of my year. The other half is sixteen-hour days in front of a terminal, Silicon Valley hacker brain on Africa time.",
+      "heat_score": 5.0,
+      "timeliness_score": 6.0,
+      "composite_score": 5.6,
+      "tcloud_relevance": 5.5,
+      "tcloud_integration": "**Indexing a year of video locally on a 20** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Indexing a year of video locally on a 20** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Indexing a year of video locally on a 20** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "研究解读",
+        "社区参与"
+      ],
+      "editorial_angles_text": "教程拆解 + 产品关联（CodeBuddy） + 研究解读 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（发观点总结文章）",
+        "X（论文快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（发观点总结文章） + X（论文快讯分享）",
+      "editorial_brief": "话题类型：研究前沿\n可用角度：「Indexing a year of video locally on a 2021 MacBoo…」（While I slept, my 5-year-old MacBook ran Gemma 4 locally an…），涉及 MCP → 可写方向：涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（发观点总结文章） + X（论文快讯分享）",
+      "social_recommendation": "「Indexing a year of video locally on a 2…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（仍有时效价值），推荐平台：LinkedIn（发观点总结文章） + X（论文快讯分享）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 Indexing a year of video locally on a 20 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Indexing a year of video locally on a 20 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "While I slept, my 5-year-old MacBook ran Gemma 4 locally and indexe…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "Indexing a year of video locally on a 2021 MacBook with Gemma4-31B (50GB swap). For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：While I slept, my 5-year-old MacBook ran Gemma 4 locally and indexe…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 教程拆解 + 产品关联（CodeBuddy） + 研究解读 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Indexing a year of video locally on a 2021 MacBook with Gemma4-31B (50GB swap). From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around hands-on walkthrough + product tie-in (CodeBuddy) + research takeaway + community conversation. What matters more to you: deployment, performance,…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。While I slept, my 5-year-old MacBook ran Gemma 4 locally and indexe…。如果用官方号发，建议主推 CodeBuddy，重点讲 教程拆解 + 产品关联（CodeBuddy） + 研究解读 + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Indexing a year of video locally on a 20** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Indexing a year of video locally on a 2021 MacBook with Gemma4-31B (50GB swap). For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on hands-on walkthrough + product tie-in (CodeBuddy) + research takeaway + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：While I slept, my 5-year-old MacBook ran Gemma 4 locally and indexe…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 教程拆解 + 产品关联（CodeBuddy） + 研究解读 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Indexing a year of video locally on a 2021 MacBook with Gemma4-31B (50GB swap). Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on hands-on walkthrough + product tie-in (CodeBuddy) + research takeaway + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Indexing a year of video locally on a 20：当我睡觉时，我用了 5 年的 MacBook 在本地运行 Gemma 4，并索引了一年的视频 — simbastack 我在马赛马拉呆了大约半年，连续三个月。小屋前的动物、摩托车、马赛村庄的朋友、认为无人机是他们见过的最有趣的东西的孩子。"
+  }
+]
