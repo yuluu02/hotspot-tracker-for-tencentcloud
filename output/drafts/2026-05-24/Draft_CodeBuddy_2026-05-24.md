@@ -1,10 +1,3 @@
-# 📋 产品 Draft 汇总 — 2026-05-24
-
-> 共 2 个产品的 P0/P1 内容草稿
-> 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
-
----
-
 # CodeBuddy — 今日内容 (7 条)
 
 ## 1. P0 今天发 · Lum1104/Understand-Anything
@@ -97,20 +90,3 @@
 *参考: [openai 周限又重置了，已经放弃 claude 了](https://www.v2ex.com/t/1215013)*
 
 ---
-
-
-# Hunyuan — 今日内容 (1 条)
-
-## 1. P1 本周发 · Fincept-Corporation/FinceptTerminal
-
-**写什么**: 围绕 FinceptTerminal 的核心功能（FinceptTerminal is a modern finance application offerin
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🧠 "Fincept-Corporation/FinceptTerminal" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
-
-*参考: [Fincept-Corporation/FinceptTerminal](https://github.com/Fincept-Corporation/FinceptTerminal)*
-
----
-
