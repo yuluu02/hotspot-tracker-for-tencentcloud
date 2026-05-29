@@ -1,0 +1,1018 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "heat": "67,100 stars",
+    "time": "Today",
+    "developer_name": "harry0703",
+    "developer_url": "https://github.com/harry0703",
+    "developer_email": "",
+    "today_stars": "4,698 stars today",
+    "language": "Python",
+    "summary": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+    "content": " \n MoneyPrinterTurbo 💸 \n\n \n     \n     \n     \n     \n \n \n 简体中文 |  English  \n \n     \n \n \n只需提供一个视频  主题  或  关键词  ，就可以全自动生成视频文案、视频素材、视频字幕、视频背景音乐，然后合成一个高清的短视频。\n \n\n Web界面 \n\n API界面 \n\n \n\n## 功能特性 🎯\n\n- [x] 完整的 **MVC架构**，代码 **结构清晰**，易于维护，支持 `API` 和 `Web界面`\n- [x] 支持视频文案 **AI自动生成**，也可以**自定义文案**\n- [x] 支持多种 **高清视频** 尺寸\n    - [x] 竖屏 9:16，`1080x1920`\n    - [x] 横屏 16:9，`1920x1080`\n- [x] 支持 **批量视频生成**，可以一次生成多个视频，然后选择一个最满意的\n- [x] 支持 **视频片段时长** 设置，方便调节素材切换频率\n- [x] 支持 **中文** 和 **英文** 视频文案\n- [x] 支持 **多种语音** 合成，可 **实时试听** 效果\n- [x] 支持 **字幕生成**，可以调整 `字体`、`位置`、`颜色`、`大小`，同时支持`字幕描边`设置\n- [x] 支持 **背景音乐**，随机或者指定音乐文件，可设置`背景音乐音量`\n- [x] 视频素材来源 **高清**，而且 **无版权**，也可以使用自己的 **本地素材**\n- [x] 支持 **OpenAI**、**Moonshot**、**Azure**、**gpt4free**、**one-api**、**通义千问**、**Google Gemini**、**Ollama**、**DeepSeek**、**MiniMax**、 **文心一言**, **Pollinations**、**ModelScope** 等多种模型接入\n    - 中国用户建议使用 **DeepSeek** 或 **Moonshot** 作为大模型提供商（国内可直接访问，不需要VPN。注册就送额度，基本够用）\n\n## 视频演示 📺\n\n### 竖屏 9:16\n\n \n \n \n  ▶️  《如何增加生活的乐趣》 \n  ▶️  《金钱的作用》 更真实的合成声音 \n  ▶️  《生命的意义是什么》 \n \n \n \n \n    \n    \n    \n \n \n \n\n### 横屏 16:9\n\n \n \n \n  ▶️ 《生命的意义是什么》 \n  ▶️ 《为什么要运动》 \n \n \n \n \n    \n    \n \n \n \n\n## 配置要求 📦\n\n- 建议系统：Windows 10 或 MacOS 11.0 以上，或主流 Linux 发行版\n- GPU 不是必需项，但如果你希望本地转录、更快的视频处理或更顺畅的批量生成体验，建议使用带显存的独立显卡\n\n| 项目 | 最低配置 | 推荐配置 | 理想配置 |\n| --- | --- | --- | --- |\n| CPU | 4 核 | 6 到 8 核 | 8 核及以上 |\n| RAM | 4 GB | 8 GB | 16 GB 及以上 |\n| GPU | 非必须 | 4 GB 显存及以上 | 8 GB 显存及以上 |\n\n- 如果你主要依赖云端 LLM、云端 TTS 和在线素材源，CPU 与内存比 GPU 更重要\n- 如果你启用 `faster-whisper`、批量生成或更重的本地处理链路，GPU 会明显提升速度\n\n## 快速开始 🚀\n\n### 推荐使用方式\n\n- Windows 用户：优先使用一键启动包，适合快速体验\n- MacOS / Linux 用户：优先使用 `uv sync --frozen` 进行本地部署\n- 想要隔离运行环境：优先使用 Docker 部署\n\n### 在 Google Colab 中运行\n免去本地环境配置，点击直接在 Google Colab 中快速体验 MoneyPrinterTurbo\n\n[](https://colab.research.google.com/github/harry0703/MoneyPrinterTurbo/blob/main/docs/MoneyPrinterTurbo.ipynb)\n\n### Windows一键启动包\n\n下载一键启动包，解压直接使用（路径不要有 **中文**、**特殊字符**、**空格**）\n当前提供的安装包仍是 `v1.2.6` 的旧打包版本，建议下载后先执行 `update.bat` 更新到最新代码。\n\n- 百度网盘（v1.2.6）: https://pan.baidu.com/s/1wg0UaIyXpO3SqIpaq790SQ?pwd=sbqx 提取码: sbqx\n- Google Drive (v1.2.6): https://drive.google.com/file/d/1HsbzfT7XunkrCrHw5ncUjFX8XX4zAuUh/view?usp=sharing\n\n下载后，建议先**双击执行** `update.bat` 更新到**最新代码**，然后双击 `start.bat` 启动\n\n启动后，会自动打开浏览器（如果打开是空白，建议换成 **Chrome** 或者 **Edge** 打开）\n\n## 安装部署 📥\n\n### 前提条件\n\n- 尽量不要使用 **中文路径**，避免出现一些无法预料的问题\n- 请确保你的 **网络** 是正常的，VPN需要打开`全局流量`模式\n\n#### ① 克隆代码\n\n```shell\ngit clone https://github.com/harry0703/MoneyPrinterTurbo.git\n```\n\n#### ② 修改配置文件（可选，建议启动后也可以在 WebUI 里面配置）\n\n- 将 `config.example.toml` 文件复制一份，命名为 `config.toml`\n- 按照 `config.toml` 文件中的说明，配置好 `pexels_api_keys` 和 `llm_provider`，并根据 llm_provider 对应的服务商，配置相关的\n  API Key\n\n### Docker部署 🐳\n\n#### ① 启动Docker\n\n如果未安装 Docker，请先安装 https://www.docker.com/products/docker-desktop/\n\n如果是Windows系统，请参考微软的文档：\n\n1. https://learn.microsoft.com/zh-cn/windows/wsl/install\n2. https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers\n\n```shell\ncd MoneyPrinterTurbo\ndocker-compose up\n```\n\n> 注意：最新版的docker安装时会自动以插件的形式安装docker compose，启动命令调整为docker compose up\n\n#### ② 访问",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 5,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "azure",
+        "docker",
+        "edge",
+        "vpn",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "大模型",
+        "llm",
+        "gemini",
+        "deepseek",
+        "openai",
+        "tts"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "Gemini",
+        "DeepSeek",
+        "通义千问"
+      ],
+      "competitors": [
+        "Azure"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 10.0,
+      "tcloud_relevance": 10.0,
+      "tcloud_integration": "**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 Lighthouse：**MoneyPrinterTurbo** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+      "tcloud_products": [
+        "Hunyuan",
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**MoneyPrinterTurbo** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景"
+      ],
+      "tcloud_evidence": [
+        "docker compose",
+        "docker-compose",
+        "大模型",
+        "llm",
+        "gemini",
+        "deepseek"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 Lighthouse：**MoneyPrinterTurbo** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / Lighthouse）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / Lighthouse）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 G…」（harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate sho…），涉及 LLM → 可写方向：**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 Lighthouse：**…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「MoneyPrinterTurbo」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 MoneyPrinterTurbo 的核心功能（harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short videos with one c…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 MoneyPrinterTurbo 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 MoneyPrinterTurbo 的核心功能（harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short videos with one c…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 MoneyPrinterTurbo 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short video…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click us…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short video…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / Lighthouse）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click us…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / Lighthouse). What matters more to you: deployment, performance, or w…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short video…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / Lighthouse），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 Lighthouse：**MoneyPrinterTurbo** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click us…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / Lighthouse).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short video…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / Lighthouse）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click us…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / Lighthouse). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "MoneyPrinterTurbo：利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+    "developer_profile": {
+      "github_username": "harry0703",
+      "profile_url": "https://github.com/harry0703",
+      "name": "Harry",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 1453,
+      "following": 2,
+      "public_repos": 7,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4928832?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+    "url": "https://github.com/affaan-m/ECC",
+    "heat": "197,529 stars",
+    "time": "Today",
+    "developer_name": "affaan-m",
+    "developer_url": "https://github.com/affaan-m",
+    "developer_email": "affaan@itomarkets.com",
+    "today_stars": "1,385 stars today",
+    "language": "JavaScript",
+    "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+    "content": "**Language:** English | Português (Brasil) | 简体中文 | 繁體中文 | 日本語 | 한국어 | Türkçe | Русский | Tiếng Việt | ไทย | Deutsch\n\n# ECC\n\n[](https://github.com/affaan-m/ECC/stargazers)\n[](https://github.com/affaan-m/ECC/network/members)\n[](https://github.com/affaan-m/ECC/graphs/contributors)\n[](https://www.npmjs.com/package/ecc-universal)\n[](https://www.npmjs.com/package/ecc-agentshield)\n[](https://github.com/marketplace/ecc-tools)\n[](LICENSE)\n\n> **182K+ stars** | **28K+ forks** | **170+ contributors** | **12+ language ecosystems** | **Cross-harness agent workflows**\n\n---\n\n \n\n**Language / 语言 / 語言 / Dil / Язык / Ngôn ngữ**\n\n**English** | Português (Brasil) | 简体中文 | 繁體中文 | 日本語 | 한국어\n | Türkçe | Русский | Tiếng Việt | ไทย | Deutsch\n\n \n\n---\n\n**The harness-native operator system for agentic work. Built from real-world multi-harness engineering workflows.**\n\nNot just configs. A complete system: skills, instincts, memory optimization, continuous learning, security scanning, and research-first development. Production-ready agents, skills, hooks, rules, MCP configurations, and legacy command shims evolved over 10+ months of intensive daily use building real products.\n\nWorks across **Codex**, **Claude Code**, **Cursor**, **OpenCode**, **Gemini**, **Zed**, **GitHub Copilot**, and other AI agent harnesses.\n\nECC v2.0.0-rc.1 adds the public Hermes operator story on top of that reusable layer: start with the Hermes setup guide, then review the rc.1 release notes and cross-harness architecture.\n\n---\n\n \n \n \n   \n      ECC Pro  \n     Private repos · GitHub App · $19/seat/mo \n   \n \n \n   \n      Sponsor  \n     Fund the OSS · From $5/mo \n   \n \n \n   \n     Community \n     \n     Discussions · Q&amp;A · Show & Tell \n   \n \n \n   \n      GitHub App  \n     Install · PR audits · Free tier \n   \n \n \n \n\n **OSS stays free.** This repo is MIT-licensed forever. ECC Pro is the hosted GitHub App for private repos.  Sponsors  and  Pro subscribers  fund the work — that's why a single maintainer ships weekly across 7 harnesses. \n\n---\n\n## The Guides\n\nThis repo is the raw code only. The guides explain everything.\n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n  Shorthand Guide  Setup, foundations, philosophy.  Read this first.  \n  Longform Guide  Token optimization, memory persistence, evals, parallelization. \n  Security Guide  Attack vectors, sandboxing, sanitization, CVEs, AgentShield. \n \n \n\n| Topic | What You'll Learn |\n|-------|-------------------|\n| Token Optimization | Model selection, system prompt slimming, background processes |\n| Memory Persistence | Hooks that save/load context across sessions automatically |\n| Continuous Learning | Auto-extract patterns from sessions into reusable skills |\n| Verification Loops | Checkpoint vs continuous evals, grader types, pass@k metrics |\n| Parallelization | Git worktrees, cascade method, when to scale instances |\n| Subagent Orchestration | The context problem, iterative retrieval pattern |\n\n---\n\n## What's New\n\n### v2.0.0-rc.1 — Surface Refresh, Operator Workflows,",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 8,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "oss"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "prompt",
+        "mcp",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "affaan-m/ECC: The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.2,
+      "tcloud_relevance": 6.2,
+      "tcloud_integration": "**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "copilot",
+        "cursor",
+        "github copilot"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「affaan-m/ECC - The agent harness performance opti…」（affaan-m/ECC: The agent harness performance optimization sy…），涉及 Agent / MCP → 可写方向：**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「affaan-m/ECC - The agent harness perfor…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 ECC 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 ECC 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 ECC 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 ECC 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "affaan-m/ECC: The agent harness performance optimization system. Sk…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：affaan-m/ECC: The agent harness performance optimization system. Sk…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。affaan-m/ECC: The agent harness performance optimization system. Sk…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：affaan-m/ECC: The agent harness performance optimization system. Sk…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ECC：代理利用性能优化系统。Claude Code、Codex、Opencode、Cursor 等的技能、直觉、记忆、安全性和研究优先的开发。",
+    "developer_profile": {
+      "github_username": "affaan-m",
+      "profile_url": "https://github.com/affaan-m",
+      "name": "Affaan Mustafa",
+      "bio": "Institutionalizing prediction markets @Ito-Markets | B={(eᵢ,wᵢ)}; Vᴮ=Σᵢwᵢℙα(eᵢ=1) | OSS meta-harness for AI agents @ECC-Tools",
+      "company": "Itô",
+      "location": "San Francisco, CA / Bellevue, WA",
+      "blog": "https://affaanmustafa.com",
+      "twitter_username": "affaanmustafa",
+      "email": "affaan@itomarkets.com",
+      "followers": 6186,
+      "following": 20,
+      "public_repos": 27,
+      "avatar_url": "https://avatars.githubusercontent.com/u/124439313?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/affaanmustafa"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/affaanmustafa/"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/affaanmustafa"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/c/AffaanMustafa"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://affaanmustafa.com"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://orcid.org/0009-0009-9408-5570"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Leonxlnx/taste-skill - Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop",
+    "url": "https://github.com/Leonxlnx/taste-skill",
+    "heat": "26,841 stars",
+    "time": "Today",
+    "developer_name": "Leonxlnx",
+    "developer_url": "https://github.com/Leonxlnx",
+    "developer_email": "",
+    "today_stars": "2,234 stars today",
+    "language": "Shell",
+    "summary": "Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop",
+    "content": " \n   \n \n\n# Taste Skill\n\n \n   The Anti-Slop Frontend Framework for AI Agents \n \n\n \n   \n     \n   \n \n\n \n   \n     \n   \n \n\nPortable **Agent Skills** that upgrade AI-built interfaces: stronger layout, typography, motion, and spacing instead of boilerplate-looking UIs. This repo also includes **image-generation skills** for reference boards (web, mobile, brand kits). Pair them with **ChatGPT Images** or similar generators, then hand the frames to Codex, Cursor, or Claude Code for implementation.\n\n \n   \n   \n   \n   \n \n\n## Disclaimer\n\nTaste Skill has no official token, coin, or crypto project. Any token using my name, image, or project is unaffiliated and not endorsed by me.\n\n   Disclaimer  ·  Install  ·  Skills  ·  Settings  ·  Examples  ·  Sponsor  ·  Research  ·  FAQ  ·  License   \n\n## Feedback & Contributions\n\nWe would love your feedback. Suggestions and bug reports:\n\n- Open a Pull Request or Issue on GitHub  \n- DM @lexnlin or @blueemi99  \n- Email us at hello@tasteskill.dev\n\n## Installing\n\nThe `npx skills add` CLI scans the `skills/` folder in this repo, so **all skills below (code and image-generation) install the same way.**\n\n```bash\nnpx skills add https://github.com/Leonxlnx/taste-skill\n```\n\nInstall a single skill by its **install name** (the `name:` field inside the SKILL frontmatter, not the folder name):\n\n```bash\nnpx skills add https://github.com/Leonxlnx/taste-skill --skill \"design-taste-frontend\"\n```\n\nYou can also copy any `SKILL.md` into your project or paste it into ChatGPT / Codex conversations.\n\n### Updating from the previous version\n\nThe default `taste-skill` (install name `design-taste-frontend`) is now **v2 (experimental)**, a substantial rewrite of the original v1. If you already have v1 installed, just re-run the install command and you will be upgraded:\n\n```bash\nnpx skills add https://github.com/Leonxlnx/taste-skill --skill \"design-taste-frontend\"\n```\n\nThe install name did not change, so no script updates are needed. The newer SKILL.md replaces the older one in place.\n\nIf you depend on the exact behavior of v1 and want to pin to it explicitly:\n\n```bash\nnpx skills add https://github.com/Leonxlnx/taste-skill --skill \"design-taste-frontend-v1\"\n```\n\nSee CHANGELOG.md for the full v1 to v2 diff and the rationale.\n\n## Skills\n\nEach skill does one job; you do not need all of them at once. **Implementation skills** output code. **Image-generation skills** output reference images only.\n\nThe `Install name` column is the exact value you pass to `--skill`.\n\n| Skill (folder) | Install name | Description |\n| --- | --- | --- |\n| **taste-skill** | `design-taste-frontend` | 🆕 **v2 (experimental)** - substantial rewrite of the default skill. Reads the brief, infers the design language, tunes three dials (VARIANCE / MOTION / DENSITY). Brief inference, design-system map, hard em-dash ban, canonical GSAP code skeletons, redesign-audit protocol, strict pre-flight check. Actively iterating toward v2.0.0 stable. |\n| **taste-skill-v1** | `design-taste-frontend-",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "chatgpt",
+        "claude",
+        "agent",
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "Leonxlnx/taste-skill: Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.3,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**taste-skill** 的用户群和 CodeBuddy 高度重合 — 可以写「taste-skill 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**taste-skill** 的用户群和 CodeBuddy 高度重合 — 可以写「taste-skill 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**taste-skill** 的用户群和 CodeBuddy 高度重合 — 可以写「taste-skill 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Leonxlnx/taste-skill - Taste-Skill - gives your A…」（Leonxlnx/taste-skill: Taste-Skill - gives your AI good tast…），涉及 Agent → 可写方向：**taste-skill** 的用户群和 CodeBuddy 高度重合 — 可以写「taste-skill 用户迁移到 CodeBuddy 的体验对比」，突…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Leonxlnx/taste-skill - Taste-Skill - gi…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 taste-skill 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 taste-skill 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 taste-skill 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 taste-skill 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Leonxlnx/taste-skill: Taste-Skill - gives your AI good taste. stops…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "Leonxlnx/taste-skill - Taste-Skill - gives your AI good taste. stops the AI from genera…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Leonxlnx/taste-skill: Taste-Skill - gives your AI good taste. stops…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Leonxlnx/taste-skill - Taste-Skill - gives your AI good taste. stops the AI from genera…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Leonxlnx/taste-skill: Taste-Skill - gives your AI good taste. stops…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**taste-skill** 的用户群和 CodeBuddy 高度重合 — 可以写「taste-skill 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Leonxlnx/taste-skill - Taste-Skill - gives your AI good taste. stops the AI from genera…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Leonxlnx/taste-skill: Taste-Skill - gives your AI good taste. stops…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Leonxlnx/taste-skill - Taste-Skill - gives your AI good taste. stops the AI from genera…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "taste-skill：品味技能 - 给你的人工智能良好的品味。阻止人工智能产生无聊的、通用的斜坡",
+    "developer_profile": {
+      "github_username": "Leonxlnx",
+      "profile_url": "https://github.com/Leonxlnx",
+      "name": "Leon Lin",
+      "bio": "i like to build stuff",
+      "company": "",
+      "location": "Munich",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 908,
+      "following": 21,
+      "public_repos": 105,
+      "avatar_url": "https://avatars.githubusercontent.com/u/219127460?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "hardikpandya/stop-slop - A skill file for removing AI tells from prose",
+    "url": "https://github.com/hardikpandya/stop-slop",
+    "heat": "6,537 stars",
+    "time": "Today",
+    "developer_name": "hardikpandya",
+    "developer_url": "https://github.com/hardikpandya",
+    "developer_email": "",
+    "today_stars": "761 stars today",
+    "language": "",
+    "summary": "A skill file for removing AI tells from prose",
+    "content": "# Stop Slop\n\nA skill for removing AI tells from prose.\n\n \n\n## What this is\n\nAI writing has patterns. Predictable phrases, structures, rhythms. This skill teaches Claude (or any LLM) to catch and remove them.\n\n## Skill Structure\n\n```\nstop-slop/\n├── SKILL.md              # Core instructions\n├── references/\n│   ├── phrases.md        # Phrases to remove\n│   ├── structures.md     # Structural patterns to avoid\n│   └── examples.md       # Before/after transformations\n├── README.md\n└── LICENSE\n```\n\n## Quick start\n\n**Claude Code:** Add this folder as a skill.\n\n**Claude Projects:** Upload `SKILL.md` and reference files to project knowledge.\n\n**Custom instructions:** Copy core rules from `SKILL.md`.\n\n**API calls:** Include `SKILL.md` in your system prompt. Reference files load on demand.\n\n## What it catches\n\n**Banned phrases** - Throat-clearing openers, emphasis crutches, business jargon, all adverbs, vague declaratives, meta-commentary. See `references/phrases.md`.\n\n**Structural clichés** - Binary contrasts, negative listings, dramatic fragmentation, rhetorical setups, false agency, narrator-from-a-distance voice, passive voice. See `references/structures.md`.\n\n**Sentence-level rules** - No Wh- sentence starters, no em dashes, no staccato fragmentation, no lazy extremes, active voice required.\n\n## Scoring\n\nRate 1-10 on each dimension:\n\n| Dimension | Question |\n|-----------|----------|\n| Directness | Statements or announcements? |\n| Rhythm | Varied or metronomic? |\n| Trust | Respects reader intelligence? |\n| Authenticity | Sounds human? |\n| Density | Anything cuttable? |\n\nBelow 35/50: revise.\n\n## Author\n\nHardik Pandya\n\n## License\n\nMIT. Use freely, share widely.",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "hardikpandya/stop-slop: A skill file for removing AI tells from prose",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.8,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**stop-slop** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**stop-slop** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**stop-slop** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「hardikpandya/stop-slop - A skill file for removin…」（hardikpandya/stop-slop: A skill file for removing AI tells…），涉及 LLM → 可写方向：**stop-slop** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「hardikpandya/stop-slop - A skill file f…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 stop-slop 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 stop-slop 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 stop-slop 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 stop-slop 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "hardikpandya/stop-slop: A skill file for removing AI tells from pro…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "hardikpandya/stop-slop - A skill file for removing AI tells from prose. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：hardikpandya/stop-slop: A skill file for removing AI tells from pro…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: hardikpandya/stop-slop - A skill file for removing AI tells from prose. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。hardikpandya/stop-slop: A skill file for removing AI tells from pro…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**stop-slop** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. hardikpandya/stop-slop - A skill file for removing AI tells from prose. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：hardikpandya/stop-slop: A skill file for removing AI tells from pro…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: hardikpandya/stop-slop - A skill file for removing AI tells from prose. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "stop-slop：从散文中删除 AI 的技能文件",
+    "developer_profile": {
+      "github_username": "hardikpandya",
+      "profile_url": "https://github.com/hardikpandya",
+      "name": "Hardik Pandya",
+      "bio": "Head of Design, Atlassian",
+      "company": "Atlassian",
+      "location": "Bangalore, India",
+      "blog": "hvpandya.com",
+      "twitter_username": "hvpandya",
+      "email": "",
+      "followers": 147,
+      "following": 46,
+      "public_repos": 12,
+      "avatar_url": "https://avatars.githubusercontent.com/u/591262?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/hvpandya"
+        },
+        {
+          "platform": "unknown",
+          "url": "http://hvpandya.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "twentyhq/twenty - The open alternative to Salesforce, designed for AI.",
+    "url": "https://github.com/twentyhq/twenty",
+    "heat": "47,973 stars",
+    "time": "Today",
+    "developer_name": "twentyhq",
+    "developer_url": "https://github.com/twentyhq",
+    "developer_email": "",
+    "today_stars": "493 stars today",
+    "language": "TypeScript",
+    "summary": "The open alternative to Salesforce, designed for AI.",
+    "content": " \n   \n     \n   \n \n\n The #1 Open-Source CRM \n\n    Website  ·    Documentation  ·    Roadmap   ·    Discord  ·     Figma  \n\n \n   \n     \n       \n       \n       \n     \n   \n \n\n \n\n# Why Twenty\n\nTwenty gives technical teams the building blocks for a custom CRM that meets complex business needs and quickly adapts as the business evolves. Twenty is the CRM you build, ship, and version like the rest of your stack.\n\n   Learn more about why we built Twenty \n\n \n\n# Installation\n\n###   Cloud\n\nThe fastest way to get started. Sign up at twenty.com and spin up a workspace in under a minute, with no infrastructure to manage and always up to date.\n\n###   Build an app\n\nScaffold a new app with the Twenty CLI:\n\n```bash\nnpx create-twenty-app my-app\n```\n\nDefine objects, fields, and views as code:\n\n```ts\nimport { defineObject, FieldType } from 'twenty-sdk/define';\n\nexport default defineObject({\n  nameSingular: 'deal',\n  namePlural: 'deals',\n  labelSingular: 'Deal',\n  labelPlural: 'Deals',\n  fields: [\n    { name: 'name', label: 'Name', type: FieldType.TEXT },\n    { name: 'amount', label: 'Amount', type: FieldType.CURRENCY },\n    { name: 'closeDate', label: 'Close Date', type: FieldType.DATE_TIME },\n  ],\n});\n```\n\nThen ship it to your workspace:\n\n```bash\nnpx twenty app:publish --private\n```\n\nSee the app development guide for objects, views, agents, and logic functions.\n\n###   Self-hosting\n\nRun Twenty on your own infrastructure with Docker Compose, or contribute locally via the local setup guide.\n\n \n \n\n# Everything you need\n\nTwenty gives you the building blocks of a modern CRM (objects, views, workflows, and agents) and lets you extend them as code. Here's a tour of what's in the box.\n\nWant to go deeper? Read the    User Guide  for product walkthroughs, or the    Documentation  for developer reference.\n\n \n   \n     \n       \n         \n         \n         \n       \n          Learn more about apps in doc  \n     \n     \n       \n         \n         \n         \n       \n          Learn more about version control in doc  \n     \n   \n   \n     \n       \n         \n         \n         \n       \n          Learn more about primitives in doc  \n     \n     \n       \n         \n         \n         \n       \n          Learn more about layouts in doc  \n     \n   \n   \n     \n       \n         \n         \n         \n       \n          Learn more about AI in doc  \n     \n     \n       \n         \n         \n         \n       \n          Learn more about CRM features in doc  \n     \n   \n \n\n \n\n# Stack\n\n-    TypeScript \n-    Nx \n-    NestJS , with  BullMQ ,    PostgreSQL ,    Redis \n-    React , with  Jotai ,  Linaria  and  Lingui \n\n# Thanks\n\n \n     \n  &nbsp;&nbsp;&nbsp;&nbsp;\n     \n  &nbsp;&nbsp;&nbsp;&nbsp;\n     \n  &nbsp;&nbsp;&nbsp;&nbsp;\n     \n \n\n  Thanks to these amazing services that we use and recommend for UI testing (Chromatic), code review (Greptile), catching bugs (Sentry) and translating (Crowdin).\n\n# Join the Community\n\n    Star the repo  ·    Discord  ·    Feature requests  ·    Releases  ·    X  ·    LinkedIn  · ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 4,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "docker",
+        "redis",
+        "postgresql"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Go",
+        "TypeScript",
+        "React"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "twentyhq/twenty: The open alternative to Salesforce, designed for AI.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.8,
+      "tcloud_relevance": 6.5,
+      "tcloud_integration": "**twenty** 明确支持自托管部署（twentyhq/twenty: The open alternative to Salesforce, designe），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**twenty** 明确支持自托管部署（twentyhq/twenty: The open alternative to Salesforce, designe），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行"
+      ],
+      "tcloud_evidence": [
+        "self-hosting",
+        "docker compose"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**twenty** 明确支持自托管部署（twentyhq/twenty: The open alternative to Salesforce, designe），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「twentyhq/twenty - The open alternative to Salesfo…」（twentyhq/twenty: The open alternative to Salesforce, design…），涉及 Go / TypeScript / React → 可写方向：**twenty** 明确支持自托管部署（twentyhq/twenty: The open alternative to Salesforce, desig…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「twenty」支持自部署，可写『Lighthouse 一键部署 twenty』实操教程。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 twenty」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 twenty 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 twenty」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 twenty 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "twentyhq/twenty: The open alternative to Salesforce, designed for A…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "twentyhq/twenty - The open alternative to Salesforce, designed for AI.. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：twentyhq/twenty: The open alternative to Salesforce, designed for A…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: twentyhq/twenty - The open alternative to Salesforce, designed for AI.. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。twentyhq/twenty: The open alternative to Salesforce, designed for A…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**twenty** 明确支持自托管部署（twentyhq/twenty: The open alternative to Salesforce, designe），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. twentyhq/twenty - The open alternative to Salesforce, designed for AI.. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：twentyhq/twenty: The open alternative to Salesforce, designed for A…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: twentyhq/twenty - The open alternative to Salesforce, designed for AI.. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "twenty：Salesforce 的开放替代方案，专为 AI 设计。",
+    "developer_profile": {
+      "github_username": "twentyhq",
+      "profile_url": "https://github.com/twentyhq",
+      "name": "Twenty",
+      "bio": "We are building a modern Open Source CRM",
+      "company": "",
+      "location": "",
+      "blog": "https://twenty.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 828,
+      "following": 0,
+      "public_repos": 3,
+      "avatar_url": "https://avatars.githubusercontent.com/u/119600397?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "DigitalPlatDev/FreeDomain - DigitalPlat FreeDomain: Free Domain For Everyone",
+    "url": "https://github.com/DigitalPlatDev/FreeDomain",
+    "heat": "170,939 stars",
+    "time": "Today",
+    "developer_name": "DigitalPlatDev",
+    "developer_url": "https://github.com/DigitalPlatDev",
+    "developer_email": "contact@digitalplat.org",
+    "today_stars": "1,761 stars today",
+    "language": "HTML",
+    "summary": "DigitalPlat FreeDomain: Free Domain For Everyone",
+    "content": "## 🌐 Welcome to DigitalPlat Domain\n\n \n   \n \n\nWelcome to **DigitalPlat FreeDomain**, where we believe everyone deserves a digital identity. Whether you're an individual, or an organization, we’re offering free domain names to bring your ideas to life – no strings attached!\n\nWith FreeDomain, you’re free to register a unique domain and host it with your favorite DNS provider, like Cloudflare, FreeDNS by Afraid.org, or Hostry. Get online with complete freedom, and keep your wallet happy.\n\n### ✔️ Why Free Domains?\n\nAt **DigitalPlat FreeDomain**, we’re on a mission to make the web more accessible. We believe that the cost of a domain shouldn’t hold anyone back from creating a website. Our goal is to make the internet an open space where everyone can have their own place online, regardless of budget.\n\n> DigitalPlat FreeDomain is independently designed and maintained by **Edward Hsing**, founder of the DigitalPlat Foundation.\n\n---\n\n### 🌍 Available Domain Extensions\n\n- **.DPDNS.ORG**\n- **.US.KG**\n- **.QZZ.IO**\n- **.XX.KG**\n- **.QD.JE**\n\n_(More extensions coming soon!)_\n\n---\n\n### 🌍 Ready to Claim Your Free Domain?\n\nJump in and register your domain by visiting our site:\n\n➡️ DigitalPlat FreeDomain Dashboard\n\n📝 Read our tutorial\n\n---\n\n### 🌟 Trusted by Thousands\n\nWith over 500,000 domains already registered, DigitalPlat FreeDomain is a trusted choice for individuals and organizations alike. Join our growing community and claim your own free domain today!\n\n---\n\n### ❔ FAQ\n\nCheck FAQ Page\n\n---\n\n### 🤝 Join Our Community!\n\n🆕 Join our official DigitalPlat FreeDomain Discord server today!\n Be the first to know about the latest updates, get support, and connect with the community.\n Got questions? Facing challenges? Or just want to share what you're building?\n Come hang out with us 🚀\n\n⚠️ **Security Notice**\nOur previous Telegram account and group were compromised and are no longer under our control.\nPlease **do not trust any messages, links, or announcements** from Telegram, especially anything related to bonuses, earnings, or external sites.\nWe are no longer using Telegram as an official communication channel.\n\n---\n\n### ⏭️ What's next\nWe might introduce more domain options and free hosting in the future to help as many people as possible! \n\n**We can’t wait to see what you build!**\n\n---\n\n### 🚨 Abuse Reporting\nWe take domain name abuse seriously and are committed to maintaining a safer and more open internet. Every report is carefully reviewed, and response times may vary from a few hours to several days, depending on the complexity of the case.\n\nEmail: abusereport@digitalplat.org\n\n---\n\n## 🧠 Story\n\nThis started as a small DNS experiment when I was 15, letting a few friends use subdomains.\n\nOver time, it grew into something people actually rely on, and running it turned out to be much harder than building it.\n\nI wrote a bit about how it evolved here:  \nhttps://dev.to/edwardhsing/i-bought-a-domain-at-15-now-it-powers-400000-users-7ol",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloudflare",
+        "dns"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Cloudflare"
+      ],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "DigitalPlatDev/FreeDomain: DigitalPlat FreeDomain: Free Domain For Everyone",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.0,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「DigitalPlatDev/FreeDomain - DigitalPlat FreeDomai…」（DigitalPlatDev/FreeDomain: DigitalPlat FreeDomain: Free Dom…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「DigitalPlatDev/FreeDomain - DigitalPlat…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 FreeDomain 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 FreeDomain 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "DigitalPlatDev/FreeDomain: DigitalPlat FreeDomain: Free Domain For…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "DigitalPlatDev/FreeDomain - DigitalPlat FreeDomain: Free Domain For Everyone. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：DigitalPlatDev/FreeDomain: DigitalPlat FreeDomain: Free Domain For…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: DigitalPlatDev/FreeDomain - DigitalPlat FreeDomain: Free Domain For Everyone. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。DigitalPlatDev/FreeDomain: DigitalPlat FreeDomain: Free Domain For…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. DigitalPlatDev/FreeDomain - DigitalPlat FreeDomain: Free Domain For Everyone. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：DigitalPlatDev/FreeDomain: DigitalPlat FreeDomain: Free Domain For…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: DigitalPlatDev/FreeDomain - DigitalPlat FreeDomain: Free Domain For Everyone. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "DigitalPlat FreeDomain：适合所有人的免费域名",
+    "developer_profile": {
+      "github_username": "DigitalPlatDev",
+      "profile_url": "https://github.com/DigitalPlatDev",
+      "name": "DigitalPlat Foundation",
+      "bio": "DigitalPlat's official repository",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://digitalplat.org/",
+      "twitter_username": "digitalplatdev",
+      "email": "contact@digitalplat.org",
+      "followers": 1030,
+      "following": 0,
+      "public_repos": 15,
+      "avatar_url": "https://avatars.githubusercontent.com/u/126394654?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/digitalplatdev"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "byoungd/English-level-up-tips - An advanced guide to learn English which might benefit you a lot 🎉 . 离谱的英语学习指南/英语学习教程/英语学习/学英语",
+    "url": "https://github.com/byoungd/English-level-up-tips",
+    "heat": "48,840 stars",
+    "time": "Today",
+    "developer_name": "byoungd",
+    "developer_url": "https://github.com/byoungd",
+    "developer_email": "",
+    "today_stars": "2,019 stars today",
+    "language": "",
+    "summary": "An advanced guide to learn English which might benefit you a lot 🎉 . 离谱的英语学习指南/英语学习教程/英语学习/学英语",
+    "content": "`简体中文` | `English`\n\n谨以此献给我曾今的挚爱 `W.`\n\n> 我们每个人都生活在各自的过去中，人们会用一分钟的时间去认识一个人，用一小时的时间去喜欢一个人，再用一天的时间去爱上一个人，到最后呢，却要用一辈子的时间去忘记一个人。\n\n# 项目介绍\n\nAn advanced guide to learn English which might benefit you a lot.\n\n离谱的英语学习指南/英语学习教程。\n\n## 推荐资源：ku0.com - 库\n\n如果你在使用本指南里的 AI 学习方案时，需要更稳定、可信的 AI 账户与接口资源，可以看看我们的产品：ku0.com - 库。\n\n`ku0.com` 是一个可信任 AI 资源库，可一站式获取 `ChatGPT`、`Claude`、`Gemini` 账户充值、成品号和号池资源。我们用 Token 质检和统一网关筛掉不稳定、掺水、冒名的中转服务，并通过可信账户资源、质检报告和接入记录，帮助你降低 AI 使用成本与采购风险。\n\n## 背景\n\n你好啊朋友，欢迎来到离谱的英语学习指南。\n\n当你的目光与这些文字相遇，我衷心希望，这不仅仅是一次攻克英语的艰苦征程，更是一场开启智慧之门的奇妙冒险。愿这方寸纸墨，化作你我心灵共鸣的琴弦，弹奏出语言学习的天籁妙音。\n\n时间回到 2017 年 7 月初，备考托福的女神`W.`问了我一个问题：**如何高效学习英语？**\n\n在我思考如何回答这个问题时，回想起我在大四一学期一次性考过 26 门课的经验（其中重修 19 门，当前学期 7 门），再加上本人`英语` 和 `语文` 两门学科曾**侥幸**在高考时摘得省第一（江苏卷），或许我勉强有资格提供一些`高效学习`的`小技巧`，权当抛砖引玉。\n\n与她交流了一番学习心得后，我惊讶于她在学习方面的热情竟是如此之高，同时也发现了她的学习方法存在一些`不可取之处`。\n\n于是我写了一篇简单的文章零散地介绍了下我学习英语的心得体会，几天后她告诉我，希望我可以将这些学习经验稍加整理，分享给更多有需要的人。\n\n在此之前，我并不知道原来有那么多同学在学习英语的这件事上磕磕绊绊。\n\n他们甚至从未想过：**英语作为一门语言，学习起来应该是一件比较自然而然的事情，就像我们自然而然地学会汉语那样**。\n\n我由衷地希望大家能**热爱**学习英语这件事情，如果做不到，那就尝试着去发现这件事情的乐趣亦或是收益。请允许我奉上乔布斯的一段话(原话指的是工作，表达的意思却是相似的)：\n\nThe only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.\n\n> > > 成就一番伟业的唯一途径就是热爱自己的事业。如果你还没能找到让自己热爱的事业，继续寻找，不要放弃。跟随自己的心，总有一天你会找到的。\n\n**热爱之于学习**，同样如此。\n\n在这份指南里，我会尽可能地综合我主观的看法与一定的科学依据，为大家提供一份详尽的英语进阶指南，**真心希望本指南能给你带来一点小小的帮助**。\n\n## 英语水平等级\n\n> 本图主要参考 Global scale - Table 1 (CEFR 3.3): Common Reference levels\n\n## 特色\n\n## 章节\n\n[](docs/threads/part-1/1-understanding.md)\n\n[](docs/threads/part-1/2-vocabulary.md)\n\n[](docs/threads/part-1/3-listening.md)\n\n[](docs/threads/part-1/4-reading.md)\n\n[](docs/threads/part-1/5-speaking.md)\n\n[](docs/threads/part-1/6-writing.md)\n\n[](docs/threads/part-1/7-ai.md)\n\n新增的 AI 章节已经更新为 `2026` 版，重点不再只是通用 Prompt，而是更系统地回答：\n\n- 为什么现在更推荐把 `Gemini` 作为英语学习主引擎\n- 如何把 `Gem / Live / Guided Learning / Canvas / quiz / flashcards` 串成完整训练流程\n- 除了 Gemini 之外，`ChatGPT / Claude / Perplexity / DeepL Write` 应该如何分工使用\n- 怎样设计真正能长期起作用的听说读写训练回路\n\n如果你想把 AI 真正变成英语学习的加速器，而不只是偶尔帮你翻译两句，这一章值得重点看。\n\n[](docs/threads/word-list/Common.md)\n\n[](docs/threads/part-2/x-misc.md)\n\n我的故事\n\n## 感谢\n\n- 感谢所有关心以及为这份指南做出贡献的人 ❤️\n\n## 番外篇\n\n聊聊我的个人成长经历中的爱情部分，欢迎查阅 离谱的前女友们\n\n如果你想看我在创业失败后那段时间的真实经历，也可以读这篇：我的故事\n\n## 在线阅读\n\n- 知乎 离谱的英语学习指南\n- GitHub Pages English-level-up-tips\n- GitBook English-level-up-tips\n\n## 转载声明\n\n转载本指南，请注明作者与 GitHub 链接，谢谢！\n\n## 协议/License\n\n本作品采用知识共享署名-非商业性使用 4.0 国际许可协议进行许可。\n\n      \n\n## 特别声明\n\n有不少热心的小伙伴来信，表明本指南写的很用心，认为对其学习英语有一定的帮助，希望能进行赞赏。\n\n**命运已经给了离谱诸多额外的馈赠，便不再需要其他奖赏**。\n\n统一声明：**本指南不接受也不需要金钱上的赞助**。\n\n请把你那些原本想用来赞赏的零钱给自己买几本好书。\n\n    学习，难道不是人生最棒的乐趣么？\n\n> Cheers and Enjoy :)",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "chatgpt",
+        "claude",
+        "gemini",
+        "prompt",
+        "训练"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "正向推广",
+      "detail_brief": "byoungd/English-level-up-tips: An advanced guide to learn English which might benefit you a lot 🎉 . 离谱的英语学习指南/英语学习教程/英语学习/学英语",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「byoungd/English-level-up-tips - An advanced guide…」（byoungd/English-level-up-tips: An advanced guide to learn E…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「byoungd/English-level-up-tips - An adva…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 English-level-up-tips 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 English-level-up-tips 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "byoungd/English-level-up-tips: An advanced guide to learn English w…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "byoungd/English-level-up-tips - An advanced guide to learn English which might benefit…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：byoungd/English-level-up-tips: An advanced guide to learn English w…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: byoungd/English-level-up-tips - An advanced guide to learn English which might benefit…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。byoungd/English-level-up-tips: An advanced guide to learn English w…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. byoungd/English-level-up-tips - An advanced guide to learn English which might benefit…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：byoungd/English-level-up-tips: An advanced guide to learn English w…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: byoungd/English-level-up-tips - An advanced guide to learn English which might benefit…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "English-level-up-tips：An advanced guide to learn English which might benefit you a lot 🎉 . 离谱的英语学习指南/英语学习教程/英语学习/学英语",
+    "developer_profile": {
+      "github_username": "byoungd",
+      "profile_url": "https://github.com/byoungd",
+      "name": "Leap Pro 离谱",
+      "bio": "ku0.com 库 - AI 资源库",
+      "company": " 红力集团",
+      "location": "Tianjin",
+      "blog": "https://ku0.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 2451,
+      "following": 7,
+      "public_repos": 17,
+      "avatar_url": "https://avatars.githubusercontent.com/u/16145783?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "https://ku0.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "microsoft/markitdown - Python tool for converting files and office documents to Markdown.",
+    "url": "https://github.com/microsoft/markitdown",
+    "heat": "128,036 stars",
+    "time": "Today",
+    "developer_name": "microsoft",
+    "developer_url": "https://github.com/microsoft",
+    "developer_email": "opensource@microsoft.com",
+    "today_stars": "1,410 stars today",
+    "language": "Python",
+    "summary": "Python tool for converting files and office documents to Markdown.",
+    "content": "# MarkItDown\n\n[](https://pypi.org/project/markitdown/)\n\n[](https://github.com/microsoft/autogen)\n\n> [!IMPORTANT]\n> MarkItDown performs I/O with the privileges of the current process. Like open() or requests.get(), it will access resources that the process itself can access. Sanitize your inputs in untrusted environments, and call the narrowest `convert_*` function needed for your use case (e.g., `convert_stream()`, or `convert_local()`). See the Security Considerations section of the documentation for more information.\n\nMarkItDown is a lightweight Python utility for converting various files to Markdown for use with LLMs and related text analysis pipelines. To this end, it is most comparable to textract, but with a focus on preserving important document structure and content as Markdown (including: headings, lists, tables, links, etc.) While the output is often reasonably presentable and human-friendly, it is meant to be consumed by text analysis tools -- and may not be the best option for high-fidelity document conversions for human consumption.\n\nMarkItDown currently supports the conversion from:\n\n- PDF\n- PowerPoint\n- Word\n- Excel\n- Images (EXIF metadata and OCR)\n- Audio (EXIF metadata and speech transcription)\n- HTML\n- Text-based formats (CSV, JSON, XML)\n- ZIP files (iterates over contents)\n- Youtube URLs\n- EPubs\n- ... and more!\n\n## Why Markdown?\n\nMarkdown is extremely close to plain text, with minimal markup or formatting, but still\nprovides a way to represent important document structure. Mainstream LLMs, such as\nOpenAI's GPT-4o, natively \"_speak_\" Markdown, and often incorporate Markdown into their\nresponses unprompted. This suggests that they have been trained on vast amounts of\nMarkdown-formatted text, and understand it well. As a side benefit, Markdown conventions\nare also highly token-efficient.\n\n## Prerequisites\nMarkItDown requires Python 3.10 or higher. It is recommended to use a virtual environment to avoid dependency conflicts.\n\nWith the standard Python installation, you can create and activate a virtual environment using the following commands:\n\n```bash\npython -m venv .venv\nsource .venv/bin/activate\n```\n\nIf using `uv`, you can create a virtual environment with:\n\n```bash\nuv venv --python=3.12 .venv\nsource .venv/bin/activate\n# NOTE: Be sure to use 'uv pip install' rather than just 'pip install' to install packages in this virtual environment\n```\n\nIf you are using Anaconda, you can create a virtual environment with:\n\n```bash\nconda create -n markitdown python=3.12\nconda activate markitdown\n```\n\n## Installation\n\nTo install MarkItDown, use pip: `pip install 'markitdown[all]'`. Alternatively, you can install it from the source:\n\n```bash\ngit clone git@github.com:microsoft/markitdown.git\ncd markitdown\npip install -e 'packages/markitdown[all]'\n```\n\n## Usage\n\n### Command-Line\n\n```bash\nmarkitdown path-to-file.pdf > document.md\n```\n\nOr use `-o` to specify the output file:\n\n```bash\nmarkitdown path-to-file.pdf -o document.md\n```\n\nYou can also pipe ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "gpt",
+        "autogen",
+        "openai",
+        "speech",
+        "ocr"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "GPT-4"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "microsoft/markitdown: Python tool for converting files and office documents to Markdown.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.8,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「microsoft/markitdown - Python tool for converting…」（microsoft/markitdown: Python tool for converting files and…），涉及 Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「microsoft/markitdown - Python tool for…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 markitdown 的文档解析效果对比图（原始 PDF vs 结构化输出），直观展示工具价值。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 markitdown 的文档解析效果对比图（原始 PDF vs 结构化输出），直观展示工具价值。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "microsoft/markitdown: Python tool for converting files and office d…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "microsoft/markitdown - Python tool for converting files and office documents to Markdow…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：microsoft/markitdown: Python tool for converting files and office d…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: microsoft/markitdown - Python tool for converting files and office documents to Markdow…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。microsoft/markitdown: Python tool for converting files and office d…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. microsoft/markitdown - Python tool for converting files and office documents to Markdow…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：microsoft/markitdown: Python tool for converting files and office d…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: microsoft/markitdown - Python tool for converting files and office documents to Markdow…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "markitdown：用于将文件和 Office 文档转换为 Markdown 的 Python 工具。",
+    "developer_profile": {
+      "github_username": "microsoft",
+      "profile_url": "https://github.com/microsoft",
+      "name": "Microsoft",
+      "bio": "Open source projects and samples from Microsoft",
+      "company": "",
+      "location": "Redmond, WA",
+      "blog": "https://opensource.microsoft.com",
+      "twitter_username": "OpenAtMicrosoft",
+      "email": "opensource@microsoft.com",
+      "followers": 120829,
+      "following": 0,
+      "public_repos": 7913,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6154722?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/OpenAtMicrosoft"
+        }
+      ],
+      "is_org": true
+    }
+  }
+]
