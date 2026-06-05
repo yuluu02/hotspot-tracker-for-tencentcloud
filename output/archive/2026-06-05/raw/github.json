@@ -1,0 +1,1043 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "chopratejas/headroom - Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+    "url": "https://github.com/chopratejas/headroom",
+    "heat": "12,985 stars",
+    "time": "Today",
+    "developer_name": "chopratejas",
+    "developer_url": "https://github.com/chopratejas",
+    "developer_email": "",
+    "today_stars": "3,142 stars today",
+    "language": "Python",
+    "summary": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+    "content": "  \n  ██╗  ██╗███████╗ █████╗ ██████╗ ██████╗  ██████╗  ██████╗ ███╗   ███╗\n  ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██╔═══██╗████╗ ████║\n  ███████║█████╗  ███████║██║  ██║██████╔╝██║   ██║██║   ██║██╔████╔██║\n  ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══██╗██║   ██║██║   ██║██║╚██╔╝██║\n  ██║  ██║███████╗██║  ██║██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║ ╚═╝ ██║\n  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝\n                  The context compression layer for AI agents\n  \n\n  60–95% fewer tokens · library · proxy · MCP · 6 algorithms · local-first · reversible  \n\n \n     \n     \n     \n     \n     \n     \n     \n \n\n \n   Docs  ·\n   Install  ·\n   Proof  ·\n   Agents  ·\n   Discord  ·\n   llms.txt  ·\n   Enterprise \n \n\n  \n   AI agents / LLMs:  read   /llms.txt   here, or fetch  the live index  /  full docs blob .\n  \n\n---\n     \n\nHeadroom compresses everything your AI agent reads — tool outputs, logs, RAG chunks, files, and conversation history — before it reaches the LLM. Same answers, fraction of the tokens.\n\n \n   \n    Live: 10,144 → 1,260 tokens — same FATAL found. \n \n\n## What it does\n\n- **Library** — `compress(messages)` in Python or TypeScript, inline in any app\n- **Proxy** — `headroom proxy --port 8787`, zero code changes, any language\n- **Agent wrap** — `headroom wrap claude|codex|cursor|aider|copilot` in one command\n- **MCP server** — `headroom_compress`, `headroom_retrieve`, `headroom_stats` for any MCP client\n- **Cross-agent memory** — shared store across Claude, Codex, Gemini, auto-dedup\n- **`headroom learn`** — mines failed sessions, writes corrections to `CLAUDE.md` / `AGENTS.md`\n- **Reversible (CCR)** — originals never deleted; LLM retrieves on demand\n\n## How it works (30 seconds)\n\n```\n Your agent / app\n   (Claude Code, Cursor, Codex, LangChain, Agno, Strands, your own code…)\n        │   prompts · tool outputs · logs · RAG results · files\n        ▼\n    ┌────────────────────────────────────────────────────┐\n    │  Headroom   (runs locally — your data stays here)  │\n    │  ────────────────────────────────────────────────  │\n    │  CacheAligner  →  ContentRouter  →  CCR            │\n    │                    ├─ SmartCrusher   (JSON)        │\n    │                    ├─ CodeCompressor (AST)         │\n    │                    └─ Kompress-base  (text, HF)    │\n    │                                                    │\n    │  Cross-agent memory  ·  headroom learn  ·  MCP     │\n    └────────────────────────────────────────────────────┘\n        │   compressed prompt  +  retrieval tool\n        ▼\n LLM provider  (Anthropic · OpenAI · Bedrock · …)\n```\n\n- **ContentRouter** — detects content type, selects the right compressor\n- **SmartCrusher / CodeCompressor / Kompress-base** — compress JSON, AST, or prose\n- **CacheAligner** — stabilizes prefixes so provider KV caches actually hit\n- **CCR** — stores originals locally; LLM calls `headroom_retrieve` if it needs them\n\n→ Architecture · CCR reversible compression · Kompress-base model card\n\n## G",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 12,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "rag",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor",
+        "LangChain"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "RAG",
+        "Agent",
+        "MCP",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "chopratejas/headroom: Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.7,
+      "tcloud_relevance": 9.0,
+      "tcloud_integration": "**headroom** 的用户群和 CodeBuddy 高度重合 — 可以写「headroom 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式\n补充关联 Hunyuan：**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**headroom** 的用户群和 CodeBuddy 高度重合 — 可以写「headroom 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "copilot",
+        "cursor",
+        "aider",
+        "llm",
+        "claude",
+        "gemini"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**headroom** 的用户群和 CodeBuddy 高度重合 — 可以写「headroom 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式\n补充关联 Hunyuan：**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy / Hunyuan）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「chopratejas/headroom - Compress tool outputs, log…」（chopratejas/headroom: Compress tool outputs, logs, files, a…），涉及 LLM / RAG / Agent → 可写方向：**headroom** 的用户群和 CodeBuddy 高度重合 — 可以写「headroom 用户迁移到 CodeBuddy 的体验对比」，突出 Code…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「chopratejas/headroom - Compress tool ou…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 headroom 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 headroom 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 headroom 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 headroom 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "chopratejas/headroom: Compress tool outputs, logs, files, and RAG c…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "chopratejas/headroom - Compress tool outputs, logs, files, and RAG chunks before they r…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：chopratejas/headroom: Compress tool outputs, logs, files, and RAG c…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: chopratejas/headroom - Compress tool outputs, logs, files, and RAG chunks before they r…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan). What matters more to you: deployment, performance, or…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。chopratejas/headroom: Compress tool outputs, logs, files, and RAG c…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**headroom** 的用户群和 CodeBuddy 高度重合 — 可以写「headroom 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式 补充关联 Hunyuan：**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. chopratejas/headroom - Compress tool outputs, logs, files, and RAG chunks before they r…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：chopratejas/headroom: Compress tool outputs, logs, files, and RAG c…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: chopratejas/headroom - Compress tool outputs, logs, files, and RAG chunks before they r…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "headroom：在工具输出、日志、文件和 RAG 块到达 LLM 之前对其进行压缩。减少 60-95% 的标记，答案相同。",
+    "developer_profile": {
+      "github_username": "chopratejas",
+      "profile_url": "https://github.com/chopratejas",
+      "name": "Tejas Chopra",
+      "bio": "Software",
+      "company": "Netflix, Inc.",
+      "location": "Los Gatos",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 220,
+      "following": 5,
+      "public_repos": 43,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3607994?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "NousResearch/hermes-agent - The agent that grows with you",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "heat": "181,336 stars",
+    "time": "Today",
+    "developer_name": "NousResearch",
+    "developer_url": "https://github.com/NousResearch",
+    "developer_email": "",
+    "today_stars": "1,913 stars today",
+    "language": "Python",
+    "summary": "The agent that grows with you",
+    "content": " \n   \n \n\n# Hermes Agent ☤\n\n \n     \n     \n     \n     \n     \n \n\n**The self-improving AI agent built by Nous Research.** It's the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, searches its own past conversations, and builds a deepening model of who you are across sessions. Run it on a $5 VPS, a GPU cluster, or serverless infrastructure that costs nearly nothing when idle. It's not tied to your laptop — talk to it from Telegram while it works on a cloud VM.\n\nUse any model you want — Nous Portal, OpenRouter (200+ models), NovitaAI (AI-native cloud for Model API, Agent Sandbox, and GPU Cloud), NVIDIA NIM (Nemotron), Xiaomi MiMo, z.ai/GLM, Kimi/Moonshot, MiniMax, Hugging Face, OpenAI, or your own endpoint. Switch with `hermes model` — no code changes, no lock-in.\n\n \n   A real terminal interface   Full TUI with multiline editing, slash-command autocomplete, conversation history, interrupt-and-redirect, and streaming tool output.  \n   Lives where you do   Telegram, Discord, Slack, WhatsApp, Signal, and CLI — all from a single gateway process. Voice memo transcription, cross-platform conversation continuity.  \n   A closed learning loop   Agent-curated memory with periodic nudges. Autonomous skill creation after complex tasks. Skills self-improve during use. FTS5 session search with LLM summarization for cross-session recall.  Honcho  dialectic user modeling. Compatible with the  agentskills.io  open standard.  \n   Scheduled automations   Built-in cron scheduler with delivery to any platform. Daily reports, nightly backups, weekly audits — all in natural language, running unattended.  \n   Delegates and parallelizes   Spawn isolated subagents for parallel workstreams. Write Python scripts that call tools via RPC, collapsing multi-step pipelines into zero-context-cost turns.  \n   Runs anywhere, not just your laptop   Six terminal backends — local, Docker, SSH, Singularity, Modal, and Daytona. Daytona and Modal offer serverless persistence — your agent's environment hibernates when idle and wakes on demand, costing nearly nothing between sessions. Run it on a $5 VPS or a GPU cluster.  \n   Research-ready   Batch trajectory generation, trajectory compression for training the next generation of tool-calling models.  \n \n\n---\n\n## Quick Install\n\n### Linux, macOS, WSL2, Termux\n\n```bash\ncurl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash\n```\n\n### Windows (native, PowerShell)\n\n> **Heads up:** Native Windows runs Hermes without WSL — CLI, gateway, TUI, and tools all work natively. If you'd rather use WSL2, the Linux/macOS one-liner above works there too. Found a bug? Please file issues.\n\nRun this in PowerShell:\n\n```powershell\niex (irm https://hermes-agent.nousresearch.com/install.ps1)\n```\n\nThe installer handles everything: uv, Python 3.11, Node.js, ripgrep, ffmpeg, **and a portable Git Bash** (MinGit, unpacked to `%LOCALAPPDATA%\\hermes\\git` — no admin required, c",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 6,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "serverless",
+        "docker",
+        "gpu",
+        "vm",
+        "vps"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Serverless",
+        "Python"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "NousResearch/hermes-agent: The agent that grows with you",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.7,
+      "tcloud_relevance": 9.1,
+      "tcloud_integration": "**hermes-agent** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CVM：**hermes-agent** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_products": [
+        "GPU CVM",
+        "CVM"
+      ],
+      "tcloud_reasons": [
+        "**hermes-agent** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**hermes-agent** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "training",
+        "vm",
+        "nvidia"
+      ],
+      "tcloud_primary_product": "GPU CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**hermes-agent** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CVM：**hermes-agent** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_official_matches": [
+        "GPU CVM",
+        "CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（GPU CVM / CVM）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（GPU CVM / CVM） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「NousResearch/hermes-agent - The agent that grows…」（NousResearch/hermes-agent: The agent that grows with you），涉及 LLM / Agent / Serverless → 可写方向：**hermes-agent** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CVM：**hermes-agent…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「hermes-agent」可结合 GPU CVM 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "GPU CVM",
+      "official_angle_cn": "围绕 hermes-agent 的核心功能（NousResearch/hermes-agent: The agent that grows with you），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 hermes-agent 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+      "platform_copies": {
+        "primary_product": "GPU CVM",
+        "product_display": "GPU CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 hermes-agent 的核心功能（NousResearch/hermes-agent: The agent that grows with you），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use GPU Cloud Virtual Machine as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 hermes-agent 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+        "x_cn": "NousResearch/hermes-agent: The agent that grows with you。如果站在腾讯云国际站官方号来写，这条更适合从 GPU CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**hermes-age…",
+        "x_en": "NousResearch/hermes-agent - The agent that grows with you. For Tencent Cloud, this fits GPU Cloud Virtual Machine: GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：NousResearch/hermes-agent: The agent that grows with you。如果从腾讯云视角切，这条最适合带到 GPU CVM，重点聊 技术科普 + 教程拆解 + 产品关联（GPU CVM / CVM） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: NousResearch/hermes-agent - The agent that grows with you. From a Tencent Cloud angle, the best hook is GPU Cloud Virtual Machine, especially around technical explainer + hands-on walkthrough + product tie-in (GPU CVM / CVM) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。NousResearch/hermes-agent: The agent that grows with you。如果用官方号发，建议主推 GPU CVM，重点讲 技术科普 + 教程拆解 + 产品关联（GPU CVM / CVM） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**hermes-agent** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CVM：**hermes-agent** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. NousResearch/hermes-agent - The agent that grows with you. For Tencent Cloud, the better angle is GPU Cloud Virtual Machine. GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering. The content should focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM / CVM) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 GPU CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：NousResearch/hermes-agent: The agent that grows with you。如果站在腾讯云国际站官方号视角，我会更想把它写成 GPU CVM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（GPU CVM / CVM） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through GPU Cloud Virtual Machine?",
+        "reddit_body_en": "A recent trend caught my eye: NousResearch/hermes-agent - The agent that grows with you. Instead of reposting it as news, I'd frame it through GPU Cloud Virtual Machine and focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM / CVM) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "hermes-agent：与您共同成长的代理商",
+    "developer_profile": {
+      "github_username": "NousResearch",
+      "profile_url": "https://github.com/NousResearch",
+      "name": "Nous Research",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://nousresearch.com",
+      "twitter_username": "nousresearch",
+      "email": "",
+      "followers": 5647,
+      "following": 0,
+      "public_repos": 85,
+      "avatar_url": "https://avatars.githubusercontent.com/u/134168893?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/nousresearch"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+    "url": "https://github.com/affaan-m/ECC",
+    "heat": "207,499 stars",
+    "time": "Today",
+    "developer_name": "affaan-m",
+    "developer_url": "https://github.com/affaan-m",
+    "developer_email": "affaan@itomarkets.com",
+    "today_stars": "1,750 stars today",
+    "language": "JavaScript",
+    "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+    "content": "**Language:** English | Português (Brasil) | 简体中文 | 繁體中文 | 日本語 | 한국어 | Türkçe | Русский | Tiếng Việt | ไทย | Deutsch\n\n# ECC\n\n[](https://github.com/affaan-m/ECC/stargazers)\n[](https://github.com/affaan-m/ECC/network/members)\n[](https://github.com/affaan-m/ECC/graphs/contributors)\n[](https://www.npmjs.com/package/ecc-universal)\n[](https://www.npmjs.com/package/ecc-agentshield)\n[](https://github.com/marketplace/ecc-tools)\n[](LICENSE)\n\n> **182K+ stars** | **28K+ forks** | **170+ contributors** | **12+ language ecosystems** | **Cross-harness agent workflows**\n\n---\n\n \n\n**Language / 语言 / 語言 / Dil / Язык / Ngôn ngữ**\n\n**English** | Português (Brasil) | 简体中文 | 繁體中文 | 日本語 | 한국어\n | Türkçe | Русский | Tiếng Việt | ไทย | Deutsch\n\n \n\n---\n\n**The harness-native operator system for agentic work. Built from real-world multi-harness engineering workflows.**\n\nNot just configs. A complete system: skills, instincts, memory optimization, continuous learning, security scanning, and research-first development. Production-ready agents, skills, hooks, rules, MCP configurations, and legacy command shims evolved over 10+ months of intensive daily use building real products.\n\nWorks across **Codex**, **Claude Code**, **Cursor**, **OpenCode**, **Gemini**, **Zed**, **GitHub Copilot**, and other AI agent harnesses.\n\nECC v2.0.0-rc.1 adds the public Hermes operator story on top of that reusable layer: start with the Hermes setup guide, then review the rc.1 release notes and cross-harness architecture.\n\n---\n\n \n \n \n   \n      ECC Pro  \n     Private repos · GitHub App · $19/seat/mo \n   \n \n \n   \n      Sponsor  \n     Fund the OSS · From $5/mo \n   \n \n \n   \n     Community \n     \n     Discussions · Q&amp;A · Show & Tell \n   \n \n \n   \n      GitHub App  \n     Install · PR audits · Free tier \n   \n \n \n \n\n **OSS stays free.** This repo is MIT-licensed forever. ECC Pro is the hosted GitHub App for private repos.  Sponsors  and  Pro subscribers  fund the work — that's why a single maintainer ships weekly across 7 harnesses. \n\n---\n\n## The Guides\n\nThis repo is the raw code only. The guides explain everything.\n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n  Shorthand Guide  Setup, foundations, philosophy.  Read this first.  \n  Longform Guide  Token optimization, memory persistence, evals, parallelization. \n  Security Guide  Attack vectors, sandboxing, sanitization, CVEs, AgentShield. \n \n \n\n| Topic | What You'll Learn |\n|-------|-------------------|\n| Token Optimization | Model selection, system prompt slimming, background processes |\n| Memory Persistence | Hooks that save/load context across sessions automatically |\n| Continuous Learning | Auto-extract patterns from sessions into reusable skills |\n| Verification Loops | Checkpoint vs continuous evals, grader types, pass@k metrics |\n| Parallelization | Git worktrees, cascade method, when to scale instances |\n| Subagent Orchestration | The context problem, iterative retrieval pattern |\n\n---\n\n## What's New\n\n### v2.0.0-rc.1 — Surface Refresh, Operator Workflows,",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 8,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "oss"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "prompt",
+        "mcp",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "affaan-m/ECC: The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.2,
+      "tcloud_relevance": 6.2,
+      "tcloud_integration": "**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "copilot",
+        "cursor",
+        "github copilot"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「affaan-m/ECC - The agent harness performance opti…」（affaan-m/ECC: The agent harness performance optimization sy…），涉及 Agent / MCP → 可写方向：**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「affaan-m/ECC - The agent harness perfor…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 ECC 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 ECC 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 ECC 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 ECC 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "affaan-m/ECC: The agent harness performance optimization system. Sk…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：affaan-m/ECC: The agent harness performance optimization system. Sk…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。affaan-m/ECC: The agent harness performance optimization system. Sk…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：affaan-m/ECC: The agent harness performance optimization system. Sk…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ECC：代理利用性能优化系统。Claude Code、Codex、Opencode、Cursor 等的技能、直觉、记忆、安全性和研究优先的开发。",
+    "developer_profile": {
+      "github_username": "affaan-m",
+      "profile_url": "https://github.com/affaan-m",
+      "name": "Affaan Mustafa",
+      "bio": "Institutionalizing prediction markets @Ito-Markets | B={(eᵢ,wᵢ)}; Vᴮ=Σᵢwᵢℙα(eᵢ=1) | OSS meta-harness for AI agents @ECC-Tools",
+      "company": "Itô",
+      "location": "San Francisco, CA / Bellevue, WA",
+      "blog": "https://affaanmustafa.com",
+      "twitter_username": "affaanmustafa",
+      "email": "affaan@itomarkets.com",
+      "followers": 6795,
+      "following": 20,
+      "public_repos": 27,
+      "avatar_url": "https://avatars.githubusercontent.com/u/124439313?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/affaanmustafa"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/affaanmustafa/"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/affaanmustafa"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/c/AffaanMustafa"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://affaanmustafa.com"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://orcid.org/0009-0009-9408-5570"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "PaddlePaddle/PaddleOCR - Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
+    "url": "https://github.com/PaddlePaddle/PaddleOCR",
+    "heat": "80,047 stars",
+    "time": "Today",
+    "developer_name": "PaddlePaddle",
+    "developer_url": "https://github.com/PaddlePaddle",
+    "developer_email": "",
+    "today_stars": "141 stars today",
+    "language": "Python",
+    "summary": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
+    "content": " \n   \n       \n   \n\n Global Leading OCR Toolkit & Document AI Engine \n\nEnglish | 简体中文 | 繁體中文 | 日本語 | 한국어 | Français | Русский | Español | العربية\n\n \n\n[](https://pepy.tech/projects/paddleocr)\n[](https://github.com/PaddlePaddle/PaddleOCR/network/dependents)\n\n[](https://www.paddleocr.com)\n[](https://deepwiki.com/PaddlePaddle/PaddleOCR)\n[](../LICENSE)\n\n \n\n**PaddleOCR converts PDF documents and images into structured, LLM-ready data (JSON/Markdown) with industry-leading accuracy. With 70k+ Stars and trusted by top-tier projects like Dify, RAGFlow, and Cherry Studio, PaddleOCR is the bedrock for building intelligent RAG and Agentic applications.**\n\n## 🚀 Key Features\n\n### 📄 Intelligent Document Parsing (LLM-Ready)\n> *Transforming messy visuals into structured data for the LLM era.*\n\n* **SOTA Document VLM**: Featuring **PaddleOCR-VL-1.6 (0.9B)**, the industry's leading lightweight vision-language model for document parsing. It achieves 96.3% accuracy on OmniDocBench v1.6, leads in text, formula, and table recognition, and shows significantly enhanced capabilities in ancient documents, rare characters, seals, and charts, with structured outputs in **Markdown** and **JSON** formats.\n* **Structure-Aware Conversion**: Powered by **PP-StructureV3**, seamlessly convert complex PDFs and images into **Markdown** or **JSON**. Unlike the PaddleOCR-VL series models, it provides more fine-grained coordinate information, including table cell coordinates, text coordinates, and more.\n* **Production-Ready Efficiency**: Achieve commercial-grade accuracy with an ultra-small footprint. Outperforms numerous closed-source solutions in public benchmarks while remaining resource-efficient for edge/cloud deployment.\n\n### 🔍 Universal Text Recognition (Scene OCR)\n> *The global gold standard for high-speed, multilingual text spotting.*\n\n* **100+ Languages Supported**: Native recognition for a vast global library. Our **PP-OCRv5** single-model solution elegantly handles multilingual mixed documents (Chinese, English, Japanese, Pinyin, etc.).\n* **Complex Element Mastery**: Beyond standard text recognition, we support **natural scene text spotting** across a wide range of environments, including IDs, street views, books, and industrial components\n* **Performance Leap**: PP-OCRv5 delivers a **13% accuracy boost** over previous versions, maintaining the \"Extreme Efficiency\" that PaddleOCR is famous for.\n\n \n   \n       \n   \n \n\n### 🛠️ Developer-Centric Ecosystem\n* **Seamless Integration**: The premier choice for the AI Agent ecosystem—deeply integrated with **Dify, RAGFlow, Pathway, and Cherry Studio**.\n* **LLM Data Flywheel**: A complete pipeline to build high-quality datasets, providing a sustainable \"Data Engine\" for fine-tuning Large Language Models.\n* **One-Click Deployment**: Supports various hardware backends (NVIDIA GPU, Intel CPU, Kunlunxin XPU, and diverse AI Accelerators).\n\n## 📣 Recent updates\n\n### 🔥 2026.05.28: Release of PaddleOCR 3.6.0\n- PaddleOCR-VL-1.6 highlights:\n\n    - **",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 8,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "edge",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "large language model",
+        "agent",
+        "rag",
+        "dify",
+        "agentic",
+        "ocr"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "Dify"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "RAG",
+        "Agent"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "PaddlePaddle/PaddleOCR: Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.8,
+      "tcloud_relevance": 6.6,
+      "tcloud_integration": "**PaddleOCR** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**PaddleOCR** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "nvidia",
+        "fine-tuning"
+      ],
+      "tcloud_primary_product": "GPU CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**PaddleOCR** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（GPU CVM）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（GPU CVM）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「PaddlePaddle/PaddleOCR - Turn any PDF or image do…」（PaddlePaddle/PaddleOCR: Turn any PDF or image document into…），涉及 LLM / RAG / Agent → 可写方向：**PaddleOCR** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「PaddleOCR」可结合 GPU CVM 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "GPU CVM",
+      "official_angle_cn": "围绕 PaddleOCR 的核心功能（PaddlePaddle/PaddleOCR: Turn any PDF or image document into structured data for…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 PaddleOCR 的文档解析效果对比图（原始 PDF vs 结构化输出），直观展示工具价值。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+      "platform_copies": {
+        "primary_product": "GPU CVM",
+        "product_display": "GPU CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 PaddleOCR 的核心功能（PaddlePaddle/PaddleOCR: Turn any PDF or image document into structured data for…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use GPU Cloud Virtual Machine as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 PaddleOCR 的文档解析效果对比图（原始 PDF vs 结构化输出），直观展示工具价值。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+        "x_cn": "PaddlePaddle/PaddleOCR: Turn any PDF or image document into structu…。如果站在腾讯云国际站官方号来写，这条更适合从 GPU CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：…",
+        "x_en": "PaddlePaddle/PaddleOCR - Turn any PDF or image document into structured data for your A…. For Tencent Cloud, this fits GPU Cloud Virtual Machine: GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：PaddlePaddle/PaddleOCR: Turn any PDF or image document into structu…。如果从腾讯云视角切，这条最适合带到 GPU CVM，重点聊 技术科普 + 教程拆解 + 产品关联（GPU CVM）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: PaddlePaddle/PaddleOCR - Turn any PDF or image document into structured data for your A…. From a Tencent Cloud angle, the best hook is GPU Cloud Virtual Machine, especially around technical explainer + hands-on walkthrough + product tie-in (GPU CVM). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。PaddlePaddle/PaddleOCR: Turn any PDF or image document into structu…。如果用官方号发，建议主推 GPU CVM，重点讲 技术科普 + 教程拆解 + 产品关联（GPU CVM），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**PaddleOCR** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. PaddlePaddle/PaddleOCR - Turn any PDF or image document into structured data for your A…. For Tencent Cloud, the better angle is GPU Cloud Virtual Machine. GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering. The content should focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM).",
+        "reddit_title_cn": "这类热点如果从 GPU CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：PaddlePaddle/PaddleOCR: Turn any PDF or image document into structu…。如果站在腾讯云国际站官方号视角，我会更想把它写成 GPU CVM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（GPU CVM）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through GPU Cloud Virtual Machine?",
+        "reddit_body_en": "A recent trend caught my eye: PaddlePaddle/PaddleOCR - Turn any PDF or image document into structured data for your A…. Instead of reposting it as news, I'd frame it through GPU Cloud Virtual Machine and focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "PaddleOCR：将任何 PDF 或图像文档转换为 AI 的结构化数据。一款功能强大、轻量级的 OCR 工具包，可弥合图像/PDF 和法学硕士之间的差距。",
+    "developer_profile": {
+      "github_username": "PaddlePaddle",
+      "profile_url": "https://github.com/PaddlePaddle",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "http://paddlepaddle.org",
+      "twitter_username": "",
+      "email": "",
+      "followers": 7086,
+      "following": 0,
+      "public_repos": 108,
+      "avatar_url": "https://avatars.githubusercontent.com/u/23534030?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "github/spec-kit - 💫 Toolkit to help you get started with Spec-Driven Development",
+    "url": "https://github.com/github/spec-kit",
+    "heat": "108,704 stars",
+    "time": "Today",
+    "developer_name": "github",
+    "developer_url": "https://github.com/github",
+    "developer_email": "",
+    "today_stars": "321 stars today",
+    "language": "Python",
+    "summary": "💫 Toolkit to help you get started with Spec-Driven Development",
+    "content": " \n     \n     🌱 Spec Kit \n      Build high-quality software faster.  \n \n\n \n     An open source toolkit that allows you to focus on product scenarios and predictable outcomes instead of vibe coding every piece from scratch. \n \n\n \n       \n       \n       \n       \n \n\n---\n\n## Table of Contents\n\n- 🤔 What is Spec-Driven Development?\n- ⚡ Get Started\n- 📽️ Video Overview\n- 🌍 Community\n- 🤖 Supported AI Coding Agent Integrations\n- 🔧 Specify CLI Reference\n- 🧩 Making Spec Kit Your Own: Extensions & Presets\n- 📚 Core Philosophy\n- 🌟 Development Phases\n- 🎯 Experimental Goals\n- 🔧 Prerequisites\n- 📖 Learn More\n- 📋 Detailed Process\n- 💬 Support\n- 🙏 Acknowledgements\n- 📄 License\n\n## 🤔 What is Spec-Driven Development?\n\nSpec-Driven Development **flips the script** on traditional software development. For decades, code has been king — specifications were just scaffolding we built and discarded once the \"real work\" of coding began. Spec-Driven Development changes this: **specifications become executable**, directly generating working implementations rather than just guiding them.\n\n## ⚡ Get Started\n\n### 1. Install Specify CLI\n\nRequires **uv** (install uv). Replace `vX.Y.Z` with the latest tag from Releases:\n\n```bash\nuv tool install specify-cli --from git+https://github.com/github/spec-kit.git@vX.Y.Z\n```\n\nSee the Installation Guide for alternative methods, verification, upgrade, and troubleshooting.\n\n### 2. Initialize a project\n\n```bash\nspecify init my-project --integration copilot\ncd my-project\n```\n\nTo check for updates or upgrade the installed CLI, use the self-management commands. See the Upgrade Guide for detailed scenarios and customization options.\n\n```bash\n# Check whether a newer release is available (read-only — does not modify anything)\nspecify self check\n\n# Preview what would run, without actually upgrading\nspecify self upgrade --dry-run\n\n# Upgrade in place to the latest stable release (auto-detects uv tool vs pipx install)\nspecify self upgrade\n\n# Or pin a specific release tag (replace vX.Y.Z[suffix] with your desired release tag)\nspecify self upgrade --tag vX.Y.Z[suffix]\n```\n\nBare `specify self upgrade` executes immediately, matching the no-prompt behavior of commands like `pip install -U` and `npm update`. For `uv tool` installs, it runs `uv tool install specify-cli --force --from  ` under the hood so pinned release tags work, including dev, alpha/beta/rc, or build metadata suffixes. `uvx` (ephemeral) runs and source checkouts are detected and produce path-specific guidance instead of running an installer. Set `SPECIFY_UPGRADE_TIMEOUT_SECS` to cap how long the installer subprocess may run (default: no timeout — interrupt with `Ctrl+C` if needed).\n\n### 3. Establish project principles\n\nLaunch your coding agent in the project directory. Most agents expose spec-kit as `/speckit.*` slash commands; Codex CLI in skills mode uses `$speckit-*` instead.\n\nUse the **`/speckit.constitution`** command to create your project's governing principles and development guidelines that w",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "copilot",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Copilot"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "github/spec-kit: 💫 Toolkit to help you get started with Spec-Driven Development",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.3,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**spec-kit** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs spec-kit 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**spec-kit** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs spec-kit 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "ai coding",
+        "coding agent",
+        "copilot"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**spec-kit** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs spec-kit 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「github/spec-kit - 💫 Toolkit to help you get start…」（github/spec-kit: 💫 Toolkit to help you get started with Spe…），涉及 Agent → 可写方向：**spec-kit** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs spec-kit 的横向对比：CodeBuddy 覆盖需求→设计→编码…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「github/spec-kit - 💫 Toolkit to help you…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 spec-kit 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 spec-kit 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 spec-kit 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 spec-kit 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "github/spec-kit: 💫 Toolkit to help you get started with Spec-Driven…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "github/spec-kit - 💫 Toolkit to help you get started with Spec-Driven Development. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：github/spec-kit: 💫 Toolkit to help you get started with Spec-Driven…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: github/spec-kit - 💫 Toolkit to help you get started with Spec-Driven Development. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, performan…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。github/spec-kit: 💫 Toolkit to help you get started with Spec-Driven…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**spec-kit** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs spec-kit 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. github/spec-kit - 💫 Toolkit to help you get started with Spec-Driven Development. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：github/spec-kit: 💫 Toolkit to help you get started with Spec-Driven…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: github/spec-kit - 💫 Toolkit to help you get started with Spec-Driven Development. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "spec-kit：💫 帮助您开始规范驱动开发的工具包",
+    "developer_profile": {
+      "github_username": "github",
+      "profile_url": "https://github.com/github",
+      "name": "GitHub",
+      "bio": "How people build software.",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://github.com/about",
+      "twitter_username": "",
+      "email": "",
+      "followers": 76719,
+      "following": 0,
+      "public_repos": 551,
+      "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "NVIDIA/cosmos - NVIDIA Cosmos is an open platform of world models, datasets, and tools that enables developers to build Physical AI for robots, autonomous vehicles, smart infrastructure, and more.",
+    "url": "https://github.com/NVIDIA/cosmos",
+    "heat": "9,103 stars",
+    "time": "Today",
+    "developer_name": "NVIDIA",
+    "developer_url": "https://github.com/NVIDIA",
+    "developer_email": "",
+    "today_stars": "133 stars today",
+    "language": "Jupyter Notebook",
+    "summary": "NVIDIA Cosmos is an open platform of world models, datasets, and tools that enables developers to build Physical AI for robots, autonomous vehicles, smart infrastructure, and more.",
+    "content": "# Cosmos\n\n \n   \n \n\n \n   Website  |\n   Framework \n \n\n## Table of Contents\n\n- Introduction\n- Cosmos 3\n  - Key Capabilities\n  - Model Architecture\n  - Model Family\n  - Supported Generation Settings\n  - Input and Output\n  - Use Cases\n    - Generator\n    - Reasoner\n  - Quickstart\n    - Generator with Diffusers\n    - Generator with vLLM-Omni\n    - Reasoner with Transformers\n    - Reasoner with vLLM\n    - Reasoner with NIM\n  - Troubleshooting\n    - Which CUDA version should I use?\n    - Which base container should I use?\n    - `torch.cuda.is_available()` is `False`\n    - Import fails with `libxcb.so.1: cannot open shared object file`\n    - `uv` errors on install or `sync`\n  - Choosing an Integration\n  - Examples\n  - Inference Benchmarks\n  - Finetune\n  - Limitations\n- Ecosystem\n- News\n- License and Contact\n\n## Introduction\n\nNVIDIA Cosmos is an open platform of world models, datasets, and tools that enables developers to build Physical AI for robots, autonomous vehicles, smart infrastructure, and more.\n\n## Cosmos 3\n\n**Cosmos 3** is our newest model family [[Report]](https://research.nvidia.com/labs/cosmos-lab/cosmos3/technical-report.pdf) [[Website]](https://research.nvidia.com/labs/cosmos-lab/cosmos3/). It is a suite of omnimodal world models designed to jointly process and generate language, images, video, audio, and action sequences within a unified Mixture-of-Transformers architecture. By supporting highly flexible input-output configurations, it seamlessly unifies critical modalities for Physical AI — effectively subsuming vision-language models, video generators, world simulators, and world-action models into a single framework.\n\nCosmos 3 exposes two runtime surfaces:\n\n| Surface | Inputs | Outputs | Use Cases |\n|----------|----------|----------|----------|\n| **Reasoner** | Text, vision | Text | World understanding, grounding, physical reasoning, task planning, action forecasting, embodied agent reasoning, and autonomous system decision making |\n| **Generator** | Text, vision, sound, action | Vision, sound, action | World generation, world simulation, future prediction, synthetic data generation, policy learning, and robot training |\n\n### Key Capabilities\n\n- **World understanding:** Analyze videos and images for captions, temporal events, next actions, spatial grounding, physical plausibility, and causal outcomes.\n- **World generation:** Produce images, videos, synchronized sound, and action-conditioned rollouts from text, image, video, or action inputs.\n- **Action modeling:** Predict policy actions, inverse dynamics, and forward dynamics for robotics, camera motion, egocentric motion, and autonomous-driving settings.\n- **Research and production paths:** Use Diffusers and Transformers for Python-first development, then vLLM-Omni and vLLM for OpenAI-compatible serving.\n- **Post-training recipes:** Adapt vision, action, and reasoner workflows with Cosmos Framework training recipes and task-specific evaluation [Coming Soon].\n\n### Model Architecture\n\nCos",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cos"
+      ],
+      "ai_hits": [
+        "ai",
+        "agent",
+        "inference",
+        "openai",
+        "reasoning"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "NVIDIA/cosmos: NVIDIA Cosmos is an open platform of world models, datasets, and tools that enables developers to build Physical AI for robots, autonomous vehicles, smart infrastructure, and more.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 5.9,
+      "tcloud_integration": "**cosmos** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**cosmos** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "nvidia",
+        "cuda"
+      ],
+      "tcloud_primary_product": "GPU CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**cosmos** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（GPU CVM）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（GPU CVM）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「NVIDIA/cosmos - NVIDIA Cosmos is an open platform…」（NVIDIA/cosmos: NVIDIA Cosmos is an open platform of world m…），涉及 Agent / Python → 可写方向：**cosmos** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「cosmos」可结合 GPU CVM 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "GPU CVM",
+      "official_angle_cn": "围绕 cosmos 的核心功能（NVIDIA/cosmos: NVIDIA Cosmos is an open platform of world models, datasets, and…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 cosmos 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+      "platform_copies": {
+        "primary_product": "GPU CVM",
+        "product_display": "GPU CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 cosmos 的核心功能（NVIDIA/cosmos: NVIDIA Cosmos is an open platform of world models, datasets, and…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use GPU Cloud Virtual Machine as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 cosmos 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+        "x_cn": "NVIDIA/cosmos: NVIDIA Cosmos is an open platform of world models, d…。如果站在腾讯云国际站官方号来写，这条更适合从 GPU CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：…",
+        "x_en": "NVIDIA/cosmos - NVIDIA Cosmos is an open platform of world models, datasets, and tools…. For Tencent Cloud, this fits GPU Cloud Virtual Machine: GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：NVIDIA/cosmos: NVIDIA Cosmos is an open platform of world models, d…。如果从腾讯云视角切，这条最适合带到 GPU CVM，重点聊 技术科普 + 教程拆解 + 产品关联（GPU CVM）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: NVIDIA/cosmos - NVIDIA Cosmos is an open platform of world models, datasets, and tools…. From a Tencent Cloud angle, the best hook is GPU Cloud Virtual Machine, especially around technical explainer + hands-on walkthrough + product tie-in (GPU CVM). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。NVIDIA/cosmos: NVIDIA Cosmos is an open platform of world models, d…。如果用官方号发，建议主推 GPU CVM，重点讲 技术科普 + 教程拆解 + 产品关联（GPU CVM），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**cosmos** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. NVIDIA/cosmos - NVIDIA Cosmos is an open platform of world models, datasets, and tools…. For Tencent Cloud, the better angle is GPU Cloud Virtual Machine. GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering. The content should focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM).",
+        "reddit_title_cn": "这类热点如果从 GPU CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：NVIDIA/cosmos: NVIDIA Cosmos is an open platform of world models, d…。如果站在腾讯云国际站官方号视角，我会更想把它写成 GPU CVM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（GPU CVM）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through GPU Cloud Virtual Machine?",
+        "reddit_body_en": "A recent trend caught my eye: NVIDIA/cosmos - NVIDIA Cosmos is an open platform of world models, datasets, and tools…. Instead of reposting it as news, I'd frame it through GPU Cloud Virtual Machine and focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "NVIDIA Cosmos 是一个包含世界模型、数据集和工具的开放平台，使开发人员能够为机器人、自动驾驶车辆、智能基础设施等构建物理 AI。",
+    "developer_profile": {
+      "github_username": "NVIDIA",
+      "profile_url": "https://github.com/NVIDIA",
+      "name": "NVIDIA Corporation",
+      "bio": "",
+      "company": "",
+      "location": "2788 San Tomas Expressway, Santa Clara, CA, 95051",
+      "blog": "https://nvidia.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 26260,
+      "following": 0,
+      "public_repos": 742,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1728152?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "lfnovo/open-notebook - An Open Source implementation of Notebook LM with more flexibility and features",
+    "url": "https://github.com/lfnovo/open-notebook",
+    "heat": "25,241 stars",
+    "time": "Today",
+    "developer_name": "lfnovo",
+    "developer_url": "https://github.com/lfnovo",
+    "developer_email": "",
+    "today_stars": "212 stars today",
+    "language": "TypeScript",
+    "summary": "An Open Source implementation of Notebook LM with more flexibility and features",
+    "content": "  \n\n \n[![Forks][forks-shield]][forks-url]\n[![Stargazers][stars-shield]][stars-url]\n[![Issues][issues-shield]][issues-url]\n[![MIT License][license-shield]][license-url]\n \n\n \n \n \n   \n     \n   \n\n   Open Notebook \n\n   \n    An open source, privacy-focused alternative to Google's Notebook LM!\n      Join our  Discord server  for help, to share workflow ideas, and suggest features! \n     \n      Checkout our website »  \n     \n     \n     📚 Get Started \n    ·\n     📖 User Guide \n    ·\n     ✨ Features \n    ·\n     🚀 Deploy \n   \n \n\n \n   \n \n\n \n   \n   Deutsch  | \n   Español  | \n   français  | \n   日本語  | \n   한국어  | \n   Português  | \n   Русский  | \n   中文 \n \n\n## A private, multi-model, 100% local, full-featured alternative to Notebook LM\n\nIn a world dominated by Artificial Intelligence, having the ability to think 🧠 and acquire new knowledge 💡, is a skill that should not be a privilege for a few, nor restricted to a single provider.\n\n**Open Notebook empowers you to:**\n- 🔒 **Control your data** - Keep your research private and secure\n- 🤖 **Choose your AI models** - Support for 18+ providers including OpenAI, Anthropic, Ollama, LM Studio, and more\n- 📚 **Organize multi-modal content** - PDFs, videos, audio, web pages, and more\n- 🎙️ **Generate professional podcasts** - Advanced multi-speaker podcast generation\n- 🔍 **Search intelligently** - Full-text and vector search across all your content\n- 💬 **Chat with context** - AI conversations powered by your research\n- 🌐 **Multi-language UI** - English, Portuguese, Chinese (Simplified & Traditional), Japanese, Russian, and Bengali support\n\nLearn more about our project at https://www.open-notebook.ai\n\n---\n\n## 🆚 Open Notebook vs Google Notebook LM\n\n| Feature | Open Notebook | Google Notebook LM | Advantage |\n|---------|---------------|--------------------|-----------|\n| **Privacy & Control** | Self-hosted, your data | Google cloud only | Complete data sovereignty |\n| **AI Provider Choice** | 18+ providers (OpenAI, Anthropic, Ollama, LM Studio, etc.) | Google models only | Flexibility and cost optimization |\n| **Podcast Speakers** | 1-4 speakers with custom profiles | 2 speakers only | Extreme flexibility |\n| **Content Transformations** | Custom and built-in | Limited options | Unlimited processing power |\n| **API Access** | Full REST API | No API | Complete automation |\n| **Deployment** | Docker, cloud, or local | Google hosted only | Deploy anywhere |\n| **Citations** | Basic references (will improve) | Comprehensive with sources | Research integrity |\n| **Customization** | Open source, fully customizable | Closed system | Unlimited extensibility |\n| **Cost** | Pay only for AI usage | Free tier + Monthly subscription | Transparent and controllable |\n\n**Why Choose Open Notebook?**\n- 🔒 **Privacy First**: Your sensitive research stays completely private\n- 💰 **Cost Control**: Choose cheaper AI providers or run locally with Ollama\n- 🎙️ **Better Podcasts**: Full script control and multi-speaker flexibility vs limited 2-speaker deep-di",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "artificial intelligence",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "GCP"
+      ],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "对比测评",
+      "detail_brief": "lfnovo/open-notebook: An Open Source implementation of Notebook LM with more flexibility and features",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.9,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「lfnovo/open-notebook - An Open Source implementat…」（lfnovo/open-notebook: An Open Source implementation of Note…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「lfnovo/open-notebook - An Open Source i…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 open-notebook 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 open-notebook 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "lfnovo/open-notebook: An Open Source implementation of Notebook LM…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "lfnovo/open-notebook - An Open Source implementation of Notebook LM with more flexibili…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：lfnovo/open-notebook: An Open Source implementation of Notebook LM…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: lfnovo/open-notebook - An Open Source implementation of Notebook LM with more flexibili…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。lfnovo/open-notebook: An Open Source implementation of Notebook LM…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. lfnovo/open-notebook - An Open Source implementation of Notebook LM with more flexibili…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：lfnovo/open-notebook: An Open Source implementation of Notebook LM…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: lfnovo/open-notebook - An Open Source implementation of Notebook LM with more flexibili…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "open-notebook：Notebook LM 的开源实现，具有更多灵活性和功能",
+    "developer_profile": {
+      "github_username": "lfnovo",
+      "profile_url": "https://github.com/lfnovo",
+      "name": "Luis Novo",
+      "bio": "Someone that is addicted to learning new stuff, committed to helping as many people as possible to achieve their full potential. Open Source lover!",
+      "company": "Supernova Labs",
+      "location": "São Paulo, Brazil",
+      "blog": "",
+      "twitter_username": "lfnovo",
+      "email": "",
+      "followers": 1053,
+      "following": 1,
+      "public_repos": 36,
+      "avatar_url": "https://avatars.githubusercontent.com/u/579178?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/lfnovo"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Open-LLM-VTuber/Open-LLM-VTuber - Talk to any LLM with hands-free voice interaction, voice interruption, and Live2D taking face running locally across platforms",
+    "url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber",
+    "heat": "9,728 stars",
+    "time": "Today",
+    "developer_name": "Open-LLM-VTuber",
+    "developer_url": "https://github.com/Open-LLM-VTuber",
+    "developer_email": "",
+    "today_stars": "581 stars today",
+    "language": "Python",
+    "summary": "Talk to any LLM with hands-free voice interaction, voice interruption, and Live2D taking face running locally across platforms",
+    "content": "\n\n Open-LLM-VTuber \n \n\n[](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/releases) \n[](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/blob/master/LICENSE) \n[](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/actions/workflows/codeql.yml)\n[](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber/actions/workflows/ruff.yml)\n[](https://hub.docker.com/r/Open-LLM-VTuber/open-llm-vtuber) \n[](https://qm.qq.com/q/ngvNUQpuKI)\n&color=blue&link=https%3A%2F%2Folv.zulipchat.com)\n\n> **📢 v2.0 Development**: We are focusing on Open-LLM-VTuber v2.0 — a complete rewrite of the codebase. v2.0 is currently in its early discussion and planning phase. We kindly ask you to refrain from opening new issues or pull requests for feature requests on v1. To participate in the v2 discussions or contribute, join our developer community on Zulip. Weekly meeting schedules will be announced on Zulip. We will continue fixing bugs for v1 and work through existing pull requests.\n\n[](https://www.buymeacoffee.com/yi.ting)\n[](https://discord.gg/3UDA8YFDXx)\n\n[](https://deepwiki.com/Open-LLM-VTuber/Open-LLM-VTuber)\n\nENGLISH README | 中文 README | 한국어 README | 日本語 README\n\nDocumentation | [](https://github.com/orgs/Open-LLM-VTuber/projects/2)\n\n   \n\n \n\n> 常见问题 Common Issues doc (Written in Chinese): https://docs.qq.com/pdf/DTFZGQXdTUXhIYWRq\n>\n> User Survey: https://forms.gle/w6Y6PiHTZr1nzbtWA\n>\n> 调查问卷(中文): https://wj.qq.com/s2/16150415/f50a/\n\n> :warning: This project is in its early stages and is currently under **active development**.\n\n> :warning: If you want to run the server remotely and access it on a different machine, such as running the server on your computer and access it on your phone, you will need to configure `https`, because the microphone on the front end will only launch in a secure context (a.k.a. https or localhost). See MDN Web Doc. Therefore, you should configure https with a reverse proxy to access the page on a remote machine (non-localhost).\n\n## ⭐️ What is this project?\n\n**Open-LLM-VTuber** is a unique **voice-interactive AI companion** that not only supports **real-time voice conversations**  and **visual perception** but also features a lively **Live2D avatar**. All functionalities can run completely offline on your computer!\n\nYou can treat it as your personal AI companion — whether you want a `virtual girlfriend`, `boyfriend`, `cute pet`, or any other character, it can meet your expectations. The project fully supports `Windows`, `macOS`, and `Linux`, and offers two usage modes: web version and desktop client (with special support for **transparent background desktop pet mode**, allowing the AI companion to accompany you anywhere on your screen).\n\nAlthough the long-term memory feature is temporarily removed (coming back soon), thanks to the persistent storage of chat logs, you can always continue your previous unfinished conversations without losing any precious interactive moments.\n\nIn terms of backend support, we have integrated a rich variety of LLM inference",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Open-LLM-VTuber/Open-LLM-VTuber: Talk to any LLM with hands-free voice interaction, voice interruption, and Live2D taking face running locally across platforms",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.2,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Open-LLM-VTuber/Open-LLM-VTuber - Talk to any LLM…」（Open-LLM-VTuber/Open-LLM-VTuber: Talk to any LLM with hands…），涉及 LLM → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Open-LLM-VTuber/Open-LLM-VTuber - Talk…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 Open-LLM-VTuber 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 Open-LLM-VTuber 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Open-LLM-VTuber/Open-LLM-VTuber: Talk to any LLM with hands-free vo…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Open-LLM-VTuber/Open-LLM-VTuber - Talk to any LLM with hands-free voice interaction, vo…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Open-LLM-VTuber/Open-LLM-VTuber: Talk to any LLM with hands-free vo…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Open-LLM-VTuber/Open-LLM-VTuber - Talk to any LLM with hands-free voice interaction, vo…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Open-LLM-VTuber/Open-LLM-VTuber: Talk to any LLM with hands-free vo…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Open-LLM-VTuber/Open-LLM-VTuber - Talk to any LLM with hands-free voice interaction, vo…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Open-LLM-VTuber/Open-LLM-VTuber: Talk to any LLM with hands-free vo…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Open-LLM-VTuber/Open-LLM-VTuber - Talk to any LLM with hands-free voice interaction, vo…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Open-LLM-VTuber：通过免提语音交互、语音中断和跨平台本地运行的 Live2D 面部识别功能与任何法学硕士交谈",
+    "developer_profile": {
+      "github_username": "Open-LLM-VTuber",
+      "profile_url": "https://github.com/Open-LLM-VTuber",
+      "name": "",
+      "bio": "Open LLM VTuber Project",
+      "company": "",
+      "location": "",
+      "blog": "https://open-llm-vtuber.github.io/",
+      "twitter_username": "",
+      "email": "",
+      "followers": 180,
+      "following": 0,
+      "public_repos": 8,
+      "avatar_url": "https://avatars.githubusercontent.com/u/193920693?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  }
+]

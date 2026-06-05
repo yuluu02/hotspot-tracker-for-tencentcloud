@@ -1,0 +1,497 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Azure Linux 4.0 is Microsoft's first general-purpose Linux",
+    "url": "https://www.boxofcables.dev/azure-linux-4-0-is-microsofts-first-general-purpose-linux/",
+    "hn_url": "https://news.ycombinator.com/item?id=48407499",
+    "heat": "46 points",
+    "time": "1 hour ago",
+    "developer_name": "haydenbarnes",
+    "developer_url": "https://news.ycombinator.com/user?id=haydenbarnes",
+    "content": "Azure Linux 4.0 is Microsoft’s first general-purpose Linux Microsoft shipped Azure Linux 4.0 into public preview at Build 2026, and for the first time you can run it on any Azure virtual machine, not just as the host underneath Azure Kubernetes Service. That sounds like a small distinction. But, this is the moment Microsoft's in-house Linux stops being a special-purpose appliance distro and becomes a general-purpose Linux distro. I have been following this distribution since before it had a marketing name. So let me put 4.0 in context... What I keep on about Microsoft has built more than one Linux distribution. Back in February 2022 I went looking through Microsoft's package mirrors and found CBL-Delridge , a Debian-based distro that powered Azure Cloud Shell. It was never announced. Mary Jo Foley wrote it up at ZDNet after reading that post. By November 2022, Delridge was 404 : its apt repository went dark and Cloud Shell moved to Microsoft's other Linux: CBL-Mariner. CBL stands for Common Base Linux, a whole family of internal distros named after Seattle geography. Delridge was the Debian one. Mariner was an RPM one, built from scratch with spec files borrowed from Photon OS , Fedora, and Linux From Scratch . Mariner is the one that survived. In March 2024 Microsoft renamed it Azure Linux and renamed the GitHub repository to match. So when I say Azure Linux, I mean the distribution that started internal development in September 2019, went public on GitHub in November 2020, hit 2.0 in April 2022, and has been the container host for AKS since 2023. None of that history was aimed at you running it on your own VM. That is what changes now. What is actually new in 4.0 Azure Linux 4.0 is derived from Fedora , right now a Fedora 43 snapshot, rather than assembled package by package the way 1.0 through 3.0 were. Microsoft no longer maintains every spec file by hand. Instead it tracks Fedora upstream and applies declarative overlays, where every deviation from Fedora carries a written description of why it exists. The rendered spec files are checked into the repository so you can read exactly what Microsoft changed and why. The component stack moved up accordingly: Kernel 6.18 LTS , Azure-tuned, with the Hyper-V integration and GPU and AI accelerator support you would expect from an Azure cloud kernel. Microsoft maintains its own kernel fork and embeds its signing keys directly in the build. dnf5 replaces tdnf , Microsoft's lean C reimplementation of dnf inherited from Photon OS. This is the single most user-visible change. You now get standard dnf5 tooling and the full plugin ecosystem instead of a Microsoft-specific package manager. glibc 2.42 , systemd 258 , OpenSSL 3.5 (with post-quantum cryptography support), Python 3.14 , and RPM 6.0 with a modernized database backend and stronger signature verification. FIPS 140-3 certification is in progress and slated for general availability. Security is solid. SELinux is supported on every image, the kernel s",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 5,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "azure",
+        "kubernetes",
+        "gpu",
+        "vm"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Azure"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Kubernetes",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Azure Linux 4. 0 is Microsoft’s first general-purpose Linux Microsoft shipped Azure Linux 4. 0 into public preview at Build 2026, and for the first time you can run it on any Azure virtual machine, not just as the host underneath Azure Kubernetes Service. That sounds like a small distinction.",
+      "heat_score": 3.0,
+      "timeliness_score": 9.0,
+      "composite_score": 6.3,
+      "tcloud_relevance": 5.3,
+      "tcloud_integration": "**Azure Linux 4.0 is Microsoft's first gen** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_products": [
+        "CVM"
+      ],
+      "tcloud_reasons": [
+        "**Azure Linux 4.0 is Microsoft's first gen** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "vm"
+      ],
+      "tcloud_primary_product": "CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CVM：**Azure Linux 4.0 is Microsoft's first gen** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_official_matches": [
+        "CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CVM）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CVM） + 社区参与",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Azure Linux 4.0 is Microsoft's first general-purp…」（Azure Linux 4. 0 is Microsoft’s first general-purpose Linux…），涉及 Kubernetes / Python → 可写方向：涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Azure Linux 4.0 is Microsoft's first gen」涉及GPU 算力场景，可结合 CVM 写教程或场景解读。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CVM",
+      "official_angle_cn": "以 Azure Linux 4.0 is Microsoft's first gen 的算力需求为切入，写一篇在 CVM GPU 实例上跑模型训练/推理的实操内容，附硬件规格和成本估算。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CVM。",
+      "platform_copies": {
+        "primary_product": "CVM",
+        "product_display": "CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Azure Linux 4.0 is Microsoft's first gen 的算力需求为切入，写一篇在 CVM GPU 实例上跑模型训练/推理的实操内容，附硬件规格和成本估算。",
+        "official_angle_en": "Use Cloud Virtual Machine (CVM) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CVM。",
+        "x_cn": "Azure Linux 4. 0 is Microsoft’s first general-purpose Linux Microso…。如果站在腾讯云国际站官方号来写，这条更适合从 CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 CVM：**Azure…",
+        "x_en": "Azure Linux 4.0 is Microsoft's first general-purpose Linux. For Tencent Cloud, this fits Cloud Virtual Machine (CVM): GPU and high-performance compute for model training and large-scale services.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Azure Linux 4. 0 is Microsoft’s first general-purpose Linux Microso…。如果从腾讯云视角切，这条最适合带到 CVM，重点聊 技术科普 + 教程拆解 + 产品关联（CVM） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Azure Linux 4.0 is Microsoft's first general-purpose Linux. From a Tencent Cloud angle, the best hook is Cloud Virtual Machine (CVM), especially around technical explainer + hands-on walkthrough + product tie-in (CVM) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Azure Linux 4. 0 is Microsoft’s first general-purpose Linux Microso…。如果用官方号发，建议主推 CVM，重点讲 技术科普 + 教程拆解 + 产品关联（CVM） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CVM：**Azure Linux 4.0 is Microsoft's first gen** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Azure Linux 4.0 is Microsoft's first general-purpose Linux. For Tencent Cloud, the better angle is Cloud Virtual Machine (CVM). GPU and high-performance compute for model training and large-scale services. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CVM) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Azure Linux 4. 0 is Microsoft’s first general-purpose Linux Microso…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CVM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CVM） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Cloud Virtual Machine (CVM)?",
+        "reddit_body_en": "A recent trend caught my eye: Azure Linux 4.0 is Microsoft's first general-purpose Linux. Instead of reposting it as news, I'd frame it through Cloud Virtual Machine (CVM) and focus on technical explainer + hands-on walkthrough + product tie-in (CVM) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Azure Linux 4.0 is Microsoft's first gen：Azure Linux 4.0 是 Microsoft 的第一个通用 Linux Microsoft 发布的 Azure Linux 4.0。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Anthropic's open-source framework for AI-powered vulnerability discovery",
+    "url": "https://github.com/anthropics/defending-code-reference-harness",
+    "hn_url": "https://news.ycombinator.com/item?id=48403980",
+    "heat": "339 points",
+    "time": "9 hours ago",
+    "developer_name": "binyu",
+    "developer_url": "https://news.ycombinator.com/user?id=binyu",
+    "content": "GitHub - anthropics/defending-code-reference-harness: Skills for threat modeling, scanning, triage, patching, plus an autonomous scanning harness you can /customize · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert anthropics / defending-code-reference-harness Public Notifications You must be signed in to change notification settings Fork 103 Star 1.3k main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 6 Commits 6 Commits .claude/ skills .claude/ skills bin bin docs docs harness harness scripts scripts static static targets targets tests tests .gitignore .gitignore CLAUDE.md CLAUDE.md LICENSE LICENSE README.md README.md pyproject.toml pyproject.toml View all files Repository files navigation Defending Code Reference Harness A reference implementation for autonomous vulnerability discovery and remediation with Claude, based on our learnings from partnering with security teams at several organizations since launching Claude Mythos Preview. For a write up of these learnings along with best practices, see the accompanying blog post (also available in blog-post.md ). For a lightweight SDK-only walkthrough of the same recon → find → triage → report → patch loop, see the companion cookbook . This repo is not maintained and is not accepting contributions. 🔒 Want a managed option? Anthropic offers Claude Security , a hosted product that finds and fixes vulnerabilities in your source code across multiple projects. Claude Security scans your repository for vulnerabilities, applies a multi-stage verification pipeline to reduce false positives, and lets you manage findings through their lifecycle: triage, fix validation, and rapid fix generation. This repository is an open-source reference implementation based on general best practices for finding vulnerabilities using Claude. You can use it to build your own vulnerability finding pipeline, customize the logic, and it can be used with whatever access you have to Claude APIs (including Bedrock, Vertex, or Azure). Contents Claude Code skills : /quickstart , /threat-model , /vuln-scan , /triage , /patch , /customize : interactive scoping, scanning, triage, and patching. Open this repo in Claude Code and run /quickstart to get oriented. harness/ : the autonomous reference pipeline (recon → find → verify → report → patch), configured for finding C/C++ memory vulnerabilities using Docker and ASAN. This harness is a reference, not a product . The general shape, prompts, and sandboxing are reusable, but the harness will not work on every codebase out of the box. Run /customize to port it to your language, detector, or vuln class. ⚠️ Security: /quickstart , /threat-model , /vuln-scan , and /triage only read and wr",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "azure",
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [
+        "Azure"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "GitHub - anthropics/defending-code-reference-harness: Skills for threat modeling, scanning, triage, patching, plus an autonomous scanning harness you can /customize · GitHub You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 6.1,
+      "tcloud_relevance": 5.5,
+      "tcloud_integration": "**Anthropic's open-source framework for AI** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Anthropic's open-source framework for AI** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Anthropic's open-source framework for AI** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Anthropic's open-source framework for AI-powered…」（GitHub - anthropics/defending-code-reference-harness: Skill…），涉及 Go → 可写方向：涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Anthropic's open-source framework for A…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 Anthropic's open-source framework for AI 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Anthropic's open-source framework for AI 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "GitHub - anthropics/defending-code-reference-harness: Skills for th…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "Anthropic's open-source framework for AI-powered vulnerability discovery. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：GitHub - anthropics/defending-code-reference-harness: Skills for th…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Anthropic's open-source framework for AI-powered vulnerability discovery. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or w…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。GitHub - anthropics/defending-code-reference-harness: Skills for th…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Anthropic's open-source framework for AI** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Anthropic's open-source framework for AI-powered vulnerability discovery. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：GitHub - anthropics/defending-code-reference-harness: Skills for th…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Anthropic's open-source framework for AI-powered vulnerability discovery. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Anthropic's open-source framework for AI：defending-code-reference-harness: 威胁建模、扫描、分类、修补的技能，以及您可以/自定义的自主扫描工具 · GitHub 您使用另一个选项卡或窗口登录。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Do transformers need three projections? Systematic study of QKV variants",
+    "url": "https://arxiv.org/abs/2606.04032",
+    "hn_url": "https://news.ycombinator.com/item?id=48405931",
+    "heat": "135 points",
+    "time": "6 hours ago",
+    "developer_name": "Anon84",
+    "developer_url": "https://news.ycombinator.com/user?id=Anon84",
+    "content": "[2606.04032] Do Transformers Need Three Projections? Systematic Study of QKV Variants Computer Science > Machine Learning arXiv:2606.04032 (cs) [Submitted on 1 Jun 2026 ( v1 ), last revised 4 Jun 2026 (this version, v2)] Title: Do Transformers Need Three Projections? Systematic Study of QKV Variants Authors: Ali Kayyam , Anusha Madan Gopal , M Anthony Lewis View a PDF of the paper titled Do Transformers Need Three Projections? Systematic Study of QKV Variants, by Ali Kayyam and 2 other authors View PDF HTML (experimental) Abstract: Transformers have become the standard solution for various AI tasks, with the query, key, and value (QKV) attention formulation playing a central role. However, the individual contribution of these three projections and the impact of omitting some remain poorly understood. We systematically evaluate three projection sharing constraints: a) Q-K=V (shared key-value), b) Q=K-V (shared query-key), and c) Q=K=V (single projection). The last two variants produce symmetric attention maps; to address this, we also explore asymmetric attention via 2D positional encodings. Through experiments spanning synthetic tasks, vision (MNIST, CIFAR, TinyImageNet, anomaly), and language modeling (300M and 1.2B parameter models on 10B tokens), we discovered that our transformers perform on par or occasionally better than the QKV transformer. In language modeling, Q-K=V projection sharing achieves 50% KV cache reduction with only 3.1% perplexity degradation. Crucially, projection sharing is complementary to head sharing (GQA/MQA): combining Q-K=V with GQA-4 yields 87.5% cache reduction, while Q-K=V + MQA achieves 96.9%, enabling practical on-device inference. We show that Q-K=V preserves quality because keys and values can occupy similar representational spaces and attention operates in a low-rank regime, whereas Q=K-V breaks attention directionality. Our results systematically characterize projection sharing as an underexplored instance of weight tying in attention, with direct, quantifiable inference memory benefits, particularly valuable for edge deployment. The code is publicly available at this https URL Comments: Accepted at ICML 2026 (PMLR vol. 306). 26 pages, 12 figures, 16 tables. Code: this https URL Subjects: Machine Learning (cs.LG) ; Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Performance (cs.PF) ACM classes: I.2.6; I.2.7; I.2.10 Cite as: arXiv:2606.04032 [cs.LG] (or arXiv:2606.04032v2 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2606.04032 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Anusha Madan Gopal [ view email ] [v1] Mon, 1 Jun 2026 20:59:05 UTC (2,017 KB) [v2] Thu, 4 Jun 2026 17:08:43 UTC (2,017 KB) Full-text links: Access Paper: View a PDF of the paper titled Do Transformers Need Three Projections? Systematic Study of QKV Variants, by Ali Kayyam and 2 other authors View PDF HTML (experimental) TeX Source view license Current browse context: cs.LG < prev | n",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "edge"
+      ],
+      "ai_hits": [
+        "ai",
+        "artificial intelligence",
+        "machine learning",
+        "transformer",
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "学术研究",
+      "topic_type": "研究前沿",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Transformer"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "04032] Do Transformers Need Three Projections? Systematic Study of QKV Variants Computer Science > Machine Learning arXiv:2606. 04032 (cs) [Submitted on 1 Jun 2026 ( v1 ), last revised 4 Jun 2026 (this version, v2)] Title: Do Transformers Need Three Projections? Systematic Study of QKV Variants Authors: Ali Kayyam , Anusha Madan Gopal , M Anthony Lewis View a PDF of the paper titled Do Transformers Need Three Projections?",
+      "heat_score": 5.0,
+      "timeliness_score": 8.0,
+      "composite_score": 4.7,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "研究解读",
+        "社区参与"
+      ],
+      "editorial_angles_text": "研究解读 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（发观点总结文章）",
+        "X（论文快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（发观点总结文章） + X（论文快讯分享）",
+      "editorial_brief": "话题类型：研究前沿\n可用角度：「Do transformers need three projections? Systemati…」（04032] Do Transformers Need Three Projections? Systematic S…），涉及 Transformer\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：LinkedIn（发观点总结文章） + X（论文快讯分享）",
+      "social_recommendation": "「Do transformers need three projections?…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（发观点总结文章） + X（论文快讯分享）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "04032] Do Transformers Need Three Projections? Systematic Study of…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Do transformers need three projections? Systematic study of QKV variants. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：04032] Do Transformers Need Three Projections? Systematic Study of…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 研究解读 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Do transformers need three projections? Systematic study of QKV variants. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around research takeaway + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。04032] Do Transformers Need Three Projections? Systematic Study of…。如果用官方号发，建议主推 人工判断场景，重点讲 研究解读 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Do transformers need three projections? Systematic study of QKV variants. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on research takeaway + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：04032] Do Transformers Need Three Projections? Systematic Study of…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 研究解读 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Do transformers need three projections? Systematic study of QKV variants. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on research takeaway + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Do transformers need three projections? ：04032]变压器需要三个投影吗？QKV 变体的系统研究计算机科学 > 机器学习 arXiv：2606。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Open Code Review – An AI-powered code review CLI tool",
+    "url": "https://github.com/alibaba/open-code-review",
+    "hn_url": "https://news.ycombinator.com/item?id=48406358",
+    "heat": "102 points",
+    "time": "5 hours ago",
+    "developer_name": "geoffbp",
+    "developer_url": "https://news.ycombinator.com/user?id=geoffbp",
+    "content": "GitHub - alibaba/open-code-review: Battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible. · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert alibaba / open-code-review Public Notifications You must be signed in to change notification settings Fork 96 Star 1.6k main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 69 Commits 69 Commits .claude-plugin .claude-plugin .claude/ commands .claude/ commands .github .github bin bin cmd cmd examples examples imgs imgs internal internal pages pages plugins/ open-code-review plugins/ open-code-review scripts scripts skills/ open-code-review skills/ open-code-review .gitignore .gitignore .npmignore .npmignore CONTRIBUTING.md CONTRIBUTING.md CONTRIBUTING.zh-CN.md CONTRIBUTING.zh-CN.md LICENSE LICENSE Makefile Makefile README.md README.md README.zh-CN.md README.zh-CN.md go.mod go.mod go.sum go.sum package.json package.json View all files Repository files navigation The open source AI code review agent. English | 简体中文 What is Open Code Review? Open Code Review is an AI-powered code review CLI tool. It originated as Alibaba Group's internal official AI code review assistant — over the past two years, it has served tens of thousands of developers and identified millions of code defects. After thorough validation at massive scale, we incubated it into an open source project for the community. Simply configure a model endpoint to get started. It reads Git diffs, sends changed files to a configurable LLM via an agent with tool-use capabilities, and generates structured review comments with line-level precision. The agent can read full file contents, search the codebase, inspect other changed files for context, and produce deep reviews — not just surface-level diff feedback. Why Open Code Review? The Problem with General-Purpose Agents If you've used general-purpose agents like Claude Code with Skills for code review, you've likely encountered these pain points: Incomplete coverage — On larger changesets, agents tend to \"cut corners,\" selectively reviewing only some files and missing others. Position drift — Reported issues frequently don't match the actual code location, with line numbers or file references drifting off target. Unstable quality — Natural-language-driven Skills are hard to debug, and review quality fluctuates significantly with minor prompt variations. The root cause: a purely language-driven architecture lacks hard constraints on the review process. Core Design: Deterministic Engineering × Agent Hybrid Open Code Review'",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 8,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "agent",
+        "fine-tune",
+        "prompt",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Fine-tuning",
+        "Go"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "GitHub - alibaba/open-code-review: Battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible. · GitHub You signed in with another tab or window. Reload to refresh your session.",
+      "heat_score": 5.0,
+      "timeliness_score": 8.0,
+      "composite_score": 6.0,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**Open Code Review** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Open Code Review** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Open Code Review** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Open Code Review – An AI-powered code review CLI…」（GitHub - alibaba/open-code-review: Battle-tested at Alibaba…），涉及 LLM / Agent / Fine-tuning → 可写方向：**Open Code Review** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Open Code Review – An AI-powered code r…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 Open Code Review 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用工具/框架的架构图或使用流程截图，如果有命令行输出可以截取关键操作步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Open Code Review 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用工具/框架的架构图或使用流程截图，如果有命令行输出可以截取关键操作步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "GitHub - alibaba/open-code-review: Battle-tested at Alibaba's scale…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "Open Code Review – An AI-powered code review CLI tool. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：GitHub - alibaba/open-code-review: Battle-tested at Alibaba's scale…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Open Code Review – An AI-powered code review CLI tool. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。GitHub - alibaba/open-code-review: Battle-tested at Alibaba's scale…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Open Code Review** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Open Code Review – An AI-powered code review CLI tool. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：GitHub - alibaba/open-code-review: Battle-tested at Alibaba's scale…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Open Code Review – An AI-powered code review CLI tool. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Open Code Review：open-code-review,在阿里巴巴规模上经过实战测试,下载open-code-review的源码_GitHub_帮酷混合架构代码审查工具：确定性管道 + LLM Agent、精确的行级注释、内置微调规则集（NPE、线程安全、XSS、SQL 注入）、OpenAI 和 Anthropic 兼容。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "VoidZero Is Joining Cloudflare",
+    "url": "https://blog.cloudflare.com/voidzero-joins-cloudflare/",
+    "hn_url": "https://news.ycombinator.com/item?id=48398055",
+    "heat": "599 points",
+    "time": "16 hours ago",
+    "developer_name": "coloneltcb",
+    "developer_url": "https://news.ycombinator.com/user?id=coloneltcb",
+    "content": "VoidZero is joining Cloudflare VoidZero is joining Cloudflare 2026-06-04 Evan You Steve Faulkner 7 min read VoidZero, the company behind Vite , Vitest , Rolldown , Oxc , and Vite+ , is joining Cloudflare. As part of this change, all team members of VoidZero are joining Cloudflare, too. Before saying anything else, we want to make the most important thing clear: Vite, Vitest, Rolldown, Oxc, and Vite+ will stay open source, vendor-agnostic, and community-driven. Nothing about that changes. Cloudflare's mission is to help build a better Internet. And a better Internet is an open Internet. Developers need choice, frameworks need a neutral foundation, and applications need to be portable. It is not reasonable to expect the entire web ecosystem to build around a single vendor. The most important tools and frameworks are portable by design. Vite is one of the few foundational tools that the whole JavaScript ecosystem agrees on. It earned that position by being fast, excellent, portable, and vendor-neutral. One of the best ways Cloudflare can help build a better Internet is by investing in that foundational open source toolchain. A toolchain that makes the Internet better for everyone, not just people who use Cloudflare or choose to host with us. Over the last few years we've invested heavily in making Cloudflare the best place to build and run websites, applications, and agents on our developer platform . But ultimately that choice will always be yours. Run your Vite application anywhere you want. What this means for Vite Today's news gives Vite more resources to keep growing, while the things that make Vite what it is remain the same: Vite remains MIT-licensed and open source. Vite remains vendor-agnostic. Applications built with Vite run anywhere and will continue to do so. Vite's roadmap continues to be driven by the broader Vite team and community, and continues to be developed in the open. Evan and the rest of the VoidZero team continue to lead Vite, Vitest, Rolldown, Oxc, and Vite+. Cloudflare is committing engineering and resources to those projects, not redirecting them. We made the same kind of commitment when Astro joined Cloudflare earlier this year. Astro is still open source, and still deploys anywhere. The team is still shipping the roadmap they were already shipping. This commitment matters even more with Vite, because Vite is not one framework. Vite is the foundation underlying so many: Vue , SvelteKit , Nuxt , Astro , Solid , Qwik , Angular , React Router , TanStack Start . Even Next.js now has a Vite-based implementation in vinext . Vite has become a shared foundation for the JavaScript ecosystem. Our number one goal is to maintain the trust that has earned Vite so much adoption. Not with our words here, but by proving it every day in how we support and develop these projects. We also want to put our money where our mouth is when it comes to our support for open source and shared ecosystem foundations. As part of this announcement, Clo",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloudflare"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Cloudflare"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "React",
+        "Vue"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "VoidZero is joining Cloudflare VoidZero is joining Cloudflare 2026-06-04 Evan You Steve Faulkner 7 min read VoidZero, the company behind Vite , Vitest , Rolldown , Oxc , and Vite+ , is joining Cloudflare. As part of this change, all team members of VoidZero are joining Cloudflare, too. Before saying anything else, we want to make the most important thing clear: Vite, Vitest, Rolldown, Oxc, and Vite+ will stay open source, vendor-agnostic, and community-driven.",
+      "heat_score": 6.0,
+      "timeliness_score": 6.0,
+      "composite_score": 3.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「VoidZero Is Joining Cloudflare」（VoidZero is joining Cloudflare VoidZero is joining Cloudfla…），涉及 React / Vue → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「VoidZero Is Joining Cloudflare」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "VoidZero is joining Cloudflare VoidZero is joining Cloudflare 2026-…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "VoidZero Is Joining Cloudflare. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：VoidZero is joining Cloudflare VoidZero is joining Cloudflare 2026-…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: VoidZero Is Joining Cloudflare. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。VoidZero is joining Cloudflare VoidZero is joining Cloudflare 2026-…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. VoidZero Is Joining Cloudflare. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：VoidZero is joining Cloudflare VoidZero is joining Cloudflare 2026-…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: VoidZero Is Joining Cloudflare. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "VoidZero Is Joining Cloudflare：VoidZero 即将加入 Cloudflare VoidZero 即将加入 Cloudflare 2026-06-04 Evan You Steve Faulkner 7 分钟阅读 Vite、Vite、Rolldown、Oxc 和 Vite+ 背后的公司 VoidZero 即将加入 Cloudflare。作为此变更的一部分，Void…"
+  }
+]
