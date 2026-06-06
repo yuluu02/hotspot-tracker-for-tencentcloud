@@ -1,0 +1,670 @@
+[
+  {
+    "source": "V2EX",
+    "title": "大家是怎么使用 AI 的，真能做到不手写代码吗，在我手里感觉是个智障。。。",
+    "url": "https://www.v2ex.com/t/1218201",
+    "heat": "113 replies",
+    "time": "Hot",
+    "summary": "经常会被 AI 气到忍不住吐槽，但是身边有观点说是我用的方法不对，说我没给 AI 提供足够的文档。\r\n\r\n目前我使用 AI 的方式还是局限于写点业务无关的辅助类，还有就是代码 review 功能（感觉最有用的功能就这个了），使用的是 codex gpt5.5 high 。\r\n\r\n最近尝试使用 mattpocock/skills 的 grill-with-docs ，就是一直针对你的需求提问问题，和 AI 对齐颗粒度，然后 AI 会针对该需求生成 prd 文档，issues 等。但是几天下来我发现这些文档好像没什么用，AI 还是会忘记需求，忘记文档，偶尔左右脑互搏。最典的是它需求实现错了，我指出错误的地方让它调整，它反手就说刚刚的代码是我写的，它是基于我的代码修改的，我直接红温了...\r\n\r\n我看一些文章说，公司的业务代码完全用 AI 写的，我真有点不愿相信，感觉是利益方的小作文。当然那些非公司业务的个人工具，我还是相信能不手写代码的，毕竟业务能灵活调整。",
+    "developer_name": "AItsuki",
+    "developer_url": "https://www.v2ex.com/member/AItsuki",
+    "content": "大家是怎么使用 AI 的，真能做到不手写代码吗，在我手里感觉是个智障。。。 - V2EX Home Sign Up Sign In • 请不要在回答技术问题时复制粘贴 AI 生成的内容 V2EX › 程序员 大家是怎么使用 AI 的，真能做到不手写代码吗，在我手里感觉是个智障。。。 AItsuki · 21h 30m ago · 6739 views 经常会被 AI 气到忍不住吐槽，但是身边有观点说是我用的方法不对，说我没给 AI 提供足够的文档。 目前我使用 AI 的方式还是局限于写点业务无关的辅助类，还有就是代码 review 功能（感觉最有用的功能就这个了），使用的是 codex gpt5.5 high 。 最近尝试使用 mattpocock/skills 的 grill-with-docs ，就是一直针对你的需求提问问题，和 AI 对齐颗粒度，然后 AI 会针对该需求生成 prd 文档，issues 等。但是几天下来我发现这些文档好像没什么用，AI 还是会忘记需求，忘记文档，偶尔左右脑互搏。最典的是它需求实现错了，我指出错误的地方让它调整，它反手就说刚刚的代码是我写的，它是基于我的代码修改的，我直接红温了... 我看一些文章说，公司的业务代码完全用 AI 写的，我真有点不愿相信，感觉是利益方的小作文。当然那些非公司业务的个人工具，我还是相信能不手写代码的，毕竟业务能灵活调整。 AI 代码 业务 113 replies • 2026-06-06 12:20:12 +08:00 1 2 ❮ ❯ 1 EthanZC 21h 25m ago 3 我都自己 vibe 了一堆小工具了...你还在这阿巴阿巴 2 loryyang 21h 25m ago 1 差不多吧，很久没手写代码了，有问题让他继续改好了 至于你说效果不好，那你要了解模型和 agent 的工作机制，对应调整。理论上 codex 已经是顶级模型了，模型上面问题不大 3 AItsuki OP 21h 24m ago @ EthanZC #1 可能我没说清楚，我指的是公司的业务代码，毕竟小工具没那么多约束。 4 giter 21h 23m ago 2 和城中村的巷子一样深的业务代码最好主动补充说明完整的业务介绍、细节，可以多写点 Skills ，再安装一个读取数据库的 MCP ，让 AI 可以实时结合数据库中的数据与业务代码一起做 CRUD 。 5 lucays 21h 20m ago via Android 不 AI 写还手写吗？早就百分百 AI 写了，你应该是文档不够吧或者需求没说清楚 6 lujiaxing 21h 19m ago 我现在一直用 Opus 4.7, 基本上不自己写代码了 7 Sundayz 21h 19m ago 1 我已经有大半年没有手搓代码了，即是很小的改动，我也让 AI 去完成。 经验就是铺垫好背景、明确好目标、确定好约束，写清楚提示词，然后让 AI 去完成就好了。 8 jettzhang 21h 17m ago 1 你不会使用了中转站的假模型吧，现在 codex 很顶了，现在不说写代码了，我根本一行都没看，直接做用户验收 9 fciasth 21h 14m ago 很强，昨天重构了一个小模块，几乎一遍过，不敢想象以前手搓要弄多久 10 ndxxx 21h 12m ago via Android 不要给 ai 太多的文档（任何 LLM 都有上下文限制），不要给 ai 太少的描述（任何 LLM 都不是你肚子里的蛔虫）。 11 darthdarth 21h 11m ago 我就想问问，全 ai 写的那些人，ai 写完，你们本地不调试运行一下吗？直接就提交代码吗，有问题也不自己打断点调试吗？真就一行代码不写？ 12 l864494871 21h 11m ago 1 进入工程文件夹，启动 claude code | codex ，先/init 。然后开始改 CLAUDE.md | AGENTS.md 。 改为类似 ` # Ben Admin Template - Claude Code Gateway > 长期红线与稳定偏好由 Memory 负责，当前项目规则由 `.claude/rules/*` 负责。 ## Highest Priority Guardrails - Never run `rm` or `rm -rf`. - Never modify Git state unless the user explicitly asks, including `git add`, `git commit`, `git push`, `git reset`, and `git checkout`. - Before shell commands, check Memory ` critical_rules.md `. - Do not claim completion, fixed, or passing without fresh verification evidence. - Ask before any irreversible or high-risk action. ## Project Rules @.claude/rules/ coding-standards.md @.claude/rules/ project-context.md @.claude/rules/ collaboration-contract.md @.claude/rules/ workflow-triggers.md ## Skills - Prefer project skills over user/global skills. - Matt skills are on-demand capabilities; they do not replace project rules. - Use `planning-with-files` only for long-lived, cross-session, or explicitly requested planning work. - Run `linus-review` before delivery when `.claude/rules/ workflow-triggers.md ` says it is required. ## Local Constraints - `.claude/rules/` owns project collaboration, coding standards, project context, and workflow triggers. - When deeper local `*.md` files exist, read their local constraints first and apply them without violating higher-priority guardrails. ## Agent skills ### Issue tracker Issues and PRDs live as local ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "MCP"
+      ],
+      "tone": "热点事件",
+      "detail_brief": "经常会被 AI 气到忍不住吐槽，但是身边有观点说是我用的方法不对，说我没给 AI 提供足够的文档。 目前我使用 AI 的方式还是局限于写点业务无关的辅助类，还有就是代码 review 功能（感觉最有用的功能就这个了），使用的是 codex gpt5. 5 high 。 最近尝试使用 mattpocock/skills 的 grill-with-docs ，就是一直针对你的需求提问问题，和 AI 对齐颗粒度，然后 AI 会针对该需求生成 prd 文档，issues 等。",
+      "heat_score": 5.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.4,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "「AI 的，真能做到不手」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「AI 的，真能做到不手」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「AI 的，真能做到不手」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「大家是怎么使用 AI 的，真能做到不手写代码吗，在我手里感觉是个智障。。。」（经常会被 AI 气到忍不住吐槽，但是身边有观点说是我用的方法不对，说我没给 AI 提供足够的文档。 目前我使用 AI…），涉及 LLM / Agent / MCP → 可写方向：「AI 的，真能做到不手」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「大家是怎么使用 AI 的，真能做到不手写代码吗，在我手里感觉是个智障。。。」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「AI 的，真能做到不手」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（经常会被 AI 气到忍不住吐槽，但是身边有观点说是我用的方法不对，说我没给 AI 提供足够的文档。 目前我使用 AI 的方式还是局限于写点业务无关的辅助类，还…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「AI 的，真能做到不手」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（经常会被 AI 气到忍不住吐槽，但是身边有观点说是我用的方法不对，说我没给 AI 提供足够的文档。 目前我使用 AI 的方式还是局限于写点业务无关的辅助类，还…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "经常会被 AI 气到忍不住吐槽，但是身边有观点说是我用的方法不对，说我没给 AI 提供足够的文档。 目前我使用 AI 的方式还是局限于…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "大家是怎么使用 AI 的，真能做到不手写代码吗，在我手里感觉是个智障。。。. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：经常会被 AI 气到忍不住吐槽，但是身边有观点说是我用的方法不对，说我没给 AI 提供足够的文档。 目前我使用 AI 的方式还是局限于…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 大家是怎么使用 AI 的，真能做到不手写代码吗，在我手里感觉是个智障。。。. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。经常会被 AI 气到忍不住吐槽，但是身边有观点说是我用的方法不对，说我没给 AI 提供足够的文档。 目前我使用 AI 的方式还是局限于…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「AI 的，真能做到不手」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 大家是怎么使用 AI 的，真能做到不手写代码吗，在我手里感觉是个智障。。。. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：经常会被 AI 气到忍不住吐槽，但是身边有观点说是我用的方法不对，说我没给 AI 提供足够的文档。 目前我使用 AI 的方式还是局限于…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: 大家是怎么使用 AI 的，真能做到不手写代码吗，在我手里感觉是个智障。。。. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "经常会被 AI 气到忍不住吐槽，但是身边有观点说是我用的方法不对，说我没给 AI 提供足够的文档。 目前我使用 AI 的方式还是局限于写点业务无关的辅助类，还有就是代码 review 功能（感觉最有用的功能就这个了），使用的是 codex gpt5. 5 high 。 最近尝试使用 mattpocock/skills 的 grill-with-docs ，就是一直针对你的需求提问问题，和 AI…"
+  },
+  {
+    "source": "V2EX",
+    "title": "找一个程序员搭子，互相鼓励",
+    "url": "https://www.v2ex.com/t/1218189",
+    "heat": "47 replies",
+    "time": "Hot",
+    "summary": "坐标独立开发，离职一个月，一个人租了办公室干活。最近发现一个问题：没人监督之后，执行力直线下降，总是用舒服的工程任务逃避真正重要的事。\r\n\r\n想找一个也在独立做项目的人，做最简单的互相监督：每天早上发三件今天要做的事，晚上发完成情况。不需要深度交流，也不需要点评对方的项目，就是\"有个人知道我今天该干什么\"这件事本身就够了。\r\n\r\n我的方向：游戏工具站 + SEO ，技术栈 Next.js / Claude Code / AI 自动化建站。如果你也是一个人在扛，来聊。",
+    "developer_name": "himason",
+    "developer_url": "https://www.v2ex.com/member/himason",
+    "content": "找一个程序员搭子，互相鼓励 - V2EX Home Sign Up Sign In V2EX › 独立开发者 👨‍💻 找一个程序员搭子，互相鼓励 himason · 22h 0m ago · 3382 views 坐标独立开发，离职一个月，一个人租了办公室干活。最近发现一个问题：没人监督之后，执行力直线下降，总是用舒服的工程任务逃避真正重要的事。 想找一个也在独立做项目的人，做最简单的互相监督：每天早上发三件今天要做的事，晚上发完成情况。不需要深度交流，也不需要点评对方的项目，就是\"有个人知道我今天该干什么\"这件事本身就够了。 我的方向：游戏工具站 + SEO ，技术栈 Next.js / Claude Code / AI 自动化建站。如果你也是一个人在扛，来聊。 程序员 监督 独立 47 replies • 2026-06-06 12:23:19 +08:00 1 zgsi 21h 55m ago 1 我以为找对象呢 2 CongoJvy 21h 48m ago 都什么时代了？这个直接让 agent 干不就行了，我现在都是每天一个定时任务总结我今天做了什么，干了哪些事 3 kulove 21h 46m ago via Android 可以发小红书 说不定自媒体赛道就做成了 4 isales 21h 37m ago To-do list 够了. 5 ycl10875222 21h 35m ago 躺在床上用 codex 手机版控制电脑干活就完事了 6 cairnechen 21h 33m ago 我比较好奇为什么要租个办公室，没有办公桌的仪式感干不了活？ 7 jingcjie 21h 31m ago 认识一下，你 tg 的 id 居然搜不到人🤣 https://jingcjie.top/ 8 neuthself 21h 29m ago 开个 goal 模式，让 AI 一直干活就行了，自己有空过来瞅一眼。 9 Adriel 21h 24m ago 先去搞点负债再说 主要还是没压力 10 wonderfulcxm 21h 20m ago via iPhone 1 何不先做一个搭子网站或者 app ？ 11 wfg 21h 17m ago via iPhone 你自己发给自己不就行了 12 zhangshaohan 21h 15m ago 连这点自制力没有就别创业了 13 Nasdaq PRO 21h 14m ago 5 你适合当牛马挨领导 PUA ，别 JB 创业了～ 14 qiubo 20h 58m ago 虽然我也是单干，但是赚钱的事没法和别人讨论 15 zhuyue 20h 57m ago 你开个直播吧 16 ashen114 20h 55m ago @ zhuyue 附议 17 luchengdst 20h 54m ago 赚钱还要监督鼓励 那这个也不是非赚不可 18 himason OP 20h 39m ago @ Nasdaq 我很理解你的感觉，但是口臭是一个很不好的习惯，如果习惯了在网上当键盘侠，现实的回旋镖很容易击中你。兄弟 19 himason OP 20h 34m ago 可能写的简单了些，大家的评论我也都看完了，我觉得可以再详细写一下个人情况。 之前全职的收入为 2.4w ，目前创业的第一个月的盈利情况 8000 ，一个人创业是孤独的，可能只有创业的人才会感同身受。我反省了一下，应该不是真的需要鼓励师，而是寻找一个志同道合的朋友，共同去努力实现自己的梦想以及寻找自身的自由自洽之路。 20 himason OP 20h 30m ago @ jingcjie 好呀，忘记我 tg 注销了，不好意思。 我加你～ 21 himason OP 20h 28m ago @ Adriel 哈哈哈，是的。目前确实没负债，压力都是自己给自己想出来的 22 xiaokekeT 20h 23m ago @ himason 来聊啊，一个工作久了是很无聊的😂 23 himason OP 20h 23m ago @ zhuyue 好！谢谢。我认真考虑下，现在也在做自媒体，也才几万粉丝而已，直播还没尝试过 24 himason OP 20h 20m ago @ CongoJvy 是的，已经这么做了。但是感觉内心还是非常的空虚，我不清楚是不是创业的话这种感觉是否是常态。就跟解决 X 需求，用肥瘠杯可以解决，但是跟真实的女人一起就是另一种感觉 25 himason OP 20h 19m ago @ qiubo 很真实 26 ixixi 20h 16m ago 赶紧你挺牛逼的 自媒体几万粉 领先一大截人了 ,不上班还有这么多收入 27 himason OP 20h 5m ago @ ixixi 自媒体是在还没离职前就做了一年多了 28 unusualcat 19h 45m ago 同样 oneman 做事。不过我没租办公室，在家分出单独一个房间，动力主要来自客户，前几年干劲十足，现在不太想搞的太累了。客户不催我就往后放一放。客户催的急我就赶紧做。闲下来就出去骑行或徒步，要么就在电脑前折腾 ai 研究东西玩。 话说你们赚钱的事情怎么能跟人分享呢？闷声赚钱不好吗。真正赚钱的事情，那是连亲兄弟都不会告诉的。 29 kneo 19h 39m ago 你可以找个 AI 伙伴啊。不是嘲讽你，AI 真的适合这个。 30 zlo309618100 19h 38m ago 游戏工具站 + SEO 感觉是良辰美那套呢。 31 himason OP 19h 34m ago @ unusualcat 当然～ 赚钱的肯定是闷声做的，可能就是这几天有点累了，每周工作时间太长了，应该超过 60 个小时了。所以才想着要不要找一个同行交流一下之类的... 32 himason OP 19h 33m ago @ kneo 嗯嗯，感谢。后续考虑一下，可能我是感觉 AI 就是 AI ，有时候人回复的话，可能一个嗯就够了。可能调整一下提示词做一个专属 AI 陪伴也可以 33 ixixi 19h 0m ago @ himason #27 什么赛道 34 kkkbbb 18h 58m ago @ zgsi 噗 35 kkkbbb 18h 54m ago @ Nasdaq 人都有点拖延症，这很正常那，跟 pua 有什么关系，别见个人就喷 36 nc 18h 54m ago 搞个 TG 频道吧 37 pckillers 18h 47m ago 雇个助理，给她发工资，工作内容是给你排期与对进度。 这样经济压力有了，计划有了，排期也有了。 效率猛增 38 krapnik 18h 46m ago 老哥，交个朋友~ a3JhcG5paw== 39 himason OP 18h 41m ago @ ixixi AI 赛道，就是发发什么模型更新了呀，功能怎么怎么用之类的 40 wudipdf 18h 41m ago 老登 dmlwcGRm 41 NotNEO 15h 41m ago 我现在也在做出海网站这一套 所以很想找人一起交流 VFBOMDI1OA== 42 darkengine 13h 4m ago @ himason 每周工作时间太长了，应该超过 60 个小时",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "React"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "找一个程序员搭子，互相鼓励: 坐标独立开发，离职一个月，一个人租了办公室干活。 最近发现一个问题：没人监督之后，执行力直线下降，总是用舒服的工程任务逃避真正重要的事。 想找一个也在独立做项目的人，做最简单的互相监督：每天早上发三件今天要做的事，晚上发完成情况。 不需要深度交流，也不需要点评对方的项目，就是\"有个人知道我今天该干什么\"这件事本身就够了。",
+      "heat_score": 3.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.5,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "「找一个程序员搭子」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「找一个程序员搭子」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「找一个程序员搭子」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「找一个程序员搭子，互相鼓励」（找一个程序员搭子，互相鼓励: 坐标独立开发，离职一个月，一个人租了办公室干活。 最近发现一个问题：没人监督之后，执行力…），涉及 Agent / React → 可写方向：「找一个程序员搭子」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「找一个程序员搭子，互相鼓励」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「找一个程序员搭子」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（找一个程序员搭子，互相鼓励: 坐标独立开发，离职一个月，一个人租了办公室干活。 最近发现一个问题：没人监督之后，执行力直线下降，总是用舒服的工程任务逃避真正重…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「找一个程序员搭子」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（找一个程序员搭子，互相鼓励: 坐标独立开发，离职一个月，一个人租了办公室干活。 最近发现一个问题：没人监督之后，执行力直线下降，总是用舒服的工程任务逃避真正重…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "找一个程序员搭子，互相鼓励: 坐标独立开发，离职一个月，一个人租了办公室干活。 最近发现一个问题：没人监督之后，执行力直线下降，总是用…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "找一个程序员搭子，互相鼓励. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：找一个程序员搭子，互相鼓励: 坐标独立开发，离职一个月，一个人租了办公室干活。 最近发现一个问题：没人监督之后，执行力直线下降，总是用…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 找一个程序员搭子，互相鼓励. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。找一个程序员搭子，互相鼓励: 坐标独立开发，离职一个月，一个人租了办公室干活。 最近发现一个问题：没人监督之后，执行力直线下降，总是用…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「找一个程序员搭子」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 找一个程序员搭子，互相鼓励. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：找一个程序员搭子，互相鼓励: 坐标独立开发，离职一个月，一个人租了办公室干活。 最近发现一个问题：没人监督之后，执行力直线下降，总是用…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: 找一个程序员搭子，互相鼓励. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "找一个程序员搭子，互相鼓励: 坐标独立开发，离职一个月，一个人租了办公室干活。 最近发现一个问题：没人监督之后，执行力直线下降，总是用舒服的工程任务逃避真正重要的事。 想找一个也在独立做项目的人，做最简单的互相监督：每天早上发三件今天要做的事，晚上发完成情况。 不需要深度交流，也不需要点评对方的项目，就是\"有个人知道我今天该干什么\"这件事本身就够了。"
+  },
+  {
+    "source": "V2EX",
+    "title": "为什么 AI 现在这么火，却很少有行业真的铺开呢？",
+    "url": "https://www.v2ex.com/t/1218246",
+    "heat": "37 replies",
+    "time": "Hot",
+    "summary": "有人说，AI 是新东西，应该去赚新世界的钱。新世界有没有钱我不知道，但传统行业我是很少见有大范围铺开的，至少中老登行业的钱就赚不了。\r\n\r\n我个人觉得有几点原因：\r\n\r\n1 、传统行业他们更倾向于维持现在的体系，然后让 AI 去做一些优化的、锦上添花的工作，而不是让 AI 来一场重构。首先拿到一个 AI 产品，他们会下意识地把它当成一个纯工具，希望它能嵌入到现有的工作流当中，而不希望围绕 AI 来一场升级。\r\n\r\n2 、AI 本身也有局限，现在大部分还在理想的实验阶段，距离现实场景中的工作，还有很大的 gap 。也就是它能帮你思考，但真要帮你干活的话是不靠谱的。\r\n\r\n举个例子，你要给企业建一个 AI 知识库，但现实世界里，企业里 90%的知识不在数据库的结构化字段里，而是躺在 PDF 研报、Word 合同、Excel 财务报表、PPT 产品方案里。光是解析这一步，就能把 AI 卡住。\r\n\r\n3 、安全问题，AI 现在说白了，还是比较黑箱的，对于数据安全看得比较紧的行业，难免瞻前顾后，迟迟不愿开放。\r\n\r\n你们觉得限制 AI 铺开和商业化的还有哪些因素？想听听专业老哥们的意见。",
+    "developer_name": "cxd8190102",
+    "developer_url": "https://www.v2ex.com/member/cxd8190102",
+    "content": "为什么 AI 现在这么火，却很少有行业真的铺开呢？ - V2EX Home Sign Up Sign In V2EX › 职场话题 为什么 AI 现在这么火，却很少有行业真的铺开呢？ cxd8190102 · 19h 50m ago · 2880 views 有人说，AI 是新东西，应该去赚新世界的钱。新世界有没有钱我不知道，但传统行业我是很少见有大范围铺开的，至少中老登行业的钱就赚不了。 我个人觉得有几点原因： 1 、传统行业他们更倾向于维持现在的体系，然后让 AI 去做一些优化的、锦上添花的工作，而不是让 AI 来一场重构。首先拿到一个 AI 产品，他们会下意识地把它当成一个纯工具，希望它能嵌入到现有的工作流当中，而不希望围绕 AI 来一场升级。 2 、AI 本身也有局限，现在大部分还在理想的实验阶段，距离现实场景中的工作，还有很大的 gap 。也就是它能帮你思考，但真要帮你干活的话是不靠谱的。 举个例子，你要给企业建一个 AI 知识库，但现实世界里，企业里 90%的知识不在数据库的结构化字段里，而是躺在 PDF 研报、Word 合同、Excel 财务报表、PPT 产品方案里。光是解析这一步，就能把 AI 卡住。 3 、安全问题，AI 现在说白了，还是比较黑箱的，对于数据安全看得比较紧的行业，难免瞻前顾后，迟迟不愿开放。 你们觉得限制 AI 铺开和商业化的还有哪些因素？想听听专业老哥们的意见。 AI 传统 限制 37 replies • 2026-06-06 12:29:17 +08:00 1 jackStation 19h 25m ago 很火，对有些人好用。但还没到开箱即用 的程度 2 connor123 19h 21m ago 1 我个人认为当前 ai 的本质是抽卡，而工程最需要的是稳定，因此 ai 作为人类的助手非常强大，但是让 ai 直接进入工程中，够呛 3 Majestic11 19h 16m ago AI 做长任务贵得离谱，还存在很多不确定因素，需要人类把关 如果定位做短任务辅助人类，那价值大大缩水 4 Rickkkkkkk 19h 14m ago 我真的是觉得太多人/太多老板没用过 codex + gpt 5.5 来处理他们在电脑上要干的活。 用过的话很多活真的要被替代。 5 wanglz111 19h 8m ago “CODEX, 帮我去区块链上赚 100 美金” -> SB “CODEX, 我发现区块链上这里存在一个套利机会，大概是 xxxxxx 这样，你能不能帮我看一下这些交易的共性，验证一下，并实现成一个可套利的模板” -> 究极生产力工具 6 TimPeake 19h 4m ago 你处在互联网圈子里 知道 ai 已经在大规模应用。这个圈子外的，估计 99%以上还停留在 把 ai 当搜索引擎问答上。 7 Sundayz 19h 2m ago 知道为啥 Anthropic 迅速登顶 AI 企业利润第一吗？因为他们知道现阶段 AI 变现的方式只有卖 token ，而程序员们正好是 token 消费力最强的群体，把 claude 做到最顶尖，企业就是第一了。 AI 商业变现面临大量的法律法规问题，全世界都没有哪个国家对 AI 有完善的法律机制，所以很多事情都是搞不了的，所以卖 token 才是最赚钱的。 8 loa13368 17h 51m ago 影视行业已经用上了，ai 短剧。 保险行业，填表格，分析文字。 这是我知道的，不知道的应该还有很多。 9 cxd8190102 OP 17h 50m ago @ Sundayz #7 唉，这离我们期待 AI 攻克癌症、解决数学难题、解放人类生产力的初衷有点远啊 10 Solix 17h 49m ago 不是不想要，是因为用了就被开除了，这是一个深层原因，不是大家不用 AI 的原因。未来所有的做办公室的工作都可以被 AI 替代，那么人去干什么呢？怎么挣钱呢？对吧？ 11 cxd8190102 OP 17h 48m ago @ loa13368 #8 感觉 AI 做的事情还是比较平的，没有像工程行业之类的这么复杂和强调配合。 12 cxd8190102 OP 17h 46m ago @ Solix #10 本以为它是来解放人类的，结果变成替代人类的了，没去攻克难题反而变成人机斗争了，真是悲哀 13 xxmym 17h 41m ago 为什么现在这个时间节点还能有这种论调。先问是不是，再问为什么。 14 hfJ433 17h 35m ago 我看到是的有人拿 CODEX 来破解 ps 后面应该越来越多的应用会被破解吧 总感觉出发点不对 15 Leslieo 17h 24m ago via Android 铺开了，国内豆包，ai 短剧，ai 修图 16 intoext 17h 15m ago 举个例子，你要给企业建一个 AI 知识库，但现实世界里，企业里 90%的知识不在数据库的结构化字段里，而是躺在 PDF 研报、Word 合同、Excel 财务报表、PPT 产品方案里。光是解析这一步，就能把 AI 卡住。 这一条不敢苟同，无非是企业拿着所谓这些知识当宝，不敢喂而已。 敢喂数据的话，AI 解析那不是小儿科吗 17 davidyin 17h 2m ago via Android AI 作客服，比如 wealthsimple AI 作股票分析，富途 moomoo 18 loa13368 15h 50m ago @ cxd8190102 行业发展需要时间的，现在 2026 年，gpt 出来的第三年 19 icyalala 13h 30m ago 企业组织架构的变革是缓慢的，所以并不是行业里面铺不开，而是你看到 AI 发展的相对来说太快 （我感觉我已经被 AI 污染了，写了个不是而是的句式...） 20 tfdetang 13h 7m ago >你要给企业建一个 AI 知识库，但现实世界里，企业里 90%的知识不在数据库的结构化字段里，而是躺在 PDF 研报、Word 合同、Excel 财务报表、PPT 产品方案里。光是解析这一步，就能把 AI 卡住。 对不起，我现在这些文档都是让 ai 读，ai 分析，ai 写，效果非常好； 为什么只有程序员先被替代了，而其他行业还没铺开； 因为程序员的工资可能是一家科技企业成本的 90%，而普通文职人员的成本在一家传统企业所占的成本不到 10%； 不是做不到，而是收益没那么大 21 ETiV 13h 6m ago via iPhone AI 现在看上去不太能有规模效应，不会因为规模越大而成本越小，越“聪明”的模型参数越多、参数越多需要更多的算力、内存。厂商今年买的先进芯片三五年之后就不够快了，内存厂商的产能在这里摆着，也都排到明年后年去了。 token 又不像带宽、电力，用不完就浪费掉了，所以需要卖掉……甚至能看到负的电价 我觉得可能这一轮 AI 泡沫破掉之后才能迎来产业变革吧…… 22 moudy 12h 55m ago @ intoext 系统性的知识喂进去还行。客户东一榔头西一锄头搞出来的问题，解决之后的知识还挺难系统化的喂进去的。基本上还是得人来调试，人来总结。尤其客户跟你说 xxx 不",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": true,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 1,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "claude",
+        "anthropic"
+      ],
+      "anxiety_hits": [
+        "替代人类"
+      ],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "正向推广",
+      "detail_brief": "有人说，AI 是新东西，应该去赚新世界的钱。 新世界有没有钱我不知道，但传统行业我是很少见有大范围铺开的，至少中老登行业的钱就赚不了。 我个人觉得有几点原因： 1 、传统行业他们更倾向于维持现在的体系，然后让 AI 去做一些优化的、锦上添花的工作，而不是让 AI 来一场重构。 首先拿到一个 AI 产品，他们会下意识地把它当成一个纯工具，希望它能嵌入到现有的工作流当中，而不希望围绕 AI 来一场升级。",
+      "heat_score": 3.0,
+      "timeliness_score": 10.0,
+      "composite_score": 2.7,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「为什么 AI 现在这么火，却很少有行业真的铺开呢？」（有人说，AI 是新东西，应该去赚新世界的钱。 新世界有没有钱我不知道，但传统行业我是很少见有大范围铺开的，至少中老登行…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「为什么 AI 现在这么火，却很少有行业真的铺开呢？」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "有人说，AI 是新东西，应该去赚新世界的钱。 新世界有没有钱我不知道，但传统行业我是很少见有大范围铺开的，至少中老登行业的钱就赚不了。…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "为什么 AI 现在这么火，却很少有行业真的铺开呢？. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：有人说，AI 是新东西，应该去赚新世界的钱。 新世界有没有钱我不知道，但传统行业我是很少见有大范围铺开的，至少中老登行业的钱就赚不了。…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 为什么 AI 现在这么火，却很少有行业真的铺开呢？. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。有人说，AI 是新东西，应该去赚新世界的钱。 新世界有没有钱我不知道，但传统行业我是很少见有大范围铺开的，至少中老登行业的钱就赚不了。…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 为什么 AI 现在这么火，却很少有行业真的铺开呢？. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：有人说，AI 是新东西，应该去赚新世界的钱。 新世界有没有钱我不知道，但传统行业我是很少见有大范围铺开的，至少中老登行业的钱就赚不了。…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: 为什么 AI 现在这么火，却很少有行业真的铺开呢？. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "有人说，AI 是新东西，应该去赚新世界的钱。 新世界有没有钱我不知道，但传统行业我是很少见有大范围铺开的，至少中老登行业的钱就赚不了。 我个人觉得有几点原因： 1 、传统行业他们更倾向于维持现在的体系，然后让 AI 去做一些优化的、锦上添花的工作，而不是让 AI 来一场重构。 首先拿到一个 AI 产品，他们会下意识地把它当成一个纯工具，希望它能嵌入到现有的工作流当中，而不希望围绕 AI 来一场升…"
+  },
+  {
+    "source": "V2EX",
+    "title": "看很多人用 codex 被封号的，想统计一下原因",
+    "url": "https://www.v2ex.com/t/1218212",
+    "heat": "35 replies",
+    "time": "Hot",
+    "summary": "我先说的的情况，目前正常使用,没有要求用手机号接验证码验证。\r\n\r\n最早一批美国苹果手机 id 注册的，美国手机号，礼品卡在苹果官网 visa 卡买的激活然后充值的，20 刀一个月 plus ，ip 在日本区域乱跳，只用官方 codex app 和 codex cli",
+    "developer_name": "superkkk",
+    "developer_url": "https://www.v2ex.com/member/superkkk",
+    "content": "看很多人用 codex 被封号的，想统计一下原因 - V2EX Home Sign Up Sign In V2EX › OpenAI 看很多人用 codex 被封号的，想统计一下原因 superkkk · 21h 5m ago · 3323 views 我先说的的情况，目前正常使用,没有要求用手机号接验证码验证。 最早一批美国苹果手机 id 注册的，美国手机号，礼品卡在苹果官网 visa 卡买的激活然后充值的，20 刀一个月 plus ，ip 在日本区域乱跳，只用官方 codex app 和 codex cli Supplement 1  · 19h 9m ago 感觉大家购买礼品卡充值的渠道很重要，有被封的大家可以补充一下，是不是用非苹果官方的礼品卡充值的，比如支付宝或者某些其它渠道的。 还有我猜就是是不是用了 sub2api 被封的，这个不确定，因为我看有人用但是没被封的，我自己也没用过。 Codex 苹果 激活 35 replies • 2026-06-06 07:32:16 +08:00 1 pinylin 21h 1m ago 我土区，appleid, 没有手机号， 只用官方的 codex app 和 codex cli, IP 美国/singapore; 目前正常 2 rotor1996 20h 56m ago 2 土区 1 gg 卡接码，1 没有手机号 谷歌邮箱，目前正常。 1 美区 之前接码平台接码，跳过二验，但是又放过我了，目前正常。 日常没在意节点一类的乱七八糟的东西，瞎用。 接码土区还在挂 sub2api 。 3 EastLord 20h 53m ago 目前正常使用 两三年注册的，谷歌邮箱，用的接码平台，应该是 罗马尼亚 的号码，美区礼品卡订阅 100 刀，ip 日本软银(自建)，用官方 codex app 、codex cli 、ChatGPT iOS app 4 superkite 20h 50m ago 封号都是土区 500 里拉黑卡 5 NeverBelieveMe 20h 48m ago 土区礼品卡，暂时也没啥问题。中国手机号。梯子 ip 几乎天天变，也没有封号。 6 evamayy 20h 48m ago 今天刚被封，美区，个人正常使用，不知道是哪里的问题 7 yjxjn 20h 42m ago @ superkite 我看了一下 L 站也有说美区 P 站买的卡，也被封，我觉得和区域，以及黑卡不大可能，因为是不是黑卡，苹果最在意，OpenAI 没必要啊。封也是封 AppleID 而不是 GPT 8 frank1256 20h 41m ago 土区 2 个号，sub2api 反代在用，礼品卡买的 oyunfor ，曾经收到过 cyberabuse ，然后申诉了，回信说他们弄错了。 前两天 2 个号全部跳出手机验证。昨天全部消失。 目前一切正常。 9 lujiaosama 20h 37m ago 1 IP 脏不脏是不是乱飞，礼品卡是不是黑卡，关键是这俩吧 10 creepmountain 20h 19m ago @ frank1256 申诉写的什么？ 11 zhouxiao 20h 18m ago 1 、最早出来的时候注册的，谷歌邮箱，看攻略找的接码平台，哪个国家的号码忘了，反正当时选的最便宜的 2 、美区礼品卡订阅 20 刀, 3 、ip 基本美国，有时候节点超时的时候用日本、新加坡，规则模式。 4 、用过 GPT 网页，GPT IOS app ，codex 桌面端和 codex cli, 5 、设备：iPhone 用于登录 GPT app, 一台 Windows 笔记本，一台 Mac 笔记本和一台 Mac mini 都登录了 GPT 网页端, Mac 笔记本登录 codex 桌面端应用, Windows 笔记本在用 codex cli 目前一切正常，也从来没有过论坛上大家说的要填验证码什么的，登录的时候跳转到 web 端，点击 Google 邮箱登录即可。 12 jackqian 20h 14m ago 1：23 年注册，谷歌邮箱 2：美区 apple 渠道,订阅 200 刀 3：ip 基本美国，少量日本 4：sub2api 供 7 个人用但都是 用的官方 codex app + ccswitch 目前一切正常 13 OnlineParty 20h 11m ago 23 年注册老号，老兵认证 Plus ，正常用 Codex 和网页端，从来没要过手机号验证，其他啥也没干，目前一切正常 14 mjawp 19h 54m ago 1. 25 年注册，google 邮箱 2. 美区 appid ，pro 5x 100 刀，余额充值 3. ip 基本新加坡 4. 无 sub2api ，但是在几个设备上登录（共用一个机场节点） 5. 时区新加坡 6. 绑定了美国手机号 7. 最近有用 hermes ，最近网页版 pro 模型用的比较多 8. 无破限 今天早上被封了 15 frank1256 19h 46m ago @ creepmountain 我就让 gpt 自己写的，大概就是自己正常用的。啥都没做。 16 unusualcat 19h 44m ago 做个牛马怎么就这么难呢。。。😑 17 guoch 19h 41m ago via iPhone 土区，appleid, 没有手机号， 只用官方的 codex app 和 codex cli, IP 美国; 目前正常，本月第三个月 18 ilingfeng 19h 20m ago 23 年注册，google 邮箱，土区礼品卡，自建两个美国 VPS 来回切，官方 codex+网页 chatgpt+手机 chatgpt ，目前正常 19 wwwwjack 19h 13m ago 目前正常 20 AItsuki 19h 12m ago chatgpt 账号，23 年注册，使用了十几年的 google 邮箱。 美区苹果账号，22 年注册，使用十几年的 qq 邮箱。 然后使用这个美区苹果账号订阅的 chatgpt plus ，关键是 chatgpt 账号和苹果美区账号不是同一个邮箱，有点抽象。 普通机场+美区礼品卡+ios chatgpt+网页 chatgpt+codex 。目前城镇，已经用了七八个月了。 21 Introvert 19h 9m ago 上周刚开的 pro20x ，现在瑟瑟发抖。。。 22 roninc 19h 8m ago 是不是付费用户才会封？ 23 年注册，用了 10 年的 google 账号登录，万人骑 ip 登录 这么久一直没事，两个号来回切 23 Tritium0041 19h 8m ago 刚开的新号 全部自己的谷歌账号注册，用自己的电话号码过了手机认证，开了 plus 昨天晚上被封了 24 Comyn 18h 24m ago L 站看之前用过 0 元购也有可能被封 25 Mrxxxxxxyxxxx 16h 17m ago via Android 和礼品卡有什么关系？ OpenAI 还能检测到你用非官方礼品卡？逻辑混乱。 遇到黑卡就不光只是三方 App 被封了，直接 AppleID 直接给扬了。",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "vps"
+      ],
+      "ai_hits": [
+        "gpt",
+        "chatgpt",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "其他",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "看很多人用 codex 被封号的，想统计一下原因: 我先说的的情况，目前正常使用,没有要求用手机号接验证码验证。 最早一批美国苹果手机 id 注册的，美国手机号，礼品卡在苹果官网 visa 卡买的激活然后充值的，20 刀一个月 plus ，ip 在日本区域乱跳，只用官方 codex app 和 codex cli",
+      "heat_score": 3.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.2,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「看很多人用 codex 被封号的，想统计一下原因」（看很多人用 codex 被封号的，想统计一下原因: 我先说的的情况，目前正常使用,没有要求用手机号接验证码验证。 最早…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「看很多人用 codex 被封号的，想统计一下原因」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "看很多人用 codex 被封号的，想统计一下原因: 我先说的的情况，目前正常使用,没有要求用手机号接验证码验证。 最早一批美国苹果手机…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "看很多人用 codex 被封号的，想统计一下原因. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：看很多人用 codex 被封号的，想统计一下原因: 我先说的的情况，目前正常使用,没有要求用手机号接验证码验证。 最早一批美国苹果手机…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 看很多人用 codex 被封号的，想统计一下原因. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。看很多人用 codex 被封号的，想统计一下原因: 我先说的的情况，目前正常使用,没有要求用手机号接验证码验证。 最早一批美国苹果手机…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 看很多人用 codex 被封号的，想统计一下原因. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：看很多人用 codex 被封号的，想统计一下原因: 我先说的的情况，目前正常使用,没有要求用手机号接验证码验证。 最早一批美国苹果手机…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: 看很多人用 codex 被封号的，想统计一下原因. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "看很多人用 codex 被封号的，想统计一下原因: 我先说的的情况，目前正常使用,没有要求用手机号接验证码验证。 最早一批美国苹果手机 id 注册的，美国手机号，礼品卡在苹果官网 visa 卡买的激活然后充值的，20 刀一个月 plus ，ip 在日本区域乱跳，只用官方 codex app 和 codex cli"
+  },
+  {
+    "source": "V2EX",
+    "title": "现在在国内还有办法注册 Google 账号吗？",
+    "url": "https://www.v2ex.com/t/1218362",
+    "heat": "32 replies",
+    "time": "Hot",
+    "summary": "现在 Google 注册风控越来越严了，要求手机号验证（不是接验证码），但是在国内根本验证不了，大家有没比较好的法子绕过这个手机号验证，或者可以跳过这个验证？网上看了说和 IP 干净度有关，我也试过了，静态住宅 IP 也要求手机号验证",
+    "developer_name": "ldy619354397",
+    "developer_url": "https://www.v2ex.com/member/ldy619354397",
+    "content": "现在在国内还有办法注册 Google 账号吗？ - V2EX Home Sign Up Sign In › Google Play › Google Fi › Google Developers Channel › Google 全球透明度报告 › 9to5Google V2EX › Google 现在在国内还有办法注册 Google 账号吗？ ldy619354397 · 2h 24m ago · 1149 views 现在 Google 注册风控越来越严了，要求手机号验证（不是接验证码），但是在国内根本验证不了，大家有没比较好的法子绕过这个手机号验证，或者可以跳过这个验证？网上看了说和 IP 干净度有关，我也试过了，静态住宅 IP 也要求手机号验证 Supplement 1  · 1h 28m ago 还有一个前提，新设备没有登录过 Google 的，老设备登录过 Google 一般都可以注册，新设备要注册 Goole 很难 Supplement 2  · 50 mins ago 你们用 Google App 注册不会跳到 [验证您的手机号码] 这个页面吗，然后在中国+86 手机号会一直转圈最后失败 Google 账号 验证 32 replies • 2026-06-06 12:38:26 +08:00 1 fengtalk 2h 13m ago 在手机上，通过 Google 的 app 注册，基本上还能注册下来。它封你就申诉，基本能过。 2 bubuyier 2h 13m ago via iPhone 用 pixel 手机注册 3 zfyime 2h 9m ago 国内手机已经不能验证了吗 之前一直可以绑+86 4 SilenceLL 2h 9m ago 用 gmail app 注册，没有任何限制，但是不要多注册，我之前注册第一个很顺利，过了几天注册第二个的时候第一个也挂了 5 qinqiuxu 2h 7m ago 我用联通手机号收不到验证码，用电信手机号就能收到 6 ldy619354397 OP 2h 1m ago 不是每台手机都可以注册，有的手机会要求你要手机号验证，但是国内+86 手机根本验证不了 7 ldy619354397 OP 2h 0m ago @ qinqiuxu 不是让你收验证码，是要手机 SIM 卡验证，证明你是真实用户，但是国内验证不了 8 itechify PRO 1h 58m ago 搞一张虚拟卡 或者买号，10 ～ 15 有一个美区老号 9 itechify PRO 1h 57m ago 另外，国内手机可以验证啊，上个月才帮朋友注册了，用他的+86 手机验证的 10 lirui0073 1h 50m ago @ ldy619354397 +86 的 验证很多次了不让验 新的随便弄 11 no996 1h 48m ago 上周才注册了一个，可以使用+86 的，而且它这个是支持让你往指定号码发指定内容去验证的，非一定要接收短信 12 526457385 1h 46m ago 首先你要有个老 gmail 号在手机上登着，然后过一点时间直接注册就行了，不提示验证手机号的 13 HTravel 1h 44m ago 没想到现在这么严格。刚用 GiffGaff 卡注册，到了最后一步直接秒封。浪费了 0.3 英镑话费 14 ldy619354397 OP 1h 35m ago @ 526457385 新手机得用老的 gmail 养一段时间吗 15 yc26110 1h 23m ago 现在严的一批，我最近几天注册几个封几个，封的怀疑人生，但用 iphone+gmail 注册好像比较好点 16 Poko 1h 23m ago 怎么可能，这不是随便注册吗，我最近都注册 3 个了 17 lirui0073 1h 21m ago @ yc26110 出口 IP 不行 太多风险操作了 就容易这样 18 Oktfolio 1h 21m ago 手机上注册经常不验证手机，但是注册后不要在电脑上登录 19 seWindows 1h 20m ago 在 Google 的 app 里面注册，这个不需要手机验证码。 此外 iPhone 注册甚至连 gms 信息都不需要提供的、 20 yc26110 1h 18m ago @ lirui0073 这确实，我怀疑用同一魔法用的人太多了，IP 都烂了，哎，找不到很纯净的出口 IP 21 Meistar 1h 4m ago 前两天才注册了一个，找了很多 IP ，最后用了一个新加坡的节点才没让验证手机号。然后两天后就被封了（理由是机器批量注册）😂。但是最后申诉要回来了。 22 kkcling 1h 3m ago 前两天在手机上注册成功了，把手机的时区地区语言都改美国的，没有要求验证，给朋友用了，他在电脑上登录了，梯子不干净，立马被封了 23 eventlooped 57 mins ago 我就是+86 注册的账号，一开始被 disable 了，申诉通过，但是紧接着又是尝试太多次，登录不上 已经等了一周时间，准备再等一个月试试看，目前还是抱有较大的希望的 想问下，我这种情况还是捷径可以加速嘛？人麻了 https://v2ex.com/t/1215201#reply1 24 zyxk 57 mins ago 前段时间注册的， 用了两天就被封了 25 Falcon1 56 mins ago 不是随便注册吗。我之前用 GV 号注册都能过 26 blueorange 54 mins ago 5 块钱一个。 27 ldy619354397 OP 53 mins ago @ no996 国内+86 号码，没办法送短信吧？ 28 huhalo 46 mins ago via Android 找国外的人帮你注册一个不就好了，找不到我可以帮忙 29 okekrrGo 35 mins ago 截屏 2026-06-05 下午 9.10.52.png 3 小时前用 iPad 注册了一个，很顺利没要我手机号啥的，注册进去之后帮顶辅助邮箱和电话就好了。 30 vacants 19 mins ago via iPhone 3 月份注册过，很顺利，用+86 注册的，过了一天封了，申诉写详细一点立马就解封（特别说明了我是中国用户，要用 VPN 才能登录），现在随便用随便切 IP 都没事儿 31 andforce 15 mins ago via iPhone @ HTravel #13 直接申诉，很快就解封了 32 Moishine 8 mins ago 直接买号 About · Help · Advertise · Blog · API · FAQ · Solana · 2733 Online Highest 6679 · Select Language 创意工作者们的社区 World is powered by solitude VERSION: 3.9.8.5 · 66ms · UTC 04:47 · PVG 12:47 · LAX 21:47 · JFK 00:47 ♥ Do have faith in what you're doing. ❯",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "vpn"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "负面拉踩",
+      "detail_brief": "现在在国内还有办法注册 Google 账号吗？: 现在 Google 注册风控越来越严了，要求手机号验证（不是接验证码），但是在国内根本验证不了，大家有没比较好的法子绕过这个手机号验证，或者可以跳过这个验证？ 网上看了说和 IP 干净度有关，我也试过了，静态住宅 IP 也要求手机号验证",
+      "heat_score": 3.0,
+      "timeliness_score": 10.0,
+      "composite_score": 3.4,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「现在在国内还有办法注册 Google 账号吗？」（现在在国内还有办法注册 Google 账号吗？: 现在 Google 注册风控越来越严了，要求手机号验证（不是接验证码…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「现在在国内还有办法注册 Google 账号吗？」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "现在在国内还有办法注册 Google 账号吗？: 现在 Google 注册风控越来越严了，要求手机号验证（不是接验证码），但是在国内根…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "现在在国内还有办法注册 Google 账号吗？. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：现在在国内还有办法注册 Google 账号吗？: 现在 Google 注册风控越来越严了，要求手机号验证（不是接验证码），但是在国内根…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 现在在国内还有办法注册 Google 账号吗？. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。现在在国内还有办法注册 Google 账号吗？: 现在 Google 注册风控越来越严了，要求手机号验证（不是接验证码），但是在国内根…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 现在在国内还有办法注册 Google 账号吗？. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：现在在国内还有办法注册 Google 账号吗？: 现在 Google 注册风控越来越严了，要求手机号验证（不是接验证码），但是在国内根…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: 现在在国内还有办法注册 Google 账号吗？. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "现在在国内还有办法注册 Google 账号吗？: 现在 Google 注册风控越来越严了，要求手机号验证（不是接验证码），但是在国内根本验证不了，大家有没比较好的法子绕过这个手机号验证，或者可以跳过这个验证？ 网上看了说和 IP 干净度有关，我也试过了，静态住宅 IP 也要求手机号验证"
+  },
+  {
+    "source": "V2EX",
+    "title": "windows 终将成为最好的 Linux",
+    "url": "https://www.v2ex.com/t/1218268",
+    "heat": "32 replies",
+    "time": "Hot",
+    "summary": "[微软将大多数 Linux 命令移植到了 Windows 上]( https://mp.weixin.qq.com/s/WNZ_3YWhlgt4iGR5JM4WWw)\r\n\r\n[microsoft/coreutils - github]( https://github.com/microsoft/coreutils)\r\n\r\n在本周举行的微软年度 Build 2026 开发者大会上，微软发布了一款名为“coreutils”的工具，这是一个 Windows 多调用二进制文件，它可以直接在 Windows CMD 和 PowerShell 命令行中使用超过 75 个 Linux/Unix 命令。\r\n\r\n其中包括 ls 、grep 、cat 、cp 及 rm 等常用的 Linux 命令。微软说了，这不叫“抄”，这叫做“致敬”。\r\n\r\n这一步非常棒！！！",
+    "developer_name": "plko345",
+    "developer_url": "https://www.v2ex.com/member/plko345",
+    "content": "windows 终将成为最好的 Linux - V2EX Home Sign Up Sign In › 升级到 Windows 11 V2EX › Windows windows 终将成为最好的 Linux plko345 · 18h 41m ago via Android · 3783 views 微软将大多数 Linux 命令移植到了 Windows 上 microsoft/coreutils - github 在本周举行的微软年度 Build 2026 开发者大会上，微软发布了一款名为“coreutils”的工具，这是一个 Windows 多调用二进制文件，它可以直接在 Windows CMD 和 PowerShell 命令行中使用超过 75 个 Linux/Unix 命令。 其中包括 ls 、grep 、cat 、cp 及 rm 等常用的 Linux 命令。微软说了，这不叫“抄”，这叫做“致敬”。 这一步非常棒！！！ 微软 Linux 命令 32 replies • 2026-06-06 12:42:00 +08:00 1 lujiaosama 18h 34m ago 终于可以 lsof -i 了吗 2 xiaogezz 18h 32m ago 用了很多年的 wsl2 ，很香，但自从买了 mac 之后，再也不想用了 3 putaozhenhaochi 18h 19m ago 这要是早点出.都不用开发新版本的 PowerShell 4 nsjs 18h 9m ago via Android 好奇是怎么和 windows 的对象系统结合的 5 exploretheworld 18h 4m ago via Android 但问题是和 powershell 内置命令冲突太多，会默认走内置命令，然后 codex 默认又走 powershell 。等于没用。 6 JerningChan 17h 34m ago @ xiaogezz 而且现在的 m 芯片，续航还那么牛 b,选配个大内存，还能跑跑本地 llm,多爽 7 iomect 17h 21m ago @ exploretheworld #5 做个 skill 就行了 8 wuruxu 17h 17m ago 现在的 windows 笔记本 续航是真拉 9 neutrino 16h 59m ago 1 先把 git for windows 弄成不依赖 mingw 再说 10 ca2oh4 16h 53m ago @ neutrino git for windows 这玩意好像不是微软开发的 11 june4 16h 20m ago 我不想要 windows 臃肿的界面系统，所以何不直接用 linux 桌面呢 12 gibber 15h 52m ago @ june4 所以你不是目标人群啊 13 ronen 15h 40m ago @ june4 +1 linux live long. 14 since2021 15h 37m ago 已经自适应 cmder 好久了 15 passive 15h 28m ago via Android 1 busybox 真香，还带 sh 和 pdpmake 16 gigishy 11h 51m ago via iPhone 光命令没意义，内核不是 Unix/linux Windows 的问题主要还是屎山，且内核不健壮，且对应用程序资源使用不约束，这些不解决，未来五年 Windows 可能就消失了，成了另一个 msdos 。 17 hxy100 11h 30m ago 很好，早就该有了，一直对 Cygwin 有重度依赖（因为 WSL2 太笨重），现在写自动化脚本可以方便一些了。 18 defaw 11h 15m ago 没解决问题，claude code cli 自带一套 bash 和 busybox ，coreutils 有的 cc 都自带，coreutils 没有的的 cc 也能自己写 powershell 来解决。 19 chutsetien 8h 39m ago 这个是基于 uutils 的，然后 uutils 那边还有 sed, 且是现成可用的。uutils 那帮人里好像好多本来就是微软的这帮子搞 cli 的年轻人。 20 coosir 4h 3m ago 哦，什么时候能原生 docker 21 jjx 3h 41m ago 主次颠倒, 屎上雕花 先解决 windows 的问题 22 PrinceofInj 3h 9m ago via Android 自从 Linux 转译后玩游戏竟然比微软远程还能快一点，Windows 就已经被证明必须大变了。至少得把那些所谓兼容性或者叠屋架床的东西大刀阔斧的砍掉 23 lmmortal 2h 29m ago via iPhone 弥补了 windows 不能 rm -rf /*的缺憾？ 24 cwxiaos 2h 1m ago via iPhone 1 Windows 早点 rip 吧，那些好用的工业软件啥时候能原生在 linux 上开发，说不定用得更好 25 kingfire 1h 55m ago 还对咖喱味的 windows 有幻想吗？ 26 L4Linux 1h 50m ago via Android @ lmmortal 昨天上班刚执行了 rm -rf *，还好只是把俺自己下的 emacs 代码仓删了😅 27 coderfee 1h 42m ago via iPhone 我还记得微软有次发布会的主题是 win ♥️ linux 28 datocp 1h 22m ago 使用.exe 在 windows ltsc 有安装错误。 把一个.sh 修改了一下， 不知道怎么运行.sh 。 要是只能执行单独的命令，还是看起来有点像的命令。这放 shell 脚本怎么转换。 是不会用嘛。。。看起来不实用啊。谁会用单独的命令去执行，肯定是一段 shell 脚本去处理。 29 Moishine 1h 16m ago Windows 终于成了屎山 30 PaulSamuelson 25 mins ago 继微软放弃 IE 到放弃命令行体系 31 wwhc 17 mins ago 微软的前途在于把 Windows 变成 Linux 的发行版之一 32 unused 7 mins ago via Android 加几个命令就能叫 linux 吗？起码先把 POSIX 兼容好吧 About · Help · Advertise · Blog · API · FAQ · Solana · 2727 Online Highest 6679 · Select Language 创意工作者们的社区 World is powered by solitude VERSION: 3.9.8.5 · 97ms · UTC 04:49 · PVG 12:49 · LAX 21:49 · JFK 00:49 ♥ Do have faith in what you're doing. ❯",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "llm",
+        "claude"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "[微软将大多数 Linux 命令移植到了 Windows 上]( https://mp. com/s/WNZ_3YWhlgt4iGR5JM4WWw) [microsoft/coreutils - github]( https://github. com/microsoft/coreutils) 在本周举行的微软年度 Build 2026 开发者大会上，微软发布了一款名为“coreutils”的工具，这是一个 Windows 多调用二进制文件，它可以直接在 Windows CMD 和 PowerShell 命令行中使用超过 75 个 Linux/Unix 命令。 其中包括 ls 、grep 、cat 、cp 及 rm 等常用的 Linux 命令。",
+      "heat_score": 3.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.8,
+      "tcloud_relevance": 5.5,
+      "tcloud_integration": "「终将成为最好的」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「终将成为最好的」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「终将成为最好的」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「windows 终将成为最好的 Linux」（[微软将大多数 Linux 命令移植到了 Windows 上]( https://mp. com/s/WNZ_3YWh…），涉及 LLM → 可写方向：「终将成为最好的」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「windows 终将成为最好的 Linux」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「终将成为最好的」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（[微软将大多数 Linux 命令移植到了 Windows 上]( https://mp. com/s/WNZ_3YWhlgt4iGR5JM4WWw) [mic…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「终将成为最好的」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（[微软将大多数 Linux 命令移植到了 Windows 上]( https://mp. com/s/WNZ_3YWhlgt4iGR5JM4WWw) [mic…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "[微软将大多数 Linux 命令移植到了 Windows 上]( https://mp. com/s/WNZ_3YWhlgt4iGR5…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "windows 终将成为最好的 Linux. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：[微软将大多数 Linux 命令移植到了 Windows 上]( https://mp. com/s/WNZ_3YWhlgt4iGR5…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: windows 终将成为最好的 Linux. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。[微软将大多数 Linux 命令移植到了 Windows 上]( https://mp. com/s/WNZ_3YWhlgt4iGR5…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「终将成为最好的」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. windows 终将成为最好的 Linux. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：[微软将大多数 Linux 命令移植到了 Windows 上]( https://mp. com/s/WNZ_3YWhlgt4iGR5…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: windows 终将成为最好的 Linux. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "[微软将大多数 Linux 命令移植到了 Windows 上]( https://mp. com/s/WNZ_3YWhlgt4iGR5JM4WWw) [microsoft/coreutils - github]( https://github. com/microsoft/coreutils) 在本周举行的微软年度 Build 2026 开发者大会上，微软发布了一款名为“coreutils”的工…"
+  },
+  {
+    "source": "V2EX",
+    "title": "Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品",
+    "url": "https://www.v2ex.com/t/1218305",
+    "heat": "25 replies",
+    "time": "Hot",
+    "summary": "秀一秀 https://show1show.com\r\n\r\n在全民 Vibe Coding 的时代，敲出几行代码生成一个“能跑”的软件原型确实变得轻而易举。但这种低门槛带来的副作用也日益凸显：产品同质化严重，且冷启动获客极其困难。很多优秀的创意在生成后，往往因为缺乏曝光而迅速沉寂，导致开发者无法获取真实用户反馈，产品迭代陷入死循环。\r\n\r\n为了解决这一痛点，我通过 Vibe Coding 开发了 “秀一秀” —— 一个专注于 Vibe Coding 作品的展示与发现平台。\r\n\r\n秀一秀 旨在降低开发者分享作品的摩擦力，无需注册和登录即可直接提交你的网站、App 、游戏或 AI 工具。平台不仅展示最终成品，还鼓励记录开发过程，帮助开发者获取早期用户关注与反馈。\r\n\r\n如果您不想亲自提交，也可以在这里留下作品信息，由我来代劳。",
+    "developer_name": "geniushui",
+    "developer_url": "https://www.v2ex.com/member/geniushui",
+    "content": "Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品 - V2EX Home Sign Up Sign In 爱意满满的作品展示区。 Advertisement V2EX › 分享创造 Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品 geniushui · 14h 59m ago · 1120 views 秀一秀 https://show1show.com 在全民 Vibe Coding 的时代，敲出几行代码生成一个“能跑”的软件原型确实变得轻而易举。但这种低门槛带来的副作用也日益凸显：产品同质化严重，且冷启动获客极其困难。很多优秀的创意在生成后，往往因为缺乏曝光而迅速沉寂，导致开发者无法获取真实用户反馈，产品迭代陷入死循环。 为了解决这一痛点，我通过 Vibe Coding 开发了 “秀一秀” —— 一个专注于 Vibe Coding 作品的展示与发现平台。 秀一秀 旨在降低开发者分享作品的摩擦力，无需注册和登录即可直接提交你的网站、App 、游戏或 AI 工具。平台不仅展示最终成品，还鼓励记录开发过程，帮助开发者获取早期用户关注与反馈。 如果您不想亲自提交，也可以在这里留下作品信息，由我来代劳。 vibe 作品 展示 25 replies • 2026-06-06 12:32:51 +08:00 1 409164 14h 54m ago 为什么要用你的平台而不是自己亲自宣传 2 409164 14h 54m ago 天天就想着做平台，让别人来上传作品 3 geniushui OP 14h 52m ago @ 409164 至少可以带来一个外链，另外我会在小红书/知乎/抖音 投流。 4 geniushui OP 14h 48m ago @ 409164 兄弟，你不要有任何损失的，就像你在 V2EX 发贴一样。 5 qfdk PRO 13h 43m ago 完蛋. 我大 https://voilapro.app/ 没有 vibe 只是 ai 帮着做了个站... 那似乎不合规了 6 bigbigeggs 13h 30m ago 已提交，一楼的怨气很大啊 7 JaydenTong 11h 13m ago https://holidaydates.net/ 8 SurfaceW 10h 52m ago 打磨了一段时间，还真的给弄上线了，哈哈 https://dots.e-studio.ai/ 9 iyuanyi 4h 40m ago via iPhone peptidecalculatoronline.com 能上你的平台吗 10 geniushui OP 4h 29m ago @ qfdk 大佬的站界面很漂亮，已收录 11 geniushui OP 4h 25m ago @ JaydenTong 已收录，大佬，你的站为啥不加个中文语言啊？ 12 geniushui OP 4h 22m ago @ SurfaceW 已收录 13 geniushui OP 4h 19m ago @ iyuanyi 大佬，你这是啥高科技啊，翻译成中文我都看不明白。已收录 14 liujavamail 3h 32m ago https://aicaltrack.app/ 15 FelixHe 2h 48m ago https://www.applewalls.com https://phwalls.com 能上你的平台吗 16 geniushui OP 2h 32m ago @ liujavamail 已收录 17 geniushui OP 2h 17m ago @ FelixHe 已收录，壁纸很棒，我会用。 18 FelixHe 2h 16m ago @ geniushui 感谢，感谢，整理了很久壁纸 19 mesbbs 2h 0m ago https://biaoqingchufang.com 能上你的平台吗？主打一键制作 AI 表情包，包含微信表情平台需要的所有素材。可直接上传微信表情平台。 20 mesbbs 1h 58m ago 你先把你站点的 https 启用一下吧。 21 geniushui OP 1h 52m ago @ mesbbs 已收录。https 你那边访问有问题么？我这边是正常的啊，用的是 acme.sh 22 asrpub 1h 12m ago via Android https://www.global-datasets.com/ 23 teaguexiao 46 mins ago 用 Claude Code vibe coding 做了个 AWS 资源巡检小工具，几乎全程不需要手写代码。最大的感受是需求要拆得足够细，AI 才不会乱跳——说“做个巡检工具”和说“扫描指定 region 的未打 tag 的 EC2 并生成 CSV 报告”，出来的结果差很多。 24 geniushui OP 18 mins ago @ asrpub 已收录 25 geniushui OP 17 mins ago @ teaguexiao 兄弟，你这没有发链接啊 About · Help · Advertise · Blog · API · FAQ · Solana · 2712 Online Highest 6679 · Select Language 创意工作者们的社区 World is powered by solitude VERSION: 3.9.8.5 · 44ms · UTC 04:50 · PVG 12:50 · LAX 21:50 · JFK 00:50 ♥ Do have faith in what you're doing. ❯",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "aws"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [
+        "AWS"
+      ],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品: 秀一秀 https://show1show. com 在全民 Vibe Coding 的时代，敲出几行代码生成一个“能跑”的软件原型确实变得轻而易举。 但这种低门槛带来的副作用也日益凸显：产品同质化严重，且冷启动获客极其困难。 很多优秀的创意在生成后，往往因为缺乏曝光而迅速沉寂，导致开发者无法获取真实用户反馈，产品迭代陷入死循环。",
+      "heat_score": 3.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.8,
+      "tcloud_relevance": 5.5,
+      "tcloud_integration": "「秒收录秀一秀欢迎」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「秒收录秀一秀欢迎」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「秒收录秀一秀欢迎」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品」（Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品: 秀一秀 https://show1show.…） → 可写方向：「秒收录秀一秀欢迎」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「秒收录秀一秀欢迎」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品: 秀一秀 https://show1show. com 在全民 Vibe Coding…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「秒收录秀一秀欢迎」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品: 秀一秀 https://show1show. com 在全民 Vibe Coding…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品: 秀一秀 https://show1show. com 在全民…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品: 秀一秀 https://show1show. com 在全民…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品: 秀一秀 https://show1show. com 在全民…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「秒收录秀一秀欢迎」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品: 秀一秀 https://show1show. com 在全民…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Google 秒收录，秀一秀欢迎提交您的 vibe coding 作品: 秀一秀 https://show1show. com 在全民 Vibe Coding 的时代，敲出几行代码生成一个“能跑”的软件原型确实变得轻而易举。 但这种低门槛带来的副作用也日益凸显：产品同质化严重，且冷启动获客极其困难。 很多优秀的创意在生成后，往往因为缺乏曝光而迅速沉寂，导致开发者无法获取真实用户反馈，产品迭代陷入…"
+  }
+]
