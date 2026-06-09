@@ -1,10 +1,3 @@
-# 📋 产品 Draft 汇总 — 2026-06-09
-
-> 共 2 个产品的 P0/P1 内容草稿
-> 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
-
----
-
 # CodeBuddy — 今日内容 (5 条)
 
 ## 1. P1 本周发 · mvanhorn/last30days-skill
@@ -71,20 +64,3 @@
 *参考: [phuryn/pm-skills](https://github.com/phuryn/pm-skills)*
 
 ---
-
-
-# SCF — 今日内容 (1 条)
-
-## 1. P0 今天发 · How would you schedule Lambda executions dynamically from Dy
-
-**写什么**: 围绕 How would you schedule Lambda executions 的核心功能（How would you schedule Lambda 
-
-**发到哪**: X（快评竞品动态） + LinkedIn（发深度对比分析文章）
-
-**参考文案**:
-> 🔥 "How would you schedule Lambda executions" — **How would you schedule Lambda executions** 与 SCF 存在潜在场景关联，. Check out Tencent Cloud SCF for a production-ready solution. #TencentCloud #CloudComputing
-
-*参考: [How would you schedule Lambda executions dynamical](https://www.reddit.com/r/aws/comments/1u0lcg4/how_would_you_schedule_lambda_executions/)*
-
----
-
