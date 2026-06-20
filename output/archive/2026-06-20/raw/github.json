@@ -1,0 +1,998 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "DeusData/codebase-memory-mcp - High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+    "url": "https://github.com/DeusData/codebase-memory-mcp",
+    "heat": "8,436 stars",
+    "time": "Today",
+    "developer_name": "DeusData",
+    "developer_url": "https://github.com/DeusData",
+    "developer_email": "",
+    "today_stars": "1,058 stars today",
+    "language": "C",
+    "summary": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+    "content": "# codebase-memory-mcp\n\n[](https://github.com/DeusData/codebase-memory-mcp/releases/latest)\n[](LICENSE)\n[](https://github.com/DeusData/codebase-memory-mcp/actions/workflows/dry-run.yml)\n[](https://github.com/DeusData/codebase-memory-mcp)\n[](https://github.com/DeusData/codebase-memory-mcp)\n[](#hybrid-lsp)\n[](https://github.com/DeusData/codebase-memory-mcp)\n[](https://github.com/DeusData/codebase-memory-mcp)\n[](https://github.com/DeusData/codebase-memory-mcp/releases/latest)\n[](https://scorecard.dev/viewer/?uri=github.com/DeusData/codebase-memory-mcp)\n[](https://slsa.dev)\n[](https://github.com/DeusData/codebase-memory-mcp/releases/latest)\n[](https://arxiv.org/abs/2603.27277)\n\n**The fastest and most efficient code intelligence engine for AI coding agents.** Full-indexes an average repository in milliseconds, the Linux kernel (28M LOC, 75K files) in 3 minutes. Answers structural queries in under 1ms. Ships as a single static binary for macOS, Linux, and Windows — download, run `install`, done.\n\nHigh-quality parsing through tree-sitter AST analysis across all 158 languages, enhanced with **Hybrid LSP** semantic type resolution for Python, TypeScript / JavaScript / JSX / TSX, PHP, C#, Go, C, C++, Java, Kotlin, and Rust — producing a persistent knowledge graph of functions, classes, call chains, HTTP routes, and cross-service links. 14 MCP tools. Zero dependencies. Plug and play across 11 coding agents.\n\n> **Research** — The design and benchmarks behind this project are described in the preprint *Codebase-Memory: Tree-Sitter-Based Knowledge Graphs for LLM Code Exploration via MCP* (arXiv:2603.27277). Evaluated across 31 real-world repositories: 83% answer quality, 10× fewer tokens, 2.1× fewer tool calls vs. file-by-file exploration.\n\n> **Security & Trust** — This tool reads your codebase and writes to your agent configuration files. That is what it is designed to do. If you prefer to audit before running, the full source is here — every release binary is signed, checksummed, and scanned by 70+ antivirus engines. All processing happens 100% locally; your code never leaves your machine. Found a security issue? We want to know — see SECURITY.md. Security is Priority #1 for us.\n\n \n   \n   \n   Built-in 3D graph visualization (UI variant) — explore your knowledge graph at localhost:9749 \n \n\n## Why codebase-memory-mcp\n\n- **Extreme indexing speed** — Linux kernel (28M LOC, 75K files) in 3 minutes. RAM-first pipeline: LZ4 compression, in-memory SQLite, fused Aho-Corasick pattern matching. Memory released after indexing.\n- **Plug and play** — single static binary for macOS (arm64/amd64), Linux (arm64/amd64), and Windows (amd64). No Docker, no runtime dependencies, no API keys. Download → `install` → restart agent → done.\n- **158 languages** — vendored tree-sitter grammars compiled into the binary. Nothing to install, nothing that breaks.\n- **120x fewer tokens** — 5 structural queries: ~3,400 tokens vs ~412,000 via file-by-file search. One graph query replaces dozen",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "mcp",
+        "knowledge graph"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "MCP",
+        "3D Generation",
+        "Rust",
+        "Go",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.6,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**codebase-memory-mcp** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs codebase-memory-mcp 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**codebase-memory-mcp** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs codebase-memory-mcp 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "ai coding",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**codebase-memory-mcp** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs codebase-memory-mcp 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「DeusData/codebase-memory-mcp - High-performance c…」（High-performance code intelligence MCP server. Indexes code…），涉及 LLM / Agent / MCP → 可写方向：**codebase-memory-mcp** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs codebase-memory-mcp 的横向对…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「DeusData/codebase-memory-mcp - High-per…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 codebase-memory-mcp 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 codebase-memory-mcp 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 codebase-memory-mcp 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 codebase-memory-mcp 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "High-performance code intelligence MCP server. Indexes codebases in…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "DeusData/codebase-memory-mcp - High-performance code intelligence MCP server. Indexes c…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：High-performance code intelligence MCP server. Indexes codebases in…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: DeusData/codebase-memory-mcp - High-performance code intelligence MCP server. Indexes c…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。High-performance code intelligence MCP server. Indexes codebases in…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**codebase-memory-mcp** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs codebase-memory-mcp 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. DeusData/codebase-memory-mcp - High-performance code intelligence MCP server. Indexes c…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：High-performance code intelligence MCP server. Indexes codebases in…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: DeusData/codebase-memory-mcp - High-performance code intelligence MCP server. Indexes c…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "codebase-memory-mcp：高性能代码智能MCP服务器。将代码库索引到持久知识图谱中——以毫秒为单位的平均存储库。",
+    "developer_profile": {
+      "github_username": "DeusData",
+      "profile_url": "https://github.com/DeusData",
+      "name": "Martin Vogel",
+      "bio": "https://www.linkedin.com/in/martin-vogel-ab5b66174/",
+      "company": "",
+      "location": "Berlin",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 84,
+      "following": 0,
+      "public_repos": 22,
+      "avatar_url": "https://avatars.githubusercontent.com/u/81762164?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+    "url": "https://github.com/google-research/timesfm",
+    "heat": "24,144 stars",
+    "time": "Today",
+    "developer_name": "google-research",
+    "developer_url": "https://github.com/google-research",
+    "developer_email": "",
+    "today_stars": "1,510 stars today",
+    "language": "Python",
+    "summary": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+    "content": "# TimesFM\n\nTimesFM (Time Series Foundation Model) is a pretrained time-series foundation\nmodel developed by Google Research for time-series forecasting.\n\n*   Paper:\n    A decoder-only foundation model for time-series forecasting,\n    ICML 2024.\n*   All checkpoints:\n    TimesFM Hugging Face Collection.\n*   Google Research blog.\n*   TimesFM in Google 1P Products:\n    *   BigQuery ML: Enterprise level SQL queries for scalability and reliability.\n    *   Google Sheets: For your daily spreadsheet. \n    *   Vertex Model Garden: Dockerized endpoint for agentic calling.\n\nThis open version is not an officially supported Google product.\n\n**Latest Model Version:** TimesFM 2.5\n\n**Archived Model Versions:**\n\n-   1.0 and 2.0: relevant code archived in the sub directory `v1`. You can `pip\n    install timesfm==1.3.0` to install an older version of this package to load\n    them.\n## Update - June 5, 2026\n\nUpdated PyPI to `timesfm=2.0.0`. See Install.\n\n## Update - Apr. 9, 2026\n\nAdded fine-tuning example using HuggingFace Transformers + PEFT (LoRA) — see\n`timesfm-forecasting/examples/finetuning/`.\nAlso added unit tests (`tests/`) and incorporated several community fixes.\n\nShoutout to @kashif and @darkpowerxo. \n\n## Update - Mar. 19, 2026\n\nHuge shoutout to @borealBytes for adding the support for AGENTS! TimesFM SKILL.md is out.\n\n## Update - Oct. 29, 2025\n\nAdded back the covariate support through XReg for TimesFM 2.5.\n\n## Update - Sept. 15, 2025\n\nTimesFM 2.5 is out!\n\nComparing to TimesFM 2.0, this new 2.5 model:\n\n-   uses 200M parameters, down from 500M.\n-   supports up to 16k context length, up from 2048.\n-   supports continuous quantile forecast up to 1k horizon via an optional 30M\n    quantile head.\n-   gets rid of the `frequency` indicator.\n-   has a couple of new forecasting flags.\n\nSince the Sept. 2025 launch, the following improvements have been completed:\n\n1.  ✅ Flax version of the model for faster inference.\n2.  ✅ Covariate support via XReg (see Oct. 2025 update).\n3.  ✅ Documentation, examples, and agent skill (see `timesfm-forecasting/`).\n4.  ✅ Fine-tuning example with LoRA via HuggingFace Transformers + PEFT (see `timesfm-forecasting/examples/finetuning/`).\n5.  ✅ Unit tests for core layers, configs, and utilities (see `tests/`).\n\n### Install\n\n#### From `PyPI`\n\n```shell\n# Install the package with torch\npip install timesfm[torch]\n# Or with Flax\npip install timesfm[flax]\n# And when XReg is needed\npip install timesfm[xreg]\n```\n\n#### Local Install\n\n1.  Clone the repository:\n    ```shell\n    git clone https://github.com/google-research/timesfm.git\n    cd timesfm\n    ```\n\n2.  Create a virtual environment and install dependencies using `uv`:\n    ```shell\n    # Create a virtual environment\n    uv venv\n    \n    # Activate the environment\n    source .venv/bin/activate\n    \n    # Install the package in editable mode with torch\n    uv pip install -e .[torch]\n    # Or with flax\n    uv pip install -e .[flax]\n    # And when XReg is needed\n    uv pip install -e .[xreg]\n    `",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "agent",
+        "inference",
+        "huggingface",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "学术研究",
+      "topic_type": "开发者话题",
+      "products": [
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Fine-tuning"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "google-research/timesfm: TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.3,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "研究解读"
+      ],
+      "editorial_angles_text": "技术科普 + 研究解读",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「google-research/timesfm - TimesFM (Time Series Fo…」（google-research/timesfm: TimesFM (Time Series Foundation Mo…），涉及 Agent / Fine-tuning → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「google-research/timesfm - TimesFM (Time…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 timesfm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 timesfm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 研究解读。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + research takeaway. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 研究解读，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + research takeaway.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 研究解读。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + research takeaway. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "TimesFM（时间序列基础模型）是 Google Research 开发的用于时间序列预测的预训练时间序列基础模型。",
+    "developer_profile": {
+      "github_username": "google-research",
+      "profile_url": "https://github.com/google-research",
+      "name": "Google Research",
+      "bio": "",
+      "company": "",
+      "location": "Earth",
+      "blog": "https://research.google",
+      "twitter_username": "",
+      "email": "",
+      "followers": 16266,
+      "following": 0,
+      "public_repos": 349,
+      "avatar_url": "https://avatars.githubusercontent.com/u/43830688?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "palmier-io/palmier-pro - macOS video editor built for AI",
+    "url": "https://github.com/palmier-io/palmier-pro",
+    "heat": "2,046 stars",
+    "time": "Today",
+    "developer_name": "palmier-io",
+    "developer_url": "https://github.com/palmier-io",
+    "developer_email": "founders@palmier.io",
+    "today_stars": "756 stars today",
+    "language": "Swift",
+    "summary": "macOS video editor built for AI",
+    "content": " \n\n# Palmier Pro\n\n**The video editor built for AI.**\n\n \n   \n \n\n  Requires macOS 26 (Tahoe) on Apple Silicon  \n\n   \n   \n   \n\n \n\n \n\n---\n\nPalmier Pro is an open source video editor for Mac. You and your agent can generate and edit videos together inside the timeline.\n\n### Swift-native video editor\n\nWe built Palmier Pro from scratch with Swift. The north star is Premiere Pro, with our take on integrating AI into the workflow.\n\n### Built-in Generative AI\n\nGenerate videos and images with SOTA models like Seedance, Kling, Nano Banana Pro inside the timeline editor.\n\n### Integrates with your agents\n\nConnects your Claude/Codex/Cursor via MCP, or use the in-app agent to work on the same project together.\n\n## MCP server\n\nWhen the app is open, it exposes an MCP server at `http://127.0.0.1:19789/mcp` via HTTP. To connect:\n\n**Claude Code**\n```bash\nclaude mcp add --transport http palmier-pro http://127.0.0.1:19789/mcp\n```\n\n**Codex**\n```bash\ncodex mcp add palmier-pro --url http://127.0.0.1:19789/mcp\n```\n\n**Cursor**\n\nThe easiest way is go inside the app `Help` -> `MCP Instructions` -> `Install in Cursor`, or install manually by adding this to `~/.cursor/mcp.json`:\n\n```\n{\n  \"mcpServers\": {\n    \"palmier-pro\": {\n      \"type\": \"http\",\n      \"url\": \"http://127.0.0.1:19789/mcp\"\n    }\n  }\n}\n```\n\n**Claude Desktop**\n\nWe bundle a mcpb with the app that allows a one click install Desktop Extension on Claude Desktop. Go to `Help` -> `MCP Instructions` -> `Install in Claude Desktop`\n\n## FAQ\n\n**Is Palmier Pro fully open source?**\n\nThe video editor (without the generative AI features) is fully open source. The MCP server and the agent chat are also open source. The only thing that is closed source is the generative AI processing.\n\n**Is it free?**\n\nThe editor is free. You can download it with no login required, and use it as a video editor like CapCut or Adobe Premiere. You can also use the MCP server for free, and start experimenting using Claude Code/Desktop or Cursor to interact with your timeline editor.\n\nGenerative AI features require login and subscription.\n\n**What platforms does it support?**\n\nmacOS 26 (Tahoe) on Apple Silicon only.\n\nSee FAQ.md for more.\n\n## Development\n\nSee CONTRIBUTING.md\n\n## Community &amp; Support\n\n- **Discord:** Join the community on **Discord**.\n- **Twitter / X:** Follow **@Palmier_io** for updates and announcements.\n- **Instagram:** Follow @palmier.io \n- **Feedback &amp; Support:** Create a Github Issue or email us at founders@palmier.io\n\n## Star History\n\n \n  \n    \n    \n    \n  \n \n\n## License\n\nCopyright (C) 2026 Palmier, Inc.\n\nPalmier Pro is open source under GPLv3.",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Go"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "palmier-io/palmier-pro: macOS video editor built for AI",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.7,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**palmier-pro** 的用户群和 CodeBuddy 高度重合 — 可以写「palmier-pro 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**palmier-pro** 的用户群和 CodeBuddy 高度重合 — 可以写「palmier-pro 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**palmier-pro** 的用户群和 CodeBuddy 高度重合 — 可以写「palmier-pro 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「palmier-io/palmier-pro - macOS video editor built…」（palmier-io/palmier-pro: macOS video editor built for AI），涉及 Agent / MCP / Go → 可写方向：**palmier-pro** 的用户群和 CodeBuddy 高度重合 — 可以写「palmier-pro 用户迁移到 CodeBuddy 的体验对比」，突…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「palmier-io/palmier-pro - macOS video ed…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 palmier-pro 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 palmier-pro 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 palmier-pro 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 palmier-pro 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "palmier-io/palmier-pro: macOS video editor built for AI。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**palmier…",
+        "x_en": "palmier-io/palmier-pro - macOS video editor built for AI. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：palmier-io/palmier-pro: macOS video editor built for AI。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: palmier-io/palmier-pro - macOS video editor built for AI. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。palmier-io/palmier-pro: macOS video editor built for AI。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**palmier-pro** 的用户群和 CodeBuddy 高度重合 — 可以写「palmier-pro 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. palmier-io/palmier-pro - macOS video editor built for AI. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：palmier-io/palmier-pro: macOS video editor built for AI。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: palmier-io/palmier-pro - macOS video editor built for AI. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "palmier-pro：专为 AI 打造的 macOS 视频编辑器",
+    "developer_profile": {
+      "github_username": "palmier-io",
+      "profile_url": "https://github.com/palmier-io",
+      "name": "Palmier",
+      "bio": "AI Video Platform",
+      "company": "",
+      "location": "United States of America",
+      "blog": "www.palmier.io",
+      "twitter_username": "Palmier_io",
+      "email": "founders@palmier.io",
+      "followers": 28,
+      "following": 0,
+      "public_repos": 6,
+      "avatar_url": "https://avatars.githubusercontent.com/u/173962009?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "https://github.com/palmier-io"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/palmier-io"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/Palmier_io"
+        },
+        {
+          "platform": "generic",
+          "url": "https://www.ycombinator.com/companies/palmier"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "koala73/worldmonitor - Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+    "url": "https://github.com/koala73/worldmonitor",
+    "heat": "57,378 stars",
+    "time": "Today",
+    "developer_name": "koala73",
+    "developer_url": "https://github.com/koala73",
+    "developer_email": "",
+    "today_stars": "156 stars today",
+    "language": "TypeScript",
+    "summary": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+    "content": "# World Monitor\n\n**Real-time global intelligence dashboard** — AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface.\n\n[](https://github.com/koala73/worldmonitor/stargazers)\n[](https://discord.gg/re63kWKxaz)\n[](https://www.gnu.org/licenses/agpl-3.0)\n[](https://www.typescriptlang.org/)\n[](https://github.com/koala73/worldmonitor/commits/main)\n[](https://github.com/koala73/worldmonitor/releases/latest)\n\n \n     &nbsp;\n     &nbsp;\n     &nbsp;\n     &nbsp;\n     &nbsp;\n     \n \n\n \n     &nbsp;\n     &nbsp;\n     &nbsp;\n     \n \n\n \n    Documentation   &nbsp;·&nbsp;\n    Releases   &nbsp;·&nbsp;\n    Contributing  \n \n\n---\n\n## What It Does\n\n- **500+ curated news feeds** across 15 categories, AI-synthesized into briefs\n- **Dual map engine** — 3D globe (globe.gl) and WebGL flat map (deck.gl) with 56 map layer types\n- **Cross-stream correlation** — military, economic, disaster, and escalation signal convergence\n- **Country Instability Index (CII)** — server-authoritative CII v8 stress scoring for 31 Tier-1 countries\n- **Finance radar** — 29 stock exchanges, commodities, crypto, and 7-signal market composite\n- **Local AI** — run everything with Ollama, no API keys required\n- **6 site variants** from a single codebase (world, tech, finance, commodity, happy, energy)\n- **Native desktop app** (Tauri 2) for macOS, Windows, and Linux\n- **24 languages** with native-language feeds and RTL support\n\nFor the full feature list, architecture, data sources, and algorithms, see the **documentation**.\n\n---\n\n## Support Status\n\nAll site variants and desktop binaries are built from a single codebase and ship from the same release process. The table below clarifies maintenance status so you know which surfaces are safe to depend on.\n\n| Surface | Status | Notes |\n|---------|--------|-------|\n| `worldmonitor.app`, `tech.`, `finance.`, `commodity.`, `happy.`, `energy.` | Stable | Public deployments built from this repo, actively maintained |\n| Desktop binaries (Windows / macOS Apple Silicon / macOS Intel / Linux AppImage) | Stable | One Tauri binary that switches variants in-app; current CI release targets are `full` and `tech` |\n\nIssues filed against any of the above are triaged from the same backlog — see the issues board for currently-open work.\n\n---\n\n## Quick Start\n\n```bash\ngit clone https://github.com/koala73/worldmonitor.git\ncd worldmonitor\nnpm install\nnpm run dev\n```\n\nOpen localhost:3000. The app runs with no environment variables.\n\nFeature-specific data sources may require credentials — for example, the flight-price command (`fly LON DXB`) needs `TRAVELPAYOUTS_API_TOKEN` to return live quotes; without it the command shows a \"credentials required\" message rather than synthetic data. See `.env.example` for the full list.\n\nFor variant-specific development:\n\n```bash\nnpm run dev:tech       # tech.worldmonitor.app\nnpm run dev:finance    # finance.worldmonitor.app\nnpm run dev:commodity  # commodity.worldmonitor.app\nn",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "3D Generation"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "koala73/worldmonitor: Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.8,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「koala73/worldmonitor - Real-time global intellige…」（koala73/worldmonitor: Real-time global intelligence dashboa…），涉及 3D Generation → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「koala73/worldmonitor - Real-time global…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 worldmonitor 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 worldmonitor 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "koala73/worldmonitor: Real-time global intelligence dashboard. AI-p…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "koala73/worldmonitor - Real-time global intelligence dashboard. AI-powered news aggrega…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：koala73/worldmonitor: Real-time global intelligence dashboard. AI-p…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: koala73/worldmonitor - Real-time global intelligence dashboard. AI-powered news aggrega…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。koala73/worldmonitor: Real-time global intelligence dashboard. AI-p…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. koala73/worldmonitor - Real-time global intelligence dashboard. AI-powered news aggrega…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：koala73/worldmonitor: Real-time global intelligence dashboard. AI-p…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: koala73/worldmonitor - Real-time global intelligence dashboard. AI-powered news aggrega…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "worldmonitor：实时全球情报仪表板。在统一的态势感知界面中进行人工智能驱动的新闻聚合、地缘政治监控和基础设施跟踪",
+    "developer_profile": {
+      "github_username": "koala73",
+      "profile_url": "https://github.com/koala73",
+      "name": "Elie Habib",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "eliehabib",
+      "email": "",
+      "followers": 3127,
+      "following": 14,
+      "public_repos": 22,
+      "avatar_url": "https://avatars.githubusercontent.com/u/996596?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://www.x.com/eliehabib"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "aishwaryanr/awesome-generative-ai-guide - A one stop repository for generative AI research updates, interview resources, notebooks and much more!",
+    "url": "https://github.com/aishwaryanr/awesome-generative-ai-guide",
+    "heat": "27,690 stars",
+    "time": "Today",
+    "developer_name": "aishwaryanr",
+    "developer_url": "https://github.com/aishwaryanr",
+    "developer_email": "",
+    "today_stars": "107 stars today",
+    "language": "HTML",
+    "summary": "A one stop repository for generative AI research updates, interview resources, notebooks and much more!",
+    "content": "# :star: :bookmark: awesome-generative-ai-guide\n\nGenerative AI is experiencing rapid growth, and this repository serves as a comprehensive hub for updates on generative AI research, interview materials, notebooks, and more!\n\n   \n\nExplore the following resources:\n\n1. Monthly Best GenAI Papers List\n2. GenAI Interview Resources\n3. Applied LLMs Mastery 2024 (created by Aishwarya Naresh Reganti) course material\n4. Generative AI Genius 2024 (created by Aishwarya Naresh Reganti) course material\n5. AI Evals for Everyone (created by Aishwarya Naresh Reganti & Kiriti Badam) - Get Certified!\n6. **[NEW] OpenClaw Mastery for Everyone (created by Aishwarya Reganti & Kiriti Badam) - Get Certified!**\n7. List of all GenAI-related free courses (over 90 listed)\n8. List of code repositories/notebooks for developing generative AI applications\n\nWe'll be updating this repository regularly, so keep an eye out for the latest additions!\n\nHappy Learning!\n\n---\n## :star: Top AI Tools List\n\nDiscover our favorite AI tools spanning every layer of AI application development. Click here to learn more.\n\n---\n\n## :speaker: Announcements\n\n- **NEW: OpenClaw Mastery for Everyone is now live with certification!** (Click Here)\n- AI Evals for Everyone course is now live with certification! (Click Here)\n- Applied LLMs Mastery full course content has been released!!! (Click Here)\n- 5-day roadmap to learn LLM foundations out now! (Click Here)\n- 60 Common GenAI Interview Questions out now! (Click Here)\n- ICLR 2024 paper summaries (Click Here)\n- List of free GenAI courses (Click Here)\n- Generative AI resources and roadmaps\n  - 3-day RAG roadmap\n  - 5-day LLM foundations roadmap\n  - 5-day LLM agents roadmap\n  - Agents 101 guide\n  - Introduction to MM LLMs\n  - LLM Lingo Series: Commonly used LLM terms and their easy-to-understand definitions\n\n---\n\n## :mortar_board: Courses\n\n#### [Ongoing] Applied LLMs Mastery 2024\n\nJoin 1000+ students on this 10-week adventure as we delve into the application of LLMs across a variety of use cases\n\n#### Link to the course website\n\n##### [Feb 2024] Registrations are still open click here to register\n\n🗓️\\*Week 1 [Jan 15 2024]**\\*: Practical Introduction to LLMs**\n\n- Applied LLM Foundations\n- Real World LLM Use Cases\n- Domain and Task Adaptation Methods\n\n🗓️\\*Week 2 [Jan 22 2024]**\\*: Prompting and Prompt\nEngineering**\n\n- Basic Prompting Principles\n- Types of Prompting\n- Applications, Risks and Advanced Prompting\n\n🗓️\\*Week 3 [Jan 29 2024]**\\*: LLM Fine-tuning**\n\n- Basics of Fine-Tuning\n- Types of Fine-Tuning\n- Fine-Tuning Challenges\n\n🗓️\\*Week 4 [Feb 5 2024]**\\*: RAG (Retrieval-Augmented Generation)**\n\n- Understanding the concept of RAG in LLMs\n- Key components of RAG\n- Advanced RAG Methods\n\n🗓️\\*Week 5 [ Feb 12 2024]**\\*: Tools for building LLM Apps**\n\n- Fine-tuning Tools\n- RAG Tools\n- Tools for observability, prompting, serving, vector search etc.\n\n🗓️\\*Week 6 [Feb 19 2024]**\\*: Evaluation Techniques**\n\n- Types of Evaluation\n- Common Evaluation Benchmarks\n- Common Met",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "rag",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "RAG"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "aishwaryanr/awesome-generative-ai-guide: A one stop repository for generative AI research updates, interview resources, notebooks and much more!",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.9,
+      "tcloud_relevance": 4.7,
+      "tcloud_integration": "**awesome-generative-ai-guide** 涉及 RAG 检索 — 腾讯云 ES 支持向量搜索 + BM25 混合检索，可以作为 RAG 应用的检索后端，提供开箱即用的语义搜索能力",
+      "tcloud_products": [
+        "ES"
+      ],
+      "tcloud_reasons": [
+        "**awesome-generative-ai-guide** 涉及 RAG 检索 — 腾讯云 ES 支持向量搜索 + BM25 混合检索，可以作为 RAG 应用的检索后端，提供开箱即用的语义搜索能力"
+      ],
+      "tcloud_evidence": [
+        "rag",
+        "vector search",
+        "observability"
+      ],
+      "tcloud_primary_product": "ES",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 ES：**awesome-generative-ai-guide** 涉及 RAG 检索 — 腾讯云 ES 支持向量搜索 + BM25 混合检索，可以作为 RAG 应用的检索后端，提供开箱即用的语义搜索能力",
+      "tcloud_official_matches": [
+        "ES"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（ES）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（ES）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「aishwaryanr/awesome-generative-ai-guide - A one s…」（aishwaryanr/awesome-generative-ai-guide: A one stop reposit…），涉及 LLM / RAG → 可写方向：**awesome-generative-ai-guide** 涉及 RAG 检索 — 腾讯云 ES 支持向量搜索 + BM25 混合检索，可以作为 RAG…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「awesome-generative-ai-guide」涉及搜索/检索场景，可结合 ES 写教程或场景解读。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "ES",
+      "official_angle_cn": "从 awesome-generative-ai-guide 的搜索/检索场景出发，写一篇用腾讯云 ES 构建智能搜索的技术内容，附完整的索引和查询示例。",
+      "visual_brief": "主视觉用 awesome-generative-ai-guide 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 ES。",
+      "platform_copies": {
+        "primary_product": "ES",
+        "product_display": "ES",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 awesome-generative-ai-guide 的搜索/检索场景出发，写一篇用腾讯云 ES 构建智能搜索的技术内容，附完整的索引和查询示例。",
+        "official_angle_en": "Use Elasticsearch Service (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 awesome-generative-ai-guide 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 ES。",
+        "x_cn": "aishwaryanr/awesome-generative-ai-guide: A one stop repository for…。如果站在腾讯云国际站官方号来写，这条更适合从 ES 切入：如果以腾讯云国际站官方号来写，这条建议主推 ES：**awesome-g…",
+        "x_en": "aishwaryanr/awesome-generative-ai-guide - A one stop repository for generative AI resea…. For Tencent Cloud, this fits Elasticsearch Service (Tencent Cloud): Managed Elasticsearch for RAG retrieval, log analysis, and full-text search.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：aishwaryanr/awesome-generative-ai-guide: A one stop repository for…。如果从腾讯云视角切，这条最适合带到 ES，重点聊 技术科普 + 教程拆解 + 产品关联（ES）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: aishwaryanr/awesome-generative-ai-guide - A one stop repository for generative AI resea…. From a Tencent Cloud angle, the best hook is Elasticsearch Service (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (ES). What matters more to you: deployment, performance, or workf…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。aishwaryanr/awesome-generative-ai-guide: A one stop repository for…。如果用官方号发，建议主推 ES，重点讲 技术科普 + 教程拆解 + 产品关联（ES），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 ES：**awesome-generative-ai-guide** 涉及 RAG 检索 — 腾讯云 ES 支持向量搜索 + BM25 混合检索，可以作为 RAG 应用的检索后端，提供开箱即用的语义搜索能力",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. aishwaryanr/awesome-generative-ai-guide - A one stop repository for generative AI resea…. For Tencent Cloud, the better angle is Elasticsearch Service (Tencent Cloud). Managed Elasticsearch for RAG retrieval, log analysis, and full-text search. The content should focus on technical explainer + hands-on walkthrough + product tie-in (ES).",
+        "reddit_title_cn": "这类热点如果从 ES 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：aishwaryanr/awesome-generative-ai-guide: A one stop repository for…。如果站在腾讯云国际站官方号视角，我会更想把它写成 ES 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（ES）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Elasticsearch Service (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: aishwaryanr/awesome-generative-ai-guide - A one stop repository for generative AI resea…. Instead of reposting it as news, I'd frame it through Elasticsearch Service (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (ES). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "awesome-generative-ai-guide：生成式人工智能研究更新、访谈资源、笔记本等的一站式存储库！",
+    "developer_profile": {
+      "github_username": "aishwaryanr",
+      "profile_url": "https://github.com/aishwaryanr",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 2151,
+      "following": 0,
+      "public_repos": 5,
+      "avatar_url": "https://avatars.githubusercontent.com/u/12550285?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "BuilderIO/agent-native - A framework for building agent-native applications.",
+    "url": "https://github.com/BuilderIO/agent-native",
+    "heat": "1,108 stars",
+    "time": "Today",
+    "developer_name": "BuilderIO",
+    "developer_url": "https://github.com/BuilderIO",
+    "developer_email": "help@builder.io",
+    "today_stars": "147 stars today",
+    "language": "TypeScript",
+    "summary": "A framework for building agent-native applications.",
+    "content": "# Agent-Native\n\n### Open-source framework for agentic applications you own.\n\nDon't choose between rich user interfaces and autonomous agents. Every Agent-Native app is both.\n\n## Agents and UIs — Fully Connected\n\nThe agent and the UI are equal citizens of the same system. Every action works both ways — click it or ask for it.\n\n- **Everything syncs** — Agent and UI share one database and one state. Changes from either side show up instantly on the other.\n- **Real-time multiplayer** — Humans and agents collaborate in the same document simultaneously: CRDT merging, live presence (cursors, selection rings, who's on which slide), and the agent as a first-class peer editor. Works on any SQL database and any host, including serverless.\n- **Context-aware** — The agent knows what you're looking at. Select text, hit Cmd+I, and tell it what to do.\n- **Per-user workspace** — Skills, memory, instructions, sub-agents, and MCP servers — SQL-backed, customizable per user. Claude-Code-level flexibility, SaaS-grade economics.\n- **Agents call agents** — Tag another agent from any app. They discover each other over A2A and take action across your stack.\n- **Reusable integrations** — Connect a provider once in Dispatch, keep secret values in the vault, then grant apps like Brain, Analytics, Mail, and Dispatch access to the shared account metadata and credential refs.\n- **Three shapes** — Build the same agent as a headless API, a rich chat experience, or a full application where agent and UI stay in sync.\n- **Apps that improve themselves** — Your apps get better on their own. The agent can add features, fix bugs, and refine the UI over time.\n- **Any database, any host** — Any SQL database Drizzle supports. Any hosting target Nitro supports. No lock-in.\n- **Bring the agent surface you need** — MCP-compatible hosts can call your apps, coding agents can install skills, native chat renders reusable app outputs, and BYO agent runtimes can stream into the Agent-Native chat shell.\n\n## The framework for agent-native apps\n\nAgent-Native is an open-source framework for building robust agents that can act inside real apps, not just chat next to them.\n\nIt gives you primitives for product-grade agentic software: shared actions, SQL-backed state, identity, tools, skills, jobs, observability, and UI surfaces that all work together.\n\nBackend agnostic: bring your own database, hosting provider, model stack, and app code.\n\n```ts\n// One action powers UI, agent, HTTP, MCP, A2A, and CLI.\nexport default defineAction({\n  schema: z.object({\n    emailId: z.string(),\n    body: z.string(),\n  }),\n  run: async ({ emailId, body }) => {\n    await db.insert(replies).values({ emailId, body });\n  },\n});\n```\n\n- **Actions** — Define work once. Use it from UI, agent, API, MCP, A2A, and CLI.\n- **Agent runtime** — Chat, tools, skills, memory, jobs, observability, and handoffs ship together.\n- **Backend agnostic** — Plug in any Drizzle-supported SQL database and Nitro-compatible host.\n\n## One agent, three pro",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "serverless",
+        "saas"
+      ],
+      "ai_hits": [
+        "claude",
+        "agent",
+        "mcp",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Serverless",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "BuilderIO/agent-native: A framework for building agent-native applications.",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.2,
+      "tcloud_relevance": 5.1,
+      "tcloud_integration": "**agent-native** 需要数据库后端 — TDSQL-C 云原生数据库兼容 MySQL/PostgreSQL，支持秒级扩缩容 + Serverless 按量付费，适合从个人项目到企业级的弹性场景",
+      "tcloud_products": [
+        "TDSQL-C"
+      ],
+      "tcloud_reasons": [
+        "**agent-native** 需要数据库后端 — TDSQL-C 云原生数据库兼容 MySQL/PostgreSQL，支持秒级扩缩容 + Serverless 按量付费，适合从个人项目到企业级的弹性场景"
+      ],
+      "tcloud_evidence": [
+        "database",
+        "sql"
+      ],
+      "tcloud_primary_product": "TDSQL-C",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 TDSQL-C：**agent-native** 需要数据库后端 — TDSQL-C 云原生数据库兼容 MySQL/PostgreSQL，支持秒级扩缩容 + Serverless 按量付费，适合从个人项目到企业级的弹性场景",
+      "tcloud_official_matches": [
+        "TDSQL-C"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（TDSQL-C）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（TDSQL-C）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「BuilderIO/agent-native - A framework for building…」（BuilderIO/agent-native: A framework for building agent-nati…），涉及 Agent / MCP / Serverless → 可写方向：**agent-native** 需要数据库后端 — TDSQL-C 云原生数据库兼容 MySQL/PostgreSQL，支持秒级扩缩容 + Serverle…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「agent-native」涉及云原生数据库场景，可结合 TDSQL-C 写教程或场景解读。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "TDSQL-C",
+      "official_angle_cn": "以 agent-native 的数据库需求为切入，写一篇从自建数据库迁移到 TDSQL-C 的实操指南，重点对比运维成本和性能提升。",
+      "visual_brief": "主视觉用 agent-native 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 TDSQL-C。",
+      "platform_copies": {
+        "primary_product": "TDSQL-C",
+        "product_display": "TDSQL-C",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 agent-native 的数据库需求为切入，写一篇从自建数据库迁移到 TDSQL-C 的实操指南，重点对比运维成本和性能提升。",
+        "official_angle_en": "Use TDSQL-C (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 agent-native 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 TDSQL-C。",
+        "x_cn": "BuilderIO/agent-native: A framework for building agent-native appli…。如果站在腾讯云国际站官方号来写，这条更适合从 TDSQL-C 切入：如果以腾讯云国际站官方号来写，这条建议主推 TDSQL-C：…",
+        "x_en": "BuilderIO/agent-native - A framework for building agent-native applications.. For Tencent Cloud, this fits TDSQL-C (Tencent Cloud): Cloud-native database compatible with MySQL/PostgreSQL for app backends.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：BuilderIO/agent-native: A framework for building agent-native appli…。如果从腾讯云视角切，这条最适合带到 TDSQL-C，重点聊 技术科普 + 教程拆解 + 产品关联（TDSQL-C）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: BuilderIO/agent-native - A framework for building agent-native applications.. From a Tencent Cloud angle, the best hook is TDSQL-C (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (TDSQL-C). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。BuilderIO/agent-native: A framework for building agent-native appli…。如果用官方号发，建议主推 TDSQL-C，重点讲 技术科普 + 教程拆解 + 产品关联（TDSQL-C），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 TDSQL-C：**agent-native** 需要数据库后端 — TDSQL-C 云原生数据库兼容 MySQL/PostgreSQL，支持秒级扩缩容 + Serverless 按量付费，适合从个人项目到企业级的弹性场景",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. BuilderIO/agent-native - A framework for building agent-native applications.. For Tencent Cloud, the better angle is TDSQL-C (Tencent Cloud). Cloud-native database compatible with MySQL/PostgreSQL for app backends. The content should focus on technical explainer + hands-on walkthrough + product tie-in (TDSQL-C).",
+        "reddit_title_cn": "这类热点如果从 TDSQL-C 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：BuilderIO/agent-native: A framework for building agent-native appli…。如果站在腾讯云国际站官方号视角，我会更想把它写成 TDSQL-C 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（TDSQL-C）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through TDSQL-C (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: BuilderIO/agent-native - A framework for building agent-native applications.. Instead of reposting it as news, I'd frame it through TDSQL-C (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (TDSQL-C). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "agent-native：用于构建代理本机应用程序的框架。",
+    "developer_profile": {
+      "github_username": "BuilderIO",
+      "profile_url": "https://github.com/BuilderIO",
+      "name": "Builder.io",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://builder.io",
+      "twitter_username": "",
+      "email": "help@builder.io",
+      "followers": 2830,
+      "following": 0,
+      "public_repos": 92,
+      "avatar_url": "https://avatars.githubusercontent.com/u/35700027?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "chopratejas/headroom - Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+    "url": "https://github.com/chopratejas/headroom",
+    "heat": "39,221 stars",
+    "time": "Today",
+    "developer_name": "chopratejas",
+    "developer_url": "https://github.com/chopratejas",
+    "developer_email": "",
+    "today_stars": "4,005 stars today",
+    "language": "Python",
+    "summary": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+    "content": "  \n  ██╗  ██╗███████╗ █████╗ ██████╗ ██████╗  ██████╗  ██████╗ ███╗   ███╗\n  ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██╔═══██╗████╗ ████║\n  ███████║█████╗  ███████║██║  ██║██████╔╝██║   ██║██║   ██║██╔████╔██║\n  ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══██╗██║   ██║██║   ██║██║╚██╔╝██║\n  ██║  ██║███████╗██║  ██║██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║ ╚═╝ ██║\n  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝\n                  The context compression layer for AI agents\n  \n\n  60–95% fewer tokens · library · proxy · MCP · 6 algorithms · local-first · reversible  \n\n \n     \n     \n     \n     \n     \n     \n     \n \n\n \n   Docs  ·\n   Install  ·\n   Proof  ·\n   Agents  ·\n   Discord  ·\n   llms.txt  ·\n   Enterprise \n \n\n  \n   AI agents / LLMs:  read   /llms.txt   here, or fetch  the live index  /  full docs blob .\n  \n\n---\n     \n\nHeadroom compresses everything your AI agent reads — tool outputs, logs, RAG chunks, files, and conversation history — before it reaches the LLM. Same answers, fraction of the tokens.\n\n \n   \n    Live: 10,144 → 1,260 tokens — same FATAL found. \n \n\n## What it does\n\n- **Library** — `compress(messages)` in Python or TypeScript, inline in any app\n- **Proxy** — `headroom proxy --port 8787`, zero code changes, any language\n- **Agent wrap** — `headroom wrap claude|codex|cursor|aider|copilot` in one command\n- **MCP server** — `headroom_compress`, `headroom_retrieve`, `headroom_stats` for any MCP client\n- **Cross-agent memory** — shared store across Claude, Codex, Gemini, auto-dedup\n- **`headroom learn`** — mines failed sessions, writes corrections to `CLAUDE.md` / `AGENTS.md`\n- **Output token reduction** — trims what the model *writes back* (not just what you send): drops ceremony/restated code and skips deep \"thinking\" on routine steps. See Output token reduction.\n- **Reversible (CCR)** — originals are cached for retrieval on demand\n\n## How it works (30 seconds)\n\n```\n Your agent / app\n   (Claude Code, Cursor, Codex, LangChain, Agno, Strands, your own code…)\n        │   prompts · tool outputs · logs · RAG results · files\n        ▼\n    ┌────────────────────────────────────────────────────┐\n    │  Headroom   (runs locally — your data stays here)  │\n    │  ────────────────────────────────────────────────  │\n    │  CacheAligner  →  ContentRouter  →  CCR            │\n    │                    ├─ SmartCrusher   (JSON)        │\n    │                    ├─ CodeCompressor (AST)         │\n    │                    └─ Kompress-base  (text, HF)    │\n    │                                                    │\n    │  Cross-agent memory  ·  headroom learn  ·  MCP     │\n    └────────────────────────────────────────────────────┘\n        │   compressed prompt  +  retrieval tool\n        ▼\n LLM provider  (Anthropic · OpenAI · Bedrock · …)\n```\n\n- **ContentRouter** — detects content type, selects the right compressor\n- **SmartCrusher / CodeCompressor / Kompress-base** — compress JSON, AST, or prose\n- **CacheAligner** — stabilizes prefixes so provi",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 12,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "rag",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor",
+        "LangChain"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "RAG",
+        "Agent",
+        "MCP",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "chopratejas/headroom: Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.7,
+      "tcloud_relevance": 9.0,
+      "tcloud_integration": "**headroom** 的用户群和 CodeBuddy 高度重合 — 可以写「headroom 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式\n补充关联 Hunyuan：**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**headroom** 的用户群和 CodeBuddy 高度重合 — 可以写「headroom 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "copilot",
+        "cursor",
+        "aider",
+        "llm",
+        "claude",
+        "gemini"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**headroom** 的用户群和 CodeBuddy 高度重合 — 可以写「headroom 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式\n补充关联 Hunyuan：**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy / Hunyuan）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「chopratejas/headroom - Compress tool outputs, log…」（chopratejas/headroom: Compress tool outputs, logs, files, a…），涉及 LLM / RAG / Agent → 可写方向：**headroom** 的用户群和 CodeBuddy 高度重合 — 可以写「headroom 用户迁移到 CodeBuddy 的体验对比」，突出 Code…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「chopratejas/headroom - Compress tool ou…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 headroom 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 headroom 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 headroom 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 headroom 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "chopratejas/headroom: Compress tool outputs, logs, files, and RAG c…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "chopratejas/headroom - Compress tool outputs, logs, files, and RAG chunks before they r…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：chopratejas/headroom: Compress tool outputs, logs, files, and RAG c…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: chopratejas/headroom - Compress tool outputs, logs, files, and RAG chunks before they r…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan). What matters more to you: deployment, performance, or…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。chopratejas/headroom: Compress tool outputs, logs, files, and RAG c…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**headroom** 的用户群和 CodeBuddy 高度重合 — 可以写「headroom 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式 补充关联 Hunyuan：**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. chopratejas/headroom - Compress tool outputs, logs, files, and RAG chunks before they r…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：chopratejas/headroom: Compress tool outputs, logs, files, and RAG c…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: chopratejas/headroom - Compress tool outputs, logs, files, and RAG chunks before they r…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "headroom：在工具输出、日志、文件和 RAG 块到达 LLM 之前对其进行压缩。令牌减少 60-95%，答案相同。",
+    "developer_profile": {
+      "github_username": "chopratejas",
+      "profile_url": "https://github.com/chopratejas",
+      "name": "Tejas Chopra",
+      "bio": "Software",
+      "company": "Netflix, Inc.",
+      "location": "Los Gatos",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 642,
+      "following": 5,
+      "public_repos": 43,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3607994?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "calesthio/OpenMontage - World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
+    "url": "https://github.com/calesthio/OpenMontage",
+    "heat": "6,400 stars",
+    "time": "Today",
+    "developer_name": "calesthio",
+    "developer_url": "https://github.com/calesthio",
+    "developer_email": "",
+    "today_stars": "156 stars today",
+    "language": "Python",
+    "summary": "World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
+    "content": " \n   \n \n\n OpenMontage \n\n  The first open-source, agentic video production system.  \n\n \n   Paste A Video  &nbsp;·&nbsp;\n   Quick Start  &nbsp;·&nbsp;\n   Try These Prompts  &nbsp;·&nbsp;\n   Pipelines  &nbsp;·&nbsp;\n   How It Works  &nbsp;·&nbsp;\n   Providers  &nbsp;·&nbsp;\n   Agent Guide \n \n\n \n     \n \n\n  Follow The Build  \n\n \n     \n     \n     \n \n\n---\n\nTurn your AI coding assistant into a full video production studio. Describe what you want in plain language — your agent handles research, scripting, asset generation, editing, and final composition.\n\n**Important distinction:** OpenMontage can make image-based videos, but it can also make a real **video video** for free/open-source workflows: the agent builds a corpus from free stock footage and open archives, retrieves actual motion clips, edits them into a timeline, and renders a finished piece. That is not the usual \"animate a handful of stills and call it video\" trick.\n\n \n    \n \n\n> **\"SIGNAL FROM TOMORROW\"** — a cinematic sci-fi trailer fully produced through OpenMontage: concept, script, scene plan, Veo-generated motion clips, soundtrack, and Remotion composition.\n\n \n    \n \n\n> **\"THE LAST BANANA\"** — a 60-second Pixar-style animated short about a lonely banana who finds friendship with a kiwi. 6 Kling v3-generated motion clips (via fal.ai), Google Chirp3-HD narration, royalty-free piano music, TikTok-style word-level captions, and Remotion composition. Total cost: **$1.33**.\n\n \n    \n \n\n> **\"VOID — Neural Interface\"** — a product ad produced with just one API key (OpenAI). 4 AI-generated images (gpt-image-1), TTS narration, auto-sourced royalty-free music, word-level subtitles via WhisperX, and Remotion data visualizations. Total cost: **$0.69**. Zero manual asset work.\n\n \n    \n \n\n> **\"Afternoon in Candyland\"** — a Ghibli-style anime animation. A little girl's whimsical afternoon adventure through candy gates, gumdrop rivers, and lollipop gardens. 12 FLUX-generated images with multi-image crossfade, cinematic camera motion (zoom, pan, Ken Burns), sparkle/petal/firefly particle overlays, and ambient music with auto-detected energy offset. Total cost: **$0.15**. No video generation, no manual editing.\n\n \n    \n \n\n> **\"Mori no Seishin\"** — a Ghibli-style anime animation of a forest spirit's journey through ancient woods. 12 FLUX-generated images with parallax crossfade, drift and pan camera motion, firefly and petal particles, cinematic vignette lighting, and ambient forest soundtrack. Total cost: **$0.15**. Still images brought to life through Remotion's animation engine.\n\n \n    \n \n\n> **\"Into the Abyss\"** — a deep ocean exploration rendered in anime style. Bioluminescent gardens, coral cathedrals, and creatures of light — 12 FLUX-generated images with sparkle and mist particle overlays, light-ray effects, smooth camera motion, and ambient oceanic soundtrack. Total cost: **$0.15**. Zero video generation APIs needed.\n\n \n    Subscribe to @OpenMontage on YouTube   to see new videos as they ship — every v",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "agent",
+        "openai",
+        "agentic",
+        "tts"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "calesthio/OpenMontage: World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.3,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「calesthio/OpenMontage - World's first open-source…」（calesthio/OpenMontage: World's first open-source, agentic v…），涉及 Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「calesthio/OpenMontage - World's first o…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 OpenMontage 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 OpenMontage 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "calesthio/OpenMontage: World's first open-source, agentic video pro…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：calesthio/OpenMontage: World's first open-source, agentic video pro…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。calesthio/OpenMontage: World's first open-source, agentic video pro…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：calesthio/OpenMontage: World's first open-source, agentic video pro…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "OpenMontage：世界上第一个开源的代理视频制作系统。12条管道、52种工具、500+座席技能。",
+    "developer_profile": {
+      "github_username": "calesthio",
+      "profile_url": "https://github.com/calesthio",
+      "name": "Calesthio",
+      "bio": "Building open source intelligence tools.\r\nCreator of Crucix — crucix.live\r\n",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "calesthioailabs",
+      "email": "",
+      "followers": 370,
+      "following": 0,
+      "public_repos": 6,
+      "avatar_url": "https://avatars.githubusercontent.com/u/213189893?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/calesthioailabs"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@OpenMontage"
+        }
+      ],
+      "is_org": false
+    }
+  }
+]
