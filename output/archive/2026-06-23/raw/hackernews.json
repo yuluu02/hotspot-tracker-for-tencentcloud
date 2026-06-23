@@ -1,0 +1,504 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Will It Mythos?",
+    "url": "https://swelljoe.com/post/will-it-mythos/",
+    "hn_url": "https://news.ycombinator.com/item?id=48640196",
+    "heat": "25 points",
+    "time": "41 minutes ago",
+    "developer_name": "mindingnever",
+    "developer_url": "https://news.ycombinator.com/user?id=mindingnever",
+    "content": "Will It Mythos? - I've done some things OK, so Mythos finds really challenging security bugs, right? That’s why it’s cordoned off from the hoi polloi, to protect the world from such a powerful finder of exploits. I am skeptical of the reasons given publicly, I suspect it’s really just so much more expensive to operate than their current models that they don’t want to offer it broadly, yet, given the difficulty they’ve had growing capacity to keep up with use. But, are they telling the truth about how good it is at finding security vulnerabilities or is it just more hype? A while back, I built a tool to automate bug hunting in my own projects called Nelson , and I’d already noticed there are surprising differences in the various models and how effectively they identify bugs. But, I wanted hard numbers. So, I (actually mostly Claude) cooked up a benchmark suite that borrows some code from Nelson. The idea is to gather up bugs that were specifically found by Mythos, as covered by their own documentation , find the commit from before the bug was fixed, verify that a top-tier model (Opus, in this case) can identify and understand the bug if pointed right at it, and add that to our corpus for benchmarking whether models going in blind can accurately detect and describe the bug. ( The details of the bugs in the current corpus are here. ) I used Opus (4.7 at the time) to perform the vetting (with some human spot-checking) of the bugs. All of the bugs in the corpus (9, currently) are believed to be after the knowledge cutoff for all models, so they won’t have the bug in their memory. And, all of the bugs can be identified by several models if they are pointed directly at it and told what to look for. So, these are confirmed bugs exactly as they appeared in the wild, and probably as they were when Mythos found them. Over time, I’ll evolve the corpus. It may become a more generic CVE-based benchmark, if Anthropic stops bragging about specific bugs. So, this benchmark has one purpose: To find out whether other models can do what Mythos does, or if Mythos really is uniquely powerful for this task. There are a few caveats here, that maybe mean this isn’t a fair test for the models being tested. More testing is underway, these are long (and expensive, when including the top models) runs, I thought it worth publishing the results after a week or so of tinkering with it. The models are given the problem file and basic tools in a simple test harness (except Opus, which uses Claude Code, see note about agents below). No hints were given except what file to look at (which is not a hint at all…standard auditing practice is to individually look at every file in a project, so it’s a realistic prompt). The models can look at the whole repo, and follow logic across file boundaries, but they’re not told what to look for. The toughest bugs are multi-file bugs. The models were free to look at all files, but one often needs to know the context to know that a given usage is a",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "prompt",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "对比测评",
+      "detail_brief": "Will It Mythos? - I've done some things OK, so Mythos finds really challenging security bugs, right? That’s why it’s cordoned off from the hoi polloi, to protect the world from such a powerful finder of exploits. I am skeptical of the reasons given publicly, I suspect it’s really just so much more expensive to operate than their current models that they don’t want to offer it broadly, yet, given the difficulty they’ve had growing capacity to keep up with use.",
+      "heat_score": 3.0,
+      "timeliness_score": 9.5,
+      "composite_score": 5.4,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**Will It Mythos?** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Will It Mythos?** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Will It Mythos?** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Will It Mythos?」（Will It Mythos? - I've done some things OK, so Mythos finds…） → 可写方向：涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Will It Mythos?」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 Will It Mythos? 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Will It Mythos? 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Will It Mythos? - I've done some things OK, so Mythos finds really…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "Will It Mythos?. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Will It Mythos? - I've done some things OK, so Mythos finds really…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Will It Mythos?. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Will It Mythos? - I've done some things OK, so Mythos finds really…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Will It Mythos?** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Will It Mythos?. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Will It Mythos? - I've done some things OK, so Mythos finds really…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Will It Mythos?. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Will It Mythos?：会是神话吗？- 我已经完成了一些事情，所以 Mythos 发现了真正具有挑战性的安全漏洞，对吧？"
+  },
+  {
+    "source": "Hacker News",
+    "title": "VibeThinker: 3B param model that beats Opus 4.5 on reasoning with novel SFT+GRPO",
+    "url": "https://arxiv.org/abs/2606.16140",
+    "hn_url": "https://news.ycombinator.com/item?id=48639240",
+    "heat": "63 points",
+    "time": "2 hours ago",
+    "developer_name": "timhigins",
+    "developer_url": "https://news.ycombinator.com/user?id=timhigins",
+    "content": "[2606.16140] VibeThinker-3B: Exploring the Frontier of Verifiable Reasoning in Small Language Models Computer Science > Artificial Intelligence arXiv:2606.16140 (cs) [Submitted on 15 Jun 2026] Title: VibeThinker-3B: Exploring the Frontier of Verifiable Reasoning in Small Language Models Authors: Sen Xu , Shixi Liu , Wei Wang , Jixin Min , Yingwei Dai , Zhibin Yin , Yirong Chen , Xin Zhou , Junlin Zhang View a PDF of the paper titled VibeThinker-3B: Exploring the Frontier of Verifiable Reasoning in Small Language Models, by Sen Xu and 8 other authors View PDF HTML (experimental) Abstract: This technical report introduces VibeThinker-3B, a compact dense model with 3B parameters developed to investigate how far verifiable reasoning can be pushed within a strictly small-model regime. Building upon the Spectrum-to-Signal post-training paradigm, we systematically enhance the model through an optimized pipeline that includes curriculum-based supervised fine-tuning, multi-domain reinforcement learning, and offline self-distillation. Experimental evaluations demonstrate that VibeThinker-3B achieves frontier-level performance on highly demanding verifiable tasks. Specifically, it attains a score of 94.3 on AIME26 (improving to 97.1 with claim-level test-time scaling), an 80.2 Pass@1 on LiveCodeBench v6, and exhibits strong out-of-distribution generalization with a 96.1\\% acceptance rate on recent unseen LeetCode contests. This effectively places it in the performance band of first-tier reasoning systems, matching or exceeding flagship models that are orders of magnitude larger, such as DeepSeek V3.2, GLM-5, and Gemini 3 Pro. Furthermore, a score of 93.4 on IFEval confirms that this extreme reasoning enhancement does not compromise strict instruction controllability. Extending our previous 1.5B work, these findings motivate the Parametric Compression-Coverage Hypothesis, which views verifiable reasoning as compressible into compact reasoning cores, while open-domain knowledge and general-purpose competence require broad parameter coverage over facts, concepts, and long-tail scenarios. This perspective suggests that compact models are not merely deployment-efficient substitutes, but a complementary path toward frontier-level performance in parameter-dense capability regimes. Subjects: Artificial Intelligence (cs.AI) ; Computation and Language (cs.CL) Cite as: arXiv:2606.16140 [cs.AI] (or arXiv:2606.16140v1 [cs.AI] for this version) https://doi.org/10.48550/arXiv.2606.16140 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Sen Xu [ view email ] [v1] Mon, 15 Jun 2026 02:57:19 UTC (552 KB) Full-text links: Access Paper: View a PDF of the paper titled VibeThinker-3B: Exploring the Frontier of Verifiable Reasoning in Small Language Models, by Sen Xu and 8 other authors View PDF HTML (experimental) TeX Source view license Current browse context: cs.AI < prev | next > new | recent | 2026-06 Change to browse by: cs cs.CL References & Citatio",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "artificial intelligence",
+        "gemini",
+        "deepseek",
+        "reasoning"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "Gemini",
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "16140] VibeThinker-3B: Exploring the Frontier of Verifiable Reasoning in Small Language Models Computer Science > Artificial Intelligence arXiv:2606. 16140 (cs) [Submitted on 15 Jun 2026] Title: VibeThinker-3B: Exploring the Frontier of Verifiable Reasoning in Small Language Models Authors: Sen Xu , Shixi Liu , Wei Wang , Jixin Min , Yingwei Dai , Zhibin Yin , Yirong Chen , Xin Zhou , Junlin Zhang View a PDF of the paper titled VibeThinker-3B: Exploring the Frontier of Verifiable Reasoning in S…",
+      "heat_score": 4.0,
+      "timeliness_score": 9.0,
+      "composite_score": 4.3,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「VibeThinker: 3B param model that beats Opus 4.5 o…」（16140] VibeThinker-3B: Exploring the Frontier of Verifiable…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「VibeThinker: 3B param model that beats…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "16140] VibeThinker-3B: Exploring the Frontier of Verifiable Reasoni…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "VibeThinker: 3B param model that beats Opus 4.5 on reasoning with novel SFT+GRPO. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：16140] VibeThinker-3B: Exploring the Frontier of Verifiable Reasoni…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: VibeThinker: 3B param model that beats Opus 4.5 on reasoning with novel SFT+GRPO. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。16140] VibeThinker-3B: Exploring the Frontier of Verifiable Reasoni…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. VibeThinker: 3B param model that beats Opus 4.5 on reasoning with novel SFT+GRPO. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：16140] VibeThinker-3B: Exploring the Frontier of Verifiable Reasoni…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: VibeThinker: 3B param model that beats Opus 4.5 on reasoning with novel SFT+GRPO. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "VibeThinker: 3B param model that beats O：16140] VibeThinker-3B：探索小语言模型中可验证推理的前沿计算机科学 > 人工智能 arXiv：2606。16140 (cs) [提交于 2026 年 6 月 15 日] 标题：VibeThinker-3B：探索小语言模型中可验证推理的前沿 作者：Sen Xu、Shixi Liu、Wei Wang…"
+  },
+  {
+    "source": "Hacker News",
+    "title": "GLM-5.2 – How to Run Locally",
+    "url": "https://unsloth.ai/docs/models/glm-5.2",
+    "hn_url": "https://news.ycombinator.com/item?id=48636377",
+    "heat": "266 points",
+    "time": "7 hours ago",
+    "developer_name": "TechTechTech",
+    "developer_url": "https://news.ycombinator.com/user?id=TechTechTech",
+    "content": "GLM-5.2 - How to Run Locally | Unsloth Documentation Introducing Unsloth Studio: a new web UI for local AI 🦥 🇺🇸 English Get Started 🦥 Homepage 🔮 Models ⭐ Beginner? 📒 Unsloth Notebooks 📥 Installation 🧬 Fine-tuning Guide 💡 Reinforcement Learning New 🦥 Introducing Unsloth Studio Unsloth API endpoint Unsloth Updates Models Complete LLM Directory GLM-5.2 DiffusionGemma ✨ Gemma 4 💜 Qwen3.6 🌘 Kimi K2.7 Code 🪽 Run MTP Models MiniMax M3 💜 Qwen3.5 Basics Unsloth API 🖥️ Inference & Deployment Claude Code OpenAI Codex MCP Server Multi-GPU Training 🔎 Embedding Fine-tuning 💎 Faster MoE Training 🔊 Text-to-Speech Fine-tuning 🦥 Dynamic 2.0 GGUFs Tool Calling Guide 👁️ Vision Fine-tuning ⚠️ Troubleshooting & FAQs 💬 Chat Templates ♻️ Continued Pretraining Integrations Connect a Provider OpenClaw OpenCode Hermes Agent Python SDK Curl & HTTP VS Code OpenAI Codex Claude Code Blog ⚡ New 3x Faster Training 500K Context Training Quantization-Aware Training DGX Station Unsloth Docker Guide DGX Spark and Unsloth Blackwell, RTX 50 and Unsloth Powered by GitBook On this page For the complete documentation index, see llms.txt . This page is also available as Markdown . GLM-5.2 is Z.ai’s new open model, delivering SOTA performance across long-horizon coding, reasoning, and agentic tasks. With 744B parameters , 40B active parameters, and a 1M context window, it can now be run locally using Unsloth Dynamic GGUFs. GLM-5.2 is the strongest open model to date, performing on par with Claude 4.8 Opus, GPT-5.5, and Gemini 3.1 Pro across Artificial Analysis and many other benchmarks. Dynamic 1-bit reaches ~76.2% top-1 accuracy while being 86% smaller . Dynamic 2-bit reaches ~82% accuracy while being 84% smaller . This means the model is not 86% worse since it's 86% smaller - it rather is only ~24% less accurate than the full 1.5TB model. Thanks Z.ai for giving Unsloth day-zero access. GLM-5.2-GGUF Run GLM-5.2 Tutorials Quantization Results ⚙️ Usage Guide The 2-bit dynamic quant UD-IQ2_M uses 239GB of disk space - this can directly fit on a 256GB unified memory Mac and works well in a 1x24GB GPU and 256GB of RAM with MoE offloading. The 1-bit quant will fit on a 223GB RAM and 8-bit requires 810GB RAM. Table: Inference hardware requirements (units = total memory: RAM + VRAM, or unified memory) 1-bit 2-bit 3-bit 4-bit 5-bit 8-bit 223 GB 245 GB 290-360 GB 372-475 GB 570 GB 810 GB For best performance, make sure your total available memory, including VRAM and system RAM, exceeds the quantized model file size by a comfortable margin. Recommended Settings GLM-5.2 has 3 thinking modes . Non-thinking and Thinking in two modes: High + Max . Use Max Thinking for complicated tasks. In Unsloth Studio you can easily toggle High + Max Thinking and non-Thinking with a UI. Use these settings for most use cases: Default Settings (Most Tasks) SWE-Bench Pro temperature = 1.0 temperature = 1.0 top_p = 0.95 top_p = 1.0 Maximum context window: 1,048,576 . Disabling Thinking, changing reasoning effort GLM 5.2 ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 13,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "gpt",
+        "claude",
+        "gemini",
+        "agent",
+        "embedding",
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "MCP",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "2 - How to Run Locally | Unsloth Documentation Introducing Unsloth Studio: a new web UI for local AI 🦥 🇺🇸 English Get Started 🦥 Homepage 🔮 Models ⭐ Beginner? 📒 Unsloth Notebooks 📥 Installation 🧬 Fine-tuning Guide 💡 Reinforcement Learning New 🦥 Introducing Unsloth Studio Unsloth API endpoint Unsloth Updates Models Complete LLM Directory GLM-5. 2 DiffusionGemma ✨ Gemma 4 💜 Qwen3. 6 🌘 Kimi K2.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 8.0,
+      "tcloud_relevance": 9.7,
+      "tcloud_integration": "**GLM-5.2** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 Hunyuan：**GLM-5.2** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "GPU CVM",
+        "Hunyuan",
+        "CodeBuddy",
+        "CVM"
+      ],
+      "tcloud_reasons": [
+        "**GLM-5.2** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**GLM-5.2** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**GLM-5.2** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "gpu",
+        "training",
+        "fine-tuning",
+        "pretraining",
+        "llm",
+        "claude",
+        "gemini"
+      ],
+      "tcloud_primary_product": "GPU CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**GLM-5.2** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 Hunyuan：**GLM-5.2** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "GPU CVM",
+        "Hunyuan",
+        "CodeBuddy",
+        "CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（GPU CVM / Hunyuan）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（GPU CVM / Hunyuan） + 社区参与",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「GLM-5.2 – How to Run Locally」（2 - How to Run Locally | Unsloth Documentation Introducing…），涉及 LLM / Agent / MCP → 可写方向：**GLM-5.2** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 Hunyuan：**GLM-5.2** 与 H…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「GLM-5.2」可结合 GPU CVM 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "GPU CVM",
+      "official_angle_cn": "围绕 GLM-5.2 的核心功能（2 - How to Run Locally | Unsloth Documentation Introducing Unsloth Studio: a ne…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+      "platform_copies": {
+        "primary_product": "GPU CVM",
+        "product_display": "GPU CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 GLM-5.2 的核心功能（2 - How to Run Locally | Unsloth Documentation Introducing Unsloth Studio: a ne…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use GPU Cloud Virtual Machine as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+        "x_cn": "2 - How to Run Locally | Unsloth Documentation Introducing Unsloth…。如果站在腾讯云国际站官方号来写，这条更适合从 GPU CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：*…",
+        "x_en": "GLM-5.2 – How to Run Locally. For Tencent Cloud, this fits GPU Cloud Virtual Machine: GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：2 - How to Run Locally | Unsloth Documentation Introducing Unsloth…。如果从腾讯云视角切，这条最适合带到 GPU CVM，重点聊 技术科普 + 教程拆解 + 产品关联（GPU CVM / Hunyuan） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: GLM-5.2 – How to Run Locally. From a Tencent Cloud angle, the best hook is GPU Cloud Virtual Machine, especially around technical explainer + hands-on walkthrough + product tie-in (GPU CVM / Hunyuan) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。2 - How to Run Locally | Unsloth Documentation Introducing Unsloth…。如果用官方号发，建议主推 GPU CVM，重点讲 技术科普 + 教程拆解 + 产品关联（GPU CVM / Hunyuan） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**GLM-5.2** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 Hunyuan：**GLM-5.2** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. GLM-5.2 – How to Run Locally. For Tencent Cloud, the better angle is GPU Cloud Virtual Machine. GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering. The content should focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM / Hunyuan) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 GPU CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：2 - How to Run Locally | Unsloth Documentation Introducing Unsloth…。如果站在腾讯云国际站官方号视角，我会更想把它写成 GPU CVM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（GPU CVM / Hunyuan） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through GPU Cloud Virtual Machine?",
+        "reddit_body_en": "A recent trend caught my eye: GLM-5.2 – How to Run Locally. Instead of reposting it as news, I'd frame it through GPU Cloud Virtual Machine and focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM / Hunyuan) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "GLM-5.2：2 - 如何本地运行|Unsloth 文档 介绍 Unsloth Studio：用于本地 AI 的新 Web UI 🦥 🇺🇸 英语入门 🦥 主页 🔮 模型 ⭐ 初学者？📒 Unsloth 笔记本 📥 安装 🧬 微调指南 💡 强化学习新功能 🦥 介绍 Unsloth Studio Unsloth API 端点 Unsloth 更新模型 完整的 LLM 目录 GLM-5。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "In praise of memcached",
+    "url": "https://jchri.st/blog/in-praise-of-memcached/",
+    "hn_url": "https://news.ycombinator.com/item?id=48638886",
+    "heat": "86 points",
+    "time": "3 hours ago",
+    "developer_name": "j03b",
+    "developer_url": "https://news.ycombinator.com/user?id=j03b",
+    "content": "In praise of memcached In praise of memcached 2nd June 2026 from jc's blog If you happen to find yourself in a sysadmin position, or a position where you just so happen to maintain someone’s infrastructure , chances are that at some point in time the topic “we need a cache” comes up. You think for a moment and reach out for Redis, because you’re used to it, it’s fully featured, and it works! You remember it being a good, solid cache, and you wonder which new features recent releases have brought, and head to its homepage: Your agents aren’t failing. Their context is. Inquiring agents want to know: How can I use Redis Iris as a real-time context engine for AI apps? 1 Right, so probably something with AI 2 . This is sort of understandable, because Redis is a company that wants to make money. Anyways, Redis homepage aside, you deploy it, and off you go - your trusty cache. You hand the connection string to the people who asked for it, and off you go. Few months later After a while, it turns out that cache.set(\"key\", \"value\") is a really simple abstraction, and definitely easier than INSERT INTO table VALUES ('key', 'value') . People start treating the REmote DIctionary Server as something that’s always there, something that persists data, something that is a database . You don’t know this. Your ops colleagues don’t know this. Therefore, your alerting doesn’t know this either, because you assume that people treat the cache as something volatile. You find out that this has been going on when you happen to do something to Redis. Maybe you upgrade it, maybe you move it to another node, maybe your cat hits the eject button on your RAID0 server’s HDD tray. The issue isn’t that Redis doesn’t have persistence, the issue is that usually, Redis is brought into a stack as a cache , and it is run with the assumption that people treat it that way. Usually, by the time you realize this, it is already too late, and Redis is too intertwined in the app to really leave its place. Instead, you have the eternal pleasure of maintaining it and monitoring it like a pet. Enter memcached First off - what’s a memcached? Easy, ask its website : What is Memcached? Free & open source, high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load. 3 Wow, first sentence on the page, even with code examples. And look at those cute little mascots at the top! Memcached is also a cache, similar to Redis. Chances are that you’re using a framework like Django, which supports pluggable caching and allows you to switch between different caching backends. But why should you use memcached when it has much less features than Redis? Here are my reasons for why these days, I will always prefer memcached over Redis: Dealing with memcached downtime is incredibly easy, because client libraries generally ignore connection exceptions. For instance, a simple get will just return the default va",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "redis"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "In praise of memcached In praise of memcached 2nd June 2026 from jc's blog If you happen to find yourself in a sysadmin position, or a position where you just so happen to maintain someone’s infrastructure , chances are that at some point in time the topic “we need a cache” comes up. You think for a moment and reach out for Redis, because you’re used to it, it’s fully featured, and it works! You remember it being a good, solid cache, and you wonder which new features recent releases have brough…",
+      "heat_score": 4.0,
+      "timeliness_score": 8.0,
+      "composite_score": 3.5,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「In praise of memcached」（In praise of memcached In praise of memcached 2nd June 2026…），涉及 Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「In praise of memcached」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "In praise of memcached In praise of memcached 2nd June 2026 from jc…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "In praise of memcached. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：In praise of memcached In praise of memcached 2nd June 2026 from jc…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: In praise of memcached. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。In praise of memcached In praise of memcached 2nd June 2026 from jc…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. In praise of memcached. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：In praise of memcached In praise of memcached 2nd June 2026 from jc…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: In praise of memcached. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "In praise of memcached：对 memcached 的赞扬 对 memcached 的赞扬 2026 年 6 月 2 日，来自 jc 的博客 如果您碰巧发现自己处于系统管理员职位，或者恰好维护某人的基础设施，那么很可能在某个时候会出现“我们需要缓存”的主题。您想了一下，选择了 Redis，因为您已经习惯了它，它功能齐全，而且很有效！"
+  },
+  {
+    "source": "Hacker News",
+    "title": "An Introduction to YOLO26",
+    "url": "https://blog.roboflow.com/yolo26/",
+    "hn_url": "https://news.ycombinator.com/item?id=48639165",
+    "heat": "26 points",
+    "time": "3 hours ago",
+    "developer_name": "teleforce",
+    "developer_url": "https://news.ycombinator.com/user?id=teleforce",
+    "content": "YOLO26: YOLO Model for Real-Time Vision AI [2026] Search Sign in Book a demo Get Started Search Blog What is YOLO26? An Introduction Contributing Writer Published Jan 14, 2026 • 5 min read SUMMARY YOLO26 is an end-to-end object detection and multi-task model family supporting detection, instance segmentation , pose estimation, oriented object detection, and image classification across five size variants from Nano to Extra Large. Released in January 2026, it removes Non-Maximum Suppression for lower latency and drops the Distribution Focal Loss module for better compatibility with edge and low-power hardware. This post covers the architecture, COCO benchmark results, download links, and comparisons to models including RF-DETR , LW-DETR, and D-FINE. YOLO models are a family of real-time computer vision models designed to handle a wide range of tasks, including object detection , segmentation , pose estimation , classification , and oriented object detection . Leveraging popular architectures, these models offer exceptional speed and accuracy, making them well-suited for applications across edge devices, cloud APIs, and more. In this blog, we’ll examine YOLO26 , released January 2026, revealing its key improvements, important features, and how it compares to other leading computer vision models. 💡 Roboflow supports YOLO26 for labeling, training, and deployment, learn more . What Is YOLO26? YOLO26 is a multi-task model family designed to handle a broad range of computer vision tasks, including object detection, instance segmentation, image classification, pose estimation, and oriented object detection. The lineup features multiple size variants Nano (N), Small (S), Medium (M), Large (L), and Extra Large (X) to cater to different performance and deployment needs. Compared to previous YOLO generations, YOLO26 is optimized for edge deployment, featuring faster CPU inference, a more compact model design, and a simplified architecture for improved compatibility across diverse hardware environments. Notable improvements include decreased latency by removing NMS and results staying consistent in fp16 and fp32, making it possible to run the model in an optimized, low-latency way and get the same high accuracy you saw during training. ⚡ RF-DETR Neural Architecture Search (NAS) is faster and more accurate than YOLO26. Read the blog post here . Try YOLO26 on Images See how YOLO26 performs on images for common objects included in the COCO dataset . Test out how the model handles your data below. Download YOLO26 The table below provides links to download YOLO26 for object detection and outlines the Ultralytics reported performance benchmarks for the YOLO26 model family, comparing variants from nano to extra-large across key metrics like accuracy (mAP), latency, and computational cost. Model size (pixels) mAP val 50-95 Speed CPU ONNX (ms) Speed T4 TensorRT10 (ms) params (M) FLOPs (B) YOLO26n 640 40.9 38.9 ± 0.7 1.7 ± 0.0 2.4 5.4 YOLO26s 640 48.6 87.2 ± 0.9 2.5 ± 0",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "edge"
+      ],
+      "ai_hits": [
+        "ai",
+        "inference",
+        "computer vision",
+        "vision model"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "对比测评",
+      "detail_brief": "YOLO26: YOLO Model for Real-Time Vision AI [2026] Search Sign in Book a demo Get Started Search Blog What is YOLO26? An Introduction Contributing Writer Published Jan 14, 2026 • 5 min read SUMMARY YOLO26 is an end-to-end object detection and multi-task model family supporting detection, instance segmentation , pose estimation, oriented object detection, and image classification across five size variants from Nano to Extra Large.",
+      "heat_score": 3.0,
+      "timeliness_score": 8.0,
+      "composite_score": 6.3,
+      "tcloud_relevance": 5.9,
+      "tcloud_integration": "**An Introduction to YOLO26** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
+      "tcloud_products": [
+        "EdgeOne"
+      ],
+      "tcloud_reasons": [
+        "**An Introduction to YOLO26** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景"
+      ],
+      "tcloud_evidence": [
+        "edge",
+        "latency"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**An Introduction to YOLO26** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
+      "tcloud_official_matches": [
+        "EdgeOne"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（EdgeOne）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（EdgeOne） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「An Introduction to YOLO26」（YOLO26: YOLO Model for Real-Time Vision AI [2026] Search Si…） → 可写方向：面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「An Introduction to YOLO26」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 An Introduction to YOLO26 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 An Introduction to YOLO26 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "YOLO26: YOLO Model for Real-Time Vision AI [2026] Search Sign in Bo…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：…",
+        "x_en": "An Introduction to YOLO26. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：YOLO26: YOLO Model for Real-Time Vision AI [2026] Search Sign in Bo…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 技术科普 + 教程拆解 + 产品关联（EdgeOne） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: An Introduction to YOLO26. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (EdgeOne) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。YOLO26: YOLO Model for Real-Time Vision AI [2026] Search Sign in Bo…。如果用官方号发，建议主推 EdgeOne，重点讲 技术科普 + 教程拆解 + 产品关联（EdgeOne） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**An Introduction to YOLO26** 面向全球用户，EdgeOne 在全球 3,200+ 节点提供 CDN 加速，并整合安全防护，适合需要低延迟 + 安全的场景",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. An Introduction to YOLO26. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：YOLO26: YOLO Model for Real-Time Vision AI [2026] Search Sign in Bo…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（EdgeOne） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: An Introduction to YOLO26. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "An Introduction to YOLO26：YOLO26：实时视觉 AI 的 YOLO 模型 [2026] 搜索 登录 预订演示 开始搜索 博客 什么是 YOLO26？简介 特约撰稿人 2026 年 1 月 14 日发布 • 阅读 5 分钟 摘要 YOLO26 是一个端到端对象检测和多任务模型系列，支持从纳米到超大的五种尺寸变体的检测、实例分割、姿态估计、定向对象检测和图像分类。"
+  }
+]
