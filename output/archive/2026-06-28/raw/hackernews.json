@@ -1,0 +1,477 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Wayfinder Router: deterministic routing of queries between local and hosted LLM",
+    "url": "https://github.com/itsthelore/wayfinder-router",
+    "hn_url": "https://news.ycombinator.com/item?id=48704373",
+    "heat": "9 points",
+    "time": "41 minutes ago",
+    "developer_name": "handfuloflight",
+    "developer_url": "https://news.ycombinator.com/user?id=handfuloflight",
+    "content": "GitHub - itsthelore/wayfinder-router: Simple CLI tool for deterministic routing of queries between local and hosted LLM models · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert Uh oh! There was an error while loading. Please reload this page . itsthelore / wayfinder-router Public Notifications You must be signed in to change notification settings Fork 5 Star 37 main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 177 Commits 177 Commits .claude/ skills/ wayfinder-triage .claude/ skills/ wayfinder-triage .github/ workflows .github/ workflows .rac .rac benchmarks benchmarks decisions decisions designs designs docs docs examples examples roadmaps roadmaps tests tests wayfinder_router wayfinder_router .gitignore .gitignore CHANGELOG.md CHANGELOG.md Dockerfile Dockerfile EXPLAINER.md EXPLAINER.md LICENSE LICENSE Makefile Makefile NOTICE NOTICE README.md README.md conftest.py conftest.py docker-compose.example.yml docker-compose.example.yml pyproject.toml pyproject.toml View all files Repository files navigation Deterministic prompt-complexity routing — send each prompt to your local or cloud model, offline, with no model call to decide. Quickstart · Benchmark · How it compares · Explainer · Changelog No model call to decide the route Deterministic and fully offline Calibrate on your own data Bring your own key self-hosted Wayfinder reads the shape of a prompt — its length, headings, lists, and code — plus difficulty cues in the wording, like proofs, math, and hard constraints, and tells you whether to send it to your small local model or your big cloud one. It decides in microseconds, runs offline, and never calls another model to make the call. No API key, no network, no model call to decide. You get a score and a recommendation; what you do with it is up to you. Cheap prompts stay local, hard ones go to the expensive model, and you stop paying frontier prices for \"summarize this\" and \"fix my typo.\" How it compares Most routers decide by calling a model: a trained classifier, an LLM judge, or a hosted API. That adds latency, cost, and a little randomness to the exact step that is meant to save you money. Wayfinder reads structure and wording instead, so the decision is free and the same every time. router decides by model call? self-host calibrate Wayfinder deterministic structural score no yes yes RouteLLM trained classifier (preference data) yes yes retrain NotDiamond / Martian learned, hosted yes no via platform OpenRouter (Auto) hosted auto-router yes no — LiteLLM provider proxy (not complexity-routed) no yes n/a Wayfinder is not chasing a top accuracy number. It is the one router you can run offline, with zero model calls, and tune on your own",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "docker"
+      ],
+      "ai_hits": [
+        "llm",
+        "claude",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Go"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "GitHub - itsthelore/wayfinder-router: Simple CLI tool for deterministic routing of queries between local and hosted LLM models · GitHub You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session.",
+      "heat_score": 2.0,
+      "timeliness_score": 9.5,
+      "composite_score": 6.3,
+      "tcloud_relevance": 6.4,
+      "tcloud_integration": "**Wayfinder Router: deterministic routing ** 明确支持自托管部署（GitHub - itsthelore/wayfinder-router: Simple CLI tool for de），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**Wayfinder Router: deterministic routing ** 明确支持自托管部署（GitHub - itsthelore/wayfinder-router: Simple CLI tool for de），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行"
+      ],
+      "tcloud_evidence": [
+        "self-hosted",
+        "docker-compose",
+        "dockerfile"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**Wayfinder Router: deterministic routing ** 明确支持自托管部署（GitHub - itsthelore/wayfinder-router: Simple CLI tool for de），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Wayfinder Router: deterministic routing of querie…」（GitHub - itsthelore/wayfinder-router: Simple CLI tool for d…），涉及 LLM / Go → 可写方向：明确支持自托管部署（GitHub - itsthelore/wayfinder-router: Simple CLI tool for de），Lightho…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Wayfinder Router: deterministic routing 」支持自部署，可写『Lighthouse 一键部署 Wayfinder Router: deterministic routing 』实操教程。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 Wayfinder Router: deterministic routing 」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用工具/框架的架构图或使用流程截图，如果有命令行输出可以截取关键操作步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 Wayfinder Router: deterministic routing 」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用工具/框架的架构图或使用流程截图，如果有命令行输出可以截取关键操作步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "GitHub - itsthelore/wayfinder-router: Simple CLI tool for determini…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "Wayfinder Router: deterministic routing of queries between local and hosted LLM. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：GitHub - itsthelore/wayfinder-router: Simple CLI tool for determini…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Wayfinder Router: deterministic routing of queries between local and hosted LLM. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary. What matters more to you: deployment, performa…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。GitHub - itsthelore/wayfinder-router: Simple CLI tool for determini…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**Wayfinder Router: deterministic routing ** 明确支持自托管部署（GitHub - itsthelore/wayfinder-router: Simple CLI tool for de），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Wayfinder Router: deterministic routing of queries between local and hosted LLM. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：GitHub - itsthelore/wayfinder-router: Simple CLI tool for determini…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Wayfinder Router: deterministic routing of queries between local and hosted LLM. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Wayfinder Router: deterministic routing ：wayfinder-router,用于在本地和托管 LLM 模型之间确定性路由查询的简单 CLI 工具,下载wayfinder-router的源码_GitHub_酷徒"
+  },
+  {
+    "source": "Hacker News",
+    "title": "AMD Strix Halo RDMA Cluster Setup Guide",
+    "url": "https://github.com/kyuz0/amd-strix-halo-vllm-toolboxes/blob/main/rdma_cluster/setup_guide.md",
+    "hn_url": "https://news.ycombinator.com/item?id=48703258",
+    "heat": "78 points",
+    "time": "4 hours ago",
+    "developer_name": "jakogut",
+    "developer_url": "https://news.ycombinator.com/user?id=jakogut",
+    "content": "amd-strix-halo-vllm-toolboxes/rdma_cluster/setup_guide.md at main · kyuz0/amd-strix-halo-vllm-toolboxes · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert kyuz0 / amd-strix-halo-vllm-toolboxes Public Notifications You must be signed in to change notification settings Fork 59 Star 399 Files Expand file tree main / setup_guide.md Copy path Blame More file actions Blame More file actions Latest commit History History History 393 lines (291 loc) · 16.7 KB main / setup_guide.md Copy path Top File metadata and controls Preview Code Blame 393 lines (291 loc) · 16.7 KB Raw Copy raw file Download raw file Outline Edit and raw actions AMD Strix Halo RDMA Cluster Setup Guide This guide details how to configure a two-node AMD Strix Halo cluster linked via Intel E810 (RoCE v2) for distributed vLLM inference using Tensor Parallelism. Table of Contents TL;DR (Quick Start) Concepts & Architecture Hardware Prerequisites Host Configuration (Fedora) 4.1 Install Packages 4.2 Check Native Firmware 4.3 Network Configuration 4.4 BIOS & Kernel Configuration 4.5 Firewall Rules Toolbox Installation & Network Verification 5.1 Prerequisites: Passwordless SSH 5.2 Installation 5.3 Verify RDMA Connection Running the Cluster 6.1 Setup & Verify 6.2 Launching vLLM Troubleshooting References & Acknowledgements 1. TL;DR (Quick Start) On Both Nodes: Preparation : Install/Update Fedora 43 and the E810 NICs (Check firmware: ethtool -i <iface> ). BIOS/Kernel : Set iGPU to 512MB and apply kernel params ( iommu=pt , pci=realloc , etc.). SSH : Configure passwordless SSH between nodes. Networking : Assign static IPs ( 192.168.100.1 & .2 ), set MTU 9000, and trust the interface in firewall. Install Toolbox : Run ./refresh_toolbox.sh (this automatically installs the container with RDMA support and the custom librccl.so patch). Run Cluster : Run start-vllm-cluster . Select \"2. Start Ray Cluster\" (Follow prompts using the TUI). Select \"4. Launch VLLM Serve\" and choose your model. (Export HF_TOKEN first for gated models!) Key Note : The refresh_toolbox.sh script detects your Infiniband/RDMA devices and automatically configures the container to expose them. 2. Concepts & Architecture To fully utilize the Strix Halo cluster, it is helpful to understand the technologies involved: vLLM : A high-performance inference engine. To run models larger than a single GPU (or APU) can handle, it splits the model using Tensor Parallelism (TP) . Ray : A distributed computing framework. vLLM uses Ray to orchestrate the cluster, manage the \"worker\" processes on each node, and ensure they start up correctly. Ray handles the control plane (issuing commands). RCCL (ROCm Collective Communication Library) : The AMD equivalent of NVIDIA's NCCL. This library handles the data plane —specifically, the extremel",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "gpu"
+      ],
+      "ai_hits": [
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "正向推广",
+      "detail_brief": "amd-strix-halo-vllm-toolboxes/rdma_cluster/setup_guide. md at main · kyuz0/amd-strix-halo-vllm-toolboxes · GitHub You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window.",
+      "heat_score": 4.0,
+      "timeliness_score": 8.0,
+      "composite_score": 5.5,
+      "tcloud_relevance": 5.9,
+      "tcloud_integration": "**AMD Strix Halo RDMA Cluster Setup Guide** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**AMD Strix Halo RDMA Cluster Setup Guide** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "nvidia"
+      ],
+      "tcloud_primary_product": "GPU CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**AMD Strix Halo RDMA Cluster Setup Guide** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（GPU CVM）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（GPU CVM） + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「AMD Strix Halo RDMA Cluster Setup Guide」（amd-strix-halo-vllm-toolboxes/rdma_cluster/setup_guide. md…） → 可写方向：与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「AMD Strix Halo RDMA Cluster Setup Guide」可结合 GPU CVM 写应用实践内容。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "GPU CVM",
+      "official_angle_cn": "围绕 AMD Strix Halo RDMA Cluster Setup Guide 的核心功能（amd-strix-halo-vllm-toolboxes/rdma_cluster/setup_guide. md at main · kyuz0/amd-…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用工具/框架的架构图或使用流程截图，如果有命令行输出可以截取关键操作步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+      "platform_copies": {
+        "primary_product": "GPU CVM",
+        "product_display": "GPU CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 AMD Strix Halo RDMA Cluster Setup Guide 的核心功能（amd-strix-halo-vllm-toolboxes/rdma_cluster/setup_guide. md at main · kyuz0/amd-…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use GPU Cloud Virtual Machine as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用工具/框架的架构图或使用流程截图，如果有命令行输出可以截取关键操作步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+        "x_cn": "amd-strix-halo-vllm-toolboxes/rdma_cluster/setup_guide. md at main…。如果站在腾讯云国际站官方号来写，这条更适合从 GPU CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：*…",
+        "x_en": "AMD Strix Halo RDMA Cluster Setup Guide. For Tencent Cloud, this fits GPU Cloud Virtual Machine: GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：amd-strix-halo-vllm-toolboxes/rdma_cluster/setup_guide. md at main…。如果从腾讯云视角切，这条最适合带到 GPU CVM，重点聊 技术科普 + 教程拆解 + 产品关联（GPU CVM） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: AMD Strix Halo RDMA Cluster Setup Guide. From a Tencent Cloud angle, the best hook is GPU Cloud Virtual Machine, especially around technical explainer + hands-on walkthrough + product tie-in (GPU CVM) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。amd-strix-halo-vllm-toolboxes/rdma_cluster/setup_guide. md at main…。如果用官方号发，建议主推 GPU CVM，重点讲 技术科普 + 教程拆解 + 产品关联（GPU CVM） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**AMD Strix Halo RDMA Cluster Setup Guide** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. AMD Strix Halo RDMA Cluster Setup Guide. For Tencent Cloud, the better angle is GPU Cloud Virtual Machine. GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering. The content should focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 GPU CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：amd-strix-halo-vllm-toolboxes/rdma_cluster/setup_guide. md at main…。如果站在腾讯云国际站官方号视角，我会更想把它写成 GPU CVM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（GPU CVM） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through GPU Cloud Virtual Machine?",
+        "reddit_body_en": "A recent trend caught my eye: AMD Strix Halo RDMA Cluster Setup Guide. Instead of reposting it as news, I'd frame it through GPU Cloud Virtual Machine and focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "AMD Strix Halo RDMA Cluster Setup Guide：amd-strix-halo-vllm-toolboxes/rdma_cluster/setup_guide。md at main · kyuz0/amd-strix-halo-vllm-toolboxes · GitHub 您使用另一个选项卡或窗口登录。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Anonymous GitHub account mass-dropping undisclosed 0-days",
+    "url": "https://github.com/bikini/exploitarium",
+    "hn_url": "https://news.ycombinator.com/item?id=48698617",
+    "heat": "729 points",
+    "time": "14 hours ago",
+    "developer_name": "binyu",
+    "developer_url": "https://news.ycombinator.com/user?id=binyu",
+    "content": "GitHub - bikini/exploitarium: A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz. Please do not abuse these. I do this so to allure people into the field, and I've always found this is the most efficient way. · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert bikini / exploitarium Public Notifications You must be signed in to change notification settings Fork 282 Star 1.3k main Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 40 Commits 40 Commits 7zip-rar5-motw-chain-poc 7zip-rar5-motw-chain-poc anydesk-printer-com-impersonation-poc anydesk-printer-com-impersonation-poc c-ares-tcp-uaf-calc-poc c-ares-tcp-uaf-calc-poc docker-cp-copyout-destination-escape docker-cp-copyout-destination-escape ffmpeg-rasc-dlta-calc-poc ffmpeg-rasc-dlta-calc-poc firefox-smartwindow-private-url-exfil-poc firefox-smartwindow-private-url-exfil-poc floci-apigateway-vtl-rce-poc floci-apigateway-vtl-rce-poc flowise-mcp-env-case-bypass-poc flowise-mcp-env-case-bypass-poc ghidra-12.1.2-rce-ace-calc-poc ghidra-12.1.2-rce-ace-calc-poc gitea-act-runner-container-options-poc gitea-act-runner-container-options-poc imagemagick-gs-delegate-hijack-poc imagemagick-gs-delegate-hijack-poc libssh2-cve-2026-55200-poc libssh2-cve-2026-55200-poc libssh2-publickey-list-calc-poc libssh2-publickey-list-calc-poc lunar-modrinth-chain-poc lunar-modrinth-chain-poc mybb-limited-acp-to-admin mybb-limited-acp-to-admin nghttp2-nghttpx-upgrade-queue-poison-poc nghttp2-nghttpx-upgrade-queue-poison-poc nmap-ipv6-extlen-wrap-poc nmap-ipv6-extlen-wrap-poc objdump-dlx-calc-poc objdump-dlx-calc-poc openvpn-connect-echo-script-ace-poc openvpn-connect-echo-script-ace-poc php857-streambucket-soap-rce-rpoc php857-streambucket-soap-rce-rpoc rustdesk-session-permission-pocs rustdesk-session-permission-pocs systeminformer-phsvc-trusted-host-lpe-poc systeminformer-phsvc-trusted-host-lpe-poc vlc-vp9-reschange-crash-poc vlc-vp9-reschange-crash-poc .gitattributes .gitattributes .gitignore .gitignore README.md README.md View all files Repository files navigation Statement This repo was incomplete when published. That's why some findings are kinda ass (ghidra) and some are better. Going forward, only serious vulnerabilities will be shared (Floci, libssh2, FFmpeg, c-ares). In regard to AI usage, my fuzzing workflow was automated by AI with a strict harness. I used GPT-5.5-3-Codex-Spark for ALL the fuzzing, as barely any \"thought\" is necessary when provided with an efficient harness. Contrary to the growing narrative that I'm just some random child burning tokens, I ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "MCP",
+        "Go"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "GitHub - bikini/exploitarium: A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz. Please do not abuse these.",
+      "heat_score": 6.0,
+      "timeliness_score": 6.0,
+      "composite_score": 4.0,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Anonymous GitHub account mass-dropping undisclose…」（GitHub - bikini/exploitarium: A single archive of public ex…），涉及 MCP / Go → 可写方向：MCP 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Anonymous GitHub account mass-dropping…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "GitHub - bikini/exploitarium: A single archive of public exploit Po…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Anonymous GitHub account mass-dropping undisclosed 0-days. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：GitHub - bikini/exploitarium: A single archive of public exploit Po…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Anonymous GitHub account mass-dropping undisclosed 0-days. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。GitHub - bikini/exploitarium: A single archive of public exploit Po…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Anonymous GitHub account mass-dropping undisclosed 0-days. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：GitHub - bikini/exploitarium: A single archive of public exploit Po…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Anonymous GitHub account mass-dropping undisclosed 0-days. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Anonymous GitHub account mass-dropping u：exploitarium,公开利用 PoC 和漏洞研究文章的单一档案,下载exploitarium的源码_GitHub_帮酷当我发布这些内容时，还没有任何报道。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Choosing a Public DNS Resolver",
+    "url": "https://evilbit.de/dns-resolver-guide.html",
+    "hn_url": "https://news.ycombinator.com/item?id=48702273",
+    "heat": "105 points",
+    "time": "7 hours ago",
+    "developer_name": "pawal",
+    "developer_url": "https://news.ycombinator.com/user?id=pawal",
+    "content": "Choosing a Public DNS Resolver Step 1 · Interactive finder Find a resolver for your requirements Check what matters to you. Transport, DNSSEC, IPv6, jurisdiction and operator type are hard filters. The priorities are scored and ranked. My priorities Maximum privacy and no logging Minimal or no query logging, privacy-first operator Block malware and phishing Security blocklist on by default or via a simple variant Block ads and trackers Network-wide ad and tracker filtering Parental controls and adult-content blocking Family or adult-content filter available No filtering (unaltered DNS) Returns answers exactly as published Fully customizable filtering Choose your own blocklists or rules via an account Top-tier speed (global anycast) Large low-latency anycast network Non-commercial operator Nonprofit, registry, community or public-interest, not a for-profit company Must support encrypted DNS DNS-over-HTTPS (DoH) DNS-over-TLS (DoT) DNS-over-QUIC (DoQ) DNSCrypt Other requirements Must validate DNSSEC Must offer IPv6 Provides IPv6 resolver addresses Operator jurisdiction Operator type Any Nonprofit, community or public-interest Commercial Clear all filters Recommended resolvers Step 2 · Full comparison All 29 global public resolvers Click a column header to sort. Search by name, operator, jurisdiction, or feature. Filter-variant addresses (malware, family, unfiltered) are listed in the Filtering cell. Resolver Jurisdiction Type Primary IPs (v4 / v6) Filtering (default and variants) DNSSEC Transports Logging ECS Evidence How to decide: what the research says Findings from peer-reviewed DNS measurement studies that should shape the trade-offs above. Speed: plain DNS has the lowest latency, but encrypted keeps up Encrypted transports (DoH and DoT) add latency per query, yet whole-page load times are often close to plain DNS, and DoH's overhead is small in practice. On lossy or high-latency links, plain Do53 still wins. Performance also varies by provider and region, so the fastest resolver depends on where you are. Hounsel et al., WWW 2020; Böttger et al., IMC 2019; Chhabra et al., IMC 2021. Encrypted DNS resists tampering, not just snooping The largest end-to-end study of encrypted DNS found queries are far less likely to be intercepted or altered in transit than plain DNS, with only minor overhead. Operator quality varies, though: about 25% of DoT providers in that study served invalid TLS certificates, so favour well-run providers. Lu et al., IMC 2019. Encryption hides queries from the network, not from the resolver Whichever provider you choose still sees every domain you look up. If that worries you, prefer no-logging operators, or an oblivious design (ODoH) where a proxy separates your identity from your queries so no single party sees both. Cloudflare and Apple have deployed ODoH. Schmitt, Edmundson & Feamster, PoPETS 2019; Singanamalla et al., 2021. DNSSEC validation is what stops forged answers Only a validating resolver protects you from spoofe",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloudflare",
+        "dns"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "学术研究",
+      "topic_type": "研究前沿",
+      "products": [],
+      "competitors": [
+        "Cloudflare"
+      ],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "对比测评",
+      "detail_brief": "Choosing a Public DNS Resolver Step 1 · Interactive finder Find a resolver for your requirements Check what matters to you. Transport, DNSSEC, IPv6, jurisdiction and operator type are hard filters. The priorities are scored and ranked. My priorities Maximum privacy and no logging Minimal or no query logging, privacy-first operator Block malware and phishing Security blocklist on by default or via a simple variant Block ads and trackers Network-wide ad and tracker filtering Parental controls and…",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 5.4,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**Choosing a Public DNS Resolver** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+      "tcloud_products": [
+        "EdgeOne"
+      ],
+      "tcloud_reasons": [
+        "**Choosing a Public DNS Resolver** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示"
+      ],
+      "tcloud_evidence": [
+        "security",
+        "latency",
+        "tls"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**Choosing a Public DNS Resolver** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+      "tcloud_official_matches": [
+        "EdgeOne"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "产品关联（EdgeOne）",
+        "观点评论",
+        "研究解读",
+        "社区参与"
+      ],
+      "editorial_angles_text": "产品关联（EdgeOne） + 观点评论 + 研究解读 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（发观点总结文章）",
+        "X（论文快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（发观点总结文章） + X（论文快讯分享）",
+      "editorial_brief": "话题类型：研究前沿\n可用角度：「Choosing a Public DNS Resolver」（Choosing a Public DNS Resolver Step 1 · Interactive finder…） → 可写方向：涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（发观点总结文章） + X（论文快讯分享）",
+      "social_recommendation": "「Choosing a Public DNS Resolver」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P1 本周发（仍有时效价值），推荐平台：LinkedIn（发观点总结文章） + X（论文快讯分享）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 Choosing a Public DNS Resolver 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 Choosing a Public DNS Resolver 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "Choosing a Public DNS Resolver Step 1 · Interactive finder Find a r…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：…",
+        "x_en": "Choosing a Public DNS Resolver. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Choosing a Public DNS Resolver Step 1 · Interactive finder Find a r…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 产品关联（EdgeOne） + 观点评论 + 研究解读 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Choosing a Public DNS Resolver. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around product tie-in (EdgeOne) + opinionated commentary + research takeaway + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Choosing a Public DNS Resolver Step 1 · Interactive finder Find a r…。如果用官方号发，建议主推 EdgeOne，重点讲 产品关联（EdgeOne） + 观点评论 + 研究解读 + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**Choosing a Public DNS Resolver** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Choosing a Public DNS Resolver. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on product tie-in (EdgeOne) + opinionated commentary + research takeaway + community conversation.",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Choosing a Public DNS Resolver Step 1 · Interactive finder Find a r…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 产品关联（EdgeOne） + 观点评论 + 研究解读 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Choosing a Public DNS Resolver. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on product tie-in (EdgeOne) + opinionated commentary + research takeaway + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Choosing a Public DNS Resolver：选择公共 DNS 解析器 步骤 1 · 交互式查找器 查找满足您需求的解析器​​ 检查对您来说重要的内容。传输、DNSSEC、IPv6、管辖区和运营商类型是硬过滤器。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Ford hired AI and sacked humans. It backfired badly",
+    "url": "https://www.the-independent.com/tech/ford-ai-automation-human-workers-b3003787.html",
+    "hn_url": "https://news.ycombinator.com/item?id=48703968",
+    "heat": "71 points",
+    "time": "2 hours ago",
+    "developer_name": "speckx",
+    "developer_url": "https://news.ycombinator.com/user?id=speckx",
+    "content": "Ford hired AI and sacked humans. It backfired badly | The Independent Stay up to date with notifications from The Independent Notifications can be managed in browser preferences. Not now Yes please Swipe for next article Your support helps us to tell the story Read more Support Now From reproductive rights to climate change to Big Tech, The Independent is on the ground when the story is developing. Whether it's investigating the financials of Elon Musk's pro-Trump PAC or producing our latest documentary, 'The A Word', which shines a light on the American women fighting for reproductive rights, we know how important it is to parse out the facts from the messaging. At such a critical moment in US history, we need reporters on the ground. Your donation allows us to keep sending journalists to speak to both sides of the story. The Independent is trusted by Americans across the entire political spectrum. And unlike many other quality news outlets, we choose not to lock Americans out of our reporting and analysis with paywalls. We believe quality journalism should be available to everyone, paid for by those who can afford it. Your support makes all the difference. Read more Ford has admitted to rehiring hundreds of human workers after its aggressive AI adoption strategy backfired. The US automaker hired over 350 veteran engineers, referred to internally as “gray beards”, over the past three years in order to address mistakes made by automated systems. The staff will lead quality reviews after the automation issues cost the company billions of dollars, Bloomberg reported, while some workers will also help improve and train the AI systems. “We had been relying more and more on automated quality systems and not getting the desired results,” said Kumar Galhotra, Ford’s chief operating officer. “We brought back technical specialists and they hunt for failure points before a part ever reaches the plant floor.” Ford had been increasingly relying on AI-driven inspection systems to streamline production and address quality control issues, however the firm acknowledged that AI lacked the nuanced judgement when it came to complex problems. After rehiring experienced engineers, Ford experienced a marked improvement in its quality standards. According to the latest J.D. Power Initial Quality Survey, an annual automotive benchmark that measures the quality of new vehicles, Ford ranked top among mainstream brands – the first time it has achieved that milestone in 16 years. Ford continues to have quality issues with its older vehicles, and remains the most recalled automaker in the US, though executives blamed this on past issues involving automation, rather than the rehiring of humans. The company said it would not abandon its use of AI, but plans to now use it in conjunction with human oversight and experience. “ Artificial intelligence is a fantastic tool, but it’s only as good as the information you use to train it,” said Charles Poon, Ford’s vice president of veh",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "artificial intelligence"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "对比测评",
+      "detail_brief": "Ford hired AI and sacked humans. It backfired badly | The Independent Stay up to date with notifications from The Independent Notifications can be managed in browser preferences. Not now Yes please Swipe for next article Your support helps us to tell the story Read more Support Now From reproductive rights to climate change to Big Tech, The Independent is on the ground when the story is developing.",
+      "heat_score": 4.0,
+      "timeliness_score": 9.0,
+      "composite_score": 3.6,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Ford hired AI and sacked humans. It backfired bad…」（Ford hired AI and sacked humans. It backfired badly | The I…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Ford hired AI and sacked humans. It bac…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Ford hired AI and sacked humans. It backfired badly | The Independe…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Ford hired AI and sacked humans. It backfired badly. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Ford hired AI and sacked humans. It backfired badly | The Independe…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Ford hired AI and sacked humans. It backfired badly. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Ford hired AI and sacked humans. It backfired badly | The Independe…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Ford hired AI and sacked humans. It backfired badly. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Ford hired AI and sacked humans. It backfired badly | The Independe…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Ford hired AI and sacked humans. It backfired badly. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Ford hired AI and sacked humans. It back：福特雇佣了人工智能并解雇了人类。结果却适得其反|独立 可以在浏览器首选项中管理独立通知的最新通知。"
+  }
+]
