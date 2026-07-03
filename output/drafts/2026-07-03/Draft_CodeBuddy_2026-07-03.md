@@ -1,10 +1,3 @@
-# 📋 产品 Draft 汇总 — 2026-07-03
-
-> 共 3 个产品的 P0/P1 内容草稿
-> 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
-
----
-
 # CodeBuddy — 今日内容 (8 条)
 
 ## 1. P0 今天发 · JuliusBrussee/caveman
@@ -110,36 +103,3 @@
 *参考: [Does anthropic’s fable 5 downgrade due to safety t](https://www.reddit.com/r/aws/comments/1ulrp7j/does_anthropics_fable_5_downgrade_due_to_safety/)*
 
 ---
-
-
-# EdgeOne — 今日内容 (1 条)
-
-## 1. P0 今天发 · usestrix/strix
-
-**写什么**: 从 strix 的性能/安全需求出发
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> ⚡ Interesting project: "usestrix/strix". For teams needing global acceleration + DDoS protection, check out EdgeOne — 3,200+ PoP nodes worldwide. #CDN #WebSecurity #EdgeComputing
-
-*参考: [usestrix/strix](https://github.com/usestrix/strix)*
-
----
-
-
-# Hunyuan — 今日内容 (1 条)
-
-## 1. P1 本周发 · TransOne： macOS 原生菜单栏翻译工具
-
-**写什么**: 以「原生菜单栏翻译工具」话题为引子
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🧠 "TransOne： macOS 原生菜单栏翻译工具" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
-
-*参考: [TransOne： macOS 原生菜单栏翻译工具](https://www.v2ex.com/t/1224640)*
-
----
-
