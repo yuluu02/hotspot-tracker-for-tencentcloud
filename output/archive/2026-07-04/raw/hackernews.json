@@ -1,0 +1,376 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "GLM5.2 on AMD MI355X at 2626 tok/s/node at over 2x lower cost than Blackwell",
+    "url": "https://www.wafer.ai/blog/glm52-amd",
+    "hn_url": "https://news.ycombinator.com/item?id=48780417",
+    "heat": "149 points",
+    "time": "6 hours ago",
+    "developer_name": "latchkey",
+    "developer_url": "https://news.ycombinator.com/user?id=latchkey",
+    "content": "Performance per dollar is getting faster and cheaper | Wafer Announcing the fastest GLM-5.2, in collaboration with Vercel AI Gateway and OpenRouter. GLM-5.2 is live — via Vercel AI Gateway & OpenRouter. Read more Have you noticed we like AMD? The demand for inference is skyrocketing and outpacing supply. With frontier models being released almost every other week — Claude Fable, GLM5.2, and Minimax M3, to name a few — the token craze is only getting crazier, and there aren’t enough Blackwells going around to support it. Thus, NVIDIA GPU prices are climbing fast, and tokens are getting really expensive. In comes AMD. At around 2.75x cheaper per GPU on average (MI355X vs B300) with comparable hardware specs, the solution to cheap inference is hiding in plain sight — a message we at Wafer have been preaching for months. But although AMD’s Instinct MI350 series competes with Blackwells at the silicon level, NVIDIA’s software advantage and day-0 support typically allows providers to serve inference much faster on their hardware with much less friction. Conversely, on the MI355X / ROCm stack SOTA performance rarely comes out of the box for these frontier models (sometimes it does!). In fact, you’re lucky if you can find an image that runs them at all. Without this day-0 support, building and optimizing for the newest models can require weeks of engineering and compute. By then, the newest model has already been released, making it so AMD is always playing catch-up. But as agents improve at kernel and model optimization, this gap is closing in real time. At Wafer, we’ve proven this time and time again. And again — on a 20k in / 1k out, 60% cache hit rate workload, we hit an aggregate throughput of 2626 tok/s/node @ 2.4 rps with a defined knee of ≤5s TTFT — only 80% of the performance measured on a B200, despite being over 2x cheaper. Sustained RPS Aggregate tok/s/node TTFT p50 / p95 Success 0.5 449 0.59s / 0.60s 100% 1.0 974 0.60s / 0.81s 100% 1.5 1913 0.62s / 1.03s 100% 2.0 1944 0.62s / 1.05s 100% 2.25 2089 0.63s / 1.23s 100% 2.4 (saturation) 2626 0.81s / 2.22s 100% We also hit 213 tok/s on GLM5.2 on 10k input tokens / 1.5k output tokens single stream, following Artificial Analysis standards , served on AMD MI355X capacity from TensorWave. Though this number doesn’t top the AA leaderboard, it still wins on performance per dollar. How we did it The first step with any model work is to choose a quantization and framework. We quantized the base bf16 GLM-5.2 to MXFP4 with AMD Quark. In comparison to z-ai’s official FP8 quantization, our MXFP4 was lossless (GPQA-Diamond, tau2, GSM8K). Eval FP8 baseline MXFP4 Δ (MXFP4 − FP8) GSM8K (200q, 5-shot, greedy) 0.965 ± 0.013 0.955 ± 0.014 −0.010 GPQA-Diamond (198q × 2 seeds, temp 1.0) 0.9217 ± 0.027 0.9026 ± 0.029 −0.019 tau2 macro 0.819 0.834 +0.015 As for the inference framework, we had three options — vLLM, ATOM, and sglang. Among the three, we chose sglang — vLLM had no working MXFP4 + GlmMoeDsa path so the MXFP",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "vercel",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "观点评论",
+      "topic_type": "竞品动态",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [
+        "Vercel"
+      ],
+      "competitor_products": [
+        "Vercel"
+      ],
+      "techs": [],
+      "tone": "对比测评",
+      "detail_brief": "Performance per dollar is getting faster and cheaper | Wafer Announcing the fastest GLM-5. 2, in collaboration with Vercel AI Gateway and OpenRouter. 2 is live — via Vercel AI Gateway & OpenRouter. Read more Have you noticed we like AMD?",
+      "heat_score": 5.0,
+      "timeliness_score": 8.0,
+      "composite_score": 6.4,
+      "tcloud_relevance": 5.9,
+      "tcloud_integration": "**GLM5.2 on AMD MI355X at 2626 tok/s/node ** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**GLM5.2 on AMD MI355X at 2626 tok/s/node ** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "nvidia"
+      ],
+      "tcloud_primary_product": "GPU CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**GLM5.2 on AMD MI355X at 2626 tok/s/node ** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "产品关联（GPU CVM）",
+        "竞品对比（Vercel）",
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "产品关联（GPU CVM） + 竞品对比（Vercel） + 观点评论 + 社区参与",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「GLM5.2 on AMD MI355X at 2626 tok/s/node at over 2…」（Performance per dollar is getting faster and cheaper | Wafe…） → 可写方向：Vercel 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「GLM5.2 on AMD MI355X at 2626 tok/s/node 」可结合 GPU CVM 写应用实践内容。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "GPU CVM",
+      "official_angle_cn": "围绕 GLM5.2 on AMD MI355X at 2626 tok/s/node  的核心功能（Performance per dollar is getting faster and cheaper | Wafer Announcing the fas…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+      "platform_copies": {
+        "primary_product": "GPU CVM",
+        "product_display": "GPU CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 GLM5.2 on AMD MI355X at 2626 tok/s/node  的核心功能（Performance per dollar is getting faster and cheaper | Wafer Announcing the fas…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use GPU Cloud Virtual Machine as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+        "x_cn": "Performance per dollar is getting faster and cheaper | Wafer Announ…。如果站在腾讯云国际站官方号来写，这条更适合从 GPU CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：…",
+        "x_en": "GLM5.2 on AMD MI355X at 2626 tok/s/node at over 2x lower cost than Blackwell. For Tencent Cloud, this fits GPU Cloud Virtual Machine: GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Performance per dollar is getting faster and cheaper | Wafer Announ…。如果从腾讯云视角切，这条最适合带到 GPU CVM，重点聊 产品关联（GPU CVM） + 竞品对比（Vercel） + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: GLM5.2 on AMD MI355X at 2626 tok/s/node at over 2x lower cost than Blackwell. From a Tencent Cloud angle, the best hook is GPU Cloud Virtual Machine, especially around product tie-in (GPU CVM) + competitor comparison (Vercel) + opinionated commentary + community conversation. What matters more to you: deployment, pe…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Performance per dollar is getting faster and cheaper | Wafer Announ…。如果用官方号发，建议主推 GPU CVM，重点讲 产品关联（GPU CVM） + 竞品对比（Vercel） + 观点评论 + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**GLM5.2 on AMD MI355X at 2626 tok/s/node ** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. GLM5.2 on AMD MI355X at 2626 tok/s/node at over 2x lower cost than Blackwell. For Tencent Cloud, the better angle is GPU Cloud Virtual Machine. GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering. The content should focus on product tie-in (GPU CVM) + competitor comparison (Vercel) + opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 GPU CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Performance per dollar is getting faster and cheaper | Wafer Announ…。如果站在腾讯云国际站官方号视角，我会更想把它写成 GPU CVM 相关内容，重点是 产品关联（GPU CVM） + 竞品对比（Vercel） + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through GPU Cloud Virtual Machine?",
+        "reddit_body_en": "A recent trend caught my eye: GLM5.2 on AMD MI355X at 2626 tok/s/node at over 2x lower cost than Blackwell. Instead of reposting it as news, I'd frame it through GPU Cloud Virtual Machine and focus on product tie-in (GPU CVM) + competitor comparison (Vercel) + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "GLM5.2 on AMD MI355X at 2626 tok/s/node ：每美元的性能变得更快、更便宜 |Wafer 宣布推出最快的 GLM-5。2、与Vercel AI Gateway和OpenRouter合作。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Leanstral 1.5: Proof abundance for all",
+    "url": "https://mistral.ai/news/leanstral-1-5/",
+    "hn_url": "https://news.ycombinator.com/item?id=48780801",
+    "heat": "130 points",
+    "time": "5 hours ago",
+    "developer_name": "programLyrique",
+    "developer_url": "https://news.ycombinator.com/user?id=programLyrique",
+    "content": "Leanstral 1.5: Proof Abundance for All Research Leanstral 1.5: Proof Abundance for All July 2, 2026 By Leanstral Team at Mistral AI Back to Blog 6 min read Share this post Copy url to clipboard Copied Thinking Summary Leanstral 1.5, a free Apache-2.0 licensed model with 6B active parameters, delivers a major performance upgrade in formal verification, saturating miniF2F, solving 587/672 PutnamBench problems, and achieving state-of-the-art results on FATE-H (87%) and FATE-X (34%). Trained through mid-training, supervised fine-tuning, and reinforcement learning with CISPO, it excels in agentic proof engineering and real-world code verification, uncovering 5 previously unknown bugs across 57 repositories tested. Fully open-sourced and available via Hugging Face and a free API, Leanstral 1.5 is now accessible for practical proof engineering in Lean 4. Since its launch, Leanstral has offered an open, practical approach to proof engineering in Lean 4 . Today, we are releasing Leanstral 1.5 , a free Apache-2.0 licensed model with 119B total and only 6B active parameters, delivering a performance upgrade that makes formal verification more powerful and accessible than ever. Leanstral 1.5 saturates miniF2F, solves 587/672 PutnamBench problems, and achieves a new state-of-the-art of %87 on FATE-H and 34% on FATE-X . Beyond benchmarks, it verifies complex code properties and uncovers previously unknown bugs in open-source repositories —proving that rigorous formal methods can be both effective and practical for real-world use. Training Leanstral Leanstral 1.5 goes through a three-stage process: mid-training, supervised fine-tuning, and reinforcement learning with CISPO. Leanstral 1.5 leverages extensive training on two RL environments: In the multiturn environment , the model is given a theorem statement and must either prove or disprove it. The model submits a proof, receives Lean compiler feedback, and refines its approach with each attempt. If the proof compiles it succeeds; otherwise the loop continues until the model either solves the problem or exhausts its budget. In the code agent environment , Leanstral operates like a developer in a raw filesystem: it edits files, runs bash commands, and uses the Lean language server to inspect goals, errors, and type information in real time. This allows it to tackle long-horizon tasks like completing partial proofs in a repository, building auxiliary lemmas, and persisting through multiple rounds of context compaction. The model learns to navigate the full proof-engineering workflow and is finally verified by our fork of SafeVerify for correctness given a list of target theorems. Evaluation We evaluate Leanstral on the following benchmarks: miniF2F is a cross-system benchmark for formal mathematics, ranging from elementary problems to IMO-level challenges, testing diverse proof abilities across algebra, combinatorics, and number theory. PutnamBench consists of 672 problems from the Putnam Mathematical Competitio",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "mistral",
+        "agent",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Mistral",
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Leanstral 1. 5: Proof Abundance for All Research Leanstral 1. 5: Proof Abundance for All July 2, 2026 By Leanstral Team at Mistral AI Back to Blog 6 min read this post Copy url to clipboard Copied Thinking Summary Leanstral 1. 5, a free Apache-2.",
+      "heat_score": 5.0,
+      "timeliness_score": 8.0,
+      "composite_score": 4.1,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Leanstral 1.5: Proof abundance for all」（Leanstral 1. 5: Proof Abundance for All Research Leanstral…），涉及 Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Leanstral 1.5: Proof abundance for all」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Leanstral 1. 5: Proof Abundance for All Research Leanstral 1. 5: Pr…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Leanstral 1.5: Proof abundance for all. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Leanstral 1. 5: Proof Abundance for All Research Leanstral 1. 5: Pr…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Leanstral 1.5: Proof abundance for all. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Leanstral 1. 5: Proof Abundance for All Research Leanstral 1. 5: Pr…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Leanstral 1.5: Proof abundance for all. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Leanstral 1. 5: Proof Abundance for All Research Leanstral 1. 5: Pr…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Leanstral 1.5: Proof abundance for all. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Leanstral 1.5: Proof abundance for all：Leanstral 1. 5：所有研究的丰富性证明 Leanstral 1."
+  },
+  {
+    "source": "Hacker News",
+    "title": "Steam Controller Auto-Charge – pilot to magnetic charging puck using CV",
+    "url": "https://github.com/FossPrime/Steam-Controller-Auto-Charge",
+    "hn_url": "https://news.ycombinator.com/item?id=48780865",
+    "heat": "99 points",
+    "time": "5 hours ago",
+    "developer_name": "zdw",
+    "developer_url": "https://news.ycombinator.com/user?id=zdw",
+    "content": "GitHub - FossPrime/Steam-Controller-Auto-Charge: Slam the controller into the magnetic puck until it charges · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert FossPrime / Steam-Controller-Auto-Charge Public Notifications You must be signed in to change notification settings Fork 9 Star 265 master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 13 Commits 13 Commits .github/ workflows .github/ workflows data data public public scripts scripts src src tests tests .gitattributes .gitattributes .gitignore .gitignore AGENTS.md AGENTS.md LICENSE LICENSE README.md README.md index.html index.html package-lock.json package-lock.json package.json package.json playwright.config.ts playwright.config.ts shell.nix shell.nix triton_2026_steam_controller_spec.md triton_2026_steam_controller_spec.md tsconfig.app.json tsconfig.app.json tsconfig.json tsconfig.json tsconfig.node.json tsconfig.node.json vite.config.ts vite.config.ts View all files Repository files navigation Steam Controller Auto-Charge Steam Controller Auto-Charge is an open-source web application designed to automatically pilot a Steam Controller into its magnetic charging puck using optical flow computer vision and WebHID telemetry. Features Optical Flow Tracking: Utilizes OpenCV.js to track user-selected points on the controller and the charging puck via an overhead camera. WebHID Telemetry & Haptic Navigation: Connects to the Triton Controller natively via WebHID, streaming input and telemetry (Report 67). Navigates the controller towards the puck by firing 70Hz asymmetric haptic pulses through the internal dual Linear Resonant Actuators (LRAs). Proximity Creep Mode: Automatically cuts haptic pulse frequency by 50% when the controller is within 150 pixels of the puck to ensure a gentle magnetic dock. Battery Status Polling: Intercepts Report ID 121 ( 0x79 ) to confirm successful magnetic charging, and parses Report ID 67 ( 0x43 ) to display live battery percentage and battery cell voltage (mV). Setup Requirements Nix Package Manager : The only build dependency you need. It works seamlessly on Windows, Mac, and Linux. A Chromium-based browser supporting the WebHID API. An overhead webcam pointing down at your desk. Mount a webcam directly overhead pointing at the desk. Start the project with a single command (this will automatically fetch dependencies and build the WASM module): nix-shell --run \" npm install && npm run dev \" Usage Mount a webcam directly overhead pointing at the desk. Place the Steam Controller Auto-Charge puck on the desk. Place your Steam Controller on the desk, upright. Open the web interface and click Connect Steam Controller to pair it via WebHID. Click ✨ Auto-Track to eng",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "computer vision"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "WebAssembly",
+        "Go",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "GitHub - FossPrime/Steam-Controller-Auto-Charge: Slam the controller into the magnetic puck until it charges · GitHub You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session.",
+      "heat_score": 4.0,
+      "timeliness_score": 8.0,
+      "composite_score": 3.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Steam Controller Auto-Charge – pilot to magnetic…」（GitHub - FossPrime/Steam-Controller-Auto-Charge: Slam the c…），涉及 WebAssembly / Go / TypeScript → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Steam Controller Auto-Charge – pilot to…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "GitHub - FossPrime/Steam-Controller-Auto-Charge: Slam the controlle…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Steam Controller Auto-Charge – pilot to magnetic charging puck using CV. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：GitHub - FossPrime/Steam-Controller-Auto-Charge: Slam the controlle…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Steam Controller Auto-Charge – pilot to magnetic charging puck using CV. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。GitHub - FossPrime/Steam-Controller-Auto-Charge: Slam the controlle…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Steam Controller Auto-Charge – pilot to magnetic charging puck using CV. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：GitHub - FossPrime/Steam-Controller-Auto-Charge: Slam the controlle…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Steam Controller Auto-Charge – pilot to magnetic charging puck using CV. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Steam Controller Auto-Charge：Steam-Controller-Auto-Charge,将控制器猛击磁性圆盘直至充电,下载Steam-Controller-Auto-Charge的源码_GitHub_帮酷"
+  },
+  {
+    "source": "Hacker News",
+    "title": "SearXNG: A free internet metasearch engine",
+    "url": "https://github.com/searxng/searxng",
+    "hn_url": "https://news.ycombinator.com/item?id=48779454",
+    "heat": "168 points",
+    "time": "8 hours ago",
+    "developer_name": "theanonymousone",
+    "developer_url": "https://news.ycombinator.com/user?id=theanonymousone",
+    "content": "GitHub - searxng/searxng: SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled. · GitHub Skip to content You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert Uh oh! There was an error while loading. Please reload this page . searxng / searxng Public Notifications You must be signed in to change notification settings Fork 3.1k Star 33.2k master Branches Tags Go to file Code Open more actions menu Folders and files Name Name Last commit message Last commit date Latest commit History 9,583 Commits 9,583 Commits .devcontainer .devcontainer .github .github .helix .helix .vscode .vscode client/ simple client/ simple container container docs docs searx searx searxng_extra searxng_extra tests tests utils utils .coveragerc .coveragerc .dockerignore .dockerignore .editorconfig .editorconfig .gitattributes .gitattributes .gitignore .gitignore .nvmrc .nvmrc .pylintrc .pylintrc .weblate .weblate .yamllint.yml .yamllint.yml AI_POLICY.rst AI_POLICY.rst AUTHORS.rst AUTHORS.rst CHANGELOG.rst CHANGELOG.rst CONTRIBUTING.rst CONTRIBUTING.rst LICENSE LICENSE Makefile Makefile PULL_REQUEST_TEMPLATE.md PULL_REQUEST_TEMPLATE.md README.rst README.rst SECURITY.md SECURITY.md babel.cfg babel.cfg go.mod go.mod go.sum go.sum manage manage mise.toml mise.toml package.json package.json pyrightconfig.json pyrightconfig.json requirements-dev.txt requirements-dev.txt requirements-server.txt requirements-server.txt requirements.txt requirements.txt setup.py setup.py View all files Repository files navigation SearXNG is a metasearch engine . Users are neither tracked nor profiled. Setup To install SearXNG, see Installation guide . To fine-tune SearXNG, see Configuration guide . Further information on how-to can be found here . Connect If you have questions or want to connect with others in the community: #searxng:matrix.org Contributing See CONTRIBUTING for more details. License This project is licensed under the GNU Affero General Public License (AGPL-3.0). See LICENSE for more details. About SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled. docs.searxng.org Topics python search search-engine google privacy bing duckduckgo yahoo startpage brave searx metasearch qwant degoogle searxng Resources Readme License AGPL-3.0 license Contributing Contributing Security policy Security policy Uh oh! There was an error while loading. Please reload this page . Activity Custom properties Stars 33.2k stars Watchers 160 watching Forks 3.1k forks Report repository Packages 0 Uh oh! There was an error while loading. Please reload this page . Contributors Uh oh! There was an error while loading. Please reload this ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "fine-tune"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Fine-tuning",
+        "Go",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "GitHub - searxng/searxng: SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled. · GitHub You signed in with another tab or window. Reload to refresh your session.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 3.4,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「SearXNG: A free internet metasearch engine」（GitHub - searxng/searxng: SearXNG is a free internet metase…），涉及 Fine-tuning / Go / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「SearXNG: A free internet metasearch eng…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "GitHub - searxng/searxng: SearXNG is a free internet metasearch eng…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "SearXNG: A free internet metasearch engine. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：GitHub - searxng/searxng: SearXNG is a free internet metasearch eng…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: SearXNG: A free internet metasearch engine. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。GitHub - searxng/searxng: SearXNG is a free internet metasearch eng…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. SearXNG: A free internet metasearch engine. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：GitHub - searxng/searxng: SearXNG is a free internet metasearch eng…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: SearXNG: A free internet metasearch engine. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "SearXNG: A free internet metasearch engi：SearXng,SearXNG 是一个免费的互联网元搜索引擎，它聚合来自各种搜索服务和数据库的结果,下载searxng的源码_GitHub_帮酷用户既不会被跟踪，也不会被分析。"
+  }
+]
