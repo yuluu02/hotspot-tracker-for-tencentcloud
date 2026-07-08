@@ -1,0 +1,1023 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "MadsLorentzen/ai-job-search - AI-powered job application framework built on Claude Code. Fork it, fill in your profile, and let Claude evaluate jobs, tailor CVs, write cover letters, and prepare you for interviews.",
+    "url": "https://github.com/MadsLorentzen/ai-job-search",
+    "heat": "11,601 stars",
+    "time": "Today",
+    "developer_name": "MadsLorentzen",
+    "developer_url": "https://github.com/MadsLorentzen",
+    "developer_email": "madslorentzen17@gmail.com",
+    "today_stars": "2,514 stars today",
+    "language": "TypeScript",
+    "summary": "AI-powered job application framework built on Claude Code. Fork it, fill in your profile, and let Claude evaluate jobs, tailor CVs, write cover letters, and prepare you for interviews.",
+    "content": " \n   \n \n\n# AI Job Search\n\nAn AI-powered job application framework built on Claude Code. Fork it, fill in your profile, and let Claude evaluate job postings, tailor your CV, write cover letters, and prepare you for interviews.\n\n> Note: This is an independent open-source project and is not affiliated with, endorsed by, sponsored by, or maintained by Anthropic. Anthropic and Claude Code are referenced only to describe the toolchain this workflow uses.\n\n \n   \n     \n   \n \n\n## What this is\n\nA structured workflow that turns Claude Code into a full-stack job application assistant. The core workflow (self-profiling, fit evaluation, and the drafter-reviewer application pipeline) is **language- and country-agnostic**. The job portal search skills are built for the Danish market (Jobindex, Jobnet, Akademikernes Jobbank, etc.), but the pattern is designed to be swapped for your local job boards.\n\n```\n/setup          /scrape              /apply  \n  |                |                     |\n  v                v                     v\nFill in        Search job           Evaluate fit\nyour profile   portals              Score & recommend\n  |                |                     |\n  v                v                     v\nProfile        Present matches      Draft CV + Cover Letter\nfiles ready    with fit ratings     (LaTeX, tailored)\n                   |                     |\n                   v                     v\n               Pick a match         Reviewer agent critiques\n               -> /apply            -> Revise -> Final output\n```\n\nThe framework encodes career guidance best practices, including structured evaluation criteria, forward-looking cover letter framing, and optional salary benchmarking.\n\n## Prerequisites\n\n- Claude Code (CLI)\n- Python 3.10+\n- Bun (for Danish job search CLI tools)\n- LaTeX distribution with `lualatex` and `xelatex`: TeX Live or MiKTeX. The CV compiles with `lualatex` (pdflatex often fails on modern MiKTeX installs with `fontawesome5` font-expansion errors); the cover letter compiles with `xelatex` because `cover.cls` requires `fontspec`.\n- Optional: `pdftotext` from poppler (macOS: `brew install poppler`, Debian/Ubuntu: `apt install poppler-utils`, Windows: `choco install poppler`) — used by `/apply`'s ATS parseability check on the compiled CV. If missing, the check degrades gracefully to a visual keyword review.\n\n## Quick start\n\n### 1. Fork and clone\n\n```bash\ngh repo fork MadsLorentzen/ai-job-search --clone\ncd ai-job-search\n```\n\n### 2. Install job search tools\n\n```bash\ncd .agents/skills/jobbank-search/cli && bun install && cd ../../../..\ncd .agents/skills/jobdanmark-search/cli && bun install && cd ../../../..\ncd .agents/skills/jobindex-search/cli && bun install && cd ../../../..\ncd .agents/skills/jobnet-search/cli && bun install && cd ../../../..\ncd .agents/skills/linkedin-search/cli && bun install && cd ../../../..\n```\n\nFor `linkedin-search` the install is optional: it has zero runtime dependencies and runs with plain `bun`; `bu",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "MadsLorentzen/ai-job-search: AI-powered job application framework built on Claude Code. Fork it, fill in your profile, and let Claude evaluate jobs, tailor CVs, write cover letters, and prepare you for interviews.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.0,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**ai-job-search** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**ai-job-search** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ai-job-search** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「MadsLorentzen/ai-job-search - AI-powered job appl…」（MadsLorentzen/ai-job-search: AI-powered job application fra…），涉及 Agent / Python / TypeScript → 可写方向：**ai-job-search** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「MadsLorentzen/ai-job-search - AI-powere…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 ai-job-search 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 ai-job-search 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 ai-job-search 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 ai-job-search 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "MadsLorentzen/ai-job-search: AI-powered job application framework b…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "MadsLorentzen/ai-job-search - AI-powered job application framework built on Claude Code…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：MadsLorentzen/ai-job-search: AI-powered job application framework b…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: MadsLorentzen/ai-job-search - AI-powered job application framework built on Claude Code…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。MadsLorentzen/ai-job-search: AI-powered job application framework b…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ai-job-search** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. MadsLorentzen/ai-job-search - AI-powered job application framework built on Claude Code…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：MadsLorentzen/ai-job-search: AI-powered job application framework b…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: MadsLorentzen/ai-job-search - AI-powered job application framework built on Claude Code…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ai-job-search：基于 Claude Code 构建的人工智能驱动的职位申请框架。叉开它，填写你的个人资料，让克劳德评估工作，定制简历，写求职信，并为你的面试做好准备。",
+    "developer_profile": {
+      "github_username": "MadsLorentzen",
+      "profile_url": "https://github.com/MadsLorentzen",
+      "name": "Mads Lorentzen",
+      "bio": "Geophysicist, PhD",
+      "company": "",
+      "location": "Denmark",
+      "blog": "",
+      "twitter_username": "",
+      "email": "madslorentzen17@gmail.com",
+      "followers": 365,
+      "following": 48,
+      "public_repos": 10,
+      "avatar_url": "https://avatars.githubusercontent.com/u/50207393?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/mads-lorentzen/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Zackriya-Solutions/meetily - Privacy first, AI meeting assistant with 4x faster Parakeet/Whisper live transcription, speaker diarization, and Ollama summarization built on Rust. 100% local processing. no cloud required. Meetily (Meetly Ai -https://meetily.ai) is the #1 Self-hosted, Open-source Ai meeting note taker for macOS & Windows.",
+    "url": "https://github.com/Zackriya-Solutions/meetily",
+    "heat": "20,940 stars",
+    "time": "Today",
+    "developer_name": "Zackriya-Solutions",
+    "developer_url": "https://github.com/Zackriya-Solutions",
+    "developer_email": "hello@zackriya.com",
+    "today_stars": "1,777 stars today",
+    "language": "Rust",
+    "summary": "Privacy first, AI meeting assistant with 4x faster Parakeet/Whisper live transcription, speaker diarization, and Ollama summarization built on Rust. 100% local processing. no cloud required. Meetily (Meetly Ai -https://meetily.ai) is the #1 Self-hosted, Open-source Ai meeting note taker for macOS & Windows.",
+    "content": " \n     \n         \n         \n        Privacy-First AI Meeting Assistant\n     \n       \n     \n     \n       \n      \n \n      \n       \n       \n      \n \n     \n     \n     \n    Open Source • Privacy-First • Enterprise-Ready\n     \n     \n    Get latest   Product updates     \n      Website   •\n      LinkedIn   •\n      Meetily Discord   •\n      Privacy-First AI   •\n      Reddit  \n \n     \n\nA privacy-first AI meeting assistant that captures, transcribes, and summarizes meetings entirely on your infrastructure. Built by expert AI engineers passionate about data sovereignty and open source solutions. Perfect for enterprises that need advanced meeting intelligence without compromising on privacy, compliance, or control.\n\n \n\n \n     \n     \n     View full Demo Video \n \n\n \n\n---\n\n> **Meetily PRO Upgrade Offer** - Meetily PRO is available for users who need enhanced accuracy, advanced exports, custom summary workflows, and team-ready features. Use coupon code **LAUNCH20** for **20% off** until the next Meetily Community Edition release. Speaker diarization is also planned for PRO in mid-June. Explore Meetily PRO →\n\n---\n\n \n Table of Contents \n\n- Introduction\n- Why Meetily?\n- Features\n- Installation\n- Key Features in Action\n- System Architecture\n- For Developers\n- Meetily PRO\n- Contributing\n- License\n\n \n\n## Introduction\n\nMeetily is a privacy-first AI meeting assistant that runs entirely on your local machine. It captures your meetings, transcribes them in real-time, and generates summaries, all without sending any data to the cloud. This makes it the perfect solution for professionals and enterprises who need to maintain complete control over their sensitive information.\n\n## Why Meetily?\n\nWhile there are many meeting transcription tools available, this solution stands out by offering:\n\n- **Privacy First:** All processing happens locally on your device.\n- **Cost-Effective:** Uses open-source AI models instead of expensive APIs.\n- **Flexible:** Works offline and supports multiple meeting platforms.\n- **Customizable:** Self-host and modify for your specific needs.\n\n \n The Privacy Problem \n\nMeeting AI tools create significant privacy and compliance risks across all sectors:\n\n- **$4.4M average cost per data breach** (IBM 2024)\n- **€5.88 billion in GDPR fines** issued by 2025\n- **400+ unlawful recording cases** filed in California this year\n\nWhether you're a defense consultant, enterprise executive, legal professional, or healthcare provider, your sensitive discussions shouldn't live on servers you don't control. Cloud meeting tools promise convenience but deliver privacy nightmares with unclear data storage practices and potential unauthorized access.\n\n**Meetily solves this:** Complete data sovereignty on your infrastructure, zero vendor lock-in, and full control over your sensitive conversations.\n\n \n\n## Features\n\n- **Local First:** All processing is done on your machine. No data ever leaves your computer.\n- **Real-time Transcription:** Get a live transcript of your meeting as",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Rust"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Privacy first, AI meeting assistant with 4x faster Parakeet/Whisper live transcription, speaker diarization, and Ollama summarization built on Rust. 100% local processing. no cloud required. Meetily (Meetly Ai -https://meetily.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.9,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Zackriya-Solutions/meetily - Privacy first, AI me…」（Privacy first, AI meeting assistant with 4x faster Parakeet…），涉及 Rust → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Zackriya-Solutions/meetily - Privacy fi…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 meetily 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 meetily 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Privacy first, AI meeting assistant with 4x faster Parakeet/Whisper…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Zackriya-Solutions/meetily - Privacy first, AI meeting assistant with 4x faster Parakee…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Privacy first, AI meeting assistant with 4x faster Parakeet/Whisper…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Zackriya-Solutions/meetily - Privacy first, AI meeting assistant with 4x faster Parakee…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Privacy first, AI meeting assistant with 4x faster Parakeet/Whisper…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Zackriya-Solutions/meetily - Privacy first, AI meeting assistant with 4x faster Parakee…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Privacy first, AI meeting assistant with 4x faster Parakeet/Whisper…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Zackriya-Solutions/meetily - Privacy first, AI meeting assistant with 4x faster Parakee…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "meetily：隐私第一，AI 会议助手具有 4 倍快的 Parakeet/Whisper 实时转录、发言者分类和基于 Rust 构建的 Ollama 摘要。100%本地加工。",
+    "developer_profile": {
+      "github_username": "Zackriya-Solutions",
+      "profile_url": "https://github.com/Zackriya-Solutions",
+      "name": "Zackriya Solutions",
+      "bio": "We're democratizing access to powerful AI tools while respecting data sovereignty.",
+      "company": "",
+      "location": "",
+      "blog": "https://www.zackriya.com",
+      "twitter_username": "",
+      "email": "hello@zackriya.com",
+      "followers": 149,
+      "following": 0,
+      "public_repos": 18,
+      "avatar_url": "https://avatars.githubusercontent.com/u/82556810?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/zackriya-solutions/"
+        },
+        {
+          "platform": "generic",
+          "url": "https://meetily.ai"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.",
+    "url": "https://github.com/addyosmani/agent-skills",
+    "heat": "72,333 stars",
+    "time": "Today",
+    "developer_name": "addyosmani",
+    "developer_url": "https://github.com/addyosmani",
+    "developer_email": "",
+    "today_stars": "1,317 stars today",
+    "language": "JavaScript",
+    "summary": "Production-grade engineering skills for AI coding agents.",
+    "content": "# Agent Skills\n\n**Production-grade engineering skills for AI coding agents.**\n\nSkills encode the workflows, quality gates, and best practices that senior engineers use when building software. These ones are packaged so AI agents follow them consistently across every phase of development.\n\n   \n\n```\n  DEFINE          PLAN           BUILD          VERIFY         REVIEW          SHIP\n ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐\n │ Idea │ ───▶ │ Spec │ ───▶ │ Code │ ───▶ │ Test │ ───▶ │  QA  │ ───▶ │  Go  │\n │Refine│      │  PRD │      │ Impl │      │Debug │      │ Gate │      │ Live │\n └──────┘      └──────┘      └──────┘      └──────┘      └──────┘      └──────┘\n  /spec          /plan          /build        /test         /review       /ship\n```\n\n---\n\n## Commands\n\n8 slash commands that map to the development lifecycle. Each one activates the right skills automatically.\n\n| What you're doing | Command | Key principle |\n|-------------------|---------|---------------|\n| Define what to build | `/spec` | Spec before code |\n| Plan how to build it | `/plan` | Small, atomic tasks |\n| Build incrementally | `/build` | One slice at a time |\n| Prove it works | `/test` | Tests are proof |\n| Review before merge | `/review` | Improve code health |\n| Audit web performance | `/webperf` | Measure before you optimize |\n| Simplify the code | `/code-simplify` | Clarity over cleverness |\n| Ship to production | `/ship` | Faster is safer |\n\nWant fewer manual steps once the spec exists? **`/build auto`** generates the plan and implements every task in a single approved pass — you approve the plan once, then it runs autonomously. It removes the human stepping *between* tasks, not the verification: every task is still test-driven and committed individually, and it pauses on failures or risky steps.\n\nSkills also activate automatically based on what you're doing — designing an API triggers `api-and-interface-design`, building UI triggers `frontend-ui-engineering`, and so on.\n\n---\n\n## Quick Start\n\n**Fastest path — any agent, one command.** The open skills CLI installs into 70+ agents (Claude Code, Cursor, Codex, Copilot, Cline, and more):\n\n```bash\nnpx skills add addyosmani/agent-skills            # install all 24 skills\nnpx skills add addyosmani/agent-skills --list     # browse before installing\n```\n\nOr grab individual skills:\n\n```bash\nnpx skills add addyosmani/agent-skills --skill code-review-and-quality   # five-axis review before merge\nnpx skills add addyosmani/agent-skills --skill interview-me              # requirements interrogation, one question at a time\nnpx skills add addyosmani/agent-skills --skill test-driven-development   # red-green-refactor, enforced\n```\n\nPrefer a native integration? Pick your tool below.\n\n \n  Claude Code (recommended)  \n\n**Marketplace install:**\n\n```\n/plugin marketplace add addyosmani/agent-skills\n/plugin install agent-skills@addy-agent-skills\n```\n\n> **SSH errors?** The marketplace clones repos via SSH. If you don'",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "copilot",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "addyosmani/agent-skills: Production-grade engineering skills for AI coding agents.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.5,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "coding agent",
+        "copilot",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「addyosmani/agent-skills - Production-grade engine…」（addyosmani/agent-skills: Production-grade engineering skill…），涉及 Agent / Go → 可写方向：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「addyosmani/agent-skills - Production-gr…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 agent-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 agent-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 agent-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 agent-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "addyosmani/agent-skills: Production-grade engineering skills for AI…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：addyosmani/agent-skills: Production-grade engineering skills for AI…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。addyosmani/agent-skills: Production-grade engineering skills for AI…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：addyosmani/agent-skills: Production-grade engineering skills for AI…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: addyosmani/agent-skills - Production-grade engineering skills for AI coding agents.. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "agent-skills：AI 编码代理的生产级工程技能。",
+    "developer_profile": {
+      "github_username": "addyosmani",
+      "profile_url": "https://github.com/addyosmani",
+      "name": "Addy Osmani",
+      "bio": "Former Director at Google working on Gemini and  Google Cloud",
+      "company": "Google",
+      "location": "Sunnyvale, California",
+      "blog": "https://www.addyosmani.com",
+      "twitter_username": "addyosmani",
+      "email": "",
+      "followers": 51063,
+      "following": 267,
+      "public_repos": 358,
+      "avatar_url": "https://avatars.githubusercontent.com/u/110953?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/addyosmani"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/addyosmani/"
+        },
+        {
+          "platform": "bluesky",
+          "url": "https://bsky.app/profile/addyosmani.bsky.social"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/addyist/"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.addyosmani.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "ruvnet/RuView - π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+    "url": "https://github.com/ruvnet/RuView",
+    "heat": "78,598 stars",
+    "time": "Today",
+    "developer_name": "ruvnet",
+    "developer_url": "https://github.com/ruvnet",
+    "developer_email": "",
+    "today_stars": "1,129 stars today",
+    "language": "Rust",
+    "summary": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+    "content": "# π RuView\n\n \n   \n     \n   \n \n \n   \n     \n   \n \n\n## **See through walls with WiFi** ##\n\n**Turn ordinary WiFi into a spatial intelligence / sensing system.** Detect people, measure breathing and heart rate, track movement, and monitor rooms — through walls, in the dark, with no cameras or wearables. Just physics.\n\nWorks natively with the four major smart-home ecosystems: **Home Assistant** via the HA-DISCO MQTT publisher, **Apple Home & HomePod** as a discoverable HAP-1.1 bridge, **Google Home** + **Amazon Alexa** via the same HA bridge or a Matter endpoint. Siri, Google Assistant, and Alexa can voice presence and vitals by room with zero custom skills.\n\n[](docs/integrations/home-assistant.md) [](docs/adr/ADR-122-bfld-ruview-ha-matter-exposure.md) [](docs/user-guide-apple-homepod.md) [](docs/integrations/home-assistant.md) [](docs/integrations/home-assistant.md)\n\n> Drop into any **Home Assistant** install with one `--mqtt` flag. Or pair into **Apple Home / Google Home / Alexa / SmartThings** as a Matter Bridge. Ships 21 entities per node (11 raw signals + 10 inferred semantic states: someone-sleeping, possible-distress, room-active, elderly-inactivity-anomaly, meeting-in-progress, bathroom-occupied, fall-risk-elevated, bed-exit, no-movement, multi-room-transition) plus 3 starter HA Blueprints. See `docs/integrations/home-assistant.md` · ADR-115.\n\n### π RuView is a WiFi sensing platform that turns radio signals into spatial intelligence.\n\nEvery WiFi router already fills your space with radio waves. When people move, breathe, or even sit still, they disturb those waves in measurable ways. RuView captures these disturbances using Channel State Information (CSI) from low-cost ESP32 sensors and turns them into actionable data: who's there, what they're doing, and whether they're okay.\n\n**What it senses:**\n- **Presence and occupancy** — detect people through walls, count them, track entries and exits\n- **Vital signs** — breathing rate and heart rate, contactless, while sleeping or sitting\n- **Activity recognition** — walking, sitting, gestures, falls — from temporal CSI patterns\n- **Environment mapping** — RF fingerprinting identifies rooms, detects moved furniture, spots new objects\n- **Sleep quality** — overnight monitoring with sleep stage classification and apnea screening\n\nBuilt on RuVector and Cognitum Seed, RuView runs entirely on edge hardware — an ESP32 mesh (as low as $9 per node) paired with a Cognitum Seed for persistent memory, cryptographic attestation, and AI integration. No cloud, no cameras, no internet required.\n\nThe system learns each environment locally using spiking neural networks that adapt in under 30 seconds, with multi-frequency mesh scanning across 6 WiFi channels that uses your neighbors' routers as free radar illuminators. Every measurement is cryptographically attested via an Ed25519 witness chain.\n\nRuView turns ordinary WiFi into a contactless sensor. A $9 ESP32 board reads the radio reflections off the people in a room, a",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "edge"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "3D Generation"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "ruvnet/RuView: π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.3,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「ruvnet/RuView - π RuView turns commodity WiFi sig…」（ruvnet/RuView: π RuView turns commodity WiFi signals into r…），涉及 3D Generation → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「ruvnet/RuView - π RuView turns commodit…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 RuView 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 RuView 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "ruvnet/RuView: π RuView turns commodity WiFi signals into real-time…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "ruvnet/RuView - π RuView turns commodity WiFi signals into real-time spatial intelligen…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：ruvnet/RuView: π RuView turns commodity WiFi signals into real-time…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: ruvnet/RuView - π RuView turns commodity WiFi signals into real-time spatial intelligen…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。ruvnet/RuView: π RuView turns commodity WiFi signals into real-time…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. ruvnet/RuView - π RuView turns commodity WiFi signals into real-time spatial intelligen…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：ruvnet/RuView: π RuView turns commodity WiFi signals into real-time…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: ruvnet/RuView - π RuView turns commodity WiFi signals into real-time spatial intelligen…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "π RuView 将商用 WiFi 信号转化为实时空间智能、生命体征监测和存在检测 - 所有这些都无需视频像素。",
+    "developer_profile": {
+      "github_username": "ruvnet",
+      "profile_url": "https://github.com/ruvnet",
+      "name": "rUv",
+      "bio": "Unicorn Breeder. ",
+      "company": "Not a Bot",
+      "location": "0x",
+      "blog": "Cognitum.One",
+      "twitter_username": "ruv",
+      "email": "",
+      "followers": 10048,
+      "following": 47,
+      "public_repos": 197,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2934394?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/ruv"
+        },
+        {
+          "platform": "generic",
+          "url": "https://rUv.io"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://Cognitum.One"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "asgeirtj/system_prompts_leaks - Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google - Gemini 3.5 Flash, 3.1 Pro, Antigravity. xAI - Grok, Cursor, Copilot, VS Code, Perplexity, and more. Updated regularly.",
+    "url": "https://github.com/asgeirtj/system_prompts_leaks",
+    "heat": "53,202 stars",
+    "time": "Today",
+    "developer_name": "asgeirtj",
+    "developer_url": "https://github.com/asgeirtj",
+    "developer_email": "asgeirtj@gmail.com",
+    "today_stars": "1,691 stars today",
+    "language": "JavaScript",
+    "summary": "Extracted system prompts from Anthropic - Claude Fable 5, Opus 4.8, Claude Code, Claude Design. OpenAI - ChatGPT 5.5 Thinking, GPT 5.5 Instant, Codex. Google - Gemini 3.5 Flash, 3.1 Pro, Antigravity. xAI - Grok, Cursor, Copilot, VS Code, Perplexity, and more. Updated regularly.",
+    "content": "> **As seen in The Washington Post:** See the hidden rules behind AI. Then use them to rewrite this article. (May 11, 2026)\n# System Prompts Leaks\nThe purpose of this repo is to document the System Prompt instructions for all the AI chatbots out there - Claude, ChatGPT, Gemini etc.\n\n \n   \n   \n   \n \n\n[](https://github.com/asgeirtj/system_prompts_leaks)\n\n[](http://makeapullrequest.com)\n\n> 🆕 **Diff: Claude Opus 4.8 → Claude Fable 5** — see exactly what changed in the claude.ai system prompt for Anthropic's newest model\n\n## Recently Updated\n\n| What | Date | Link |\n|------|------|------|\n| **Claude Sonnet 5** | July 1, 2026 | System prompt |\n| **Claude Design (Opus 4.8 — full prompt + 48 tools + 16 skills + 9 starter sources)** | June 26, 2026 | System prompt |\n| **GitHub Copilot for macOS (app)** | June 18, 2026 | System prompt |\n| **GPT-5.5 Codex (full prompt)** | June 18, 2026 | System prompt |\n| **Claude Fable 5** | June 9, 2026 | System prompt · Diff vs Opus 4.8 |\n| **Claude Opus 4.8** | June 9, 2026 | System prompt · Official |\n| **Claude Code Glob & Grep tools** | June 9, 2026 | Glob · Grep |\n| **Claude Code (Opus 4.8)** | May 28, 2026 | System prompt |\n| **Claude Code & Cowork** | May 28, 2026 | Claude Code · Cowork · Cowork Dispatch |\n| **GPT-5.5** | May 24, 2026 | Thinking · Instant · API · Pro API |\n| **Perplexity Computer** | May 21, 2026 | System prompt |\n| **VS Code Copilot Agent** | May 21, 2026 | System prompt |\n| **Docker Gordon AI** | May 21, 2026 | System prompt |\n| **Gemini 3.5 Flash** | May 20, 2026 | System prompt · AI Studio · Tools |\n| **Antigravity CLI** | May 20, 2026 | System prompt |\n| **Zed AI** | May 16, 2026 | System prompt |\n| **Grok Expert** | May 11, 2026 | System prompt |\n\n---\n\n## Anthropic — Claude\n\n| Model | Prompt |\n|-------|--------|\n| **Claude Fable 5** | **System prompt** |\n| **Claude Opus 4.8** | **System prompt** |\n| **Claude Sonnet 5** | **System prompt** |\n| **Claude Code (Opus 4.8)** | **System prompt** |\n| **Claude Opus 4.7** | **System prompt** |\n| **Claude Code (Opus 4.6)** | **System prompt** |\n| **Claude Opus 4.6** | **System prompt** |\n| **Claude Sonnet 4.6** | **System prompt** |\n| Claude.ai | Anthropic Reminders |\n\n  Integrations, official prompts & older versions \n\n| | |\n|--|--|\n| Integrations | Cowork · Cowork Dispatch · Desktop Code · Design · Mobile iOS · In Chrome · For Excel · For Word · In PowerPoint · Default Styles |\n| Claude Code extras | Glob tool · Grep tool · Deferred tools · Docs assistant · Bundled skills |\n| Published (`claude_behavior` at release date, not updated) | Opus 4.8 · Opus 4.7 · Opus 4.6 · Sonnet 4.6 · All versions |\n| Without tools | Opus 4.6 · Sonnet 4.6 |\n| Raw prompts | Opus 4.6 · Opus 4.6 (no tools) · Sonnet 4.6 · Sonnet 4.6 (no tools) |\n| Visualize | Visualization |\n| Opus 4.5 | System prompt |\n| Sonnet 4.5 | System prompt |\n| Sonnet 4 | System prompt |\n| Opus 4.1 Thinking | System prompt |\n| Sonnet 3.7 | System prompt · With tools · Full w/ tools · Human-readable |",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 10,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "chatgpt",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "asgeirtj/system_prompts_leaks: Extracted system prompts from Anthropic - Claude Fable 5, Opus 4. 8, Claude Code, Claude Design. OpenAI - ChatGPT 5. 5 Thinking, GPT 5.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.2,
+      "tcloud_relevance": 6.2,
+      "tcloud_integration": "**system_prompts_leaks** 的用户群和 CodeBuddy 高度重合 — 可以写「system_prompts_leaks 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**system_prompts_leaks** 的用户群和 CodeBuddy 高度重合 — 可以写「system_prompts_leaks 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "copilot",
+        "cursor",
+        "github copilot"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**system_prompts_leaks** 的用户群和 CodeBuddy 高度重合 — 可以写「system_prompts_leaks 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「asgeirtj/system_prompts_leaks - Extracted system…」（asgeirtj/system_prompts_leaks: Extracted system prompts fro…），涉及 Agent → 可写方向：**system_prompts_leaks** 的用户群和 CodeBuddy 高度重合 — 可以写「system_prompts_leaks 用户迁移到…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「asgeirtj/system_prompts_leaks - Extract…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 system_prompts_leaks 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 system_prompts_leaks 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 system_prompts_leaks 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 system_prompts_leaks 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "asgeirtj/system_prompts_leaks: Extracted system prompts from Anthro…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "asgeirtj/system_prompts_leaks - Extracted system prompts from Anthropic - Claude Fable…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：asgeirtj/system_prompts_leaks: Extracted system prompts from Anthro…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: asgeirtj/system_prompts_leaks - Extracted system prompts from Anthropic - Claude Fable…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, pe…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。asgeirtj/system_prompts_leaks: Extracted system prompts from Anthro…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**system_prompts_leaks** 的用户群和 CodeBuddy 高度重合 — 可以写「system_prompts_leaks 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. asgeirtj/system_prompts_leaks - Extracted system prompts from Anthropic - Claude Fable…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：asgeirtj/system_prompts_leaks: Extracted system prompts from Anthro…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: asgeirtj/system_prompts_leaks - Extracted system prompts from Anthropic - Claude Fable…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "system_prompts_leaks：从 Anthropic 中提取的系统提示 - Claude Fable 5、Opus 4. 8、Claude Code、Claude Design。",
+    "developer_profile": {
+      "github_username": "asgeirtj",
+      "profile_url": "https://github.com/asgeirtj",
+      "name": "Ásgeir Thor Johnson",
+      "bio": "asgeirtj@gmail.com",
+      "company": "",
+      "location": "Iceland",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 1653,
+      "following": 5,
+      "public_repos": 31,
+      "avatar_url": "https://avatars.githubusercontent.com/u/27446620?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "TencentCloud/CubeSandbox - Instant, Concurrent, Secure & Lightweight Sandbox for AI Agents.",
+    "url": "https://github.com/TencentCloud/CubeSandbox",
+    "heat": "8,541 stars",
+    "time": "Today",
+    "developer_name": "TencentCloud",
+    "developer_url": "https://github.com/TencentCloud",
+    "developer_email": "",
+    "today_stars": "664 stars today",
+    "language": "Rust",
+    "summary": "Instant, Concurrent, Secure & Lightweight Sandbox for AI Agents.",
+    "content": " \n   \n \n\n CubeSandbox \n\n \n   Instant, Concurrent, Secure & Lightweight Sandbox Service for AI Agents \n \n\n \n     \n \n\n \n     \n     \n     \n     \n     \n     \n \n\n \n   \n   \n   \n   \n \n\n \n    中文文档   ·\n    Quick Start   ·\n    Documentation   ·\n    Changelog   ·\n    X(Twitter)  \n \n\n---\n\nCube Sandbox is a high-performance, out-of-the-box secure sandbox service built on RustVMM and KVM. It supports both single-node deployment and easy scaling to multi-node clusters. It is compatible with the E2B SDK and can create a hardware-isolated, fully serviceable sandbox in under 60ms with less than 5MB of memory overhead.\n\n \n   \n   \n \n\n## 📰 News\n\n \n   \n     \n       \n         \n       \n     \n     \n       v0.5: AutoPause, Terraform deployer, ARM64 &amp; network policy hardening  \n       AutoPause/AutoResume  — idle sandboxes auto-suspend and wake on the next request.  Terraform one-click cluster deploy   ARM64  native full-stack support  network policy hardening  — per-sandbox traffic tokens, policy-routing egress. \n       Changelog →  ·\n       Terraform deploy → \n     \n   \n   \n     \n       \n         \n       \n     \n     \n       v0.4: Safer egress, easier ops  \n       Credential vault  — Agents call external APIs as usual; keys never enter the sandbox.  Dashboard  — version matrix and template health checks; see at a glance whether templates need rebuilding after upgrades. \n       Changelog →  ·\n       Security proxy guide →  ·\n       WebUI guide → \n     \n   \n   \n     \n       \n         \n       \n     \n     \n       Snapshot, Clone &amp; Rollback at hundred-millisecond granularity  \n      CubeSandbox 0.3.0 introduces the  CubeCoW  Copy-on-Write snapshot engine, enabling event-level snapshots, instant cloning, and rollback to any saved state.\n       Changelog → \n     \n   \n   \n     \n       \n         \n       \n     \n     \n       🎉 Initial open-source release  \n      Cube Sandbox is now open source! Millisecond boot, hardware-level isolation, E2B-compatible sandbox for AI Agents.\n       Changelog → \n     \n   \n \n\n## Product Highlights\n\n \n   \n     \n       ⚡ Sub-60ms boot · High density · Auto pause/resume   \n      Average &lt;60ms cold start, &lt;5MB overhead per instance — run thousands of Agents on one node. Supports automatic sandbox pause and resume for cost optimization  \n       Quick start → \n     \n     \n       🔒 Hardware-level isolation   \n      Each sandbox gets its own Guest OS kernel — no Docker shared-kernel escapes; run untrusted LLM-generated code safely  \n       Architecture → \n     \n     \n       🔌 Seamless E2B migration   \n      Native E2B SDK compatibility — swap one URL env var, zero business code changes  \n       Examples → \n     \n   \n   \n     \n       🖥️ Web console   \n      Manage sandboxes, templates, nodes, and version matrix in the browser — open  :12088  right after install  \n       WebUI guide → \n     \n     \n       🔐 Credential vault   \n      Agents call LLMs and external APIs as usual — keys never enter the sandbox, model context, or logs  \n       Security ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "TencentCloud/CubeSandbox: Instant, Concurrent, Secure & Lightweight Sandbox for AI Agents.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.9,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「TencentCloud/CubeSandbox - Instant, Concurrent, S…」（TencentCloud/CubeSandbox: Instant, Concurrent, Secure & Lig…），涉及 LLM → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「TencentCloud/CubeSandbox - Instant, Con…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 CubeSandbox 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 CubeSandbox 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "TencentCloud/CubeSandbox: Instant, Concurrent, Secure & Lightweight…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "TencentCloud/CubeSandbox - Instant, Concurrent, Secure & Lightweight Sandbox for AI Age…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：TencentCloud/CubeSandbox: Instant, Concurrent, Secure & Lightweight…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: TencentCloud/CubeSandbox - Instant, Concurrent, Secure & Lightweight Sandbox for AI Age…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。TencentCloud/CubeSandbox: Instant, Concurrent, Secure & Lightweight…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. TencentCloud/CubeSandbox - Instant, Concurrent, Secure & Lightweight Sandbox for AI Age…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：TencentCloud/CubeSandbox: Instant, Concurrent, Secure & Lightweight…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: TencentCloud/CubeSandbox - Instant, Concurrent, Secure & Lightweight Sandbox for AI Age…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "CubeSandbox：适用于 AI 代理的即时、并发、安全和轻量级沙箱。",
+    "developer_profile": {
+      "github_username": "TencentCloud",
+      "profile_url": "https://github.com/TencentCloud",
+      "name": "Tencent Cloud",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://cloud.tencent.com/",
+      "twitter_username": "",
+      "email": "",
+      "followers": 934,
+      "following": 0,
+      "public_repos": 197,
+      "avatar_url": "https://avatars.githubusercontent.com/u/20101770?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "AhmadIbrahiim/Website-downloader - 💡 Download the complete source code of any website (including all assets). [ Javascripts, Stylesheets, Images ] using Node.js",
+    "url": "https://github.com/AhmadIbrahiim/Website-downloader",
+    "heat": "4,155 stars",
+    "time": "Today",
+    "developer_name": "AhmadIbrahiim",
+    "developer_url": "https://github.com/AhmadIbrahiim",
+    "developer_email": "me@ahmed-ibrahim.com",
+    "today_stars": "140 stars today",
+    "language": "HTML",
+    "summary": "💡 Download the complete source code of any website (including all assets). [ Javascripts, Stylesheets, Images ] using Node.js",
+    "content": "## Complete Website Downloader 💾\nDownload the complete source code of any website (including all assets) 🔨.\n\n👉 Live Demo: https://website-downloader.onrender.com\n\n \n\n    \n\n \n\n## Description 📒\n Website downloader works with `wget` and `archiver` to download all websites assets and compress then sends it back to the user through socket channel\n \n **wget params the being used**\n \n `wget --mirror --convert-links --adjust-extension --page-requisites \n--no-parent http://example.org`\n\n **Explanation of the various flags:**\n\n - --mirror – Makes (among other things) the download recursive.\n- --convert-links – convert all the links (also to stuff like CSS stylesheets) to relative, so it will be suitable for offline viewing.\n- --adjust-extension – Adds suitable extensions to filenames (html or css) depending on their content-type.\n- --page-requisites – Download things like CSS style-sheets and images required to properly display the page offline.\n- --no-parent – When recursing do not ascend to the parent directory. It useful for restricting the download to only a portion of the site\n### Deploy on cloud providers\n[](https://replit.com/github/AhmadIbrahiim/Website-downloader)\n[](https://glitch.com/edit/#!/import/github/AhmadIbrahiim/Website-downloader)\n[](https://railway.app/new/template?template=https://github.com/AhmadIbrahiim/Website-downloader)\n[](https://app.cyclic.sh/api/app/deploy/AhmadIbrahiim/Website-downloader)\n[](https://app.koyeb.com/deploy?type=git&repository=github.com/AhmadIbrahiim/Website-downloader&branch=main&name=Website-downloader)\n[](https://render.com/deploy?repo=https://github.com/AhmadIbrahiim/Website-downloader)\n\n## How to run it 🤔\n\n- `git clone https://github.com/AhmadIbrahiim/Website-downloader.git`\n- `cd Website-downloader`\n- `$ npm install`\n- `$ npm start`\n- `http://localhost:3000/`\n\n# How To Contribute:\n - Open Issue(s) with any bugs you notice.\n - Please create Pull Requests if you think it would be an added value towards our program.\n\n## Liked it ? You can buy a coffee:\n\n   \n\nThank you,\n\nEmail: me@ahmed-ibrahim.com\n\nhttps://www.ahmed-ibrahim.com",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "render",
+        "railway"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Render",
+        "Railway"
+      ],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "AhmadIbrahiim/Website-downloader: 💡 Download the complete source code of any website (including all assets). [ Javascripts, Stylesheets, Images ] using Node.",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.7,
+      "tcloud_relevance": 0.1,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「AhmadIbrahiim/Website-downloader - 💡 Download the…」（AhmadIbrahiim/Website-downloader: 💡 Download the complete s…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「AhmadIbrahiim/Website-downloader - 💡 Do…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 Website-downloader 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 Website-downloader 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "AhmadIbrahiim/Website-downloader: 💡 Download the complete source co…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "AhmadIbrahiim/Website-downloader - 💡 Download the complete source code of any website (…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：AhmadIbrahiim/Website-downloader: 💡 Download the complete source co…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: AhmadIbrahiim/Website-downloader - 💡 Download the complete source code of any website (…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。AhmadIbrahiim/Website-downloader: 💡 Download the complete source co…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. AhmadIbrahiim/Website-downloader - 💡 Download the complete source code of any website (…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：AhmadIbrahiim/Website-downloader: 💡 Download the complete source co…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: AhmadIbrahiim/Website-downloader - 💡 Download the complete source code of any website (…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Website-downloader：💡 下载任何网站的完整源代码（包括所有资产）。[ JavaScript、样式表、图像] 使用 Node.js",
+    "developer_profile": {
+      "github_username": "AhmadIbrahiim",
+      "profile_url": "https://github.com/AhmadIbrahiim",
+      "name": "Ahmed Ibrahim",
+      "bio": "Building Voice AI Agents @GoodcallAI ",
+      "company": "",
+      "location": "Seattle, WA",
+      "blog": "http://www.ahmed-ibrahim.com/",
+      "twitter_username": "",
+      "email": "me@ahmed-ibrahim.com",
+      "followers": 249,
+      "following": 23,
+      "public_repos": 62,
+      "avatar_url": "https://avatars.githubusercontent.com/u/17949497?v=4",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "http://www.ahmed-ibrahim.com/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "steipete/CodexBar - Show usage stats for OpenAI Codex and Claude Code, without having to login.",
+    "url": "https://github.com/steipete/CodexBar",
+    "heat": "17,079 stars",
+    "time": "Today",
+    "developer_name": "steipete",
+    "developer_url": "https://github.com/steipete",
+    "developer_email": "",
+    "today_stars": "376 stars today",
+    "language": "Swift",
+    "summary": "Show usage stats for OpenAI Codex and Claude Code, without having to login.",
+    "content": "# CodexBar 🎚️ — May your tokens never run out.\n\n> Every AI coding limit, in your menu bar.\n\n[](https://github.com/steipete/CodexBar/releases/latest)\n[](https://github.com/steipete/CodexBar/releases/latest)\n[](https://github.com/steipete/homebrew-tap)\n[](https://aur.archlinux.org/packages/codexbar-cli)\n[](LICENSE)\n[](https://codexbar.app)\n\n   \n\nTiny macOS 14+ menu bar app that keeps **AI coding-provider limits visible** and shows when each window resets. Codex, OpenAI, Claude, Cursor, Gemini, Copilot, Grok, GroqCloud, ElevenLabs, Deepgram, z.ai, MiniMax, Kiro, Zed, Vertex AI, Augment, OpenRouter, LiteLLM, LLM Proxy, Codebuff, Command Code, AWS Bedrock, and many newer coding providers. One status item per provider, or Merge Icons mode with a provider switcher. No Dock icon, minimal UI, dynamic bar icons.\n\n \n\n## Why\n\n- **Plan around resets.** Per-provider session, weekly, and monthly windows with countdowns to the next reset — stop guessing whether to start that long task.\n- **Credits, spend, and cost scans.** Credit balances, Admin API spend dashboards, provider billing summaries, and local cost scans where the source exposes enough detail.\n- **Live status.** Provider status polling surfaces incident badges in the menu and an indicator overlay on the bar icon.\n- **Privacy-first.** Reuses existing provider sessions — OAuth, device flow, API keys, browser cookies, local files — so no passwords are stored.\n\n## Install\n\n### Requirements\n- macOS 14+ (Sonoma)\n\n### GitHub Releases\nDownload:  \n\n### Homebrew\n```bash\nbrew install --cask codexbar\n```\n\n### CLI Tarballs (macOS/Linux)\nHomebrew formula (Linux today):\n```bash\nbrew install steipete/tap/codexbar\n```\nArch Linux AUR package:\n```bash\nyay -S codexbar-cli\n```\nOr download release tarballs from GitHub Releases:\n- macOS: `CodexBarCLI-v -macos-arm64.tar.gz`, `CodexBarCLI-v -macos-x86_64.tar.gz`\n- Linux (glibc): `CodexBarCLI-v -linux-aarch64.tar.gz`, `CodexBarCLI-v -linux-x86_64.tar.gz`\n- Linux (static musl): `CodexBarCLI-v -linux-musl-aarch64.tar.gz`, `CodexBarCLI-v -linux-musl-x86_64.tar.gz`\n\n### First run\n- Open Settings → Providers and enable what you use.\n- Install/sign in to the provider sources you rely on: CLIs, browser sessions, OAuth/device flow, API keys, local app files, or provider apps depending on the provider.\n- Optional: Settings → Providers → Codex → OpenAI cookies (Automatic or Manual) to add dashboard extras.\n\n### Set API keys from the CLI\nProvider toggles and API keys live in the resolved CodexBar config file. New installs use\n`~/.config/codexbar/config.json`; existing `~/.codexbar/config.json` installs still load from the legacy path. You can\nscript the same provider list that Settings → Providers uses:\n\n```bash\ncodexbar config providers\ncodexbar config enable --provider grok\ncodexbar config disable --provider cursor\n```\n\nFor API-key providers, store a key without opening Settings:\n\n```bash\nprintf '%s' \"$ELEVENLABS_API_KEY\" | codexbar config set-api-key --provider elevenlabs --stdin\n```\n",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "aws"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "gemini",
+        "copilot",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "竞品动态",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [
+        "AWS",
+        "GCP"
+      ],
+      "competitor_products": [
+        "Amazon Bedrock",
+        "Google Vertex AI"
+      ],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "steipete/CodexBar: Show usage stats for OpenAI Codex and Claude Code, without having to login.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.2,
+      "tcloud_relevance": 9.7,
+      "tcloud_integration": "**CodexBar** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs CodexBar 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件\n补充关联 Hunyuan：**CodexBar** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**CodexBar** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs CodexBar 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "**CodexBar** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "copilot",
+        "cursor",
+        "llm",
+        "claude",
+        "gemini"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**CodexBar** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs CodexBar 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件\n补充关联 Hunyuan：**CodexBar** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "产品关联（CodeBuddy / Hunyuan）",
+        "竞品对比（Amazon Bedrock / Google Vertex AI）"
+      ],
+      "editorial_angles_text": "教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 竞品对比（Amazon Bedrock / Google Vertex AI）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「steipete/CodexBar - Show usage stats for OpenAI C…」（steipete/CodexBar: Show usage stats for OpenAI Codex and Cl…），涉及 LLM → 可写方向：Amazon Bedrock / Google Vertex AI 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「steipete/CodexBar - Show usage stats fo…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 CodexBar 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 CodexBar 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 CodexBar 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 CodexBar 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "steipete/CodexBar: Show usage stats for OpenAI Codex and Claude Cod…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "steipete/CodexBar - Show usage stats for OpenAI Codex and Claude Code, without having t…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：steipete/CodexBar: Show usage stats for OpenAI Codex and Claude Cod…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 竞品对比（Amazon Bedrock / Google Vertex AI）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: steipete/CodexBar - Show usage stats for OpenAI Codex and Claude Code, without having t…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan) + competitor comparison (Amazon Bedrock / Google Vertex AI). What matters mor…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。steipete/CodexBar: Show usage stats for OpenAI Codex and Claude Cod…。如果用官方号发，建议主推 CodeBuddy，重点讲 教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 竞品对比（Amazon Bedrock / Google Vertex AI），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**CodexBar** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs CodexBar 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件 补充关联 Hunyuan：**CodexBar** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. steipete/CodexBar - Show usage stats for OpenAI Codex and Claude Code, without having t…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan) + competitor comparison (Amazon Bedrock / Google Vertex AI).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：steipete/CodexBar: Show usage stats for OpenAI Codex and Claude Cod…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 竞品对比（Amazon Bedrock / Google Vertex AI）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: steipete/CodexBar - Show usage stats for OpenAI Codex and Claude Code, without having t…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan) + competitor comparison (Amazon Bedrock / Google Vertex AI). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "CodexBar：显示 OpenAI Codex 和 Claude Code 的使用统计信息，无需登录。",
+    "developer_profile": {
+      "github_username": "steipete",
+      "profile_url": "https://github.com/steipete",
+      "name": "Peter Steinberger",
+      "bio": "Came back from retirement to mess with AI. Clawdfather @OpenClaw\r\n\r\nPreviously: Founder of @PSPDFKit.",
+      "company": "OpenAI",
+      "location": "London / San Francisco",
+      "blog": "http://steipete.me",
+      "twitter_username": "steipete",
+      "email": "",
+      "followers": 52144,
+      "following": 109,
+      "public_repos": 180,
+      "avatar_url": "https://avatars.githubusercontent.com/u/58493?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/steipete"
+        },
+        {
+          "platform": "mastodon",
+          "url": "https://mastodon.social/@steipete"
+        },
+        {
+          "platform": "bluesky",
+          "url": "https://bsky.app/profile/steipete.me"
+        },
+        {
+          "platform": "unknown",
+          "url": "http://steipete.me"
+        }
+      ],
+      "is_org": false
+    }
+  }
+]
