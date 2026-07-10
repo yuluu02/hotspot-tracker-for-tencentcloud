@@ -1,10 +1,3 @@
-# 📋 产品 Draft 汇总 — 2026-07-10
-
-> 共 2 个产品的 P0/P1 内容草稿
-> 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
-
----
-
 # CodeBuddy — 今日内容 (6 条)
 
 ## 1. P1 本周发 · MadsLorentzen/ai-job-search
@@ -84,33 +77,3 @@
 *参考: [[0710 内测] Brivionix（Codex Pro 池）— GPT-5.6 / 5.5 / ](https://www.v2ex.com/t/1226243)*
 
 ---
-
-
-# Hunyuan — 今日内容 (2 条)
-
-## 1. P1 本周发 · wonderwhy-er/DesktopCommanderMCP
-
-**写什么**: 围绕 DesktopCommanderMCP 的核心功能（wonderwhy-er/DesktopCommanderMCP: This is MCP serve
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🧠 "wonderwhy-er/DesktopCommanderMCP" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
-
-*参考: [wonderwhy-er/DesktopCommanderMCP](https://github.com/wonderwhy-er/DesktopCommanderMCP)*
-
----
-
-## 2. P0 今天发 · vxcontrol/pentagi
-
-**写什么**: 围绕 pentagi 的核心功能（vxcontrol/pentagi: Fully autonomous AI Agents system capable of
-
-**发到哪**: X（快评竞品动态） + LinkedIn（发深度对比分析文章）
-
-**参考文案**:
-> 🧠 "vxcontrol/pentagi" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
-
-*参考: [vxcontrol/pentagi](https://github.com/vxcontrol/pentagi)*
-
----
-
