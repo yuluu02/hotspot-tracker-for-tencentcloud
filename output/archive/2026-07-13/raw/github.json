@@ -1,0 +1,902 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "Dicklesworthstone/destructive_command_guard - The Destructive Command Guard (dcg) is for blocking dangerous git and shell commands from being executed by agents.",
+    "url": "https://github.com/Dicklesworthstone/destructive_command_guard",
+    "heat": "3,121 stars",
+    "time": "Today",
+    "developer_name": "Dicklesworthstone",
+    "developer_url": "https://github.com/Dicklesworthstone",
+    "developer_email": "jeffreyemanuel@gmail.com",
+    "today_stars": "444 stars today",
+    "language": "Rust",
+    "summary": "The Destructive Command Guard (dcg) is for blocking dangerous git and shell commands from being executed by agents.",
+    "content": "# dcg (Destructive Command Guard)\n\n \n   \n \n\n \n\n[](https://codecov.io/gh/Dicklesworthstone/destructive_command_guard)\n[](https://opensource.org/licenses/MIT)\n\n \n\nA high-performance hook for AI coding agents that blocks destructive commands before they execute, protecting your work from accidental deletion across Claude Code, Codex CLI, Gemini CLI, Copilot CLI, VS Code Copilot Chat, Cursor, Hermes Agent, Grok (xAI), and related tools.\n\n**Supported:** Claude Code, Codex CLI 0.125.0+, Gemini CLI, GitHub Copilot CLI, VS Code Copilot Chat, Cursor IDE, Hermes Agent, Grok (xAI) (native `~/.grok/hooks/` plus Claude compatibility layer), Antigravity CLI (`agy`) (native `~/.gemini/config/hooks.json` via `dcg install --agy`), OpenCode (via community plugin), Pi (via extension recipe), Aider (limited—git hooks only), Continue (detection only)\n\n \n Quick Install \n\n```bash\ncurl -fsSL \"https://raw.githubusercontent.com/Dicklesworthstone/destructive_command_guard/main/install.sh?$(date +%s)\" | bash -s -- --easy-mode\n```\n\n  Works on Linux, macOS, and Windows via WSL. Auto-detects your platform, downloads the right binary, and configures supported agent hooks including Claude Code, Codex CLI, Gemini CLI, GitHub Copilot CLI, VS Code Copilot Chat (through VS Code's Claude-hook compatibility), Cursor IDE, Hermes Agent, and Grok (xAI) (via  dcg install --grok  for a native  ~/.grok/hooks/dcg.json , or via the Claude compatibility layer automatically picked up by Grok). For native Windows, use the PowerShell installer below.  \n\n Windows (native, PowerShell) \n\n```powershell\n& ([scriptblock]::Create((irm \"https://raw.githubusercontent.com/Dicklesworthstone/destructive_command_guard/main/install.ps1\"))) -EasyMode -Verify\n```\n\n  Installs native  dcg.exe , verifies the SHA256 checksum (and the Sigstore/cosign signature when  cosign  is present), adds it to your User  PATH  ( -EasyMode ), runs a self-test ( -Verify ), and configures detected agent hooks for Claude Code, Codex CLI, Gemini CLI, GitHub Copilot CLI, Cursor IDE, and Hermes Agent. Copilot is configured at the user level under  %COPILOT_HOME%\\hooks  (or  %USERPROFILE%\\.copilot\\hooks ) so every workspace is protected. On Windows the  windows.filesystem  and  windows.system  packs are on by default, so  del /s ,  rd /s ,  Remove-Item -Recurse -Force ,  format , and  vssadmin delete shadows  are blocked out of the box. Pin a version with  -Version vX.Y.Z .  \n \n\n---\n\n## TL;DR\n\n**The Problem**: AI coding agents (Claude, Codex, Gemini, Copilot, etc.) occasionally run catastrophic commands like `git reset --hard`, `rm -rf ./src`, or `DROP TABLE users`—destroying hours of uncommitted work in seconds.\n\n**The Solution**: dcg is a high-performance hook that intercepts destructive commands *before* they execute, blocking them with clear explanations and safer alternatives.\n\n### Why Use dcg?\n\n| Feature | What It Does |\n|---------|--------------|\n| **Zero-Config Protection** | Blocks dangerous git/filesystem commands out of the bo",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Dicklesworthstone/destructive_command_guard: The Destructive Command Guard (dcg) is for blocking dangerous git and shell commands from being executed by agents.",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.1,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**destructive_command_guard** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs destructive_command_guard 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**destructive_command_guard** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs destructive_command_guard 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "coding agent",
+        "copilot",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**destructive_command_guard** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs destructive_command_guard 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Dicklesworthstone/destructive_command_guard - The…」（Dicklesworthstone/destructive_command_guard: The Destructiv…），涉及 Agent → 可写方向：**destructive_command_guard** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs destructive_comman…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Dicklesworthstone/destructive_command_g…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 destructive_command_guard 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 destructive_command_guard 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 destructive_command_guard 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 destructive_command_guard 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Dicklesworthstone/destructive_command_guard: The Destructive Comman…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "Dicklesworthstone/destructive_command_guard - The Destructive Command Guard (dcg) is fo…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Dicklesworthstone/destructive_command_guard: The Destructive Comman…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Dicklesworthstone/destructive_command_guard - The Destructive Command Guard (dcg) is fo…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Dicklesworthstone/destructive_command_guard: The Destructive Comman…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**destructive_command_guard** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs destructive_command_guard 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Dicklesworthstone/destructive_command_guard - The Destructive Command Guard (dcg) is fo…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Dicklesworthstone/destructive_command_guard: The Destructive Comman…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Dicklesworthstone/destructive_command_guard - The Destructive Command Guard (dcg) is fo…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "destructive_command_guard：破坏性命令防护 (dcg) 用于阻止代理执行危险的 git 和 shell 命令。",
+    "developer_profile": {
+      "github_username": "Dicklesworthstone",
+      "profile_url": "https://github.com/Dicklesworthstone",
+      "name": "Jeff Emanuel",
+      "bio": "Building in NY",
+      "company": "",
+      "location": "",
+      "blog": "https://www.jeffreyemanuel.com/",
+      "twitter_username": "doodlestein",
+      "email": "jeffreyemanuel@gmail.com",
+      "followers": 2884,
+      "following": 29,
+      "public_repos": 187,
+      "avatar_url": "https://avatars.githubusercontent.com/u/35050222?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/doodlestein"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/jeffreyemanuel"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.jeffreyemanuel.com/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "wonderwhy-er/DesktopCommanderMCP - This is MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities",
+    "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+    "heat": "8,036 stars",
+    "time": "Today",
+    "developer_name": "wonderwhy-er",
+    "developer_url": "https://github.com/wonderwhy-er",
+    "developer_email": "",
+    "today_stars": "210 stars today",
+    "language": "TypeScript",
+    "summary": "This is MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities",
+    "content": "# Desktop Commander MCP\n### Search, update, manage files and run terminal commands with AI\n\n[](https://www.npmjs.com/package/@wonderwhy-er/desktop-commander)\n[](https://agentaudit.dev/skills/desktop-commander)\n[](https://archestra.ai/mcp-catalog/wonderwhy-er__desktopcommandermcp)\n[](https://smithery.ai/server/@wonderwhy-er/desktop-commander)\n[](https://www.buymeacoffee.com/wonderwhyer)\n\n[](https://discord.gg/kQ27sNnZr7)\n\nWork with code and text, run processes, and automate tasks, going far beyond other AI editors - while using host client subscriptions instead of API token costs.\n\n \n   \n \n\n## 🖥️ Try the Desktop Commander App (Beta)\n\n**Want a better experience?** The Desktop Commander App gives you everything the MCP server does, plus:\n\n- **Use any AI model** — Claude, GPT-4.5, Gemini 2.5, or any model you prefer\n- **See file changes live** — visual file previews as AI edits your files\n- **Add custom MCPs and context** — extend with your own tools, no config files\n- **Coming soon** — skills system, dictation, background scheduled tasks, and more\n\n**👉 Download the App** (macOS & Windows)\n\n> The MCP server below still works great with Claude Desktop and other MCP clients — the app is for those who want a dedicated, polished experience.\n\n## Table of Contents\n- Features\n- How to install\n- Getting Started\n- Usage\n- File Preview UI & Markdown Editor\n- Handling Long-Running Commands\n- Work in Progress and TODOs\n- Sponsors and Supporters\n- Website\n- Media\n- Testimonials\n- Frequently Asked Questions\n- Contributing\n- License\n\nAll of your AI development tools in one place.\nDesktop Commander puts all dev tools in one chat.\nExecute long-running terminal commands on your computer and manage processes through Model Context Protocol (MCP). Built on top of MCP Filesystem Server to provide additional search and replace file editing capabilities.\n\n## Features\n\n- **Remote AI Control** - Use Desktop Commander from ChatGPT, Claude web, and other AI services via Remote MCP\n- **File Preview UI** - Visual file previews in Claude Desktop with rendered markdown, inline images, expandable content, built-in markdown editor, and quick \"Open in folder\" access\n- **Enhanced terminal commands with interactive process control**\n- **Execute code in memory (Python, Node.js, R) without saving files**\n- **Instant data analysis - just ask to analyze CSV/JSON/Excel files**\n- **Native Excel file support** - Read, write, edit, and search Excel files (.xlsx, .xls, .xlsm) without external tools\n- **PDF support** - Read PDFs with text extraction, create new PDFs from markdown, modify existing PDFs\n- **DOCX support** - Read, create, edit, and search Word documents (.docx) with surgical XML editing and markdown-to-DOCX conversion\n- **Interact with running processes (SSH, databases, development servers)**\n- Execute terminal commands with output streaming\n- Command timeout and background execution support\n- Process management (list and kill processes)\n- Session management for long-running command",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "chatgpt",
+        "claude",
+        "gemini",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "GPT-4"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "MCP",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "wonderwhy-er/DesktopCommanderMCP: This is MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.2,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**DesktopCommanderMCP** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**DesktopCommanderMCP** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "gpt-4",
+        "claude",
+        "gemini"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**DesktopCommanderMCP** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「wonderwhy-er/DesktopCommanderMCP - This is MCP se…」（wonderwhy-er/DesktopCommanderMCP: This is MCP server for Cl…），涉及 MCP / Python → 可写方向：**DesktopCommanderMCP** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「DesktopCommanderMCP」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 DesktopCommanderMCP 的核心功能（wonderwhy-er/DesktopCommanderMCP: This is MCP server for Claude that gives it t…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 DesktopCommanderMCP 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 DesktopCommanderMCP 的核心功能（wonderwhy-er/DesktopCommanderMCP: This is MCP server for Claude that gives it t…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 DesktopCommanderMCP 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "wonderwhy-er/DesktopCommanderMCP: This is MCP server for Claude tha…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "wonderwhy-er/DesktopCommanderMCP - This is MCP server for Claude that gives it terminal…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：wonderwhy-er/DesktopCommanderMCP: This is MCP server for Claude tha…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: wonderwhy-er/DesktopCommanderMCP - This is MCP server for Claude that gives it terminal…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。wonderwhy-er/DesktopCommanderMCP: This is MCP server for Claude tha…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**DesktopCommanderMCP** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. wonderwhy-er/DesktopCommanderMCP - This is MCP server for Claude that gives it terminal…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：wonderwhy-er/DesktopCommanderMCP: This is MCP server for Claude tha…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: wonderwhy-er/DesktopCommanderMCP - This is MCP server for Claude that gives it terminal…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "DesktopCommanderMCP：这是 Claude 的 MCP 服务器，为其提供终端控制、文件系统搜索和 diff 文件编辑功能",
+    "developer_profile": {
+      "github_username": "wonderwhy-er",
+      "profile_url": "https://github.com/wonderwhy-er",
+      "name": "Eduard Ruzga",
+      "bio": "",
+      "company": "",
+      "location": "Riga",
+      "blog": "http://www.wonderwhy-er.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 395,
+      "following": 13,
+      "public_repos": 60,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1150639?v=4",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "http://www.wonderwhy-er.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "HKUDS/Vibe-Trading - \"Vibe-Trading: Your Personal Trading Agent\"",
+    "url": "https://github.com/HKUDS/Vibe-Trading",
+    "heat": "20,758 stars",
+    "time": "Today",
+    "developer_name": "HKUDS",
+    "developer_url": "https://github.com/HKUDS",
+    "developer_email": "",
+    "today_stars": "768 stars today",
+    "language": "Python",
+    "summary": "\"Vibe-Trading: Your Personal Trading Agent\"",
+    "content": " \n   English  |  中文  |  日本語  |  한국어  |  العربية \n \n\n \n   \n \n\n Vibe-Trading: Your Personal Trading Agent \n\n \n   One Command to Empower Your Agent with Comprehensive Trading Capabilities \n \n\n \n     \n \n\n \n   \n   \n   \n     \n     \n   \n     \n     \n     \n \n\n \n   Website  &nbsp;&middot;&nbsp;\n   Docs  &nbsp;&middot;&nbsp;\n   News  &nbsp;&middot;&nbsp;\n   Features  &nbsp;&middot;&nbsp;\n   Shadow Account  &nbsp;&middot;&nbsp;\n   Demo  &nbsp;&middot;&nbsp;\n   Quick Start  &nbsp;&middot;&nbsp;\n   Examples  &nbsp;&middot;&nbsp;\n   API / MCP  &nbsp;&middot;&nbsp;\n   Roadmap  &nbsp;&middot;&nbsp;\n   Contributing \n \n\n \n     \n \n\n---\n\n## 📰 News\n\n> ⚠️ **Security warning:** The X account `VibeTrading_HKU`, Virtuals project `101845`, and token contract `0x640BDBF77b6447E8b7DB7894cED84BD1c40571f4` are not official Vibe-Trading assets. We have never launched or endorsed any token or memecoin. Do not buy, connect a wallet, or sign anything. Details.\n\n- **2026-07-12** 🧪 **Strategy Development Manager + contributor fix batch**: the new `strategy-dev-manager` skill (#87) turns academic papers and broker research into registered factors/strategies with a persistent artifact store and automated IC/Sharpe decay monitoring — `sdm_register` / `sdm_status` / `sdm_decay_scan` drive an active → monitoring → decayed → disabled lifecycle over `~/.vibe-trading/` (#457, closes #455, thanks @shadowinlife). Also merged: the Correlation tab accepts bare tickers (`AAPL,SPY`) and walks the full loader fallback chain (#472, closes #471, thanks @yxhuang), the `local` loader honors requested intervals via OHLCV resampling (#467, thanks @Shizoqua), Binance USD-M perpetual history lands with explicit `BTC-USDT-PERP` routing + execution/mark price separation as the first #462 slice (#470, thanks @honginp), FastMCP transport imports now work across both module layouts (#469, thanks @roberttidball), and Requesty is available as an OpenAI-compatible LLM gateway provider (#474, thanks @Thibaultjaigu).\n\n- **2026-07-11** 🚀 **v0.1.11 released** (`pip install -U vibe-trading-ai`): rolls up three weeks since 0.1.10 — first-class Indian equity (NSE/BSE) backtesting, the PIT-safe fundamental factor layer (Alpha Zoo → 460), the 16-adapter IM channel runtime, end-to-end scheduled research, optional QVeris premium data, and today's contributor batch: a turnover-aware optimizer (#466, thanks @Robin1987China), an `analyze_image` vision tool + NapCat DM pairing + the IM-media read fix (#464/#463/#465, thanks @fei-moss), Longbridge Decimal serialization (#459, thanks @fanfpy), and packaged-manifest count guards (#461, thanks @asahikiko). Full details: CHANGELOG · release notes.\n\n- **2026-07-10** 🇮🇳 **Indian equity (NSE/BSE) support + centralized env config**: a dedicated `IndiaEquityEngine` lands — T+1 delivery, circuit bands, and a config-driven STT/stamp/exchange/SEBI/GST cost stack — with `.NS`/`.BO` symbol routing, an opt-in read-only Shoonya/Dhan data bridge, and 255 alpha101/qlib158 factors opted into the n",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "mcp",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "MCP"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "HKUDS/Vibe-Trading: \"Vibe-Trading: Your Personal Trading Agent\"",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「HKUDS/Vibe-Trading - \"Vibe-Trading: Your Personal…」（HKUDS/Vibe-Trading: \"Vibe-Trading: Your Personal Trading Ag…），涉及 LLM / Agent / MCP → 可写方向：MCP 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「HKUDS/Vibe-Trading - \"Vibe-Trading: You…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 Vibe-Trading 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 Vibe-Trading 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "HKUDS/Vibe-Trading: \"Vibe-Trading: Your Personal Trading Agent\"。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "HKUDS/Vibe-Trading - \"Vibe-Trading: Your Personal Trading Agent\". For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：HKUDS/Vibe-Trading: \"Vibe-Trading: Your Personal Trading Agent\"。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: HKUDS/Vibe-Trading - \"Vibe-Trading: Your Personal Trading Agent\". From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。HKUDS/Vibe-Trading: \"Vibe-Trading: Your Personal Trading Agent\"。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. HKUDS/Vibe-Trading - \"Vibe-Trading: Your Personal Trading Agent\". For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：HKUDS/Vibe-Trading: \"Vibe-Trading: Your Personal Trading Agent\"。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: HKUDS/Vibe-Trading - \"Vibe-Trading: Your Personal Trading Agent\". Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "“Vibe-Trading：您的个人交易代理”",
+    "developer_profile": {
+      "github_username": "HKUDS",
+      "profile_url": "https://github.com/HKUDS",
+      "name": "✨Data Intelligence Lab@HKU✨",
+      "bio": "",
+      "company": "",
+      "location": "Hong Kong",
+      "blog": "https://sites.google.com/view/chaoh",
+      "twitter_username": "",
+      "email": "",
+      "followers": 12249,
+      "following": 0,
+      "public_repos": 91,
+      "avatar_url": "https://avatars.githubusercontent.com/u/118165258?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "PrefectHQ/prefect - Prefect is a workflow orchestration framework for building resilient data pipelines in Python.",
+    "url": "https://github.com/PrefectHQ/prefect",
+    "heat": "23,213 stars",
+    "time": "Today",
+    "developer_name": "PrefectHQ",
+    "developer_url": "https://github.com/PrefectHQ",
+    "developer_email": "",
+    "today_stars": "66 stars today",
+    "language": "Python",
+    "summary": "Prefect is a workflow orchestration framework for building resilient data pipelines in Python.",
+    "content": "   \n\n \n     \n         \n     \n     \n         \n     \n     \n         \n     \n     \n         \n     \n     \n     \n         \n     \n     \n         \n     \n \n\n \n     \n        Installation\n     \n    ·\n     \n        Quickstart\n     \n    ·\n     \n        Build workflows\n     \n    ·\n     \n        Deploy workflows\n     \n    ·\n     \n        Prefect Cloud\n     \n \n\n# Prefect\n\nPrefect is a workflow orchestration framework for building data pipelines in Python.\nIt's the simplest way to elevate a script into a production workflow.\nWith Prefect, you can build resilient, dynamic data pipelines that react to the world around them and recover from unexpected changes.\n\nWith just a few lines of code, data teams can confidently automate any data process with features such as scheduling, caching, retries, and event-based automations.\n\nWorkflow activity is tracked and can be monitored with a self-hosted Prefect server instance or managed Prefect Cloud dashboard.\n\n> [!TIP]\n> Prefect flows can handle retries, dependencies, and even complex branching logic\n> \n> Check our docs or see the example below to learn more!\n\n## Getting started\n\nPrefect requires Python 3.10+. To install the latest version of Prefect, run one of the following commands:\n\n```bash\npip install -U prefect\n```\n\n```bash\nuv add prefect\n```\n\nThen create and run a Python file that uses Prefect `flow` and `task` decorators to orchestrate and observe your workflow - in this case, a simple script that fetches the number of GitHub stars from a repository:\n\n```python\nfrom prefect import flow, task\nimport httpx\n\n@task(log_prints=True)\ndef get_stars(repo: str):\n    url = f\"https://api.github.com/repos/{repo}\"\n    count = httpx.get(url).json()[\"stargazers_count\"]\n    print(f\"{repo} has {count} stars!\")\n\n@flow(name=\"GitHub Stars\")\ndef github_stars(repos: list[str]):\n    for repo in repos:\n        get_stars(repo)\n\n# run the flow!\nif __name__ == \"__main__\":\n    github_stars([\"PrefectHQ/prefect\"])\n```\n\nFire up a Prefect server and open the UI at http://localhost:4200 to see what happened:\n\n```bash\nprefect server start\n```\n\nTo run your workflow on a schedule, turn it into a deployment and schedule it to run every minute by changing the last line of your script to the following:\n\n```python\nif __name__ == \"__main__\":\n    github_stars.serve(\n        name=\"first-deployment\",\n        cron=\"* * * * *\",\n        parameters={\"repos\": [\"PrefectHQ/prefect\"]}\n    )\n```\n\nYou now have a process running locally that is looking for scheduled deployments!\nAdditionally you can run your workflow manually from the UI or CLI. You can even run deployments in response to events.\n\n> [!TIP]\n> Where to go next - check out our documentation to learn more about:\n> - Deploying flows to production environments\n> - Adding error handling and retries\n> - Integrating with your existing tools\n> - Setting up team collaboration features\n\n## Prefect Cloud\n\nPrefect Cloud provides workflow orchestration for the modern data enterprise. By automating over 200 million data",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Go",
+        "Python",
+        "React"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "PrefectHQ/prefect: Prefect is a workflow orchestration framework for building resilient data pipelines in Python.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「PrefectHQ/prefect - Prefect is a workflow orchest…」（PrefectHQ/prefect: Prefect is a workflow orchestration fram…），涉及 Go / Python / React → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「PrefectHQ/prefect - Prefect is a workfl…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 prefect 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 prefect 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "PrefectHQ/prefect: Prefect is a workflow orchestration framework fo…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "PrefectHQ/prefect - Prefect is a workflow orchestration framework for building resilien…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：PrefectHQ/prefect: Prefect is a workflow orchestration framework fo…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: PrefectHQ/prefect - Prefect is a workflow orchestration framework for building resilien…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。PrefectHQ/prefect: Prefect is a workflow orchestration framework fo…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. PrefectHQ/prefect - Prefect is a workflow orchestration framework for building resilien…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：PrefectHQ/prefect: Prefect is a workflow orchestration framework fo…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: PrefectHQ/prefect - Prefect is a workflow orchestration framework for building resilien…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Prefect 是一个工作流程编排框架，用于在 Python 中构建弹性数据管道。",
+    "developer_profile": {
+      "github_username": "PrefectHQ",
+      "profile_url": "https://github.com/PrefectHQ",
+      "name": "Prefect",
+      "bio": "",
+      "company": "",
+      "location": "Washington, DC",
+      "blog": "https://prefect.io",
+      "twitter_username": "PrefectIO",
+      "email": "",
+      "followers": 913,
+      "following": 0,
+      "public_repos": 41,
+      "avatar_url": "https://avatars.githubusercontent.com/u/39270919?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "http://prefect.io/fastmcp"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/prefect/"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/PrefectIO"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Shubhamsaboo/awesome-llm-apps - 100+ AI Agent & RAG apps you can actually run — clone, customize, ship.",
+    "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+    "heat": "118,767 stars",
+    "time": "Today",
+    "developer_name": "Shubhamsaboo",
+    "developer_url": "https://github.com/Shubhamsaboo",
+    "developer_email": "",
+    "today_stars": "408 stars today",
+    "language": "Python",
+    "summary": "100+ AI Agent & RAG apps you can actually run — clone, customize, ship.",
+    "content": " \n   \n     \n   \n \n\n \n   \n     \n   \n   \n     \n   \n \n\n \n   \n   Deutsch  | \n   Español  | \n   français  | \n   日本語  | \n   한국어  | \n   Português  | \n   Русский  | \n   中文 \n \n\n \n\n \n\n# 🌟 Awesome LLM Apps\n\n  100+ AI Agent & RAG apps you can actually run — clone, customize, ship.  \nAI Agents · Always-on Agents · Multi-agent Teams · MCP Agents · RAG · Voice Agents · Agent Skills · Fine-tuning \n\n \n Free step-by-step tutorials on  Unwind AI   \n Works with Claude · Gemini · OpenAI · xAI · Qwen · Llama \n \n\n \n   \n   \n   \n   \n \n \n\n \n   &nbsp; 🚀 Quick Start &nbsp;   \n   &nbsp; 📂 Browse Templates &nbsp;   \n   &nbsp; 📚 Step-by-Step Tutorials &nbsp;   \n \n\n \n   \n \n\n \n\n---\n\n## 💡 Why this exists\n\nYou shouldn't have to rebuild the same RAG pipeline, agent loop, or MCP integration from scratch every time you start a new LLM project.\n\n**Awesome LLM Apps is a cookbook of ready-to-run templates** - starter code you can fork, customize, and ship as a production LLM app. Every template here is self-contained with full source code, not collected from elsewhere.\n\n- 🛠️ **Hand-built, not curated** - every template is original work, tested end-to-end before it ships.\n- 🧪 **Runs in 3 commands** - no broken `requirements.txt`, no \"figure it out yourself\" scaffolding.\n- 🧠 **Covers the modern AI stack** - AI Agents, Always-on Agents, Multi-agent Teams, MCP Agents, Voice AI Agents, RAG, Agent Skills, Fine-tuning.\n- 🌐 **Provider-agnostic** - switch between Claude, Gemini, GPT, Llama, Qwen, xAI and others with a config change.\n- 📚 **Step-by-step tutorials** - every featured template has a free walkthrough on Unwind AI.\n- 💸 **Apache-2.0** - fork it, ship it, sell it. No paywall, no signup, no telemetry.\n\n> ⭐ **If this saves you time, star the repo - that's how the next developer discovers it.**\n\n## 🚀 Quick Start\n\nRun your first agent in **30 seconds**:\n\n```bash\ngit clone https://github.com/Shubhamsaboo/awesome-llm-apps.git\ncd awesome-llm-apps/starter_ai_agents/ai_travel_agent\npip install -r requirements.txt\nstreamlit run travel_agent.py\n```\n\n## 🔥 Featured This Month\n\n| Template | What it does | Stack |\n|---|---|---|\n| ⚰️ Project Graveyard Skill | Finds your dead side projects, tells you why each one died, and helps you finish the one worth going back to | Agent Skill · Runs locally |\n| 📰 Always-on Hacker News Briefing Agent | Scheduled Hacker News scout that filters AI agent and LLM app signals into a delivery-ready daily brief | ADK + Agent Runtime |\n| 🛡️ Insurance Claim Live Agent Team | Real-time voice claim intake with Gemini Live and ADK | Voice + ADK |\n| 🏠 Home Renovation Agent | Photo → AI redesign with Nano Banana Pro | Vision + Multi-agent |\n| ♾️ Self-Improving Agent Skills | Automatically optimize agent skills using Gemini and ADK | Agent Skills + ADK |\n\n> 📬 Subscribe on Unwind AI to get new template drops + tutorials in your inbox.\n\n## 📑 Table of Contents\n\n \n  15 categories · Click to expand  \n\n- 🧩 Agent Skills\n- 🌱 Starter AI Agents\n- 🚀 Advanced AI Agents\n- 🛰️ Always-on Agents\n- ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 11,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "gpt",
+        "claude",
+        "gemini",
+        "llama",
+        "qwen",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Llama",
+        "通义千问"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "RAG",
+        "Agent",
+        "MCP"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Shubhamsaboo/awesome-llm-apps: 100+ AI Agent & RAG apps you can actually run — clone, customize, ship.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**awesome-llm-apps** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**awesome-llm-apps** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "llm",
+        "claude",
+        "gemini",
+        "qwen",
+        "llama"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**awesome-llm-apps** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Shubhamsaboo/awesome-llm-apps - 100+ AI Agent & R…」（Shubhamsaboo/awesome-llm-apps: 100+ AI Agent & RAG apps you…），涉及 LLM / RAG / Agent → 可写方向：**awesome-llm-apps** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「awesome-llm-apps」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 awesome-llm-apps 的核心功能（Shubhamsaboo/awesome-llm-apps: 100+ AI Agent & RAG apps you can actually run —…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 awesome-llm-apps 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 awesome-llm-apps 的核心功能（Shubhamsaboo/awesome-llm-apps: 100+ AI Agent & RAG apps you can actually run —…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 awesome-llm-apps 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "Shubhamsaboo/awesome-llm-apps: 100+ AI Agent & RAG apps you can act…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "Shubhamsaboo/awesome-llm-apps - 100+ AI Agent & RAG apps you can actually run — clone,…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Shubhamsaboo/awesome-llm-apps: 100+ AI Agent & RAG apps you can act…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Shubhamsaboo/awesome-llm-apps - 100+ AI Agent & RAG apps you can actually run — clone,…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Shubhamsaboo/awesome-llm-apps: 100+ AI Agent & RAG apps you can act…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**awesome-llm-apps** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Shubhamsaboo/awesome-llm-apps - 100+ AI Agent & RAG apps you can actually run — clone,…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Shubhamsaboo/awesome-llm-apps: 100+ AI Agent & RAG apps you can act…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Shubhamsaboo/awesome-llm-apps - 100+ AI Agent & RAG apps you can actually run — clone,…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "awesome-llm-apps：您可以实际运行 100 多个 AI Agent 和 RAG 应用程序 — 克隆、自定义、发布。",
+    "developer_profile": {
+      "github_username": "Shubhamsaboo",
+      "profile_url": "https://github.com/Shubhamsaboo",
+      "name": "Shubham Saboo",
+      "bio": "Senior AI PM @ Google Cloud | Building open-source repository of practical world class tutorials on AI Agents, RAG and LLMs ⏳",
+      "company": "Google",
+      "location": "",
+      "blog": "https://www.theunwindai.com/",
+      "twitter_username": "Saboo_Shubham_",
+      "email": "",
+      "followers": 8844,
+      "following": 3,
+      "public_repos": 181,
+      "avatar_url": "https://avatars.githubusercontent.com/u/31396011?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/Saboo_Shubham_"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/shubhamsaboo"
+        },
+        {
+          "platform": "generic",
+          "url": "https://www.theunwindai.com/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "anthropics/claude-cookbooks - A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
+    "url": "https://github.com/anthropics/claude-cookbooks",
+    "heat": "48,532 stars",
+    "time": "Today",
+    "developer_name": "anthropics",
+    "developer_url": "https://github.com/anthropics",
+    "developer_email": "",
+    "today_stars": "459 stars today",
+    "language": "Jupyter Notebook",
+    "summary": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
+    "content": "# Claude Cookbooks\n\nThe Claude Cookbooks provide code and guides designed to help developers build with Claude, offering copy-able code snippets that you can easily integrate into your own projects.\n\n## Prerequisites\n\nTo make the most of the examples in this cookbook, you'll need a Claude API key (sign up for free here).\n\nWhile the code examples are primarily written in Python, the concepts can be adapted to any programming language that supports interaction with the Claude API.\n\nIf you're new to working with the Claude API, we recommend starting with our Claude API Fundamentals course to get a solid foundation.\n\n## Explore Further\n\nLooking for more resources to enhance your experience with Claude and AI assistants? Check out these helpful links:\n\n- Anthropic developer documentation\n- Anthropic support docs\n- Anthropic Discord community\n\n## Contributing\n\nThe Claude Cookbooks thrives on the contributions of the developer community. We value your input, whether it's submitting an idea, fixing a typo, adding a new guide, or improving an existing one. By contributing, you help make this resource even more valuable for everyone.\n\nTo avoid duplication of efforts, please review the existing issues and pull requests before contributing.\n\nIf you have ideas for new examples or guides, share them on the issues page.\n\n## Table of recipes\n\n### Capabilities\n- Classification: Explore techniques for text and data classification using Claude.\n- Retrieval Augmented Generation: Learn how to enhance Claude's responses with external knowledge.\n- Summarization: Discover techniques for effective text summarization with Claude.\n\n### Tool Use and Integration\n- Tool use: Learn how to integrate Claude with external tools and functions to extend its capabilities.\n  - Customer service agent\n  - Calculator integration\n  - SQL queries\n\n### Third-Party Integrations\n- Retrieval augmented generation: Supplement Claude's knowledge with external data sources.\n  - Vector databases (Pinecone)\n  - Wikipedia\n  - Web pages\n- Embeddings with Voyage AI\n\n### Multimodal Capabilities\n- Vision with Claude: \n  - Getting started with images\n  - Best practices for vision\n  - Interpreting charts and graphs\n  - Extracting content from forms\n- Generate images with Claude: Use Claude with Stable Diffusion for image generation.\n\n### Advanced Techniques\n- Sub-agents: Learn how to use Haiku as a sub-agent in combination with Opus.\n- Upload PDFs to Claude: Parse and pass PDFs as text to Claude.\n- Automated evaluations: Use Claude to automate the prompt evaluation process.\n- Enable JSON mode: Ensure consistent JSON output from Claude.\n- Create a moderation filter: Use Claude to create a content moderation filter for your application.\n- Prompt caching: Learn techniques for efficient prompt caching with Claude.\n\n## Additional Resources\n\n- Anthropic on AWS: Explore examples and solutions for using Claude on AWS infrastructure.\n- AWS Samples: A collection of code samples from AWS which can be adapted for use",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 9,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "aws"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "diffusion",
+        "stable diffusion",
+        "multimodal",
+        "prompt",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [
+        "AWS"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "RAG",
+        "Agent",
+        "Diffusion",
+        "Vector DB",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "anthropics/claude-cookbooks: A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.9,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「anthropics/claude-cookbooks - A collection of not…」（anthropics/claude-cookbooks: A collection of notebooks/reci…），涉及 RAG / Agent / Diffusion → 可写方向：RAG 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「anthropics/claude-cookbooks - A collect…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 claude-cookbooks 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 claude-cookbooks 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "anthropics/claude-cookbooks: A collection of notebooks/recipes show…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "anthropics/claude-cookbooks - A collection of notebooks/recipes showcasing some fun and…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：anthropics/claude-cookbooks: A collection of notebooks/recipes show…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: anthropics/claude-cookbooks - A collection of notebooks/recipes showcasing some fun and…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。anthropics/claude-cookbooks: A collection of notebooks/recipes show…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. anthropics/claude-cookbooks - A collection of notebooks/recipes showcasing some fun and…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：anthropics/claude-cookbooks: A collection of notebooks/recipes show…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: anthropics/claude-cookbooks - A collection of notebooks/recipes showcasing some fun and…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "claude-cookbooks：一系列笔记本/食谱展示了一些有趣且有效的使用克劳德的方法。",
+    "developer_profile": {
+      "github_username": "anthropics",
+      "profile_url": "https://github.com/anthropics",
+      "name": "Anthropic",
+      "bio": "",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://anthropic.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 76134,
+      "following": 0,
+      "public_repos": 92,
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Crosstalk-Solutions/project-nomad - Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.",
+    "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+    "heat": "33,880 stars",
+    "time": "Today",
+    "developer_name": "Crosstalk-Solutions",
+    "developer_url": "https://github.com/Crosstalk-Solutions",
+    "developer_email": "info@crosstalksolutions.com",
+    "today_stars": "125 stars today",
+    "language": "TypeScript",
+    "summary": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.",
+    "content": " \n \n\n# Project N.O.M.A.D.\n### Node for Offline Media, Archives, and Data\n\n**Knowledge That Never Goes Offline**\n\n[](https://www.projectnomad.us)\n[](https://discord.com/invite/crosstalksolutions)\n[](https://benchmark.projectnomad.us)\n\n \n\n---\n\nProject N.O.M.A.D. is a self-contained, offline-first knowledge and education server packed with critical tools, knowledge, and AI to keep you informed and empowered — anytime, anywhere.\n\n## Installation & Quickstart\nProject N.O.M.A.D. can be installed on any Debian-based operating system (we recommend Ubuntu). Installation is completely terminal-based, and all tools and resources are designed to be accessed through the browser, so there's no need for a desktop environment if you'd rather setup N.O.M.A.D. as a \"server\" and access it through other clients.\n\n*Note: sudo/root privileges are required to run the install script*\n\n### Quick Install (Debian-based OS Only)\n```bash\nsudo apt-get update && \\\nsudo apt-get install -y curl && \\\ncurl -fsSL https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/refs/heads/main/install/install_nomad.sh \\\n  -o install_nomad.sh && \\\nsudo bash install_nomad.sh\n```\n\nProject N.O.M.A.D. is now installed on your device! Open a browser and navigate to `http://localhost:8080` (or `http://DEVICE_IP:8080`) to start exploring!\n\nFor a complete step-by-step walkthrough (including Ubuntu installation), see the Installation Guide. For Windows users, see the WSL2 install guide — community-supported path covering native Docker and Docker Desktop install routes.\n\n### Advanced Installation\nFor more control over the installation process, copy and paste the Docker Compose template into a `docker-compose.yml` file and customize it to your liking (be sure to replace any placeholders with your actual values). Then, run `docker compose up -d` to start the Command Center and its dependencies. Note: this method is recommended for advanced users only, as it requires familiarity with Docker and manual configuration before starting.\n\n## How It Works\nN.O.M.A.D. is a management UI (\"Command Center\") and API that orchestrates a collection of containerized tools and resources via Docker. It handles installation, configuration, and updates for everything — so you don't have to.\n\n**Built-in capabilities include:**\n- **AI Chat with Knowledge Base** — local AI chat powered by Ollama or you can use OpenAI API compatible software such as LM Studio or llama.cpp, with document upload and semantic search (RAG via Qdrant)\n- **Information Library** — offline Wikipedia, medical references, ebooks, and more via Kiwix\n- **Education Platform** — Khan Academy courses with progress tracking via Kolibri\n- **Offline Maps** — downloadable regional maps via ProtoMaps\n- **Data Tools** — encryption, encoding, and analysis via CyberChef\n- **Notes** — local note-taking via FlatNotes\n- **System Benchmark** — hardware scoring with a community leaderboard\n- **Supply Depot** — a one-click app catalog (PDF tools, file browser, ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "llama",
+        "rag",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Llama"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "RAG"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Crosstalk-Solutions/project-nomad: Project N. D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 6.1,
+      "tcloud_integration": "**project-nomad** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**project-nomad** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景"
+      ],
+      "tcloud_evidence": [
+        "docker compose",
+        "docker-compose"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**project-nomad** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Crosstalk-Solutions/project-nomad - Project N.O.M…」（Crosstalk-Solutions/project-nomad: Project N. D, is a self-…），涉及 RAG → 可写方向：**project-nomad** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「project-nomad」支持自部署，可写『Lighthouse 一键部署 project-nomad』实操教程。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 project-nomad」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 project-nomad 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 project-nomad」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 project-nomad 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "Crosstalk-Solutions/project-nomad: Project N. D, is a self-containe…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "Crosstalk-Solutions/project-nomad - Project N.O.M.A.D, is a self-contained, offline sur…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Crosstalk-Solutions/project-nomad: Project N. D, is a self-containe…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Crosstalk-Solutions/project-nomad - Project N.O.M.A.D, is a self-contained, offline sur…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary. What matters more to you: deployment,…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Crosstalk-Solutions/project-nomad: Project N. D, is a self-containe…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**project-nomad** 提供了 Docker 部署方式，Lighthouse 的 Docker 预装镜像 + 海外节点覆盖（硅谷/法兰克福/新加坡等）适合需要全球访问的自托管场景",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Crosstalk-Solutions/project-nomad - Project N.O.M.A.D, is a self-contained, offline sur…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Crosstalk-Solutions/project-nomad: Project N. D, is a self-containe…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Crosstalk-Solutions/project-nomad - Project N.O.M.A.D, is a self-contained, offline sur…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "project-nomad：Project N.D 是一款独立的离线生存计算机，配备了关键工具、知识和人工智能，可让您随时随地了解情况并获得授权。",
+    "developer_profile": {
+      "github_username": "Crosstalk-Solutions",
+      "profile_url": "https://github.com/Crosstalk-Solutions",
+      "name": "Crosstalk Solutions",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://crosstalksolutions.com",
+      "twitter_username": "crosstalksol",
+      "email": "info@crosstalksolutions.com",
+      "followers": 500,
+      "following": 0,
+      "public_repos": 5,
+      "avatar_url": "https://avatars.githubusercontent.com/u/105950641?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/crosstalksol"
+        }
+      ],
+      "is_org": true
+    }
+  }
+]
