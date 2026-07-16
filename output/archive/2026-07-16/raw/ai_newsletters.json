@@ -1,0 +1,941 @@
+[
+  {
+    "source": "KDnuggets",
+    "title": "Stop Using If-Else Chains: Use the Registry Pattern in Python Instead",
+    "url": "https://www.kdnuggets.com/stop-using-if-else-chains-use-the-registry-pattern-in-python-instead",
+    "time": "Wed, 15 Jul 2026 14:00:06 +0000",
+    "heat": "",
+    "summary": "",
+    "developer_name": "Kanwal Mehreen",
+    "content": "Stop Using If-Else Chains: Use the Registry Pattern in Python Instead - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter Stop Using If-Else Chains: Use the Registry Pattern in Python Instead Learn a cleaner, more extensible way to dispatch logic in Python. By Kanwal Mehreen , KDnuggets Technical Editor & Content Specialist on July 15, 2026 in Python # Introduction Every Python codebase has this problem. A function that starts small. Two branches, maybe three. Then someone adds a case, someone else adds another, and a year later you've got 200 lines of if/elif/else that nobody wants to touch. Here's an example: def get_model(name): if name == \"logreg\": return LogisticRegression() elif name == \"random_forest\": return RandomForestClassifier() elif name == \"svm\": return SVC() elif name == \"xgboost\": return XGBClassifier() # ... 15 more branches else: raise ValueError(f\"Unknown model: {name}\") And yeah, it works. But it also breaks the Open/Closed Principle , which states that software entities (classes, modules, and functions) should be open for extension but closed for modification. There is a better way to handle this problem: the registry pattern . This article covers what the registry pattern is, how to build it up from a five-line dictionary to a production-grade reusable class, and when it actually earns its place in your code. So, let's get started. # The Problem With If-Else Chains A long conditional chain fails in a few specific ways: It violates the Open/Closed Principle. New case, new edit to a function that already worked. Yesterday's tested code gets cracked open, retested, and reviewed again. The unit of change should be \"add a file,\" not \"modify the central dispatcher.\" It piles unrelated logic into one place. Say your payment dispatcher covers credit cards, PayPal, and crypto. Now three domains that have nothing to do with each other are sharing one function. The elif ladder forces them to share a room anyway. It scales badly. Every new branch adds to the cognitive weight of the whole function. Twenty branches is twenty things to scroll past every time you are debugging branch number three. It cannot be extended from outside. Ship a library with a hardcoded get_model() chain and your users are stuck. They cannot add their own model without monkey-patching or forking. The logic is sealed shut. The registry pattern fixes all four by flipping the relationship. Instead of the dispatcher knowing about every option, each option announces itself to the dispatcher. What is the registry pattern? It is basically a central lookup table that maps keys to objects (functions, classes, instances), where each object registers itself instead of being hardcoded into some conditional. In Python, that lookup table is almost always a dictionary, an",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "machine learning",
+        "nlp",
+        "computer vision"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Stop Using If-Else Chains: Use the Registry Pattern in Python Instead - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter Stop Using If-Else Chains: Use the Registry Pattern in Python Instead Learn a cleaner, more extensible way to dispatch logic in Python.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 2.7,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Stop Using If-Else Chains: Use the Registry Patte…」（Stop Using If-Else Chains: Use the Registry Pattern in Pyth…），涉及 Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「Stop Using If-Else Chains: Use the Regi…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Stop Using If-Else Chains: Use the Registry Pattern in Python Inste…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Stop Using If-Else Chains: Use the Registry Pattern in Python Instead. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Stop Using If-Else Chains: Use the Registry Pattern in Python Inste…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Stop Using If-Else Chains: Use the Registry Pattern in Python Instead. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Stop Using If-Else Chains: Use the Registry Pattern in Python Inste…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Stop Using If-Else Chains: Use the Registry Pattern in Python Instead. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Stop Using If-Else Chains: Use the Registry Pattern in Python Inste…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Stop Using If-Else Chains: Use the Registry Pattern in Python Instead. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "停止使用 If-Else 链：改用 Python 中的注册表模式"
+  },
+  {
+    "source": "KDnuggets",
+    "title": "7 Python Frameworks for Orchestrating Local AI Agents",
+    "url": "https://www.kdnuggets.com/7-python-frameworks-for-orchestrating-local-ai-agents",
+    "time": "Wed, 15 Jul 2026 12:00:56 +0000",
+    "heat": "",
+    "summary": "",
+    "developer_name": "Shittu Olumide",
+    "content": "7 Python Frameworks for Orchestrating Local AI Agents - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter 7 Python Frameworks for Orchestrating Local AI Agents This article contains seven Python tools that engineers are actually using in 2026 to build, coordinate, and run agents on local infrastructure. By Shittu Olumide , Technical Content Specialist on July 15, 2026 in Artificial Intelligence # Introduction An agent that calls a cloud API for every decision is renting its intelligence. It needs a key, it racks up a bill per token, and every request leaves your machine before you get an answer back. An agent built to run locally skips all of that. No API key, no per-call cost once the model is downloaded, and nothing leaves your network unless you tell it to. The catch is that running everything locally means you also need an orchestration layer that actually understands how to talk to a model sitting on your own hardware instead of one sitting behind someone else's API. Below are seven Python tools that engineers are actually using in 2026 to build, coordinate, and run agents on local infrastructure, from the runtime that serves the model itself to the frameworks that decide what the agent does with it. # 1. Ollama Before you can orchestrate anything locally, something has to actually run the model. Ollama is a lightweight runtime for running open-source large language models (LLMs) on your own machine — the closest thing to Docker for language models. One command pulls a model, another serves it over a local API, with no Python environment to configure and no CUDA drivers to install by hand. What makes Ollama the foundation almost every framework on this list builds on is one specific design choice. It exposes an OpenAI-compatible API, which means it slots directly into most agent frameworks without a custom adapter, alongside the privacy benefit of your data never leaving the machine and the cost benefit of every request being free once a model is downloaded. It isn't built for raw throughput, which is worth knowing before you scale past a single developer's laptop. For high-concurrency workloads, teams often pair Ollama's simplicity during development with something like vLLM 's PagedAttention-based serving once they need more performance, while keeping the same agent orchestration layer on top. # 2. Smolagents If you want to understand exactly what your agent is doing without digging through layers of abstraction, smolagents from Hugging Face is built for that. The entire logic for agents fits in roughly 1,000 lines of code, with abstractions kept to their minimal shape above raw code, and the library is fully model-agnostic, supporting local transformers or Ollama models alongside dozens of hosted providers. Its defining feature is a",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 8,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "artificial intelligence",
+        "machine learning",
+        "large language model",
+        "agent",
+        "nlp",
+        "openai",
+        "computer vision"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "7 Python Frameworks for Orchestrating Local AI Agents - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter 7 Python Frameworks for Orchestrating Local AI Agents This article contains seven Python tools that engineers are actually using in 2026 to build, coordinate, and run agents on local…",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 3.5,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「7 Python Frameworks for Orchestrating Local AI Ag…」（7 Python Frameworks for Orchestrating Local AI Agents - KDn…），涉及 LLM / Agent / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「7 Python Frameworks for Orchestrating L…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "7 Python Frameworks for Orchestrating Local AI Agents - KDnuggets B…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "7 Python Frameworks for Orchestrating Local AI Agents. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：7 Python Frameworks for Orchestrating Local AI Agents - KDnuggets B…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 7 Python Frameworks for Orchestrating Local AI Agents. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。7 Python Frameworks for Orchestrating Local AI Agents - KDnuggets B…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 7 Python Frameworks for Orchestrating Local AI Agents. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：7 Python Frameworks for Orchestrating Local AI Agents - KDnuggets B…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: 7 Python Frameworks for Orchestrating Local AI Agents. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "用于编排本地人工智能代理的 7 个 Python 框架"
+  },
+  {
+    "source": "KDnuggets",
+    "title": "Getting Started with Conductor for Gemini CLI",
+    "url": "https://www.kdnuggets.com/getting-started-with-conductor-for-gemini-cli",
+    "time": "Tue, 14 Jul 2026 14:00:24 +0000",
+    "heat": "",
+    "summary": "",
+    "developer_name": "Shittu Olumide",
+    "content": "Getting Started with Conductor for Gemini CLI - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter Getting Started with Conductor for Gemini CLI Conductor is a Gemini CLI extension built to fix your context problems. Learn all about it here. By Shittu Olumide , Technical Content Specialist on July 14, 2026 in Programming # Introduction When you open Gemini CLI, describe a feature you need to build, and the agent immediately starts writing code. No questions, no clarifications, no plan. Ten minutes later, you have a hundred lines of implementation across four files and none of it matches your actual architecture because the agent never knew your architecture. It made plausible guesses. Some were right. Most weren't. Now you're untangling AI-generated code while wondering if it would have been faster to just write it yourself. That's not a Gemini problem. That's a context problem. The agent doesn't know what you're building, what libraries you've chosen, what your coding standards are, or what the feature is actually supposed to do. Every session starts from zero. Conductor , released in preview on December 17, 2025, is a Gemini CLI extension built to fix this. It introduces a workflow called Context-Driven Development (CDD), a structured approach where your project context, specs, and implementation plans live in Markdown files inside your repository, not inside an ephemeral chat window. The agent reads those files every time it touches your project. Your style guides, your tech stack decisions, your product goals — all of it persists and travels with the code. Since launch, the Conductor GitHub repository has accumulated over 3,600 stars and 284 forks. A Google Codelab walking through a full greenfield project with Conductor went live in April 2026. This article covers everything you need to go from zero to running your first implementation track. # What Conductor Actually Is Before getting into the commands, it helps to understand the model Conductor is built on, because it changes how you think about AI-assisted development. Standard AI coding workflows are stateless. You open a session, describe what you want, the agent works, you close the session. Next time you open it, the agent remembers nothing about what you built, why you built it, or what comes next. As one Google Cloud developer put it, the model is \"transient, forgetful, and a bit of a cowboy.\" Conductor solves this by making context a managed artifact. Instead of describing your project fresh every session, you maintain a set of Markdown files that do that job permanently. The agent reads them on every run. Your coding standards are always loaded. Your product goals are always in scope. The feature plan is always visible. Google's announcement post invokes Benjamin Franklin's \"",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai",
+        "machine learning",
+        "gemini",
+        "agent",
+        "nlp",
+        "computer vision"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Gemini"
+      ],
+      "competitors": [
+        "GCP"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Getting Started with Conductor for Gemini CLI - KDnuggets Blog Top Posts About Topics AI Career Advice Computer Vision Data Engineering Data Science Language Models Machine Learning MLOps NLP Programming Python SQL Datasets Events Resources Cheat Sheets Recommendations Tech Briefs Advertise Join Newsletter Getting Started with Conductor for Gemini CLI Conductor is a Gemini CLI extension built to fix your context problems.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 3.3,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Getting Started with Conductor for Gemini CLI」（Getting Started with Conductor for Gemini CLI - KDnuggets B…），涉及 Agent / Go / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「Getting Started with Conductor for Gemi…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Getting Started with Conductor for Gemini CLI - KDnuggets Blog Top…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Getting Started with Conductor for Gemini CLI. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Getting Started with Conductor for Gemini CLI - KDnuggets Blog Top…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Getting Started with Conductor for Gemini CLI. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Getting Started with Conductor for Gemini CLI - KDnuggets Blog Top…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Getting Started with Conductor for Gemini CLI. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Getting Started with Conductor for Gemini CLI - KDnuggets Blog Top…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Getting Started with Conductor for Gemini CLI. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Gemini CLI 的 Conductor 入门"
+  },
+  {
+    "source": "One Useful Thing",
+    "title": "<![CDATA[The twilight of the chatbots]]>",
+    "url": "https://www.oneusefulthing.org/p/the-twilight-of-the-chatbots",
+    "time": "Tue, 30 Jun 2026 22:18:12 GMT",
+    "heat": "",
+    "summary": "If you feel like things are accelerating in AI, you are probably right. Better AI models from the leading American AI labs have been releasing more quickly than ever (though government interventions stopped access temporarily to two of the most powerful models, Claude Fable and GPT-5.6). But it isn'...",
+    "developer_name": "Ethan Mollick",
+    "content": "The twilight of the chatbots - by Ethan Mollick One Useful Thing Subscribe Sign in The twilight of the chatbots How work changes along the exponential Ethan Mollick Jun 30, 2026 687 90 61 Share If you feel like things are accelerating in AI, you are probably right. Better AI models from the leading American AI labs have been releasing more quickly than ever (though government interventions stopped access temporarily to two of the most powerful models, Claude Fable and GPT-5.6). But it isn't just release timing. The evidence points to accelerating capability gains as well (though the frontier stays jagged, and AIs remain weak in many places). This is especially obvious when we look at the ability of AIs to do real work. There are a few good assessments that try to measure how much human work AIs can do. Two of the most famous, from METR and the UK’s official government AI Security Institute , estimate the amount of human programmer hours’ worth of effort the AI can do with a single prompt. GDPval compares human experts in many fields to AI performance using professional judges. They are all increasing at a better than exponential rate. Another organization doing similar experiments, Epoch , recently found Opus 4.7, working on its own for 14 hours, was able to build a software package that would take 2-17 weeks of human engineering work (it cost $251 in tokens). Again, AI systems cannot pass every test, nor are they always cheap to run, but they are definitely improving at a very rapid rate. In my own experiments , I found Fable was able to work autonomously for 9 hours to execute on very complex software projects that would have taken a team well over a week to do. So far, I have focused on the frontier models, those with the highest “intelligence.” They are made by three American companies — Anthropic, OpenAI, and Google (though it has been a while since Google has released a new model). But there is a second set of near-frontier AI models that typically lag 6-12 months behind the frontier, all of which are from China. These are open weights models, which means that anyone can use or modify them after release (as opposed to the frontier models which are proprietary). That makes them quite cheap to operate. They, too, are climbing up an exponential improvement curve, though lagging the American closed models. You can see this in my graph of AI performance in a test called AA-Briefcase , which simulates a complex multi-week consulting engagement where AI has to do many kinds of analysis. The open-weights Chinese models (other countries produce open weights models, but none are near the frontier) are on their own exponential curve, behind closed US models But abstract graphs only get you so far, and they can hide how jagged the frontier is (and also the fact that the open weights models, while very impressive, do not always perform as well as their benchmarks would indicate). To get real insight, you need to try using AI for different use cases and ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "claude",
+        "prompt",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "观点评论",
+      "topic_type": "行业观察",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "正向推广",
+      "detail_brief": "If you feel like things are accelerating in AI, you are probably right. Better AI models from the leading American AI labs have been releasing more quickly than ever (though government interventions stopped access temporarily to two of the most powerful models, Claude Fable and GPT-5. But it isn'.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 3.0,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "观点评论"
+      ],
+      "editorial_angles_text": "观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（行业观察文章）",
+        "X（摘要快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "editorial_brief": "话题类型：行业观察\n可用角度：「<![CDATA[The twilight of the chatbots]]>」（If you feel like things are accelerating in AI, you are pro…）\n优先级：P2 观察中（可择机再发）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "social_recommendation": "「<![CDATA[The twilight of the chatbots]]>」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "If you feel like things are accelerating in AI, you are probably ri…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "<![CDATA[The twilight of the chatbots]]>. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：If you feel like things are accelerating in AI, you are probably ri…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[The twilight of the chatbots]]>. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。If you feel like things are accelerating in AI, you are probably ri…。如果用官方号发，建议主推 人工判断场景，重点讲 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[The twilight of the chatbots]]>. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：If you feel like things are accelerating in AI, you are probably ri…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[The twilight of the chatbots]]>. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[聊天机器人的黄昏]]>"
+  },
+  {
+    "source": "One Useful Thing",
+    "title": "<![CDATA[What it feels like to work with Mythos]]>",
+    "url": "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos",
+    "time": "Tue, 09 Jun 2026 17:11:22 GMT",
+    "heat": "",
+    "summary": "I had early access to the first Mythos-class AI model being released to the public, Claude 5 Fable. Much of the discussion of Mythos has centered on its impact on software security, but I tested it on everything except that (the guardrails around Fable essentially prevent it from being used for cybe...",
+    "developer_name": "Ethan Mollick",
+    "content": "What it feels like to work with Mythos - by Ethan Mollick One Useful Thing Subscribe Sign in What it feels like to work with Mythos Claude Fable represents another big jump in AI Ethan Mollick Jun 09, 2026 2,147 202 219 Share I had early access to the first Mythos-class AI model being released to the public, Claude 5 Fable. Much of the discussion of Mythos has centered on its impact on software security, but I tested it on everything except that (the guardrails around Fable essentially prevent it from being used for cybersecurity at all). My conclusion is that it represents a very real leap over every model I have used before, and, maybe more important, suggests our relationship with AI is changing in drastic ways. First, how good is Fable? In experiment after experiment I conducted, it outperformed basically every other public model I have used by a considerable margin. It was capable across many problems and produced some startling results — it would work up to a dozen hours executing on multi-page specifications. I’ll walk you through a couple of more complex, and serious, use cases shortly, but you could see the general improvement across the board on every task. The problem about communicating this in a post is that many of the most impressive results are going to be interesting to only small portions of my readers. For example, it made the most sophisticated academic social science paper I have yet seen from an AI from a single prompt and one piece of feedback. It also created a 10-page epic rhyming poem about a haircut where every word starts with the letter s. So, as a more accessible and entertaining example, I also had it create a bunch of games you can try. All of these are one initial prompt in Claude Code where Fable had to take my vague prompts and generate something workable, followed by a couple of additional prompts with minor encouragement (“make it better”) or feedback. What makes these especially impressive is that Claude cannot generate images, so every piece of art or 3D object was made with math alone, not using any external assets. You can try any of them: a game about flipping coins (prompt: “Balatro, but for the game of coin flips”) that is quite fun; a snake game where the snake is self-aware and crazy things happen; or a game about descending into the depths to see what is there. So the output is impressive. But, especially as I turned to more serious projects, I often felt using the tool was somewhere between delightful and unnerving. Delightful because I just asked for something at it happened. And also unnerving because I just asked for something and it happened. Maps and Methods To see why, it helps to understand the way in which Fable gets work done, and for that I want to turn to an example I have tested on many previous AI models: building an isochrone map. This is a map that shows the distance you can travel in a given length of time, and the first one was created in 1881 showing travel times from London. The o",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "学术研究",
+      "topic_type": "研究前沿",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "3D Generation"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "I had early access to the first Mythos-class AI model being released to the public, Claude 5 Fable. Much of the discussion of Mythos has centered on its impact on software security, but I tested it on everything except that (the guardrails around Fable essentially prevent it from being used for cybe.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 4.1,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "「<![CDATA[What it feels like to work wit」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「<![CDATA[What it feels like to work wit」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[What it feels like to work wit」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "产品关联（CodeBuddy）",
+        "研究解读"
+      ],
+      "editorial_angles_text": "产品关联（CodeBuddy） + 研究解读",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（发观点总结文章）",
+        "X（论文快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（发观点总结文章） + X（论文快讯分享）",
+      "editorial_brief": "话题类型：研究前沿\n可用角度：「<![CDATA[What it feels like to work with Mythos]]>」（I had early access to the first Mythos-class AI model being…），涉及 3D Generation → 可写方向：「<![CDATA[What it feels like to work wit」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式…\n优先级：P2 观察中（可择机再发）\n适合平台：LinkedIn（发观点总结文章） + X（论文快讯分享）",
+      "social_recommendation": "「<![CDATA[What it feels like to work wit…」讨论 AI 编程工具话题，可以自然切入 CodeBuddy 做产品推荐。P2 观察中（可择机再发），推荐平台：LinkedIn（发观点总结文章） + X（论文快讯分享）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「<![CDATA[What it feels like to work wit」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（I had early access to the first Mythos-class AI model being released to the pub…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「<![CDATA[What it feels like to work wit」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（I had early access to the first Mythos-class AI model being released to the pub…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "I had early access to the first Mythos-class AI model being release…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "<![CDATA[What it feels like to work with Mythos]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：I had early access to the first Mythos-class AI model being release…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 产品关联（CodeBuddy） + 研究解读。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[What it feels like to work with Mythos]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around product tie-in (CodeBuddy) + research takeaway. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。I had early access to the first Mythos-class AI model being release…。如果用官方号发，建议主推 CodeBuddy，重点讲 产品关联（CodeBuddy） + 研究解读，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[What it feels like to work wit」涉及开发者效率话题 — CodeBuddy 提供从需求规划到代码发布的一站式 AI 编码体验，可以作为开发效率提升的具体工具推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[What it feels like to work with Mythos]]>. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on product tie-in (CodeBuddy) + research takeaway.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：I had early access to the first Mythos-class AI model being release…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 产品关联（CodeBuddy） + 研究解读。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[What it feels like to work with Mythos]]>. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on product tie-in (CodeBuddy) + research takeaway. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[与 Mythos 合作的感觉]]>"
+  },
+  {
+    "source": "One Useful Thing",
+    "title": "<![CDATA[Co-Existence and the End of Co-Intelligence]]>",
+    "url": "https://www.oneusefulthing.org/p/co-existence-and-the-end-of-co-intelligence",
+    "time": "Thu, 04 Jun 2026 21:13:42 GMT",
+    "heat": "",
+    "summary": "It has been two years since Co-Intelligence , my book about AI, was published, and it was successful beyond what I could have hoped (it was a New York Times bestseller and has been translated into 25+ languages, with the biggest markets being the Netherlands and Korea). I don’t think the book is out...",
+    "developer_name": "Ethan Mollick",
+    "content": "Co-Existence and the End of Co-Intelligence One Useful Thing Subscribe Sign in Co-Existence and the End of Co-Intelligence Also: how pitch a book to an AI! Ethan Mollick Jun 04, 2026 902 119 77 Share It has been two years since Co-Intelligence , my book about AI, was published, and it was successful beyond what I could have hoped (it was a New York Times bestseller and has been translated into 25+ languages, with the biggest markets being the Netherlands and Korea). I don’t think the book is out-of-date, exactly, but it was written about a world of chatbots and earlier AI models. In that world, working with an AI was a cooperative exercise, involving prompting a chatbot back-and-forth, adding your own knowledge and skepticism as you went. Humans were at the center, chatbots were your helpers. But this kind of co-intelligence was never the long-term vision of AI companies. Their goal has always been, for better or worse, to build what the OpenAI charter calls “highly autonomous systems that outperform humans at most economically valuable work.” They wanted to build self-directed AI agents, which felt distant… until suddenly, it wasn’t. In late 2025, we got the first real coding agents, and in the last couple of days, we learned about some of their impact. One study suggested they led to seventeen times more code being written and today Anthropic reported that AI now writes 80% of its code, with each developer shipping 8x more. Software development is changing, and what is happening in coding is going to be happening in many fields. There are now important areas of work where AI outperforms humans, and yet, AI is far from perfect. Given the jagged frontier of AI ability, the complexities of AI adoption, and the limitations of AI, I believe there is still a lot of room for humans to not just use AI, but to use AI to thrive. So, I decided to write a new book: Co-Existence, about how to work with AI that is sometimes, but not always, better than you . It comes out October 20, and you can pre-order it here (which I would really appreciate, and it comes with a pre-order bonus to be named later). I also get to show you the cover, which has a fun reference to recent AI history. Have you spotted it yet? Co-existing as an author The first question you might ask is how did I work with AI as I wrote this book? I think the results are pretty indicative of the state of AI today. Sometimes I used AI a lot, sometimes very little, and sometimes I had to let the AI do what it wanted. So let me get this out of the way first: yes, I wrote the book. I assume you wanted to read it because you wanted to know what I, a human author doing research on the subject, thinks about AI. Similarly, I only wanted to write this book so that I could share my authentic views about AI in my voice. Your expectations and my own create an underlying contract that is even more important than the abilities of AI systems. But it isn’t just that: AI is not a great long-form writer. It has di",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "It has been two years since Co-Intelligence , my book about AI, was published, and it was successful beyond what I could have hoped (it was a New York Times bestseller and has been translated into 25+ languages, with the biggest markets being the Netherlands and Korea). I don’t think the book is out.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 2.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[Co-Existence and the End of Co-Intellige…」（It has been two years since Co-Intelligence , my book about…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「<![CDATA[Co-Existence and the End of Co…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "It has been two years since Co-Intelligence , my book about AI, was…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "<![CDATA[Co-Existence and the End of Co-Intelligence]]>. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：It has been two years since Co-Intelligence , my book about AI, was…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[Co-Existence and the End of Co-Intelligence]]>. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。It has been two years since Co-Intelligence , my book about AI, was…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[Co-Existence and the End of Co-Intelligence]]>. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：It has been two years since Co-Intelligence , my book about AI, was…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[Co-Existence and the End of Co-Intelligence]]>. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[共存与共同智能的终结]]>"
+  },
+  {
+    "source": "Ben's Bites",
+    "title": "<![CDATA[How to use GPT-5.6]]>",
+    "url": "https://www.bensbites.com/p/how-to-use-gpt-56",
+    "time": "Tue, 14 Jul 2026 13:01:24 GMT",
+    "heat": "",
+    "summary": "Hey folks, OpenAI finally released the GPT-5.6 models to everyone , with many product changes. ChatGPT’s macOS app and the Codex app are now merged, with a new mode called ChatGPT Work . You can update your Codex app and get the new combined app. Codex and Work look similar, with the details fine-tu...",
+    "developer_name": "",
+    "content": "How to use GPT-5.6 - Ben's Bites Subscribe Sign in How to use GPT-5.6 new desktop app and hosted sites in ChatGPT Jul 14, 2026 62 1 Share Hey folks, OpenAI finally released the GPT-5.6 models to everyone , with many product changes. ChatGPT’s macOS app and the Codex app are now merged, with a new mode called ChatGPT Work . You can update your Codex app and get the new combined app. Codex and Work look similar, with the details fine-tuned for coding-related vs non-coding-related work. There’s a new plugin called “ChatGPT Sites” that lets you build hosted websites with an optional “Login with ChatGPT” feature. It’s nice for sharing but kept annoying me by making everything that I ask on ChatGPT Sites, so I turned it off. GPT-5.6 series has three models: Luna, Terra and Sol. Each of them comes with 5 thinking levels - light, medium, high, xhigh, max, and a new mode: Ultra mode. Ultra mode basically allows these models to go haywire with subagents. Now… these models eat up your usage limits much faster when used at higher thinking levels. So don’t rip ultra; first time I’ve ever been nearly out of usage in Codex. I’m defaulting to sol medium for most building/creativity, background agents for harder tasks and day-to-day productivity using luna xhigh. Some general patterns I’ve noticed: Sol is pretty good at UI, but it’s even better once you give it some references. Sol at Max thinking has really good writing, and it’s fun to chat with. Terra feels like a replacement for 5.5 with minor improvements in UI and writing skills. It also feels more steerable, so skills would be useful with it. Luna has a bit of a mini model smell, like sometimes it doesn’t “get” what you meant in ambiguous prompts. But it doesn’t fail at tasks you clearly define. Over the weekend, OpenAI reset usage 4-5 times while they were fixing bugs introduced during the app merge, and they have temporarily removed the 5h limit on your usage. Take note of that because you might end up using up your weekly limits in one go. These models in the Codex app are really good at Computer Use, i.e., self-driving your cursor so it can open apps, click buttons, and use them by looking at the screen. You should definitely try this with Sol medium/high for some small task to see it in action. Further reading: Sol helped post-train Luna . Train a model on your iMessages . Using GPT-5.6 without burning limits . Ben’s Bites is brought to you by Voices Building or training voice models? Stop scraping. Voices has professionally directed, fully consented voice data ready now—part of 100,000+ hours of custom, premium data. Character performances, 43 emotional states, 8 languages. Request a sample today . Headlines Anthropic again extended Fable 5 on paid plans and Claude Code’s 50% higher weekly limits through July 19. This feels like a joke at this point. Claude Code got an in-app browser - let Claude open and click through docs, designs or your app. Claude Code Artifacts now support public links and mult",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "gpt",
+        "chatgpt",
+        "claude",
+        "fine-tune",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Fine-tuning",
+        "Go"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Hey folks, OpenAI finally released the GPT-5. 6 models to everyone , with many product changes. ChatGPT’s macOS app and the Codex app are now merged, with a new mode called ChatGPT Work . You can update your Codex app and get the new combined app.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 4.7,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "「<![CDATA[How to use GPT-5.6]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「<![CDATA[How to use GPT-5.6]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[How to use GPT-5.6]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[How to use GPT-5.6]]>」（Hey folks, OpenAI finally released the GPT-5. 6 models to e…），涉及 Fine-tuning / Go → 可写方向：「<![CDATA[How to use GPT-5.6]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「<![CDATA[How to use GPT-5.6]]>」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「<![CDATA[How to use GPT-5.6]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Hey folks, OpenAI finally released the GPT-5. 6 models to everyone , with many…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「<![CDATA[How to use GPT-5.6]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Hey folks, OpenAI finally released the GPT-5. 6 models to everyone , with many…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Hey folks, OpenAI finally released the GPT-5. 6 models to everyone…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "<![CDATA[How to use GPT-5.6]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Hey folks, OpenAI finally released the GPT-5. 6 models to everyone…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[How to use GPT-5.6]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Hey folks, OpenAI finally released the GPT-5. 6 models to everyone…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[How to use GPT-5.6]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[How to use GPT-5.6]]>. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Hey folks, OpenAI finally released the GPT-5. 6 models to everyone…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[How to use GPT-5.6]]>. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[如何使用GPT-5.6]]>"
+  },
+  {
+    "source": "Ben's Bites",
+    "title": "<![CDATA[Grok x Cursor]]>",
+    "url": "https://www.bensbites.com/p/grok-x-cursor",
+    "time": "Thu, 09 Jul 2026 13:02:45 GMT",
+    "heat": "",
+    "summary": "Hey folks, Anthropic extended access to Fable 5 via Claude subscriptions until July 12. Same deal as before: up to 50% of your weekly limits, and after July 12, use prepaid usage credits. But this dangling-a-carrot move doesn’t make me trust their deadlines anymore. Otoh, OpenAI announced that GPT-5...",
+    "developer_name": "",
+    "content": "Grok x Cursor - Ben's Bites Subscribe Sign in Grok x Cursor More Fable, GPT-5.6 and new ChatGPT voice Jul 09, 2026 55 Share Hey folks, Anthropic extended access to Fable 5 via Claude subscriptions until July 12. Same deal as before: up to 50% of your weekly limits, and after July 12, use prepaid usage credits. But this dangling-a-carrot move doesn’t make me trust their deadlines anymore. Otoh, OpenAI announced that GPT-5.6 models (Sol, Terra and Luna) will be live for all users later today. General feedback on X (from early testers) is that Sol is not smarter than Fable but is so much more reliable that you would not want to use anything else. Well, let’s see. Ben’s Bites is brought to you by Flodesk Most AI tools generate emails for you. Flodesk Studio designs with you — describe what you want, get a beautiful on-brand email in seconds, then refine in chat or perfect by hand. Real designer foundations, AI-accelerated, finished by you. Try it. Headlines We have a good Grok model - Grok 4.5 . SpaceXAI and Cursor trained it together, and it’s an Opus-class model. It should perform roughly in between Opus 4.7 and 4.8. But it’s much cheaper on a per-token basis and token-efficient—making it 6x cheaper than Opus models and 3x cheaper than GPT-5.5. It’s available in Cursor with increased limits and via API too . ChatGPT Voice is finally getting some new models - GPT-Live-1 and Live-1-mini . A new architecture lets these models a) talk while you’re still speaking without cutting your message off and b) use GPT-5.5 in the background. Results in much smoother conversations and a big jump in intelligence from the old advanced voice mode. A lighter version of Claude Cowork will work on web and mobile - sessions will run remotely and save to your account, so you can kick off a task on the laptop, close it, and check in from your phone. Cowork on the desktop app remains the full deal. Beta rolls out over the coming weeks. Muse Image and Video - New multimedia generation models from Meta. The images have more of an AI look, but the model seems good at image editing and text rendering, and can search the web to get facts right, etc. They also have a video model in preview that will be released soon. Subscribe My feed Render Workflows - D efine long-running tasks with a lightweight SDK that handles queuing, orchestration, & retries. Try it - use code RENDER-BENSBITES for $50 in credits.* Cognition released SWE-1.7 - its strongest model yet, near the top frontier models at lower cost, and available at 1000 tok/s. Cloudflare Drop - drag a folder into the browser, get a live site, no account needed. Toya - Executive assistant that lives in iMessage, calls your phone, knows you and your work. (i’m an investor; check them out on Product Hunt and Twitter ) Ora Directory - search the web for tools and resources agents can use. 64 Claudes rewrote Bun in Rust in just 11 days. Spatial context in Clicky - draw on your screen so the model knows exactly where to look. LoginW",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloudflare",
+        "render"
+      ],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "chatgpt",
+        "claude",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [
+        "Cloudflare"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Rust",
+        "TypeScript"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Hey folks, Anthropic extended access to Fable 5 via Claude subscriptions until July 12. Same deal as before: up to 50% of your weekly limits, and after July 12, use prepaid usage credits. But this dangling-a-carrot move doesn’t make me trust their deadlines anymore. Otoh, OpenAI announced that GPT-5.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 3.5,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[Grok x Cursor]]>」（Hey folks, Anthropic extended access to Fable 5 via Claude…），涉及 Rust / TypeScript → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「<![CDATA[Grok x Cursor]]>」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Hey folks, Anthropic extended access to Fable 5 via Claude subscrip…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "<![CDATA[Grok x Cursor]]>. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Hey folks, Anthropic extended access to Fable 5 via Claude subscrip…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[Grok x Cursor]]>. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Hey folks, Anthropic extended access to Fable 5 via Claude subscrip…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[Grok x Cursor]]>. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Hey folks, Anthropic extended access to Fable 5 via Claude subscrip…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[Grok x Cursor]]>. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[Grok x 光标]]>"
+  },
+  {
+    "source": "Ben's Bites",
+    "title": "<![CDATA[My thoughts on Fable]]>",
+    "url": "https://www.bensbites.com/p/my-thoughts-on-fable",
+    "time": "Tue, 07 Jul 2026 13:04:10 GMT",
+    "heat": "",
+    "summary": "Hey folks, I’ve been using Fable quite a bit since it came back (but not for long…) and I’ve barely used it to do any building. I like Anthropic’s models mostly for their thinking, they’re resourceful, creative and can connect things I often can’t put my finger on. So Fable’s been a bit of a therapi...",
+    "developer_name": "",
+    "content": "My thoughts on Fable - Ben's Bites Subscribe Sign in My thoughts on Fable what I want from a harness Jul 07, 2026 40 Share Hey folks, I’ve been using Fable quite a bit since it came back (but not for long…) and I’ve barely used it to do any building. I like Anthropic’s models mostly for their thinking, they’re resourceful, creative and can connect things I often can’t put my finger on. So Fable’s been a bit of a therapist/thinking partner this past week. But it feels slightly different this time. It could be me, but it has shown me a bunch of Opus-like traits in how it’s talking or thinking. And it’s not because my prompts are being routed to Opus (I checked). I’m excited to see GPT 5.6 come out, I think this week, to see if they’ve finally cracked the creativity/thinking vibe I’m after. Codex is a materially better product than Claude Code (or Cowork). And it’s super fast. As usual, I’m using a square peg for a round hole - a coding agent with a coding brain for creative thinking and brainstorming. But I do change the system prompt of Claude Code to a simpler one that is much faster and much less steered. I’m wanting a harness that can still build but is less of a developer at heart, and more something to really spar with me on creative thinking. I sometimes flit to plain Claude for different perspectives, but that doesn’t seem to cut it either. I’ve tried skills, prompts, and harnesses but nothing seems to get me what I want. Which is something I keep thinking through when I want to make something…what do I actually want?! Today that question comes up for me a lot, and I keep convincing myself I’ll only know when I see it, so I need to stay ‘in the work’ before it’ll present itself. But equally, this could be AI having an impact on me - if anything can be generated at any moment, just cycle through until you see what you want. Just keep spinning that wheel. Seems healthy? 😅 Ben’s Bites is brought to you by Adobe Firefly Adobe Firefly expands agentic capabilities with: brand kit creation (describe your style, brand name, and color palette and let it go to work), short product video creation, Quick Cut (auto-assemble video footage into a polished cut), storyboards (visualize and sequence ideas before production). Headlines Today is the last day of Fable being available in your Claude subscriptions (atleast for now). You will have to buy usage credits for using Fable starting tomorrow. So everyone has a guide to get the max out of this one day: Use Fable to find your unknowns - Thariq (from Anthropic) Let Fable use its judgement - Simon Willison I’ve mostly used a single long chat with Fable this entire week. The way it uses memory, compaction, and writing to files is amazing. I’m making it use codex and droid as subagents A LOT. So much that I’m running out on my Codex usage faster than my Claude Code usage. — Keshav Theo’s video on how he has used Fable is a good watch to reimagine how you should use the newer generation of AI models, because re",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "claude",
+        "agent",
+        "prompt",
+        "anthropic",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Hey folks, I’ve been using Fable quite a bit since it came back (but not for long…) and I’ve barely used it to do any building. I like Anthropic’s models mostly for their thinking, they’re resourceful, creative and can connect things I often can’t put my finger on. So Fable’s been a bit of a therapi.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 4.7,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "「<![CDATA[My thoughts on Fable]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「<![CDATA[My thoughts on Fable]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[My thoughts on Fable]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[My thoughts on Fable]]>」（Hey folks, I’ve been using Fable quite a bit since it came…），涉及 Agent / Go → 可写方向：「<![CDATA[My thoughts on Fable]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→…\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「<![CDATA[My thoughts on Fable]]>」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「<![CDATA[My thoughts on Fable]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Hey folks, I’ve been using Fable quite a bit since it came back (but not for lo…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「<![CDATA[My thoughts on Fable]]>」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（Hey folks, I’ve been using Fable quite a bit since it came back (but not for lo…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Hey folks, I’ve been using Fable quite a bit since it came back (bu…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "<![CDATA[My thoughts on Fable]]>. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Hey folks, I’ve been using Fable quite a bit since it came back (bu…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[My thoughts on Fable]]>. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Hey folks, I’ve been using Fable quite a bit since it came back (bu…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「<![CDATA[My thoughts on Fable]]>」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[My thoughts on Fable]]>. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Hey folks, I’ve been using Fable quite a bit since it came back (bu…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[My thoughts on Fable]]>. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[我对寓言的看法]]>"
+  },
+  {
+    "source": "Interconnects",
+    "title": "<![CDATA[6 months to live for open models]]>",
+    "url": "https://www.interconnects.ai/p/6-months-to-live-for-open-models",
+    "time": "Sun, 12 Jul 2026 16:47:42 GMT",
+    "heat": "",
+    "summary": "The most serious test to date of open source AI’s viability is happening right now. I’ve seen many waves of anti open-source AI rhetoric come and go since ChatGPT was launched, but none of them had obvious analogues in their potential enforcement to real action already in place targeting the peer, c...",
+    "developer_name": "Nathan Lambert",
+    "content": "6 months to live for open models - by Nathan Lambert Subscribe Sign in 6 months to live for open models Staring down the barrel of policy action that could make open models a permanent second class citizen. Nathan Lambert Jul 12, 2026 ∙ Paid 74 6 15 Share Upgrade to paid to play voiceover The most serious test to date of open source AI’s viability is happening right now. I’ve seen many waves of anti open-source AI rhetoric come and go since ChatGPT was launched, but none of them had obvious analogues in their potential enforcement to real action already in place targeting the peer, closed models of the day. It is more real because new forms of regulation are being tested and implemented, with minimal oversight. I will be doing far more policy-facing writing than usual until this passes. As of writing this, many sources are citing White House discussions on how to manage open models via a new executive order. There is no official information here, and it would likely impact a) Chinese-origin models and b) government uses only, but this is how the dominoes start to fall. Open models lack the central economic champion to represent the potential downside of action against them. From recent coverage of the events surrounding model licensing agreements for Fable (and then GPT-5.6), more was said about what unfolded on June 9th: At the meeting, the topic of how the program will deal with open-source AI models came up, according to a person familiar with the session. A representative from Reflection AI, a U.S.-based open-source model provider, argued that open-source models should have exemptions from the framework based on their capabilities, the person said. Currently, Chinese open-source models such as DeepSeek have a substantial lead over other available open models, and Reflection has not yet launched a public model. A ban of any form here would be a big mistake for the long-term trajectory of AI. The most likely incoming action is to ban or indefinitely delay any open-weights model meaningfully above the capability level in the range of GPT 5.5, Claude Opus 4.8, or GLM-5.2 . With the consistent capability gap , this should be within the next 6 months. As it stands, these would most likely be from a Chinese company, which is how this conversation of frontier open model capabilities inextricably becomes linked to other issues such as distillation. The capability threshold for a “right to review” from the government will shift over time, but once in place will likely progress far slower for open models rather than their closed counterparts. This is partially due to closed models being easier to secure but also due to the closed model companies having far more effective lobbying. So, this leaves us in a place where there are two crucial policy discussions unfolding at once impacting open models – distillation & frontier capabilities. They’re very different in their nature, the necessity of response, and the potential response space. Still, together the",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "chatgpt",
+        "claude",
+        "deepseek"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Go"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "The most serious test to date of open source AI’s viability is happening right now. I’ve seen many waves of anti open-source AI rhetoric come and go since ChatGPT was launched, but none of them had obvious analogues in their potential enforcement to real action already in place targeting the peer, c.",
+      "heat_score": 1.0,
+      "timeliness_score": 5.0,
+      "composite_score": 3.0,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「<![CDATA[6 months to live for open models]]>」（The most serious test to date of open source AI’s viability…），涉及 Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）",
+      "social_recommendation": "「<![CDATA[6 months to live for open mode…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用话题核心观点的金句图 + 数据可视化（如果有数据），避免使用通用的产品截图拼接。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "The most serious test to date of open source AI’s viability is happ…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "<![CDATA[6 months to live for open models]]>. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：The most serious test to date of open source AI’s viability is happ…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: <![CDATA[6 months to live for open models]]>. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。The most serious test to date of open source AI’s viability is happ…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. <![CDATA[6 months to live for open models]]>. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：The most serious test to date of open source AI’s viability is happ…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: <![CDATA[6 months to live for open models]]>. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "<![CDATA[开放模型的生存期为 6 个月]]>"
+  }
+]
