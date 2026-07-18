@@ -1,10 +1,3 @@
-# 📋 产品 Draft 汇总 — 2026-07-18
-
-> 共 3 个产品的 P0/P1 内容草稿
-> 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
-
----
-
 # CodeBuddy — 今日内容 (4 条)
 
 ## 1. P1 本周发 · github/copilot-sdk
@@ -58,36 +51,3 @@
 *参考: [kimi k3 买的 199 会员，终于有随便用的感觉了](https://www.v2ex.com/t/1228031)*
 
 ---
-
-
-# ES — 今日内容 (1 条)
-
-## 1. P0 今天发 · codecrafters-io/build-your-own-x
-
-**写什么**: 从 build-your-own-x 的搜索/检索场景出发
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🔥 "codecrafters-io/build-your-own-x" — **build-your-own-x** 涉及 RAG 检索 — 腾讯云 ES 支持向量搜索 + BM25 混合检索，可. Check out Tencent Cloud ES for a production-ready solution. #TencentCloud #CloudComputing
-
-*参考: [codecrafters-io/build-your-own-x](https://github.com/codecrafters-io/build-your-own-x)*
-
----
-
-
-# Hunyuan — 今日内容 (1 条)
-
-## 1. P0 今天发 · HenryNdubuaku/maths-cs-ai-compendium
-
-**写什么**: 围绕 maths-cs-ai-compendium 的核心功能（HenryNdubuaku/maths-cs-ai-compendium: Become a c
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🧠 "HenryNdubuaku/maths-cs-ai-compendium" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
-
-*参考: [HenryNdubuaku/maths-cs-ai-compendium](https://github.com/HenryNdubuaku/maths-cs-ai-compendium)*
-
----
-
