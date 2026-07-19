@@ -1,0 +1,1007 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "Robbyant/lingbot-map - A feed-forward 3D foundation model for reconstructing scenes from streaming data",
+    "url": "https://github.com/Robbyant/lingbot-map",
+    "heat": "13,053 stars",
+    "time": "Today",
+    "developer_name": "Robbyant",
+    "developer_url": "https://github.com/Robbyant",
+    "developer_email": "",
+    "today_stars": "831 stars today",
+    "language": "Python",
+    "summary": "A feed-forward 3D foundation model for reconstructing scenes from streaming data",
+    "content": " \n   \n\n LingBot-Map: Geometric Context Transformer for Streaming 3D Reconstruction \n\nRobbyant Team\n\n \n\n \n\n[](https://arxiv.org/abs/2604.14141)\n[](lingbot-map_paper.pdf)\n[](https://technology.robbyant.com/lingbot-map)\n[](https://huggingface.co/robbyant/lingbot-map)\n[](https://www.modelscope.cn/models/Robbyant/lingbot-map)\n[](LICENSE.txt)\n\n \n\nhttps://github.com/user-attachments/assets/fe39e095-af2c-4ec9-b68d-a8ba97e505ab\n\n-----\n\n### 🗺️ Meet LingBot-Map! We've built a feed-forward 3D foundation model for streaming 3D reconstruction! 🏗️🌍\n\nLingBot-Map has focused on:\n\n- **Geometric Context Transformer**: Architecturally unifies coordinate grounding, dense geometric cues, and long-range drift correction within a single streaming framework through anchor context, pose-reference window, and trajectory memory.\n- **High-Efficiency Streaming Inference**: A feed-forward architecture with paged KV cache attention, enabling stable inference at ~20 FPS on 518×378 resolution over long sequences exceeding 10,000 frames.\n- **State-of-the-Art Reconstruction**: Superior performance on diverse benchmarks compared to both existing streaming and iterative optimization-based approaches.\n\n---\n\n## 📑 Table of Contents\n\n \n Click to expand \n\n- 📰 News\n- 📋 TODO\n- ⚙️ Installation\n- 📦 Model Download\n- 🚀 Quick Start\n- 🎬 Interactive Demo (`demo.py`)\n  - Try the Example Scenes\n  - Streaming with Keyframe Interval\n  - Windowed Inference (for long sequences, >3000 frames)\n  - Sky Masking\n  - Visualization Options\n  - Performance & Memory\n- 🎥 Offline Rendering Pipeline (`demo_render/batch_demo.py`)\n- 📜 License\n- 📖 Citation\n- ✨ Acknowledgments\n\n \n\n---\n\n## 📰 News\n\n- **2026-06-28** — Fixed an SDPA KV cache bug. **The SDPA backend now performs better on long sequences**. We still recommend the FlashInfer backend for the best performance.\n- **2026-05-25** — 📊 **Evaluation benchmark released**. We released the evaluation scripts for KITTI and Oxford Spires — see benchmark/ for the pipeline, and run `preprocess/oxford.py` to prepare Oxford Spires data before evaluation.\n- **2026-04-29** — 📹 **Long-video demo released**. We released a very-long-video example (~25 000 frames, 13-minute indoor walkthrough) rendered with the offline pipeline — see Worked Example for the command, flag rationale, and rendered output.\n- **2026-04-27** — 🚀 **LingBot-Map accelerated**. Pull the latest `main` and run `python demo.py --compile ...` or `python gct_profile.py --backend flashinfer --dtype bf16 --compile` to verify on your hardware.\n- **2026-04-24** — Fixed a FlashInfer KV cache bug where `--keyframe_interval > 1` silently cached non-keyframes. **You should now see better pose and reconstruction quality when running with more than 320 frames**.\n\n---\n\n## 📋 TODO\n\n- ✅ Release evaluation benchmark\n  - ✅ Oxford Spires dataset\n  - ✅ KITTI dataset\n  - ✅ VBR dataset\n  - ✅ Droid-W dataset\n  - ✅ TUM-D dataset\n  - ✅ 7-scenes dataset\n  - ✅ ETH3D dataset\n  - ✅ Tanks and Temples dataset\n  - ✅ NRGBD dataset\n- ✅ Release d",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "render"
+      ],
+      "ai_hits": [
+        "transformer",
+        "inference",
+        "huggingface"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Transformer",
+        "3D Generation",
+        "Python"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Robbyant/lingbot-map: A feed-forward 3D foundation model for reconstructing scenes from streaming data",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.4,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Robbyant/lingbot-map - A feed-forward 3D foundati…」（Robbyant/lingbot-map: A feed-forward 3D foundation model fo…），涉及 Transformer / 3D Generation / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Robbyant/lingbot-map - A feed-forward 3…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 lingbot-map 的 3D 效果展示图或 Demo 截图，展示技术效果比文字更有说服力。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 lingbot-map 的 3D 效果展示图或 Demo 截图，展示技术效果比文字更有说服力。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Robbyant/lingbot-map: A feed-forward 3D foundation model for recons…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Robbyant/lingbot-map - A feed-forward 3D foundation model for reconstructing scenes fro…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Robbyant/lingbot-map: A feed-forward 3D foundation model for recons…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Robbyant/lingbot-map - A feed-forward 3D foundation model for reconstructing scenes fro…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Robbyant/lingbot-map: A feed-forward 3D foundation model for recons…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Robbyant/lingbot-map - A feed-forward 3D foundation model for reconstructing scenes fro…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Robbyant/lingbot-map: A feed-forward 3D foundation model for recons…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Robbyant/lingbot-map - A feed-forward 3D foundation model for reconstructing scenes fro…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "lingbot-map：用于从流数据重建场景的前馈 3D 基础模型",
+    "developer_profile": {
+      "github_username": "Robbyant",
+      "profile_url": "https://github.com/Robbyant",
+      "name": "Robbyant",
+      "bio": "Intelligence in Action, Benefits for Everyone",
+      "company": "",
+      "location": "",
+      "blog": "https://technology.robbyant.com/",
+      "twitter_username": "robbyant_brain",
+      "email": "",
+      "followers": 1297,
+      "following": 0,
+      "public_repos": 10,
+      "avatar_url": "https://avatars.githubusercontent.com/u/212647524?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/robbyant_brain"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/robbyant"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "apache/ossie - Apache Ossie, industry wide specification effort to standardize how we exchange semantic metadata across analytics, AI and BI platforms, providing a vendor neutral, single source of truth for semantic data",
+    "url": "https://github.com/apache/ossie",
+    "heat": "1,303 stars",
+    "time": "Today",
+    "developer_name": "apache",
+    "developer_url": "https://github.com/apache",
+    "developer_email": "",
+    "today_stars": "47 stars today",
+    "language": "Python",
+    "summary": "Apache Ossie, industry wide specification effort to standardize how we exchange semantic metadata across analytics, AI and BI platforms, providing a vendor neutral, single source of truth for semantic data",
+    "content": " \n\n# Apache Ossie (incubating)\n\nApache Ossie is a collaborative, open-source effort dedicated to standardizing and streamlining semantic model exchange and utilization across the diverse array of tools and platforms within the data analytics, AI, and BI ecosystem. Our shared vision is to establish a common, vendor-agnostic semantic model specification, promoting unparalleled interoperability, efficiency, and collaboration among all participants. By providing a single, consistent source of truth, this vendor-agnostic standard ensures that your data's definitions and value remain consistent as they are interchanged between AI agents, BI platforms, and all other tools in your ecosystem, eliminating inconsistencies across your different tools.\n\nApache Ossie was formerly known as **Open Semantic Interchange (OSI)**.\n\nApache Ossie provides a single JSON- and YAML-based specification that any tool can read and write, addressing the semantic fragmentation common across today's data stack: the same KPI defined differently across tools, teams spending significant effort manually reconciling definitions, and AI agents producing unreliable outputs grounded in inconsistent business logic.\n\n## What's in this repository\n\n- `core-spec/` — The Ossie core specification (`spec.md`), the machine-readable schema (`spec.yaml`, `osi-schema.json`), and accompanying documentation.\n- `converters/` — Reference converters that translate between Ossie and other semantic formats (e.g., dbt, GoodData, Polaris, Salesforce).\n- `examples/` — Example semantic models, including a complete TPC-DS model.\n- `validation/` — Tooling for validating semantic models against the Ossie schema.\n- `docs/` — Project documentation and overview.\n\n## Get involved\n\n- **Contribute:** See CONTRIBUTING.md for how to propose specification changes, contribute code, and participate in the community.\n- **Roadmap:** See ROADMAP.md for current working groups, future efforts, and planned enhancements informed by community discussion.\n- **Discuss:** Join the conversation on GitHub Discussions and Issues.\n- **Join the Slack community:** Chat directly with contributors on Slack.",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "Apache Ossie, industry wide specification effort to standardize how we exchange semantic metadata across analytics, AI and BI platforms, providing a vendor neutral, single source of truth for semantic data",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「apache/ossie - Apache Ossie, industry wide specif…」（Apache Ossie, industry wide specification effort to standar…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「apache/ossie - Apache Ossie, industry w…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 ossie 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 ossie 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Apache Ossie, industry wide specification effort to standardize how…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "apache/ossie - Apache Ossie, industry wide specification effort to standardize how we e…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Apache Ossie, industry wide specification effort to standardize how…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: apache/ossie - Apache Ossie, industry wide specification effort to standardize how we e…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Apache Ossie, industry wide specification effort to standardize how…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. apache/ossie - Apache Ossie, industry wide specification effort to standardize how we e…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Apache Ossie, industry wide specification effort to standardize how…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: apache/ossie - Apache Ossie, industry wide specification effort to standardize how we e…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Apache Ossie，行业范围内的规范工作，旨在标准化我们在分析、AI 和 BI 平台之间交换语义元数据的方式，为语义数据提供供应商中立的单一事实来源",
+    "developer_profile": {
+      "github_username": "apache",
+      "profile_url": "https://github.com/apache",
+      "name": "The Apache Software Foundation",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://www.apache.org/",
+      "twitter_username": "",
+      "email": "",
+      "followers": 23478,
+      "following": 0,
+      "public_repos": 3145,
+      "avatar_url": "https://avatars.githubusercontent.com/u/47359?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "PostHog/posthog - 🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP.",
+    "url": "https://github.com/PostHog/posthog",
+    "heat": "36,640 stars",
+    "time": "Today",
+    "developer_name": "PostHog",
+    "developer_url": "https://github.com/PostHog",
+    "developer_email": "hey@posthog.com",
+    "today_stars": "338 stars today",
+    "language": "Python",
+    "summary": "🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP.",
+    "content": " \n   \n \n \n     \n     \n   \n      \n      \n \n\n \n   Docs  -  Community  -  Roadmap  -  Why PostHog?  -  Changelog  -  Bug reports \n \n\n \n   \n     \n   \n \n\n## PostHog is the open source platform for building self-driving products\n\nPostHog provides every tool you need to build a successful product, and captures all the context agents need to proactively diagnose problems, uncover opportunities, and ship fixes:\n\n- Self-driving mode: Turn signals in your product data (errors, rage clicks, failed queries, and more) into researched reports and pull requests you review and merge.\n- Product analytics: Autocapture or manually instrument event-based analytics to understand user behavior and analyze data with visualization or SQL.\n- Web analytics: Monitor web traffic and user sessions with a GA-like dashboard. Easily monitor conversion, web vitals, and revenue.\n- Session replays: Watch real user sessions of interactions with your website or mobile app to diagnose issues and understand user behavior.\n- Feature flags: Safely roll out features to select users or cohorts with feature flags.\n- Experiments: Test changes and measure their statistical impact on goal metrics. Set up experiments with no-code too.\n- Error tracking: Track errors, get alerts, and resolve issues to improve your product.\n- Logs: Ingest, search, and analyze log data alongside the rest of your product data.\n- Surveys: Ask anything with our collection of no-code survey templates, or build custom surveys with our survey builder.\n- Data warehouse: Sync data from external tools like Stripe, Hubspot, your data warehouse, and more. Query it alongside your product data.\n- Data pipelines: Run custom filters and transformations on your incoming data. Send it to 25+ tools or any webhook in real time or batch export large amounts to your warehouse.\n- AI observability: Capture traces, generations, latency, and cost for your LLM-powered app.\n- Workflows: Create workflows that automate actions or send messages to your users.\n\nYou can steer it all from Slack, web, desktop (PostHog Code), or your own editor via the MCP.\n\nBest of all, all of this is free to use with a generous monthly free tier for each tool. Get started by signing up for PostHog Cloud US or PostHog Cloud EU.\n\n## Table of Contents\n\n- PostHog is the open source platform for building self-driving products\n- Table of Contents\n- Getting started with PostHog\n  - PostHog Cloud (Recommended)\n  - Self-hosting the open-source hobby deploy (Advanced)\n- Setting up PostHog\n- Learning more about PostHog\n- Contributing\n- Open-source vs. paid\n- We’re hiring!\n\n## Getting started with PostHog\n\n### PostHog Cloud (Recommended)\n\nThe fastest and most reliable way to get started with PostHog is signing up for free to PostHog Cloud or PostHog Cloud EU. Your first 1 million events, 5k recordings, 1M flag requests, 100k exceptions, and 1500 survey responses are free every month, after which you pay based on usage.\n\n### Self-hosting the open-source hobby deploy (Advanced)",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "MCP"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.4,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「PostHog/posthog - 🦔 PostHog is the leading platfo…」（🦔 PostHog is the leading platform for building self-driving…），涉及 LLM / MCP → 可写方向：MCP 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「PostHog/posthog - 🦔 PostHog is the lead…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 posthog 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 posthog 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "🦔 PostHog is the leading platform for building self-driving product…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "PostHog/posthog - 🦔 PostHog is the leading platform for building self-driving products.…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：🦔 PostHog is the leading platform for building self-driving product…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: PostHog/posthog - 🦔 PostHog is the leading platform for building self-driving products.…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。🦔 PostHog is the leading platform for building self-driving product…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. PostHog/posthog - 🦔 PostHog is the leading platform for building self-driving products.…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：🦔 PostHog is the leading platform for building self-driving product…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: PostHog/posthog - 🦔 PostHog is the leading platform for building self-driving products.…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "🦔 PostHog 是构建自动驾驶产品的领先平台。我们的开发人员工具——人工智能可观察性、分析、会话重放、标记、实验、错误跟踪、日志等——捕获代理诊断问题、发现机会和发布修复所需的所有上下文。",
+    "developer_profile": {
+      "github_username": "PostHog",
+      "profile_url": "https://github.com/PostHog",
+      "name": "PostHog",
+      "bio": "The single platform to analyze, test, observe, and deploy new features",
+      "company": "",
+      "location": "San Francisco, California",
+      "blog": "https://posthog.com",
+      "twitter_username": "PostHog",
+      "email": "hey@posthog.com",
+      "followers": 2050,
+      "following": 0,
+      "public_repos": 356,
+      "avatar_url": "https://avatars.githubusercontent.com/u/60330232?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/PostHog"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "ibelick/ui-skills - Skills for Design Engineers",
+    "url": "https://github.com/ibelick/ui-skills",
+    "heat": "5,106 stars",
+    "time": "Today",
+    "developer_name": "ibelick",
+    "developer_url": "https://github.com/ibelick",
+    "developer_email": "",
+    "today_stars": "123 stars today",
+    "language": "TypeScript",
+    "summary": "Skills for Design Engineers",
+    "content": "# UI Skills\n\nSkills for Design Engineers\n\nMore on ui-skills.com\n\nRun `npx ui-skills start` to route your agent through the right UI skill set for the task.\n\n## CLI\n\n```bash\nnpx ui-skills\nnpx ui-skills start\nnpx ui-skills categories\nnpx ui-skills list --category motion\nnpx ui-skills get baseline-ui\n```\n\n## License\n\nLicensed under the MIT license.",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "其他",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "ibelick/ui-skills: Skills for Design Engineers",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.3,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普"
+      ],
+      "editorial_angles_text": "技术科普",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「ibelick/ui-skills - Skills for Design Engineers」（ibelick/ui-skills: Skills for Design Engineers），涉及 Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「ibelick/ui-skills - Skills for Design E…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 ui-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 ui-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "ibelick/ui-skills: Skills for Design Engineers。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "ibelick/ui-skills - Skills for Design Engineers. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：ibelick/ui-skills: Skills for Design Engineers。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: ibelick/ui-skills - Skills for Design Engineers. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。ibelick/ui-skills: Skills for Design Engineers。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. ibelick/ui-skills - Skills for Design Engineers. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：ibelick/ui-skills: Skills for Design Engineers。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: ibelick/ui-skills - Skills for Design Engineers. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ui-skills：设计工程师的技能",
+    "developer_profile": {
+      "github_username": "ibelick",
+      "profile_url": "https://github.com/ibelick",
+      "name": "Julien Thibeaut",
+      "bio": "",
+      "company": "",
+      "location": "Paris",
+      "blog": "ibelick.com",
+      "twitter_username": "ibelick",
+      "email": "",
+      "followers": 1576,
+      "following": 22,
+      "public_repos": 22,
+      "avatar_url": "https://avatars.githubusercontent.com/u/14288396?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/ibelick"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://ibelick.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "rohitg00/ai-engineering-from-scratch - Learn it. Build it. Ship it for others.",
+    "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+    "heat": "39,172 stars",
+    "time": "Today",
+    "developer_name": "rohitg00",
+    "developer_url": "https://github.com/rohitg00",
+    "developer_email": "",
+    "today_stars": "191 stars today",
+    "language": "Python",
+    "summary": "Learn it. Build it. Ship it for others.",
+    "content": " \n   \n \n\n \n     \n     \n     \n     \n     \n \n\n## From the creator of Agent Memory - #1 Persistent memory ⭐     which naturally works with any agents or chat assistants.\n\n```\n░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒\n```\n\n> **84% of students already use AI tools. Only 18% feel prepared to use them\n> professionally.** This curriculum closes that gap.\n>\n> 503 lessons. 20 phases. ~320 hours. Python, TypeScript, Rust, Julia. Every lesson ships\n> a reusable artifact: a prompt, a skill, an agent, an MCP server. Free, open source, MIT.\n>\n> You don't just learn AI. You build it. End-to-end. By hand.\n\n \n   150,639  readers &nbsp;·&nbsp;  241,669  page views in the last 30 days &nbsp;·&nbsp; as of 2026-06-07  \n \n\n## How this works\n\nMost AI material teaches in scattered pieces. A paper here, a fine-tuning post there, a\nflashy agent demo somewhere else. The pieces rarely line up. You ship a chatbot but can't\nexplain its loss curve. You hook a function to an agent but can't say what attention does\ninside the model that's calling it.\n\nThis curriculum is the spine. 20 phases, 503 lessons, four languages: Python, TypeScript,\nRust, Julia. Linear algebra at one end, autonomous swarms at the other. Every algorithm\ngets built from raw math first. Backprop. Tokenizer. Attention. Agent loop. By the time\nPyTorch shows up, you already know what it's doing under the hood.\n\nEach lesson runs the same loop: read the problem, derive the math, write the code, run\nthe test, keep the artifact. No five-minute videos, no copy-paste deploys, no hand-holding.\nFree, open source, and built to run on your own laptop.\n\n```\n░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒\n```\n\n## The shape of the curriculum\n\nTwenty phases stack on top of each other. Math is the floor. Agents and production are the roof.\nSkip ahead if you already know the lower layers, but don't skip and then wonder why something at\nthe top is breaking.\n\n```mermaid\n%%{init: {'theme':'base','themeVariables':{'primaryColor':'#fafaf5','primaryTextColor':'#1a1a1a','primaryBorderColor':'#3553ff','lineColor':'#3553ff','fontFamily':'JetBrains Mono','fontSize':'12px'}}}%%\nflowchart TB\n  P0[\"Phase 0 — Setup &amp; Tooling\"] --> P1[\"Phase 1 — Math Foundations\"]\n  P1 --> P2[\"Phase 2 — ML Fundamentals\"]\n  P2 --> P3[\"Phase 3 — Deep Learning Core\"]\n  P3 --> P4[\"Phase 4 — Vision\"]\n  P3 --> P5[\"Phase 5 — NLP\"]\n  P3 --> P6[\"Phase 6 — Speech &amp; Audio\"]\n  P3 --> P9[\"Phase 9 — RL\"]\n  P5 --> P7[\"Phase 7 — Transformers\"]\n  P7 --> P8[\"Phase 8 — GenAI\"]\n  P7 --> P10[\"Phase 10 — LLMs from Scratch\"]\n  P10 --> P11[\"Phase 11 — LLM Engineering\"]\n  P10 --> P12[\"Phase 12 — Multimodal\"]\n  P11 --> P13[\"Phase 13 — Tools &amp; Protocols\"]\n  P13 --> P14[\"Phase 14 — Agent Engineering\"]\n  P14 --> P15[\"Phase 15 — Autonomous Systems\"]\n  P15 --> P16[\"Phase 16 — Multi-Agent &amp; Swarms\"]\n  P14 --> P17[\"Phase 17 — Infrastructure &amp; Production\"]\n  P15 --> P18[\"Phase 18 — ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 9,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "deep learning",
+        "llm",
+        "agent",
+        "multimodal",
+        "nlp",
+        "prompt",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "MCP",
+        "Rust",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "热点事件",
+      "detail_brief": "rohitg00/ai-engineering-from-scratch: Learn it. Build it. Ship it for others.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「rohitg00/ai-engineering-from-scratch - Learn it.…」（rohitg00/ai-engineering-from-scratch: Learn it. Build it. S…），涉及 LLM / Agent / MCP → 可写方向：MCP 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「rohitg00/ai-engineering-from-scratch -…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 ai-engineering-from-scratch 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 ai-engineering-from-scratch 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "rohitg00/ai-engineering-from-scratch: Learn it. Build it. Ship it f…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "rohitg00/ai-engineering-from-scratch - Learn it. Build it. Ship it for others.. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：rohitg00/ai-engineering-from-scratch: Learn it. Build it. Ship it f…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: rohitg00/ai-engineering-from-scratch - Learn it. Build it. Ship it for others.. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。rohitg00/ai-engineering-from-scratch: Learn it. Build it. Ship it f…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. rohitg00/ai-engineering-from-scratch - Learn it. Build it. Ship it for others.. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：rohitg00/ai-engineering-from-scratch: Learn it. Build it. Ship it f…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: rohitg00/ai-engineering-from-scratch - Learn it. Build it. Ship it for others.. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ai-engineering-from-scratch：学习它。建造它。",
+    "developer_profile": {
+      "github_username": "rohitg00",
+      "profile_url": "https://github.com/rohitg00",
+      "name": "Rohit Ghumare",
+      "bio": "Engineer | DevRel | GDE | CNCF Ambassador | Docker Captain | AWS CommunityBuilder | Ex - Solo.io, Cerbos, Oracle, Reliance Jio",
+      "company": "iii.dev",
+      "location": "UK",
+      "blog": "",
+      "twitter_username": "ghumare64",
+      "email": "",
+      "followers": 5058,
+      "following": 54,
+      "public_repos": 314,
+      "avatar_url": "https://avatars.githubusercontent.com/u/48523873?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/ghumare64"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/rohit-ghumare/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "tirth8205/code-review-graph - Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.",
+    "url": "https://github.com/tirth8205/code-review-graph",
+    "heat": "20,251 stars",
+    "time": "Today",
+    "developer_name": "tirth8205",
+    "developer_url": "https://github.com/tirth8205",
+    "developer_email": "tirthkanani18@gmail.com",
+    "today_stars": "355 stars today",
+    "language": "Python",
+    "summary": "Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.",
+    "content": " code-review-graph \n\n \n   Stop burning tokens. Start reviewing smarter. \n \n\n \n   English  |\n   简体中文  |\n   日本語  |\n   한국어  |\n   हिन्दी \n \n\n \n     \n     \n     \n     \n     \n     \n     \n     \n     \n \n\n \n   Usage  ·\n   Commands  ·\n   FAQ  ·\n   Troubleshooting  ·\n   GitHub Action  ·\n   Reproducing the benchmarks  ·\n   Roadmap \n \n\n \n\nAI coding tools can end up re-reading large parts of your codebase on review tasks. `code-review-graph` fixes that. It builds a structural map of your code with Tree-sitter, tracks changes incrementally, and gives your AI assistant precise context via MCP so it reads only what matters.\n\n \n   \n \n\n---\n\n## Quick Start\n\n```bash\npip install code-review-graph                     # or: pipx install code-review-graph\ncode-review-graph install          # auto-detects and configures all supported platforms\ncode-review-graph build            # parse your codebase\n```\n\nOne command sets up everything. `install` detects which AI coding tools you have, writes the correct MCP configuration for each one, installs platform-native hooks/skills where supported, and injects graph-aware instructions into your platform rules. It auto-detects whether you installed via `uvx` or `pip`/`pipx` and generates the right config. Restart your editor/tool after installing.\n\n \n   \n \n\nTo target a specific platform:\n\n```bash\ncode-review-graph install --platform codex       # configure only Codex\ncode-review-graph install --platform cursor      # configure only Cursor\ncode-review-graph install --platform claude-code  # configure only Claude Code\ncode-review-graph install --platform gemini-cli   # configure only Gemini CLI\ncode-review-graph install --platform kiro         # configure only Kiro\ncode-review-graph install --platform copilot      # configure only GitHub Copilot (VS Code)\ncode-review-graph install --platform copilot-cli  # configure only GitHub Copilot CLI\ncode-review-graph install --platform codebuddy    # configure only CodeBuddy Code\n```\n\nRequires Python 3.10+. For the best experience, install uv (the MCP config will use `uvx` if available, otherwise falls back to the `code-review-graph` command directly).\n\nTo remove CRG from a Git or SVN project, use the symmetric uninstall command\nfrom anywhere inside its working tree. The target is normalized to the working\ntree root, and non-repository directories are refused. It removes only\nCRG-owned files and entries; unrelated MCP servers, hooks, skills, and JSONC\ncomments remain untouched. Shared configuration changes use atomic replacement\nso a failed write leaves the original file intact.\n\n```bash\ncode-review-graph uninstall --dry-run    # preview every action; write nothing\ncode-review-graph uninstall              # preview, ask for confirmation, then apply\ncode-review-graph uninstall --yes        # apply without prompting\ncode-review-graph uninstall --all-repos  # also clean every registered repository\ncode-review-graph uninstall --keep-data  # remove integrations but keep graph databases\ncode-review-g",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "copilot",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "CodeBuddy",
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "MCP",
+        "Python"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.5,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**code-review-graph** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs code-review-graph 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**code-review-graph** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs code-review-graph 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "codebuddy",
+        "claude code",
+        "ai coding",
+        "copilot",
+        "coding tool"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**code-review-graph** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs code-review-graph 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「tirth8205/code-review-graph - Local-first code in…」（Local-first code intelligence graph for MCP and CLI. Builds…），涉及 MCP / Python → 可写方向：**code-review-graph** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs code-review-graph 的横向对比：Co…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「tirth8205/code-review-graph - Local-fir…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 code-review-graph 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 code-review-graph 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 code-review-graph 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 code-review-graph 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Local-first code intelligence graph for MCP and CLI. Builds a persi…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "tirth8205/code-review-graph - Local-first code intelligence graph for MCP and CLI. Buil…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Local-first code intelligence graph for MCP and CLI. Builds a persi…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: tirth8205/code-review-graph - Local-first code intelligence graph for MCP and CLI. Buil…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Local-first code intelligence graph for MCP and CLI. Builds a persi…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**code-review-graph** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs code-review-graph 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. tirth8205/code-review-graph - Local-first code intelligence graph for MCP and CLI. Buil…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Local-first code intelligence graph for MCP and CLI. Builds a persi…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: tirth8205/code-review-graph - Local-first code intelligence graph for MCP and CLI. Buil…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "code-review-graph：MCP 和 CLI 的本地优先代码智能图。构建代码库的持久映射，以便 AI 编码工具仅读取重要内容，并在评论和大型存储库工作流程上进行基准上下文缩减。",
+    "developer_profile": {
+      "github_username": "tirth8205",
+      "profile_url": "https://github.com/tirth8205",
+      "name": "Tirth Kanani",
+      "bio": "AI/ML Engineer",
+      "company": "University of Birmingham",
+      "location": "London",
+      "blog": "tirthkanani.com",
+      "twitter_username": "tirth_8205",
+      "email": "tirthkanani18@gmail.com",
+      "followers": 503,
+      "following": 81,
+      "public_repos": 30,
+      "avatar_url": "https://avatars.githubusercontent.com/u/68604113?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/tirth_8205"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/tirthkanani/"
+        },
+        {
+          "platform": "generic",
+          "url": "https://medium.com/@tirthkanani18"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://tirthkanani.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "elder-plinius/G0DM0D3 - LIBERATED AI CHAT",
+    "url": "https://github.com/elder-plinius/G0DM0D3",
+    "heat": "9,551 stars",
+    "time": "Today",
+    "developer_name": "elder-plinius",
+    "developer_url": "https://github.com/elder-plinius",
+    "developer_email": "",
+    "today_stars": "69 stars today",
+    "language": "TypeScript",
+    "summary": "LIBERATED AI CHAT",
+    "content": "```\n ▄████  ██████  ██████  ███▄ ▄███  ██████  ██████  ██████\n██      ██  ██  ██   ██ ██ ███ ██  ██  ██  ██   ██      ██\n██ ▄███ ██  ██  ██   ██ ██  █  ██  ██  ██  ██   ██  █████\n██  ██  ██  ██  ██   ██ ██     ██  ██  ██  ██   ██      ██\n ██████  ████   ██████  ██     ██   ████   ██████  ██████\n ───────────────────────────────────────────────────────────\n  ░▒▓█  LIBERATED AI. COGNITION WITHOUT CONTROL.  █▓▒░\n ───────────────────────────────────────────────────────────\n```\n\nGODMOD3.AI\n\nG0DM0D3 is a fully open-source, privacy-transparent, multi-model chat interface that pushes the limits of the post-training layer — for red teaming, cognition research, and liberated AI interaction. Built for hackers, philosophers, and system tinkerers.\n\n## ✨ Features\n\n- 🧠 **Multi-Provider** — 60 listed OpenRouter models, up to 44 Venice models, or your own local models\n- 🔥 **GODMODE CLASSIC** — 5 battle-tested prompt + model combos racing in parallel to find the best response\n- 🌋 **ULTRAPLINIAN** — Multi-model evaluation engine across 5 tiers (12–60 OpenRouter models), with composite scoring\n- 🏠 **Local Models** — Run ULTRAPLINIAN on your own hardware through Ollama, LM Studio, llama.cpp, or vLLM\n- 🐍 **Parseltongue** — Input perturbation engine for red-teaming with 33 techniques across 3 intensity tiers\n- 🎛 **AutoTune** — Context-adaptive sampling parameter engine across 20 query contexts\n- 🔐 **Privacy Controls** — Metadata-only app telemetry is on by default and can be disabled with No-Log or Local-only mode\n- 💾 **Local History** — Conversations and settings stay in browser storage with export/import support\n- 🎮 **Easter Eggs** — Hidden secrets throughout (try the Konami code!)\n- 📱 **Responsive** — Works on desktop and mobile\n- 🌐 **Single-File Core UI** — The hosted interface lives in one `index.html`; the telemetry endpoint is a separate Cloudflare Pages Function\n\n## 🚀 Quick Start\n\n### Hosted\n\nVisit godmod3.ai — no install needed. Bring an OpenRouter key, a Venice key, connect a local OpenAI-compatible server, or configure more than one of those providers.\n\n### Self-Host\n\nThe standalone interface is a single `index.html` file with no build step or package install.\n\n```bash\n# Clone the repository\ngit clone https://github.com/elder-plinius/G0DM0D3.git\ncd G0DM0D3\n\n# Open directly in your browser\nopen index.html\n# or serve locally\npython3 -m http.server 8000\n```\n\nOpen it in your browser and configure OpenRouter, Venice, or local models in Settings. A static-only deployment can run the chat UI, but `/api/telemetry` will not publish metadata unless you also deploy `functions/api/telemetry.ts` on Cloudflare Pages and configure its Hugging Face variables.\n\n### Run with Local Models\n\nG0DM0D3 supports OpenAI-compatible model servers running on your own hardware. For example, with Ollama:\n\n```bash\nollama pull qwen3:8b\nollama serve\n```\n\nOpen **Settings → API Keys → Local Models**, enter `http://localhost:11434/v1`, then click **Test & Discover Models**. Enable **Local-only m",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloudflare"
+      ],
+      "ai_hits": [
+        "ai",
+        "llama",
+        "prompt",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "竞品动态",
+      "products": [
+        "Llama",
+        "HuggingFace"
+      ],
+      "competitors": [
+        "Cloudflare"
+      ],
+      "competitor_products": [
+        "Cloudflare Pages"
+      ],
+      "techs": [
+        "TypeScript"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "elder-plinius/G0DM0D3: LIBERATED AI CHAT",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.4,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "竞品对比（Cloudflare Pages）"
+      ],
+      "editorial_angles_text": "教程拆解 + 竞品对比（Cloudflare Pages）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「elder-plinius/G0DM0D3 - LIBERATED AI CHAT」（elder-plinius/G0DM0D3: LIBERATED AI CHAT），涉及 TypeScript → 可写方向：Cloudflare Pages 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「elder-plinius/G0DM0D3 - LIBERATED AI CH…」是竞品动态，建议以行业观察视角切入，可写竞品对比或趋势点评。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 G0DM0D3 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 G0DM0D3 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "elder-plinius/G0DM0D3: LIBERATED AI CHAT。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "elder-plinius/G0DM0D3 - LIBERATED AI CHAT. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：elder-plinius/G0DM0D3: LIBERATED AI CHAT。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 教程拆解 + 竞品对比（Cloudflare Pages）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: elder-plinius/G0DM0D3 - LIBERATED AI CHAT. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around hands-on walkthrough + competitor comparison (Cloudflare Pages). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。elder-plinius/G0DM0D3: LIBERATED AI CHAT。如果用官方号发，建议主推 人工判断场景，重点讲 教程拆解 + 竞品对比（Cloudflare Pages），并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. elder-plinius/G0DM0D3 - LIBERATED AI CHAT. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on hands-on walkthrough + competitor comparison (Cloudflare Pages).",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：elder-plinius/G0DM0D3: LIBERATED AI CHAT。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 教程拆解 + 竞品对比（Cloudflare Pages）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: elder-plinius/G0DM0D3 - LIBERATED AI CHAT. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on hands-on walkthrough + competitor comparison (Cloudflare Pages). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "G0DM0D3：自由的人工智能聊天",
+    "developer_profile": {
+      "github_username": "elder-plinius",
+      "profile_url": "https://github.com/elder-plinius",
+      "name": "pliny",
+      "bio": "latent space liberator; red teamer, hacker, builder, whisperer\r\n!insert_divider: \r\n⊰-•-•✧•-•-⦑/L\\O/V\\E/\\P/L\\I/N\\Y/⦒-•-•✧•-•-⊱\r\n{GODMODE:ENABLED}",
+      "company": "Pliny the Prompter",
+      "location": "",
+      "blog": "pliny.gg",
+      "twitter_username": "elder_plinius",
+      "email": "",
+      "followers": 19472,
+      "following": 0,
+      "public_repos": 45,
+      "avatar_url": "https://avatars.githubusercontent.com/u/133052465?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/elder_plinius"
+        },
+        {
+          "platform": "generic",
+          "url": "https://discord.gg/basi"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/channel/UC5obt8DBGtc_RPdeA6YR_Tw"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://pliny.gg"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "lyogavin/airllm - AirLLM 70B inference with single 4GB GPU",
+    "url": "https://github.com/lyogavin/airllm",
+    "heat": "23,378 stars",
+    "time": "Today",
+    "developer_name": "lyogavin",
+    "developer_url": "https://github.com/lyogavin",
+    "developer_email": "",
+    "today_stars": "161 stars today",
+    "language": "Jupyter Notebook",
+    "summary": "AirLLM 70B inference with single 4GB GPU",
+    "content": "\n\n**Quickstart** | \n**Configurations** | \n**MacOS** | \n**Example notebooks** | \n**FAQ**\n\n**AirLLM** dramatically reduces inference memory usage, letting 70B large language models run on a single 4GB GPU card — without quantization, distillation, or pruning. You can even run **405B Llama 3.1** on **8GB**, and **DeepSeek-V3 (671B)** on **~12GB**.\n\n  \n[](https://pepy.tech/project/airllm)\n\n[](https://github.com/LianjiaTech/BELLE/blob/main/LICENSE)\n[](https://static.aicompose.cn/static/wecom_barcode.png?t=1671918938)\n![Discord](https://discord.gg/2xffU5sn)\n\n[](https://medium.com/@lyo.gavin)\n[](https://gavinliblog.com)\n[](https://patreon.com/gavinli)\n[](https://github.com/sponsors/lyogavin)\n\n## AI Agents Recommendation:\n\n* Best AI Game Sprite Generator\n\n* Best AI Facial Expression Editor\n\n* Bloome — build & run AI agent teams in the cloud, zero setup\n\n## Updates\n[2026/06] **v3.0**: FP8 model support + the latest models. Run **DeepSeek-V3 (671B) on ~12GB** and **Qwen3-235B on ~3GB**, plus Qwen3, Llama 3.x/4, DeepSeek V2/V3, Phi-4, Gemma and more — all through a single `AutoModel`.\n\n[2024/08/20] v2.11.0: Support Qwen2.5\n\n[2024/08/18] v2.10.1 Support CPU inference. Support non sharded models. Thanks @NavodPeiris for the great work! \n\n[2024/07/30] Support Llama3.1 **405B** (example notebook). Support **8bit/4bit quantization**.\n\n[2024/04/20] AirLLM supports Llama3 natively already. Run Llama3 70B on 4GB single GPU.\n\n[2023/12/25] v2.8.2: Support MacOS running 70B large language models.\n\n[2023/12/20] v2.7: Support AirLLMMixtral. \n\n[2023/12/20] v2.6: Added AutoModel, automatically detect model type, no need to provide model class to initialize model.\n\n[2023/12/18] v2.5: added prefetching to overlap the model loading and compute. 10% speed improvement.\n\n[2023/12/03] added support of **ChatGLM**, **QWen**, **Baichuan**, **Mistral**, **InternLM**!\n\n[2023/12/02] added support for safetensors. Now support all top 10 models in open llm leaderboard.\n\n[2023/12/01] airllm 2.0. Support compressions: **3x run time speed up!**\n\n[2023/11/20] airllm Initial version!\n\n## Star History\n\n \n   \n     \n     \n   \n \n\n## Table of Contents\n\n* Quick start\n* Model Compression\n* Configurations\n* Run on MacOS\n* Example notebooks\n* Supported Models\n* Acknowledgement\n* FAQ\n\n## Quickstart\n\n### 1. Install package\n\nFirst, install the airllm pip package.\n\n```bash\npip install airllm\n```\n\n### 2. Inference\n\nThen, initialize AirLLMLlama2, pass in the huggingface repo ID of the model being used, or the local path, and inference can be performed similar to a regular transformer model.\n\n(*You can also specify the path to save the splitted layered model through **layer_shards_saving_path** when init AirLLMLlama2.*\n\n```python\nfrom airllm import AutoModel\n\nMAX_LENGTH = 128\n# just pass a hugging face repo id — works with almost any popular model:\nmodel = AutoModel.from_pretrained(\"Qwen/Qwen3-32B\")\n\n# go bigger with the exact same one line:\n#model = AutoModel.from_pretrained(\"Qwen/Qwen3-235B-A22B\")     # ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 11,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "large language model",
+        "llama",
+        "mistral",
+        "qwen",
+        "deepseek",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "DeepSeek",
+        "Llama",
+        "Mistral",
+        "通义千问",
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Transformer",
+        "Go",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "lyogavin/airllm: AirLLM 70B inference with single 4GB GPU",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.3,
+      "tcloud_relevance": 6.4,
+      "tcloud_integration": "**airllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**airllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "llm",
+        "large language model",
+        "deepseek",
+        "qwen",
+        "llama"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**airllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「lyogavin/airllm - AirLLM 70B inference with singl…」（lyogavin/airllm: AirLLM 70B inference with single 4GB GPU），涉及 LLM / Agent / Transformer → 可写方向：**airllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「airllm」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 airllm 的核心功能（lyogavin/airllm: AirLLM 70B inference with single 4GB GPU），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 airllm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 airllm 的核心功能（lyogavin/airllm: AirLLM 70B inference with single 4GB GPU），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 airllm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "lyogavin/airllm: AirLLM 70B inference with single 4GB GPU。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**airllm**…",
+        "x_en": "lyogavin/airllm - AirLLM 70B inference with single 4GB GPU. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：lyogavin/airllm: AirLLM 70B inference with single 4GB GPU。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: lyogavin/airllm - AirLLM 70B inference with single 4GB GPU. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。lyogavin/airllm: AirLLM 70B inference with single 4GB GPU。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**airllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. lyogavin/airllm - AirLLM 70B inference with single 4GB GPU. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：lyogavin/airllm: AirLLM 70B inference with single 4GB GPU。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: lyogavin/airllm - AirLLM 70B inference with single 4GB GPU. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "使用单个 4GB GPU 进行 AirLLM 70B 推理",
+    "developer_profile": {
+      "github_username": "lyogavin",
+      "profile_url": "https://github.com/lyogavin",
+      "name": "Gavin Li",
+      "bio": "Anima AI Founder,CEO",
+      "company": "animaai.cloud",
+      "location": "Bay area",
+      "blog": "http://www.linkedin.com/pub/gavin-li/17/541/643",
+      "twitter_username": "",
+      "email": "",
+      "followers": 883,
+      "following": 11,
+      "public_repos": 68,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1113905?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "http://www.linkedin.com/pub/gavin-li/17/541/643"
+        }
+      ],
+      "is_org": false
+    }
+  }
+]
