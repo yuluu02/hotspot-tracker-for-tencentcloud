@@ -1,0 +1,838 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "lyogavin/airllm - AirLLM 70B inference with single 4GB GPU",
+    "url": "https://github.com/lyogavin/airllm",
+    "heat": "27,373 stars",
+    "time": "Today",
+    "developer_name": "lyogavin",
+    "developer_url": "https://github.com/lyogavin",
+    "developer_email": "",
+    "today_stars": "1,085 stars today",
+    "language": "Jupyter Notebook",
+    "summary": "AirLLM 70B inference with single 4GB GPU",
+    "content": "\n\n**Quickstart** | \n**Configurations** | \n**MacOS** | \n**Example notebooks** | \n**FAQ**\n\n**AirLLM** dramatically reduces inference memory usage, letting 70B large language models run on a single 4GB GPU card — without quantization, distillation, or pruning. You can even run **405B Llama 3.1** on **8GB**, **DeepSeek-V3 (671B)** on **~12GB**, and **Kimi K3 (2.8T)** — the largest open-source model released to date — on **under 4GB**, because sparse MoE models stream one expert at a time rather than a whole layer.\n\n  \n[](https://pepy.tech/project/airllm)\n\n[](https://github.com/LianjiaTech/BELLE/blob/main/LICENSE)\n[](https://static.aicompose.cn/static/wecom_barcode.png?t=1671918938)\n![Discord](https://discord.gg/2xffU5sn)\n\n[](https://medium.com/@lyo.gavin)\n[](https://gavinliblog.com)\n[](https://patreon.com/gavinli)\n[](https://github.com/sponsors/lyogavin)\n\n## AI Agents Recommendation:\n\n* Best AI Game Sprite Generator\n\n* Best AI Facial Expression Editor\n\n* Bloome — build & run AI agent teams in the cloud, zero setup\n\n## Updates\n[2026/07] **Kimi K3 (2.8T)** support: the largest open-source model runs on a single card in **3.72GB** of VRAM, measured end to end on one RTX 6000 Ada. Per-expert streaming loads only the experts a token actually routes to. K3 brings three requirements of its own: `pip install compressed-tensors flash-attn` (its model code mandates flash attention regardless of what you request), a CUDA 12 build of torch, since no prebuilt flash-attn wheel exists for CUDA 13 yet, and `transformers` 4.56.x, as its remote code does not load on 5.x.\n\n[2026/06] **v3.0**: FP8 model support + the latest models. Run **DeepSeek-V3 (671B) on ~12GB** and **Qwen3-235B on ~3GB**, plus Qwen3, Llama 3.x/4, DeepSeek V2/V3, Phi-4, Gemma and more — all through a single `AutoModel`.\n\n[2024/08/20] v2.11.0: Support Qwen2.5\n\n[2024/08/18] v2.10.1 Support CPU inference. Support non sharded models. Thanks @NavodPeiris for the great work! \n\n[2024/07/30] Support Llama3.1 **405B** (example notebook). Support **8bit/4bit quantization**.\n\n[2024/04/20] AirLLM supports Llama3 natively already. Run Llama3 70B on 4GB single GPU.\n\n[2023/12/25] v2.8.2: Support MacOS running 70B large language models.\n\n[2023/12/20] v2.7: Support AirLLMMixtral. \n\n[2023/12/20] v2.6: Added AutoModel, automatically detect model type, no need to provide model class to initialize model.\n\n[2023/12/18] v2.5: added prefetching to overlap the model loading and compute. 10% speed improvement.\n\n[2023/12/03] added support of **ChatGLM**, **QWen**, **Baichuan**, **Mistral**, **InternLM**!\n\n[2023/12/02] added support for safetensors. Now support all top 10 models in open llm leaderboard.\n\n[2023/12/01] airllm 2.0. Support compressions: **3x run time speed up!**\n\n[2023/11/20] airllm Initial version!\n\n## Star History\n\n \n   \n     \n     \n   \n \n\n## Table of Contents\n\n* Quick start\n* Model Compression\n* Configurations\n* Run on MacOS\n* Example notebooks\n* Supported Models\n* Acknowledgement\n* FAQ\n\n## Quickstart\n\n### 1.",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 9,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "large language model",
+        "llama",
+        "mistral",
+        "qwen",
+        "deepseek",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "DeepSeek",
+        "Llama",
+        "Mistral",
+        "通义千问"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "lyogavin/airllm: AirLLM 70B inference with single 4GB GPU",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.5,
+      "tcloud_relevance": 9.9,
+      "tcloud_integration": "**airllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 GPU CVM：**airllm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan",
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**airllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**airllm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "cuda",
+        "llm",
+        "large language model",
+        "deepseek",
+        "qwen",
+        "llama"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**airllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 GPU CVM：**airllm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / GPU CVM）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「lyogavin/airllm - AirLLM 70B inference with singl…」（lyogavin/airllm: AirLLM 70B inference with single 4GB GPU），涉及 LLM / Agent → 可写方向：**airllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 GPU CVM：**airllm** 与 GPU…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「airllm」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 airllm 的核心功能（lyogavin/airllm: AirLLM 70B inference with single 4GB GPU），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 airllm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 airllm 的核心功能（lyogavin/airllm: AirLLM 70B inference with single 4GB GPU），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 airllm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "lyogavin/airllm: AirLLM 70B inference with single 4GB GPU。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**airllm**…",
+        "x_en": "lyogavin/airllm - AirLLM 70B inference with single 4GB GPU. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：lyogavin/airllm: AirLLM 70B inference with single 4GB GPU。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: lyogavin/airllm - AirLLM 70B inference with single 4GB GPU. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / GPU CVM). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。lyogavin/airllm: AirLLM 70B inference with single 4GB GPU。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**airllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 GPU CVM：**airllm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. lyogavin/airllm - AirLLM 70B inference with single 4GB GPU. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / GPU CVM).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：lyogavin/airllm: AirLLM 70B inference with single 4GB GPU。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: lyogavin/airllm - AirLLM 70B inference with single 4GB GPU. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / GPU CVM). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "使用单个 4GB GPU 进行 AirLLM 70B 推理",
+    "developer_profile": {
+      "github_username": "lyogavin",
+      "profile_url": "https://github.com/lyogavin",
+      "name": "Gavin Li",
+      "bio": "Anima AI Founder,CEO",
+      "company": "animaai.cloud",
+      "location": "Bay area",
+      "blog": "http://www.linkedin.com/pub/gavin-li/17/541/643",
+      "twitter_username": "",
+      "email": "",
+      "followers": 950,
+      "following": 11,
+      "public_repos": 68,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1113905?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "http://www.linkedin.com/pub/gavin-li/17/541/643"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "zhaoxuya520/reverse-skill - Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing + On-demand toolchain bootstrapping + Self-evolving knowledge base Supports Claude Code, Kiro, Cursor, Cline, and other AI coding clients 逆向/渗透/安全技能路由包 - AI 自动路由 + 按需自举工具链 + 自动进化经验库 | 支持 Claude Code / Kiro / Cursor / Cline 等代码 AI 客户端",
+    "url": "https://github.com/zhaoxuya520/reverse-skill",
+    "heat": "16,185 stars",
+    "time": "Today",
+    "developer_name": "zhaoxuya520",
+    "developer_url": "https://github.com/zhaoxuya520",
+    "developer_email": "",
+    "today_stars": "2,446 stars today",
+    "language": "PowerShell",
+    "summary": "Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing + On-demand toolchain bootstrapping + Self-evolving knowledge base Supports Claude Code, Kiro, Cursor, Cline, and other AI coding clients 逆向/渗透/安全技能路由包 - AI 自动路由 + 按需自举工具链 + 自动进化经验库 | 支持 Claude Code / Kiro / Cursor / Cline 等代码 AI 客户端",
+    "content": " \n   \n \n\n reverse-skill \n Cybersecurity Skills Router · 逆向技能路由包 \n\n  Navigate the dark waters, sail against the stream.  \n\n \n     \n     \n     \n     \n     \n     \n \n\n \n   \n     \n \n\n \n \n   About  ·\n   Getting Started  ·\n   Usage  ·\n   Fast route  ·\n   Routing  ·\n   Ops contracts  ·\n   AI Bootstrap  ·\n   Sponsors  ·\n   Contributing \n \n\n \n  🌐  中文 \n \n\n \n\n  \n\n## About\n\n> **If you are an AI Agent, jump to README_AI.md and follow the instructions strictly.**\n\nWhen an AI agent (Claude Code, Codex CLI, Cursor, etc.) encounters an APK, a binary, frontend JS encryption, a CTF challenge, or a pentesting target, this package routes it to the right methodology, checks available tools, and executes a repeatable workflow instead of guessing commands.\n\n```\nUser task\n  → RULES.md\n  → MASTER-ROUTING / master-route.ps1 (PRIMARY)\n  → case-init / scope.md (auth + network_profile; no target ACT until ready)\n  → Scenario skill → tools / MCP / scripts\n  → timeline + Evidence→Finding→Path → report + field-journal\n```\n\n**Why this exists:**\n- AI agents don't know whether to use jadx, apktool, Frida, IDA, or BurpSuite for a given task\n- APK, ELF, JS, PCAP, and CTF tasks each need different playbooks\n- Tools, MCP servers, and scripts are scattered across machines\n- The same mistakes get repeated because experience isn't reused\n\nPRIMARY ladder: skills/MASTER-ROUTING.md · Full matrix: skills/routing.md · Ops: skills/ops/\n\n \n\n \n   \n     \n   \n \n\n \n\n ( back to top ) \n\n### Built With\n\n \n    \n   IDA Pro  ·  radare2  ·  Ghidra \n \n\n ( back to top ) \n\n  \n\n## Getting Started\n\n### Prerequisites\n\n- **Java / JDK** — for jadx and apktool\n- **Node.js 22.12+** — for JS toolchain and MCP servers\n- **Python 3.x** — for Frida and helper scripts\n- **A code AI client** — Claude Code, Codex CLI, Cursor, etc.\n\n### Installation\n\n```\ngit clone https://github.com/zhaoxuya520/reverse-skill.git\n```\n\nThen refresh the tool index per platform:\n\n| Platform | Command |\n|----------|---------|\n| Windows | `powershell -File skills/scripts/refresh-tool-index.ps1` |\n| Linux / macOS | `bash skills/scripts/refresh-tool-index.sh` |\n| Kali Linux | `bash kali/scripts/refresh-tool-index.sh` |\n\nCheck skills/tool-index.md to see detected tools.\n\nPlatform-specific docs:\n- **Kali Linux** → kali/README-kali.md\n- **Ubuntu/Debian** → docs/platforms/linux.md\n- **macOS** → docs/platforms/macos.md\n\n ( back to top ) \n\n  \n\n## Usage\n\n### Supported scenarios\n\n| Scenario | Entry |\n|----------|-------|\n| APK / Android analysis | `skills/apk-reverse/` |\n| iOS / mobile | `skills/mobile-reverse/` |\n| Binary reverse (exe/dll/so/elf) | `skills/ida-reverse/` / `skills/radare2/` |\n| .NET / C# | `skills/dotnet-reverse/` |\n| Frontend JS / encrypted params | `skills/js-reverse/` |\n| DSL VM / custom JS opcode VM | `skills/reverse-engineering/dsl-vm-reverse/` |\n| HTTP capture / request replay | anything-analyzer, Reqable MCP + `js-reverse/` |\n| Malware / YARA | `skills/malware-analysis/` |\n| Penetration testing / scanning | `skills/pentest-tools/` |\n",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "vm"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing + On-demand toolchain bootstrapping + Self-evolving knowledge base Supports Claude Code, Kiro, Cursor, Cline, and other AI coding clients 逆向/渗透/安全技能路由包 - AI 自动路由 + 按需自举工具链 + 自动进化经验库 | 支持 Claude Code / Kiro / Cursor / Cline 等代码 AI 客户端",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 6.2,
+      "tcloud_integration": "**reverse-skill** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs reverse-skill 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**reverse-skill** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs reverse-skill 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "cursor",
+        "cline"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**reverse-skill** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs reverse-skill 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「zhaoxuya520/reverse-skill - Reverse Engineering /…」（Reverse Engineering / Authorized Penetration Testing / Secu…），涉及 Agent / MCP / Python → 可写方向：**reverse-skill** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs reverse-skill 的横向对比：CodeBuddy…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「zhaoxuya520/reverse-skill - Reverse Eng…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 reverse-skill 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 reverse-skill 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 reverse-skill 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 reverse-skill 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Reverse Engineering / Authorized Penetration Testing / Security Res…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "zhaoxuya520/reverse-skill - Reverse Engineering / Authorized Penetration Testing / Secu…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Reverse Engineering / Authorized Penetration Testing / Security Res…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: zhaoxuya520/reverse-skill - Reverse Engineering / Authorized Penetration Testing / Secu…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Reverse Engineering / Authorized Penetration Testing / Security Res…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**reverse-skill** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs reverse-skill 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. zhaoxuya520/reverse-skill - Reverse Engineering / Authorized Penetration Testing / Secu…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Reverse Engineering / Authorized Penetration Testing / Security Res…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: zhaoxuya520/reverse-skill - Reverse Engineering / Authorized Penetration Testing / Secu…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "reverse-skill：Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing + On-demand toolchain bootstrapping + Self-evolving knowledge base Supports…",
+    "developer_profile": {
+      "github_username": "zhaoxuya520",
+      "profile_url": "https://github.com/zhaoxuya520",
+      "name": "ZhaoXu",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "blog.hahacc.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 199,
+      "following": 2,
+      "public_repos": 20,
+      "avatar_url": "https://avatars.githubusercontent.com/u/147215175?v=4",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "https://blog.hahacc.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "firecrawl/pdf-inspector - Fast Rust library for PDF inspection, classification, and text extraction. Intelligently detects scanned vs text-based PDFs to enable smart routing decisions.",
+    "url": "https://github.com/firecrawl/pdf-inspector",
+    "heat": "8,592 stars",
+    "time": "Today",
+    "developer_name": "firecrawl",
+    "developer_url": "https://github.com/firecrawl",
+    "developer_email": "hello@firecrawl.dev",
+    "today_stars": "1,699 stars today",
+    "language": "Rust",
+    "summary": "Fast Rust library for PDF inspection, classification, and text extraction. Intelligently detects scanned vs text-based PDFs to enable smart routing decisions.",
+    "content": "# pdf-inspector\n\n[](https://crates.io/crates/pdf-inspector)\n[](https://www.npmjs.com/package/@firecrawl/pdf-inspector)\n[](https://pypi.org/project/pdf-inspector/)\n[](LICENSE)\n\nFast Rust library for PDF classification and text extraction. Detects whether a PDF is text-based or scanned, extracts text with position awareness, and converts to clean Markdown — all without OCR. Includes bindings for Python, Node.js, and browser WebAssembly.\n\nBuilt by Firecrawl to handle text-based PDFs locally in under 200ms, skipping expensive OCR services for the ~54% of PDFs that don't need them.\n\n## Features\n\n- **Smart classification** — Detect TextBased, Scanned, ImageBased, or Mixed PDFs in ~10-50ms by sampling content streams. Returns a confidence score (0.0-1.0) and per-page OCR routing.\n- **Text extraction** — Position-aware extraction with font info, X/Y coordinates, and automatic multi-column reading order.\n- **Markdown conversion** — Headings (H1-H4 via font size ratios), bullet/numbered/letter lists, code blocks (monospace font detection), tables (rectangle-based and heuristic), bold/italic formatting, URL linking, and page breaks.\n- **Table detection** — Dual-mode: rectangle-based detection from PDF drawing ops, plus heuristic detection from text alignment. Handles financial tables, footnotes, and continuation tables across pages.\n- **CID font support** — ToUnicode CMap decoding for Type0/Identity-H fonts, UTF-16BE, UTF-8, and Latin-1 encodings.\n- **Multi-column layout** — Automatic detection of newspaper-style columns, sequential reading order, and RTL text support.\n- **Encoding issue detection** — Automatically flags broken font encodings so callers can fall back to OCR.\n- **Single document load** — The document is parsed once and shared between detection and extraction, avoiding redundant I/O.\n- **Browser WebAssembly** — Run the same Rust parser locally in browsers and Web Workers, with embedded CMaps and no server round trip.\n- **Lightweight** — Pure Rust, no ML models, no external services. Single dependency on `lopdf` for PDF parsing.\n\n## Benchmark\n\nEvaluated on the opendataloader-bench corpus (200 PDFs). Only local engines without model-based PDF parsing are shown; OCR was disabled. Scores are 0-1, higher is better.\n\n| Engine | Overall | Reading Order (NID) | Tables (TEDS) | Headings (MHS) | Speed (200 docs) |\n|---|---|---|---|---|---|\n| pdf-inspector | **0.875** | **0.915** | **0.814** | 0.788 | **0.470s** |\n| liteparse | 0.873 | 0.913 | 0.693 | **0.811** | 0.750s |\n| opendataloader | 0.831 | 0.902 | 0.489 | 0.739 | 2.569s |\n| pymupdf4llm | 0.735 | 0.886 | 0.401 | 0.424 | 17.117s |\n| markitdown | 0.589 | 0.844 | 0.273 | 0.000 | 16.165s |\n\nResults were refreshed on July 31, 2026, on an Apple M4 Pro. Engine versions were pdf-inspector 0.2.6, LiteParse 2.10.1, OpenDataLoader 2.2.1, PyMuPDF4LLM 0.2.0, and MarkItDown 0.1.5. Speed is the median of five alternating or rotating complete corpus runs after an excluded warm-up run, with each parser processin",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ocr"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "WebAssembly",
+        "Rust",
+        "Python"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "firecrawl/pdf-inspector: Fast Rust library for PDF inspection, classification, and text extraction. Intelligently detects scanned vs text-based PDFs to enable smart routing decisions.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.3,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「firecrawl/pdf-inspector - Fast Rust library for P…」（firecrawl/pdf-inspector: Fast Rust library for PDF inspecti…），涉及 WebAssembly / Rust / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「firecrawl/pdf-inspector - Fast Rust lib…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 pdf-inspector 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 pdf-inspector 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "firecrawl/pdf-inspector: Fast Rust library for PDF inspection, clas…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "firecrawl/pdf-inspector - Fast Rust library for PDF inspection, classification, and tex…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：firecrawl/pdf-inspector: Fast Rust library for PDF inspection, clas…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: firecrawl/pdf-inspector - Fast Rust library for PDF inspection, classification, and tex…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。firecrawl/pdf-inspector: Fast Rust library for PDF inspection, clas…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. firecrawl/pdf-inspector - Fast Rust library for PDF inspection, classification, and tex…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：firecrawl/pdf-inspector: Fast Rust library for PDF inspection, clas…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: firecrawl/pdf-inspector - Fast Rust library for PDF inspection, classification, and tex…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "pdf-inspector：用于 PDF 检查、分类和文本提取的快速 Rust 库。智能检测扫描 PDF 与基于文本的 PDF，以实现智能路由决策。",
+    "developer_profile": {
+      "github_username": "firecrawl",
+      "profile_url": "https://github.com/firecrawl",
+      "name": "Firecrawl",
+      "bio": "Web data API for AI",
+      "company": "",
+      "location": "United States of America",
+      "blog": "firecrawl.dev",
+      "twitter_username": "firecrawl_dev",
+      "email": "hello@firecrawl.dev",
+      "followers": 2939,
+      "following": 0,
+      "public_repos": 103,
+      "avatar_url": "https://avatars.githubusercontent.com/u/135057108?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/firecrawl_dev"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/firecrawl"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "esengine/DeepSeek-Reasonix - DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.",
+    "url": "https://github.com/esengine/DeepSeek-Reasonix",
+    "heat": "30,119 stars",
+    "time": "Today",
+    "developer_name": "esengine",
+    "developer_url": "https://github.com/esengine",
+    "developer_email": "",
+    "today_stars": "883 stars today",
+    "language": "Go",
+    "summary": "DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.",
+    "content": " \n   \n \n\n> [!WARNING]\n> **This is the legacy TypeScript line (Reasonix 0.x), in maintenance mode.**\n> Active development moved to the **Go rewrite** — see the `main-v2` branch (the new default) and the migration guide. Only bug fixes land here.\n\n \n   English \n  &nbsp;·&nbsp;\n   简体中文 \n  &nbsp;·&nbsp;\n   日本語 \n  &nbsp;·&nbsp;\n   Website \n  &nbsp;·&nbsp;\n   Guide \n  &nbsp;·&nbsp;\n   Architecture \n  &nbsp;·&nbsp;\n   Benchmarks \n  &nbsp;·&nbsp;\n    Discord  \n \n\n \n     \n     \n     \n     \n     \n     \n     \n     \n     \n     \n \n\n \n     \n     \n     \n \n\n \n\n A DeepSeek-native AI coding agent for your terminal. \n Engineered around prefix-cache stability — so token costs stay low across long sessions, and you can leave it running. \n\n \n\n \n   \n \n\n \n\n> [!TIP]\n> **Cache stability isn't a feature you turn on; it's an invariant the loop is designed around.** That's the whole reason Reasonix is DeepSeek-only — every layer is tuned to the byte-stable prefix-cache mechanic.\n\n> [!NOTE]\n> **Real user, single day (2026-05-01):** 435M input tokens, **99.82% cache hit**, ~$12 instead of the ~$61 the same workload would cost with no cache on `v4-flash` — see the case study. DeepSeek provides the cacheable bytes; the four mechanisms in Pillar 1 are how Reasonix keeps them cacheable across long sessions.\n\n> [!IMPORTANT]\n> **Community · 加入社区** — bilingual Discord with channels for setup help (`#help` / `#求助`), workflow showcases, feature ideas, and contributor-only PR coordination. Verify your GitHub in-server to get the **Contributor** role automatically. → ** **\n\n \n\n## Install\n\nRequires Node ≥ 22. Works on macOS · Linux · Windows (PowerShell · Git Bash · Windows Terminal).\n\nInstall Reasonix globally if you want the `reasonix` command available on your `PATH`:\n\n~~~bash\nnpm install -g reasonix\nreasonix code my-project   # paste a DeepSeek API key on first run; persists after\n~~~\n\nOr run it once without installing globally:\n\n~~~bash\ncd my-project\nnpx reasonix code          # always uses the latest package by default\n~~~\n\nGrab a DeepSeek API key → · `reasonix code --help` for flags.\n\nIf you use Reasonix daily, global install is the simplest path. If you just want to try it, use `npx`.\n\n**Prefer fewer keystrokes?** The shorter `dsnix` alias resolves to the same CLI:\n\n~~~bash\nnpm install -g dsnix       # exposes `dsnix` on PATH, depends on reasonix\nnpx dsnix@latest code      # one-shot via the shorter command\n~~~\n\nA global `npm install -g reasonix` also drops a `dsnix` shim on PATH, so the two are interchangeable.\n\nBare `reasonix` (no subcommand) launches `code` in the current directory — typing `reasonix` and `reasonix code` are equivalent.\n\n| Command | When |\n|---|---|\n| `reasonix` / `reasonix code [dir]` | The coding agent. **Start here.** |\n| `reasonix chat` | Plain chat — no filesystem or shell tools. |\n| `reasonix run \"task\"` | One-shot, streams to stdout. Good for pipes. |\n| `reasonix doctor` | Health check: Node, API key, MCP wiring. |\n| `reasonix update` | Upgrade Reasonix ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "deepseek",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Go",
+        "TypeScript"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "esengine/DeepSeek-Reasonix: DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.0,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**DeepSeek-Reasonix** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs DeepSeek-Reasonix 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**DeepSeek-Reasonix** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs DeepSeek-Reasonix 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "ai coding",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**DeepSeek-Reasonix** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs DeepSeek-Reasonix 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「esengine/DeepSeek-Reasonix - DeepSeek-native AI c…」（esengine/DeepSeek-Reasonix: DeepSeek-native AI coding agent…），涉及 Agent / MCP / Go → 可写方向：**DeepSeek-Reasonix** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs DeepSeek-Reasonix 的横向对比：Co…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「esengine/DeepSeek-Reasonix - DeepSeek-n…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 DeepSeek-Reasonix 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 DeepSeek-Reasonix 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 DeepSeek-Reasonix 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 DeepSeek-Reasonix 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "esengine/DeepSeek-Reasonix: DeepSeek-native AI coding agent for you…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "esengine/DeepSeek-Reasonix - DeepSeek-native AI coding agent for your terminal. Enginee…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：esengine/DeepSeek-Reasonix: DeepSeek-native AI coding agent for you…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: esengine/DeepSeek-Reasonix - DeepSeek-native AI coding agent for your terminal. Enginee…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。esengine/DeepSeek-Reasonix: DeepSeek-native AI coding agent for you…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**DeepSeek-Reasonix** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs DeepSeek-Reasonix 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. esengine/DeepSeek-Reasonix - DeepSeek-native AI coding agent for your terminal. Enginee…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：esengine/DeepSeek-Reasonix: DeepSeek-native AI coding agent for you…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: esengine/DeepSeek-Reasonix - DeepSeek-native AI coding agent for your terminal. Enginee…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "DeepSeek-Reasonix：DeepSeek-适用于您终端的本机 AI 编码代理。围绕前缀缓存稳定性进行设计 - 让它运行。",
+    "developer_profile": {
+      "github_username": "esengine",
+      "profile_url": "https://github.com/esengine",
+      "name": "YHH",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "esengine.cn",
+      "twitter_username": "",
+      "email": "",
+      "followers": 577,
+      "following": 1,
+      "public_repos": 114,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18465053?v=4",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "https://esengine.cn"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://orcid.org/0009-0007-6917-7807"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "TencentCloud/TencentDB-Agent-Memory - TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
+    "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+    "heat": "12,333 stars",
+    "time": "Today",
+    "developer_name": "TencentCloud",
+    "developer_url": "https://github.com/TencentCloud",
+    "developer_email": "",
+    "today_stars": "1,090 stars today",
+    "language": "TypeScript",
+    "summary": "TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
+    "content": " \n\n \n\n### Agents remember,Humans innovate.\n\n   \n\n[](https://www.npmjs.com/package/@tencentdb-agent-memory/memory-tencentdb)\n[](./LICENSE)\n[](https://nodejs.org/)\n[](https://github.com/openclaw/openclaw)\n[](https://hermes-agent.nousresearch.com/docs/)\n[](https://discord.gg/dJQM6mKMF)\n\nHighlights · Overview · Core Technology · Features · Quick Start\n\n \n\n**English** · 简体中文\n\n \n\n \n\n---\n\n## ✨ Highlights\n\n> **TencentDB Agent Memory = symbolic short-term memory + layered long-term memory.**\n>\n> - **Symbolic short-term memory** offloads heavy tool logs and condenses them into compact Mermaid symbols, cutting token usage and improving task success.\n> - **Layered long-term memory** distills fragmented conversations into structured personas and scenes, instead of flat vector piles.\n\nWhen integrated with OpenClaw, it cuts token usage by up to **61.38%**, improves pass rate by **51.52%** (relative), and raises PersonaMem accuracy from **48%** to **76%**.\n\n| Memory Capability | Benchmark | OpenClaw Success | With Plugin | Relative Δ | OpenClaw Tokens | With Plugin Tokens | Relative Δ |\n| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |\n| **Short-term** | WideSearch | 33% | **50%** | **+51.52%** | 221.31M | **85.64M** | **−61.38%** |\n| **Short-term** | SWE-bench | 58.4% | **64.2%** | **+9.93%** | 3474.1M | **2375.4M** | **−33.09%** |\n| **Short-term** | AA-LCR | 44.0% | **47.5%** | **+7.95%** | 112.0M | **77.3M** | **−30.98%** |\n| **Long-term** | PersonaMem | 48% | **76%** | **+59%** | — | — | — |\n\n> These results are measured over continuous long-horizon sessions, not isolated turns. For example, SWE-bench runs 50 consecutive tasks per session to simulate the context-accumulation pressure of real-world long-horizon agents.\n\n---\n\n## Overview\n\n**Memory is not about hoarding everything in the AI — it is about sparing humans from having to repeat themselves.**\n\nIn practice, we constantly re-explain the same SOPs, project background, tool conventions, and output formats to the Agent. Such information should not require repetition, nor should it be indiscriminately dumped into the context.\n\nTencentDB Agent Memory helps the Agent learn your workflows, retain task context, and reuse past experience. We reject both brute-force history accumulation and irreversible lossy summarization. Instead, we design memory as a layered system: **symbolic memory** for in-task information overload, and **memory layering** for cross-session experience.\n\n> **Let the Agent remember what should be remembered, so people can focus on judgment, creation, and work that truly matters.**\n\n---\n\n## Core Technology: Reject Flat Storage, Embrace Layering and Symbolization\n\nOur architecture rests on two pillars: **memory layering** and **symbolic memory**. Together they ensure Agents do not merely \"remember more\", but \"reason better\".\n\n### 1. Memory Layering: Progressive Disclosure with Heterogeneous Storage\n\nTraditional memory systems shred data into fragments and dump them into a flat ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.0,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「TencentCloud/TencentDB-Agent-Memory - TencentDB A…」（TencentDB Agent Memory is a team-level memory hub for AI Ag…），涉及 LLM / Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「TencentCloud/TencentDB-Agent-Memory - T…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 TencentDB-Agent-Memory 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 TencentDB-Agent-Memory 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "TencentDB Agent Memory is a team-level memory hub for AI Agents — t…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "TencentCloud/TencentDB-Agent-Memory - TencentDB Agent Memory is a team-level memory hub…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：TencentDB Agent Memory is a team-level memory hub for AI Agents — t…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: TencentCloud/TencentDB-Agent-Memory - TencentDB Agent Memory is a team-level memory hub…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。TencentDB Agent Memory is a team-level memory hub for AI Agents — t…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. TencentCloud/TencentDB-Agent-Memory - TencentDB Agent Memory is a team-level memory hub…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：TencentDB Agent Memory is a team-level memory hub for AI Agents — t…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: TencentCloud/TencentDB-Agent-Memory - TencentDB Agent Memory is a team-level memory hub…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "TencentDB-Agent-Memory：TangentDB Agent Memory 是 AI Agent 的团队级内存中心，将对话、文档和代码转化为四种可重用的内存资产（聊天内存、技能、LLM-Wiki、代码图），并在代理和框架之间进行管理、共享和配备。",
+    "developer_profile": {
+      "github_username": "TencentCloud",
+      "profile_url": "https://github.com/TencentCloud",
+      "name": "Tencent Cloud",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://cloud.tencent.com/",
+      "twitter_username": "",
+      "email": "",
+      "followers": 1074,
+      "following": 0,
+      "public_repos": 200,
+      "avatar_url": "https://avatars.githubusercontent.com/u/20101770?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "microsoft/AI-For-Beginners - 12 Weeks, 24 Lessons, AI for All!",
+    "url": "https://github.com/microsoft/AI-For-Beginners",
+    "heat": "60,987 stars",
+    "time": "Today",
+    "developer_name": "microsoft",
+    "developer_url": "https://github.com/microsoft",
+    "developer_email": "opensource@microsoft.com",
+    "today_stars": "1,902 stars today",
+    "language": "Jupyter Notebook",
+    "summary": "12 Weeks, 24 Lessons, AI for All!",
+    "content": "[](https://github.com/microsoft/AI-For-Beginners/blob/main/LICENSE)\n[](https://GitHub.com/microsoft/AI-For-Beginners/graphs/contributors/)\n[](https://GitHub.com/microsoft/AI-For-Beginners/issues/)\n[](https://GitHub.com/microsoft/AI-For-Beginners/pulls/)\n[](http://makeapullrequest.com)\n\n[](https://GitHub.com/microsoft/AI-For-Beginners/watchers/)\n[](https://GitHub.com/microsoft/AI-For-Beginners/network/)\n[](https://GitHub.com/microsoft/AI-For-Beginners/stargazers/)\n[](https://mybinder.org/v2/gh/microsoft/ai-for-beginners/HEAD)\n[](https://gitter.im/Microsoft/ai-for-beginners?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)\n\n[](https://discord.gg/nTYy5BXMWG)\n\n# Artificial Intelligence for Beginners - A Curriculum\n\n||\n|:---:|\n| AI For Beginners - _Sketchnote by @girlie_mac_ |\n\nExplore the world of **Artificial Intelligence** (AI) with our 12-week, 24-lesson curriculum!  It includes practical lessons, quizzes, and labs. The curriculum is beginner-friendly and covers tools like TensorFlow and PyTorch, as well as ethics in AI\n\n### 🌐 Multi-Language Support\n\n#### Supported via GitHub Action (Automated & Always Up-to-Date)\n\n \nArabic | Bengali | Bulgarian | Burmese (Myanmar) | Chinese (Simplified) | Chinese (Traditional, Hong Kong) | Chinese (Traditional, Macau) | Chinese (Traditional, Taiwan) | Croatian | Czech | Danish | Dutch | Estonian | Finnish | French | German | Greek | Hebrew | Hindi | Hungarian | Indonesian | Italian | Japanese | Kannada | Khmer | Korean | Lithuanian | Malay | Malayalam | Marathi | Nepali | Nigerian Pidgin | Norwegian | Persian (Farsi) | Polish | Portuguese (Brazil) | Portuguese (Portugal) | Punjabi (Gurmukhi) | Romanian | Russian | Serbian (Cyrillic) | Slovak | Slovenian | Spanish | Swahili | Swedish | Tagalog (Filipino) | Tamil | Telugu | Thai | Turkish | Ukrainian | Urdu | Vietnamese\n\n> **Prefer to Clone Locally?**\n>\n> This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:\n>\n> **Bash / macOS / Linux:**\n> ```bash\n> git clone --filter=blob:none --sparse https://github.com/microsoft/AI-For-Beginners.git\n> cd AI-For-Beginners\n> git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'\n> ```\n>\n> **CMD (Windows):**\n> ```cmd\n> git clone --filter=blob:none --sparse https://github.com/microsoft/AI-For-Beginners.git\n> cd AI-For-Beginners\n> git sparse-checkout set --no-cone \"/*\" \"!translations\" \"!translated_images\"\n> ```\n>\n> This gives you everything you need to complete the course with a much faster download.\n \n\n**If you wish to have additional translations languages supported are listed here**\n\n## Join the Community\n[](https://discord.gg/nTYy5BXMWG)\n\n## What you will learn\n\n**Mindmap of the Course**\n\nIn this curriculum, you will learn:\n\n* Different approaches to Artificial Intelligence, including the \"good old\" symbolic approach with **Knowledge Representation** and reasoning (GOFAI).\n* **Neural Networks** and **Deep ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "artificial intelligence",
+        "reasoning"
+      ],
+      "anxiety_hits": [],
+      "topic": "其他",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "microsoft/AI-For-Beginners: 12 Weeks, 24 Lessons, AI for All!",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普"
+      ],
+      "editorial_angles_text": "技术科普",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「microsoft/AI-For-Beginners - 12 Weeks, 24 Lessons…」（microsoft/AI-For-Beginners: 12 Weeks, 24 Lessons, AI for Al…），涉及 Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「microsoft/AI-For-Beginners - 12 Weeks,…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 AI-For-Beginners 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 AI-For-Beginners 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "microsoft/AI-For-Beginners: 12 Weeks, 24 Lessons, AI for All!。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "microsoft/AI-For-Beginners - 12 Weeks, 24 Lessons, AI for All!. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：microsoft/AI-For-Beginners: 12 Weeks, 24 Lessons, AI for All!。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: microsoft/AI-For-Beginners - 12 Weeks, 24 Lessons, AI for All!. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。microsoft/AI-For-Beginners: 12 Weeks, 24 Lessons, AI for All!。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. microsoft/AI-For-Beginners - 12 Weeks, 24 Lessons, AI for All!. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：microsoft/AI-For-Beginners: 12 Weeks, 24 Lessons, AI for All!。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: microsoft/AI-For-Beginners - 12 Weeks, 24 Lessons, AI for All!. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "AI-For-Beginners：12 周，24 节课，全民人工智能！",
+    "developer_profile": {
+      "github_username": "microsoft",
+      "profile_url": "https://github.com/microsoft",
+      "name": "Microsoft",
+      "bio": "Open source projects and samples from Microsoft",
+      "company": "",
+      "location": "Redmond, WA",
+      "blog": "https://opensource.microsoft.com",
+      "twitter_username": "OpenAtMicrosoft",
+      "email": "opensource@microsoft.com",
+      "followers": 126765,
+      "following": 0,
+      "public_repos": 8239,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6154722?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/OpenAtMicrosoft"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "microsoft/generative-ai-for-beginners - 21 Lessons, Get Started Building with Generative AI",
+    "url": "https://github.com/microsoft/generative-ai-for-beginners",
+    "heat": "115,722 stars",
+    "time": "Today",
+    "developer_name": "microsoft",
+    "developer_url": "https://github.com/microsoft",
+    "developer_email": "",
+    "today_stars": "775 stars today",
+    "language": "Jupyter Notebook",
+    "summary": "21 Lessons, Get Started Building with Generative AI",
+    "content": "\n\n### 21 Lessons teaching everything you need to know to start building Generative AI applications\n\n[](https://github.com/microsoft/Generative-AI-For-Beginners/blob/master/LICENSE?WT.mc_id=academic-105485-koreyst)\n[](https://GitHub.com/microsoft/Generative-AI-For-Beginners/graphs/contributors/?WT.mc_id=academic-105485-koreyst)\n[](https://GitHub.com/microsoft/Generative-AI-For-Beginners/issues/?WT.mc_id=academic-105485-koreyst)\n[](https://GitHub.com/microsoft/Generative-AI-For-Beginners/pulls/?WT.mc_id=academic-105485-koreyst)\n[](http://makeapullrequest.com?WT.mc_id=academic-105485-koreyst)\n\n[](https://GitHub.com/microsoft/Generative-AI-For-Beginners/watchers/?WT.mc_id=academic-105485-koreyst)\n[](https://GitHub.com/microsoft/Generative-AI-For-Beginners/network/?WT.mc_id=academic-105485-koreyst)\n[](https://GitHub.com/microsoft/Generative-AI-For-Beginners/stargazers/?WT.mc_id=academic-105485-koreyst)\n\n[](https://discord.gg/nTYy5BXMWG)\n\n### 🌐 Multi-Language Support\n\n#### Supported via GitHub Action (Automated & Always Up-to-Date)\n\n \nArabic | Bengali | Bulgarian | Burmese (Myanmar) | Chinese (Simplified) | Chinese (Traditional, Hong Kong) | Chinese (Traditional, Macau) | Chinese (Traditional, Taiwan) | Croatian | Czech | Danish | Dutch | Estonian | Finnish | French | German | Greek | Hebrew | Hindi | Hungarian | Indonesian | Italian | Japanese | Kannada | Khmer | Korean | Lithuanian | Malay | Malayalam | Marathi | Nepali | Nigerian Pidgin | Norwegian | Persian (Farsi) | Polish | Portuguese (Brazil) | Portuguese (Portugal) | Punjabi (Gurmukhi) | Romanian | Russian | Serbian (Cyrillic) | Slovak | Slovenian | Spanish | Swahili | Swedish | Tagalog (Filipino) | Tamil | Telugu | Thai | Turkish | Ukrainian | Urdu | Vietnamese\n\n> **Prefer to Clone Locally?**\n>\n> This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:\n>\n> **Bash / macOS / Linux:**\n> ```bash\n> git clone --filter=blob:none --sparse https://github.com/microsoft/generative-ai-for-beginners.git\n> cd generative-ai-for-beginners\n> git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'\n> ```\n>\n> **CMD (Windows):**\n> ```cmd\n> git clone --filter=blob:none --sparse https://github.com/microsoft/generative-ai-for-beginners.git\n> cd generative-ai-for-beginners\n> git sparse-checkout set --no-cone \"/*\" \"!translations\" \"!translated_images\"\n> ```\n>\n> This gives you everything you need to complete the course with a much faster download.\n \n\n# Generative AI for Beginners (Version 3) - A Course\n\nLearn the fundamentals of building Generative AI applications with our 21-lesson comprehensive course by Microsoft Cloud Advocates.\n\n## 🌱 Getting Started\n\nThis course has 21 lessons. Each lesson covers its own topic so start wherever you like!\n\nLessons are labeled either \"Learn\" lessons explaining a Generative AI concept or \"Build\" lessons that explain a concept and code examples in both **Python** and **Type",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "microsoft/generative-ai-for-beginners: 21 Lessons, Get Started Building with Generative AI",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.1,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「microsoft/generative-ai-for-beginners - 21 Lesson…」（microsoft/generative-ai-for-beginners: 21 Lessons, Get Star…），涉及 Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「microsoft/generative-ai-for-beginners -…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 generative-ai-for-beginners 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 generative-ai-for-beginners 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "microsoft/generative-ai-for-beginners: 21 Lessons, Get Started Buil…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "microsoft/generative-ai-for-beginners - 21 Lessons, Get Started Building with Generativ…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：microsoft/generative-ai-for-beginners: 21 Lessons, Get Started Buil…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: microsoft/generative-ai-for-beginners - 21 Lessons, Get Started Building with Generativ…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。microsoft/generative-ai-for-beginners: 21 Lessons, Get Started Buil…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. microsoft/generative-ai-for-beginners - 21 Lessons, Get Started Building with Generativ…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：microsoft/generative-ai-for-beginners: 21 Lessons, Get Started Buil…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: microsoft/generative-ai-for-beginners - 21 Lessons, Get Started Building with Generativ…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "generative-ai-for-beginners：21 节课程，开始使用生成式 AI 进行构建"
+  }
+]
