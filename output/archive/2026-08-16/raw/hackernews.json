@@ -1,0 +1,176 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Asynchronous I/O in DuckDB: Work, Thread, Work",
+    "url": "https://duckdb.org/2026/07/31/asynchronous-io",
+    "hn_url": "https://news.ycombinator.com/item?id=49243061",
+    "heat": "15 points",
+    "time": "1 hour ago",
+    "developer_name": "pdet",
+    "developer_url": "https://news.ycombinator.com/user?id=pdet",
+    "content": "Asynchronous I/O in DuckDB: Work, Thread, Work – DuckDB Asynchronous I/O in DuckDB: Work, Thread, Work Pedro Holanda 2026-07-31 · 21 min TL;DR: Starting with v2.0, scheduled for fall 2026, DuckDB will support asynchronous reads of Parquet and CSV files. This can significantly speed up queries when synchronous I/O does not saturate the available bandwidth, as is typical in EC2/S3 compute-storage setups. It doesn't matter how fast query operators are in a database system if we can't pull in the data quickly. For most of DuckDB's history, however, this problem was largely avoided by pruning data early. By pushing down filters and projections, we could ensure that we only read what we actually needed. This worked particularly well because DuckDB primarily ran locally, with its main use case being as a quick-draw database engine for querying data directly from your machine's SSD. We could split the data into several partitions, such as row groups for Parquet files or fixed-size buffers for CSV files, and load them with low latency and high bandwidth. As a result, the main bottlenecks were elsewhere: subqueries, joins, aggregations, and so on. The actual data access path received less attention because synchronous access was perfectly suitable for this use case. As usual, things changed. We realized that DuckDB's architecture was a great fit for querying remotely stored large-scale datasets, such as data lakes (e.g., DuckLake ). Since May this year , we can even run DuckDB as a server using the Quack protocol . The original expectation of data files sitting on a local SSD therefore no longer always holds. The practical implication of these changes is that many current DuckDB setups need to transfer files from remote storage to the machine that will actually process them. For data lakes, for example, a typical setup is to store the data in blob storage, such as S3, and process it on an EC2 machine in the same region. In this setup, latency and bandwidth play a much more significant role. If we cannot issue enough concurrent requests to use the available network bandwidth, performance can suffer drastically, with threads spending a large amount of their time waiting for remote reads instead of processing data. As an example, let's consider a simple query over a remote Parquet file. For simplicity, let's assume we only have a single thread executing. FROM read_parquet ( 's3://bucket/file.parquet' ); A Parquet scan is partitioned into row-group-based jobs, with each job containing one or more fetch tasks that issue byte-range requests. With synchronous I/O, the worker thread will be blocked, waiting for the data to arrive at the machine before performing actual work, such as decoding, aggregating, and so on. You can see a visual depiction in the figure below, where the thread is blocked from doing any work while it waits for the read to finish. Synchronous read To address this, we have been implementing asynchronous I/O pipelines in DuckDB. They are curren",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "s3"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "Asynchronous I/O in DuckDB: Work, Thread, Work – DuckDB Asynchronous I/O in DuckDB: Work, Thread, Work Pedro Holanda 2026-07-31 · 21 min TL;DR: Starting with v2. 0, scheduled for fall 2026, DuckDB will support asynchronous reads of Parquet and CSV files. This can significantly speed up queries when synchronous I/O does not saturate the available bandwidth, as is typical in EC2/S3 compute-storage setups.",
+      "heat_score": 3.0,
+      "timeliness_score": 9.0,
+      "composite_score": 4.8,
+      "tcloud_relevance": 4.6,
+      "tcloud_integration": "**Asynchronous I/O in DuckDB: Work, Thread** 涉及知识库/RAG 场景 — COS 对象存储可以作为知识库文档的持久化存储后端，配合 CDN 加速全球访问",
+      "tcloud_products": [
+        "COS"
+      ],
+      "tcloud_reasons": [
+        "**Asynchronous I/O in DuckDB: Work, Thread** 涉及知识库/RAG 场景 — COS 对象存储可以作为知识库文档的持久化存储后端，配合 CDN 加速全球访问"
+      ],
+      "tcloud_evidence": [
+        "bucket",
+        "storage"
+      ],
+      "tcloud_primary_product": "COS",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 COS：**Asynchronous I/O in DuckDB: Work, Thread** 涉及知识库/RAG 场景 — COS 对象存储可以作为知识库文档的持久化存储后端，配合 CDN 加速全球访问",
+      "tcloud_official_matches": [
+        "COS"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（COS）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（COS） + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Asynchronous I/O in DuckDB: Work, Thread, Work」（Asynchronous I/O in DuckDB: Work, Thread, Work – DuckDB Asy…） → 可写方向：涉及知识库/RAG 场景 — COS 对象存储可以作为知识库文档的持久化存储后端，配合 CDN 加速全球访问\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Asynchronous I/O in DuckDB: Work, Thread」涉及对象存储场景，可结合 COS 写教程或场景解读。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "COS",
+      "official_angle_cn": "围绕 Asynchronous I/O in DuckDB: Work, Thread 的核心功能（Asynchronous I/O in DuckDB: Work, Thread, Work – DuckDB Asynchronous I/O in Duc…），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+      "platform_copies": {
+        "primary_product": "COS",
+        "product_display": "COS",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 Asynchronous I/O in DuckDB: Work, Thread 的核心功能（Asynchronous I/O in DuckDB: Work, Thread, Work – DuckDB Asynchronous I/O in Duc…），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Cloud Object Storage (COS) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+        "x_cn": "Asynchronous I/O in DuckDB: Work, Thread, Work – DuckDB Asynchronou…。如果站在腾讯云国际站官方号来写，这条更适合从 COS 切入：如果以腾讯云国际站官方号来写，这条建议主推 COS：**Asynch…",
+        "x_en": "Asynchronous I/O in DuckDB: Work, Thread, Work. For Tencent Cloud, this fits Cloud Object Storage (COS): Object storage for knowledge bases, datasets, files, and AI workflow persistence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Asynchronous I/O in DuckDB: Work, Thread, Work – DuckDB Asynchronou…。如果从腾讯云视角切，这条最适合带到 COS，重点聊 技术科普 + 教程拆解 + 产品关联（COS） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Asynchronous I/O in DuckDB: Work, Thread, Work. From a Tencent Cloud angle, the best hook is Cloud Object Storage (COS), especially around technical explainer + hands-on walkthrough + product tie-in (COS) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Asynchronous I/O in DuckDB: Work, Thread, Work – DuckDB Asynchronou…。如果用官方号发，建议主推 COS，重点讲 技术科普 + 教程拆解 + 产品关联（COS） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 COS：**Asynchronous I/O in DuckDB: Work, Thread** 涉及知识库/RAG 场景 — COS 对象存储可以作为知识库文档的持久化存储后端，配合 CDN 加速全球访问",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Asynchronous I/O in DuckDB: Work, Thread, Work. For Tencent Cloud, the better angle is Cloud Object Storage (COS). Object storage for knowledge bases, datasets, files, and AI workflow persistence. The content should focus on technical explainer + hands-on walkthrough + product tie-in (COS) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 COS 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Asynchronous I/O in DuckDB: Work, Thread, Work – DuckDB Asynchronou…。如果站在腾讯云国际站官方号视角，我会更想把它写成 COS 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（COS） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Cloud Object Storage (COS)?",
+        "reddit_body_en": "A recent trend caught my eye: Asynchronous I/O in DuckDB: Work, Thread, Work. Instead of reposting it as news, I'd frame it through Cloud Object Storage (COS) and focus on technical explainer + hands-on walkthrough + product tie-in (COS) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Asynchronous I/O in DuckDB: Work, Thread：DuckDB 中的异步 I/O：工作、线程、工作 – DuckDB DuckDB 中的异步 I/O：工作、线程、工作 Pedro Holanda 2026-07-31 · 21 分钟 TL;DR：从 v2 开始。DuckDB 计划于 2026 年秋季发布 0.0 版本，将支持 Parquet 和 CSV 文件的异步…"
+  },
+  {
+    "source": "Hacker News",
+    "title": "AI in drug discovery – what it is, where we stand and the path forward",
+    "url": "https://www.science.org/content/blog-post/so-how-ai-drug-discovery-doing-really",
+    "hn_url": "https://news.ycombinator.com/item?id=49313367",
+    "heat": "97 points",
+    "time": "7 hours ago",
+    "developer_name": "AnodicElegy",
+    "developer_url": "https://news.ycombinator.com/user?id=AnodicElegy",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "其他",
+      "topic_type": "行业观察",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "AI in drug discovery：药物发现中的人工智能——它是什么、我们的立场和前进的道路",
+      "heat_score": 4.0,
+      "timeliness_score": 7.0,
+      "composite_score": 3.0,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "社区参与"
+      ],
+      "editorial_angles_text": "社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（行业观察文章）",
+        "X（摘要快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "editorial_brief": "话题类型：行业观察\n可用角度：「AI in drug discovery – what it is, where we stand…」（AI in drug discovery：药物发现中的人工智能——它是什么、我们的立场和前进的道路）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "social_recommendation": "「AI in drug discovery – what it is, wher…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "AI in drug discovery：药物发现中的人工智能——它是什么、我们的立场和前进的道路。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "AI in drug discovery – what it is, where we stand and the path forward. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：AI in drug discovery：药物发现中的人工智能——它是什么、我们的立场和前进的道路。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: AI in drug discovery – what it is, where we stand and the path forward. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。AI in drug discovery：药物发现中的人工智能——它是什么、我们的立场和前进的道路。如果用官方号发，建议主推 人工判断场景，重点讲 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. AI in drug discovery – what it is, where we stand and the path forward. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：AI in drug discovery：药物发现中的人工智能——它是什么、我们的立场和前进的道路。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: AI in drug discovery – what it is, where we stand and the path forward. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "AI in drug discovery：药物发现中的人工智能——它是什么、我们的立场和前进的道路"
+  }
+]
