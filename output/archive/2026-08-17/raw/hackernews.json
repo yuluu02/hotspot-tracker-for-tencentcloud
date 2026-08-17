@@ -1,0 +1,280 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Qwen 3.8 27B is excellent, but it defaults to overthinking things",
+    "url": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
+    "hn_url": "https://news.ycombinator.com/item?id=49324985",
+    "heat": "64 points",
+    "time": "2 hours ago",
+    "developer_name": "bilsbie",
+    "developer_url": "https://news.ycombinator.com/user?id=bilsbie",
+    "content": "Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things Simon Willison’s Weblog Subscribe Sponsored by: WorkOS — auth.md by WorkOS: agents register users, no sign-up form. Try it! Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things 16th August 2026 Friday’s big release was Qwen 3.8 27B , an Apache 2 licensed 27B parameter vision-capable LLM from Alibaba’s Qwen research lab. I’ve been looking forward to this one: 27B is an excellent size for running a model on a reasonably specced laptop, and its predecessor Qwen 3.6 27B was impressive. Qwen’s self-reported benchmarks for this model are eye-opening. They show a boost from both Qwen 3.6 27B and the closed-weight Qwen 3.7-Plus, which was one of Qwen’s strongest models of any size as recently as May this year . It will be interesting to hear what independent benchmarks have to say about the model. I’ve been running the model on two different machines: my 128GB M5 Max MacBook Pro, and an NVIDIA DGX Spark . On both machines I’m running LM Studio and their 17GB Q4_K_M quantized build . I also tried using llama-server directly on the Spark. The default of extra high results in spectacular over-thinking Qwen’s documentation describes the model as defaulting to xhigh for the reasoning effort, and the LM Studio GGUF I’ve been trying preserves that default: Qwen3.8 comes with official support for reasoning_effort , which can be used to adjust reasoning depth and control cost: xhigh (default): for complex tasks demanding thorough analysis medium : balancing accuracy and speed low : efficient reasoning optimizing for speed and cost This is a hilarious default. It’s absolutely not a good way to run the model, especially on consumer hardware. I’ve been finding the results extremely entertaining. I quickly ran into problems with LM Studio’s default context limit of 8,192 tokens—Qwen was using them all up thinking about even the most mundane of problems. I loaded the model with the full 262,144 maximum context length and that problem went away. Here’s the pelican riding a bicycle SVG I got from my first attempt with that increased context length. It took 21 minutes to generate, using 22,276 reasoning tokens to produce 3,223 tokens of output. You can read the reasoning trace here . This is by far the best pelican SVG I’ve been able to generate with a model that runs on a local machine—and this Qwen is pretty small, just a 17GB file on disk. There’s a lot to like about this: The bicycle frame is the right shape It has legs on each side of the bike—that’s very rare Good, clear pelican pouch The wings extend to touch the handlebars! The motion lines are behind, not in front It has a tasteful background—nice sun, clouds, hill, flowers and grass. Was that worth waiting 21 minutes for? Absolutely not. Here’s that same prompt run with reasoning turned off— transcript here . This one produced 3,715 tokens and took 137s—just over two minutes. And just for completeness, I used OpenRouter",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "llm",
+        "llama",
+        "qwen",
+        "prompt",
+        "reasoning"
+      ],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "开发者话题",
+      "products": [
+        "Llama",
+        "通义千问"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "8 27B is excellent, but it defaults to wildly overthinking things Simon Willison’s Weblog Subscribe Sponsored by: WorkOS — auth. md by WorkOS: agents register users, no sign-up form. 8 27B is excellent, but it defaults to wildly overthinking things 16th August 2026 Friday’s big release was Qwen 3. 8 27B , an Apache 2 licensed 27B parameter vision-capable LLM from Alibaba’s Qwen research lab.",
+      "heat_score": 4.0,
+      "timeliness_score": 9.0,
+      "composite_score": 6.2,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**Qwen 3.8 27B is excellent, but it defaul** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**Qwen 3.8 27B is excellent, but it defaul** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "llm",
+        "qwen",
+        "llama"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**Qwen 3.8 27B is excellent, but it defaul** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "产品关联（Hunyuan）",
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 产品关联（Hunyuan） + 观点评论 + 社区参与",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Qwen 3.8 27B is excellent, but it defaults to ove…」（8 27B is excellent, but it defaults to wildly overthinking…），涉及 LLM → 可写方向：与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Qwen 3.8 27B is excellent, but it defaul」可结合 Hunyuan 写应用实践内容。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 Qwen 3.8 27B is excellent, but it defaul 的核心功能（8 27B is excellent, but it defaults to wildly overthinking things Simon Williso…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 Qwen 3.8 27B is excellent, but it defaul 的核心功能（8 27B is excellent, but it defaults to wildly overthinking things Simon Williso…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "8 27B is excellent, but it defaults to wildly overthinking things S…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "Qwen 3.8 27B is excellent, but it defaults to overthinking things. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：8 27B is excellent, but it defaults to wildly overthinking things S…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 产品关联（Hunyuan） + 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Qwen 3.8 27B is excellent, but it defaults to overthinking things. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + product tie-in (Hunyuan) + opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。8 27B is excellent, but it defaults to wildly overthinking things S…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 产品关联（Hunyuan） + 观点评论 + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**Qwen 3.8 27B is excellent, but it defaul** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Qwen 3.8 27B is excellent, but it defaults to overthinking things. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + product tie-in (Hunyuan) + opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：8 27B is excellent, but it defaults to wildly overthinking things S…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 产品关联（Hunyuan） + 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Qwen 3.8 27B is excellent, but it defaults to overthinking things. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + product tie-in (Hunyuan) + opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Qwen 3.8 27B is excellent, but it defaul：8 27B 非常出色，但它默认会过度思考西蒙·威利森的博客订阅赞助商：WorkOS — auth。md by WorkOS：代理注册用户，无需注册表单。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Rhombus 1.1 is now available",
+    "url": "https://blog.racket-lang.org/2026/08/rhombus-v1.1.html",
+    "hn_url": "https://news.ycombinator.com/item?id=49325384",
+    "heat": "17 points",
+    "time": "1 hour ago",
+    "developer_name": "spdegabrielle",
+    "developer_url": "https://news.ycombinator.com/user?id=spdegabrielle",
+    "content": "Rhombus v1.1 Racket blog 17 Aug 2026 Rhombus version 1.1 is now available! We are pleased to announce Rhombus 1.1 is now available from https://rhombus-lang.org/ . Rhombus is a general-purpose programming language that is easy to use and uniquely customizable. As of this release: Add annot and annot.def as ways to define an annotation without directly writing meta-time (i.e., macro) code. Add as as a binding form, which is sometimes more readable for naming than using && and provides a way to shadow an identifier that is bound as a binding form. Change class to bind inherited names using the corresponding superclass or interface reference. Change space.enforest to adjust scopes in the same way as for a macro transformer when applying an identifier handler. ffi: Add an initialized-array variant of new . pict : Change explain_anim to add a ~label_as argument. Change Pict.rebuilt to replace as rebuilt, and also add a ~as_rebuilt argument to select the old or new bevavior. The Pict.rebuild method also supports ~as_rebuilt . Improve magic_move and cross_fade to better handle paragraph points and multiple instances of a child pict. slideshow : Add slide_transition and continued page numbering. Thank you to community members who contributed this release. Feedback Welcome Questions and discussion welcome at the Racket community on Discourse or Discord ( #rhombus channel) Anyone can participate in Rhombus design discussions. The Racket team’s unofficial motto is anything we can do, you can do: programmers should feel empowered to participate in the creation of the languages they use. Discussions, pull requests, and issues are open to all, and a wide variety of perspectives is especially beneficial. Made with Frog , a static-blog generator written in Racket. Source code for this blog.",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "transformer"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Transformer"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Rhombus 1.1 is now available: Rhombus v1. 1 Racket blog 17 Aug 2026 Rhombus version 1. 1 is now available! We are pleased to announce Rhombus 1.",
+      "heat_score": 3.0,
+      "timeliness_score": 9.0,
+      "composite_score": 3.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Rhombus 1.1 is now available」（Rhombus 1.1 is now available: Rhombus v1. 1 Racket blog 17…），涉及 Transformer → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Rhombus 1.1 is now available」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Rhombus 1.1 is now available: Rhombus v1. 1 Racket blog 17 Aug 2026…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Rhombus 1.1 is now available. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Rhombus 1.1 is now available: Rhombus v1. 1 Racket blog 17 Aug 2026…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Rhombus 1.1 is now available. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Rhombus 1.1 is now available: Rhombus v1. 1 Racket blog 17 Aug 2026…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Rhombus 1.1 is now available. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Rhombus 1.1 is now available: Rhombus v1. 1 Racket blog 17 Aug 2026…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Rhombus 1.1 is now available. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Rhombus 1.1 is now available：Rhombus 1.1 现已推出：Rhombus v1。1 Racket 博客 2026 年 8 月 17 日 Rhombus 版本 1。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Claude: System Prompts",
+    "url": "https://platform.claude.com/docs/en/release-notes/system-prompts",
+    "hn_url": "https://news.ycombinator.com/item?id=49319556",
+    "heat": "552 points",
+    "time": "13 hours ago",
+    "developer_name": "tosh",
+    "developer_url": "https://news.ycombinator.com/user?id=tosh",
+    "content": "System Prompts - Claude Platform Docs  Search Ctrl K Models Models overview Model IDs and versioning Choosing a model Optimizing for cost and intelligence Introducing Claude Fable 5 and Claude Mythos 5 What's new in Claude Sonnet 5 What's new in Claude Opus 5 Upgrade between model versions Model deprecations Model cards System prompts Pricing  Console Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading  Copy page  Claude's web interface ( claude.ai ) and mobile apps use a system prompt to provide up-to-date information, such as the current date, to Claude at the start of every conversation. The system prompt also encourages certain behaviors, such as always providing code snippets in Markdown. This prompt is periodically updated to improve Claude's responses. These system prompt updates do not apply to the Claude API. Where a model has multiple dated entries below, updates between versions are bolded. Starting with the Claude 4.6 generation, each model ID is a single fixed snapshot , so those models have one entry.  Claude Opus 5 July 24, 2026   Claude Fable 5 June 9, 2026   Claude Opus 4.8 May 28, 2026   Claude Opus 4.7 April 16, 2026   Claude Sonnet 4.6 February 17, 2026   Claude Opus 4.6 February 5, 2026   Claude Opus 4.5 January 18, 2026  November 24, 2025   Claude Haiku 4.5 January 18, 2026  November 19, 2025  October 15, 2025   Claude Sonnet 4.5 January 18, 2026  November 19, 2025  September 29, 2025   Claude Opus 4.1 August 5, 2025   Claude Opus 4 August 5, 2025  July 31, 2025  May 22, 2025   Claude Sonnet 4 August 5, 2025  July 31, 2025  May 22, 2025   Claude Sonnet 3.7 February 24, 2025   Claude Sonnet 3.5 November 22, 2024  October 22, 2024  September 9, 2024  July 12, 2024   Claude Haiku 3.5 October 22, 2024   Claude Opus 3 July 12, 2024   Claude Haiku 3 July 12, 2024  Was this page helpful?  ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "System Prompts - Claude Platform Docs  Search Ctrl K Models Models overview Model IDs and versioning Choosing a model Optimizing for cost and intelligence Introducing Claude Fable 5 and Claude Mythos 5 What's new in Claude Sonnet 5 What's new in Claude Opus 5 Upgrade between model versions Model deprecations Model cards System prompts Pricing  Console Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading Loading  Copy page  Claude's web interface ( claude.",
+      "heat_score": 6.0,
+      "timeliness_score": 6.0,
+      "composite_score": 3.7,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Claude: System Prompts」（System Prompts - Claude Platform Docs  Search Ctrl K Model…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Claude: System Prompts」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "System Prompts - Claude Platform Docs  Search Ctrl K Models Models…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Claude: System Prompts. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：System Prompts - Claude Platform Docs  Search Ctrl K Models Models…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Claude: System Prompts. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。System Prompts - Claude Platform Docs  Search Ctrl K Models Models…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Claude: System Prompts. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：System Prompts - Claude Platform Docs  Search Ctrl K Models Models…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Claude: System Prompts. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Claude: System Prompts：系统提示 - Claude 平台文档  搜索 Ctrl K 模型 模型概述 模型 ID 和版本控制 选择模型 成本和智能优化 介绍 Claude Fable 5 和 Claude Mythos 5 Claude Sonnet 5 的新功能 Claude Opus 5 的新功能 在模型版本之间升级 模型弃用 模型卡 系统提示 定价  控制台 正在加…"
+  }
+]
