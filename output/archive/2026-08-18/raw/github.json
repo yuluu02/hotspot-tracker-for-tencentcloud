@@ -1,0 +1,989 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "harry0703/MoneyPrinterTurbo - 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
+    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "heat": "106,228 stars",
+    "time": "Today",
+    "developer_name": "harry0703",
+    "developer_url": "https://github.com/harry0703",
+    "developer_email": "harry0703@hotmail.com",
+    "today_stars": "1,189 stars today",
+    "language": "Python",
+    "summary": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
+    "content": " \n\n# MoneyPrinterTurbo 💸\n\n### 一站式 AI 短视频生成工具\n\n只需提供视频 主题 或 关键词 ，即可自动生成视频脚本、匹配素材、生成字幕和背景音乐，并合成高清短视频。\n\n[](https://github.com/harry0703/MoneyPrinterTurbo/releases)\n[](https://github.com/harry0703/MoneyPrinterTurbo/releases/latest)\n[](https://www.python.org/)\n[](https://github.com/harry0703/MoneyPrinterTurbo/releases/latest)\n\n   \n   \n\n简体中文 | English | 版本发布 | 问题反馈\n\n \n\n## 界面预览 🖥️\n\n WebUI \n\n API \n\n---\n\n## 特别感谢 ❤️\n\n \n     \n \n\n感谢 Kimi 赞助本项目！Kimi K3 是 Moonshot AI 迄今能力最强的模型，也是全球首个开源 3T 级模型，拥有原生视觉能力与 100 万 Token 上下文，在知识工作、推理和长周期任务中展现前沿性能。在 MoneyPrinterTurbo 中，K3 能直接驱动视频创作，不仅撰写视频文案，还会提炼素材搜索关键词、决定成片画面；对内容理解越准确，匹配到的素材就越贴题。\n\n**MoneyPrinterTurbo 用户专属优惠：新用户通过专属链接注册，首次成功充值可获充值金额 10% 的 API 额度，最高赠送 ¥1000。活动截至 2026 年 9 月 30 日。前往 Kimi 开放平台（中文站｜Global）体验 API。**\n \n\n \n   \n     \n          \n        火山引擎  \n     \n     \n      感谢字节火山引擎赞助本项目！  【专属活动优惠】 19元Tokens包！享字节自研豆包模型+满血版开源 SOTA模型，覆盖文本、VLM、图像生成，全模态一站配齐：Seed-2.1、Seedream-5.0、GLM-5.2、DeepSeek、Qwen等。不止编程，更能解决 Agent 复杂长程任务 --&gt;  注册即领2500万Tokens，立即前往 \n     \n   \n   \n     \n          \n        CCSub  \n     \n     \n      感谢  CCSub  赞助本项目！CCSub 是稳定、实惠的 AI API 中转平台，是 Claude Code 官方订阅的超强平替。一个 API Key 即可调用 Claude Opus 4.8、Sonnet 4.6、Haiku 4.5、GPT-5、Gemini 等模型，价格约为官方直连的 1/3，全球直连无需梯子。兼容 Claude Code、Codex、Cursor、Cline、Continue、Windsurf 等所有主流 AI 编程工具。前往  www.ccsub.net  注册即送 $5 体验额度。\n     \n   \n   \n     \n          \n        Infistar.ai 无限星河  \n     \n     \n      感谢  Infistar.ai 无限星河  赞助本项目！ \n      ⚡ 超低成本与稳定调度：价格低至官方 1 折，模型倍率与调用明细全程透明；多路供应动态调度，告别限流与断连困扰。 \n      🧠 全系大模型完美驱动脚本：全面覆盖 OpenAI、Claude、Google Gemini、DeepSeek、通义千问（Qwen）等主流 LLM，兼容 OpenAI 标准接口，为 MoneyPrinterTurbo 的文案生成与素材关键词提炼提供低延迟、高并发支持。 \n      🎨 前沿多模态生态：全面接入 FLUX、Midjourney、Seedance、可灵（Kling）、Sora、Luma 等顶级生图与视频模型，满足下一代 AI 视频生成需求。 \n      🎁 MoneyPrinterTurbo 用户专属福利：通过  专属推广链接  注册即享 [专属赠送额度 / 首充特惠]，开箱即用！\n     \n   \n   \n     \n          \n        录咖 AI  \n     \n     \n      由于该项目的  部署  和  使用 ，对于一些小白用户来说，还是  有一定的门槛 ，在此特别感谢  录咖（AI智能 多媒体服务平台）  网站基于该项目，提供的免费  AI视频生成器  服务，可以不用部署，直接在线使用，非常方便。\n     \n   \n   \n     \n          \n        佐糖  \n     \n     \n      感谢  佐糖  对该项目的支持和赞助，使得该项目能够持续的更新和维护。佐糖专注于 图像处理领域 ，提供丰富的 图像处理工具 ，将复杂操作极致简化，真正实现让图像处理更简单。\n     \n   \n \n\n## 作者的另一个开源项目：MangoDisk ⭐\n\n \n   \n     \n       \n       \n       \n     \n   \n \n\n \n   适用于 macOS 和 Windows 的安全优先开源磁盘清理与空间分析工具  \n  查找大文件和重复文件，清理缓存与应用残留，安全释放磁盘空间。\n \n\n \n   查看 GitHub 开源项目 \n \n\n---\n\n## 功能特性 🎯\n\n- [x] 提供 **AI Agent**、**WebUI**、**API** 和 **CLI** 四种使用方式，代码按控制器、服务和模型等职责分层\n- [x] 支持 **AI 自动生成视频脚本**，也可以使用自定义脚本\n- [x] 支持多种 **高清视频** 尺寸\n  - [x] 竖屏 9:16，`1080x1920`\n  - [x] 横屏 16:9，`1920x1080`\n- [x] 支持 **批量视频生成**，可以一次生成多个视频，然后选择一个最满意的\n- [x] 支持 **视频片段时长** 设置，方便调节素材切换频率\n- [x] 支持 **多语言视频脚本** 生成\n- [x] 支持 **Edge TTS**、**Azure Speech**、**SiliconFlow**、**Google Gemini**、**小米 MiMo**、**ElevenLabs** 和 **Chatterbox** 语音合成，可实时试听\n- [x] 支持 **字幕生成**，可调整字体、位置、颜色、大小、描边和背景样式\n- [x] 支持 **背景音乐**，可随机选择或使用指定音乐，并调整音量\n- [x] 支持使用自己的 **本地素材**，也可从 **Pexels**、**Pixabay** 和 **Coverr** 获取可免费使用的高清素材\n- [x] 支持 **Kimi / Moonshot AI**、**OpenAI**、**Google Gemini**、**DeepSeek**、**阿里云通义千问**、**Microsoft Az",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 16,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "azure",
+        "阿里云",
+        "edge"
+      ],
+      "ai_hits": [
+        "ai",
+        "大模型",
+        "llm",
+        "gpt",
+        "claude",
+        "gemini",
+        "qwen",
+        "deepseek"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "DeepSeek",
+        "通义千问",
+        "Cursor"
+      ],
+      "competitors": [
+        "Azure",
+        "阿里云",
+        "火山引擎"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "harry0703/MoneyPrinterTurbo: 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。 Generate HD short videos from a topic or keyword with an automated AI workflow.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 10.0,
+      "tcloud_relevance": 10.0,
+      "tcloud_integration": "**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**MoneyPrinterTurbo** 的用户群和 CodeBuddy 高度重合 — 可以写「MoneyPrinterTurbo 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**MoneyPrinterTurbo** 的用户群和 CodeBuddy 高度重合 — 可以写「MoneyPrinterTurbo 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor",
+        "cline",
+        "windsurf",
+        "大模型",
+        "llm",
+        "多模态",
+        "ai api",
+        "claude"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**MoneyPrinterTurbo** 的用户群和 CodeBuddy 高度重合 — 可以写「MoneyPrinterTurbo 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「harry0703/MoneyPrinterTurbo - 利用 AI 大模型和自动化工作流，根据…」（harry0703/MoneyPrinterTurbo: 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高…），涉及 LLM / Agent / Python → 可写方向：**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**M…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「MoneyPrinterTurbo」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 MoneyPrinterTurbo 的核心功能（harry0703/MoneyPrinterTurbo: 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。 Generate HD sh…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 MoneyPrinterTurbo 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 MoneyPrinterTurbo 的核心功能（harry0703/MoneyPrinterTurbo: 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。 Generate HD sh…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 MoneyPrinterTurbo 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "harry0703/MoneyPrinterTurbo: 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。 Ge…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "harry0703/MoneyPrinterTurbo - 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short vide…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：harry0703/MoneyPrinterTurbo: 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。 Ge…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: harry0703/MoneyPrinterTurbo - 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short vide…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy). What matters more to you: deployment, performance, or wo…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。harry0703/MoneyPrinterTurbo: 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。 Ge…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**MoneyPrinterTurbo** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**MoneyPrinterTurbo** 的用户群和 CodeBuddy 高度重合 — 可以写「MoneyPrinterTurbo 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. harry0703/MoneyPrinterTurbo - 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short vide…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：harry0703/MoneyPrinterTurbo: 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。 Ge…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: harry0703/MoneyPrinterTurbo - 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short vide…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "MoneyPrinterTurbo：利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
+    "developer_profile": {
+      "github_username": "harry0703",
+      "profile_url": "https://github.com/harry0703",
+      "name": "Harry",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "harry0703@hotmail.com",
+      "followers": 2505,
+      "following": 2,
+      "public_repos": 14,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4928832?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "usestrix/strix - Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
+    "url": "https://github.com/usestrix/strix",
+    "heat": "54,267 stars",
+    "time": "Today",
+    "developer_name": "usestrix",
+    "developer_url": "https://github.com/usestrix",
+    "developer_email": "hi@usestrix.com",
+    "today_stars": "598 stars today",
+    "language": "Python",
+    "summary": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
+    "content": " \n   \n     \n   \n \n\n \n\n# Strix\n\n### The open-source AI pentesting tool. Autonomous AI hackers that find and fix your app’s vulnerabilities.\n\n \n\n   \n   \n[](https://discord.gg/strix-ai)\n\n   \n   \n   \n   \n\n   \n   \n\n   \n   \n\n \n\n> [!TIP]\n> **New!** Strix integrates seamlessly with GitHub Actions and CI/CD pipelines. Automatically scan for vulnerabilities on every pull request and block insecure code before it reaches production - Get started with no setup required.\n\n---\n\n## Strix Overview\n\nStrix are autonomous AI penetration testing agents that act just like real hackers - they run your code dynamically, find vulnerabilities, and validate them through actual proofs-of-concept. Built for developers and security teams who need fast, accurate security testing without the overhead of manual pentesting or the false positives of static analysis tools.\n\n**Key Capabilities:**\n\n- **Full pentesting toolkit** - reconnaissance, exploitation, and validation out of the box\n- **Multi-agent orchestration** - teams of AI pentesters that collaborate and scale\n- **Real exploit validation** - working PoCs, not false positives like legacy vulnerability scanners\n- **Developer‑first CLI** - actionable findings with remediation guidance\n- **Auto‑fix & reporting** - generate patches and compliance-ready pentest reports\n\n \n\n \n   \n     \n   \n \n\n## Use Cases\n\n- **Application Security Testing** - Detect and validate critical vulnerabilities in your applications\n- **Rapid Penetration Testing** - Get penetration tests done in hours, not weeks, with compliance reports\n- **Bug Bounty Automation** - Automate bug bounty research and generate PoCs for faster reporting\n- **CI/CD Integration** - Run tests in CI/CD to block vulnerabilities before reaching production\n\n## 🚀 Quick Start\n\n**Prerequisites:**\n- Docker (running)\n- An LLM API key from any supported provider (OpenAI, Anthropic, Google, etc.)\n\n### Installation & First Scan\n\n```bash\n# Install Strix\ncurl -sSL https://strix.ai/install | bash\n\n# Configure your AI provider\nexport STRIX_LLM=\"openai/gpt-5.4\"\nexport LLM_API_KEY=\"your-api-key\"\n\n# Run your first security assessment\nstrix --target ./app-directory\n```\n\n> [!NOTE]\n> First run automatically pulls the sandbox Docker image. Results are saved to `strix_runs/ `\n\n---\n\n## ☁️ Strix Platform\n\nTry the Strix full-stack penetration testing platform at **app.strix.ai** - sign up for free, connect your repos and domains, and launch a pentest in minutes.\n\n- **Validated findings with PoCs** - every vulnerability includes a working proof-of-concept exploit and reproduction steps\n- **One-click autofix** - AI-generated security patches as ready-to-merge pull requests\n- **Continuous pentesting** - always-on vulnerability scanning that keeps pace with your deployments\n- **DevSecOps integrations** - GitHub, GitLab, Bitbucket, Slack, Jira, Linear, and CI/CD pipelines\n- **Continuous learning** - AI that builds on past findings, adapts to your codebase, and reduces false positives over time\n\n**Start your fi",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "ssl"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "gpt",
+        "agent",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "usestrix/strix: Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.3,
+      "tcloud_relevance": 5.9,
+      "tcloud_integration": "**strix** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+      "tcloud_products": [
+        "EdgeOne"
+      ],
+      "tcloud_reasons": [
+        "**strix** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示"
+      ],
+      "tcloud_evidence": [
+        "security",
+        "ssl"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**strix** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+      "tcloud_official_matches": [
+        "EdgeOne"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（EdgeOne）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（EdgeOne） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「usestrix/strix - Open-source AI penetration testi…」（usestrix/strix: Open-source AI penetration testing tool to…），涉及 LLM / Agent → 可写方向：**strix** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「strix」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 strix 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉用 strix 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 strix 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 strix 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "usestrix/strix: Open-source AI penetration testing tool to find and…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：…",
+        "x_en": "usestrix/strix - Open-source AI penetration testing tool to find and fix your app’s vul…. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：usestrix/strix: Open-source AI penetration testing tool to find and…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 技术科普 + 教程拆解 + 产品关联（EdgeOne） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: usestrix/strix - Open-source AI penetration testing tool to find and fix your app’s vul…. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (EdgeOne) + opinionated commentary. What matters more to you: deployment, perfo…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。usestrix/strix: Open-source AI penetration testing tool to find and…。如果用官方号发，建议主推 EdgeOne，重点讲 技术科普 + 教程拆解 + 产品关联（EdgeOne） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**strix** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. usestrix/strix - Open-source AI penetration testing tool to find and fix your app’s vul…. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：usestrix/strix: Open-source AI penetration testing tool to find and…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（EdgeOne） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: usestrix/strix - Open-source AI penetration testing tool to find and fix your app’s vul…. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "strix：开源人工智能渗透测试工具，用于查找并修复应用程序的漏洞。",
+    "developer_profile": {
+      "github_username": "usestrix",
+      "profile_url": "https://github.com/usestrix",
+      "name": "Strix",
+      "bio": "Open-source AI hackers to find and fix your app’s vulnerabilities",
+      "company": "",
+      "location": "",
+      "blog": "strix.ai",
+      "twitter_username": "strix_ai",
+      "email": "hi@usestrix.com",
+      "followers": 577,
+      "following": 0,
+      "public_repos": 3,
+      "avatar_url": "https://avatars.githubusercontent.com/u/187630752?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/strix_ai"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/strix-agent"
+        },
+        {
+          "platform": "generic",
+          "url": "https://discord.gg/strix-ai"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "akitaonrails/ai-memory - Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+    "url": "https://github.com/akitaonrails/ai-memory",
+    "heat": "2,132 stars",
+    "time": "Today",
+    "developer_name": "akitaonrails",
+    "developer_url": "https://github.com/akitaonrails",
+    "developer_email": "",
+    "today_stars": "207 stars today",
+    "language": "Rust",
+    "summary": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+    "content": " \n   \n     \n     \n   \n \n\n> Long-term memory for AI coding agents. Quit Claude Code mid-task,\n> start OpenAI Codex in the same directory, continue without\n> re-explaining the architecture, the failed approaches, or the open\n> questions.\n\n[](https://github.com/akitaonrails/ai-memory/releases/latest)\n[](rust-toolchain.toml)\n[](LICENSE)\n\n## Support Matrix\n\n| Area | Status | Notes |\n|---|---|---|\n| Linux | Supported | Primary Docker/server target and CI platform. Published Docker images support `linux/amd64` and `linux/arm64`. Native Arch/AUR packages include system and user systemd units. |\n| macOS | Supported | Workspace tests run in CI; tagged releases publish native `ai-memory-macos-aarch64.tar.gz` and `ai-memory-macos-x86_64.tar.gz` binaries. The native binary is the recommended path on Apple Silicon. See `docs/macos.md`. |\n| Windows via WSL2 | Supported | Use the Linux install path inside WSL2 when the agent runs there. |\n| Native Windows | Experimental | Tagged releases publish `ai-memory-windows-x86_64.zip` with `ai-memory.exe`; Docker Desktop wrapper and source builds are also available. Local supported profiles default to host-native hook commands; Claude Code may use its Windows exec form, while other agents use native single command strings matching their hook schema. PowerShell/Git Bash scripts are compatibility fallbacks. See `docs/windows.md`. |\n| Claude Code | Supported | MCP config + lifecycle hooks; native commands enforce capture exclusions. `install-mcp --session-aware` optionally enables per-session auto-scope isolation through a local stdio bridge. Optionally captures the assistant's final turn on `Stop` when installed with `--capture-assistant` and the server enables `capture_assistant` (double opt-in, off by default). |\n| Codex | Supported | MCP config + lifecycle hooks; native commands enforce capture exclusions. No automatic true session-end hook, so run `ai-memory finalize-session` when you need a final summary/handoff. |\n| Command Code | Supported | MCP config (`~/.commandcode/mcp.json`) + its four stable lifecycle-hook events (`~/.commandcode/settings.json`); native commands enforce capture exclusions and `SessionStart` injects handoffs. `Stop` is only a turn boundary, so use `ai-memory finalize-session --agent command-code` after the final turn. `ai-memory run command-code` adds exact v3 native-session resume and visible-event import; experimental unsandboxed Mods remain excluded. |\n| Devin CLI | Supported | MCP config + lifecycle hooks. Hooks use Devin's `PostCompaction` event, inject handoffs via `hookSpecificOutput.additionalContext`, and omit subagent events because Devin does not expose them. |\n| OpenCode | Supported | Remote MCP config + generated TypeScript plugin; generated plugin enforces capture exclusions. |\n| Cursor | Supported | MCP config + lifecycle hooks. |\n| Gemini CLI | Supported | MCP config + lifecycle hooks. |\n| Oh My Pi / OMP | Supported | Use `--client omp` / `--agent omp` (or `oh-my-pi`) for native",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "agent",
+        "mcp",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Rust",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "akitaonrails/ai-memory: Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.6,
+      "tcloud_relevance": 6.2,
+      "tcloud_integration": "**ai-memory** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs ai-memory 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**ai-memory** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs ai-memory 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "coding agent",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ai-memory** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs ai-memory 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「akitaonrails/ai-memory - Solution for long term m…」（akitaonrails/ai-memory: Solution for long term memory for a…），涉及 Agent / MCP / Rust → 可写方向：**ai-memory** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs ai-memory 的横向对比：CodeBuddy 覆盖需求→设计→…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「akitaonrails/ai-memory - Solution for l…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 ai-memory 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 ai-memory 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 ai-memory 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 ai-memory 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "akitaonrails/ai-memory: Solution for long term memory for agent cod…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "akitaonrails/ai-memory - Solution for long term memory for agent coding CLIs and to fac…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：akitaonrails/ai-memory: Solution for long term memory for agent cod…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: akitaonrails/ai-memory - Solution for long term memory for agent coding CLIs and to fac…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。akitaonrails/ai-memory: Solution for long term memory for agent cod…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ai-memory** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs ai-memory 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. akitaonrails/ai-memory - Solution for long term memory for agent coding CLIs and to fac…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：akitaonrails/ai-memory: Solution for long term memory for agent cod…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: akitaonrails/ai-memory - Solution for long term memory for agent coding CLIs and to fac…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ai-memory：用于代理编码 CLI 的长期记忆解决方案，并促进不同代理供应商之间的切换",
+    "developer_profile": {
+      "github_username": "akitaonrails",
+      "profile_url": "https://github.com/akitaonrails",
+      "name": "Fabio Akita",
+      "bio": "Agile Senior Vibe Coder /\r\nSign up for my newsletter: https://themakitachronicles.com",
+      "company": "Codeminer 42",
+      "location": "Brazil",
+      "blog": "http://www.akitaonrails.com",
+      "twitter_username": "akitaonrails",
+      "email": "",
+      "followers": 19400,
+      "following": 5,
+      "public_repos": 174,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2840?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/akitaonrails"
+        },
+        {
+          "platform": "unknown",
+          "url": "http://www.akitaonrails.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "mukul975/Anthropic-Cybersecurity-Skills - 817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
+    "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+    "heat": "28,485 stars",
+    "time": "Today",
+    "developer_name": "mukul975",
+    "developer_url": "https://github.com/mukul975",
+    "developer_email": "",
+    "today_stars": "198 stars today",
+    "language": "Python",
+    "summary": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0",
+    "content": " \n   \n \n\n \n\n#  Anthropic Cybersecurity Skills\n\n### The largest open-source cybersecurity skills library for AI agents\n\n[](https://mahipal.engineer/survey?utm_source=github_badge&utm_medium=readme&utm_campaign=gars2026)\n[](LICENSE)\n[](#whats-inside--29-security-domains)\n[](#six-frameworks-one-skill-library)\n[](https://ctid.mitre.org/fraud/)\n[](#whats-inside--29-security-domains)\n[](#compatible-platforms)\n[](https://github.com/mukul975/Anthropic-Cybersecurity-Skills/stargazers)\n[](https://github.com/mukul975/Anthropic-Cybersecurity-Skills/network/members)\n[](https://github.com/mukul975/Anthropic-Cybersecurity-Skills/commits/main)\n[](https://agentskills.io)\n[](CONTRIBUTING.md)\n[](https://casky.ai/?utm_source=github&utm_medium=readme&utm_campaign=cohort_launch#waitlist)\n[](https://github.com/NousResearch/hermes-agent)\n\n**817 production-grade cybersecurity skills · 29 security domains · 6 framework mappings · 26+ AI platforms**\n\nGet Started · What's Inside · Frameworks · Platforms · Contributing\n\n \n\n---\n\n> ⚠️ **Community Project** — This is an independent, community-created project. Not affiliated with Anthropic PBC.\n>\n> 🔐 **Authorized & lawful use only.** This library includes offensive and dual-use techniques (e.g. red-team C2, phishing simulation, exploitation) intended for **authorized penetration testing, security research, defense, and education**. Only use them against systems you own or have **explicit written permission** to test, and comply with all applicable laws and rules of engagement. You are solely responsible for how you use these skills. See SECURITY.md and CODE_OF_CONDUCT.md.\n\n## Give any AI agent the security skills of a senior analyst\n\nA junior analyst knows which Volatility3 plugin to run on a suspicious memory dump, which Sigma rules catch Kerberoasting, and how to scope a cloud breach across three providers. **Your AI agent doesn't — unless you give it these skills.**\n\nThis repo contains **817 structured cybersecurity skills** spanning **29 security domains**, each following the agentskills.io open standard.  The library maps across **six industry frameworks** — MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, MITRE D3FEND, NIST AI RMF, and the MITRE Fight Fraud Framework (F3) — with each skill mapped to the frameworks **relevant to its type** (a forensics skill carries ATT&CK + CSF; an AI-security skill adds ATLAS and AI RMF).  Clone it, point your agent at it, and your next security investigation gets expert-level guidance in seconds.\n\n## Six frameworks, one skill library\n\nEach skill maps to the frameworks that fit its subject — ATT&CK and NIST CSF are near-universal, while ATLAS, AI RMF, D3FEND, and F3 apply where they're relevant. **Framework coverage across the 817 skills:** MITRE ATT&CK **805** · NIST CSF 2.0 **804** · MITRE D3FEND **139** · NIST AI RMF **97** · MITRE F3 **94** · MITRE ATLAS **93**.\n\n| Framework | Version | Framework scope | What it maps |\n|---|---|---|---|\n| MITRE ATT&CK | v19.1 | 15 tactics · Enterprise/Mobile/",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2. 0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills. io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.0,
+      "tcloud_relevance": 6.2,
+      "tcloud_integration": "**Anthropic-Cybersecurity-Skills** 的用户群和 CodeBuddy 高度重合 — 可以写「Anthropic-Cybersecurity-Skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Anthropic-Cybersecurity-Skills** 的用户群和 CodeBuddy 高度重合 — 可以写「Anthropic-Cybersecurity-Skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "copilot",
+        "cursor",
+        "github copilot"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Anthropic-Cybersecurity-Skills** 的用户群和 CodeBuddy 高度重合 — 可以写「Anthropic-Cybersecurity-Skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「mukul975/Anthropic-Cybersecurity-Skills - 817 str…」（817 structured cybersecurity skills for AI agents · Mapped…），涉及 Agent → 可写方向：**Anthropic-Cybersecurity-Skills** 的用户群和 CodeBuddy 高度重合 — 可以写「Anthropic-Cyberse…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「mukul975/Anthropic-Cybersecurity-Skills…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 Anthropic-Cybersecurity-Skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 Anthropic-Cybersecurity-Skills 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Anthropic-Cybersecurity-Skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 Anthropic-Cybersecurity-Skills 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "817 structured cybersecurity skills for AI agents · Mapped to 6 fra…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "mukul975/Anthropic-Cybersecurity-Skills - 817 structured cybersecurity skills for AI ag…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：817 structured cybersecurity skills for AI agents · Mapped to 6 fra…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: mukul975/Anthropic-Cybersecurity-Skills - 817 structured cybersecurity skills for AI ag…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。817 structured cybersecurity skills for AI agents · Mapped to 6 fra…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Anthropic-Cybersecurity-Skills** 的用户群和 CodeBuddy 高度重合 — 可以写「Anthropic-Cybersecurity-Skills 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. mukul975/Anthropic-Cybersecurity-Skills - 817 structured cybersecurity skills for AI ag…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：817 structured cybersecurity skills for AI agents · Mapped to 6 fra…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: mukul975/Anthropic-Cybersecurity-Skills - 817 structured cybersecurity skills for AI ag…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Anthropic-Cybersecurity-Skills：AI 代理的 817 项结构化网络安全技能 · 映射到 6 个框架：MITRE ATT&CK、NIST CSF 2.0、MITRE ATLAS、D3FEND、NIST AI RMF 和 MITRE F3（打击欺诈） · 代理技能。",
+    "developer_profile": {
+      "github_username": "mukul975",
+      "profile_url": "https://github.com/mukul975",
+      "name": "Mahipal",
+      "bio": "🔐 Cybersecurity | 💻 Dev | 📷 Street Photographer\r\n🎓 MSc | 📚 Research & AI Security",
+      "company": "",
+      "location": "Berlin ",
+      "blog": "Mahipal.engineer",
+      "twitter_username": "Mukul_jangra",
+      "email": "",
+      "followers": 1043,
+      "following": 1,
+      "public_repos": 33,
+      "avatar_url": "https://avatars.githubusercontent.com/u/42860185?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/Mukul_jangra"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/mahipal975"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://Mahipal.engineer"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://orcid.org/0009-0003-4474-946X"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "AlexsJones/llmfit - Hundreds of models & providers. One command to find what runs on your hardware.",
+    "url": "https://github.com/AlexsJones/llmfit",
+    "heat": "32,332 stars",
+    "time": "Today",
+    "developer_name": "AlexsJones",
+    "developer_url": "https://github.com/AlexsJones",
+    "developer_email": "",
+    "today_stars": "198 stars today",
+    "language": "Rust",
+    "summary": "Hundreds of models & providers. One command to find what runs on your hardware.",
+    "content": "# llmfit\n\n \n   \n \n\n \n   English  ·\n   中文  ·\n   日本語 \n \n\n \n     \n     \n     \n     \n \n\n> **📊 New: benchmark & share — real numbers from your machine, better estimates for everyone.** Download a model, serve it, and measure real tok/s on your hardware — then contribute the results back to the project as a PR, straight from the TUI. No `gh` CLI, no third-party account. Every run is saved locally first, your own measurements replace estimates in the fit table, and each merged submission ships in the next release: anyone on identical hardware gets measured `✓` numbers before they ever run a benchmark. Follow the step-by-step benchmarking guide →\n>\n> *Previously: llmfit 1.0 — the release where the numbers became verifiable →*\n\n**Hundreds of models & providers. One command to find what runs on your hardware.**\n\nA terminal tool that right-sizes LLM models to your system's RAM, CPU, and GPU. Detects your hardware, scores each model across quality, speed, fit, and context dimensions, and tells you which ones will actually run well on your machine.\n\nShips with an interactive TUI (default) and a classic CLI mode. Supports multi-GPU setups, MoE architectures, dynamic quantization selection, speed estimation, and local runtime providers (Ollama, llama.cpp, MLX, Docker Model Runner, LM Studio).\n\n> **Sister projects:**\n> - sympozium — managing agents in Kubernetes.\n> - llmserve — a simple TUI for serving local LLM models. Pick a model, pick a backend, serve it.\n> - llama-panel — a native macOS app for managing local llama-server instances.\n\n## Documentation\n\n|  |  |\n|---|---|\n| **Get started** | Install · Usage · How it works |\n| **Guides** | TUI guide · Benchmarking step-by-step · CLI & automation · Runtime providers · OpenClaw integration |\n| **Reference** | How it works (full) · Platform & GPU support · Custom models · Development |\n| **Project** | Contributing · Alternatives · Code signing · License |\n\n---\n\n## Install\n\n### Windows\n```sh\nscoop install llmfit\n```\n\nIf Scoop is not installed, follow the Scoop installation guide.\n\n### macOS / Linux\n\n#### Homebrew\n\nPrebuilt binary (recommended, works on all macOS/Linux versions):\n```sh\nbrew install AlexsJones/llmfit/llmfit\n```\n\nOr from the homebrew-core formula, which builds from source on macOS versions without a bottle:\n```sh\nbrew install llmfit\n```\n\n#### MacPorts\n```sh\nport install llmfit\n```\n\n#### Quick install\n```sh\ncurl -fsSL https://llmfit.axjns.dev/install.sh | sh\n```\n\nDownloads the latest release binary from GitHub and installs it to `/usr/local/bin` (or `~/.local/bin` if no sudo).\n\n**Install to `~/.local/bin` without sudo:**\n```sh\ncurl -fsSL https://llmfit.axjns.dev/install.sh | sh -s -- --local\n```\n\n### uv / pip\nTo install or update llmfit:\n```sh\nuv tool install -U llmfit\n```\n\nTo run without installing:\n```sh\nuvx llmfit\n```\n\nYou can also install llmfit as a Python package in the normal way with tools such as pip or uv.\n\n### Docker / Podman\n```sh\ndocker run ghcr.io/alexsjones/llmfit\n```\nThis prints JSON fr",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "kubernetes",
+        "docker",
+        "gpu"
+      ],
+      "ai_hits": [
+        "llm",
+        "llama"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Llama"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Kubernetes",
+        "Python"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "AlexsJones/llmfit: Hundreds of models & providers. One command to find what runs on your hardware.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.8,
+      "tcloud_relevance": 0.6,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「AlexsJones/llmfit - Hundreds of models & provider…」（AlexsJones/llmfit: Hundreds of models & providers. One comm…），涉及 LLM / Kubernetes / Python → 可写方向：Kubernetes 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「AlexsJones/llmfit - Hundreds of models…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 llmfit 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 llmfit 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "AlexsJones/llmfit: Hundreds of models & providers. One command to f…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "AlexsJones/llmfit - Hundreds of models & providers. One command to find what runs on yo…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：AlexsJones/llmfit: Hundreds of models & providers. One command to f…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: AlexsJones/llmfit - Hundreds of models & providers. One command to find what runs on yo…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。AlexsJones/llmfit: Hundreds of models & providers. One command to f…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. AlexsJones/llmfit - Hundreds of models & providers. One command to find what runs on yo…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：AlexsJones/llmfit: Hundreds of models & providers. One command to f…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: AlexsJones/llmfit - Hundreds of models & providers. One command to find what runs on yo…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "llmfit：数百个模型和提供商。一个命令即可查找您的硬件上运行的内容。",
+    "developer_profile": {
+      "github_username": "AlexsJones",
+      "profile_url": "https://github.com/AlexsJones",
+      "name": "Alex Jones",
+      "bio": "I build infrastructure for the agentic era\r\nPrincipal Engineer",
+      "company": "AWS",
+      "location": "London",
+      "blog": "https://axjns.dev",
+      "twitter_username": "AlexJonesax",
+      "email": "",
+      "followers": 1419,
+      "following": 62,
+      "public_repos": 268,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1235925?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/AlexJonesax"
+        },
+        {
+          "platform": "bluesky",
+          "url": "https://bsky.app/profile/axjns.dev"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://axjns.dev"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://orcid.org/0009-0008-8279-6896"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "santifer/career-ops - Open-source AI job search: scan job portals, evaluate listings with a structured A-F rubric into a 1.0-5.0 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)",
+    "url": "https://github.com/santifer/career-ops",
+    "heat": "64,746 stars",
+    "time": "Today",
+    "developer_name": "santifer",
+    "developer_url": "https://github.com/santifer",
+    "developer_email": "hi@santifer.io",
+    "today_stars": "218 stars today",
+    "language": "JavaScript",
+    "summary": "Open-source AI job search: scan job portals, evaluate listings with a structured A-F rubric into a 1.0-5.0 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)",
+    "content": "      \n\n \n\nEnglish | Español | Deutsch | Français | Português (Brasil) | 한국어 | 日本語 | 简体中文 | 繁體中文 | Українська | Русский | Polski | Dansk | தமிழ் | العربية | हिन्दी | Türkçe\n\n \n\n \n     \n \n\n \n   I spent months applying to jobs the hard way. So I engineered the system I wish I had.  \n  Companies use AI to filter candidates.  I just gave candidates AI to  choose  companies.  \n   Now it's open source. \n \n\n \n     \n \n\n \n     \n \n\n  FEATURED IN  \n\n \n        \n  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n        \n \n\n---\n\n \n   \n \n\n  740+ job listings evaluated · 100+ personalized CVs · 1 dream role landed  \n\n \n   \n     \n       \n       \n     \n   \n \n\n \n     \n \n\n \n     \n \n\n \n     \n \n\n \n   Also runs on any agent-skill-standard CLI. See  Supported CLIs .  \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n     \n \n\n## What Is This\n\ncareer-ops (career-ops.org, also known as **careerops**) turns any AI coding CLI into a full job search command center. Instead of manually tracking applications in a spreadsheet, you get an AI-powered pipeline that:\n\n- **Evaluates offers** with a structured evaluation -- blocks A-F scored across 5 weighted dimensions, plus block G, a separate posting-legitimacy assessment that never affects the 1-5 score\n- **Generates tailored PDFs** -- ATS-optimized CVs customized per job description\n- **Scans portals** automatically (Greenhouse, Ashby, Lever, company pages)\n- **Processes in batch** -- evaluate 10+ offers in parallel with sub-agents\n- **Tracks everything** in a single source of truth with integrity checks\n- **Researches companies and finds the right person to contact** -- applications get you in the queue; research gets you a conversation\n\n> **Important: This is NOT a spray-and-pray tool.** career-ops is a filter -- it helps you find the few offers worth your time out of hundreds. The system strongly recommends against applying to anything scoring below 4.0/5. Your time is valuable, and so is the recruiter's. Always review before submitting.\n\ncareer-ops is agentic: whichever AI coding CLI you choose navigates career pages with Playwright, evaluates fit by reasoning about your CV vs the job description (not keyword matching), and adapts your resume per listing.\n\n> **Heads up: the first evaluations won't be great.** The system doesn't know you yet. Feed it context -- your CV, your career story, your proof points, your preferences, what you're good at, what you want to avoid. The more you nurture it, the better it gets. Think of it as onboarding a new recruiter: the first week they need to learn about you, then they become invaluable.\n\nBuilt by someone who used it to evaluate 740+ job offers, generate 100+ tailored CVs, and land a Head of Applied AI role. Read the full case study.\n\n## The CareerOps Manifesto\n\ncareer-ops is the first reference implementation of the CareerOps Manifesto. read it. if it says what you believe, sign it. your signature becomes a commit.\n\n## Features\n\n| Feature                  | Description                           ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "agentic",
+        "reasoning"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Open-source AI job search: scan job portals, evaluate listings with a structured A-F rubric into a 1. 0 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.5,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**career-ops** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs career-ops 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**career-ops** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs career-ops 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**career-ops** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs career-ops 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「santifer/career-ops - Open-source AI job search:…」（Open-source AI job search: scan job portals, evaluate listi…），涉及 Agent → 可写方向：**career-ops** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs career-ops 的横向对比：CodeBuddy 覆盖需求→设…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「santifer/career-ops - Open-source AI jo…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 career-ops 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 career-ops 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 career-ops 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 career-ops 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Open-source AI job search: scan job portals, evaluate listings with…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "santifer/career-ops - Open-source AI job search: scan job portals, evaluate listings wi…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Open-source AI job search: scan job portals, evaluate listings with…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: santifer/career-ops - Open-source AI job search: scan job portals, evaluate listings wi…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Open-source AI job search: scan job portals, evaluate listings with…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**career-ops** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs career-ops 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. santifer/career-ops - Open-source AI job search: scan job portals, evaluate listings wi…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Open-source AI job search: scan job portals, evaluate listings with…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: santifer/career-ops - Open-source AI job search: scan job portals, evaluate listings wi…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "career-ops：开源 AI 职位搜索：扫描职位门户，使用结构化 A-F 评分标准将列表评估为 1. 0 分，定制您的简历，跟踪应用程序 — 在您的 AI 编码 CLI 中本地运行（Claude Code、Codex、OpenCode、Antigravity...）",
+    "developer_profile": {
+      "github_username": "santifer",
+      "profile_url": "https://github.com/santifer",
+      "name": "Santiago Fernández de Valderrama Aparicio",
+      "bio": "Building career-ops, open-source AI job search (60K★). Head of Applied AI. Founder (exit 2025).",
+      "company": "",
+      "location": "Seville, Spain",
+      "blog": "https://santifer.io",
+      "twitter_username": "santifer",
+      "email": "hi@santifer.io",
+      "followers": 3126,
+      "following": 43,
+      "public_repos": 25,
+      "avatar_url": "https://avatars.githubusercontent.com/u/256850418?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://linkedin.com/in/santifer"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/santifer"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@santifer_io"
+        },
+        {
+          "platform": "facebook",
+          "url": "https://www.facebook.com/santifer.io/"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://santifer.io"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://orcid.org/0009-0006-2192-7210"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "jundot/omlx - LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar",
+    "url": "https://github.com/jundot/omlx",
+    "heat": "19,018 stars",
+    "time": "Today",
+    "developer_name": "jundot",
+    "developer_url": "https://github.com/jundot",
+    "developer_email": "junkim.dot@gmail.com",
+    "today_stars": "78 stars today",
+    "language": "Python",
+    "summary": "LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar",
+    "content": " \n   \n     \n     \n     \n   \n \n\n oMLX \n  LLM inference, optimized for your Mac  Continuous batching and tiered KV caching, managed directly from your menu bar. \n\n \n   \n \n\n \n   \n   \n   \n \n\n \n   junkim.dot@gmail.com  ·  https://omlx.ai/me \n \n\n \n   Install  ·\n   Quickstart  ·\n   Features  ·\n   Models  ·\n   CLI Configuration  ·\n   Benchmarks  ·\n   oMLX.ai \n \n\n \n   English  ·\n   中文  ·\n   한국어  ·\n   日本語 \n \n\n---\n\n \n   \n \n\n> *Every LLM server I tried made me choose between convenience and control. I wanted to pin everyday models in memory, auto-swap heavier ones on demand, set context limits - and manage it all from a menu bar.*\n>\n> *oMLX persists KV cache across a hot in-memory tier and cold SSD tier - even when context changes mid-conversation, all past context stays cached and reusable across requests, making local LLMs practical for real coding work with tools like Claude Code. That's why I built it.*\n\n## Install\n\n### macOS App\n\nDownload the `.dmg` from Releases, drag to Applications, done. The app includes in-app auto-update, so future upgrades are just one click. The macOS app also installs a lightweight `~/.omlx/bin/omlx` CLI shim so terminal commands and Apple Shortcuts can control the app-managed server.\n\n### Homebrew\n\n```bash\nbrew tap jundot/omlx https://github.com/jundot/omlx\nbrew install jundot/omlx/omlx\n\n# Upgrade to the latest version\nbrew update && brew upgrade omlx\n\n# Run as a background service (auto-restarts on crash)\nomlx start\n\n# Optional: MCP (Model Context Protocol) support\n/opt/homebrew/opt/omlx/libexec/bin/pip install mcp\n```\n\nOptional GLM-5.2 / MiniMax M3 native custom kernels currently require a HEAD build:\n\n```bash\nbrew install jundot/omlx/omlx --HEAD --with-custom-kernel\n```\n\n### From Source\n\n```bash\ngit clone https://github.com/jundot/omlx.git\ncd omlx\npip install -e .          # Core only\npip install -e \".[mcp]\"   # With MCP (Model Context Protocol) support\n\n# GLM-5.2 / MiniMax M3 / Qwen3.5 native custom kernels (strongly recommended\n# if you serve those families -- see note below)\nOMLX_WITH_CUSTOM_KERNEL=1 pip install -e .\n```\n\nRequires macOS 15.0+ (Sequoia), Python 3.11–3.13, and Apple Silicon (M1/M2/M3/M4).\n\n> **Note on native custom kernels:** a plain `pip install -e .` does NOT build\n> them, and the affected model families then silently fall back to much slower\n> generic paths -- for GLM-5.2 the fused DSA prefill is roughly 30x faster with\n> the kernels (measured 845 vs ~29 tok/s on an M3 Ultra), and the fallback also\n> uses more memory (#2137). Building them requires the Metal toolchain, which\n> Command Line Tools alone do not provide (`xcrun: error: unable to find utility\n> \"metal\"`): install full Xcode, or use the official DMG which ships the kernels\n> precompiled. Homebrew can build them with `brew install jundot/omlx/omlx --HEAD\n> --with-custom-kernel`, but that build also needs full Xcode. To verify your\n> install:\n>\n> ```bash\n> python -c \"from omlx.custom_kernels import native_kernel_status; print(native_kernel_stat",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "inference",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "MCP",
+        "Python"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "jundot/omlx: LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.2,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**omlx** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**omlx** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**omlx** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「jundot/omlx - LLM inference server with continuou…」（jundot/omlx: LLM inference server with continuous batching…），涉及 LLM / MCP / Python → 可写方向：**omlx** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「jundot/omlx - LLM inference server with…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 omlx 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 omlx 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 omlx 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 omlx 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "jundot/omlx: LLM inference server with continuous batching & SSD ca…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "jundot/omlx - LLM inference server with continuous batching & SSD caching for Apple Sil…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：jundot/omlx: LLM inference server with continuous batching & SSD ca…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: jundot/omlx - LLM inference server with continuous batching & SSD caching for Apple Sil…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。jundot/omlx: LLM inference server with continuous batching & SSD ca…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**omlx** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. jundot/omlx - LLM inference server with continuous batching & SSD caching for Apple Sil…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：jundot/omlx: LLM inference server with continuous batching & SSD ca…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: jundot/omlx - LLM inference server with continuous batching & SSD caching for Apple Sil…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "omlx：LLM 推理服务器，具有适用于 Apple Silicon 的连续批处理和 SSD 缓存 - 从 macOS 菜单栏进行管理",
+    "developer_profile": {
+      "github_username": "jundot",
+      "profile_url": "https://github.com/jundot",
+      "name": "Jun Kim",
+      "bio": "Data engineer by day, AI dreamer by night. I build the tools I wish existed for my Mac — then open-source them.\r\njunkim.dot@gmail.com",
+      "company": "",
+      "location": "Seoul, Korea",
+      "blog": "https://omlx.ai",
+      "twitter_username": "jundotkim",
+      "email": "",
+      "followers": 602,
+      "following": 1,
+      "public_repos": 5,
+      "avatar_url": "https://avatars.githubusercontent.com/u/64250138?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "https://omlx.ai/me"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/jundotkim"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://omlx.ai"
+        }
+      ],
+      "is_org": false
+    }
+  }
+]
