@@ -1,0 +1,489 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Everything I own, owned",
+    "url": "https://schlarp.com/posts/everything-i-own-owned/",
+    "hn_url": "https://news.ycombinator.com/item?id=49413320",
+    "heat": "302 points",
+    "time": "3 hours ago",
+    "developer_name": "schlarpc",
+    "developer_url": "https://news.ycombinator.com/user?id=schlarpc",
+    "content": "Everything I own, owned - schlarp.com Everything I own, owned August 23, 2026 Over the past couple weeks I’ve been doing agent-driven reverse engineering of peripherals that happen to be within arm’s reach. From those devices, I’ve come away with a full plaintext command shell inside my microphone, a webcam whose activity LED I can switch off while it records, and a key light that hands out memory writes to anyone on the WiFi. Peripherals have proven to be an ideal target for agentic RE - they’re tiny computers attached to my computer, with a data connection to the host and usually a firmware update mechanism, so an agent has something to iterate against. The net outcome is better control and understanding of my machine. My process was pretty much the same for each of these devices: grab a copy of the device’s firmware and associated update tool from the manufacturer, throw it into my reverse engineering environment , tell Claude Opus 5 what my goals are, and let it churn. Depending on the device, the goals were somewhat different, but they usually looked something like: In this directory is the firmware and update utility for ___. The device is also attached to this computer, and you may interact with it in non-mutating ways. Exhaustively document and cross-validate the entire firmware, including the following goals: * reverse engineer the firmware update format and update protocol * implement our own update utility * determine the security properties of the update protocol, including checksums, signature validation, secure boot * use static and dynamic analysis to determine all protocol surfaces and completely enumerate functionality * find any hidden or debug functionality in the product and how to access it Depending on the results, there were different directions of follow-up, but you should get the general idea. Let’s run through the list - each device links to a GitHub repo full of generated-slop docs and scripts, most of which have been validated live against real hardware. I’ve also included the effort each device took, pulled out of the Claude Code session transcripts. “Churn” is the time Claude was actually working, with the long idle gaps removed. “Prompts from me” is every message I typed, including the one-word ones telling it to keep going. All five devices together came out to about 13 hours of churn and 98 prompts, spread across two weeks of evenings. Everything I own Insta360 Link webcam GitHub repo - 3.7 hours of Claude churn, 33 prompts from me I use an Insta360 Link webcam, which is a nice gimbaled pan-tilt-zoom camera that does face tracking for automatically framing the shot. I wanted to know if it was possible to subvert the activity LED, like in the classic iSeeYou exploit. Interestingly, it was immediately obvious that this camera has a lot going on inside it. It turns out that it runs a whole RTOS (ThreadX) sourced from the upstream SoC vendor, Ambarella . The RTOS hosts several small vision models that provide things l",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "agent",
+        "agentic",
+        "vision model"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Everything I own, owned - schlarp. com Everything I own, owned August 23, 2026 Over the past couple weeks I’ve been doing agent-driven reverse engineering of peripherals that happen to be within arm’s reach. From those devices, I’ve come away with a full plaintext command shell inside my microphone, a webcam whose activity LED I can switch off while it records, and a key light that hands out memory writes to anyone on the WiFi.",
+      "heat_score": 5.0,
+      "timeliness_score": 8.0,
+      "composite_score": 5.8,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**Everything I own, owned** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Everything I own, owned** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Everything I own, owned** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Everything I own, owned」（Everything I own, owned - schlarp. com Everything I own, ow…），涉及 Agent → 可写方向：涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Everything I own, owned」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 Everything I own, owned 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Everything I own, owned 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Everything I own, owned - schlarp. com Everything I own, owned Augu…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "Everything I own, owned. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Everything I own, owned - schlarp. com Everything I own, owned Augu…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Everything I own, owned. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Everything I own, owned - schlarp. com Everything I own, owned Augu…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Everything I own, owned** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Everything I own, owned. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Everything I own, owned - schlarp. com Everything I own, owned Augu…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Everything I own, owned. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Everything I own, owned：我拥有的一切，拥有——schlarp。com 我拥有的一切，2026 年 8 月 23 日拥有 在过去的几周里，我一直在对触手可及的外围设备进行代理驱动的逆向工程。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Anthropic's best AI model struggles to attract users as cheaper tools thrive",
+    "url": "https://www.ft.com/content/5ee49718-c258-4f01-aa32-7e5b76ae5245",
+    "hn_url": "https://news.ycombinator.com/item?id=49411102",
+    "heat": "244 points",
+    "time": "8 hours ago",
+    "developer_name": "naves",
+    "developer_url": "https://news.ycombinator.com/user?id=naves",
+    "content": "Subscribe to read Accessibility help Skip to navigation Skip to main content Skip to footer Anthropic’s best AI model struggles to attract users as cheaper tools thrive Subscribe to unlock this article Try unlimited access Only $1 for 4 weeks Then $75 per month. Complete digital access to quality FT journalism on any device. Cancel anytime during your trial. Keep reading for $1 What’s included Global news & analysis Expert opinion FT App on Android & iOS First FT: the day’s biggest stories 20+ curated newsletters Follow topics & set alerts with myFT FT Videos & Podcasts 10 additional monthly gift articles to share Lex: FT’s flagship investment column 15+ Premium newsletters from leading experts FT Digital Edition: our digitised print edition Explore more offers. Standard Digital $45 per month Essential digital access to quality FT journalism on any device. Pay a year upfront and save 20%. Select What's included Global news & analysis Expert opinion FT App on Android & iOS FT Edit: Access on iOS and web FirstFT: the day's biggest stories 20+ curated newsletters Follow topics & set alerts with myFT FT Videos & Podcasts 10 monthly gift articles to share Premium Digital Complete coverage $75 per month Complete digital access to quality FT journalism with expert analysis from industry leaders. Pay a year upfront and save 20%. Select What's included Global news & analysis Expert opinion FT App on Android & iOS FT Edit: Access on iOS and web FirstFT: the day's biggest stories 20+ curated newsletters Follow topics & set alerts with myFT FT Videos & Podcasts 20 monthly gift articles to share Lex: FT's flagship investment column 15+ Premium newsletters by leading experts FT Digital Edition: our digitised print edition FT Digital Edition $16.99 per month Our digitised version of the FT newspaper, for easy reading on any device. Select What's included FT Digital Edition: our digitised print edition Global news & analysis Expert opinion Translate instantly to 26 languages Lex: FT's flagship investment column FT Magazines, including HTSI Offline Access Check whether you already have access via your university or organisation. Terms & Conditions apply Explore our full range of subscriptions. For individuals Discover all the plans currently available in your country Digital Print Print + Digital For multiple readers Digital access for organisations. Includes exclusive features and content. FT Professional Find out why Close side navigation menu Search the FT Search Subscribe for full access",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "观点评论",
+      "topic_type": "行业观察",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "正向推广",
+      "detail_brief": "Subscribe to read Accessibility help content Skip to footer Anthropic’s best AI model struggles to attract users as cheaper tools thrive Subscribe to unlock this article Try unlimited access Only $1 for 4 weeks Then $75 per month. Complete digital access to quality FT journalism on any device. Cancel anytime during your trial. Keep reading for $1 What’s included Global news & analysis Expert opinion FT App on Android & iOS First FT: the day’s biggest stories 20+ curated newsletters Follow topic…",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 3.4,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "观点评论",
+        "社区参与"
+      ],
+      "editorial_angles_text": "观点评论 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "LinkedIn（行业观察文章）",
+        "X（摘要快讯分享）"
+      ],
+      "recommended_platforms_text": "LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "editorial_brief": "话题类型：行业观察\n可用角度：「Anthropic's best AI model struggles to attract us…」（Subscribe to read Accessibility help content Skip to footer…）\n优先级：P1 本周发（仍有时效价值）\n适合平台：LinkedIn（行业观察文章） + X（摘要快讯分享）",
+      "social_recommendation": "「Anthropic's best AI model struggles to…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 LinkedIn（行业观察文章） + X（摘要快讯分享）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Subscribe to read Accessibility help content Skip to footer Anthrop…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Anthropic's best AI model struggles to attract users as cheaper tools thrive. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Subscribe to read Accessibility help content Skip to footer Anthrop…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 观点评论 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Anthropic's best AI model struggles to attract users as cheaper tools thrive. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around opinionated commentary + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Subscribe to read Accessibility help content Skip to footer Anthrop…。如果用官方号发，建议主推 人工判断场景，重点讲 观点评论 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Anthropic's best AI model struggles to attract users as cheaper tools thrive. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on opinionated commentary + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Subscribe to read Accessibility help content Skip to footer Anthrop…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 观点评论 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Anthropic's best AI model struggles to attract users as cheaper tools thrive. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on opinionated commentary + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Anthropic's best AI model struggles to a：在任何设备上以数字方式完整访问高质量的《金融时报》新闻。试用期间随时取消。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "My agent.md to improve LLM-assisted code quality",
+    "url": "https://fabiensanglard.net/agent.md/index.html",
+    "hn_url": "https://news.ycombinator.com/item?id=49410932",
+    "heat": "174 points",
+    "time": "8 hours ago",
+    "developer_name": "ibobev",
+    "developer_url": "https://news.ycombinator.com/user?id=ibobev",
+    "content": "My agent.md to improve LLM-assisted code quality Fabien Sanglard - WEBSITE Aug 21, 2026 My agent.md to improve LLM-assisted code quality The first time I tried to use an LLM to speed up coding was in mid-2025. I was not impressed. I was working on libadbmdns back then, an mDNS implementation in Rust. The code produced would not even compile. I revisited LLMs in January 2026. This time it worked better. Not only did it write a complex indexed-binary heap class, it was able to pinpoint an obscure bug in the polling crate due to the Windows IOCP implementation. However, the code quality was abysmal. It was spaghetti code with no comments and no structure. It was cool but not realistic to work with LLMs if the speed gain was lost to cleaning up the code until it met the production-level bar. Iterating and repeating myself over and over again In March 2026, I tried to use agentic IDEs like Antigravity and VS Code's Claude Code plugin. I was now able to \"iterate\" over the \"staged\" code. I found myself reviewing the code of an infinitely patient junior CS major with suggestions like \"don't use magic numbers\", \"add a short comment here to explain yourself\", or \"use short function names\". The code quality improved dramatically. It was very close to what I would have produced \"by hand\" but it was tedious. I ended up repeating myself over and over again in each new session. Agent.md to the rescue When a coding session starts, the coding harness loads a file named agent.md and injects it into the prompt. This is the perfect location to super fine-tune coding style preferences. When I found myself repeating the same suggestion to improve the code, I added it in there. Here is my version of agent.md as a starting point if you need one. Placing it in the root of a project should be enough. Alternatively, gemini.md/claude.md can be symlinked toward an agent.md to have it active anywhere. # FAB's AGENT.MD - When writing something intended for human consumption, (comment, commit message, reply to prompt) use as few words as possible. Pick every word meticulously to reduce the volume to a strict minimum. Be down to the point. Less is more. - Avoid superlatives and praise. Stop telling me I am absolutely right. Give me the cold hard truth. - Avoid magic numbers and strings by extracting recurring or meaningful values into descriptive constants (const) or enums. Keep self-explanatory, one-off values inline to avoid clutter. If a value comes from a spec (e.g. HTTP 200 OK), use a constant regardless. - Reduce code indentation. Avoid Arrow Anti-Pattern. Leverage early return and continue. - Keep function names short. Less than 30 characters. - Use enums instead of booleans for function parameters. - Let the reader of the code breathe. Add empty lines between logical blocks of code. - Add a small, to the point, comment to explain *what* the block does and *why*. Use examples when possible. Propose ASCII drawings to explain complete systems. - Treat member visibility chan",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "llm",
+        "claude",
+        "gemini",
+        "agent",
+        "fine-tune",
+        "prompt",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Fine-tuning",
+        "Rust"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "My agent. md to improve LLM-assisted code quality Fabien Sanglard - WEBSITE Aug 21, 2026 My agent. md to improve LLM-assisted code quality The first time I tried to use an LLM to speed up coding was in mid-2025. I was not impressed.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 7.1,
+      "tcloud_relevance": 8.3,
+      "tcloud_integration": "**My agent.md to improve LLM-assisted code** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**My agent.md to improve LLM-assisted code** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**My agent.md to improve LLM-assisted code** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**My agent.md to improve LLM-assisted code** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "llm",
+        "claude",
+        "gemini"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**My agent.md to improve LLM-assisted code** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**My agent.md to improve LLM-assisted code** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「My agent.md to improve LLM-assisted code quality」（My agent. md to improve LLM-assisted code quality Fabien Sa…），涉及 LLM / Agent / Fine-tuning → 可写方向：与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy： 涉及 AI 编码场景，CodeBuddy 提供…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「My agent.md to improve LLM-assisted code」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 My agent.md to improve LLM-assisted code 的核心功能（My agent. md to improve LLM-assisted code quality Fabien Sanglard - WEBSITE Aug…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 My agent.md to improve LLM-assisted code 的核心功能（My agent. md to improve LLM-assisted code quality Fabien Sanglard - WEBSITE Aug…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "My agent. md to improve LLM-assisted code quality Fabien Sanglard -…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "My agent.md to improve LLM-assisted code quality. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：My agent. md to improve LLM-assisted code quality Fabien Sanglard -…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: My agent.md to improve LLM-assisted code quality. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。My agent. md to improve LLM-assisted code quality Fabien Sanglard -…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**My agent.md to improve LLM-assisted code** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**My agent.md to improve LLM-assisted code** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互…",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. My agent.md to improve LLM-assisted code quality. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：My agent. md to improve LLM-assisted code quality Fabien Sanglard -…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: My agent.md to improve LLM-assisted code quality. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "My agent.md to improve LLM-assisted code：我的经纪人。md 提高法学硕士辅助代码质量 Fabien Sanglard - 网站 2026 年 8 月 21 日 我的代理人。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "What Is a Harness?",
+    "url": "https://earendil.com/posts/what-is-a-harness/",
+    "hn_url": "https://news.ycombinator.com/item?id=49409092",
+    "heat": "316 points",
+    "time": "11 hours ago",
+    "developer_name": "tosh",
+    "developer_url": "https://news.ycombinator.com/user?id=tosh",
+    "content": "What is a Harness? | EARENDIL What is a Harness? Date: Thu, 20 Aug 2026 From: Earendil Product < rfc@earendil.com > To: You Subject: What is a Harness? Harness – definition by the Cambridge Dictionary Noun. a piece of equipment with straps and belts, used to control or hold in place a person, animal, or object Verb. to control something, usually in order to use its power – When I think of a harness, I think first of the set of straps and belts that I put on in middle school before scrambling up the walls of my school. I was a mediocre climber at best. Royal Robbins on El Capitan, his harness racked with the tools of the ascent. Photo by Tom Frost . If you’re main-lining into the AI newsfeed these days however, your archetypal harness may already be an agent harness. And, this post was not written for you. This was written for those who may be curious to know what an agent harness is, but don’t, and have been too embarrassed to ask. Let’s get back to climbing. Why do you strap on a harness when you go climbing? Well, firstly, the harness supports you and keeps you safe. It does that by connecting you to carabiners and ropes that secure you from falls, moderate your pace, and govern your route. You can also attach other tools to your harness like a chalk bag, nut tools and quickdraws. And when you go climb different mountains or make different ascents you can take your harness with you. Depending on the terrain, you can even modify your harness and what goes on your gear loops. Climbing harnesses are adaptable. They are used by acrobats and arborists. The people who own them can make them their own. There are similarities between climbing harnesses and agent harnesses both in terms of structure and function. Agent Harnesses Others have written (simplistically) that Agent = Model + Harness. Here the word Harness refers to an Agent Harness. But what is an agent harness? Agent harnesses use AI models to create AI agents, and their first application was for coding. Now, agent harnesses sit at the core of all types of AI agents and understanding how an agent harness works will help you understand what an AI agent is. An agent harness is a piece of software that provides an environment for an AI model to operate within. Unlike most AI models, you as an end user can own your own agent harness. Often, users like software engineers interact directly with harnesses like Pi using the Terminal application on their computer. But, harnesses like OpenClaw also use different user interfaces like iMessage, a chat app, or email. Our harness Lefos was built primarily to interact via email. Regardless of the interface, harnesses generally do four things: Firstly, they provide a set of instructions that help govern how the AI model responds. This set of instructions is typically called a “system prompt”. Secondly, they describe and provide a set of tools that are made available to the AI model to use in service of responding to requests from the user. Thirdly, the harn",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "其他",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "What is a Harness? | EARENDIL What is a Harness? Date: Thu, 20 Aug 2026 From: Earendil Product < rfc@earendil. com > To: You Subject: What is a Harness?",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 5.1,
+      "tcloud_relevance": 4.2,
+      "tcloud_integration": "**What Is a Harness?** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台",
+      "tcloud_products": [
+        "IM"
+      ],
+      "tcloud_reasons": [
+        "**What Is a Harness?** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台"
+      ],
+      "tcloud_evidence": [
+        "chat",
+        "chat app"
+      ],
+      "tcloud_primary_product": "IM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 IM：**What Is a Harness?** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台",
+      "tcloud_official_matches": [
+        "IM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "产品关联（IM）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 产品关联（IM） + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「What Is a Harness?」（What is a Harness? | EARENDIL What is a Harness? Date: Thu,…），涉及 Agent / Go → 可写方向：涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「What Is a Harness?」涉及即时通信场景，可结合 IM 写教程或场景解读。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "IM",
+      "official_angle_cn": "围绕 What Is a Harness? 的核心功能（What is a Harness? | EARENDIL What is a Harness? Date: Thu, 20 Aug 2026 From: E…），以 IM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 IM。",
+      "platform_copies": {
+        "primary_product": "IM",
+        "product_display": "IM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 What Is a Harness? 的核心功能（What is a Harness? | EARENDIL What is a Harness? Date: Thu, 20 Aug 2026 From: E…），以 IM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Instant Messaging (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 IM。",
+        "x_cn": "What is a Harness? | EARENDIL What is a Harness? Date: Thu, 20 Aug…。如果站在腾讯云国际站官方号来写，这条更适合从 IM 切入：如果以腾讯云国际站官方号来写，这条建议主推 IM：**What Is a…",
+        "x_en": "What Is a Harness?. For Tencent Cloud, this fits Instant Messaging (Tencent Cloud): Build chat and messaging features with Tencent Cloud IM.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：What is a Harness? | EARENDIL What is a Harness? Date: Thu, 20 Aug…。如果从腾讯云视角切，这条最适合带到 IM，重点聊 技术科普 + 产品关联（IM） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: What Is a Harness?. From a Tencent Cloud angle, the best hook is Instant Messaging (Tencent Cloud), especially around technical explainer + product tie-in (IM) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。What is a Harness? | EARENDIL What is a Harness? Date: Thu, 20 Aug…。如果用官方号发，建议主推 IM，重点讲 技术科普 + 产品关联（IM） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 IM：**What Is a Harness?** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. What Is a Harness?. For Tencent Cloud, the better angle is Instant Messaging (Tencent Cloud). Build chat and messaging features with Tencent Cloud IM. The content should focus on technical explainer + product tie-in (IM) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 IM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：What is a Harness? | EARENDIL What is a Harness? Date: Thu, 20 Aug…。如果站在腾讯云国际站官方号视角，我会更想把它写成 IM 相关内容，重点是 技术科普 + 产品关联（IM） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Instant Messaging (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: What Is a Harness?. Instead of reposting it as news, I'd frame it through Instant Messaging (Tencent Cloud) and focus on technical explainer + product tie-in (IM) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "What Is a Harness?：什么是线束？|EARENDIL 什么是安全带？"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Malware infects Android-based automotive head unit firmware",
+    "url": "https://securelist.com/android-head-unit-malware/121106/",
+    "hn_url": "https://news.ycombinator.com/item?id=49408550",
+    "heat": "215 points",
+    "time": "13 hours ago",
+    "developer_name": "campuscodi",
+    "developer_url": "https://news.ycombinator.com/user?id=campuscodi",
+    "content": "First Android malware targeting automotive head units | Securelist Dark mode off Securelist menu English Russian Spanish Brazil Existing Customers Personal My Kaspersky Renew your product Update your product Customer support Business KSOS portal Kaspersky Business Hub Technical Support Knowledge Base Renew License Home Products Trials&Update Resource Center Business Kaspersky Next Small Business (1-50 employees) Medium Business (51-999 employees) Enterprise (1000+ employees) Securelist Threats Financial threats Mobile threats Web threats Secure environment (IoT) Vulnerabilities and exploits Spam and Phishing Industrial threats Categories APT reports Incidents Research Malware reports Spam and phishing reports Publications Kaspersky Security Bulletin Archive All Tags APT Logbook Webinars Statistics Encyclopedia Threats descriptions KSB 2021 About Us Company Transparency Corporate News Press Center Careers Sponsorships Policy Blog Contacts Partners Find a Partner Partner Program Content menu Close Subscribe Threat Response Table of Contents Head unit firmware overview The TWCore app Stage 1: the JarService dropper Stage 2: the loader Stage 3: clicker / reverse proxy loader Attribution Conclusion Indicators of compromise Stage 1: JarService Stage 2: loader Stage 3: loader/clicker zhima module Domains and IP addresses Addresses used to download JarService Hashes of TWCore (the legitimate software used to distribute JarService) Authors Dmitry Kalinin While monitoring Android threats in June 2026, we discovered a new piece of Android malware. What struck us as unusual was that it installed like an ordinary user app yet made no attempt to disguise itself as legitimate software: it had no user interface at all. This led us to suspect the app might be reaching users’ devices without their knowledge. Further investigation confirmed that hypothesis and allowed us to reconstruct the entire infection chain. Key findings: We identified new Android malware: a multi-stage downloader whose ultimate purpose is ad fraud and creation of a proxy botnet. The malware spread through the built-in updaters of Android-based automotive head unit firmware. This is the first documented case of malware found on a car head unit with an infection chain specific to that type of device. We attribute this activity, with high confidence, to the MoYu Group, an actor linked to the BADBOX botnet. Kaspersky solutions detect the threats described below under the following detection names: HEUR:Trojan-Dropper.AndroidOS.Agent.vu HEUR:Trojan-Downloader.AndroidOS.Agent.ov HEUR:Trojan-Proxy.AndroidOS.Zhima.* HEUR:Trojan.AndroidOS.Vo1d.* Head unit firmware overview A head unit is a system that combines multimedia functions with partial control over certain vehicle functions. Head units may come as part of a car’s factory equipment or as an aftermarket upgrade. The main attack vectors for these systems are compromise via physical access and vulnerabilities in the head unit’s OS or components, b",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "产品发布",
+      "topic_type": "产品动态",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "First Android malware targeting automotive head units | Securelist Dark mode off Securelist menu English Russian Spanish Brazil Existing Customers Personal My Kaspersky Renew your product Update your product Customer support Business KSOS portal Kaspersky Business Hub Technical Support Knowledge Base Renew License Home Products Trials&Update Resource Center Business Kaspersky Next Small Business (1-50 employees) Medium Business (51-999 employees) Enterprise (1000+ employees) Securelist Threats…",
+      "heat_score": 5.0,
+      "timeliness_score": 6.0,
+      "composite_score": 4.5,
+      "tcloud_relevance": 4.4,
+      "tcloud_integration": "**Malware infects Android-based automotive** 涉及知识库/RAG 场景 — COS 对象存储可以作为知识库文档的持久化存储后端，配合 CDN 加速全球访问",
+      "tcloud_products": [
+        "COS"
+      ],
+      "tcloud_reasons": [
+        "**Malware infects Android-based automotive** 涉及知识库/RAG 场景 — COS 对象存储可以作为知识库文档的持久化存储后端，配合 CDN 加速全球访问"
+      ],
+      "tcloud_evidence": [
+        "knowledge base",
+        "archive"
+      ],
+      "tcloud_primary_product": "COS",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 COS：**Malware infects Android-based automotive** 涉及知识库/RAG 场景 — COS 对象存储可以作为知识库文档的持久化存储后端，配合 CDN 加速全球访问",
+      "tcloud_official_matches": [
+        "COS"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "产品关联（COS）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "产品关联（COS） + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "X（产品上新快讯）",
+        "LinkedIn（产品功能深度解读）"
+      ],
+      "recommended_platforms_text": "X（产品上新快讯） + LinkedIn（产品功能深度解读）",
+      "editorial_brief": "话题类型：产品动态\n可用角度：「Malware infects Android-based automotive head uni…」（First Android malware targeting automotive head units | Sec…），涉及 Agent → 可写方向：涉及知识库/RAG 场景 — COS 对象存储可以作为知识库文档的持久化存储后端，配合 CDN 加速全球访问\n优先级：P1 本周发（仍有时效价值）\n适合平台：X（产品上新快讯） + LinkedIn（产品功能深度解读）",
+      "social_recommendation": "「Malware infects Android-based automotive」涉及对象存储场景，可结合 COS 写教程或场景解读。P1 本周发（仍有时效价值），推荐平台：X（产品上新快讯） + LinkedIn（产品功能深度解读）。",
+      "official_product_focus": "COS",
+      "official_angle_cn": "围绕 Malware infects Android-based automotive 的核心功能（First Android malware targeting automotive head units | Securelist Dark mode of…），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+      "platform_copies": {
+        "primary_product": "COS",
+        "product_display": "COS",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 Malware infects Android-based automotive 的核心功能（First Android malware targeting automotive head units | Securelist Dark mode of…），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Cloud Object Storage (COS) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+        "x_cn": "First Android malware targeting automotive head units | Securelist…。如果站在腾讯云国际站官方号来写，这条更适合从 COS 切入：如果以腾讯云国际站官方号来写，这条建议主推 COS：**Malware…",
+        "x_en": "Malware infects Android-based automotive head unit firmware. For Tencent Cloud, this fits Cloud Object Storage (COS): Object storage for knowledge bases, datasets, files, and AI workflow persistence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：First Android malware targeting automotive head units | Securelist…。如果从腾讯云视角切，这条最适合带到 COS，重点聊 产品关联（COS） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Malware infects Android-based automotive head unit firmware. From a Tencent Cloud angle, the best hook is Cloud Object Storage (COS), especially around product tie-in (COS) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。First Android malware targeting automotive head units | Securelist…。如果用官方号发，建议主推 COS，重点讲 产品关联（COS） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 COS：**Malware infects Android-based automotive** 涉及知识库/RAG 场景 — COS 对象存储可以作为知识库文档的持久化存储后端，配合 CDN 加速全球访问",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Malware infects Android-based automotive head unit firmware. For Tencent Cloud, the better angle is Cloud Object Storage (COS). Object storage for knowledge bases, datasets, files, and AI workflow persistence. The content should focus on product tie-in (COS) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 COS 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：First Android malware targeting automotive head units | Securelist…。如果站在腾讯云国际站官方号视角，我会更想把它写成 COS 相关内容，重点是 产品关联（COS） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Cloud Object Storage (COS)?",
+        "reddit_body_en": "A recent trend caught my eye: Malware infects Android-based automotive head unit firmware. Instead of reposting it as news, I'd frame it through Cloud Object Storage (COS) and focus on product tie-in (COS) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Malware infects Android-based automotive：首个针对汽车音响主机的 Android 恶意软件 |Securelist 深色模式关闭 Securelist 菜单 英语 俄语 西班牙语 巴西 现有客户 个人 我的卡巴斯基 更新您的产品 更新您的产品 客户支持 企业 KSOS 门户 卡巴斯基 Business Hub 技术支持知识库 更新许可证 主页 产品试用和更…"
+  }
+]
