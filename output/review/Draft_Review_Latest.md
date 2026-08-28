@@ -1,4 +1,4 @@
-# 📋 产品 Draft 汇总 — 2026-08-27
+# 📋 产品 Draft 汇总 — 2026-08-28
 
 > 共 1 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
@@ -20,16 +20,16 @@
 
 ---
 
-## 2. P0 今天发 · freestylefly/awesome-gpt-image-2
+## 2. P1 本周发 · K-Dense-AI/scientific-agent-skills
 
-**写什么**: 以 awesome-gpt-image-2 引发的开发者效率讨论为切入点
+**写什么**: 以 scientific-agent-skills 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "freestylefly/awesome-gpt-image-2" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "K-Dense-AI/scientific-agent-skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2)*
+*参考: [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills)*
 
 ---
 
@@ -46,42 +46,42 @@
 
 ---
 
-## 4. P1 本周发 · Alishahryar1/free-claude-code
+## 4. P0 今天发 · abhigyanpatwari/GitNexus
 
-**写什么**: 以 free-claude-code 引发的开发者效率讨论为切入点
+**写什么**: 以 GitNexus 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "Alishahryar1/free-claude-code" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "abhigyanpatwari/GitNexus" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [Alishahryar1/free-claude-code](https://github.com/Alishahryar1/free-claude-code)*
+*参考: [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus)*
 
 ---
 
-## 5. P1 本周发 · MadsLorentzen/ai-job-search
+## 5. P1 本周发 · JetBrains/go-modern-guidelines
 
-**写什么**: 以 ai-job-search 引发的开发者效率讨论为切入点
+**写什么**: 以 go-modern-guidelines 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "MadsLorentzen/ai-job-search" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "JetBrains/go-modern-guidelines" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search)*
+*参考: [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines)*
 
 ---
 
-## 6. P1 本周发 · AgriciDaniel/claude-obsidian
+## 6. P1 本周发 · abi/screenshot-to-code
 
-**写什么**: 以 claude-obsidian 引发的开发者效率讨论为切入点
+**写什么**: 以 screenshot-to-code 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "AgriciDaniel/claude-obsidian" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "abi/screenshot-to-code" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [AgriciDaniel/claude-obsidian](https://github.com/AgriciDaniel/claude-obsidian)*
+*参考: [abi/screenshot-to-code](https://github.com/abi/screenshot-to-code)*
 
 ---
 

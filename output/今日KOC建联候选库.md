@@ -1,6 +1,6 @@
 # 🤝 KOC 建联候选库
 
-> 2026-08-27 · 共发现 7 位 KOC 候选人
+> 2026-08-28 · 共发现 8 位 KOC 候选人
 
 **用途**：以下是从今日热点中自动提取的潜在合作对象，
 包括 GitHub 开源开发者、Twitter/Reddit 活跃讨论者。
@@ -10,57 +10,59 @@
 
 ## ⭐ 高价值 KOC（评分 ≥ 6）
 
-### 1. 苍何 (GitHub)
+### 1. JetBrains (GitHub)
 
-- 🔗 主页：https://github.com/freestylefly
-- 📊 评分：7.5 · 类型：开源开发者
-- 👥 Followers：1797
-- 📝 Bio：Sharing thoughtful insights on AI, building cool things along the way.· Founder @ WeSight · Microsof
-- 📬 联系方式：🐦 @canghe | 🔗 https://x.com/canghe | 🔗 https://canghe.blog.csdn.net/ | 🔗 https://mp.weixin.qq.com/s/n15MLa2B4SZOvPbZjsaPiw | 🔗 https://canghe.ai
-- 💡 合作切入角度：高影响力开发者(1797 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@canghe)，可直接 DM 建联
-- 🔗 关联项目：[freestylefly/awesome-gpt-image-2 - Prompt as Code ](https://github.com/freestylefly/awesome-gpt-image-2)
+- 🔗 主页：https://github.com/JetBrains
+- 📊 评分：10.0 · 类型：开源组织
+- 👥 Followers：13553
+- 📝 Bio：JetBrains Open Source
+- 📬 联系方式：📧 github@jetbrains.com | 🐦 @jetbrains | 🔗 https://twitter.com/jetbrains | 🔗 https://bsky.app/profile/jetbrains.com | 💼 https://www.linkedin.com/company/jetbrains/
+- 💡 合作切入角度：高影响力开发者(13553 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@jetbrains)，可直接 DM 建联
+- 🔗 关联项目：[JetBrains/go-modern-guidelines - Help AI coding ag](https://github.com/JetBrains/go-modern-guidelines)
 
-### 2. Rohit Ghumare (GitHub)
+### 2. K-Dense (GitHub)
 
-- 🔗 主页：https://github.com/rohitg00
-- 📊 评分：7.5 · 类型：开源开发者
-- 👥 Followers：6021
-- 📝 Bio：Engineer | DevRel | GDE | CNCF Ambassador | Docker Captain | AWS CommunityBuilder | Ex - Solo.io, Ce
-- 📬 联系方式：🐦 @ghumare64 | 🔗 https://twitter.com/ghumare64 | 💼 https://www.linkedin.com/in/rohit-ghumare/
-- 💡 合作切入角度：高影响力开发者(6021 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 独立开发者/Maker，适合 Lighthouse 推广合作
-- 🔗 关联项目：[rohitg00/ai-engineering-from-scratch - Learn it. B](https://github.com/rohitg00/ai-engineering-from-scratch)
+- 🔗 主页：https://github.com/K-Dense-AI
+- 📊 评分：8.0 · 类型：开源组织
+- 👥 Followers：1423
+- 📝 Bio：A world leader in empowering scientists with AI agentic tools.
+- 📬 联系方式：📧 contact@k-dense.ai | 🐦 @k_dense_ai | 💼 https://www.linkedin.com/company/k-dense-inc | 🔗 https://x.com/k_dense_ai | 📺 https://www.youtube.com/@K-Dense-Inc | 🔴 https://www.reddit.com/user/-k-dense-/
+- 💡 合作切入角度：高影响力开发者(1423 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@k_dense_ai)，可直接 DM 建联
+- 🔗 关联项目：[K-Dense-AI/scientific-agent-skills - Turn any AI a](https://github.com/K-Dense-AI/scientific-agent-skills)
 
 ### 3. Anthropic (GitHub)
 
 - 🔗 主页：https://github.com/anthropics
 - 📊 评分：7.0 · 类型：开源组织
-- 👥 Followers：83619
-- 💡 合作切入角度：高影响力开发者(83619 followers)，适合深度合作 | 关联项目：anthropics/claude-plugins-official - Off
+- 👥 Followers：83791
+- 💡 合作切入角度：高影响力开发者(83791 followers)，适合深度合作 | 关联项目：anthropics/claude-plugins-official - Off
 - 🔗 关联项目：[anthropics/claude-plugins-official - Official, Ant](https://github.com/anthropics/claude-plugins-official)
 
-### 4. Agrici.Daniel (GitHub)
+### 4. Calesthio (GitHub)
 
-- 🔗 主页：https://github.com/AgriciDaniel
+- 🔗 主页：https://github.com/calesthio
 - 📊 评分：6.5 · 类型：开源开发者
-- 👥 Followers：2630
-- 📝 Bio：AI Marketing Systems Architect. Building open-source Claude & Codex skills for SEO, ads & content.
-- 📬 联系方式：📺 https://www.youtube.com/@AgriciDaniel | 🔗 https://www.skool.com/ai-marketing-hub
-- 💡 合作切入角度：高影响力开发者(2630 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 关联项目：AgriciDaniel/claude-obsidian - Self-orga
-- 🔗 关联项目：[AgriciDaniel/claude-obsidian - Self-organizing AI ](https://github.com/AgriciDaniel/claude-obsidian)
+- 👥 Followers：1078
+- 📝 Bio：Building open source AI Assisted and Agentic Tools.
+Creator of OpenMontage and Crucix — https://www
+- 📬 联系方式：🐦 @calesthioailabs | 🔗 https://x.com/calesthioailabs | 📺 https://www.youtube.com/@OpenMontage | 🔗 https://www.instagram.com/theopenmontage/
+- 💡 合作切入角度：高影响力开发者(1078 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@calesthioailabs)，可直接 DM 建联
+- 🔗 关联项目：[calesthio/OpenMontage - World's first open-source,](https://github.com/calesthio/OpenMontage)
 
-### 5. Mads Lorentzen (GitHub)
+### 5. Abi Raja (GitHub)
 
-- 🔗 主页：https://github.com/MadsLorentzen
-- 📊 评分：6.0 · 类型：开源开发者
-- 👥 Followers：802
-- 📝 Bio：Geophysicist, PhD
-- 📬 联系方式：📧 madslorentzen17@gmail.com | 💼 https://www.linkedin.com/in/mads-lorentzen/
-- 💡 合作切入角度：活跃开发者(802 followers)，适合技术内容共创 | 关联项目：MadsLorentzen/ai-job-search - The job se
-- 🔗 关联项目：[MadsLorentzen/ai-job-search - The job search that ](https://github.com/MadsLorentzen/ai-job-search)
+- 🔗 主页：https://github.com/abi
+- 📊 评分：6.5 · 类型：开源开发者
+- 👥 Followers：1979
+- 📝 Bio：startup'ing
+- 📬 联系方式：🔗 http://abiraja.com
+- 💡 合作切入角度：高影响力开发者(1979 followers)，适合深度合作 | 关联项目：abi/screenshot-to-code - Drop in a scree
+- 🔗 关联项目：[abi/screenshot-to-code - Drop in a screenshot and ](https://github.com/abi/screenshot-to-code)
 
 ---
 
 ## 🐙 GitHub 开源开发者
 
-- **tt-a1i** (571 followers) — [tt-a1i](https://github.com/tt-a1i) · 暂无公开联系方式
-- **Ali Khokhar** (1230 followers) — [Alishahryar1](https://github.com/Alishahryar1) · 暂无公开联系方式
+- **tt-a1i** (685 followers) — [tt-a1i](https://github.com/tt-a1i) · 暂无公开联系方式
+- **Abhigyan Patwari** (652 followers) — [abhigyanpatwari](https://github.com/abhigyanpatwari) · 💼 https://www.linkedin.com/in/abhigyan-patwari-81809b261/ | 
+- **Bilawal Sidhu** (2625 followers) — [bilawalsidhu](https://github.com/bilawalsidhu) · 🔗 http://x.com/@bilawalsidhu | 🔗 http://linkedin.com/in/bila
