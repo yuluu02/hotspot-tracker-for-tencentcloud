@@ -1,11 +1,11 @@
-# 📋 产品 Draft 汇总 — 2026-08-29
+# 📋 产品 Draft 汇总 — 2026-08-30
 
 > 共 2 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CodeBuddy — 今日内容 (6 条)
+# CodeBuddy — 今日内容 (3 条)
 
 ## 1. P1 本周发 · tt-a1i/archify
 
@@ -33,33 +33,7 @@
 
 ---
 
-## 3. P1 本周发 · anthropics/claude-plugins-official
-
-**写什么**: 以 claude-plugins-official 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "anthropics/claude-plugins-official" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official)*
-
----
-
-## 4. P0 今天发 · abhigyanpatwari/GitNexus
-
-**写什么**: 以 GitNexus 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "abhigyanpatwari/GitNexus" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus)*
-
----
-
-## 5. P1 本周发 · JetBrains/go-modern-guidelines
+## 3. P1 本周发 · JetBrains/go-modern-guidelines
 
 **写什么**: 以 go-modern-guidelines 引发的开发者效率讨论为切入点
 
@@ -72,32 +46,19 @@
 
 ---
 
-## 6. P1 本周发 · abi/screenshot-to-code
 
-**写什么**: 以 screenshot-to-code 引发的开发者效率讨论为切入点
+# Hunyuan — 今日内容 (1 条)
 
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+## 1. P1 本周发 · Hy4 preview
 
-**参考文案**:
-> 🤖 "abi/screenshot-to-code" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [abi/screenshot-to-code](https://github.com/abi/screenshot-to-code)*
-
----
-
-
-# TDSQL-C — 今日内容 (1 条)
-
-## 1. P1 本周发 · 公司不让装 Navicat 了，就自己写了一个数据库客户端
-
-**写什么**: 以「公司不让装了就自」话题为引子
+**写什么**: 围绕 Hy4 preview 的核心功能（Tencent Releases and Open-Sources Tencent Hy4 preview - Ten
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🗃️ "公司不让装 Navicat 了，就自己写了一个数据库客户端" highlights the need for reliable databases. TDSQL-C offers 100% PostgreSQL/MySQL compatibility with cloud-native performance. #Database #CloudNative
+> 🧠 "Hy4 preview" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
 
-*参考: [公司不让装 Navicat 了，就自己写了一个数据库客户端](https://www.v2ex.com/t/1237986)*
+*参考: [Hy4 preview](https://www.tencent.com/tencent-releases-and-open-sources-tencent-hy4-preview/)*
 
 ---
 
