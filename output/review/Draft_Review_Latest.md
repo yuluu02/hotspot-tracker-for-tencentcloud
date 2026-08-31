@@ -1,26 +1,13 @@
-# 📋 产品 Draft 汇总 — 2026-08-30
+# 📋 产品 Draft 汇总 — 2026-08-31
 
-> 共 2 个产品的 P0/P1 内容草稿
+> 共 1 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CodeBuddy — 今日内容 (3 条)
+# CodeBuddy — 今日内容 (4 条)
 
-## 1. P1 本周发 · tt-a1i/archify
-
-**写什么**: 以 archify 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "tt-a1i/archify" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [tt-a1i/archify](https://github.com/tt-a1i/archify)*
-
----
-
-## 2. P1 本周发 · K-Dense-AI/scientific-agent-skills
+## 1. P1 本周发 · K-Dense-AI/scientific-agent-skills
 
 **写什么**: 以 scientific-agent-skills 引发的开发者效率讨论为切入点
 
@@ -33,32 +20,42 @@
 
 ---
 
-## 3. P1 本周发 · JetBrains/go-modern-guidelines
+## 2. P1 本周发 · tt-a1i/archify
 
-**写什么**: 以 go-modern-guidelines 引发的开发者效率讨论为切入点
+**写什么**: 以 archify 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "JetBrains/go-modern-guidelines" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "tt-a1i/archify" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [JetBrains/go-modern-guidelines](https://github.com/JetBrains/go-modern-guidelines)*
+*参考: [tt-a1i/archify](https://github.com/tt-a1i/archify)*
 
 ---
 
+## 3. P1 本周发 · mvanhorn/last30days-skill
 
-# Hunyuan — 今日内容 (1 条)
-
-## 1. P1 本周发 · Hy4 preview
-
-**写什么**: 围绕 Hy4 preview 的核心功能（Tencent Releases and Open-Sources Tencent Hy4 preview - Ten
+**写什么**: 以 last30days-skill 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "Hy4 preview" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🤖 "mvanhorn/last30days-skill" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [Hy4 preview](https://www.tencent.com/tencent-releases-and-open-sources-tencent-hy4-preview/)*
+*参考: [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)*
+
+---
+
+## 4. P1 本周发 · 记一次 GLM 开发严重事故，花了 8 亿 token，买了个教训
+
+**写什么**: 借「记一次开发严重事」的讨论热度写一篇 AI 编程工具选型指南
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "记一次 GLM 开发严重事故，花了 8 亿 token，买了个教训" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [记一次 GLM 开发严重事故，花了 8 亿 token，买了个教训](https://www.v2ex.com/t/1238217)*
 
 ---
 
