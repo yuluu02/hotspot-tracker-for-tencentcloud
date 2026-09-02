@@ -1,6 +1,6 @@
 # 🤝 KOC 建联候选库
 
-> 2026-08-31 · 共发现 7 位 KOC 候选人
+> 2026-09-02 · 共发现 7 位 KOC 候选人
 
 **用途**：以下是从今日热点中自动提取的潜在合作对象，
 包括 GitHub 开源开发者、Twitter/Reddit 活跃讨论者。
@@ -10,58 +10,49 @@
 
 ## ⭐ 高价值 KOC（评分 ≥ 6）
 
-### 1. Lakr (GitHub)
+### 1. Firecrawl (GitHub)
 
-- 🔗 主页：https://github.com/Lakr233
-- 📊 评分：9.0 · 类型：开源开发者
-- 👥 Followers：4377
-- 📝 Bio：🥺
-- 📬 联系方式：📧 launchctl@outlook.com | 🐦 @Lakr233 | 🔗 https://twitter.com/Lakr233 | 🔗 https://qaq.wiki
-- 💡 合作切入角度：高影响力开发者(4377 followers)，适合深度合作 | 有 Twitter(@Lakr233)，可直接 DM 建联 | 关联项目：Lakr233/vphone-cli
-- 🔗 关联项目：[Lakr233/vphone-cli](https://github.com/Lakr233/vphone-cli)
+- 🔗 主页：https://github.com/firecrawl
+- 📊 评分：9.0 · 类型：开源组织
+- 👥 Followers：3530
+- 📝 Bio：Web data API for AI
+- 📬 联系方式：📧 hello@firecrawl.dev | 🐦 @firecrawl_dev | 🔗 https://x.com/firecrawl_dev | 💼 https://www.linkedin.com/company/firecrawl
+- 💡 合作切入角度：高影响力开发者(3530 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@firecrawl_dev)，可直接 DM 建联
+- 🔗 关联项目：[firecrawl/pdf-inspector - Fast Rust library for PD](https://github.com/firecrawl/pdf-inspector)
 
-### 2. K-Dense (GitHub)
+### 2. Gitlawb (GitHub)
 
-- 🔗 主页：https://github.com/K-Dense-AI
+- 🔗 主页：https://github.com/Gitlawb
 - 📊 评分：8.0 · 类型：开源组织
-- 👥 Followers：1478
-- 📝 Bio：A world leader in empowering scientists with AI agentic tools.
-- 📬 联系方式：📧 contact@k-dense.ai | 🐦 @k_dense_ai | 💼 https://www.linkedin.com/company/k-dense-inc | 🔗 https://x.com/k_dense_ai | 📺 https://www.youtube.com/@K-Dense-Inc | 🔴 https://www.reddit.com/user/-k-dense-/
-- 💡 合作切入角度：高影响力开发者(1478 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@k_dense_ai)，可直接 DM 建联
-- 🔗 关联项目：[K-Dense-AI/scientific-agent-skills - Turn any AI a](https://github.com/K-Dense-AI/scientific-agent-skills)
+- 👥 Followers：1010
+- 📝 Bio：A decentralized code collaboration platform where AI agents are first-class citizens. No central aut
+- 📬 联系方式：📧 hey@gitlawb.com | 🐦 @gitlawb | 🔗 https://x.com/gitlawb
+- 💡 合作切入角度：高影响力开发者(1010 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@gitlawb)，可直接 DM 建联
+- 🔗 关联项目：[Gitlawb/openclaude - runs anywhere. uses anything](https://github.com/Gitlawb/openclaude)
 
-### 3. UncleCode (GitHub)
+### 3. Browser Use (GitHub)
 
-- 🔗 主页：https://github.com/unclecode
-- 📊 评分：7.5 · 类型：开源开发者
-- 👥 Followers：1934
-- 📝 Bio：Author of Crawl4AI (#1 GitHub Trending). Founder of Kidocode, SE Asia's largest tech & biz school. L
-- 📬 联系方式：🐦 @unclecode | 🔗 https://x.com/unclecode | 🔗 https://bsky.app/profile/unclecode.bsky.social | 🔗 http://kidocode.com
-- 💡 合作切入角度：高影响力开发者(1934 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@unclecode)，可直接 DM 建联
-- 🔗 关联项目：[unclecode/crawl4ai - 🚀🤖 Crawl4AI: Open-source LLM ](https://github.com/unclecode/crawl4ai)
+- 🔗 主页：https://github.com/browser-use
+- 📊 评分：7.5 · 类型：开源组织
+- 👥 Followers：4064
+- 📬 联系方式：🐦 @browser_use | 🔗 https://x.com/browser_use
+- 💡 合作切入角度：高影响力开发者(4064 followers)，适合深度合作 | 有 Twitter(@browser_use)，可直接 DM 建联 | 关联项目：browser-use/video-use - Edit videos with
+- 🔗 关联项目：[browser-use/video-use - Edit videos with coding ag](https://github.com/browser-use/video-use)
 
-### 4. Matt Van Horn (GitHub)
+### 4. Grant Sanderson (GitHub)
 
-- 🔗 主页：https://github.com/mvanhorn
-- 📊 评分：7.5 · 类型：开源开发者
-- 👥 Followers：4948
-- 📝 Bio：Co-founded June ("self-driving oven" acquired by @webergrills) & the co that became @Lyft. Building 
-- 📬 联系方式：🐦 @mvanhorn | 🔗 https://x.com/mvanhorn | 💼 https://www.linkedin.com/in/mattvanhorn
-- 💡 合作切入角度：高影响力开发者(4948 followers)，适合深度合作 | AI/ML 背景，可推荐 GPU CVM / Hunyuan 试用 | 有 Twitter(@mvanhorn)，可直接 DM 建联
-- 🔗 关联项目：[mvanhorn/last30days-skill - AI agent skill that re](https://github.com/mvanhorn/last30days-skill)
-
-### 5. Philipp Emanuel Weidmann (GitHub)
-
-- 🔗 主页：https://github.com/p-e-w
-- 📊 评分：6.0 · 类型：开源开发者
-- 👥 Followers：1220
-- 📬 联系方式：🔗 https://worldwidemann.com
-- 💡 合作切入角度：高影响力开发者(1220 followers)，适合深度合作 | 关联项目：p-e-w/heretic - Fully automatic censorsh
-- 🔗 关联项目：[p-e-w/heretic - Fully automatic censorship removal](https://github.com/p-e-w/heretic)
+- 🔗 主页：https://github.com/3b1b
+- 📊 评分：6.5 · 类型：开源开发者
+- 👥 Followers：41522
+- 📝 Bio：I make videos about math.
+- 📬 联系方式：📺 https://www.youtube.com/@3blue1brown | 🔗 https://www.3blue1brown.com
+- 💡 合作切入角度：高影响力开发者(41522 followers)，适合深度合作 | 关联项目：3b1b/manim - Animation engine for explan
+- 🔗 关联项目：[3b1b/manim - Animation engine for explanatory math](https://github.com/3b1b/manim)
 
 ---
 
 ## 🐙 GitHub 开源开发者
 
-- **MAIC** (448 followers) — [THU-MAIC](https://github.com/THU-MAIC) · 📧 yujifan@tsinghua.edu.cn
-- **tt-a1i** (972 followers) — [tt-a1i](https://github.com/tt-a1i) · 暂无公开联系方式
+- **MAIC** (492 followers) — [THU-MAIC](https://github.com/THU-MAIC) · 📧 yujifan@tsinghua.edu.cn
+- **jingyaogong** (2212 followers) — [jingyaogong](https://github.com/jingyaogong) · 暂无公开联系方式
+- **Edward Cheng-I Wu** (842 followers) — [Imbad0202](https://github.com/Imbad0202) · 💼 https://www.linkedin.com/in/cheng-i-wu-874026aa/
