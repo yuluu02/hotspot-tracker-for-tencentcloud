@@ -1,0 +1,872 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "fmtlib/fmt - A modern formatting library",
+    "url": "https://github.com/fmtlib/fmt",
+    "heat": "24,433 stars",
+    "time": "Today",
+    "developer_name": "fmtlib",
+    "developer_url": "https://github.com/fmtlib",
+    "developer_email": "",
+    "today_stars": "14 stars today",
+    "language": "C++",
+    "summary": "A modern formatting library",
+    "content": " \n\n[](\nhttps://github.com/fmtlib/fmt/actions?query=workflow%3Alinux)\n[](\nhttps://github.com/fmtlib/fmt/actions?query=workflow%3Amacos)\n[](\nhttps://github.com/fmtlib/fmt/actions?query=workflow%3Awindows)\n[](\nhttps://issues.oss-fuzz.com/issues?q=title:fmt%20cc:victor.zverovich@gmail.com)\n[](\nhttps://www.bestpractices.dev/projects/8880)\n[](\nhttps://securityscorecards.dev/viewer/?uri=github.com/fmtlib/fmt)\n![Ask questions at StackOverflow with the tag fmt](https://stackoverflow.com/questions/tagged/fmt)\n![Support Ukraine](https://novaukraine.org/)\n\n**{fmt}** is an open-source formatting library providing a fast and safe\nalternative to C stdio and C++ iostreams.\n\nDocumentation\n\nCheat Sheets\n\nQ&A: ask questions on StackOverflow with the tag\nfmt.\n\nTry {fmt} in Compiler Explorer.\n\n# Features\n\n- Simple format API with positional\n  arguments for localization\n- Implementation of C++20\n  std::format and\n  C++23 std::print\n- Format string syntax similar\n  to Python\\'s\n  format\n- Fast IEEE 754 floating-point formatter with correct rounding,\n  shortness and round-trip guarantees using the\n  Dragonbox algorithm\n- Portable Unicode support\n- Safe printf\n  implementation\n  including the POSIX extension for positional arguments\n- Extensibility: support for user-defined\n  types\n- High performance: faster than common standard library\n  implementations of `(s)printf`, iostreams, `to_string` and\n  `to_chars`, see Speed tests and Converting a\n  hundred million integers to strings per\n  second\n- Small code size both in terms of source code with the minimum\n  configuration consisting of just three files, `base.h`, `format.h`\n  and `format-inl.h`, and compiled code; see Compile time and code\n  bloat\n- Reliability: the library has an extensive set of\n  tests and is\n  continuously fuzzed\n- Safety: the library is fully type-safe, errors in format strings can\n  be reported at compile time, automatic memory management prevents\n  buffer overflow errors\n- Ease of use: small self-contained code base, no external\n  dependencies, permissive MIT\n  license\n- Portability with\n  consistent output across platforms and support for older compilers\n- Clean warning-free codebase even on high warning levels such as\n  `-Wall -Wextra -pedantic`\n- Locale independence by default\n- Optional header-only configuration enabled with the\n  `FMT_HEADER_ONLY` macro\n\nSee the documentation for more details.\n\n# Examples\n\n**Print to stdout** (run)\n\n``` c++\n#include  \n\nint main() {\n  fmt::print(\"Hello, world!\\n\");\n}\n```\n\n**Format a string** (run)\n\n``` c++\nstd::string s = fmt::format(\"The answer is {}.\", 42);\n// s == \"The answer is 42.\"\n```\n\n**Format a string using positional arguments**\n(run)\n\n``` c++\nstd::string s = fmt::format(\"I'd rather be {1} than {0}.\", \"right\", \"happy\");\n// s == \"I'd rather be happy than right.\"\n```\n\n**Print dates and times** (run)\n\n``` c++\n#include  \n\nint main() {\n  auto now = std::chrono::system_clock::now();\n  fmt::print(\"Date and time: {}\\n\", now);\n  fmt::print(\"Time: {:%H:%M}\\n\", n",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "oss"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "fmtlib/fmt: A modern formatting library",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「fmtlib/fmt - A modern formatting library」（fmtlib/fmt: A modern formatting library），涉及 Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「fmtlib/fmt - A modern formatting library」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 fmt 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 fmt 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "fmtlib/fmt: A modern formatting library。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "fmtlib/fmt - A modern formatting library. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：fmtlib/fmt: A modern formatting library。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: fmtlib/fmt - A modern formatting library. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。fmtlib/fmt: A modern formatting library。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. fmtlib/fmt - A modern formatting library. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：fmtlib/fmt: A modern formatting library。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: fmtlib/fmt - A modern formatting library. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "fmt：现代格式库",
+    "developer_profile": {
+      "github_username": "fmtlib",
+      "profile_url": "https://github.com/fmtlib",
+      "name": "Hello World Foundation",
+      "bio": "",
+      "company": "",
+      "location": "United States",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 171,
+      "following": 0,
+      "public_repos": 5,
+      "avatar_url": "https://avatars.githubusercontent.com/u/7280830?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+    "url": "https://github.com/google-research/timesfm",
+    "heat": "30,116 stars",
+    "time": "Today",
+    "developer_name": "google-research",
+    "developer_url": "https://github.com/google-research",
+    "developer_email": "",
+    "today_stars": "343 stars today",
+    "language": "Python",
+    "summary": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+    "content": "# TimesFM\n\nTimesFM (Time Series Foundation Model) is a pretrained time-series foundation\nmodel developed by Google Research for time-series forecasting.\n\n*   Paper:\n    A decoder-only foundation model for time-series forecasting,\n    ICML 2024.\n*    (NEW!)  TimesFM 3.0 Checkpoint:\n    `google/timesfm-3.0-pytorch`.\n*   Checkpoints (up to 2.5):\n    TimesFM Hugging Face Collection.\n*   Google Research blog\n    (New blog post for TimesFM 3.0 coming soon!).\n*   TimesFM in Google 1P Products:\n    *   BigQuery ML:\n        Enterprise level SQL queries for scalability and reliability.\n    *   Google Sheets:\n        For your daily spreadsheet.\n    *   Vertex Model Garden:\n        Dockerized endpoint for agentic calling.\n\nThis open version is not an officially supported Google product.\n\n**Latest Model Version:** TimesFM 3.0\n\n**Archived Model Versions:**\n\n-   2.5: relevant code under `src/timesfm`.\n-   1.0 and 2.0: relevant code archived in the subdirectory `v1`. You can `pip\n    install timesfm==1.3.0` to install an older version of this package to load\n    them.\n\n--------------------------------------------------------------------------------\n\n## Update — August 2026\n\n**TimesFM 3.0 is out!**\n\nTimesFM 3.0 introduces native **multivariate time-series forecasting**, flexible\n**covariate support** (both past-only and past-and-future covariates), superior\nzero-shot generalist capabilities, and top performance across all three major\ntime-series foundation model benchmarks.\n\n### Key Highlights:\n\n-   **Native Multivariate & Univariate Forecasting with Covariates**: Seamlessly\n    forecast multi-channel multivariate series as well as individual univariate\n    series, with native support for past-only and past-and-future dynamic\n    covariates without per-task tuning.\n-   **Top Benchmark Performance**:\n    -   🥇 **fev-bench**: **Rank #1 overall** across 100 diverse real-world\n        forecasting tasks.\n    -   🥇 **TIME Benchmark**: **Rank #1 overall** across 50 domain datasets and\n        98 evaluation tasks.\n    -   🥇 **GIFT-Eval**: **Rank #1 among all foundation models**.\n\n### License notice for pretrained weights\n\n> **Important:** The TimesFM source code in this repository is licensed under\n> Apache-2.0, and model weights up to version 2.5 remain Apache-2.0. However,\n> for the time being, TimesFM 3.0 pretrained weights are distributed under the\n> separate `timesfm-non-commercial-license-v1.0` license and are restricted to\n> non-commercial, non-production use. Commercial or production use of the\n> default pretrained weights is **not permitted**.\n\n--------------------------------------------------------------------------------\n\n## Update - July 2, 2026\n\nUpdated PyPI to `timesfm=2.0.2`. See\nInstall.\n\n## Update - Apr. 9, 2026\n\nAdded fine-tuning example using HuggingFace Transformers + PEFT (LoRA) — see\n`timesfm-forecasting/examples/finetuning/`.\nAlso added unit tests (`tests/`) and incorporated several community fixes.\n\nShoutout to @kashif and\n@darkpowerxo.\n\n## Updat",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "huggingface",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Fine-tuning",
+        "Python"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "google-research/timesfm: TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.8,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「google-research/timesfm - TimesFM (Time Series Fo…」（google-research/timesfm: TimesFM (Time Series Foundation Mo…），涉及 Agent / Fine-tuning / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「google-research/timesfm - TimesFM (Time…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 timesfm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 timesfm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：google-research/timesfm: TimesFM (Time Series Foundation Model) is…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: google-research/timesfm - TimesFM (Time Series Foundation Model) is a pretrained time-s…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "TimesFM（时间序列基础模型）是 Google Research 开发的用于时间序列预测的预训练时间序列基础模型。",
+    "developer_profile": {
+      "github_username": "google-research",
+      "profile_url": "https://github.com/google-research",
+      "name": "Google Research",
+      "bio": "",
+      "company": "",
+      "location": "Earth",
+      "blog": "https://research.google",
+      "twitter_username": "",
+      "email": "",
+      "followers": 17220,
+      "following": 0,
+      "public_repos": 359,
+      "avatar_url": "https://avatars.githubusercontent.com/u/43830688?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "DietrichGebert/ponytail - Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "heat": "122,059 stars",
+    "time": "Today",
+    "developer_name": "DietrichGebert",
+    "developer_url": "https://github.com/DietrichGebert",
+    "developer_email": "",
+    "today_stars": "1,354 stars today",
+    "language": "JavaScript",
+    "summary": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+    "content": " \n   \n     \n     \n   \n \n\n Ponytail \n\n \n   He says nothing. He writes one line. It works. \n \n\n \n   \n   \n   \n   \n   \n \n\n \n     \n     \n \n\n \n   ~54% less code (up to 94%) &middot; ~20% cheaper &middot; ~27% faster &middot; 100% safe  \n   Measured on real Claude Code sessions editing a real open-source repo (FastAPI + React), against the same agent with no skill. ~54% is the mean across 12 feature tasks (Haiku 4.5, n=4); it reaches 94% where an agent over-builds (a date picker) and is near zero where the code is already minimal. ponytail keeps every safety guard while a bare \"write one-liners\" prompt drops one. (The earlier single-shot benchmark reported 80-94% as a flat figure; against a fair agentic baseline that is the per-task ceiling, not the average.)  Full writeup  &middot;  reproduce it . \n \n\n \n    Español  &middot;  한국어  \n \n\n---\n\n \n     \n \n\nYou know him. Long ponytail. Oval glasses. Has been at the company longer than the version control. You show him fifty lines; he looks at them, says nothing, and replaces them with one.\n\nPonytail puts him inside your AI agent.\n\n## Before / after\n\nYou ask for a date picker. Your agent installs flatpickr, writes a wrapper component, adds a stylesheet, and starts a discussion about timezones.\n\nWith ponytail:\n\n```html\n \n \n```\n\nMore survivors in examples/.\n\n## Numbers\n\nThe honest measurement is a real agent doing real work: a headless Claude Code session editing tiangolo's full-stack-fastapi-template (a real FastAPI + React repo), scored on the `git diff` it leaves behind. Twelve feature tickets, the same agent with and without the skill, n=4, Haiku 4.5.\n\n \n   \n \n\n| vs no-skill baseline | LOC | tokens | cost | time | safe |\n|---|--:|--:|--:|--:|--:|\n| **ponytail** | **-54%** | **-22%** | **-20%** | **-27%** | **100%** |\n| caveman (terse-prose control) | -20% | +7% | +3% | +2% | 100% |\n| \"YAGNI + one-liners\" prompt | -33% | -14% | -21% | -30% | 95% |\n\nponytail is the only arm that cuts every metric, and the only one that stays fully safe while doing it. The cut is biggest where there is a real over-build trap (date picker 404 to 23 lines, color picker 287 to 23, because it reaches for a native ` ` instead of a component) and near zero on code that is already minimal. Full method, per-task tables, and limitations: benchmarks/results/2026-06-18-agentic.md.\n\n \n  Older single-shot numbers (isolated generation)  \n\nFive everyday tasks, three models, three arms (no skill, caveman, ponytail), ten runs, median reported. One prompt, one completion, counting lines of the answer:\n\n \n   \n \n\nThis showed **80-94% less code**. #126 fairly pointed out that the bare-model baseline pads its answer with prose and options, so that gap is partly a conversational-baseline artifact. The agentic numbers above are the corrected, defensible version. Reproduce the single-shot run with `npx promptfoo eval -c benchmarks/promptfooconfig.yaml`.\n\n \n\n**The rule was never \"fewest tokens.\"** It is: write only what the task needs, and never cut val",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "prompt",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "React"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "DietrichGebert/ponytail: Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.4,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**ponytail** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**ponytail** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ponytail** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「DietrichGebert/ponytail - Makes your AI agent thi…」（DietrichGebert/ponytail: Makes your AI agent think like the…），涉及 Agent / React → 可写方向：**ponytail** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「DietrichGebert/ponytail - Makes your AI…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 ponytail 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 ponytail 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 ponytail 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 ponytail 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "DietrichGebert/ponytail: Makes your AI agent think like the laziest…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "DietrichGebert/ponytail - Makes your AI agent think like the laziest senior dev in the…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：DietrichGebert/ponytail: Makes your AI agent think like the laziest…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: DietrichGebert/ponytail - Makes your AI agent think like the laziest senior dev in the…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, pe…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。DietrichGebert/ponytail: Makes your AI agent think like the laziest…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ponytail** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. DietrichGebert/ponytail - Makes your AI agent think like the laziest senior dev in the…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：DietrichGebert/ponytail: Makes your AI agent think like the laziest…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: DietrichGebert/ponytail - Makes your AI agent think like the laziest senior dev in the…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ponytail：让你的人工智能代理像房间里最懒的高级开发人员一样思考。最好的代码是你从未编写过的代码。",
+    "developer_profile": {
+      "github_username": "DietrichGebert",
+      "profile_url": "https://github.com/DietrichGebert",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 1757,
+      "following": 1,
+      "public_repos": 3,
+      "avatar_url": "https://avatars.githubusercontent.com/u/137048761?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "debpalash/VoiceStudio - VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+    "url": "https://github.com/debpalash/VoiceStudio",
+    "heat": "15,132 stars",
+    "time": "Today",
+    "developer_name": "debpalash",
+    "developer_url": "https://github.com/debpalash",
+    "developer_email": "",
+    "today_stars": "832 stars today",
+    "language": "Python",
+    "summary": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+    "content": " \n     \n\n   \n   VoiceStudio \n    Previously OmniVoice-Studio  \n   Clone voices, dub video, dictate, and produce long-form audio on your own hardware. \n   16 TTS engines · 11 ASR engines · 646-language catalogue · macOS, Windows, Linux, and Docker \n   No account, API key, subscription, or usage meter for the local workflow. \n\n   \n     Install  ·\n     Features  ·\n     Compare  ·\n     Requirements  ·\n     Engines  ·\n     Architecture  ·\n     API  ·\n     Docs  ·\n      简体中文  \n   \n\n   \n       \n       \n       \n       \n       \n   \n\n   \n       \n   \n \n\n \n   \n \n\n> [!WARNING]\n> **Active beta.** Use the latest release for stable work. `main` contains the newest fixes and may change between releases. Report problems through GitHub Issues.\n\n## At a glance\n\n| | VoiceStudio |\n|---|---|\n| **Workflows** | Voice cloning and design, video dubbing, dictation, stories, audiobooks, batch generation |\n| **Language catalogue** | 646 TTS languages; actual coverage and quality depend on the selected engine |\n| **Engines** | 16 TTS · 11 ASR · switch in Model Catalogue or with  Ctrl / Cmd + E  |\n| **Platforms** | macOS 13.3+ on Apple Silicon · Windows 10/11 x64 · Linux x86_64 with glibc 2.39+ |\n| **Compute** | CUDA · Apple Silicon MPS/MLX · ROCm on Linux · CPU · optional remote workers |\n| **Interfaces** | Desktop app · local REST/SSE/WebSocket API · OpenAI-compatible audio API · MCP Server |\n| **Storage** | Voices, projects, settings, and outputs stay on the machine by default |\n| **License** | AGPL-3.0 application; downloaded models keep their upstream terms |\n\n  \n\n## Install\n\nDownload a package from the latest release, then follow the platform guide.\n\n| Platform | Package | Guide |\n|---|---|---|\n| macOS 13.3+ | Apple Silicon DMG | Install on macOS |\n| Windows 10/11 | x64 MSI; choose the current-user build when listed to install without admin access | Install on Windows |\n| Linux | AppImage, x86_64 with glibc 2.39+ | Install on Linux |\n| Docker | CUDA, ROCm, CPU, and worker-only GPU profiles | Run with Docker |\n\nFirst launch creates a managed Python environment and downloads the default model. Later launches reuse both.\n\n> [!NOTE]\n> On macOS, first launch needs a one-time right-click, then **Open** approval. Intel Macs cannot run the local Python backend; use a remote backend instead.\n\n### First voice\n\n1. Launch VoiceStudio and open **Voice Cloning**.\n2. Add a clean voice sample. Three seconds works; 5 to 15 seconds usually gives a better prompt.\n3. Enter text, choose a language, then select **Generate**.\n\n### Run from source\n\nInstall the development prerequisites, then:\n\n```bash\ngit clone https://github.com/debpalash/VoiceStudio.git\ncd VoiceStudio\nbun install\nbun run desktop\n```\n\nUse `bun run dev` for the browser UI. See Contributing for services, tests, and platform packages.\n\n### If setup fails\n\n- Run **Settings → About → Run self-check** or `uv run python backend/main.py --diagnose --deep`.\n- Check install troubleshooting.\n- Save a scrubbed diagnostic bundle from the ap",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "gpu"
+      ],
+      "ai_hits": [
+        "prompt",
+        "mcp",
+        "openai",
+        "tts"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "MCP",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.9,
+      "tcloud_relevance": 5.9,
+      "tcloud_integration": "**VoiceStudio** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**VoiceStudio** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "cuda"
+      ],
+      "tcloud_primary_product": "GPU CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**VoiceStudio** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（GPU CVM）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（GPU CVM）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「debpalash/VoiceStudio - VoiceStudio is the open-s…」（debpalash/VoiceStudio: VoiceStudio is the open-source, full…），涉及 MCP / Python / TypeScript → 可写方向：**VoiceStudio** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「VoiceStudio」可结合 GPU CVM 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "GPU CVM",
+      "official_angle_cn": "围绕 VoiceStudio 的核心功能（debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local ElevenLabs a…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 VoiceStudio 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+      "platform_copies": {
+        "primary_product": "GPU CVM",
+        "product_display": "GPU CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 VoiceStudio 的核心功能（debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local ElevenLabs a…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use GPU Cloud Virtual Machine as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 VoiceStudio 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+        "x_cn": "debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local…。如果站在腾讯云国际站官方号来写，这条更适合从 GPU CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：*…",
+        "x_en": "debpalash/VoiceStudio - VoiceStudio is the open-source, fully-local ElevenLabs alternat…. For Tencent Cloud, this fits GPU Cloud Virtual Machine: GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local…。如果从腾讯云视角切，这条最适合带到 GPU CVM，重点聊 技术科普 + 教程拆解 + 产品关联（GPU CVM）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: debpalash/VoiceStudio - VoiceStudio is the open-source, fully-local ElevenLabs alternat…. From a Tencent Cloud angle, the best hook is GPU Cloud Virtual Machine, especially around technical explainer + hands-on walkthrough + product tie-in (GPU CVM). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local…。如果用官方号发，建议主推 GPU CVM，重点讲 技术科普 + 教程拆解 + 产品关联（GPU CVM），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**VoiceStudio** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. debpalash/VoiceStudio - VoiceStudio is the open-source, fully-local ElevenLabs alternat…. For Tencent Cloud, the better angle is GPU Cloud Virtual Machine. GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering. The content should focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM).",
+        "reddit_title_cn": "这类热点如果从 GPU CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local…。如果站在腾讯云国际站官方号视角，我会更想把它写成 GPU CVM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（GPU CVM）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through GPU Cloud Virtual Machine?",
+        "reddit_body_en": "A recent trend caught my eye: debpalash/VoiceStudio - VoiceStudio is the open-source, fully-local ElevenLabs alternat…. Instead of reposting it as news, I'd frame it through GPU Cloud Virtual Machine and focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "VoiceStudio 是 ElevenLabs 的开源、完全本地化替代方案 — 提供 646 种语言的语音克隆、语音设计、视频配音、听写、转录和有声读物创建。",
+    "developer_profile": {
+      "github_username": "debpalash",
+      "profile_url": "https://github.com/debpalash",
+      "name": "Palash Debnath",
+      "bio": "Building VoiceStudio.sh, Friday, openGTM, Hoglet, Cly, Bootable, Opal, NewsPal and some experiments. Checkout my X for updates.",
+      "company": "Yupcha.com",
+      "location": "India",
+      "blog": "https://palash.dev",
+      "twitter_username": "idebpalash",
+      "email": "",
+      "followers": 307,
+      "following": 10,
+      "public_repos": 17,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4178343?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "https://discord.gg/bzQavDfVV9"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/idebpalash"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://palash.dev"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "ChromeDevTools/chrome-devtools-mcp - Chrome DevTools for coding agents",
+    "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "heat": "50,715 stars",
+    "time": "Today",
+    "developer_name": "ChromeDevTools",
+    "developer_url": "https://github.com/ChromeDevTools",
+    "developer_email": "",
+    "today_stars": "148 stars today",
+    "language": "TypeScript",
+    "summary": "Chrome DevTools for coding agents",
+    "content": "# Chrome DevTools for agents\n\n[](https://npmjs.org/package/chrome-devtools-mcp)\n\nChrome DevTools for agents (`chrome-devtools-mcp`) lets your coding agent (such as Antigravity, Claude, Cursor or Copilot)\ncontrol and inspect a live Chrome browser. It acts as a Model-Context-Protocol\n(MCP) server, giving your AI coding assistant access to the full power of\nChrome DevTools for reliable automation, in-depth debugging, and performance analysis.\nA [CLI][cli] is also provided for use without MCP.\n\n[Tool reference][tool-reference] | [Changelog][changelog] | [Contributing][contributing] | [Troubleshooting][troubleshooting] | [Design Principles][design-principles]\n\n## Key features\n\n- **Get performance insights**: Uses Chrome\n  DevTools to record\n  traces and extract actionable performance insights.\n- **Advanced browser debugging**: Analyze network requests, take screenshots and\n  check browser console messages (with source-mapped stack traces).\n- **Reliable automation**. Uses\n  puppeteer to automate actions in\n  Chrome and automatically wait for action results.\n\n## Disclaimers\n\n`chrome-devtools-mcp` exposes content of the browser instance to the MCP clients\nallowing them to inspect, debug, and modify any data in the browser or DevTools.\nAvoid sharing sensitive or personal information that you don't want to share with\nMCP clients.\n\n`chrome-devtools-mcp` officially supports Google Chrome and Chrome for Testing only.\nOther Chromium-based browsers may work, but this is not guaranteed, and you may encounter unexpected behavior. Use at your own discretion.\nWe are committed to providing fixes and support for the latest version of Extended Stable Chrome.\n\nPerformance tools may send trace URLs to the Google CrUX API to fetch real-user\nexperience data. This helps provide a holistic performance picture by\npresenting field data alongside lab data. This data is collected by the Chrome\nUser Experience Report (CrUX). To disable\nthis, run with the `--no-performance-crux` flag.\n\n## **Usage statistics**\n\nGoogle collects usage statistics (such as tool invocation success rates, latency, and environment information) to improve the reliability and performance of Chrome DevTools MCP.\n\nData collection is **enabled by default**. You can opt-out by passing the `--no-usage-statistics` flag when starting the server:\n\n```json\n\"args\": [\"-y\", \"chrome-devtools-mcp@latest\", \"--no-usage-statistics\"]\n```\n\nGoogle handles this data in accordance with the Google Privacy Policy.\n\nGoogle's collection of usage statistics for Chrome DevTools MCP is independent from the Chrome browser's usage statistics. Opting out of Chrome metrics does not automatically opt you out of this tool, and vice-versa.\n\nCollection is disabled if `CHROME_DEVTOOLS_MCP_NO_USAGE_STATISTICS` or `CI` env variables are set.\n\n## Update checks\n\nBy default, the server periodically checks the npm registry for updates and logs a notification when a newer version is available.\nYou can disable these update checks by setting the `CHROM",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "copilot",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "ChromeDevTools/chrome-devtools-mcp: Chrome DevTools for coding agents",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 5.5,
+      "tcloud_integration": "**chrome-devtools-mcp** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs chrome-devtools-mcp 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**chrome-devtools-mcp** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs chrome-devtools-mcp 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "ai coding",
+        "coding agent",
+        "copilot",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**chrome-devtools-mcp** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs chrome-devtools-mcp 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「ChromeDevTools/chrome-devtools-mcp - Chrome DevTo…」（ChromeDevTools/chrome-devtools-mcp: Chrome DevTools for cod…），涉及 Agent / MCP → 可写方向：**chrome-devtools-mcp** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs chrome-devtools-mcp 的横向对…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「ChromeDevTools/chrome-devtools-mcp - Ch…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 chrome-devtools-mcp 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 chrome-devtools-mcp 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 chrome-devtools-mcp 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 chrome-devtools-mcp 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "ChromeDevTools/chrome-devtools-mcp: Chrome DevTools for coding agen…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "ChromeDevTools/chrome-devtools-mcp - Chrome DevTools for coding agents. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：ChromeDevTools/chrome-devtools-mcp: Chrome DevTools for coding agen…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: ChromeDevTools/chrome-devtools-mcp - Chrome DevTools for coding agents. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。ChromeDevTools/chrome-devtools-mcp: Chrome DevTools for coding agen…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**chrome-devtools-mcp** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs chrome-devtools-mcp 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. ChromeDevTools/chrome-devtools-mcp - Chrome DevTools for coding agents. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：ChromeDevTools/chrome-devtools-mcp: Chrome DevTools for coding agen…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: ChromeDevTools/chrome-devtools-mcp - Chrome DevTools for coding agents. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "chrome-devtools-mcp：用于编码代理的 Chrome DevTools",
+    "developer_profile": {
+      "github_username": "ChromeDevTools",
+      "profile_url": "https://github.com/ChromeDevTools",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "Ctrl+Shift+I",
+      "blog": "https://devtools.chrome.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 1762,
+      "following": 0,
+      "public_repos": 19,
+      "avatar_url": "https://avatars.githubusercontent.com/u/11260967?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "NousResearch/hermes-agent - The agent that grows with you",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "heat": "240,261 stars",
+    "time": "Today",
+    "developer_name": "NousResearch",
+    "developer_url": "https://github.com/NousResearch",
+    "developer_email": "",
+    "today_stars": "533 stars today",
+    "language": "Python",
+    "summary": "The agent that grows with you",
+    "content": " \n   \n \n\n# Hermes Agent ☤\n \n   Hermes Agent  |  Hermes Desktop \n \n \n     \n     \n     \n     \n     \n     \n     \n \n\n**The self-improving AI agent built by Nous Research.** It's the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, searches its own past conversations, and builds a deepening model of who you are across sessions. Run it on a $5 VPS, a GPU cluster, or serverless infrastructure that costs nearly nothing when idle. It's not tied to your laptop — talk to it from Telegram while it works on a cloud VM.\n\nUse any model you want — Nous Portal, OpenRouter, OpenAI, your own endpoint, and many others. Switch with `hermes model` — no code changes, no lock-in.\n\n \n   A real terminal interface   Full TUI with multiline editing, slash-command autocomplete, conversation history, interrupt-and-redirect, and streaming tool output.  \n   Lives where you do   Telegram, Discord, Slack, WhatsApp, Signal, and CLI — all from a single gateway process. Voice memo transcription, cross-platform conversation continuity.  \n   A closed learning loop   Agent-curated memory with periodic nudges. Autonomous skill creation after complex tasks. Skills self-improve during use. FTS5 session search with LLM summarization for cross-session recall.  Honcho  dialectic user modeling. Compatible with the  agentskills.io  open standard.  \n   Scheduled automations   Built-in cron scheduler with delivery to any platform. Daily reports, nightly backups, weekly audits — all in natural language, running unattended.  \n   Delegates and parallelizes   Spawn isolated subagents for parallel workstreams. Write Python scripts that call tools via RPC, collapsing multi-step pipelines into zero-context-cost turns.  \n   Runs anywhere, not just your laptop   Seven terminal backends — local, Docker, SSH, Singularity, Modal, Daytona, and Vercel Sandbox. Daytona and Modal offer serverless persistence — your agent's environment hibernates when idle and wakes on demand, costing nearly nothing between sessions. Run it on a $5 VPS or a GPU cluster.  \n   Research-ready   Batch trajectory generation, trajectory compression for training the next generation of tool-calling models.  \n \n\n---\n\n## Quick Install\n\n### Linux, macOS, WSL2, Termux\n\n```bash\ncurl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash\n```\n\n### Windows (native, PowerShell)\n\n> **Heads up:** Native Windows runs Hermes without WSL — CLI, gateway, TUI, and tools all work natively. If you'd rather use WSL2, the Linux/macOS one-liner above works there too. Found a bug? Please file issues.\n\nRun this in PowerShell:\n\n```powershell\niex (irm https://hermes-agent.nousresearch.com/install.ps1)\n```\n\nThe installer handles everything: uv, Python 3.11, Node.js, ripgrep, ffmpeg, **and a portable Git Bash** (MinGit, unpacked to `%LOCALAPPDATA%\\hermes\\git` — no admin required, completely isolated from any system Git install). Hermes uses this bundled Git Bash to r",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 7,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "serverless",
+        "docker",
+        "vercel",
+        "gpu",
+        "vm",
+        "vps"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "竞品动态",
+      "products": [],
+      "competitors": [
+        "Vercel"
+      ],
+      "competitor_products": [
+        "Vercel"
+      ],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Serverless",
+        "Python"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "NousResearch/hermes-agent: The agent that grows with you",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.5,
+      "tcloud_relevance": 5.6,
+      "tcloud_integration": "**hermes-agent** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_products": [
+        "CVM"
+      ],
+      "tcloud_reasons": [
+        "**hermes-agent** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "training",
+        "vm"
+      ],
+      "tcloud_primary_product": "CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CVM：**hermes-agent** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+      "tcloud_official_matches": [
+        "CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "产品关联（CVM）",
+        "竞品对比（Vercel）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "教程拆解 + 产品关联（CVM） + 竞品对比（Vercel） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「NousResearch/hermes-agent - The agent that grows…」（NousResearch/hermes-agent: The agent that grows with you），涉及 LLM / Agent / Serverless → 可写方向：Vercel 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「hermes-agent」涉及GPU 算力场景，可结合 CVM 写教程或场景解读。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "CVM",
+      "official_angle_cn": "以 hermes-agent 的算力需求为切入，写一篇在 CVM GPU 实例上跑模型训练/推理的实操内容，附硬件规格和成本估算。",
+      "visual_brief": "主视觉用 hermes-agent 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CVM。",
+      "platform_copies": {
+        "primary_product": "CVM",
+        "product_display": "CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 hermes-agent 的算力需求为切入，写一篇在 CVM GPU 实例上跑模型训练/推理的实操内容，附硬件规格和成本估算。",
+        "official_angle_en": "Use Cloud Virtual Machine (CVM) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 hermes-agent 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CVM。",
+        "x_cn": "NousResearch/hermes-agent: The agent that grows with you。如果站在腾讯云国际站官方号来写，这条更适合从 CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 CVM：**hermes-agent** 涉及模…",
+        "x_en": "NousResearch/hermes-agent - The agent that grows with you. For Tencent Cloud, this fits Cloud Virtual Machine (CVM): GPU and high-performance compute for model training and large-scale services.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：NousResearch/hermes-agent: The agent that grows with you。如果从腾讯云视角切，这条最适合带到 CVM，重点聊 教程拆解 + 产品关联（CVM） + 竞品对比（Vercel） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: NousResearch/hermes-agent - The agent that grows with you. From a Tencent Cloud angle, the best hook is Cloud Virtual Machine (CVM), especially around hands-on walkthrough + product tie-in (CVM) + competitor comparison (Vercel) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。NousResearch/hermes-agent: The agent that grows with you。如果用官方号发，建议主推 CVM，重点讲 教程拆解 + 产品关联（CVM） + 竞品对比（Vercel） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CVM：**hermes-agent** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩缩容，按需使用避免硬件采购成本",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. NousResearch/hermes-agent - The agent that grows with you. For Tencent Cloud, the better angle is Cloud Virtual Machine (CVM). GPU and high-performance compute for model training and large-scale services. The content should focus on hands-on walkthrough + product tie-in (CVM) + competitor comparison (Vercel) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：NousResearch/hermes-agent: The agent that grows with you。如果站在腾讯云国际站官方号视角，我会更想把它写成 CVM 相关内容，重点是 教程拆解 + 产品关联（CVM） + 竞品对比（Vercel） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Cloud Virtual Machine (CVM)?",
+        "reddit_body_en": "A recent trend caught my eye: NousResearch/hermes-agent - The agent that grows with you. Instead of reposting it as news, I'd frame it through Cloud Virtual Machine (CVM) and focus on hands-on walkthrough + product tie-in (CVM) + competitor comparison (Vercel) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "hermes-agent：与您共同成长的代理商",
+    "developer_profile": {
+      "github_username": "NousResearch",
+      "profile_url": "https://github.com/NousResearch",
+      "name": "Nous Research",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://nousresearch.com",
+      "twitter_username": "nousresearch",
+      "email": "",
+      "followers": 8490,
+      "following": 0,
+      "public_repos": 94,
+      "avatar_url": "https://avatars.githubusercontent.com/u/134168893?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/nousresearch"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "superlinked/sie - Open-source inference server and production cluster for all the models your agent needs.",
+    "url": "https://github.com/superlinked/sie",
+    "heat": "3,114 stars",
+    "time": "Today",
+    "developer_name": "superlinked",
+    "developer_url": "https://github.com/superlinked",
+    "developer_email": "",
+    "today_stars": "60 stars today",
+    "language": "Python",
+    "summary": "Open-source inference server and production cluster for all the models your agent needs.",
+    "content": " \n\n \n   \n   \n \n\n SIE: Superlinked Inference Engine \n\n  Self-hosted inference for agents. Every open model your agents call, served from one cluster in your cloud.  \n\n \n   Docs  |\n   Quickstart  |\n   API Reference  |\n   Models \n \n\n[](LICENSE)\n[](https://pypi.org/project/sie-sdk/)\n[](https://github.com/superlinked/sie/stargazers)\n\n⭐ _Help us reach more developers and grow the SIE community. Star this repo!_\n\n \n\n## About\n\nSIE is an open-source inference engine that runs the models behind every agent task through one API: search and retrieval, document-to-markdown conversion, structured output, content safety, and the agent loop itself. It replaces the patchwork of a separate model server per task with one system that serves 100+ models, loading each on demand.\n\n- OpenAI-compatible API for drop-in migration: `/v1/embeddings`, `/v1/chat/completions`, `/v1/completions`, `/v1/responses`\n- Pre-configured model catalog: Stella, SPLADE, Qwen3, GLiNER, SigLIP, and more; embedding and retrieval models benchmarked on MTEB\n- Serves multiple models simultaneously with on-demand loading and LRU eviction\n- Ships Kubernetes and Helm deployment configs for the load-balancing gateway, KEDA autoscaling, and Grafana dashboards\n- Integrates with LangChain, LlamaIndex, Haystack, DSPy, CrewAI, Chroma, Qdrant, Weaviate, and LanceDB\n\n## Development\n\nInstall mise, then bootstrap the\nversioned Python, Rust, Node.js, and Helm toolchains from the repository root:\n\n```bash\n./tools/init.sh\n```\n\nThe common development checks and local server are available as mise tasks:\n\n```bash\nmise run test\nmise run lint\nmise run typecheck\nmise run serve\nmise run rust-check\nmise run rust-test\nmise run gateway-test\nmise run server-sidecar-test\n```\n\nThe Python workspace uses the committed root lock. Package membership is\nexplicit in `pyproject.toml`; a package joins the workspace only in the same\nchange that adds its complete source. Native audio is always an opt-in build:\ninstall cmake, then run\n`mise exec -- uv sync --frozen --project . --all-packages --all-extras`.\n\n## Tasks\n\nOne SIE cluster runs the inference behind a whole agent. Each task is a handful of swappable models; browse `packages/sie_server/models/` for the full set.\n\n| Task | What it does | Models |\n|---|---|---|\n| **Search** | Embed, match, and rerank to retrieve the right context. | `bge-m3`, `splade-v3`, `colbertv2`, `qwen3-reranker` |\n| **Document to markdown** | PDFs, Office files, and scans become clean markdown. | `lightonocr`, `glm-ocr`, `mineru`, `paddleocr-vl`, `docling` |\n| **Structured output** | Schema-valid JSON, extracted or generated. | `gliner2`, `nuner-zero`, `qwen3.6-27b` |\n| **Guard content** | A safety verdict with a probability you threshold. | `granite-guardian-2b` |\n| **Run the agent loop** | Plan steps and call tools with an open LLM, streaming included. | `qwen3.6-27b` |\n\n## Quickstart\n\n**1. Start the server**\n\n```bash\n# macOS (Apple Silicon) or Linux, native (requires Python 3.12)\npip install \"sie-server",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 9,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "kubernetes"
+      ],
+      "ai_hits": [
+        "llm",
+        "agent",
+        "embedding",
+        "inference",
+        "langchain",
+        "llamaindex",
+        "crewai",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "LangChain"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Vector DB",
+        "Kubernetes",
+        "Rust",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "superlinked/sie: Open-source inference server and production cluster for all the models your agent needs.",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.7,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「superlinked/sie - Open-source inference server an…」（superlinked/sie: Open-source inference server and productio…），涉及 LLM / Agent / Vector DB → 可写方向：Kubernetes 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「superlinked/sie - Open-source inference…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 sie 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 sie 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "superlinked/sie: Open-source inference server and production cluste…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "superlinked/sie - Open-source inference server and production cluster for all the model…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：superlinked/sie: Open-source inference server and production cluste…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: superlinked/sie - Open-source inference server and production cluster for all the model…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。superlinked/sie: Open-source inference server and production cluste…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. superlinked/sie - Open-source inference server and production cluster for all the model…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：superlinked/sie: Open-source inference server and production cluste…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: superlinked/sie - Open-source inference server and production cluster for all the model…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "sie：适用于代理所需的所有模型的开源推理服务器和生产集群。",
+    "developer_profile": {
+      "github_username": "superlinked",
+      "profile_url": "https://github.com/superlinked",
+      "name": "Superlinked",
+      "bio": "Compute tooling for vector-powered apps.",
+      "company": "",
+      "location": "",
+      "blog": "superlinked.com",
+      "twitter_username": "superlinked",
+      "email": "",
+      "followers": 187,
+      "following": 0,
+      "public_repos": 18,
+      "avatar_url": "https://avatars.githubusercontent.com/u/94243920?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/superlinked"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/superlinked"
+        }
+      ],
+      "is_org": true
+    }
+  }
+]
