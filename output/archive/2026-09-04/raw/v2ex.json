@@ -1,0 +1,582 @@
+[
+  {
+    "source": "V2EX",
+    "title": "Mole 出 Mac 版后，用户教会了我做产品",
+    "url": "https://www.v2ex.com/t/1239372",
+    "heat": "155 replies",
+    "time": "Hot",
+    "summary": "![《 Mole 出 Mac 版后，用户教会了我做产品》文章封面]( https://cdn.tw93.fun/blog/pic/mole-mac-cover.png?v=2)\r\n\r\n最近我写了不少关于独立开发的思考，想着要汇总一下，就把 Mole 从开源 CLI 做到 Mac 付费软件这一路聊一聊，我当时是怎么想的，哪些事情做下来真的有用，也许能给正在做自己作品的朋友一些输入。\r\n\r\n**Mole 的官网是 [mole.fit]( https://mole.fit)，CLI 在 [GitHub]( https://github.com/tw93/Mole) 开源，可以先去玩一玩。**\r\n\r\n去年国庆我在三亚的泳池边写了几百行代码，做了个 Mac 清理的命令行工具 Mole CLI 开源到 GitHub 上，本来只想给自己和同事用。结果不到一年收了 60K star ，陆续发了 50 多个版本，121 位来自全球各地的开发者提交过代码，解决掉近 800 个功能建议和 Bug 。\r\n\r\n其实我一直没太意识到用的人有多少，直到有一次，因为在 README 上挂了两张用 Vercel 加速的图片，流量把账单跑超了，欠了 Vercel 80 刀。当时才反应过来，桌面端可以做了。\r\n\r\n之前收到最多的一类邮件来自国外用户，大意都差不多：我父母也用 Mac ，我妹妹也用，但他们不会开终端，能不能做一个不用敲命令就能用的版本。这件事拖了挺久，主要是觉得 CLI 本身还没到成熟的地步。等 CLI 跑了大半年，哪些能删、删到什么程度算安全，心里有底了才开始做桌面版，做到自己敢天天用了才发出去。当天晚上十点发布，那一夜通知一直在响，法国、德国各种币种都有，后来为了睡觉把邮箱通知关了。后面几个月一直在加东西，等于是一批用户先掏了钱，再陪着我把它做完。CLI 没有任何变化，照旧开源免费，也会一直更新，付费的只有桌面版。\r\n\r\n![]( https://cdn.tw93.fun/uPic/VvFtgq33.png)\r\n\r\n## AI 多出来的三类垃圾\r\n\r\n桌面版做出来之后，我自己用得最多的反而是清理，因为我这台 Mac 真的快被 AI 撑爆了。我几乎全天开着 Claude Code 和 Codex 写东西，一开始没在意，后来才发现 AI 留下的垃圾跟以前的软件很不一样，大概是三类。\r\n\r\n第一类是编译产物，这个不新鲜，但 AI 把量级放大了。以前一天手写几百行代码编译三五次，现在一个下午让 agent 跑十几轮，每轮都要编译一次。Rust 项目的 target 、前端的 .next 和 dist 、Xcode 的 DerivedData 增长很快，我自己有一次清出 86G ，全是这些东西。第二类是 AI 工具自己留下的旧版本，Claude Code 、Cursor Agent 、GitHub Copilot 这几个命令行工具都是自动更新的。更新方式是把新版本整个下载到一个新的版本目录，一个版本约 250MB ，旧的不会删，几个月下来这里积着十几个再也用不到的版本。第三类是模型文件，Ollama 和 LM Studio 拉下来的模型、HuggingFace 的缓存，常常几十 G 。\r\n\r\n![Mole 清理完成页显示本次释放 86.4 GB 空间]( https://mole.fit/img/ch/clean.webp)\r\n\r\n前两类 Mole 会清，第三类不碰。后来我慢慢把这件事想成三档，扫到的每样东西先归个类，再决定它默认要不要勾上。第一档可再生，HTTP 缓存、GPU 缓存、编译产物和多数日志都算，相关的 App 退出了、路径也明确，就可以清。第二档重建代价高，包管理器的注册缓存、本地模型权重、iOS 的 DeviceSupport 都能重建，但要花网络和时间，得让用户自己过一眼。第三档不可替代，聊天记录、邮件库、照片图库、手上正做着的项目状态都在里面，我觉得这些东西就不该放进一键清理的列表。\r\n\r\n这三档压成同一份「安全可删」的清单当然省事，代价是替用户把决定做了。清理页的十类项目就是按这个顺序排的，可再生的缓存排在最前面，越往下越需要自己看一眼。\r\n\r\n![Mole 把清理候选分为可再生、重建代价高和不可替代三类]( https://mole.fit/img/blog/cleaner-data-kinds.webp)\r\n\r\ntarget 、build 、dist 、`__pycache__`、DerivedData 这些删掉以后重新编译一次就回来了，代价是几分钟 CPU 。node_modules 、Pods 、venv 、vendor 看着也是依赖目录，但删了必须重新联网下载，在高铁上或者飞机上想跑一下项目就只能干等。这两类看着差不多，很容易一起当垃圾清掉，Mole CLI 早期就是这样，后来专门把所有下载类的目录从 Mac 版的清理列表里摘了出去。\r\n\r\n模型是这里面最重的一类，几十 G 重下一遍是灾难，而且通用清理工具就算想帮你删也删不对。Ollama 把模型拆成一堆按哈希命名的块，多个模型可能共用同一块，`ollama rm` 会先算清楚还有没有别人在引用才敢释放。你从文件系统上直接删掉一个看着很大的块，很可能把另一个模型弄坏。这种引用关系只有工具自己清楚。\r\n\r\n所以 `~/.ollama/models`、`~/.cache/huggingface` 这类路径在代码里是写死的保护名单，扫描阶段根本不会出现，只在磁盘分析那边显示占用大小，模型本身交回给 Ollama 、LM Studio 自己管。\r\n\r\n![Ollama 模型 A 与模型 B 共用部分 SHA256 数据块的关系图]( https://mole.fit/img/blog/ai-model-store.webp)\r\n\r\n还有一类东西比模型更不能动，是 AI 的会话记录。`~/.codex/sessions`、`~/.claude/projects`、`~/.grok/sessions` 里存的是你和 AI 几个月甚至一年的完整对话，里面有当时的思路、被否掉的方案、每一处为什么这么改的原因，删掉就真的没了，说起来比代码本身还珍贵。所以这几个路径在 Mole 里永远不会清，放了多久没动过都一样，同样受保护的还有 memories 、plans 、skills 和生成的图片。\r\n\r\n![Mole 磁盘分析页用矩形树图展示 Library 、项目和图片的空间占用]( https://mole.fit/img/ch/analyze.webp)\r\n\r\n这些保护名单不是一开始就想好的，基本都是踩出来的。最蠢的一次是 `com.apple.e5rt.e5bundlecache`，名字里带 Caches ，位置也在缓存目录下，怎么看都是缓存，其实它是苹果神经引擎编译好的模型。CLI 早期真把它当缓存清了，用户那边所有用到识别功能的 App 全挂，一直到重启才好。从那以后我养成一个习惯，看到名字里带 cache 的目录，先在心里过三个问题，谁写的，重启之后谁会去读它，万一删错了怎么找回来。有一个答不上来我就不动它。\r\n\r\n## 先看一眼再删\r\n\r\n这类工具好不好，我不太看能清多少，主要看删之前让不让你看清楚。\r\n\r\nMole 清理的时候是先扫描，逐项列出来，每一项显示具体是什么、在哪、占多少，拿不准的默认不勾选，确认完再删，删的时候优先进废纸篓，后悔了还能找回来。扫描和清理全程在本机完成，文件和结果都不会上传。代价是慢，多了一步确认，赶时间的时候会嫌它啰嗦，但我还是想让它宁可漏删也不误删。\r\n\r\n![Mole 卸载页展开 Claude 的应用本体、支持文件、日志和缓存]( https://mole.fit/img/ch/uninstall.webp)\r\n\r\n卸载走的是同一套逻辑，选中一个 App ，Mole 会把它散在系统各处的东西一起翻出来，逐项标上路径和大小，上面这张图里 Claude 本体只有 781MB ，`~/Library/Application Support/claude` 却有 7.67 GB ，真正占空间的从来不是应用包本身。登录项和后台服务也放在同一页，不用再去系统设置里一个个找。\r\n\r\n举个例子，macOS 系统更新下载下来的安装包，也就是 `/macOS Install Data` 那个目录，经常十几个 G ，看着是完美的清理目标。但系统可能还等着用它把更新装完，删早了机器就起不来。所以它在 Mole 里是默认不勾选的审阅项，前面叠了三道门，系统里有更新等着装就整行隐藏，安装包最近 14 天里动过就隐藏，安装相关进程还在运行也隐藏，哪个信号读不出来，就当它有风险，直接不显示。\r\n\r\n真到执行删除那一刻，root 权限的脚本还会把这几项检查重新跑一遍，不通过就非零退出，不会出现「报告说清了 12G 其实一个字节没动」这种事。\r\n\r\n我自己判断一款清理工具好不好，有个很土的办法。装同一个厂商的两款产品，只卸掉其中一款，看它会不会把两款共用的 Application Support 父目录或者 group 容器也列进去。列进去了，说明它是按名字匹配的，不是按归属判断。归属都说不清的工具，我不太敢让它批量删东西。\r\n\r\n![Mole 按应用归属查找容器、支持文件、缓存与系统扩展，并避开共享容器]( https://mole.fit/img/blog/leftover-attribution.webp)\r\n\r\n## 平时他不会来打扰你\r\n\r\n一次清出 86G 不是靠删几个日志凑出来的，卸载 Claude 的时候能从系统各处翻出比应用本体大十倍的东西。该找的它都会去找，只是不会主动来打扰你。\r\n\r\n装了之后它不会隔三差五弹个通知提醒你该清理了，也不会扫完之后跳出来说你的电脑有多危险。你想清的时候打开它，不想的时候它就跟不存在一样。\r\n\r\n界面上也是同一个想法，扫描没结束就不进结果页，等一下就能好的事连加载提示都不给，要等一阵才出现一个正在忙的动画，完成页也提前留好空间，结果出来的时候窗口不会跳一下。这些规定都很琐碎，合起来就是它用起来稳的原因。\r\n\r\n底下要做的事情本来就不好预测，这时候加动画帮不上忙，还是得流程本身够可靠。我不希望一个维护工具需要人一直盯着，发起任务，等它完成，再拿回屏幕就够了，不用老闪着灯提醒你来看它。\r\n\r\n无障碍也算在里面，朗读顺序、键盘操作、焦点稳不稳，和看上去安不安静是同一件事。系统开启「减少动态效果」之后，行星会停止装饰性旋转，状态变化也减少空间移动，任何操作都不依赖用户看懂动画。\r\n\r\n![Mole 菜单栏面板安静地浮在桌面右侧，按需展示硬件状态和维护入口]( https://mole.fit/img/ch/menubar.webp)\r\n\r\n## 让 70 岁的老爷爷也能用\r\n\r\n以前我做东西基本只考虑身边同事和朋友用得顺不顺手。这次从 CLI 做到桌面端才发现，要让一个 70 岁的老爷爷也用得上，中间要过的事情多得多，也有意思得多。下面这些都是从这三个月的用户邮件里翻出来的，我最大的收获几乎都在这里。\r\n\r\n有位快 70 岁的英国用户，说他犯了一个老年时刻，把 Mole 又买了一遍，「第二笔钱就当做送你，谢谢这个出色的工具，帮我省下了比 CleanMyMac 多得多的英镑」。我建议他退款或者把多出来的授权送人，他去问了一圈，第二天回我「我邻居没人用 Mac ，我 Bluesky 上的关注者也没有，这一轮算我请你」。收到这样的信，我会觉得必须把产品做得更好，才对得起这份信任。\r\n\r\n一位美国用户纠正了我一个关于地区习惯的错误想法。我一直以为美国人看温度就得用华氏，所以美区默认给了华氏，他说：「美国人在所有技术相关的场景都用摄氏度，只有天气和体温例外。我装上 Mole 看到 110 ，吓了一跳。Apple 给美国人看的规格也是摄氏度，fastfetch 、neofetch 在美式系统上默认也是摄氏度。建议保留华氏切换，但所有地区默认摄氏度。」后来就改成了默认摄氏可切华氏。他还追了一封聊定价，说我给的那个数字读起来不像刻意定的价，像是从别的货币换算过来的，又补了一句「我说外来不是指反华，而是人们希望感觉到作者理解他们」。说实话那个价格就是我拍脑袋定的，做产品之前从没认真想过定价这件事，被一个素不相识的用户当面点出来，挺不好意思的，原来一个价格数字也会影响用户的决策。\r\n\r\n一位视力轻度障碍的用户说：「看起来是个很不错的 App ，可惜我用不了，它似乎把深色模式写死了。我系统设成浅色，也只用浅色模式的 App 。」 Mole 只做深色其实是个刻意的决定，菜单栏面板像 HUD 一样浮在壁纸上，深色玻璃眩光更少，也不用多一个主题开关。但这个理由对他不成立，我一直觉得自己在无障碍上做得挺认真，却完全没想到浅色模式本身也是一种无障碍需求。这封信收到有一阵了，Mole 到现在还是只有深色，浅色一直排在列表上没做完。一个说自己在意无障碍的产品，把一位明确说了用不了的用户晾到现在，这件事我一直有点过意不去。\r\n\r\n还有一位德国大学的讲师来申请教育授权，说这「不仅是对我个人的支持，也是一种有意义的教育层面的支持」。原来还有国外的老师在课堂环境里用我的产品，这是我没预料到的用法。一位匈牙利的医生则给了最真实的差评，「说实话，这个价格对一个免费应用也能做到的事情来说有点高了」。这条我一点都不觉得刺耳，不同国家购买力差别很大，他不是在抱怨，是在帮我定位问题。\r\n\r\nMole 里我自己最喜欢的几个功能，起源其实都不是我想到的。AirPods 快没电时会收到一条提醒，是做电池健康那阵子加的，我一直没遇到这个场景，直到某天下午真的收到了，很贴心又不打扰。屏幕常亮做了三种不同的行为，也是用户提醒之后才补的，周末突然出门，AI Coding 那边可以继续跑，帮我省下不少异步的时间。状态里能看到 iPhone 的电量，这一块之前不太好实现，后来也找到了办法。这些都是用户告诉我要加的，加完之后我自己受益最多。\r\n\r\n## 其实我一直手工回邮件\r\n\r\n答疑、退款、重置激活码这些事加起来不到用户量的 1%，花半小时写个脚本就能全自动，但我没写。只有自己一封封处理过，才能感觉到用户到底要什么、为什么退款、哪里让他不舒服，而那经常不是他第一句话问的东西。我给自动化定的门槛是三件事都成立，问题反复出现，答案已经稳定，例外也都摸清楚了，在那之前我宁愿一封封回。目前这样还有效，我没花钱做营销，增长基本来自口碑，退款率低于 0.8%。买的人里有不少是先用了很久 CLI 的老用户。\r\n\r\n发布之前我也没有搭工单系统、客服平台和知识库。工程师喜欢先把这套支撑系统搭起来，因为那是熟悉的工作，AI 又把它压缩到半天，更容易让人过早动手，可是搭起来只要半天，维护却是长期的事，而且暂时根本用不到。等哪天收件箱开始丢请求、看不清响应时间，或者同一个问题得到了不同回答，那才是真正需要新系统的时候。AI 让这个产品的很多部分成为可能，但和人的交流不能用 AI 代替，不然就没什么意思了，它能提效，却很难提升彼此的感情和信任，这或许也是 AI Coding 出来的产品保持人味的一个途径。\r\n\r\n## 这几件事，我觉得做下来很有用\r\n\r\n做产品这件事，我感觉代码能力大概只占三成。更花心思的是怎么把自己的痛点和大部分用户的痛点接上，做出一个好用又不用学的东西，还有怎么把它推到该看到的人面前，让人觉得多亏有它解决了一个大问题。产品工程师大概等于用研、产品、工程师、运营、数据、商业这几类角色的综合体。\r\n\r\n不做什么远比做什么重要，放到一个会删你文件的工具上，这句话就变成了不删什么，前面那些写死的保护名单其实都是从这条来的。大一刚入门的时候很幸运看了不少讲工程师修炼的书，如无必要勿增实体、至繁归于至简这两句慢慢渗进了我的生活、工作和代码里，做产品之后感受更深。好产品和一般产品的区别，很大程度上就在于会不会决定哪些东西不做。有些功能本身很好，但不在这条主线上，我就不放进来，不然很容易变成功能堆砌，也不好维护。\r\n\r\n另一个感受是脑袋里得装着往后半年的路线，清楚知道每一个版本该加什么、哪些是伪需求、哪个功能该放在用户顺手的地方。对普通用户来说，不用看说明书就能上手的那个才算好。Mole 的定位是 Mac 系统维护的安静守护者，有不少朋友建议过挺好的功能，我都婉拒了。我的目标也很简单，每一百位 Mac 用户里有一位愿意留下 Mole ，它就已经足够有用。\r\n\r\n现在一个功能进路线图之前要过三道门：用户没点进这个功能就不能有常驻的定时器、监听器和采样开销，不能为一点小便利去扩大特权助手或者新增系统权限，有合理默认值的时候不能加设置项。这不是所有软件的通用原则，是 Mole 给自己定的规矩，常驻的工作、特权和配置每多一样，用户就得多信任你一点。\r\n\r\n![许多功能想法穿过三道筛选门，最终只有少数走向安静稳定的产品](/images/blog/mole-product-gates.svg)\r\n\r\n我基本没攒过大招，尽量做到每周都发一版，这样用户的问题能及时解决，也能跟人有来有回地聊。每次发布、更新、宣发其实都是一次很好的沟通机会，也让之前没看到消息的人知道你在做什么。\r\n\r\nAI 时代代码壁垒越来越小，更需要把控的是怎么把 Token 刚好花在解决用户问题上。多花我不太介意，但要花在实处，比如把需求讨论透，把数据挖下去找到真问题，把文案写得让人一看就懂，这些地方值得花。Token 在我看来属于投资，投资也得讲收益。\r\n\r\nMole 从第一天就是全球化的，英文内容也发得比中文多。这段时间的感受是世界很大，用户很广，而且他们从一开始就愿意信任你。你顺手帮过的人，后来很可能就成了你的用户，因为彼此有过真实的来往。我也没花钱做过推广，X 上的脉冲很高但时效一般，反而有些东西发到 YouTube 之后衰减非常慢，只要东西够好，有人推荐，能在上面活很久。\r\n\r\n数据这块我花的时间比想象中多，销量分维度分时间去看，再结合流量数据、用户评论、跟用户来往的所有记录、退款的原因，开源那边还有全部 issue ，这些都是很宝贵的资源，能帮我发现特别多自己不知道的问题，也能看清销售的漏斗到底断在哪一环。\r\n\r\n最后一条更像是我自己的做法。抱着很深的功利心去把账号做上去，人是会焦虑的，我更愿意把它当成一个品牌来建设，我自己就是这个品牌本身。我的思考、想法、产品更新、见解、交流、评论，都是在给这个品牌加信任值。信任这个东西在当今虚假又繁荣的 AI 世界里尤其重要，说着非常牛逼、点进去感觉一般的东西已经把大量用户的预期拉低了很多，就算你真有一个好产品，没有信任照样得不到关注。这件事可以做得非常长期，你在互联网上待多久，这个品牌就会活多久，是你生命周期最长的产品。\r\n\r\n## 为什么是五颗行星\r\n\r\nMole 桌面版目前是清理、卸载、优化、磁盘分析、硬件状态五块，界面上每一块对应一颗行星，清理是地球，卸载是火星，优化是水星，分析是木星，状态是太阳。这和我小时候喜欢看各种行星运行有关系，加上十年前学会前端之后第一个特别想学的就是 WebGL ，正好凑到了一起。行星的贴图我换了不下 10 次，从 NASA 官网下了很多才挑定，转的方向、转速、完成之后的飞行效果也都照着真实的天体来。\r\n\r\n![]( https://cdn.fliggy.com/pic/1229.gif)\r\n\r\n这部分完全可以不做，做个菜单栏点一下清一下的小工具也能用。但 AI 产生的赛博垃圾已经够多了，与其拿 Token 再堆一个能跑就行的界面，我还是想做个舒服一点的东西出来，不浪费我的 Token ，也不污染你的时间线。\r\n\r\n我做事情喜欢水到渠成，不喜欢短时间急切追求结果，这三个月下来更是这么觉得。前段时间想到一句话，世界上最好的工作，大概是持续学习的人在自由市场里，用自己的判断力、能力和审美持续创造价值，变成他人愿意买单的东西。\r\n\r\nCLI 在 [GitHub]( https://github.com/tw93/Mole) 上开源免费，Mac 桌面版在官网 [mole.fit]( https://mole.fit)。\r\n\r\n由于第一次做付费产品，可能也有我思考不周的地方，很欢迎有经验的朋友帮助指出和建议。上面这些改动其实都不是我想出来的，全是某位用户的一封邮件或者一个 issue 带来的，所以一定不要放弃和用户交流的机会，尽情听他们吐槽和建议，能给你很多帮助，也让你更懂你的用户。",
+    "developer_name": "tw93",
+    "developer_url": "https://www.v2ex.com/member/tw93",
+    "content": "Mole 出 Mac 版后，用户教会了我做产品 - V2EX Home Sign Up Sign In 爱意满满的作品展示区。 Advertisement V2EX › 分享创造 Mole 出 Mac 版后，用户教会了我做产品 1 tw93 · Tw93 · 4h 19m ago · 4539 views 最近我写了不少关于独立开发的思考，想着要汇总一下，就把 Mole 从开源 CLI 做到 Mac 付费软件这一路聊一聊，我当时是怎么想的，哪些事情做下来真的有用，也许能给正在做自己作品的朋友一些输入。 Mole 的官网是 mole.fit ，CLI 在 GitHub 开源，可以先去玩一玩。 去年国庆我在三亚的泳池边写了几百行代码，做了个 Mac 清理的命令行工具 Mole CLI 开源到 GitHub 上，本来只想给自己和同事用。结果不到一年收了 60K star ，陆续发了 50 多个版本，121 位来自全球各地的开发者提交过代码，解决掉近 800 个功能建议和 Bug 。 其实我一直没太意识到用的人有多少，直到有一次，因为在 README 上挂了两张用 Vercel 加速的图片，流量把账单跑超了，欠了 Vercel 80 刀。当时才反应过来，桌面端可以做了。 之前收到最多的一类邮件来自国外用户，大意都差不多：我父母也用 Mac ，我妹妹也用，但他们不会开终端，能不能做一个不用敲命令就能用的版本。这件事拖了挺久，主要是觉得 CLI 本身还没到成熟的地步。等 CLI 跑了大半年，哪些能删、删到什么程度算安全，心里有底了才开始做桌面版，做到自己敢天天用了才发出去。当天晚上十点发布，那一夜通知一直在响，法国、德国各种币种都有，后来为了睡觉把邮箱通知关了。后面几个月一直在加东西，等于是一批用户先掏了钱，再陪着我把它做完。CLI 没有任何变化，照旧开源免费，也会一直更新，付费的只有桌面版。 AI 多出来的三类垃圾 桌面版做出来之后，我自己用得最多的反而是清理，因为我这台 Mac 真的快被 AI 撑爆了。我几乎全天开着 Claude Code 和 Codex 写东西，一开始没在意，后来才发现 AI 留下的垃圾跟以前的软件很不一样，大概是三类。 第一类是编译产物，这个不新鲜，但 AI 把量级放大了。以前一天手写几百行代码编译三五次，现在一个下午让 agent 跑十几轮，每轮都要编译一次。Rust 项目的 target 、前端的 .next 和 dist 、Xcode 的 DerivedData 增长很快，我自己有一次清出 86G ，全是这些东西。第二类是 AI 工具自己留下的旧版本，Claude Code 、Cursor Agent 、GitHub Copilot 这几个命令行工具都是自动更新的。更新方式是把新版本整个下载到一个新的版本目录，一个版本约 250MB ，旧的不会删，几个月下来这里积着十几个再也用不到的版本。第三类是模型文件，Ollama 和 LM Studio 拉下来的模型、HuggingFace 的缓存，常常几十 G 。 前两类 Mole 会清，第三类不碰。后来我慢慢把这件事想成三档，扫到的每样东西先归个类，再决定它默认要不要勾上。第一档可再生，HTTP 缓存、GPU 缓存、编译产物和多数日志都算，相关的 App 退出了、路径也明确，就可以清。第二档重建代价高，包管理器的注册缓存、本地模型权重、iOS 的 DeviceSupport 都能重建，但要花网络和时间，得让用户自己过一眼。第三档不可替代，聊天记录、邮件库、照片图库、手上正做着的项目状态都在里面，我觉得这些东西就不该放进一键清理的列表。 这三档压成同一份「安全可删」的清单当然省事，代价是替用户把决定做了。清理页的十类项目就是按这个顺序排的，可再生的缓存排在最前面，越往下越需要自己看一眼。 target 、build 、dist 、 __pycache__ 、DerivedData 这些删掉以后重新编译一次就回来了，代价是几分钟 CPU 。node_modules 、Pods 、venv 、vendor 看着也是依赖目录，但删了必须重新联网下载，在高铁上或者飞机上想跑一下项目就只能干等。这两类看着差不多，很容易一起当垃圾清掉，Mole CLI 早期就是这样，后来专门把所有下载类的目录从 Mac 版的清理列表里摘了出去。 模型是这里面最重的一类，几十 G 重下一遍是灾难，而且通用清理工具就算想帮你删也删不对。Ollama 把模型拆成一堆按哈希命名的块，多个模型可能共用同一块， ollama rm 会先算清楚还有没有别人在引用才敢释放。你从文件系统上直接删掉一个看着很大的块，很可能把另一个模型弄坏。这种引用关系只有工具自己清楚。 所以 ~/.ollama/models 、 ~/.cache/huggingface 这类路径在代码里是写死的保护名单，扫描阶段根本不会出现，只在磁盘分析那边显示占用大小，模型本身交回给 Ollama 、LM Studio 自己管。 还有一类东西比模型更不能动，是 AI 的会话记录。 ~/.codex/sessions 、 ~/.claude/projects 、 ~/.grok/sessions 里存的是你和 AI 几个月甚至一年的完整对话，里面有当时的思路、被否掉的方案、每一处为什么这么改的原因，删掉就真的没了，说起来比代码本身还珍贵。所以这几个路径在 Mole 里永远不会清，放了多久没动过都一样，同样受保护的还有 memories 、plans 、skills 和生成的图片。 这些保护名单不是一开始就想好的，基本都是踩出来的。最蠢的一次是 com.apple.e5rt.e5bundlecache ，名字里带 Caches ，位置也在缓存目录下，怎么看都是缓存，其实它是苹果神经引擎编译好的模型。CLI 早期真把它当缓存清了，用户那边所有用到识别功能的 App 全挂，一直到重启才好。从那以后我养成一个习惯，看到名字里带 cache 的目录，先在心里过三个问题，谁写的，重启之后谁会去读它，万一删错了怎么找回来。有一个答不上来我就不动它。 先看一眼再删 这类工具好不好，我不太看能清多少，主要看删之前让不让你看清楚。 Mole 清理的时候是先扫描，逐项列出来，每一项显示具体是什么、在哪、占多少，拿不准的默认不勾选，确认完再删，删的时候优先进废纸篓，后悔了还能找回来。扫描和清理全程在本机完成，文件和结果都不会上传。代价是慢，多了一步确认，赶时间的时候会嫌它啰嗦，但我还是想让它宁可漏删也不误删。 卸载走的是同一套逻辑，选中一个 App ，Mole 会把它散在系统各处的东西一起翻出来，逐项标上路径和大小，上面这张图里 Claude 本体只有 781MB ， ~/Library/Application Support/claude 却有 7.67 GB ，真正占空间的从来不是应用包本身。登录项和后台服务也放在同一页，不用再去系统设置里一个个找。 举个例子，macOS 系统更新下载下来的安装包，也就是 /macOS Install Data 那个目录，经常十几个 G ，看着是完美的清理目标。但系统可能还等着用它把更新装完",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": true,
+      "cloud_score": 4,
+      "ai_score": 5,
+      "anxiety_score": 1,
+      "cloud_hits": [
+        "容器",
+        "cdn",
+        "vercel",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "copilot",
+        "agent",
+        "huggingface"
+      ],
+      "anxiety_hits": [
+        "焦虑"
+      ],
+      "topic": "技术分享",
+      "topic_type": "竞品动态",
+      "products": [
+        "Claude",
+        "Copilot",
+        "Cursor",
+        "HuggingFace"
+      ],
+      "competitors": [
+        "Vercel"
+      ],
+      "competitor_products": [
+        "Vercel"
+      ],
+      "techs": [
+        "Agent",
+        "Rust"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "[《 Mole 出 Mac 版后，用户教会了我做产品》文章封面]( https://cdn. fun/blog/pic/mole-mac-cover. v=2) 最近我写了不少关于独立开发的思考，想着要汇总一下，就把 Mole 从开源 CLI 做到 Mac 付费软件这一路聊一聊，我当时是怎么想的，哪些事情做下来真的有用，也许能给正在做自己作品的朋友一些输入。 **Mole 的官网是 [mole.",
+      "heat_score": 5.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.8,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "「出版后用户教会了」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "「出版后用户教会了」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "copilot",
+        "cursor",
+        "github copilot"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「出版后用户教会了」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "竞品对比（Vercel）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "教程拆解 + 产品关联（CodeBuddy） + 竞品对比（Vercel） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「Mole 出 Mac 版后，用户教会了我做产品」（[《 Mole 出 Mac 版后，用户教会了我做产品》文章封面]( https://cdn. fun/blog/pic…），涉及 Agent / Rust → 可写方向：Vercel 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「Mole 出 Mac 版后，用户教会了我做产品」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「出版后用户教会了」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（[《 Mole 出 Mac 版后，用户教会了我做产品》文章封面]( https://cdn. fun/blog/pic/mole-mac-cover. v=2…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「出版后用户教会了」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（[《 Mole 出 Mac 版后，用户教会了我做产品》文章封面]( https://cdn. fun/blog/pic/mole-mac-cover. v=2…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "[《 Mole 出 Mac 版后，用户教会了我做产品》文章封面]( https://cdn. fun/blog/pic/mole-ma…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "Mole 出 Mac 版后，用户教会了我做产品. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：[《 Mole 出 Mac 版后，用户教会了我做产品》文章封面]( https://cdn. fun/blog/pic/mole-ma…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 教程拆解 + 产品关联（CodeBuddy） + 竞品对比（Vercel） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Mole 出 Mac 版后，用户教会了我做产品. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around hands-on walkthrough + product tie-in (CodeBuddy) + competitor comparison (Vercel) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。[《 Mole 出 Mac 版后，用户教会了我做产品》文章封面]( https://cdn. fun/blog/pic/mole-ma…。如果用官方号发，建议主推 CodeBuddy，重点讲 教程拆解 + 产品关联（CodeBuddy） + 竞品对比（Vercel） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「出版后用户教会了」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Mole 出 Mac 版后，用户教会了我做产品. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on hands-on walkthrough + product tie-in (CodeBuddy) + competitor comparison (Vercel) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：[《 Mole 出 Mac 版后，用户教会了我做产品》文章封面]( https://cdn. fun/blog/pic/mole-ma…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 教程拆解 + 产品关联（CodeBuddy） + 竞品对比（Vercel） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Mole 出 Mac 版后，用户教会了我做产品. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on hands-on walkthrough + product tie-in (CodeBuddy) + competitor comparison (Vercel) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "[《 Mole 出 Mac 版后，用户教会了我做产品》文章封面]( https://cdn. fun/blog/pic/mole-mac-cover. v=2) 最近我写了不少关于独立开发的思考，想着要汇总一下，就把 Mole 从开源 CLI 做到 Mac 付费软件这一路聊一聊，我当时是怎么想的，哪些事情做下来真的有用，也许能给正在做自己作品的朋友一些输入。 **Mole 的官网是 [mole."
+  },
+  {
+    "source": "V2EX",
+    "title": "公司要在每个人工位上安装监控摄像头，感觉都没心思工作了",
+    "url": "https://www.v2ex.com/t/1239194",
+    "heat": "107 replies",
+    "time": "Hot",
+    "summary": "最近公司的高管已经下达命令，要在每个人工位上安装监控摄像头，监控研发所有人的工作情况，离开座位的情况。\r\n\r\n听到这个消息，真的是太窒息了。\r\n\r\n也问了问 AI ，看看有什么方法可以反制。\r\n\r\n和同事聊了聊，他说之前他上家公司也这样，公司都这样。\r\n\r\n我也是挺无语的。国内真的是垃圾公司太多了。",
+    "developer_name": "icebreaker2077",
+    "developer_url": "https://www.v2ex.com/member/icebreaker2077",
+    "content": "公司要在每个人工位上安装监控摄像头，感觉都没心思工作了 - V2EX Home Sign Up Sign In V2EX › 职场话题 公司要在每个人工位上安装监控摄像头，感觉都没心思工作了 icebreaker2077 · 23h 36m ago · 8527 views 最近公司的高管已经下达命令，要在每个人工位上安装监控摄像头，监控研发所有人的工作情况，离开座位的情况。 听到这个消息，真的是太窒息了。 也问了问 AI ，看看有什么方法可以反制。 和同事聊了聊，他说之前他上家公司也这样，公司都这样。 我也是挺无语的。国内真的是垃圾公司太多了。 监控 工作 隐私 107 replies • 2026-09-04 11:42:45 +08:00 1 2 ❮ ❯ 1 songone 23h 34m ago 这也太窒息了。。。准备跑路吧 2 BeforeTooLate 23h 33m ago 给每个高光都安装一个，所以监控大家每个人都可以查看 3 Daubert 23h 31m ago via iPhone 不报一下公司名？ 4 akorn 23h 28m ago 1 带把伞上班。哈哈哈。 还是先爆 公司名称吧 5 longaiwp 23h 27m ago 赶紧准备提离职吧 6 icebreaker2077 OP 23h 26m ago @ Daubert 在职不敢爆 7 HENQIGUAI 23h 25m ago 录制一段时间的然后替换数据流 8 Krylo 23h 24m ago 起初看标题以为是银行柜台。剩下正常就是柬缅公司。 剩余的可以举报给劳动监察部门吧。可以 12345 先咨询一下。 9 icebreaker2077 OP 23h 23m ago @ Krylo 好的，感谢感谢，我这个情况问了一下 grok 它给了我一些建议 10 kulove 23h 22m ago via Android ？？离谱到家了 11 kuawo 23h 18m ago 摄像头对的是屏幕还是对的是 自己? 12 NewYear 23h 18m ago 违规 13 zgsi 23h 14m ago 屏幕贴个防窥膜 14 dinjufen 23h 14m ago @ icebreaker2077 #6 哥们要是离职了记得报一下 15 psklf 23h 13m ago 有句讲句，侵犯人权了吧？ 16 oppoic 23h 9m ago 1 安装摄像头不违反劳动法； 你上班正常摸鱼也不违法，公司不得以你上班看新闻、聊天等扣你钱 17 icebreaker2077 OP 23h 0m ago 1 @ dinjufen 好的，现在正在一层一层安装了 18 Doloroso 22h 59m ago 离谱了 不当人 19 icebreaker2077 OP 22h 59m ago @ oppoic 安装这玩意，我猜都是想针对人的时候用，毕竟有谁不摸鱼的呢，摄像头找别人摸鱼的证据 20 shawnsh 22h 57m ago via Android 傻逼公司吧，没安全感和自信的老板，公司该倒闭 21 justfindu 22h 56m ago 快跑! 22 justfindu 22h 55m ago 不过这个倒是比起什么降薪调岗为难来更方便更便宜的 把你们逼走 . 省去一大笔裁员费. 一个人的赔偿都够全楼层安装了吧 23 icebreaker2077 OP 22h 52m ago @ justfindu 是的，就是这个目的，当然明面上他们说不会承认的 24 zuokanyunqishi 22h 50m ago 你公司想不花钱裁人了,你得着反来让他花钱把你开了... 25 jjianwen68 22h 48m ago 近期有个事件，是投诉到欧盟还是什么 26 yggd 22h 45m ago @ jjianwen68 那得看这个公司在欧盟有没有业务。 27 SenLief 22h 44m ago 公司千千万，离职即可 28 icebreaker2077 OP 22h 44m ago 看到了 https://mp.weixin.qq.com/s/EwrzSuDrJXTToE8H-23sWg ，这个我也用 AI 学习一下 ESG 看看有没有办法投诉一下 29 jackerbauer 22h 43m ago 这样公司，还有待下去的必要么？ 30 TimeNewRome 22h 39m ago 1 问题不大。你可以在工位上绑氦气球。判决文书网上，有个大姐，就是这么反击公司的。 31 clemente 22h 36m ago 我记得是犯法的 32 8008wj 22h 35m ago 找心理医生评估此举措是否有可能导致被监控人产生心理问题，看是否可以申请工伤鉴定 33 V2Try 22h 31m ago via iPhone 学习 Meta 34 novaline 22h 30m ago 曝光公司名称和管理者姓名， 造福他人 35 MAVETRICK 22h 30m ago 这是监控黑奴啊，真是造孽啊 36 icebreaker2077 OP 22h 17m ago @ novaline 等离职了我会曝光的 37 whcattail 22h 16m ago 每个工位一个摄像头？？？闻所未闻啊。 38 dushixiang 21h 57m ago 感觉是逼员工主动离职啊 39 jko123 21h 57m ago via iPhone 说明你们公司已经走下坡路了 40 gyjmila 21h 56m ago 你们这高管脑子也不太好使啊感觉 41 wengjin456123 21h 56m ago 1 先查一下公司是不是和欧盟那边公司有贸易往来，有的话去欧盟公司的 esg 邮箱举报+去欧盟的网址举报 single-market-economy.ec.europa.eu/single-market/goods/forced-labour-regulation_en 42 Laimf 21h 56m ago 跨越速运 好像就是这样的 ，离谱，听说离开 15 分钟，小组长还会发消息提醒你 43 cs419 21h 35m ago 办公场所装摄像头也算合理 针对个人装摄像头感觉说不过去 但这事就像被自愿加班一样 看你愿不愿意细究了 44 icebreaker2077 OP 21h 30m ago @ wengjin456123 感谢！可能能用上的 45 tsuijinglei 21h 27m ago 这不是银行柜员的日常吗，习惯就好 46 tty0 21h 17m ago via Android 联系我 wx.someexp.com 帮你发，帮大家避雷 47 tangping 21h 17m ago 1 诸位，仔细想了想，觉得老板这波格局还是小了——单装个普通摄像头，顶多拍拍是不是在刷抖音，这怎么对得起“降本增效”的伟大战略？ 给 HR 写了一份《关于升级工位智能感知系统的可行性报告》，建议老板直接上双目结构光深度摄像头，配合热成像和毫米波雷达，再部署一套行为语义分析模型，功能包括但不限于： 活体检测：防止我用纸板人像、循环录像或者 AI ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": true,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 3,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [
+        "裁员",
+        "加班",
+        "倒闭"
+      ],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "公司要在每个人工位上安装监控摄像头，感觉都没心思工作了: 最近公司的高管已经下达命令，要在每个人工位上安装监控摄像头，监控研发所有人的工作情况，离开座位的情况。 听到这个消息，真的是太窒息了。 也问了问 AI ，看看有什么方法可以反制。 和同事聊了聊，他说之前他上家公司也这样，公司都这样。",
+      "heat_score": 5.0,
+      "timeliness_score": 10.0,
+      "composite_score": 2.4,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「公司要在每个人工位上安装监控摄像头，感觉都没心思工作了」（公司要在每个人工位上安装监控摄像头，感觉都没心思工作了: 最近公司的高管已经下达命令，要在每个人工位上安装监控摄像头，…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「公司要在每个人工位上安装监控摄像头，感觉都没心思工作了」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "公司要在每个人工位上安装监控摄像头，感觉都没心思工作了: 最近公司的高管已经下达命令，要在每个人工位上安装监控摄像头，监控研发所有人的…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "公司要在每个人工位上安装监控摄像头，感觉都没心思工作了. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：公司要在每个人工位上安装监控摄像头，感觉都没心思工作了: 最近公司的高管已经下达命令，要在每个人工位上安装监控摄像头，监控研发所有人的…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 公司要在每个人工位上安装监控摄像头，感觉都没心思工作了. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。公司要在每个人工位上安装监控摄像头，感觉都没心思工作了: 最近公司的高管已经下达命令，要在每个人工位上安装监控摄像头，监控研发所有人的…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 公司要在每个人工位上安装监控摄像头，感觉都没心思工作了. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：公司要在每个人工位上安装监控摄像头，感觉都没心思工作了: 最近公司的高管已经下达命令，要在每个人工位上安装监控摄像头，监控研发所有人的…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: 公司要在每个人工位上安装监控摄像头，感觉都没心思工作了. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "公司要在每个人工位上安装监控摄像头，感觉都没心思工作了: 最近公司的高管已经下达命令，要在每个人工位上安装监控摄像头，监控研发所有人的工作情况，离开座位的情况。 听到这个消息，真的是太窒息了。 也问了问 AI ，看看有什么方法可以反制。 和同事聊了聊，他说之前他上家公司也这样，公司都这样。"
+  },
+  {
+    "source": "V2EX",
+    "title": "有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码",
+    "url": "https://www.v2ex.com/t/1239341",
+    "heat": "63 replies",
+    "time": "Hot",
+    "summary": "经常在油管和 Twitch 看直播, 口音重的主播就跟不上了, 之前用了讯飞听见, 效果是不错, 但是听久了钱包扛不住. 想到之前在 Mac 用的一个开源软件, 依赖系统的本地大模型将音频转成文字. 搜了下 iOS v26 也支持了这个本地模型, 就手搓了个小工具 **CapTran**. 欢迎大家来体验. CapTran 是一款设备端实时翻译与文件转录工具。APP 依赖 iOS 本地模型, 纯离线,不收集任何数据.\r\n\r\n通过系统屏幕广播获取其他 App 的音频，在设备上完成语音识别和翻译，并将字幕显示在 CapTran 内，或以画中画悬浮字幕显示在其他 App 上方。\r\n\r\n你也可以导入音频或视频文件，在设备端将语音转换为文字和字幕。转录完成后，可以查看字幕内容，并将字幕导出为 SRT 文件或 txt 文件。支持显示原文、译文或双语字幕。\r\n\r\nCapTran 不将音频上传到云端，也不录制音频。模型准备完成后，可以在无网络环境下继续使用。\r\n\r\n![]( https://picui.ogmua.cn/s1/2026/09/03/6a998b8f8fb04.webp)\r\n\r\nCapTran 现在已经在 App Store 上架，为了认识第一批真的喜欢这种产品边界的人，也为了感谢 V 友，我准备了首批 50 个买断的 Pro 兑换码，这一轮限时免费发放。每个码只能成功兑换 1 次，领完即止。评论区留下你的地址, 按顺序发.\r\n\r\n另外放 2 个**订阅折扣**\r\n- [年度 7 折]( https://apps.apple.com/redeem?ctx=offercodes&id=6801756535&code=V2EX)\r\n- [买断 6 折]( https://apps.apple.com/redeem?ctx=offercodes&id=6801756535&code=GANFU)\r\n\r\n---\r\n链接\r\nApp Store： https://apps.apple.com/cn/app/captran-ai-live-translation/id6801756535\r\n\r\n官网 / 隐私政策: https://captran.kellyli.cc/privacy\r\n\r\n有问题直接回帖,或者去邮箱联系 support@kellyli.cc",
+    "developer_name": "Jolin1677",
+    "developer_url": "https://www.v2ex.com/member/Jolin1677",
+    "content": "有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码 - V2EX Home Sign Up Sign In 爱意满满的作品展示区。 Advertisement V2EX › 分享创造 有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码 Jolin1677 · 14h 10m ago · 1154 views 经常在油管和 Twitch 看直播, 口音重的主播就跟不上了, 之前用了讯飞听见, 效果是不错, 但是听久了钱包扛不住. 想到之前在 Mac 用的一个开源软件, 依赖系统的本地大模型将音频转成文字. 搜了下 iOS v26 也支持了这个本地模型, 就手搓了个小工具 CapTran . 欢迎大家来体验. CapTran 是一款设备端实时翻译与文件转录工具。APP 依赖 iOS 本地模型, 纯离线,不收集任何数据. 通过系统屏幕广播获取其他 App 的音频，在设备上完成语音识别和翻译，并将字幕显示在 CapTran 内，或以画中画悬浮字幕显示在其他 App 上方。 你也可以导入音频或视频文件，在设备端将语音转换为文字和字幕。转录完成后，可以查看字幕内容，并将字幕导出为 SRT 文件或 txt 文件。支持显示原文、译文或双语字幕。 CapTran 不将音频上传到云端，也不录制音频。模型准备完成后，可以在无网络环境下继续使用。 CapTran 现在已经在 App Store 上架，为了认识第一批真的喜欢这种产品边界的人，也为了感谢 V 友，我准备了首批 50 个买断的 Pro 兑换码，这一轮限时免费发放。每个码只能成功兑换 1 次，领完即止。评论区留下你的地址, 按顺序发. 另外放 2 个 订阅折扣 年度 7 折 买断 6 折 链接 App Store： https://apps.apple.com/cn/app/captran-ai-live-translation/id6801756535 官网 / 隐私政策: https://captran.kellyli.cc/privacy 有问题直接回帖,或者去邮箱联系 [email protected] 翻译 实时 离线 63 replies • 2026-09-04 12:45:37 +08:00 1 pipiking 14h 7m ago 谢谢~ 地址： [email protected] 2 fengci 14h 4m ago eHRnMDQwOEBvdXRsb29rLmNvbQ 谢谢 3 lesir 14h 3m ago bGVzaXJAaWsubWU= 感谢分享 4 zcomo 13h 59m ago via iPhone 谢谢 b3dvaUBtc24uY29t 5 emberzhang 13h 58m ago 有新意。ZW1iZXJ6aGFuZ0BnbWFpbC5jb20= 感谢，试一试 6 CalledKingsley 13h 56m ago Y2FsbF9raW5nc2xleUAxNjMuY29t 感谢 op ！好人一生平安 7 332526 13h 55m ago [email protected] 感谢 8 iThink 13h 54m ago 谢谢 b25zeUAxNjMuY29t 9 opp 13h 50m ago anVucEBxcS5jb20= 感谢 10 Jolin1677 OP 13h 50m ago @ pipiking 已发 11 Jolin1677 OP 13h 48m ago @ fengci 请查收 12 Jolin1677 OP 13h 48m ago @ lesir 请体验 13 Jolin1677 OP 13h 47m ago @ zcomo 已送达. 14 Jolin1677 OP 13h 46m ago @ emberzhang 还望品鉴一番 15 Jolin1677 OP 13h 45m ago @ CalledKingsley 已发送. 16 Jolin1677 OP 13h 45m ago @ 332526 请查收. 17 Jolin1677 OP 13h 44m ago @ iThink 已发送. 18 Jolin1677 OP 13h 43m ago @ opp 已发送 19 Xhofe 13h 36m ago aUBubi5jaQ== 感谢 20 CalledKingsley 13h 36m ago @ Jolin1677 #15 感谢，op 有考虑做 mac 版本吗 21 in211240520 13h 34m ago via iPhone NDQ0ODMzMEBnbWFpbC5jb20= 感谢 22 xiaotian15062635 13h 31m ago eGlhb3RpYW4xNTA2MjYzNTkwOEBvdXRsb29rLmNvbQ== 感谢 23 lockheart 13h 16m ago bG9ja2hlYXJ0QGR1Y2suY29t 感谢 24 Varvel 12h 57m ago ZHVzdGlueGxrMzI4cm9iaW5zb25Ab3V0bG9vay5jb20= 谢谢 25 zavviertang 12h 51m ago MzNAbGl2ZS5jbg== 感谢🙏 26 JimmyG 11h 56m ago via iPhone empndW1wQGdtYWlsLmNvbQ== 试试 27 uiverusifu 9h 55m ago Y3Jhenk0dm1lNTBAb3V0bG9vay5jb20= 求个码，感谢大佬 28 3231012 9h 51m ago via iPhone MzIzMTAxMkBnbWFpbC5jb20= 求码子😘 29 eocp2020 8h 19m ago via iPhone 求个码，谢谢 cG02NjZAcHJvdG9ubWFpbC5jb20= 30 dabaov2 7h 48m ago via Android YXdzbDY4OEA4OC5jb20= 谢佬 31 one234 6h 38m ago via iPhone 求个码 aXBob25lMTJzcHJvQGdtYWlsLmNvbQ 32 neilxu 6h 37m ago c2t5OG5laWxAZ21haWwuY29t 求个码，谢谢 33 DeliMG 6h 26m ago via iPhone Y2hlbmNoZW5AZHVjay5jb20= 34 CEEC 5h 58m ago via iPhone dnZlbGxkb25lQHByb3Rvbi5tZQ== 35 tuot 5h 22m ago via iPhone aW9vaWNvZGVyQGdtYWlsLmNvbQ== 感谢 36 Heroy 5h 19m ago bWFpbEB4b25lLm1l 求个码，感谢大佬。 37 ysjiang4869 5h 14m ago MTI1OTAxMjUzN0BxcS5jb20= 38 nidhogger 5h 10m ago via Android bmlk",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "音视频"
+      ],
+      "ai_hits": [
+        "ai",
+        "大模型"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码: 经常在油管和 Twitch 看直播, 口音重的主播就跟不上了, 之前用了讯飞听见, 效果是不错, 但是听久了钱包扛不住. 想到之前在 Mac 用的一个开源软件, 依赖系统的本地大模型将音频转成文字. 搜了下 iOS v26 也支持了这个本地模型, 就手搓了个小工具 **CapTran**. 欢迎大家来体验.",
+      "heat_score": 4.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.1,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro…」（有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码: 经常在油…），涉及 LLM → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送…」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码: 经常在油管和 Twitc…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码: 经常在油管和 Twitc…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码: 经常在油管和 Twitc…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码: 经常在油管和 Twitc…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: 有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "有翻译需求的小伙伴看过来, 做了一个实时翻译和音视频转文字的 APP, 附送 50 个永久 Pro 兑换码: 经常在油管和 Twitch 看直播, 口音重的主播就跟不上了, 之前用了讯飞听见, 效果是不错, 但是听久了钱包扛不住. 想到之前在 Mac 用的一个开源软件, 依赖系统的本地大模型将音频转成文字. 搜了下 iOS v26 也支持了这个本地模型, 就手搓了个小工具 **CapTran**…"
+  },
+  {
+    "source": "V2EX",
+    "title": "厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开",
+    "url": "https://www.v2ex.com/t/1239359",
+    "heat": "53 replies",
+    "time": "Hot",
+    "summary": "https://i.imgur.com/92kaywv.png \r\n 前段时间买了个临期 20XPro 可以爽蹬了",
+    "developer_name": "581996",
+    "developer_url": "https://www.v2ex.com/member/581996",
+    "content": "厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开 - V2EX Home Sign Up Sign In V2EX › OpenAI 厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开 581996 · 5h 54m ago · 4478 views 前段时间买了个临期 20XPro 可以爽蹬了 Tibo Astra 重置 53 replies • 2026-09-04 12:32:16 +08:00 1 ntdll 5h 15m ago 2 我现在的想法和 reddit 上一样，其实吧，咱也不是非要那个重置，就是觉得 astra 也没那么重要了 lol 2 luckyc 4h 55m ago 我还没拿到. 3 mathiashu4 PRO 4h 51m ago @ luckyc 大概 10 点左右可以看看 4 netox 4h 37m ago pro 5x 用户表示真不错, 目前有 1 个之前的 banked reset, 继续等待 5 blazebmaura 4h 37m ago 我是拿卡用户。。。 ![Banked reset announced]( https://i.ibb.co/LsmHvT6/image.png ) 6 privateproxies 4h 25m ago 要累死老汉啊。。。 这样搞来不起啊 年轻人 1 天一次 也扛不住一周啊 :grinning_face: 7 zhanying 4h 2m ago @ privateproxies 不是重置卡吗，不用每天都蹬完啊 8 xxmaqzas 3h 57m ago 已经拿到卡了 9 Avicii4 3h 50m ago 已到账了💳 10 luckyc 3h 50m ago 已经拿到卡了 11 Nasdaq 3h 48m ago 20x 没有卡，在哪里领鸡蛋呀！哥几个指条明路 12 brom111 3h 46m ago 卡在哪啊 请问了 13 dushixiang 3h 39m ago 好了，现在有 2 次重置机会了，就是 5 小时额度限制导致根本没有用重置卡的机会，每次快用完的时候也要结束周限了 14 chengYT 3h 24m ago 1 我原来的重置卡也加载不出来了 15 ldy619354397 3h 19m ago 拿到卡了 16 tianhehechu 3h 18m ago 没到账啊😭，Pro ，终究是错付了 17 V2Try 3h 18m ago via iPhone 5 小时限额还是挺恶心的 18 581996 OP 3h 17m ago 20X Pro 已到账 19 qrobot 3h 13m ago @ 581996 重置已经发了。 已经开始蹬了 20xPro 20 zhaoximuyun 3h 12m ago 5x 的怎么还没到账 21 zhaoximuyun 3h 12m ago 5x 的怎么还没到账 22 qrobot 3h 8m ago @ zhaoximuyun 你刷新看看， 我的 20xPro 已经领到了， 你在网页里面能看到或者在客户端里面 23 Luckydog007 3h 7m ago \"Couldn’t load usage limit resets\"重置卡都加载不出来。 24 akinoneko 3h 4m ago 错付了 pro 卡没到账 25 zcdll 2h 57m ago 加载不出来。。。 26 mathiashu4 PRO 2h 55m ago 发了发了 27 ashita 2h 54m ago 我的还没到 ... 28 deplives 2h 52m ago 接口挂了 29 z5864703 2h 51m ago 接口 429 ，加载不出来重置卡 30 fkdtz 2h 50m ago 懂了，openai 就总得有一个功能是挂的对吧 31 DICK23 2h 47m ago 为什么我的还没有 32 qq1147 2h 46m ago 重置卡到了，但是我的模型里面没有 astra 啊，codex 也已经更新到最新版了 33 qq1147 2h 45m ago 所以以后是送重置卡，不再自动重置了吗？ 34 mathiashu4 PRO 2h 45m ago @ qq1147 就是因为没有 astra 所以才给重置卡。有了以后就不会发了 35 fkdtz 2h 32m ago @ qq1147 #32 从小就有审题不严谨的坏习惯 36 iflint 2h 29m ago 到现在还是没收到卡啊 37 testsb 2h 29m ago Pro 5x 。 Win 上客户端/网页都无法加载/显示重置卡。 换了 MacOS 立马就显示出来了，梯子是同一个节点。 户子是对的？ 38 joshryo 2h 15m ago 别说给重置卡了，我都加载不出来 39 oldcai 2h 10m ago 怎么能直呼义父的姓名呢？ 40 chengYT 2h 10m ago @ testsb 我 Mac 的也加载不出来 41 blakezhaothinks 2h 9m ago @ chengYT #14 我的也加载不出来 42 minrui79 2h 8m ago 无法加载用量限制重置信息，重置按钮都被干坏了，加载不出来 43 beafreey 2h 8m ago 我也加载不出来，估计全面送完要一段时间。 44 dirstart 2h 5m ago 加载不出来 45 rushaaa 2h 2m ago 从 plus 升级到 pro ，已有的重置次数会被清除吗 46 Haku 1h 54m ago @ rushaaa 不会，我升过，但是不推荐现在升 我 10.30 左右，把 5x 取消，然后升级 20x ，因为是明天到期只需要付 3 刀，然后升完过一会，Google 给我退费了，导致我直接变成了免费用户，怀疑这会后台有点问题。建议晚点再升级。 47 laoertongzhi 1h 45m ago 已收到 48 Kokomashiro 1h 40m ago @ Haku 不会，google play 上先取消后升级就是会退款，然后让你重新订阅 49 brookepe 1h 37m ago 一个 plus 一个 pro20x 表示没收到 50 zhuoi 1h 33m ago plus 也到账了，爽 51 dirstart 1h 30m ago 已收到。 52 ichkn 1h 23m ago 我的号怎么不到账，还是 0 53 c6t 1h 9m ago Pro 5x 暂时还没到账 54 lihanst 52 mins ago 这周用量用完了，下午没 token 用了，在想要不要直接用重置卡，又怕 Astra 上线的时候直接重置一次🐶 About · Help · Advertise · Blog · API · FAQ · Privacy · Solana · 3951 Online Highest 6679 · Select Language 创意工作者们的社区 World is powered by solitude VERSION: 3.9.8.5 · 103ms · ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "产品发布",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "正向推广",
+      "detail_brief": "厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开: https://i. com/92kaywv. png 前段时间买了个临期 20XPro 可以爽蹬了",
+      "heat_score": 4.0,
+      "timeliness_score": 10.0,
+      "composite_score": 3.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开」（厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开: https://i. com/92kaywv. png…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开: https://i. com/92kaywv. png 前段时间买了个…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开: https://i. com/92kaywv. png 前段时间买了个…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开: https://i. com/92kaywv. png 前段时间买了个…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开: https://i. com/92kaywv. png 前段时间买了个…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: 厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "厉害了 Tibo 每天都送重置卡 直到 Astra 全量铺开: https://i. com/92kaywv. png 前段时间买了个临期 20XPro 可以爽蹬了"
+  },
+  {
+    "source": "V2EX",
+    "title": "感觉现在关于 github copilot 的讨论少了，还有人在主力使用的吗？想听听实际体验",
+    "url": "https://www.v2ex.com/t/1239275",
+    "heat": "43 replies",
+    "time": "Hot",
+    "summary": "去年 9 月充的 cursor 年付 pro 快到期了，之前的账单日内 auto 不限量供应，现在这部分也要没了。\r\n\r\n我现在写代码基本都是 codex 用得多，cursor 反而更多是当编辑器看代码。最近看了下 copilot pro ，$10/月，有 tab 补全，再加$15 的额度，感觉拿来配 codex 好像也够用了。\r\n\r\n东西看着挺合适，不过现在关于 copilot 的讨论好像少了很多，想了解下 V 友们还有没有在主力用的。\r\n\r\n主要想问下现在补全的速度、准确率怎么样，跟主流差距大不大？如果 agent 主要靠 codex/cc ，再配个编辑器有推荐的组合吗？",
+    "developer_name": "justwe7",
+    "developer_url": "https://www.v2ex.com/member/justwe7",
+    "content": "感觉现在关于 github copilot 的讨论少了，还有人在主力使用的吗？想听听实际体验 - V2EX Home Sign Up Sign In • 请不要在回答技术问题时复制粘贴 AI 生成的内容 V2EX › 程序员 感觉现在关于 github copilot 的讨论少了，还有人在主力使用的吗？想听听实际体验 1 justwe7 · justwe7 · 20h 5m ago · 3055 views 去年 9 月充的 cursor 年付 pro 快到期了，之前的账单日内 auto 不限量供应，现在这部分也要没了。 我现在写代码基本都是 codex 用得多，cursor 反而更多是当编辑器看代码。最近看了下 copilot pro ，$10/月，有 tab 补全，再加$15 的额度，感觉拿来配 codex 好像也够用了。 东西看着挺合适，不过现在关于 copilot 的讨论好像少了很多，想了解下 V 友们还有没有在主力用的。 主要想问下现在补全的速度、准确率怎么样，跟主流差距大不大？如果 agent 主要靠 codex/cc ，再配个编辑器有推荐的组合吗？ Copilot 代码 体验 43 replies • 2026-09-04 13:03:44 +08:00 1 qxmqh 20h 2m ago 1 copilot 已经被判死刑了。最不值的就是它。 2 sentinelK 20 hrs ago 额度不明+闭源专用 Agent+1.5 倍额度放大。完全没 get 到 copilot 目前的意义在哪里。 而且你要知道，之前 copilot 的 harness 逻辑是针对每次请求收费优化的。 3 lianyue 19h 59m ago grok cursor claude 4 jko123 19h 57m ago via iPhone 自从改了收费规则之后，copilot 已经毫无性价比了，pro+ 39 美元只能用 60 美元额度的大模型，毫不犹豫的退订阅了 5 justwe7 OP 19h 47m ago @ jko123 那现在订阅的哪家呢？国内的推荐吗 6 kailpony4396 19h 30m ago 该死的记忆又把我拉回 github 学生包白嫖 200 个请求爽蹬 claude 的时候了 7 PerFectTime 19h 29m ago 烂完了，以前按次算是性价比之王 8 sherlockGou 19h 21m ago via iPhone 现在狗都不用，额度太低🌚 9 GreatAuk 19h 18m ago 路边一条都不如了 10 guin 19h 11m ago 除非微软像 cursor 一样有自己比较好用的模型，而且量大管饱，现在的 MAI-1.1-Flash 太垃圾 11 Wanex 19h 10m ago 太贵了，早退订了 12 prosgtsr 19h 7m ago 以前是夯 现在是拉完了 13 vibbow 19h 2m ago copilot 几乎不挑支付方式，不挑网络环境。 14 phrack 18h 51m ago 狗都不用 15 yema50 18h 51m ago via iPhone 1 公司付费的，一直在用。主要是没用过别家的不知道区别。用下来 copilot 还算顺手 16 justwe7 OP 18h 42m ago @ guin cursor pro 加了 grok 池子后，额度够用吗？ 17 impl 17h 35m ago 一些商业公司就用的 copilot ，毕竟微软还是比较安全 18 hhacker 17h 29m ago 以前的 10$copilot 会员是福利包, 现在是垃圾包, 一句话就用完了所有额度 19 haojiuweijian1 17h 11m ago copilot 速度挺快的 20 FFFFourwood 17h 9m ago 我现在是 1w6 的 credits 额度 用 auto 模型(9 折,基本都是 gpt 5.6luna) 轻度使用, 一个月勉强够用 用 gemini 3.7flash medium 的话 重度用一天能用 3000 credis 剩下的好模型我都不舍得用了, 用不起 21 nutting 17h 7m ago 轮子哥都放弃它了 22 Freeego 17h 6m ago 看到这个帖子才想起来 Copilot 的订阅还在续订，马上关了，感谢 OP 23 wolfie 17h 5m ago 除非公司报销谁用，想要全部模型就用 cursor ，还送 grok composer 24 SJ2050cn 17h 1m ago 虽然之前爽用了 3 年的学生会员，但变 credit 收费后就没咋用过了。copilot 在 vscode 中最好用的一点是所有修改可以被 vscode 原生记录，然后可回退。其他 agent 还要靠额外的插件，而且捕捉的修改也不一定准。 25 iomect 16h 24m ago 目前 copilot 唯一的用途就是在 idea 中生成 commit 信息了 26 Rickkkkkkk 16h 10m ago 因为很明显，通用 agent 足够完成所有的代码任务，coding 垂类的 AI 都死了。 27 chemzqm 16h 5m ago github copilot 根本做不了 agent 开发，几个小时就把一个月额度跑完了，只能做最基础的编辑下手 28 rqzrqh 15h 45m ago 每月 10 刀的 pro 订阅，用 gpt5.4 处理 3 个任务就能用完一个月额度，玩个蛋啊，gpt5.4 要 6x 额度，不提供 1x 额度的模型，0.33x 的额度模型又太垃圾了 29 jjww 15h 42m ago 公司给买的微软全家桶, M365 + github copilot, 额度不够, 不写项目凑合能用. 30 maolon 15h 30m ago 而且现在 10 刀里能用的模型就一个 5.6 luna, 还有回答两个问题就能用完的 k3 31 xiaoz 14h 21m ago via Android 额度被砍了几轮了，现在 10 刀的 Pro 一天就用完了。 32 yinanc 13h 28m ago 这东西完全不 care 个人用户了，都是卖给公司的 33 17681880207 13h 8m ago 开通了 40+的。 配合 claude pro / gemini pro / bailian token plan 139 套餐来用。通常我只用旗舰模型，当 5 hours quota / weekly quota 满了，我就会用 github copilot pro+ 补上，直到上面某个订阅的又可以用了。 34 shinession 5h 14m ago 公司的, 每月配额 75000credit, 足够用了 35 llej 4h 55m ago 我在使用，主要是看重 vscode ，不过我没用官方服务，而是使用国内的大模型接入 36 94 4h 38m ago 如果主要是用补全，还是用 Cursor 吧，易用性还是更好的。用量计费模式轻度用还是",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "大模型",
+        "gpt",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "去年 9 月充的 cursor 年付 pro 快到期了，之前的账单日内 auto 不限量供应，现在这部分也要没了。 我现在写代码基本都是 codex 用得多，cursor 反而更多是当编辑器看代码。 最近看了下 copilot pro ，$10/月，有 tab 补全，再加$15 的额度，感觉拿来配 codex 好像也够用了。 东西看着挺合适，不过现在关于 copilot 的讨论好像少了很多，想了解下 V 友们还有没有在主力用的。",
+      "heat_score": 3.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.4,
+      "tcloud_relevance": 8.8,
+      "tcloud_integration": "「感觉现在关于的讨」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐\n补充关联 Hunyuan：「感觉现在关于的讨」话题与 Hunyuan 存在场景关联，但关联度中等，建议结合具体讨论内容判断是否植入",
+      "tcloud_products": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "「感觉现在关于的讨」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐",
+        "「感觉现在关于的讨」话题与 Hunyuan 存在场景关联，但关联度中等，建议结合具体讨论内容判断是否植入"
+      ],
+      "tcloud_evidence": [
+        "copilot",
+        "cursor",
+        "github copilot",
+        "大模型",
+        "claude",
+        "gemini"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「感觉现在关于的讨」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐\n补充关联 Hunyuan：「感觉现在关于的讨」话题与 Hunyuan 存在场景关联，但关联度中等，建议结合具体讨论内容判断是否植入",
+      "tcloud_official_matches": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy / Hunyuan）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 社区参与",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「感觉现在关于 github copilot 的讨论少了，还有人在主力使用的吗？想听听实际体验」（去年 9 月充的 cursor 年付 pro 快到期了，之前的账单日内 auto 不限量供应，现在这部分也要没了。 我…），涉及 LLM / Agent → 可写方向：「感觉现在关于的讨」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「感觉现在关于 github copilot 的讨论少了，还有人在主力使用的吗？…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "借「感觉现在关于的讨」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（去年 9 月充的 cursor 年付 pro 快到期了，之前的账单日内 auto 不限量供应，现在这部分也要没了。 我现在写代码基本都是 codex 用得多，…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "借「感觉现在关于的讨」的讨论热度写一篇 AI 编程工具选型指南，从社区关注的痛点（去年 9 月充的 cursor 年付 pro 快到期了，之前的账单日内 auto 不限量供应，现在这部分也要没了。 我现在写代码基本都是 codex 用得多，…）出发，自然引出 CodeBuddy 在全流程覆盖和 IDE 集成上的差异化。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "去年 9 月充的 cursor 年付 pro 快到期了，之前的账单日内 auto 不限量供应，现在这部分也要没了。 我现在写代码基本都…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "感觉现在关于 github copilot 的讨论少了，还有人在主力使用的吗？想听听实际体验. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：去年 9 月充的 cursor 年付 pro 快到期了，之前的账单日内 auto 不限量供应，现在这部分也要没了。 我现在写代码基本都…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 感觉现在关于 github copilot 的讨论少了，还有人在主力使用的吗？想听听实际体验. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。去年 9 月充的 cursor 年付 pro 快到期了，之前的账单日内 auto 不限量供应，现在这部分也要没了。 我现在写代码基本都…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：「感觉现在关于的讨」讨论 AI 编程工具 — CodeBuddy 的差异化在于：全流程覆盖（需求→设计→编码→测试）+ IDE 原生集成 + 中文优化，可以在讨论中做对比推荐 补充关联 Hunyuan：「感觉现在关于的讨」话题与 Hunyuan 存在场景关联，但关联度中等，建议结合具体讨论内容判断是否植入",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 感觉现在关于 github copilot 的讨论少了，还有人在主力使用的吗？想听听实际体验. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：去年 9 月充的 cursor 年付 pro 快到期了，之前的账单日内 auto 不限量供应，现在这部分也要没了。 我现在写代码基本都…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: 感觉现在关于 github copilot 的讨论少了，还有人在主力使用的吗？想听听实际体验. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "去年 9 月充的 cursor 年付 pro 快到期了，之前的账单日内 auto 不限量供应，现在这部分也要没了。 我现在写代码基本都是 codex 用得多，cursor 反而更多是当编辑器看代码。 最近看了下 copilot pro ，$10/月，有 tab 补全，再加$15 的额度，感觉拿来配 codex 好像也够用了。 东西看着挺合适，不过现在关于 copilot 的讨论好像少了很多，想了…"
+  },
+  {
+    "source": "V2EX",
+    "title": "医院术后漏取纱布 后续更新",
+    "url": "https://www.v2ex.com/t/1239373",
+    "heat": "42 replies",
+    "time": "Hot",
+    "summary": "上期回顾:（ https://v2ex.com/t/1238162#reply75 ）\r\n\r\n这周二拿到授权书后去医院办了病历封存,共 78 页。翻阅发现手术记录写着放入纱布\"24 小时后取出\",但后续护理记录里完全没有取出记录。截图如下。医患沟通办的工作人员看了也觉得说不过去。\r\n\r\n当晚医疗组组长和主任打电话承认问题,我要求书面回复和处置方案,对方说回去写。\r\n\r\n周四中午院长、主任都到场,先表达歉意,重点问会不会有后续影响,提出安排检查、医疗费全包,甚至提出派医生去江西检查——考虑到当地没有对应医疗条件,我拒绝了,改成回浙江检查、车费全包。我问请假陪同的务工费怎么算,对方表示不算。\r\n\r\n对方说赔偿要看最终后果,等检查结果出来再定,这个逻辑我认同,但也提出:纱布滞留半个月、已经发臭,这本身就说明已造成影响,不能全部押后到检查结果。\r\n\r\n最后问到具体数字,对方给出一共 3000 元。我提到类似案例判赔 3.6 万,对方觉得太高。\r\n\r\n感觉对方的意思就是\"一共 3000\",我不满意。我觉得太少了，各位觉得呢。\r\n\r\n下一步该如何进行，首先是去医院检查这是肯定的，其他该怎么做？ 周三问过西湖的免费律师咨询给的结果不太理想，跟 claude 给的差不多，而且打电话一直听不清楚。\r\n\r\nhttps://i.imgur.com/9VKRRPe.png",
+    "developer_name": "momo31",
+    "developer_url": "https://www.v2ex.com/member/momo31",
+    "content": "医院术后漏取纱布 后续更新 - V2EX Home Sign Up Sign In V2EX › 杭州 医院术后漏取纱布 后续更新 momo31 · 4h 14m ago · 3811 views 上期回顾:（ https://v2ex.com/t/1238162#reply75 ） 这周二拿到授权书后去医院办了病历封存,共 78 页。翻阅发现手术记录写着放入纱布\"24 小时后取出\",但后续护理记录里完全没有取出记录。截图如下。医患沟通办的工作人员看了也觉得说不过去。 当晚医疗组组长和主任打电话承认问题,我要求书面回复和处置方案,对方说回去写。 周四中午院长、主任都到场,先表达歉意,重点问会不会有后续影响,提出安排检查、医疗费全包,甚至提出派医生去江西检查——考虑到当地没有对应医疗条件,我拒绝了,改成回浙江检查、车费全包。我问请假陪同的务工费怎么算,对方表示不算。 对方说赔偿要看最终后果,等检查结果出来再定,这个逻辑我认同,但也提出:纱布滞留半个月、已经发臭,这本身就说明已造成影响,不能全部押后到检查结果。 最后问到具体数字,对方给出一共 3000 元。我提到类似案例判赔 3.6 万,对方觉得太高。 感觉对方的意思就是\"一共 3000\",我不满意。我觉得太少了，各位觉得呢。 下一步该如何进行，首先是去医院检查这是肯定的，其他该怎么做？ 周三问过西湖的免费律师咨询给的结果不太理想，跟 claude 给的差不多，而且打电话一直听不清楚。 https://i.imgur.com/9VKRRPe.png 漏取 纱布 赔偿 41 replies • 2026-09-04 12:09:00 +08:00 1 youname 4h 10m ago 发网上去咯 免费律师不会为这点事去得罪医院的 找正经专职律师 案例网找一下有打过类似官司的 2 Rorysky 4h 6m ago 算医疗事故么？ 3 momo31 OP 4h 6m ago @ youname #1 嗯嗯，想找专门打这方面官司的，不知道杭州有没有 4 momo31 OP 4h 4m ago @ Rorysky #2 他们口头上说是问题，但是医疗事故这四个字实际上需要鉴定。 5 secretbytes 3h 48m ago 最好不要主动提赔偿金额，，建议把自己唯一诉求改为：让医院承担接下来的来回检查的所有费用以及必要的照看误工损失（表示不信任他们医院，要换一家同级别三甲医院复诊）+书面的事故报告 6 docx 3h 42m ago via iPhone 是公益咨询的那种吗？那个很水的，要找专业的 7 zhangli2946 3h 41m ago 异地状师，本地没用。 8 shoaly 3h 36m ago 其实对方也在观察你, 能把事情闹多大, 目前他看你的阵仗, 就是估算的 等于 3000 块钱 9 tjss 3h 35m ago 舆论啊，找媒体什么的先爆了再说 10 coderluan 3h 33m ago 对方事实层面认可，双方只是就赔偿额度达不成共识的话，其实开庭走一趟流程最简单，法官判多少是多少。 11 superrichman 3h 32m ago 3000 块，打发叫花子呢。你在浙江不找 1818 黄金眼之类的媒体曝光一下 🐶 12 momo31 OP 3h 27m ago @ secretbytes #5 我不说赔偿，对面丝毫不提这个东西。后面实在说不下去了，我提了赔偿这个方面，没说金额。后面我一定要他们给个范围，才摸到 3000 这个。书面的事故报告医院出吗？不是鉴定的吗？ 13 momo31 OP 3h 27m ago @ docx #6 对，太水了。电话估计都是坏的，我听不清楚他，他说我声音小 14 momo31 OP 3h 26m ago @ tjss #9 我被来想找的，ai 说等等，先找律师。我感觉媒体也不一定靠谱。主要是诉求点不好说，总不能说我觉得 3000 少吧 15 momo31 OP 3h 20m ago @ coderluan #10 判下来应该也不多这个金额。不过我认为，这个金额是，走法律文书+加上省卫健委出发，或者说通报 16 momo31 OP 3h 19m ago @ superrichman #11 一丘之貉，我也不是很敢相信 17 momo31 OP 3h 18m ago @ shoaly #8 有点儿这个感觉了，本来我还觉得他们挺关心的。还说来浙江看出路费，我说那我陪同给我造成的务工费呢。就不说话了。 18 BH3XON 3h 18m ago 在国内，只要没有造成重大损失，法院很少会支持大额赔偿 19 layxy 3h 13m ago 起诉吧，治疗以及后续的护理费用，交通费，误工费，营养费等都要一下，要多了也没事，一般会有庭前和解，胜诉概率大，但是判赔不确定，如果低了可以去当地卫健委投诉举报，我觉得问题不只是钱，是病人承担了风险，家人也来回奔波，医院需要为自己的疏忽付出合适的代价，治病救人容不得疏忽大意，3000 和挠痒痒一样 20 mscsky 3h 7m ago 3000 是扣医生的工资？ 21 llz0919 3h 0m ago 还是要找专业的律师,免费的才是最贵的 22 ssh 3h 0m ago @ momo31 #14 AI 说等等？你该不会问的豆包吧，AI 还能让你去闹事？这不符合社会主义核心价值观呀 23 momo31 OP 2h 59m ago @ mscsky #20 我从他口中也猜是这个意思。 24 tanszhe 2h 59m ago 1 1. 来回跑成本 2. 精神折磨 3. 身体也折磨 4. 家人也折磨 5. 耗费时间 6. 后遗症 先要个 1000 万 . (要不你自己放纱布放进你体内 放臭) 25 momo31 OP 2h 58m ago @ layxy #19 是的，3000 可能还是扣医生的钱，医院一点责任不用付一样。 26 momo31 OP 2h 57m ago @ BH3XON #18 我能理解，如果走法院就不看金额，更看重对医院的处罚 27 cfancc 2h 57m ago 3000 太少了 28 momo31 OP 2h 48m ago @ tanszhe #24 这就太过分了，对我来说精神有点折磨 29 eventlooped 2h 42m ago 如果你想要 3.6 万，你就直接说 10 万 30 jonty 2h 35m ago 直接找媒体，这事大了你的赔偿才能到位 31 ylsc633 2h 28m ago 昨晚还刷到一个视频 佟丽娅演的 实习医生，做手术，将纱布遗忘在患者身体里了。。。 32 docx 2h 20m ago via iPhone @ momo31 #14 我是觉得可以先找 1818 黄金眼之类的试试，他们也要审核，不是什么新闻都接，先打了再说。上了媒体不要谈钱，主要是抖这个事出来，让大家都知道一个医院能做出这种低级错误，给院方形成舆论压力，他们自然会找你谈更高的价格。 33 GoldenSheep 2h 4m ago 请正经外地律师，找医疗这一块有名的律所，不要单看大不大 34 momo31 OP 1h 54m ago",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude"
+      ],
+      "anxiety_hits": [],
+      "topic": "产品发布",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "医院术后漏取纱布 后续更新: 上期回顾:（ https://v2ex. com/t/1238162#reply75 ） 这周二拿到授权书后去医院办了病历封存,共 78 页。 翻阅发现手术记录写着放入纱布\"24 小时后取出\",但后续护理记录里完全没有取出记录。 医患沟通办的工作人员看了也觉得说不过去。",
+      "heat_score": 3.0,
+      "timeliness_score": 10.0,
+      "composite_score": 3.6,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「医院术后漏取纱布 后续更新」（医院术后漏取纱布 后续更新: 上期回顾:（ https://v2ex. com/t/1238162#reply75 ）…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「医院术后漏取纱布 后续更新」是社区热议话题，暂未关联具体产品。可以以腾讯云开发者视角参与讨论，或作为行业洞察保留。推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用项目的产品截图或使用效果展示，如果是讨论帖则提取核心观点做金句图。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "医院术后漏取纱布 后续更新: 上期回顾:（ https://v2ex. com/t/1238162#reply75 ） 这周二拿到授权…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "医院术后漏取纱布 后续更新. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：医院术后漏取纱布 后续更新: 上期回顾:（ https://v2ex. com/t/1238162#reply75 ） 这周二拿到授权…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: 医院术后漏取纱布 后续更新. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。医院术后漏取纱布 后续更新: 上期回顾:（ https://v2ex. com/t/1238162#reply75 ） 这周二拿到授权…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. 医院术后漏取纱布 后续更新. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：医院术后漏取纱布 后续更新: 上期回顾:（ https://v2ex. com/t/1238162#reply75 ） 这周二拿到授权…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: 医院术后漏取纱布 后续更新. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "医院术后漏取纱布 后续更新: 上期回顾:（ https://v2ex. com/t/1238162#reply75 ） 这周二拿到授权书后去医院办了病历封存,共 78 页。 翻阅发现手术记录写着放入纱布\"24 小时后取出\",但后续护理记录里完全没有取出记录。 医患沟通办的工作人员看了也觉得说不过去。"
+  }
+]
