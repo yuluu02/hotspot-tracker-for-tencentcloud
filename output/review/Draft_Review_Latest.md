@@ -1,6 +1,6 @@
-# 📋 产品 Draft 汇总 — 2026-09-05
+# 📋 产品 Draft 汇总 — 2026-09-06
 
-> 共 4 个产品的 P0/P1 内容草稿
+> 共 3 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
@@ -21,7 +21,7 @@
 ---
 
 
-# CodeBuddy — 今日内容 (5 条)
+# CodeBuddy — 今日内容 (6 条)
 
 ## 1. P1 本周发 · mattpocock/skills
 
@@ -36,20 +36,7 @@
 
 ---
 
-## 2. P1 本周发 · DietrichGebert/ponytail
-
-**写什么**: 以 ponytail 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "DietrichGebert/ponytail" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)*
-
----
-
-## 3. P1 本周发 · affaan-m/ECC
+## 2. P1 本周发 · affaan-m/ECC
 
 **写什么**: 以 ECC 引发的开发者效率讨论为切入点
 
@@ -59,6 +46,19 @@
 > 🤖 "affaan-m/ECC" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
 *参考: [affaan-m/ECC](https://github.com/affaan-m/ECC)*
+
+---
+
+## 3. P1 本周发 · DietrichGebert/ponytail
+
+**写什么**: 以 ponytail 引发的开发者效率讨论为切入点
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "DietrichGebert/ponytail" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)*
 
 ---
 
@@ -75,48 +75,71 @@
 
 ---
 
-## 5. P0 今天发 · JuliusBrussee/caveman
+## 5. P1 本周发 · cathrynlavery/diagram-design
 
-**写什么**: 以 caveman 引发的开发者效率讨论为切入点
+**写什么**: 以 diagram-design 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "JuliusBrussee/caveman" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "cathrynlavery/diagram-design" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)*
+*参考: [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design)*
+
+---
+
+## 6. P1 本周发 · anomalyco/opencode
+
+**写什么**: 以 opencode 引发的开发者效率讨论为切入点
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "anomalyco/opencode" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [anomalyco/opencode](https://github.com/anomalyco/opencode)*
 
 ---
 
 
-# EdgeOne — 今日内容 (1 条)
+# Hunyuan — 今日内容 (3 条)
 
-## 1. P1 本周发 · Statichost.eu – European static site hosting
+## 1. P1 本周发 · 搞了个开源大模型 API 中转站，官方价 3.5 折，送 25 份 5 刀额度
 
-**写什么**: 从 Statichost.eu 的性能/安全需求出发
+**写什么**: 以「搞了个开源大模型」话题为引子
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> ⚡ Interesting project: "Statichost.eu – European static site hos". For teams needing global acceleration + DDoS protection, check out EdgeOne — 3,200+ PoP nodes worldwide. #CDN #WebSecurity #EdgeComputing
+> 🧠 "搞了个开源大模型 API 中转站，官方价 3.5 折，送 25 份 5 刀额度" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
 
-*参考: [Statichost.eu – European static site hosting](https://www.statichost.eu/)*
+*参考: [搞了个开源大模型 API 中转站，官方价 3.5 折，送 25 份 5 刀额度](https://www.v2ex.com/t/1239673)*
 
 ---
 
+## 2. P1 本周发 · 难绷，太相信 ai 了😭
 
-# Hunyuan — 今日内容 (1 条)
-
-## 1. P1 本周发 · opencode 出新模型了，叫 Omen Alpha，输入输出价格接近 deepseek，速度飞快
-
-**写什么**: 以「出新模型」话题为引子
+**写什么**: 以「难绷太相信了」话题为引子
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "opencode 出新模型了，叫 Omen Alpha，输入输出价格接近 dee" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🧠 "难绷，太相信 ai 了😭" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
 
-*参考: [opencode 出新模型了，叫 Omen Alpha，输入输出价格接近 deepseek，速度飞快](https://www.v2ex.com/t/1239487)*
+*参考: [难绷，太相信 ai 了😭](https://www.v2ex.com/t/1239751)*
+
+---
+
+## 3. P1 本周发 · 给我整乐呵了，商汤上了 deepseek v4 flash 和 pro
+
+**写什么**: 以「给我整乐呵了商汤」话题为引子
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🧠 "给我整乐呵了，商汤上了 deepseek v4 flash 和 pro" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+
+*参考: [给我整乐呵了，商汤上了 deepseek v4 flash 和 pro](https://www.v2ex.com/t/1239687)*
 
 ---
 
