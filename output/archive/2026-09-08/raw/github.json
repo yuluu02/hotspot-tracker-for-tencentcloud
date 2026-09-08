@@ -1,0 +1,1039 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "heygen-com/hyperframes - Write HTML. Render video. Built for agents.",
+    "url": "https://github.com/heygen-com/hyperframes",
+    "heat": "46,509 stars",
+    "time": "Today",
+    "developer_name": "heygen-com",
+    "developer_url": "https://github.com/heygen-com",
+    "developer_email": "",
+    "today_stars": "474 stars today",
+    "language": "TypeScript",
+    "summary": "Write HTML. Render video. Built for agents.",
+    "content": " \n   \n     \n     \n     \n   \n \n\n \n     \n     \n     \n     \n     \n \n\n  Write HTML. Render video. Built for agents.  \n\n \n   Quickstart  |\n   Showcase  |\n   Playground  |\n   Catalog  |\n   Docs  |\n   Discord \n \n\n \n   \n \n\nHyperFrames is an open-source framework for turning HTML, CSS, media, and seekable animations into deterministic MP4 videos. Use it locally with the CLI, from AI coding agents with skills, or as the rendering core behind hosted authoring workflows.\n\n## Quick Start\n\n### With an AI coding agent\n\nInstall the HyperFrames skills, then describe the video you want:\n\n```bash\nnpx skills add heygen-com/hyperframes\n```\n\n> The picker opens with nothing pre-selected — the **Core Skills** group is all you need: the `/hyperframes` router installs each creation workflow on demand. Agents and non-interactive runs should use `npx hyperframes skills update` instead — it installs exactly the core set, whereas `skills add --all` installs every `SKILL.md` in the repo — the 20 published skills plus six repo-internal ones under `.claude/skills` / `.agents/skills`. For the full published set use `npx hyperframes skills`.\n>\n> `skills add` resolves the skills.sh registry blob, which can lag `main` by hours. `npx hyperframes skills update` installs from the current `main`, so reach for it when you need the newest copy of a skill.\n\nTry a prompt like:\n\n> Using `/hyperframes`, create a 10-second product intro with a fade-in title, a background video, and subtle background music.\n\nThe skills teach agents the HyperFrames production loop: plan the video, write valid HTML, wire seekable animations, add media, lint, preview, and render. They work with Claude Code, Cursor, Gemini CLI, Codex, and other coding agents that support skills.\n\n## Skills\n\nHyperFrames ships 20 skills agents load on demand. Read `/hyperframes` first — it's the router and capability map; it picks a workflow for any \"make me a…\" request — video, deck, or composition port — and points to the domain skills below.\n\nDefault to the **core set** — the router installs each creation workflow on demand. `npx hyperframes skills update` installs exactly that from anywhere; the interactive picker (`npx skills add heygen-com/hyperframes`) lists it as the \"Core Skills\" group, nothing pre-selected. The picker is interactive-only — a non-interactive or agent run without `--skill` installs all 20. Use `npx skills add heygen-com/hyperframes --all` to install all 20 deliberately (skips the picker), or `npx skills add heygen-com/hyperframes --skill  ` for just one (bare name, no leading `/`).\n\nInstalls stay lean after that: `npx hyperframes init` keeps the **core set** fresh (the router, the `hyperframes-*` domain skills, and `media-use` — plus whatever is already installed; `/figma` stays on demand) and never expands a partial install; the creation workflows install **on demand** — the router runs `npx hyperframes skills update  ` before entering one. Nothing re-pulls the full set behind your back.\n\n### Upload to Codex",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "render"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "heygen-com/hyperframes: Write HTML. Render video. Built for agents.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.0,
+      "tcloud_relevance": 6.2,
+      "tcloud_integration": "**hyperframes** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs hyperframes 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**hyperframes** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs hyperframes 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "coding agent",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**hyperframes** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs hyperframes 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「heygen-com/hyperframes - Write HTML. Render video…」（heygen-com/hyperframes: Write HTML. Render video. Built for…），涉及 Agent → 可写方向：**hyperframes** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs hyperframes 的横向对比：CodeBuddy 覆盖需求…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「heygen-com/hyperframes - Write HTML. Re…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 hyperframes 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 hyperframes 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 hyperframes 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 hyperframes 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "heygen-com/hyperframes: Write HTML. Render video. Built for agents.。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "heygen-com/hyperframes - Write HTML. Render video. Built for agents.. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：heygen-com/hyperframes: Write HTML. Render video. Built for agents.。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: heygen-com/hyperframes - Write HTML. Render video. Built for agents.. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。heygen-com/hyperframes: Write HTML. Render video. Built for agents.。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**hyperframes** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs hyperframes 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. heygen-com/hyperframes - Write HTML. Render video. Built for agents.. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：heygen-com/hyperframes: Write HTML. Render video. Built for agents.。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: heygen-com/hyperframes - Write HTML. Render video. Built for agents.. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "hyperframes：编写 HTML。渲染视频。",
+    "developer_profile": {
+      "github_username": "heygen-com",
+      "profile_url": "https://github.com/heygen-com",
+      "name": "HeyGen",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 788,
+      "following": 0,
+      "public_repos": 32,
+      "avatar_url": "https://avatars.githubusercontent.com/u/65394575?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "microsoft/markitdown - Python tool for converting files and office documents to Markdown.",
+    "url": "https://github.com/microsoft/markitdown",
+    "heat": "180,707 stars",
+    "time": "Today",
+    "developer_name": "microsoft",
+    "developer_url": "https://github.com/microsoft",
+    "developer_email": "opensource@microsoft.com",
+    "today_stars": "886 stars today",
+    "language": "Python",
+    "summary": "Python tool for converting files and office documents to Markdown.",
+    "content": "# MarkItDown\n\n[](https://pypi.org/project/markitdown/)\n\n> [!IMPORTANT]\n> MarkItDown performs I/O with the privileges of the current process. Like open() or requests.get(), it will access resources that the process itself can access. Sanitize your inputs in untrusted environments, and call the narrowest `convert_*` function needed for your use case (e.g., `convert_stream()`, or `convert_local()`). See the Security Considerations section of the documentation for more information.\n\nMarkItDown is a lightweight Python utility for converting various files to Markdown for use with LLMs and related text analysis pipelines. To this end, it is most comparable to textract, but with a focus on preserving important document structure and content as Markdown (including: headings, lists, tables, links, etc.) While the output is often reasonably presentable and human-friendly, it is meant to be consumed by text analysis tools -- and may not be the best option for high-fidelity document conversions for human consumption.\n\nMarkItDown currently supports the conversion from:\n\n- PDF\n- PowerPoint\n- Word\n- Excel\n- Images (EXIF metadata and OCR)\n- Audio (EXIF metadata and speech transcription)\n- HTML\n- Text-based formats (CSV, JSON, XML)\n- ZIP files (iterates over contents)\n- YouTube URLs\n- EPubs\n- ... and more!\n\n## Why Markdown?\n\nMarkdown is extremely close to plain text, with minimal markup or formatting, but still\nprovides a way to represent important document structure. Mainstream LLMs, such as\nOpenAI's GPT-4o, natively \"_speak_\" Markdown, and often incorporate Markdown into their\nresponses unprompted. This suggests that they have been trained on vast amounts of\nMarkdown-formatted text, and understand it well. As a side benefit, Markdown conventions\nare also highly token-efficient.\n\n## Prerequisites\nMarkItDown requires Python 3.10 or higher. It is recommended to use a virtual environment to avoid dependency conflicts.\n\nWith the standard Python installation, you can create and activate a virtual environment using the following commands:\n\n```bash\npython -m venv .venv\nsource .venv/bin/activate\n```\n\nIf using `uv`, you can create a virtual environment with:\n\n```bash\nuv venv --python=3.12 .venv\nsource .venv/bin/activate\n# NOTE: Be sure to use 'uv pip install' rather than just 'pip install' to install packages in this virtual environment\n```\n\nIf you are using Anaconda, you can create a virtual environment with:\n\n```bash\nconda create -n markitdown python=3.12\nconda activate markitdown\n```\n\n## Installation\n\nTo install MarkItDown, use pip: `pip install 'markitdown[all]'`. Alternatively, you can install it from the source:\n\n```bash\ngit clone git@github.com:microsoft/markitdown.git\ncd markitdown\npip install -e 'packages/markitdown[all]'\n```\n\n## Usage\n\n### Command-Line\n\n```bash\nmarkitdown path-to-file.pdf > document.md\n```\n\nOr use `-o` to specify the output file:\n\n```bash\nmarkitdown path-to-file.pdf -o document.md\n```\n\nYou can also pipe content:\n\n```bash\ncat path-to-file.pdf | m",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "gpt",
+        "openai",
+        "speech",
+        "ocr"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "GPT-4"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "microsoft/markitdown: Python tool for converting files and office documents to Markdown.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「microsoft/markitdown - Python tool for converting…」（microsoft/markitdown: Python tool for converting files and…），涉及 Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「microsoft/markitdown - Python tool for…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 markitdown 的文档解析效果对比图（原始 PDF vs 结构化输出），直观展示工具价值。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 markitdown 的文档解析效果对比图（原始 PDF vs 结构化输出），直观展示工具价值。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "microsoft/markitdown: Python tool for converting files and office d…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "microsoft/markitdown - Python tool for converting files and office documents to Markdow…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：microsoft/markitdown: Python tool for converting files and office d…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: microsoft/markitdown - Python tool for converting files and office documents to Markdow…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。microsoft/markitdown: Python tool for converting files and office d…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. microsoft/markitdown - Python tool for converting files and office documents to Markdow…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：microsoft/markitdown: Python tool for converting files and office d…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: microsoft/markitdown - Python tool for converting files and office documents to Markdow…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "markitdown：用于将文件和 Office 文档转换为 Markdown 的 Python 工具。",
+    "developer_profile": {
+      "github_username": "microsoft",
+      "profile_url": "https://github.com/microsoft",
+      "name": "Microsoft",
+      "bio": "Open source projects and samples from Microsoft",
+      "company": "",
+      "location": "Redmond, WA",
+      "blog": "https://opensource.microsoft.com",
+      "twitter_username": "OpenAtMicrosoft",
+      "email": "opensource@microsoft.com",
+      "followers": 129296,
+      "following": 0,
+      "public_repos": 8297,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6154722?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/OpenAtMicrosoft"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "mksglu/context-mode - Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+    "url": "https://github.com/mksglu/context-mode",
+    "heat": "21,003 stars",
+    "time": "Today",
+    "developer_name": "mksglu",
+    "developer_url": "https://github.com/mksglu",
+    "developer_email": "",
+    "today_stars": "96 stars today",
+    "language": "TypeScript",
+    "summary": "Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+    "content": "# Context Mode\n\n**The other half of the context problem.**\n\n[](https://www.npmjs.com/package/context-mode) [](https://www.npmjs.com/package/context-mode) [](https://github.com/mksglu/context-mode) [](https://github.com/mksglu/context-mode/stargazers) [](https://github.com/mksglu/context-mode/network/members) [](https://github.com/mksglu/context-mode/commits) [](LICENSE)\n[](https://discord.gg/DCN9jUgN5v)\n[](https://news.ycombinator.com/item?id=47193064)\n\n \n Used across teams at \n  \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n   \n \n\n## The Problem\n\nEvery MCP tool call dumps raw data into your context window. A Playwright snapshot costs 56 KB. Twenty GitHub issues cost 59 KB. One access log — 45 KB. After 30 minutes, 40% of your context is gone. And when the agent compacts the conversation to free space, it forgets which files it was editing, what tasks are in progress, and what you last asked for. On top of that, the agent wastes output tokens on filler, pleasantries, and verbose explanations — burning context from both sides.\n\n### How Context Mode Solves It\n\nContext Mode is an MCP server that solves all four sides of this problem:\n\n1. **Context Saving** — Sandbox tools keep raw data out of the context window. 315 KB becomes 5.4 KB. 98% reduction.\n2. **Session Continuity** — Every file edit, git operation, task, error, and user decision is tracked in SQLite. When the conversation compacts, context-mode doesn't dump this data back into context — it indexes events into FTS5 and retrieves only what's relevant via BM25 search. The model picks up exactly where you left off. If you don't `--continue`, previous session data is deleted immediately — a fresh session means a clean slate.\n3. **Think in Code** — The LLM should program the analysis, not compute it. Instead of reading 50 files into context to count functions, the agent writes a script that does the counting and `console.log()`s only the result. One script replaces ten tool calls and saves 100x context. This is a mandatory paradigm across all 17 supported clients, plus the OpenClaw gateway integration: stop treating the LLM as a data processor, treat it as a code generator.\n\n   ```js\n   // Before: 47 × Read() = 700 KB.  After: 1 × ctx_execute() = 3.6 KB.\n   ctx_execute(\"javascript\", `\n     const files = fs.readdirSync('src').filter(f => f.endsWith('.ts'));\n     files.forEach(f => console.log(f + ': ' + fs.readFileSync('src/'+f,'utf8').split('\\\\n').length + ' lines'));\n   `);\n   ```\n4. **No prose-style enforcement** — context-mode keeps raw data out of context but never dictates how the model writes its final answer. Brevity, completeness, formatting — your model's call (or yours via your own `CLAUDE.md` / `AGENTS.md`). Aggressive brevity prompts have been shown to degrade coding/reasoning benchmarks (Moonshot AI on `kimi-k2.5`) — the routing block stays focused on *where data goes*, not on *how the model talks*.\n\n \n   \n     \n   \n \n     \n\n## Install\n\nPlatforms are grouped b",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "agent",
+        "mcp",
+        "reasoning"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "MCP",
+        "TypeScript"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "mksglu/context-mode: Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.3,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**context-mode** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs context-mode 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**context-mode** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs context-mode 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "ai coding",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**context-mode** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs context-mode 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「mksglu/context-mode - Context window optimization…」（mksglu/context-mode: Context window optimization for AI cod…），涉及 LLM / Agent / MCP → 可写方向：**context-mode** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs context-mode 的横向对比：CodeBuddy 覆盖…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「mksglu/context-mode - Context window op…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 context-mode 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 context-mode 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 context-mode 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 context-mode 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "mksglu/context-mode: Context window optimization for AI coding agen…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "mksglu/context-mode - Context window optimization for AI coding agents. Sandboxes tool…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：mksglu/context-mode: Context window optimization for AI coding agen…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: mksglu/context-mode - Context window optimization for AI coding agents. Sandboxes tool…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。mksglu/context-mode: Context window optimization for AI coding agen…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**context-mode** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs context-mode 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. mksglu/context-mode - Context window optimization for AI coding agents. Sandboxes tool…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：mksglu/context-mode: Context window optimization for AI coding agen…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: mksglu/context-mode - Context window optimization for AI coding agents. Sandboxes tool…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "context-mode：AI 编码代理的上下文窗口优化。沙箱工具输出（减少 98%）、保留会话内存，并通过 MCP + 挂钩强制跨 17 个平台进行路由。",
+    "developer_profile": {
+      "github_username": "mksglu",
+      "profile_url": "https://github.com/mksglu",
+      "name": "Mert Köseoğlu",
+      "bio": "building",
+      "company": "",
+      "location": "London",
+      "blog": "mksg.lu",
+      "twitter_username": "mksglu",
+      "email": "",
+      "followers": 550,
+      "following": 1,
+      "public_repos": 73,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6067714?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/mksglu"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://mksg.lu"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "jo-inc/camofox-browser - Stealth headless browser for AI agents — bypass Cloudflare, bot detection, and anti-scraping. Drop-in Puppeteer/Playwright replacement.",
+    "url": "https://github.com/jo-inc/camofox-browser",
+    "heat": "9,921 stars",
+    "time": "Today",
+    "developer_name": "jo-inc",
+    "developer_url": "https://github.com/jo-inc",
+    "developer_email": "oss@askjo.ai",
+    "today_stars": "135 stars today",
+    "language": "JavaScript",
+    "summary": "Stealth headless browser for AI agents — bypass Cloudflare, bot detection, and anti-scraping. Drop-in Puppeteer/Playwright replacement.",
+    "content": " \n   \n   camofox-browser \n    Anti-detection browser server for AI agents, powered by Camoufox  \n   \n       \n       \n       \n       \n   \n   \n    Standing on the mighty shoulders of  Camoufox  - a Firefox fork with fingerprint spoofing at the C++ level.\n   \n \n\n \n\n>    \n>\n> Built by the team behind   jo, a personal AI agent   that runs half on your Mac, half on a dedicated cloud machine just for you -- with zero maintenance needed. Available on macOS, Telegram, WhatsApp, and email.  Try the beta free -> \n\n \n\n```bash\ngit clone https://github.com/jo-inc/camofox-browser && cd camofox-browser\nnpm install && npm start\n# -> http://localhost:9377\n```\n\n---\n\n## Why\n\nAI agents need to browse the real web. Playwright gets blocked. Headless Chrome gets fingerprinted. Stealth plugins become the fingerprint.\n\nCamoufox patches Firefox at the **C++ implementation level** - `navigator.hardwareConcurrency`, WebGL renderers, AudioContext, screen geometry, WebRTC - all spoofed before JavaScript ever sees them. No shims, no wrappers, no tells.\n\nThis project wraps that engine in a REST API built for agents: accessibility snapshots instead of bloated HTML, stable element refs for clicking, and search macros for common sites.\n\n## Features\n\n- **C++ Anti-Detection** - bypasses Google, Cloudflare, and most bot detection\n- **Element Refs** - stable `e1`, `e2`, `e3` identifiers for reliable interaction\n- **Token-Efficient** - accessibility snapshots are ~90% smaller than raw HTML\n- **Runs on Anything** - lazy browser launch + idle shutdown keeps memory at ~40MB when idle. Designed to share a box with the rest of your stack -- Raspberry Pi, $5 VPS, shared infra.\n- **Session Isolation** - separate cookies/storage per user\n- **Cookie Import** - inject Netscape-format cookie files for authenticated browsing\n- **File Upload** - attach files from a configured upload directory without a native OS dialog\n- **Proxy + GeoIP** - route traffic through residential proxies with automatic locale/timezone\n- **Structured Logging** - JSON log lines with request IDs for production observability\n- **YouTube Transcripts** - extract captions from any YouTube video via yt-dlp, no API key needed\n- **Search Macros** - `@google_search`, `@youtube_search`, `@amazon_search`, `@reddit_subreddit`, and 10 more\n- **Snapshot Screenshots** - include a base64 PNG screenshot alongside the accessibility snapshot\n- **Large Page Handling** - automatic snapshot truncation with offset-based pagination\n- **Download Capture** - capture browser downloads and fetch them via API (optional inline base64)\n- **DOM Image Extraction** - list ` ` src/alt and optionally return inline data URLs\n- **Deploy Anywhere** - Docker, Fly.io, Railway\n- **VNC Interactive Login** - log into sites visually via noVNC, export storage state for agent reuse\n- **OpenAPI Docs** - auto-generated spec at `/openapi.json` and interactive docs at `/docs`\n- **Structured Extract** - `POST /tabs/:tabId/extract` with a JSON Schema that maps properties to s",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 7,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "docker",
+        "cloudflare",
+        "fly.io",
+        "railway",
+        "webrtc",
+        "vps"
+      ],
+      "ai_hits": [
+        "ai",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Cloudflare",
+        "Fly.io"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "jo-inc/camofox-browser: Stealth headless browser for AI agents — bypass Cloudflare, bot detection, and anti-scraping. Drop-in Puppeteer/Playwright replacement.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.7,
+      "tcloud_relevance": 8.2,
+      "tcloud_integration": "**camofox-browser** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发\n补充关联 ES：**camofox-browser** 涉及搜索场景 — 腾讯云 ES 提供全文搜索 + 向量搜索 + 日志分析的一站式能力",
+      "tcloud_products": [
+        "COS",
+        "ES"
+      ],
+      "tcloud_reasons": [
+        "**camofox-browser** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+        "**camofox-browser** 涉及搜索场景 — 腾讯云 ES 提供全文搜索 + 向量搜索 + 日志分析的一站式能力"
+      ],
+      "tcloud_evidence": [
+        "storage",
+        "file upload",
+        "observability",
+        "logging"
+      ],
+      "tcloud_primary_product": "COS",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 COS：**camofox-browser** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发\n补充关联 ES：**camofox-browser** 涉及搜索场景 — 腾讯云 ES 提供全文搜索 + 向量搜索 + 日志分析的一站式能力",
+      "tcloud_official_matches": [
+        "COS",
+        "ES"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（COS / ES）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（COS / ES）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「jo-inc/camofox-browser - Stealth headless browser…」（jo-inc/camofox-browser: Stealth headless browser for AI age…），涉及 Agent → 可写方向：**camofox-browser** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「camofox-browser」涉及对象存储场景，可结合 COS 写教程或场景解读。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "COS",
+      "official_angle_cn": "围绕 camofox-browser 的核心功能（jo-inc/camofox-browser: Stealth headless browser for AI agents — bypass Cloudfl…），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 camofox-browser 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+      "platform_copies": {
+        "primary_product": "COS",
+        "product_display": "COS",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 camofox-browser 的核心功能（jo-inc/camofox-browser: Stealth headless browser for AI agents — bypass Cloudfl…），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Cloud Object Storage (COS) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 camofox-browser 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+        "x_cn": "jo-inc/camofox-browser: Stealth headless browser for AI agents — by…。如果站在腾讯云国际站官方号来写，这条更适合从 COS 切入：如果以腾讯云国际站官方号来写，这条建议主推 COS：**camofo…",
+        "x_en": "jo-inc/camofox-browser - Stealth headless browser for AI agents — bypass Cloudflare, bo…. For Tencent Cloud, this fits Cloud Object Storage (COS): Object storage for knowledge bases, datasets, files, and AI workflow persistence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：jo-inc/camofox-browser: Stealth headless browser for AI agents — by…。如果从腾讯云视角切，这条最适合带到 COS，重点聊 技术科普 + 教程拆解 + 产品关联（COS / ES）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: jo-inc/camofox-browser - Stealth headless browser for AI agents — bypass Cloudflare, bo…. From a Tencent Cloud angle, the best hook is Cloud Object Storage (COS), especially around technical explainer + hands-on walkthrough + product tie-in (COS / ES). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。jo-inc/camofox-browser: Stealth headless browser for AI agents — by…。如果用官方号发，建议主推 COS，重点讲 技术科普 + 教程拆解 + 产品关联（COS / ES），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 COS：**camofox-browser** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发 补充关联 ES：**camofox-browser** 涉及搜索场景 — 腾讯云 ES 提供全文搜索 + 向量搜索 + 日志分析的一站式能力",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. jo-inc/camofox-browser - Stealth headless browser for AI agents — bypass Cloudflare, bo…. For Tencent Cloud, the better angle is Cloud Object Storage (COS). Object storage for knowledge bases, datasets, files, and AI workflow persistence. The content should focus on technical explainer + hands-on walkthrough + product tie-in (COS / ES).",
+        "reddit_title_cn": "这类热点如果从 COS 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：jo-inc/camofox-browser: Stealth headless browser for AI agents — by…。如果站在腾讯云国际站官方号视角，我会更想把它写成 COS 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（COS / ES）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Cloud Object Storage (COS)?",
+        "reddit_body_en": "A recent trend caught my eye: jo-inc/camofox-browser - Stealth headless browser for AI agents — bypass Cloudflare, bo…. Instead of reposting it as news, I'd frame it through Cloud Object Storage (COS) and focus on technical explainer + hands-on walkthrough + product tie-in (COS / ES). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "camofox-browser：适用于 AI 代理的隐形无头浏览器 — 绕过 Cloudflare、机器人检测和反抓取。替代木偶师/剧作家。",
+    "developer_profile": {
+      "github_username": "jo-inc",
+      "profile_url": "https://github.com/jo-inc",
+      "name": "jo",
+      "bio": "a personal agent",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://askjo.ai",
+      "twitter_username": "askjo",
+      "email": "oss@askjo.ai",
+      "followers": 80,
+      "following": 0,
+      "public_repos": 9,
+      "avatar_url": "https://avatars.githubusercontent.com/u/226147249?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/askjo"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "MoonTechLab/LunaTV - 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源",
+    "url": "https://github.com/MoonTechLab/LunaTV",
+    "heat": "9,878 stars",
+    "time": "Today",
+    "developer_name": "MoonTechLab",
+    "developer_url": "https://github.com/MoonTechLab",
+    "developer_email": "",
+    "today_stars": "197 stars today",
+    "language": "TypeScript",
+    "summary": "本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源",
+    "content": "# MoonTV\n\n \n   \n \n\n> 🎬 **MoonTV** 是一个开箱即用的、跨平台的影视聚合播放器。它基于 **Next.js 14** + **Tailwind&nbsp;CSS** + **TypeScript** 构建，支持多资源搜索、在线播放、收藏同步、播放记录、云端存储，让你可以随时随地畅享海量免费影视内容。\n\n \n\n \n\n---\n\n## ✨ 功能特性\n\n- 🔍 **多源聚合搜索**：一次搜索立刻返回全源结果。\n- 📄 **丰富详情页**：支持剧集列表、演员、年份、简介等完整信息展示。\n- ▶️ **流畅在线播放**：集成 HLS.js & ArtPlayer。\n- ❤️ **收藏 + 继续观看**：支持 Kvrocks/Redis/Upstash 存储，多端同步进度。\n- 📱 **PWA**：离线缓存、安装到桌面/主屏，移动端原生体验。\n- 🌗 **响应式布局**：桌面侧边栏 + 移动底部导航，自适应各种屏幕尺寸。\n- 👿 **智能去广告**：自动跳过视频中的切片广告（实验性）。\n\n### 注意：部署后项目为空壳项目，无内置播放源和直播源，需要自行收集\n\n \n   点击查看项目截图 \n   \n   \n   \n \n\n### 请不要在 B站、小红书、微信公众号、抖音、今日头条或其他中国大陆社交平台发布视频或文章宣传本项目，不授权任何“科技周刊/月刊”类项目或站点收录本项目。\n\n## 🗺 目录\n\n- 技术栈\n- 部署\n  - 一键部署\n  - Docker 部署\n- 配置文件\n- 订阅\n- 自动更新\n- 环境变量\n- 客户端\n- AndroidTV 使用\n- Roadmap\n- 安全与隐私提醒\n- License\n- 致谢\n\n## 技术栈\n\n| 分类      | 主要依赖                                                                                              |\n| --------- | ----------------------------------------------------------------------------------------------------- |\n| 前端框架  | Next.js 14 · App Router                                                        |\n| UI & 样式 | Tailwind&nbsp;CSS 3                                                       |\n| 语言      | TypeScript 4                                                                                          |\n| 播放器    | ArtPlayer · HLS.js |\n| 代码质量  | ESLint · Prettier · Jest                                                                              |\n| 部署      | Docker                                                                    |\n\n## 部署\n\n本项目**仅支持 Docker 或其他基于 Docker 的平台** 部署。\n\n### zeabur 一键部署\n\n点击下方按钮即可一键部署，自动配置 LunaTV + Kvrocks 数据库：\n\n[](https://zeabur.com/templates/8MPTQU/deploy)\n\n**优势**：\n- ✅ 无需配置，一键启动（自动部署完整环境）\n- ✅ 自动 HTTPS 和全球 CDN 加速\n- ✅ 持久化存储，数据永不丢失\n- ✅ 免费额度足够个人使用\n\n**⚠️ 重要提示**：部署完成后，需要在 Zeabur 中为 LunaTV 服务设置访问域名（Domain）才能在浏览器中访问。详见下方 设置访问域名 步骤。\n\n### Kvrocks 存储（推荐）\n\n```yml\nservices:\n  moontv-core:\n    image: ghcr.io/moontechlab/lunatv:latest\n    container_name: moontv-core\n    restart: on-failure\n    ports:\n      - '3000:3000'\n    environment:\n      - USERNAME=admin\n      - PASSWORD=admin_password\n      - NEXT_PUBLIC_STORAGE_TYPE=kvrocks\n      - KVROCKS_URL=redis://moontv-kvrocks:6666\n    networks:\n      - moontv-network\n    depends_on:\n      - moontv-kvrocks\n  moontv-kvrocks:\n    image: apache/kvrocks\n    container_name: moontv-kvrocks\n    restart: unless-stopped\n    volumes:\n      - kvrocks-data:/var/lib/kvrocks\n    networks:\n      - moontv-network\nnetworks:\n  moontv-network:\n    driver: bridge\nvolumes:\n  kvrocks-data:\n```\n\n### Redis 存储（有一定的丢数据风险）\n\n```yml\nservices:\n  moontv-core:\n    image: ghcr.io/moontechlab/lunatv:latest\n    container_name: moontv-core\n    restart: on-failure\n    ports:\n      - '3000:3000'\n    environment:\n      - USERNAME=admin\n      - PASSWORD=admin_password\n      - NEXT_PUBLIC_STORAGE_TYPE=redis\n      - REDIS_URL=redis://moontv-redis:6379\n    networks:\n      - moontv-network\n    depends_on:\n      - moontv-redis\n  moontv-redis:\n    image: redis:alpine\n    container_name: moon",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "cdn",
+        "redis"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "TypeScript",
+        "React"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "MoonTechLab/LunaTV: 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.9,
+      "tcloud_relevance": 0.1,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「MoonTechLab/LunaTV - 本项目采用 CC BY-NC-SA 协议，禁止任何商业化…」（MoonTechLab/LunaTV: 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须…），涉及 TypeScript / React → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「MoonTechLab/LunaTV - 本项目采用 CC BY-NC-SA…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 LunaTV 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 LunaTV 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "MoonTechLab/LunaTV: 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "MoonTechLab/LunaTV - 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：MoonTechLab/LunaTV: 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: MoonTechLab/LunaTV - 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。MoonTechLab/LunaTV: 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. MoonTechLab/LunaTV - 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：MoonTechLab/LunaTV: 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: MoonTechLab/LunaTV - 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "MoonTechLab/LunaTV: 本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源",
+    "developer_profile": {
+      "github_username": "MoonTechLab",
+      "profile_url": "https://github.com/MoonTechLab",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "Malaysia",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 285,
+      "following": 0,
+      "public_repos": 5,
+      "avatar_url": "https://avatars.githubusercontent.com/u/226115334?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+    "url": "https://github.com/affaan-m/ECC",
+    "heat": "253,118 stars",
+    "time": "Today",
+    "developer_name": "affaan-m",
+    "developer_url": "https://github.com/affaan-m",
+    "developer_email": "affaan@itomarkets.com",
+    "today_stars": "1,897 stars today",
+    "language": "JavaScript",
+    "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+    "content": " \n   \n \n\n \n   \n     \n       \n       \n     \n   \n   \n     \n       \n       \n     \n   \n \n\n \n   Language: \n   English  |\n   Português (Brasil)  |\n   简体中文  |\n   繁體中文  |\n   日本語  |\n   한국어  |\n   Türkçe  |\n   Русский  |\n   Tiếng Việt  |\n   ไทย  |\n   Deutsch  |\n   Español  |\n   Українська \n \n\n \n     \n     \n     \n     \n \n\n \n     \n     \n     \n     \n \n\n \n     \n     \n \n\n \n   \n   \n   \n   \n   \n   \n   \n \n\n> [!WARNING]\n> **Official sources only.** Install ECC only from verified channels: the GitHub repository github.com/affaan-m/ECC, the npm packages `ecc-universal` and `ecc-agentshield`, the GitHub App, the plugin slug `ecc@ecc`, and the project website ecc.tools. Third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware.\n\n## Install with Claude Code\n\nRun the canonical guided setup from your terminal:\n\n```bash\nnpx ecc-universal setup\n```\n\nIf npm reports a version or cache error, confirm the registry version before retrying:\n\n```bash\nnpm view ecc-universal version\n```\n\nThis path requires Node.js 18 or newer, Git, and Claude Code 2.1 or newer on\n`PATH`. It safely installs, updates, or moves one `ecc@ecc` plugin scope and\nrecords the hook profile you choose.\n\nAlternatively, run Claude Code's native plugin commands inside Claude Code:\n\n```text\n/plugin marketplace add https://github.com/affaan-m/ECC\n/plugin install ecc@ecc\n```\n\nThe native path installs ECC's skills, agents, commands, and plugin-managed hooks. If you choose it, stop there. Do not also run a full manual install into Claude Code.\n\n> Both paths install the same `ecc@ecc` plugin. Choose one and do not stack\n> another manual Claude install on top.\n\n \n\n \n \n \n   \n      \n     ECC Pro + GitHub App \n    \n    Install free  ·  Private repos from $19/seat/mo  \n \n \n   \n      \n     Sponsor ECC \n    \n   Fund the open-source project \n \n \n   \n      \n     Community \n    \n   Discord · Q&amp;A · Show and Tell \n \n \n \n\n \n\n **OSS stays free.** This repo is MIT-licensed forever. ECC Pro is the hosted GitHub App for private repos.  Sponsors  and  Pro subscribers  fund the work. That's why a single maintainer ships weekly across 7 harnesses. \n\n \n\n  Partners &amp; sponsors  \n\n \n     &nbsp;&nbsp;&nbsp;\n     &nbsp;&nbsp;&nbsp;\n        &nbsp;&nbsp;&nbsp;\n        &nbsp;&nbsp;&nbsp;\n        \n \n\n  Community sponsors:   Mike Morgan  ·  @jasonwu513  ·  @1anter  ·  @massimotodaro  ·  @meadmccabe  \n\n   Become a Sponsor   ·  Sponsor Tiers  ·  Sponsorship Program  \n\n \n\n  Jump to install ↓  \n\n# ECC\n\nYour agent can write code, but ECC gives it a coordinated engineering system and toolbox: it plans before it builds, verifies changes with tests, reviews its own work from a fresh context, remembers what matters, and turns repeated wins into reusable skills and workflows.\n\n```text\nplan -> test -> implement -> review -> verify -> remember -> improve\n```\n\nInstead of rebuilding that process in every prompt, you install it once and make it part of how your agent works.\n\n> Optimize the context wi",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "oss"
+      ],
+      "ai_hits": [
+        "claude",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "affaan-m/ECC: The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.5,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「affaan-m/ECC - The agent harness performance opti…」（affaan-m/ECC: The agent harness performance optimization sy…），涉及 Agent → 可写方向：**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「affaan-m/ECC - The agent harness perfor…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 ECC 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 ECC 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 ECC 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 ECC 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "affaan-m/ECC: The agent harness performance optimization system. Sk…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：affaan-m/ECC: The agent harness performance optimization system. Sk…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。affaan-m/ECC: The agent harness performance optimization system. Sk…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**ECC** 的用户群和 CodeBuddy 高度重合 — 可以写「ECC 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：affaan-m/ECC: The agent harness performance optimization system. Sk…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, me…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ECC：代理利用性能优化系统。Claude Code、Codex、Opencode、Cursor 等的技能、直觉、记忆、安全性和研究优先的开发。",
+    "developer_profile": {
+      "github_username": "affaan-m",
+      "profile_url": "https://github.com/affaan-m",
+      "name": "Affaan Mustafa",
+      "bio": "The Agentic Exchange for Compute @Ito-Markets | B={(eᵢ,wᵢ)}; Vᴮ=Σᵢwᵢℙα(eᵢ=1) | OSS meta-harness for AI agents @ECC-Tools",
+      "company": "Itô",
+      "location": "NYC",
+      "blog": "https://affaanmustafa.com",
+      "twitter_username": "affaanmustafa",
+      "email": "affaan@itomarkets.com",
+      "followers": 10363,
+      "following": 20,
+      "public_repos": 28,
+      "avatar_url": "https://avatars.githubusercontent.com/u/124439313?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/affaanmustafa"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/affaanmustafa/"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/affaanmustafa"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/c/AffaanMustafa"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://affaanmustafa.com"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://orcid.org/0009-0009-9408-5570"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "coreyhaines31/marketingskills - Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+    "url": "https://github.com/coreyhaines31/marketingskills",
+    "heat": "48,288 stars",
+    "time": "Today",
+    "developer_name": "coreyhaines31",
+    "developer_url": "https://github.com/coreyhaines31",
+    "developer_email": "",
+    "today_stars": "580 stars today",
+    "language": "JavaScript",
+    "summary": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+    "content": "# Marketing Skills for AI Agents\n\nA collection of AI agent skills focused on marketing tasks. Built for technical marketers and founders who want AI coding agents to help with conversion optimization, copywriting, SEO, analytics, and growth engineering. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the Agent Skills spec.\n\nBuilt by Corey Haines. Need hands-on help? Check out Conversion Factory — Corey's agency for conversion optimization, landing pages, and growth strategy. Want to learn more about marketing? Subscribe to Swipe Files. Want to get dangerously good at using AI for marketing? Check out AI Marketing Training. Want an autonomous AI agent that uses these skills to be your CMO? Try Magister.\n\nNew to the terminal and coding agents? Check out the companion guide Coding for Marketers.\n\n**Contributions welcome!** Found a way to improve a skill or have a new one to add? Open a PR.\n\nRun into a problem or have a question? Open an issue — we're happy to help.\n\n## Partners\n\nThe library is free and MIT-licensed. Verified Partners fund the work — vetted, disclosed tool integrations, listed alongside the neutral options and never influencing what the core skills recommend. The full rules and boundaries are in tools/PARTNERS.md. Become a partner →\n\n \n> ◆ **Converly** — *Conversion tracking / attribution.* Server-side conversion tracking that fires when someone submits a form, books a meeting, or starts a chat — passing click IDs and identifiers for Enhanced Conversions (Google) and high EMQ match rates (Meta), across 100+ tools. CLI + MCP so your agent sets it up in minutes. → Integration guide\n\n> ◆ **Ploy** — *AI website & growth platform.* AI marketing platform built around a Webflow-grade website builder — site optimization, SEO/AEO, visitor identification, and ad creative in one, with WebMCP to expose site actions to AI assistants. → Integration guide\n \n\n \n\n## What are Skills?\n\nSkills are markdown files that give AI agents specialized knowledge and workflows for specific tasks. When you add these to your project, your agent can recognize when you're working on a marketing task and apply the right frameworks and best practices.\n\n## How Skills Work Together\n\nSkills reference each other and build on shared context. The `product-marketing` skill is the foundation — every other skill checks it first to understand your product, audience, and positioning before doing anything.\n\n```\n                            ┌──────────────────────────────────────┐\n                            │          product-marketing           │\n                            │    (read by all other skills first)  │\n                            └──────────────────┬───────────────────┘\n                                               │\n    ┌──────────────┬─────────────┬─────────────┼─────────────┬──────────────┬──────────────┐\n    ▼              ▼             ▼             ▼             ▼              ▼              ▼\n┌──────────┐ ┌──────────┐ ┌──────",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "mcp",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "coreyhaines31/marketingskills: Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.5,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**marketingskills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs marketingskills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**marketingskills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs marketingskills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "coding agent",
+        "cursor",
+        "windsurf"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**marketingskills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs marketingskills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「coreyhaines31/marketingskills - Marketing skills…」（coreyhaines31/marketingskills: Marketing skills for Claude…），涉及 Agent / MCP → 可写方向：**marketingskills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs marketingskills 的横向对比：CodeBu…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「coreyhaines31/marketingskills - Marketi…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 marketingskills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 marketingskills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 marketingskills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 marketingskills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "coreyhaines31/marketingskills: Marketing skills for Claude Code and…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "coreyhaines31/marketingskills - Marketing skills for Claude Code and AI agents. CRO, co…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：coreyhaines31/marketingskills: Marketing skills for Claude Code and…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: coreyhaines31/marketingskills - Marketing skills for Claude Code and AI agents. CRO, co…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。coreyhaines31/marketingskills: Marketing skills for Claude Code and…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**marketingskills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs marketingskills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. coreyhaines31/marketingskills - Marketing skills for Claude Code and AI agents. CRO, co…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：coreyhaines31/marketingskills: Marketing skills for Claude Code and…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: coreyhaines31/marketingskills - Marketing skills for Claude Code and AI agents. CRO, co…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "marketingskills：Claude Code 和 AI 代理的营销技巧。CRO、文案、SEO、分析和增长工程。",
+    "developer_profile": {
+      "github_username": "coreyhaines31",
+      "profile_url": "https://github.com/coreyhaines31",
+      "name": "Corey Haines",
+      "bio": "Marketer → Developer → Founder. Marketing for top SaaS companies, bootstrapping my own SaaS products, and open-sourcing my skills along the way.",
+      "company": "",
+      "location": "San Diego",
+      "blog": "corey.co",
+      "twitter_username": "coreyhainesco",
+      "email": "",
+      "followers": 3233,
+      "following": 19,
+      "public_repos": 18,
+      "avatar_url": "https://avatars.githubusercontent.com/u/34802794?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/coreyhainesco"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://linkedin.com/in/corey-haines"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://youtube.com/@coreyhainesco"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://corey.co"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "The-Swarm-Corporation/AutoHedge - Build your autonomous hedge fund in minutes. AutoHedge harnesses the power of swarm intelligence and AI agents to automate market analysis, risk management, and trade execution.",
+    "url": "https://github.com/The-Swarm-Corporation/AutoHedge",
+    "heat": "5,354 stars",
+    "time": "Today",
+    "developer_name": "The-Swarm-Corporation",
+    "developer_url": "https://github.com/The-Swarm-Corporation",
+    "developer_email": "kye@swarms.world",
+    "today_stars": "517 stars today",
+    "language": "Python",
+    "summary": "Build your autonomous hedge fund in minutes. AutoHedge harnesses the power of swarm intelligence and AI agents to automate market analysis, risk management, and trade execution.",
+    "content": "# AutoHedge\n\n[](https://discord.gg/VapjxpSyHC3) [](https://www.youtube.com/@kyegomez3242) [](https://www.linkedin.com/in/kye-g-38759a207/) [](https://x.com/swarms_corp)\n\nAutoHedge is an enterprise-grade autonomous agent hedge fund that trades on your behalf. It combines swarm intelligence and specialized AI agents to perform end-to-end market analysis, risk management, and execution with minimal human intervention.\n\n**Current support:** Full autonomous trading on Solana. **Coming soon:** Coinbase and additional exchanges.\n\n---\n\n## Overview\n\nAutoHedge is built to be the world's most powerful autonomous agent hedge fund. It runs continuous analysis, generates and validates trading theses, sizes risk, and executes orders across supported venues. The system is designed for institutional reliability: structured outputs, comprehensive logging, and a risk-first architecture that scales from single strategies to multi-venue, multi-asset deployment.\n\n---\n\n## Features\n\n- **Multi-Agent Architecture**: Specialized agents for each stage of the trading pipeline\n  - Director Agent: strategy and thesis generation\n  - Quant Agent: technical and statistical analysis\n  - Risk Management Agent: position sizing and risk assessment\n  - Execution Agent: order generation and execution\n\n- **Real-Time Market Analysis**: Integration with live market data for analysis and execution\n- **Risk-First Design**: Built-in risk management and position sizing before any execution\n- **Structured Output**: JSON-formatted recommendations and analysis for downstream systems\n- **Enterprise Logging**: Detailed, configurable logging for audit and debugging\n- **Extensible Framework**: Modular design for custom strategies and new venues\n\n---\n\n## Supported Venues\n\n| Venue      | Status        | Notes                    |\n|-----------|----------------|--------------------------|\n| Solana    | Supported      | Full autonomous trading  |\n| Coinbase  | Coming soon    | In development           |\n| Other CEX | Roadmap        | Planned expansion        |\n\n---\n\n## Quick Start\n\n### Installation\n\n```bash\npip install -U autohedge\n```\n\n### Environment Variables\n\n```bash\n# Jupiter API (token price & search tools)\n# Get a key at https://portal.jup.ag\nJUPITER_API_KEY=\n\n# OpenAI (experimental agents)\nOPENAI_API_KEY=\nANTHROPIC_API_KEY=\nWORKSPACE_DIR=\"agent_workspace\"\n\n# Trading\nWALLET_PRIVATE_KEY=\"\"\n```\n\nSee `.env.example` for a full reference.\n\n### Basic Usage\n\n```python\nautohedge \n```\n\n---\n\n## Architecture\n\nAutoHedge uses a multi-agent pipeline where each agent has a defined responsibility:\n\n```mermaid\ngraph TD\n    A[Director Agent] --> B[Quant Agent]\n    B --> C[Risk Manager]\n    C --> D[Execution Agent]\n    D --> E[Trade Output]\n```\n\n---\n\n## Contributing\n\nContributions are welcome. See Contributing Guidelines for details.\n\n1. Fork the repository\n2. Create a feature branch (`git checkout -b feature/AmazingFeature`)\n3. Commit changes (`git commit -m 'Add some AmazingFeature'`)\n4. Push to the branch (`git p",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "agent",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "The-Swarm-Corporation/AutoHedge: Build your autonomous hedge fund in minutes. AutoHedge harnesses the power of swarm intelligence and AI agents to automate market analysis, risk management, and trade execution.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.1,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「The-Swarm-Corporation/AutoHedge - Build your auto…」（The-Swarm-Corporation/AutoHedge: Build your autonomous hedg…），涉及 Agent / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「The-Swarm-Corporation/AutoHedge - Build…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 AutoHedge 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 AutoHedge 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "The-Swarm-Corporation/AutoHedge: Build your autonomous hedge fund i…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "The-Swarm-Corporation/AutoHedge - Build your autonomous hedge fund in minutes. AutoHedg…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：The-Swarm-Corporation/AutoHedge: Build your autonomous hedge fund i…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: The-Swarm-Corporation/AutoHedge - Build your autonomous hedge fund in minutes. AutoHedg…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。The-Swarm-Corporation/AutoHedge: Build your autonomous hedge fund i…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. The-Swarm-Corporation/AutoHedge - Build your autonomous hedge fund in minutes. AutoHedg…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：The-Swarm-Corporation/AutoHedge: Build your autonomous hedge fund i…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: The-Swarm-Corporation/AutoHedge - Build your autonomous hedge fund in minutes. AutoHedg…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "在几分钟内建立您的自主对冲基金。AutoHedge 利用群体智能和人工智能代理的力量来自动化市场分析、风险管理和交易执行。",
+    "developer_profile": {
+      "github_username": "The-Swarm-Corporation",
+      "profile_url": "https://github.com/The-Swarm-Corporation",
+      "name": "Swarms",
+      "bio": "Building The Agent Economy",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://swarms.ai",
+      "twitter_username": "swarms_corp",
+      "email": "kye@swarms.world",
+      "followers": 442,
+      "following": 0,
+      "public_repos": 160,
+      "avatar_url": "https://avatars.githubusercontent.com/u/167784574?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "https://discord.gg/EamjgSaEQf"
+        },
+        {
+          "platform": "generic",
+          "url": "https://docs.swarms.world"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/swarms_corp"
+        },
+        {
+          "platform": "generic",
+          "url": "https://medium.com/kyeg"
+        }
+      ],
+      "is_org": true
+    }
+  }
+]
