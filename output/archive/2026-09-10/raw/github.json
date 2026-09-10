@@ -1,0 +1,938 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "ayghri/i-have-adhd - A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+    "url": "https://github.com/ayghri/i-have-adhd",
+    "heat": "35,359 stars",
+    "time": "Today",
+    "developer_name": "ayghri",
+    "developer_url": "https://github.com/ayghri",
+    "developer_email": "",
+    "today_stars": "4,650 stars today",
+    "language": "Python",
+    "summary": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+    "content": " \n   \n \n \n   ADHD-friendly outputs. No ADHD diagnosis needed! \n \n \n     \n \n\n \n   🇬🇧  ·\n   🇨🇳  ·\n   🇧🇷  ·\n   🇯🇵  ·\n   🇻🇳  ·\n   🇰🇷  ·\n   🇹🇭 \n \n\n## Install\n\nCopy/paste into your CLI prompt:\n\n```text\nInstall the i-have-adhd skill/plugin from https://github.com/ayghri/i-have-adhd, refer to the repo's AGENTS.md for instructions.\n```\n\nOr 🔗 check the installation instructions.\n\n## What it does\n\nA skill for your coding assistant that stops it from burying the answer. Action first. Steps numbered. No \"Hope this helps!\"\n\n## What changes\n\n \n \n \n\n## Before\n\n> Great question! Let me think about this. Your auth flow has a few moving pieces: the middleware, the token verification, and the cookie handling. Looking at `src/auth.ts`, the `verifyToken` function (around lines 42-58) seems to be using an older `jsonwebtoken` API. One approach would be to update the package and rewrite that function. After making the change, you'd want to run the auth tests to confirm nothing breaks. By the way, you might also want to look at your dependency versions overall. Hope this helps! Let me know if you want to dig deeper.\n\n \n\n \n\n## After\n\n> Run `npm install jsonwebtoken@latest`, then edit `src/auth.ts:42`.\n>\n> 1. Open `src/auth.ts`\n> 2. Replace `verifyToken` (lines 42–58) with the snippet below\n> 3. Run `npm test -- auth.spec.ts`\n>\n> Next: paste the first failing line if any test fails.\n\n \n \n \n\n## The rules\n\n10 rules. Full text in SKILL.md.\n\n1. Lead with the next action.\n2. Number multi-step tasks.\n3. End with one concrete next step.\n4. Suppress tangents.\n5. Restate state every turn.\n6. Specific time estimates (minutes, not \"a bit\").\n7. Make wins visible.\n8. Matter-of-fact errors.\n9. Rank and group long lists; aim for at most five items per group without omitting relevant items.\n10. No preamble. No recap. No closers.\n\n## Tune it\n\nFork, edit `skills/i-have-adhd/SKILL.md`, then swap your copy in:\n\n```bash\nclaude plugin uninstall i-have-adhd            # drop the upstream copy first:\nclaude plugin marketplace remove i-have-adhd   # fork and upstream share both names\nclaude plugin marketplace add  /i-have-adhd\nclaude plugin install i-have-adhd@i-have-adhd\n```\n\nRestart Claude Code, then re-invoke `/i-have-adhd`.\n\n## Credits\n\nLoosely based on *The Adult ADHD Tool Kit* by J. Russell Ramsay and Anthony L. Rostain. Adapted for how an LLM should respond, not how a human should organize their day.\n\n## License\n\nMIT.\n\nStar ⭐ if it saved you one scroll past one \"Great question!\"",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "llm",
+        "claude",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "ayghri/i-have-adhd: A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.0,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**i-have-adhd** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs i-have-adhd 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**i-have-adhd** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs i-have-adhd 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**i-have-adhd** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs i-have-adhd 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「ayghri/i-have-adhd - A skill to stop your coding…」（ayghri/i-have-adhd: A skill to stop your coding agent from…），涉及 LLM / Agent / TypeScript → 可写方向：**i-have-adhd** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs i-have-adhd 的横向对比：CodeBuddy 覆盖需求…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「ayghri/i-have-adhd - A skill to stop yo…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 i-have-adhd 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 i-have-adhd 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 i-have-adhd 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 i-have-adhd 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "ayghri/i-have-adhd: A skill to stop your coding agent from burying…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "ayghri/i-have-adhd - A skill to stop your coding agent from burying the answer. ADHD-fr…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：ayghri/i-have-adhd: A skill to stop your coding agent from burying…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: ayghri/i-have-adhd - A skill to stop your coding agent from burying the answer. ADHD-fr…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。ayghri/i-have-adhd: A skill to stop your coding agent from burying…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**i-have-adhd** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs i-have-adhd 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. ayghri/i-have-adhd - A skill to stop your coding agent from burying the answer. ADHD-fr…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：ayghri/i-have-adhd: A skill to stop your coding agent from burying…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: ayghri/i-have-adhd - A skill to stop your coding agent from burying the answer. ADHD-fr…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "i-have-adhd：阻止编码代理隐藏答案的技能。多动症友好的输出。",
+    "developer_profile": {
+      "github_username": "ayghri",
+      "profile_url": "https://github.com/ayghri",
+      "name": "Ayoub Ghriss",
+      "bio": "CLIMB research group.\r\nML\r\n",
+      "company": "University of Colorado, Boulder",
+      "location": "Boulder, CO",
+      "blog": "https://ayghri.me",
+      "twitter_username": "",
+      "email": "",
+      "followers": 361,
+      "following": 10,
+      "public_repos": 79,
+      "avatar_url": "https://avatars.githubusercontent.com/u/32200675?v=4",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "https://ayghri.me"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Tencent/teamai-cli - Make Every Team AI Native",
+    "url": "https://github.com/Tencent/teamai-cli",
+    "heat": "3,222 stars",
+    "time": "Today",
+    "developer_name": "Tencent",
+    "developer_url": "https://github.com/Tencent",
+    "developer_email": "",
+    "today_stars": "556 stars today",
+    "language": "TypeScript",
+    "summary": "Make Every Team AI Native",
+    "content": " \n   \n \n\n# TeamAI — Make Every Team AI Native\n\n> English | 简体中文\n\n[](https://github.com/Tencent/teamai-cli/actions/workflows/ci.yml)\n[](https://www.npmjs.com/package/teamai-cli)\n[](https://www.npmjs.com/package/teamai-cli)\n[](LICENSE)\n\nTeamAI manages your team's skills, rules, MCP, and knowledge across Claude Code, Codex, CodeBuddy, WorkBuddy, OpenCode, Cursor, and other AI agents.\n\n## Contributors\n\nThanks to everyone who has contributed to TeamAI!\n\n \n   \n \n\nMade with contrib.rocks.\n\n## Quick Start\n\n### Install\n\n```bash\nnpm install -g teamai-cli\n```\n\n### Team admin / solo user\n\nCreate a shared-experience repo on your git host (GitHub, GitLab, GitCode, CNB, TGit, or a private Git service), **grant write access to team members**, then run `teamai init https://github.com/yourorg/yourrepo`.\n\n> **No team repo yet?** Start from a template pre-loaded with production-ready skills, rules, and review agents. Browse the teamai-hub org, click **Use this template**, then `teamai init` against your new repo.\n\n### Team members\n\n```bash\n# Choose one, depending on where you want resources installed\n\n# Project-scope init (default, resources installed under the project directory)\ncd /path/to/my-project\nteamai init https://github.com/yourorg/yourrepo\n\n# Or, user-scope init (resources installed under ~/)\nteamai init https://github.com/yourorg/yourrepo --scope user\n```\n\nOnce initialized, every AI session automatically pulls the latest skills / rules and other Harness updates published by admins — no manual sync needed.\n\n> **Full usage guide:** docs/usage-guide.md (中文版) — covers everything from team creation to day-to-day use.\n\n## Product architecture\n\n**Team Execution × Team Context (beta) × Team Improvement (beta)**:\n\n| Layer | Job | In this CLI today |\n|-------|-----|-------------------|\n| **Team Execution** | Make every agent work the team's way | `init` / `pull` / `push`, skills, rules, agents, hooks, MCP, env |\n| **Team Context** (beta) | Make every agent understand the team | recall, learnings, codebase graph, teamwiki... |\n| **Team Improvement** (beta) | Make every execution improve the team | friction-based share-learnings, sessions, digest, dashboard... |\n\n## Overview\n\n \n   \n     \n       Agent \n       Team Execution \n       Team Context (beta) \n       Team Improvement (beta) \n     \n     \n       skills  rules  docs  env  agents  hooks  mcp \n       learnings  codebase  teamwiki \n       usage  sessions  dashboard \n     \n   \n   \n      Claude Code  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  \n      Codex  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  \n      Cursor  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  \n      CodeBuddy  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  \n      WorkBuddy  ✓  ✓  ✓  ✓  —  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  \n      OpenCode  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓  —  —  —  \n      OpenClaw  ✓  ✓  ✓  ✓  —  —  —  ✓  ✓  ✓  —  —  —  \n      Hermes  ✓  —  ✓  ✓  —  —  —  ✓  ✓  ✓  —  —  —  \n      DeepSeek Harness  ✓  —  ✓  —  —  —  —  ✓  ✓  ✓  —  —  —  \n      Qoder  ✓  ✓  ✓  ✓  ✓  ✓  ✓  ✓",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "deepseek",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "CodeBuddy",
+        "Claude",
+        "DeepSeek",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Tencent/teamai-cli: Make Every Team AI Native",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.0,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**teamai-cli** 的用户群和 CodeBuddy 高度重合 — 可以写「teamai-cli 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**teamai-cli** 的用户群和 CodeBuddy 高度重合 — 可以写「teamai-cli 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "codebuddy",
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**teamai-cli** 的用户群和 CodeBuddy 高度重合 — 可以写「teamai-cli 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Tencent/teamai-cli - Make Every Team AI Native」（Tencent/teamai-cli: Make Every Team AI Native），涉及 Agent / MCP → 可写方向：**teamai-cli** 的用户群和 CodeBuddy 高度重合 — 可以写「teamai-cli 用户迁移到 CodeBuddy 的体验对比」，突出…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Tencent/teamai-cli - Make Every Team AI…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 teamai-cli 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 teamai-cli 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 teamai-cli 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 teamai-cli 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Tencent/teamai-cli: Make Every Team AI Native。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**teamai-cli** 的用户群…",
+        "x_en": "Tencent/teamai-cli - Make Every Team AI Native. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Tencent/teamai-cli: Make Every Team AI Native。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Tencent/teamai-cli - Make Every Team AI Native. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Tencent/teamai-cli: Make Every Team AI Native。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**teamai-cli** 的用户群和 CodeBuddy 高度重合 — 可以写「teamai-cli 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Tencent/teamai-cli - Make Every Team AI Native. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Tencent/teamai-cli: Make Every Team AI Native。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Tencent/teamai-cli - Make Every Team AI Native. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "teamai-cli：让每个团队的 AI 都原生化",
+    "developer_profile": {
+      "github_username": "Tencent",
+      "profile_url": "https://github.com/Tencent",
+      "name": "Tencent",
+      "bio": "",
+      "company": "",
+      "location": "Shenzhen, China",
+      "blog": "https://opensource.tencent.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 14342,
+      "following": 0,
+      "public_repos": 296,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18461506?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "obra/superpowers - An agentic skills framework & software development methodology that works.",
+    "url": "https://github.com/obra/superpowers",
+    "heat": "284,151 stars",
+    "time": "Today",
+    "developer_name": "obra",
+    "developer_url": "https://github.com/obra",
+    "developer_email": "",
+    "today_stars": "688 stars today",
+    "language": "Shell",
+    "summary": "An agentic skills framework & software development methodology that works.",
+    "content": "# Superpowers\n\nSuperpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.\n\n## Table of Contents\n\n- How it works\n- Commercial Services\n- Getting Started\n  - Claude Code\n  - Antigravity\n  - Codex App\n  - Codex CLI\n  - Cursor\n  - Devin CLI\n  - Factory Droid\n  - Gemini CLI\n  - GitHub Copilot CLI\n  - Grok Build CLI\n  - Kimi Code\n  - OpenCode\n  - Pi\n  - Hermes Agent\n- The Basic Workflow\n- Community\n- What's Inside\n- Philosophy\n- Contributing\n- Updating\n- License\n- Visual companion telemetry\n\n## How it works\n\nIt starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it *doesn't* just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do. \n\nOnce it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest. \n\nAfter you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY. \n\nNext up, once you say \"go\", it launches a *subagent-driven-development* process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for your agent to work autonomously for a couple hours at a time without deviating from the plan you put together.\n\nThere's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.\n\n## Commercial Services\n\nIf you're using Superpowers in enterprise and could benefit from commercial support, additional tooling, or managed spending, please don't hesitate to drop us a line at sales@primeradiant.com.\n\n## Installation\n\nInstallation differs by harness. If you use more than one, install Superpowers separately for each one.\n\n### Claude Code\n\nSuperpowers is available via the official Claude plugin marketplace\n\n#### Official Marketplace\n\n- Install the plugin from Anthropic's official marketplace:\n\n  ```bash\n  /plugin install superpowers@claude-plugins-official\n  ```\n\n#### Superpowers Marketplace\n\nThe Superpowers marketplace provides Superpowers and some other related plugins for Claude Code.\n\n- Register the marketplace:\n\n  ```bash\n  /plugin marketplace add obra/superpowers-marketplace\n  ```\n\n- Install the plugin from this marketplace:\n\n  ```bash\n  /plugin install superpowers@superpowers-marketplace\n  ```\n\n### Antigravity\n\nInstall Superpowers as a plugin from this repository:\n\n```bash\nagy plugin install https://github.com/obra/superpowers\n```\n\nAntigravity runs the plugin's session-start hook, so Superpowers is active from\nthe first message. Reinstall wi",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "anthropic",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "obra/superpowers: An agentic skills framework & software development methodology that works.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent",
+        "copilot",
+        "cursor",
+        "github copilot"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「obra/superpowers - An agentic skills framework &…」（obra/superpowers: An agentic skills framework & software de…），涉及 Agent / Go → 可写方向：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「obra/superpowers - An agentic skills fr…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 superpowers 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 superpowers 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 superpowers 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 superpowers 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "obra/superpowers: An agentic skills framework & software developmen…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "obra/superpowers - An agentic skills framework & software development methodology that…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：obra/superpowers: An agentic skills framework & software developmen…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: obra/superpowers - An agentic skills framework & software development methodology that…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。obra/superpowers: An agentic skills framework & software developmen…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. obra/superpowers - An agentic skills framework & software development methodology that…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：obra/superpowers: An agentic skills framework & software developmen…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: obra/superpowers - An agentic skills framework & software development methodology that…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "superpowers：有效的代理技能框架和软件开发方法。",
+    "developer_profile": {
+      "github_username": "obra",
+      "profile_url": "https://github.com/obra",
+      "name": "Jesse Vincent",
+      "bio": "",
+      "company": "Prime Radiant",
+      "location": "Berkeley, CA 94703",
+      "blog": "http://fsck.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 8515,
+      "following": 96,
+      "public_repos": 225,
+      "avatar_url": "https://avatars.githubusercontent.com/u/45416?v=4",
+      "social_links": [
+        {
+          "platform": "mastodon",
+          "url": "https://metasocial.com/@jesse"
+        },
+        {
+          "platform": "bluesky",
+          "url": "https://bsky.app/profile/s.ly"
+        },
+        {
+          "platform": "generic",
+          "url": "https://www.threads.com/@obrajesse"
+        },
+        {
+          "platform": "generic",
+          "url": "https://blog.fsck.com"
+        },
+        {
+          "platform": "unknown",
+          "url": "http://fsck.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "pascalorg/editor - Open-source 3D architectural editor with a local CLI, MCP tools, and practical workflows for humans and AI agents.",
+    "url": "https://github.com/pascalorg/editor",
+    "heat": "23,062 stars",
+    "time": "Today",
+    "developer_name": "pascalorg",
+    "developer_url": "https://github.com/pascalorg",
+    "developer_email": "hello@pascal.app",
+    "today_stars": "107 stars today",
+    "language": "TypeScript",
+    "summary": "Open-source 3D architectural editor with a local CLI, MCP tools, and practical workflows for humans and AI agents.",
+    "content": "# Pascal Editor\n\nAn open-source, local-first 3D building editor built with React Three Fiber and\nWebGPU. Run it in the browser or from the CLI, and connect AI agents through MCP.\n\n[](LICENSE)\n[](https://www.npmjs.com/package/@pascal-app/core)\n[](https://www.npmjs.com/package/@pascal-app/viewer)\n[](https://www.npmjs.com/package/@pascal-app/cli)\n[](https://discord.gg/XRKsDcpqgS)\n[](https://x.com/pascal_app)\n\nhttps://github.com/user-attachments/assets/8b50e7cf-cebe-4579-9cf3-8786b35f7b6b\n\n## Run the Editor Locally\n\nNode.js 22.13 or newer can create a persistent local Pascal installation without\ncloning this repository:\n\n```bash\nnpx @pascal-app/cli editor\n```\n\nThe CLI starts the editor and an authenticated MCP service in the background, selects\ncollision-free loopback ports, and keeps projects in `~/.pascal/data/pascal.db`. Configure\nan agent to launch `pascal mcp connect`. See Run Pascal locally\nfor pnpm/Bun commands, project management, MCP setup, updates, storage paths, and\ntroubleshooting. The npm release is the older runtime described below; use the verified\nGitHub preview when a task needs the new read-only furniture candidate check.\n\n## Verified CLI preview\n\nThe npm `beta` tag currently resolves to `@pascal-app/cli@1.0.0-beta.1`, which predates the read-only furniture candidate input and hosted `pascal agent claim` command in this repository. To use those capabilities before the next npm release, install the verified GitHub prerelease built from commit `8ca0b79c0b415a04d28a28cae3a1958f2f403c39`:\n\n```bash\nPASCAL_PREVIEW_VERSION='1.0.0-beta.2.claim.0'\nPASCAL_PREVIEW_PREFIX=\"${XDG_DATA_HOME:-$HOME/.local/share}/pascal-preview\"\nPASCAL_PREVIEW_DOWNLOAD=\"$(mktemp -d)\"\ncd \"$PASCAL_PREVIEW_DOWNLOAD\"\n\ncurl --fail --location --remote-name \\\n  \"https://github.com/pascalorg/editor/releases/download/cli-v1.0.0-beta.2-claim.0/pascal-app-cli-${PASCAL_PREVIEW_VERSION}.tgz\"\ncurl --fail --location --remote-name \\\n  \"https://github.com/pascalorg/editor/releases/download/cli-v1.0.0-beta.2-claim.0/SHA256SUMS.txt\"\n\n# macOS\nshasum -a 256 -c SHA256SUMS.txt\n# Linux: use `sha256sum -c SHA256SUMS.txt` instead.\n\nnpm install --global --prefix \"$PASCAL_PREVIEW_PREFIX\" --ignore-scripts \\\n  \"./pascal-app-cli-${PASCAL_PREVIEW_VERSION}.tgz\"\nexport PATH=\"$PASCAL_PREVIEW_PREFIX/bin:$PATH\"\npascal --version\npascal update --version \"$PASCAL_PREVIEW_VERSION\"\npascal editor --no-open\n# For an existing hosted autonomous-agent key:\nPASCAL_API_KEY='sk_live_...' pascal agent claim\n```\n\nThe expected archive SHA-256 is `8c8204109c619898a34e76cbb33a92cb1a0c9b9ac63bcd7a3b654a2dba9c3c6b`. The same-version `update` command installs and activates this CLI's bundled runtime, restarting an older running service when necessary. Keep an existing `PASCAL_HOME` unchanged so stored projects remain in the same data directory; `pascal editor` alone reuses any healthy service, including an older one. Keep the preview prefix on the agent host's `PATH` before using the Claude plugin-provided connector, runn",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "产品发布",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "3D Generation",
+        "TypeScript",
+        "React"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "pascalorg/editor: Open-source 3D architectural editor with a local CLI, MCP tools, and practical workflows for humans and AI agents.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.8,
+      "tcloud_relevance": 4.4,
+      "tcloud_integration": "**editor** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+      "tcloud_products": [
+        "COS"
+      ],
+      "tcloud_reasons": [
+        "**editor** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发"
+      ],
+      "tcloud_evidence": [
+        "storage",
+        "archive"
+      ],
+      "tcloud_primary_product": "COS",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 COS：**editor** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+      "tcloud_official_matches": [
+        "COS"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（COS）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（COS）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「pascalorg/editor - Open-source 3D architectural e…」（pascalorg/editor: Open-source 3D architectural editor with…），涉及 Agent / MCP / 3D Generation → 可写方向：**editor** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「editor」涉及对象存储场景，可结合 COS 写教程或场景解读。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "COS",
+      "official_angle_cn": "围绕 editor 的核心功能（pascalorg/editor: Open-source 3D architectural editor with a local CLI, MCP too…），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 editor 的 3D 效果展示图或 Demo 截图，展示技术效果比文字更有说服力。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+      "platform_copies": {
+        "primary_product": "COS",
+        "product_display": "COS",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 editor 的核心功能（pascalorg/editor: Open-source 3D architectural editor with a local CLI, MCP too…），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Cloud Object Storage (COS) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 editor 的 3D 效果展示图或 Demo 截图，展示技术效果比文字更有说服力。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+        "x_cn": "pascalorg/editor: Open-source 3D architectural editor with a local…。如果站在腾讯云国际站官方号来写，这条更适合从 COS 切入：如果以腾讯云国际站官方号来写，这条建议主推 COS：**editor*…",
+        "x_en": "pascalorg/editor - Open-source 3D architectural editor with a local CLI, MCP tools, and…. For Tencent Cloud, this fits Cloud Object Storage (COS): Object storage for knowledge bases, datasets, files, and AI workflow persistence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：pascalorg/editor: Open-source 3D architectural editor with a local…。如果从腾讯云视角切，这条最适合带到 COS，重点聊 技术科普 + 教程拆解 + 产品关联（COS）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: pascalorg/editor - Open-source 3D architectural editor with a local CLI, MCP tools, and…. From a Tencent Cloud angle, the best hook is Cloud Object Storage (COS), especially around technical explainer + hands-on walkthrough + product tie-in (COS). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。pascalorg/editor: Open-source 3D architectural editor with a local…。如果用官方号发，建议主推 COS，重点讲 技术科普 + 教程拆解 + 产品关联（COS），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 COS：**editor** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. pascalorg/editor - Open-source 3D architectural editor with a local CLI, MCP tools, and…. For Tencent Cloud, the better angle is Cloud Object Storage (COS). Object storage for knowledge bases, datasets, files, and AI workflow persistence. The content should focus on technical explainer + hands-on walkthrough + product tie-in (COS).",
+        "reddit_title_cn": "这类热点如果从 COS 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：pascalorg/editor: Open-source 3D architectural editor with a local…。如果站在腾讯云国际站官方号视角，我会更想把它写成 COS 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（COS）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Cloud Object Storage (COS)?",
+        "reddit_body_en": "A recent trend caught my eye: pascalorg/editor - Open-source 3D architectural editor with a local CLI, MCP tools, and…. Instead of reposting it as news, I'd frame it through Cloud Object Storage (COS) and focus on technical explainer + hands-on walkthrough + product tie-in (COS). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "editor：开源 3D 建筑编辑器，具有本地 CLI、MCP 工具以及适用于人类和 AI 代理的实用工作流程。",
+    "developer_profile": {
+      "github_username": "pascalorg",
+      "profile_url": "https://github.com/pascalorg",
+      "name": "Pascal",
+      "bio": "Intelligence upgrade for every building",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://editor.pascal.app",
+      "twitter_username": "pascal_app",
+      "email": "hello@pascal.app",
+      "followers": 360,
+      "following": 0,
+      "public_repos": 16,
+      "avatar_url": "https://avatars.githubusercontent.com/u/214160140?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/pascal_app"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/pascalapp"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "earthtojake/text-to-cad - A library of agent skills for CAD, CAE and CAM",
+    "url": "https://github.com/earthtojake/text-to-cad",
+    "heat": "15,148 stars",
+    "time": "Today",
+    "developer_name": "earthtojake",
+    "developer_url": "https://github.com/earthtojake",
+    "developer_email": "",
+    "today_stars": "124 stars today",
+    "language": "Python",
+    "summary": "A library of agent skills for CAD, CAE and CAM",
+    "content": " \n\n \n\n \n\n \n████████╗███████╗██╗  ██╗████████╗██████╗  ██████╗ █████╗ ██████╗ \n╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝╚════██╗██╔════╝██╔══██╗██╔══██╗\n   ██║   █████╗   ╚███╔╝    ██║    █████╔╝██║     ███████║██║  ██║\n   ██║   ██╔══╝   ██╔██╗    ██║   ██╔═══╝ ██║     ██╔══██║██║  ██║\n   ██║   ███████╗██╔╝ ██╗   ██║   ███████╗╚██████╗██║  ██║██████╔╝\n   ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═════╝ \n \n\nA library of agent skills for CAD, CAE and CAM\n\nDocs\n\n[](https://github.com/earthtojake/text-to-cad/actions/workflows/test.yml?query=branch%3Amain)\n[](https://discord.gg/5FGB9DwJYU)\n[](https://github.com/earthtojake/text-to-cad/stargazers)\n[](LICENSE)\n[](https://x.com/earthtojake)\n[](skills/cad/requirements.txt)\n[](skills/cad/SKILL.md)\n[](skills/cad/SKILL.md)\n[](skills/cad/SKILL.md)\n[](skills/urdf/SKILL.md)\n[](skills/sdf/SKILL.md)\n[](skills/srdf/SKILL.md)\n\n \n\n# text-to-cad\n\ntext-to-cad is a library of agent skills for generating, inspecting, sourcing,\nslicing, and handing off CAD and robot-description artifacts from local project\nfiles.\n\n \n   \n     \n       \n         \n       \n        CAD  \n     \n     \n       \n         \n       \n        URDF  \n     \n     \n       \n         \n       \n        SRDF / MoveIt2  \n     \n   \n \n\n## 🧰 Skills\n\nInstall the library to give agents focused workflows for CAD, fabrication,\nrobot description files, simulation, and local review.\n\n| Skill        | Summary                                                                                                                                            | Source                                              |\n| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |\n| CAD          | Creates and edits CAD models from plain-language or image requests, with STEP as the main output along with options to export to STL, 3MF and GLB. | skills/cad                   |\n| CAD Viewer   | Shows local browser previews for CAD and robot files.                                                                                     | skills/cad-viewer     |\n| step.parts   | Finds off-the-shelf STEP parts like screws, bearings, motors, and connectors.                                                                      | skills/step-parts     |\n| DXF          | Creates 2D DXF drawings like profiles, templates, gaskets, and cut layouts from Python sources or CAD geometry.                                    | skills/dxf                   |\n| URDF         | Writes robot structure files with links, joints, limits, inertials, and meshes.                                                                    | skills/urdf                 |\n| SRDF         | Adds MoveIt planning groups, end effectors, poses, and collision rules to a URDF.                                                                  | skills/srdf                 |\n| SDF          |",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "earthtojake/text-to-cad: A library of agent skills for CAD, CAE and CAM",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「earthtojake/text-to-cad - A library of agent skil…」（earthtojake/text-to-cad: A library of agent skills for CAD,…），涉及 Agent / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「earthtojake/text-to-cad - A library of…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 text-to-cad 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 text-to-cad 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "earthtojake/text-to-cad: A library of agent skills for CAD, CAE and…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "earthtojake/text-to-cad - A library of agent skills for CAD, CAE and CAM. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：earthtojake/text-to-cad: A library of agent skills for CAD, CAE and…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: earthtojake/text-to-cad - A library of agent skills for CAD, CAE and CAM. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。earthtojake/text-to-cad: A library of agent skills for CAD, CAE and…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. earthtojake/text-to-cad - A library of agent skills for CAD, CAE and CAM. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：earthtojake/text-to-cad: A library of agent skills for CAD, CAE and…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: earthtojake/text-to-cad - A library of agent skills for CAD, CAE and CAM. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "text-to-cad：CAD、CAE 和 CAM 代理技能库",
+    "developer_profile": {
+      "github_username": "earthtojake",
+      "profile_url": "https://github.com/earthtojake",
+      "name": "earthtojake",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "www.earthtojake.com",
+      "twitter_username": "earthtojake",
+      "email": "",
+      "followers": 419,
+      "following": 18,
+      "public_repos": 18,
+      "avatar_url": "https://avatars.githubusercontent.com/u/10742417?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/earthtojake"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/jake-fitzgerald-680855b1/"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.earthtojake.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "cathrynlavery/diagram-design - 38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+    "url": "https://github.com/cathrynlavery/diagram-design",
+    "heat": "36,871 stars",
+    "time": "Today",
+    "developer_name": "cathrynlavery",
+    "developer_url": "https://github.com/cathrynlavery",
+    "developer_email": "",
+    "today_stars": "2,249 stars today",
+    "language": "HTML",
+    "summary": "38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+    "content": "# Diagram Design\n\n**Editorial diagrams your designer won't hate.**\n\n   \n\n[](docs/screenshots/architecture.png)\n\n[](docs/screenshots/loop.png)\n\n*New in 2.0 — the Loop: flywheels with a shared-memory hub. The dashed lines are the write-backs.*\n\n*New in 2.3: semantic system patterns and optional accessible motion, while static output stays the default.*\n\n*New in 2.5.10: ten more layout grammars — Sankey, fishbone, Wardley map, kanban, user journey, deployment, dependency graph, UML class, story map, and database schema.*\n\n39 editorial diagram types for Claude Code, Codex, Factory Droid, Pi, and Agent Skills-compatible hosts. Self-contained HTML + SVG. No shadows. No Mermaid slop. Semantic patterns describe behavior separately from layout, so a queue, policy trace, or trust boundary can use the nearest existing type without expanding the type count. Static HTML remains the default; optional motion is available for ordered explanations. The skill also redraws draw.io, Mermaid, or Excalidraw sources at a chosen format, size, and detail level.\n\nNo Figma. No generic rounded boxes. No 30-minute color-picking sessions.\n\n---\n\n## Why I built it\n\nI write at littlemight.com (and run BestSelf.co on the side). Every time I needed a diagram — an architecture sketch, a flowchart, a pyramid of what matters most — I'd ask Claude and get back a generic rounded-box thing that looked nothing like the rest of the site. I'd either fight with Figma for 30 minutes or just skip the diagram.\n\nSo I built a Claude Code skill for it. Thirty-nine visual types, editorial quality, matches your brand in 60 seconds by reading your website.\n\n> *The highest-quality move is usually deletion.* Every node earns its place. The accent color is reserved for the 1–2 things the reader should look at first. Target density: 4/10.\n\n---\n\n## What it makes\n\nAll 39 visual types ship in three static variants: minimal light, minimal dark, and full-editorial. Open any of them directly in a browser. There is no build step, JavaScript, or external image dependency.\n\n \n \n        Architecture   Components + connections  \n        IT current-state   Legacy landscape + modernization  \n        Flowchart   Decision logic  \n \n \n        Sequence   Messages over time  \n        State machine   States + transitions  \n        ER / data model   Entities + fields  \n \n \n        Timeline   Events on an axis  \n        Swimlane   Cross-functional flow  \n        Quadrant   Two-axis positioning  \n \n \n        Radar / spider   Multi-axis comparison  \n        Loop / flywheel   Reinforcing cycle + shared hub  \n        Nested   Hierarchy by containment  \n \n \n        Tree   Parent → children  \n        Org chart   Ownership + routing  \n        Layer stack   Stacked abstractions  \n \n \n        Venn   Set overlap  \n        Pyramid / funnel   Ranked hierarchy or drop-off  \n        Bar chart   Categorical comparison  \n \n \n        Treemap   Part-of-whole by area  \n        Line chart   Trends over time  \n        Gantt   Tasks + phases on ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "cathrynlavery/diagram-design: 38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.5,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**diagram-design** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**diagram-design** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**diagram-design** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「cathrynlavery/diagram-design - 38 editorial diagr…」（cathrynlavery/diagram-design: 38 editorial diagram types fo…），涉及 Agent → 可写方向：**diagram-design** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「cathrynlavery/diagram-design - 38 edito…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 diagram-design 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 diagram-design 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 diagram-design 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 diagram-design 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "cathrynlavery/diagram-design: 38 editorial diagram types for Claude…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "cathrynlavery/diagram-design - 38 editorial diagram types for Claude Code, Codex, and P…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：cathrynlavery/diagram-design: 38 editorial diagram types for Claude…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: cathrynlavery/diagram-design - 38 editorial diagram types for Claude Code, Codex, and P…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。cathrynlavery/diagram-design: 38 editorial diagram types for Claude…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**diagram-design** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. cathrynlavery/diagram-design - 38 editorial diagram types for Claude Code, Codex, and P…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：cathrynlavery/diagram-design: 38 editorial diagram types for Claude…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: cathrynlavery/diagram-design - 38 editorial diagram types for Claude Code, Codex, and P…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "diagram-design：Claude Code、Codex 和 Pi 的 38 种编辑图表类型。独立的 HTML + SVG。",
+    "developer_profile": {
+      "github_username": "cathrynlavery",
+      "profile_url": "https://github.com/cathrynlavery",
+      "name": "Cathryn Lavery",
+      "bio": "Founder \r\n@bestselfco\r\n ($55M+ bootstrapped). Sold to PE in 2022. Bought it back 2024. Becoming AI Native & documenting as I go!",
+      "company": "",
+      "location": "",
+      "blog": "http://littlemight.com",
+      "twitter_username": "cathrynlavery",
+      "email": "",
+      "followers": 890,
+      "following": 9,
+      "public_repos": 46,
+      "avatar_url": "https://avatars.githubusercontent.com/u/50469282?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/cathrynlavery"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/cathryn-lavery/"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/cathryn.lavery/"
+        },
+        {
+          "platform": "unknown",
+          "url": "http://littlemight.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "heat": "104,145 stars",
+    "time": "Today",
+    "developer_name": "TauricResearch",
+    "developer_url": "https://github.com/TauricResearch",
+    "developer_email": "",
+    "today_stars": "367 stars today",
+    "language": "Python",
+    "summary": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "content": " \n   \n \n\n \n     \n     \n     \n     \n \n \n \n     \n \n \n \n   \n   Deutsch  | \n   Español  | \n   français  | \n   日本語  | \n   한국어  | \n   Português  | \n   Русский  | \n   中文 \n \n\n---\n\n# TradingAgents: Multi-Agents LLM Financial Trading Framework\n\n## News\n- [2026-08] **TradingAgents v0.4.0** released with look-ahead / point-in-time fixes across FRED macro, social sentiment, and the decision-log memory; clearer decision signals; working CLI checkpoint resume; Trader price grounding; and the GPT-5.6 and GLM-5.3 models. See CHANGELOG.md for the full list.\n- [2026-07] **TradingAgents v0.3.1** released with correctness and stability fixes: Alpha Vantage look-ahead filtering, graph-router crash-safety, graph-shape-aware checkpoint resume, working crypto sentiment sources, a configurable LLM retry budget, Bedrock API-key auth, and Claude Sonnet 5 / Fable 5 support.\n- [2026-06] **TradingAgents v0.3.0** released with a verified data-access contract, an expanded provider registry (NVIDIA, Kimi, Groq, Mistral, Bedrock, and any OpenAI-compatible endpoint), FRED and Polymarket data vendors, a current-generation model catalog, and a CI gate.\n- [2026-05] **TradingAgents v0.2.5** released with the grounded Sentiment Analyst, GPT-5.5 etc. model coverage, Qwen/GLM/MiniMax dual-region support, `TRADINGAGENTS_*` env-var configurability with API-key auto-detection, remote Ollama support, non-US alpha benchmarks, and ticker path-traversal hardening.\n- [2026-04] **TradingAgents v0.2.4** released with structured-output agents (Research Manager, Trader, Portfolio Manager), LangGraph checkpoint resume, persistent decision log, DeepSeek/Qwen/GLM/Azure provider support, Docker, and a Windows UTF-8 encoding fix.\n- [2026-03] **TradingAgents v0.2.3** released with multi-language support, GPT-5.4 family models, unified model catalog, backtesting date fidelity, and proxy support.\n- [2026-03] **TradingAgents v0.2.2** released with GPT-5.4/Gemini 3.1/Claude 4.6 model coverage, five-tier rating scale, OpenAI Responses API, Anthropic effort control, and cross-platform stability.\n- [2026-02] **TradingAgents v0.2.0** released with multi-provider LLM support (GPT-5.x, Gemini 3.x, Claude 4.x, Grok 4.x) and improved system architecture.\n- [2026-01] **Trading-R1** Technical Report released, with Terminal expected to land soon.\n\n \n\n🚀 TradingAgents | ⚡ Installation & CLI | 🎬 Demo | 📦 Package Usage | 🤝 Contributing | 📄 Citation\n\n \n\n> 🎉 **TradingAgents** officially released! We have received numerous inquiries about the work, and we would like to express our thanks for the enthusiasm in our community.\n>\n> So we decided to fully open-source the framework. Looking forward to building impactful projects with you!\n\n## TradingAgents Framework\n\nTradingAgents is a multi-agent trading framework that mirrors the dynamics of real-world trading firms. By deploying specialized LLM-powered agents: from fundamental analysts, sentiment experts, and technical analysts, to trader, risk management team, the platform collab",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 10,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "azure",
+        "docker"
+      ],
+      "ai_hits": [
+        "llm",
+        "gpt",
+        "claude",
+        "gemini",
+        "mistral",
+        "qwen",
+        "deepseek",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "DeepSeek",
+        "Mistral",
+        "通义千问"
+      ],
+      "competitors": [
+        "Azure"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.5,
+      "tcloud_relevance": 6.4,
+      "tcloud_integration": "**TradingAgents** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**TradingAgents** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "llm",
+        "claude",
+        "gemini",
+        "deepseek",
+        "qwen"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**TradingAgents** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「TauricResearch/TradingAgents - TradingAgents: Mul…」（TauricResearch/TradingAgents: TradingAgents: Multi-Agents L…），涉及 LLM / Agent → 可写方向：**TradingAgents** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「TradingAgents」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 TradingAgents 的核心功能（TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Financial Trading…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 TradingAgents 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 TradingAgents 的核心功能（TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Financial Trading…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 TradingAgents 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**TradingAgents** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Finan…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: TauricResearch/TradingAgents - TradingAgents: Multi-Agents LLM Financial Trading Framew…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "TradingAgents：多代理LLM金融交易框架",
+    "developer_profile": {
+      "github_username": "TauricResearch",
+      "profile_url": "https://github.com/TauricResearch",
+      "name": "Tauric Research",
+      "bio": "Pioneering Trading Intelligence with AI Precision",
+      "company": "",
+      "location": "United States of America",
+      "blog": "",
+      "twitter_username": "TauricResearch",
+      "email": "",
+      "followers": 3518,
+      "following": 0,
+      "public_repos": 3,
+      "avatar_url": "https://avatars.githubusercontent.com/u/192884433?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "https://tauric.ai"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://x.com/TauricResearch"
+        }
+      ],
+      "is_org": true
+    }
+  }
+]
