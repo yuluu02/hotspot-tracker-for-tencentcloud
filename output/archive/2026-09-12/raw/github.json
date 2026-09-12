@@ -1,0 +1,879 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "ayghri/i-have-adhd - A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+    "url": "https://github.com/ayghri/i-have-adhd",
+    "heat": "42,254 stars",
+    "time": "Today",
+    "developer_name": "ayghri",
+    "developer_url": "https://github.com/ayghri",
+    "developer_email": "",
+    "today_stars": "3,463 stars today",
+    "language": "Python",
+    "summary": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+    "content": " \n   \n \n \n   ADHD-friendly outputs. No ADHD diagnosis needed! \n \n \n     \n \n\n \n   🇬🇧  ·\n   🇨🇳  ·\n   🇧🇷  ·\n   🇯🇵  ·\n   🇻🇳  ·\n   🇰🇷  ·\n   🇹🇭 \n \n\n## Install\n\nCopy/paste into your CLI prompt:\n\n```text\nInstall the i-have-adhd skill/plugin from https://github.com/ayghri/i-have-adhd, refer to the repo's AGENTS.md for instructions.\n```\n\nOr 🔗 check the installation instructions.\n\n## What it does\n\nA skill for your coding assistant that stops it from burying the answer. Action first. Steps numbered. No \"Hope this helps!\"\n\n## What changes\n\n \n \n \n\n## Before\n\n> Great question! Let me think about this. Your auth flow has a few moving pieces: the middleware, the token verification, and the cookie handling. Looking at `src/auth.ts`, the `verifyToken` function (around lines 42-58) seems to be using an older `jsonwebtoken` API. One approach would be to update the package and rewrite that function. After making the change, you'd want to run the auth tests to confirm nothing breaks. By the way, you might also want to look at your dependency versions overall. Hope this helps! Let me know if you want to dig deeper.\n\n \n\n \n\n## After\n\n> Run `npm install jsonwebtoken@latest`, then edit `src/auth.ts:42`.\n>\n> 1. Open `src/auth.ts`\n> 2. Replace `verifyToken` (lines 42–58) with the snippet below\n> 3. Run `npm test -- auth.spec.ts`\n>\n> Next: paste the first failing line if any test fails.\n\n \n \n \n\n## The rules\n\n10 rules. Full text in SKILL.md.\n\n1. Lead with the next action.\n2. Number multi-step tasks.\n3. End with one concrete next step.\n4. Suppress tangents.\n5. Restate state every turn.\n6. Specific time estimates (minutes, not \"a bit\").\n7. Make wins visible.\n8. Matter-of-fact errors.\n9. Cap lists to 5 items.\n10. No preamble. No recap. No closers.\n\n## Tune it\n\nFork, edit `skills/i-have-adhd/SKILL.md`, then swap your copy in:\n\n```bash\nclaude plugin uninstall i-have-adhd            # drop the upstream copy first:\nclaude plugin marketplace remove i-have-adhd   # fork and upstream share both names\nclaude plugin marketplace add  /i-have-adhd\nclaude plugin install i-have-adhd@i-have-adhd\n```\n\nRestart Claude Code, then re-invoke `/i-have-adhd`.\n\n## Credits\n\nLoosely based on *The Adult ADHD Tool Kit* by J. Russell Ramsay and Anthony L. Rostain. Adapted for how an LLM should respond, not how a human should organize their day.\n\n## License\n\nMIT.\n\nStar ⭐ if it saved you one scroll past one \"Great question!\"",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "llm",
+        "claude",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "ayghri/i-have-adhd: A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.0,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**i-have-adhd** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs i-have-adhd 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**i-have-adhd** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs i-have-adhd 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**i-have-adhd** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs i-have-adhd 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「ayghri/i-have-adhd - A skill to stop your coding…」（ayghri/i-have-adhd: A skill to stop your coding agent from…），涉及 LLM / Agent / TypeScript → 可写方向：**i-have-adhd** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs i-have-adhd 的横向对比：CodeBuddy 覆盖需求…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「ayghri/i-have-adhd - A skill to stop yo…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 i-have-adhd 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 i-have-adhd 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 i-have-adhd 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 i-have-adhd 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "ayghri/i-have-adhd: A skill to stop your coding agent from burying…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "ayghri/i-have-adhd - A skill to stop your coding agent from burying the answer. ADHD-fr…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：ayghri/i-have-adhd: A skill to stop your coding agent from burying…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: ayghri/i-have-adhd - A skill to stop your coding agent from burying the answer. ADHD-fr…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。ayghri/i-have-adhd: A skill to stop your coding agent from burying…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**i-have-adhd** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs i-have-adhd 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. ayghri/i-have-adhd - A skill to stop your coding agent from burying the answer. ADHD-fr…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：ayghri/i-have-adhd: A skill to stop your coding agent from burying…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: ayghri/i-have-adhd - A skill to stop your coding agent from burying the answer. ADHD-fr…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "i-have-adhd：阻止编码代理隐藏答案的技能。多动症友好的输出。",
+    "developer_profile": {
+      "github_username": "ayghri",
+      "profile_url": "https://github.com/ayghri",
+      "name": "Ayoub Ghriss",
+      "bio": "CLIMB research group.\r\nML\r\n",
+      "company": "University of Colorado, Boulder",
+      "location": "Boulder, CO",
+      "blog": "https://ayghri.me",
+      "twitter_username": "",
+      "email": "",
+      "followers": 453,
+      "following": 10,
+      "public_repos": 79,
+      "avatar_url": "https://avatars.githubusercontent.com/u/32200675?v=4",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "https://ayghri.me"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "bilawalsidhu/gods-eye-view - A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+    "url": "https://github.com/bilawalsidhu/gods-eye-view",
+    "heat": "27,420 stars",
+    "time": "Today",
+    "developer_name": "bilawalsidhu",
+    "developer_url": "https://github.com/bilawalsidhu",
+    "developer_email": "",
+    "today_stars": "3,680 stars today",
+    "language": "JavaScript",
+    "summary": "A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+    "content": " \n\n# 🌐 God's Eye View\n\n[](https://github.com/bilawalsidhu/gods-eye-view/actions/workflows/ci.yml)\n\n### A spy-satellite simulator in your browser — then you realize the sources are public and the data is real.\n\nPhotorealistic 3D globe. Live aircraft, ships, satellites, earthquakes, traffic, and public cameras. Hands-free voice control powered by a realtime AI agent.\n\n*No place left behind.*\n\n \n   \n \n\n▶️ **From the project behind the viral God's Eye View series** *(formerly WorldView)* — 5M+ on YouTube · 25M+ across socials\n\n[](https://x.com/bilawalsidhu/status/2093798887815348521)\n\n🏆 **Reached #1 on GitHub Trending, daily and weekly · August 2026**\n\n**#8 Product of the Day** · Hunted by Chris Messina, creator of the hashtag\n\n*“pretty cool”* — Brendan Eich, creator of JavaScript and co-founder of Mozilla and Brave · Featured on **Pinokio**\n\n⚡ **Start without API keys.** Install with Pinokio or run locally from the terminal. Add optional keys inside the app. **→ Quick Start**\n\n \n\n---\n\n \n\n**Quick Start · First Five Minutes · Talk to It · What's Live · Under the Hood · Keys & Costs**\n\n \n\n---\n\n## 🌍 Why This Exists\n\nGod's Eye View brings public signals into one explorable globe. Track the world live. Talk to it. Break it. Extend it.\n\nFlight transponders, ship beacons, orbital elements, seismographs, and public cameras already tell us a lot about the world. God's Eye View puts them in the same place, so you can move between a global picture and an individual aircraft, ship, or street. It runs locally in your browser, with source code you can inspect and extend.\n\n> Half the magic is that it looks like a forbidden cockpit. The other half is that every line of code is inspectable.\n\nMost feeds are live or regularly refreshed. Traffic is simulated along real\nroads using aggregate location data. CCTV camera poses and rocket launch\ntrajectories are coarse estimates.\n\nStart with the included data sources, then add your own. Each layer is a separate module.\n\n---\n\n## 🎛️ What This Thing Does\n\n- **🛩️ Cockpit view:** Ride inside a tracked flight — the camera holds the terrain under you all the way down.\n- **📡 Contacts:** A 250 km roster of everything near your target — step through live aircraft and drop into any cockpit.\n- **🎯 Click-to-track anything:** Camera locks on, draws a fading trail, surfaces full metadata — and a tracked fire or vessel hands you off to the nearest live camera in one click.\n- **🖊️ Voice whiteboard:** Speak annotations onto the world — real boundary polygons, marks, and routes.\n- **🛫 3D hangar:** Real per-class aircraft models — 787, ATR-72, Citation, Bell 206, MQ-9 — and a tracked contact swaps from glyph to 3D model as you close in.\n- **🎨 Reskin reality:** GLSL sensor looks over the normal globe — CRT, NVG, FLIR/thermal, Noir, Snow.\n- **🟩 Detection overlay:** Screen-space bounding boxes and IDs on everything in view.\n- **🎖️ Military HUD:** Tactical heads-up display with intelligence-style telemetry.\n- **🌐 Global Context:** Stage the full si",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "3D Generation"
+      ],
+      "tone": "热点事件",
+      "detail_brief": "bilawalsidhu/gods-eye-view: A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.8,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「bilawalsidhu/gods-eye-view - A spy satellite simu…」（bilawalsidhu/gods-eye-view: A spy satellite simulator in yo…），涉及 Agent / 3D Generation → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「bilawalsidhu/gods-eye-view - A spy sate…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 gods-eye-view 的 3D 效果展示图或 Demo 截图，展示技术效果比文字更有说服力。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 gods-eye-view 的 3D 效果展示图或 Demo 截图，展示技术效果比文字更有说服力。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "bilawalsidhu/gods-eye-view: A spy satellite simulator in your brows…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "bilawalsidhu/gods-eye-view - A spy satellite simulator in your browser, except the data…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：bilawalsidhu/gods-eye-view: A spy satellite simulator in your brows…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: bilawalsidhu/gods-eye-view - A spy satellite simulator in your browser, except the data…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。bilawalsidhu/gods-eye-view: A spy satellite simulator in your brows…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. bilawalsidhu/gods-eye-view - A spy satellite simulator in your browser, except the data…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：bilawalsidhu/gods-eye-view: A spy satellite simulator in your brows…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: bilawalsidhu/gods-eye-view - A spy satellite simulator in your browser, except the data…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "gods-eye-view：浏览器中的间谍卫星模拟器，只不过数据是真实的。在逼真的 3D 地球仪上实时呈现开源空间智能。",
+    "developer_profile": {
+      "github_username": "bilawalsidhu",
+      "profile_url": "https://github.com/bilawalsidhu",
+      "name": "Bilawal Sidhu",
+      "bio": "Connecting the world of bits & atoms. Blending reality & imagination. ",
+      "company": "",
+      "location": "",
+      "blog": "https://spatialintelligence.ai",
+      "twitter_username": "",
+      "email": "",
+      "followers": 3437,
+      "following": 0,
+      "public_repos": 2,
+      "avatar_url": "https://avatars.githubusercontent.com/u/106619546?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "http://x.com/@bilawalsidhu"
+        },
+        {
+          "platform": "generic",
+          "url": "http://linkedin.com/in/bilawalsidhu"
+        },
+        {
+          "platform": "generic",
+          "url": "http://youtube.com/@bilawalsidhu"
+        },
+        {
+          "platform": "generic",
+          "url": "https://halfpixel.ai"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://spatialintelligence.ai"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agents + WhatsApp (WAHA). Open alternative to Kommo, Octadesk & Intercom for any business that sells by chat. MCP-ready, multi-tenant, LGPD.",
+    "url": "https://github.com/melgarafael/DeskcommCRM",
+    "heat": "1,438 stars",
+    "time": "Today",
+    "developer_name": "melgarafael",
+    "developer_url": "https://github.com/melgarafael",
+    "developer_email": "",
+    "today_stars": "152 stars today",
+    "language": "TypeScript",
+    "summary": "Open-source AI sales OS — self-hosted CRM with native AI agents + WhatsApp (WAHA). Open alternative to Kommo, Octadesk & Intercom for any business that sells by chat. MCP-ready, multi-tenant, LGPD.",
+    "content": " \n\n🇧🇷 Português · 🇺🇸 English · 🇪🇸 Español\n\n \n   \n   \n \n\n# 🛠️ DeskcommCRM — o Sistema Operacional de Vendas com IA, open source, pro WhatsApp\n\n**Agentes de IA que atendem, qualificam e vendem no WhatsApp — dentro de um CRM open source rodando no seu servidor.**\n**Sem mensalidade, sem feature travada, seus dados com você. A alternativa aberta a Kommo, Octadesk e Intercom.**\n\n[](https://nextjs.org)\n[](https://www.typescriptlang.org)\n[](https://supabase.com)\n[](hostgator-setup-kit/)\n[](https://github.com/melgarafael/DeskcommCRM/actions/workflows/ci.yml)\n[](LICENSE)\n\n**⚡ Instalar** · **🔄 Atualizar** · **🧭 Visão** · **🏗️ Arquitetura** · **🤝 Contribuir** · **🗺️ Roadmap**\n\n \n\n---\n\n> ### ☁️ Rode este CRM em produção com 1 comando\n>\n> O DeskcommCRM foi desenvolvido em **parceria com a HostGator**: o `hostgator-setup-kit/`\n> instala o CRM completo (app + WhatsApp + banco) numa VPS com um único comando, e o\n> runbook de produção já assume esse ambiente.\n>\n> **👉 Assinar a VPS HostGator com desconto da parceria** —\n> datacenter em São Paulo, ideal pro WhatsApp rodando 24/7. *(link de parceiro — assinar por ele apoia o projeto e sai mais barato)*\n>\n> **Ainda não tem servidor?** Rode isto **no seu computador** (macOS, Linux ou WSL). Ele diz\n> qual plano contratar — com os números do runbook, não um \"depende\" — e te devolve o\n> comando certo pro seu caso:\n>\n> ```bash\n> curl -fsSL https://raw.githubusercontent.com/melgarafael/DeskcommCRM/main/hostgator-setup-kit/comecar.sh | bash\n> ```\n>\n> *(prefere ler antes de executar? clone o repo e rode `bash hostgator-setup-kit/comecar.sh` —\n> ele não instala nada sem você confirmar.)*\n\n---\n\n## ⚡ Instalar na sua VPS (o caminho principal)\n\n### 1. Entre na sua VPS\n\nAbra o **Terminal** no seu computador (no Windows, o **PowerShell**; no Mac ou Linux, o\n**Terminal**) e conecte com o IP e a porta que a hospedagem te mandou por e-mail:\n\n```bash\nssh -p PORTA root@SEU_IP\n```\n\nTroque `PORTA` e `SEU_IP` pelos seus. Se a hospedagem não mencionou porta nenhuma, é a padrão\n(22) e você pode omitir: `ssh root@SEU_IP`.\n\nEle pede a senha. **Ao digitar, não aparece nada na tela — nem asteriscos.** Isso não é\ntravamento: é o terminal escondendo a senha. Digite (ou cole) e dê Enter.\n\n> Na primeira conexão ele pergunta `Are you sure you want to continue connecting?` — responda\n> `yes`. É o servidor se apresentando pela primeira vez.\n\n### 2. Rode o instalador\n\nJá dentro da VPS:\n\n```bash\ngit clone https://github.com/melgarafael/DeskcommCRM.git\ncd DeskcommCRM\nbash hostgator-setup-kit/install.sh\n```\n\nÉ isso. **Você não instala Node, nem pnpm, nem compila nada** — a imagem do app já vem pronta.\nSe faltar Docker, o instalador pergunta e instala sozinho.\n\n### O que você precisa ter em mãos\n\n| Item | Onde conseguir |\n|---|---|\n| **VPS com Docker** | HostGator (parceria) — ou qualquer VPS com Docker. 4 GB de RAM recomendados |\n| **Domínio** | Um registro **A** apontando pro IP da VPS (ex.: `crm.suaempresa.com.br`) |\n| **Banco** | Conta grátis no supabase",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "vps"
+      ],
+      "ai_hits": [
+        "ai",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "MCP",
+        "React"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM with native AI agents + WhatsApp (WAHA). Open alternative to Kommo, Octadesk & Intercom for any business that sells by chat. MCP-ready, multi-tenant, LGPD.",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.1,
+      "tcloud_relevance": 6.4,
+      "tcloud_integration": "**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行"
+      ],
+      "tcloud_evidence": [
+        "self-hosted",
+        "24/7",
+        "vps"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「melgarafael/DeskcommCRM - Open-source AI sales OS…」（melgarafael/DeskcommCRM: Open-source AI sales OS — self-hos…），涉及 MCP / React → 可写方向：**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — se…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「DeskcommCRM」支持自部署，可写『Lighthouse 一键部署 DeskcommCRM』实操教程。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 DeskcommCRM」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 DeskcommCRM 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 DeskcommCRM」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 DeskcommCRM 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Lighth…",
+        "x_en": "melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "DeskcommCRM：开源人工智能销售操作系统——带有原生人工智能代理的自托管 CRM + WhatsApp (WAHA)。为任何通过聊天进行销售的企业提供 Kommo、Octadesk 和 Intercom 的开放替代方案。",
+    "developer_profile": {
+      "github_username": "melgarafael",
+      "profile_url": "https://github.com/melgarafael",
+      "name": "Rafael Melgaço",
+      "bio": "Despertando o potencial do ser humano com as IAs",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 91,
+      "following": 1,
+      "public_repos": 18,
+      "avatar_url": "https://avatars.githubusercontent.com/u/119944436?v=4",
+      "social_links": [
+        {
+          "platform": "instagram",
+          "url": "https://instagram.com/melgarafael"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@melgarafael"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "vastsa/PI-Desktop - Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins",
+    "url": "https://github.com/vastsa/PI-Desktop",
+    "heat": "2,857 stars",
+    "time": "Today",
+    "developer_name": "vastsa",
+    "developer_url": "https://github.com/vastsa",
+    "developer_email": "vastsau@gmail.com",
+    "today_stars": "552 stars today",
+    "language": "TypeScript",
+    "summary": "Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins",
+    "content": " \n\n \n\n# PI-Desktop\n\n### Your local-first desktop workspace for AI coding agents.\n\n**Bring your own model. Open any local project. Let agents work — while you stay in control.**\n\nNo PI-Desktop account. No mandatory relay. No editor lock-in.\n\n \n\n[](https://github.com/vastsa/PI-Desktop/releases/latest)\n[](https://github.com/vastsa/PI-Desktop/releases)\n[](https://github.com/vastsa/PI-Desktop/stargazers)\n[](https://github.com/vastsa/PI-Desktop/actions/workflows/ci.yml)\n[](LICENSE)\n\n   \n   \n\n**Download PI-Desktop** ·\nDocumentation ·\nScreenshots ·\n简体中文\n\n \n\n \n\n A standalone desktop workspace for coding agents, projects, models, tools, and long-running sessions. \n\n \n\n---\n\n> [!IMPORTANT]\n> **PI-Desktop is currently in Early Preview.**\n>\n> The project is actively developed and already usable for real coding workflows, but APIs, extension interfaces, and some desktop behaviors may continue to evolve.\n\n## Why PI-Desktop?\n\nMost coding agents live inside a terminal, an editor extension, or a hosted service.\n\nPI-Desktop gives them a workspace of their own.\n\n \n \n \n\n### 🖥️ Desktop-first\n\nWork across repositories and sessions without tying your agent workflow to one editor or terminal.\n\nProjects, conversations, reviews, files, previews, notifications, and extensions live in one workspace.\n\n \n \n\n### ✨ Bring your own model\n\nUse OpenAI, Anthropic, local models, hosted gateways, or any OpenAI-compatible API.\n\nConfigure multiple providers and models, then switch between them per session.\n\n \n \n\n \n \n\n### 🔍 Inspectable by default\n\nAgents can read files, edit code, and run commands — but privileged actions pass through PI-Desktop's permission layer.\n\nReview diffs, inspect command output, and decide how much autonomy each session gets.\n\n \n \n\n### 🧩 Built to extend\n\nAdd Skills, MCP servers, Subagents, and installable Plugins.\n\nPlugins can contribute tools, commands, panels, themes, services, skills, and new workspace experiences.\n\n \n \n \n\n---\n\n## From prompt to patch\n\nGetting started only takes a few steps:\n\n1. **Connect a model**\n   Open **Settings → Model configuration**, choose a provider or compatible API, and add your credentials.\n\n2. **Open a project**\n   Add any local repository or project directory from the sidebar.\n\n3. **Pick Agent, Plan, or Goal**\n   **Agent** starts working. **Plan** waits until you approve a frozen implementation plan. **Goal** waits until you approve the outcome, then the agent chooses the path.\n\n4. **Review the result**\n   Inspect edits in the Review panel, check command output, preview the application, and continue the conversation without leaving PI-Desktop.\n\n---\n\n## More than a chat window\n\n### Agent, Plan, and Goal\n\nSame agent. Three gates. Privileged tools still go through the permission layer in every mode.\n\n| | **Agent** | **Plan** | **Goal** |\n| --- | --- | --- | --- |\n| You approve | Nothing extra | The implementation plan | The outcome and acceptance criteria |\n| The agent does | Reads, edits, runs commands, tests, iterates | Studies the",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "agent",
+        "prompt",
+        "mcp",
+        "openai",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Rust",
+        "Go"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "vastsa/PI-Desktop: Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.9,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**PI-Desktop** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs PI-Desktop 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**PI-Desktop** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs PI-Desktop 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "ai coding",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**PI-Desktop** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs PI-Desktop 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「vastsa/PI-Desktop - Local-first AI coding agent d…」（vastsa/PI-Desktop: Local-first AI coding agent desktop: Ele…），涉及 Agent / MCP / Rust → 可写方向：**PI-Desktop** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs PI-Desktop 的横向对比：CodeBuddy 覆盖需求→设…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「vastsa/PI-Desktop - Local-first AI codi…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 PI-Desktop 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 PI-Desktop 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 PI-Desktop 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 PI-Desktop 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "vastsa/PI-Desktop: Local-first AI coding agent desktop: Electron +…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "vastsa/PI-Desktop - Local-first AI coding agent desktop: Electron + Rust host core + pi…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：vastsa/PI-Desktop: Local-first AI coding agent desktop: Electron +…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: vastsa/PI-Desktop - Local-first AI coding agent desktop: Electron + Rust host core + pi…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。vastsa/PI-Desktop: Local-first AI coding agent desktop: Electron +…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**PI-Desktop** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs PI-Desktop 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. vastsa/PI-Desktop - Local-first AI coding agent desktop: Electron + Rust host core + pi…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：vastsa/PI-Desktop: Local-first AI coding agent desktop: Electron +…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: vastsa/PI-Desktop - Local-first AI coding agent desktop: Electron + Rust host core + pi…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "PI-Desktop：本地优先的 AI 编码代理桌面：Electron + Rust 主机核心 + pi Agent Harness + 用户可安装的插件",
+    "developer_profile": {
+      "github_username": "vastsa",
+      "profile_url": "https://github.com/vastsa",
+      "name": "Lan",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "lan0day",
+      "email": "vastsau@gmail.com",
+      "followers": 134,
+      "following": 1,
+      "public_repos": 21,
+      "avatar_url": "https://avatars.githubusercontent.com/u/48862574?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/lan0day"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "armory3d/armorpaint - Graphics Creation Tools",
+    "url": "https://github.com/armory3d/armorpaint",
+    "heat": "4,769 stars",
+    "time": "Today",
+    "developer_name": "armory3d",
+    "developer_url": "https://github.com/armory3d",
+    "developer_email": "",
+    "today_stars": "350 stars today",
+    "language": "C",
+    "summary": "Graphics Creation Tools",
+    "content": "\n\narmorpaint\n==============\n\nArmorPaint is a software for 3D PBR texture painting - check out the manual.\n\n*Note 1: This repository is aimed at developers and may not be stable. Distributed binaries are paid to help with the project funding. All of the development is happening here in order to make it accessible to everyone. Thank you for support!*\n\n*Note 2: If you are compiling git version of ArmorPaint, then you need to have a compiler (Visual Studio with clang tools - Windows, clang + dependencies - Linux, Xcode - macOS / iOS, Android Studio - Android) and git installed.*\n\n```bash\ngit clone https://github.com/armory3d/armorpaint\ncd armorpaint/paint\n```\n\n**Windows (x64)**\n```bash\n..\\base\\make\n# Open generated Visual Studio project at `build\\ArmorPaint.sln`\n# Build and run\n```\n\n**Linux (x64)**\n```bash\n../base/make --run\n```\n\n**macOS (arm64)**\n```bash\n../base/make\n# Open generated Xcode project at `build/ArmorPaint.xcodeproj`\n# Build and run\n```\n\n**Android (arm64)**\n```bash\n../base/make --target android\n# Open generated Android Studio project at `build/ArmorPaint`\n# Build for device\n```\n\n**iOS (arm64)**\n```bash\n../base/make --target ios\n# Open generated Xcode project `build/ArmorPaint.xcodeproj`\n# Build for device\n```\n\n**WASM**\n```bash\n../base/make --target wasm --compile --embed\n```\n\n**Generating a locale file**\n```bash\n./base/make --js base/tools/extract_locales.js  \n# Generates a `paint/assets/locale/ .json` file\n```\n\n**Embedding data files**\n```bash\n# Requires compiler with c23 #embed support (clang 19 or newer)\n../base/make --embed\n```",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "embedding"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "3D Generation",
+        "WebAssembly"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "armory3d/armorpaint: Graphics Creation Tools",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「armory3d/armorpaint - Graphics Creation Tools」（armory3d/armorpaint: Graphics Creation Tools），涉及 3D Generation / WebAssembly → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「armory3d/armorpaint - Graphics Creation…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 armorpaint 的 3D 效果展示图或 Demo 截图，展示技术效果比文字更有说服力。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 armorpaint 的 3D 效果展示图或 Demo 截图，展示技术效果比文字更有说服力。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "armory3d/armorpaint: Graphics Creation Tools。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "armory3d/armorpaint - Graphics Creation Tools. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：armory3d/armorpaint: Graphics Creation Tools。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: armory3d/armorpaint - Graphics Creation Tools. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。armory3d/armorpaint: Graphics Creation Tools。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. armory3d/armorpaint - Graphics Creation Tools. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：armory3d/armorpaint: Graphics Creation Tools。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: armory3d/armorpaint - Graphics Creation Tools. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "armorpaint：图形创建工具",
+    "developer_profile": {
+      "github_username": "armory3d",
+      "profile_url": "https://github.com/armory3d",
+      "name": "Armory 3D",
+      "bio": "Graphics Creation Tools",
+      "company": "",
+      "location": "",
+      "blog": "https://armorpaint.org/",
+      "twitter_username": "",
+      "email": "",
+      "followers": 356,
+      "following": 0,
+      "public_repos": 35,
+      "avatar_url": "https://avatars.githubusercontent.com/u/20436620?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "alsk1992/CloddsBot - Open Source AI trading agent that operates autonomously across 1000+ markets - Polymarket, Kalshi, Binance, Hyperliquid, Solana DEXs, 5 EVM chains. Scans for edge, executes instantly, manages risk while you sleep. Agent commerce protocol for machine-to-machine payments. Self-hosted. Built on Claude.",
+    "url": "https://github.com/alsk1992/CloddsBot",
+    "heat": "2,228 stars",
+    "time": "Today",
+    "developer_name": "alsk1992",
+    "developer_url": "https://github.com/alsk1992",
+    "developer_email": "",
+    "today_stars": "626 stars today",
+    "language": "TypeScript",
+    "summary": "Open Source AI trading agent that operates autonomously across 1000+ markets - Polymarket, Kalshi, Binance, Hyperliquid, Solana DEXs, 5 EVM chains. Scans for edge, executes instantly, manages risk while you sleep. Agent commerce protocol for machine-to-machine payments. Self-hosted. Built on Claude.",
+    "content": " \n   \n \n\n \n   AI-powered trading terminal for prediction markets, crypto & futures \n   \n   Claude + Odds = Clodds \n \n\n \n   Clodds CA:   2puc76ehVHyPXhZmDprtP2phDSFE4kzZKDT4JgAWpump \n \n\n \n     \n   \n   \n     \n   \n   \n   \n   \n     \n \n\n \n   \n \n\n \n   Quick Start  •\n   WebChat  •\n   Features  •\n   Channels  •\n   Markets  •\n   Launch  •\n   Forum  •\n   Docs \n \n\n---\n\n**Clodds** is a personal AI trading terminal for prediction markets, crypto spot, perpetual futures with leverage, **token launches**, and **Bittensor subnet mining**. Run it on your own machine, chat via any of **21 messaging platforms**, trade across **10 prediction markets + 7 futures exchanges**, with full Solana integration (Jupiter, Pump.fun, Raydium, Orca, Bags.fm) and EVM chains (Robinhood,Base, ETH, Arbitrum, Optimism, Polygon via Uniswap V3, 1inch, Virtuals Protocol), mine TAO on Bittensor, and manage your portfolio — all through natural conversation.\n\nPowered by Claude with 118+ trading strategies, whale tracking, arbitrage detection, copy trading, and DCA bots.\n\n> 🏗️ **Built for Colosseum Agent Hackathon on Solana** — Developed in 12 days as a fully-featured autonomous trading agent.\n\n---\n\n## Quick Start\n\n> **Requirement:** Node.js 22 or newer. Node.js 20 is not supported and dependency installation may fail.\n\n```bash\nnpm install -g https://github.com/alsk1992/CloddsBot/releases/latest/download/clodds.tgz --loglevel=error\nclodds onboard\n```\n\n> The old `clodds` package on npmjs.com is no longer maintained. Install the current release from GitHub using the command above.\n\nThat's it. The setup wizard walks you through everything — API key, messaging channel, and starts the gateway. WebChat opens at `http://localhost:18789/webchat`.\n\n \n  From source (alternative)  \n\n```bash\ngit clone https://github.com/alsk1992/CloddsBot.git && cd CloddsBot\nnpm install && cp .env.example .env\n# Add ANTHROPIC_API_KEY to .env\nnpm run build && npm start\n```\n \n\n## Demo\n\n**30-second terminal onboarding** — See Clodds in action:\n\n[](https://cloddsbot.com/onboard.mp4)\n\nThe demo shows:\n- Install the latest GitHub Release → `clodds onboard`\n- Onboarding wizard walks through credentials setup\n- Fetches live 15-minute BTC prediction markets from Polymarket (in real-time)\n- One command away from trading\n\nAfter the demo: Set your env vars or input credentials, then you're ready to trade.\n\n---\n\n## WebChat\n\nBuilt-in browser interface at `http://localhost:18789/webchat` -- no setup, no third-party dependencies.\n\n**Interface:**\n- Claude-style sidebar with 4 tabs: Chats, Projects, Artifacts, Code\n- Create and organize conversations into project folders\n- Artifacts and code blocks auto-extracted from chat history\n- One-click copy for code snippets, search across all conversations\n\n**Thinking Indicator:**\n- Live spinner with elapsed timer while the AI generates\n- Replaces generic typing dots with actual status feedback\n\n**Unlimited History:**\n- Every message stored in a dedicated database table (append-only, one row per ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "edge"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Open Source AI trading agent that operates autonomously across 1000+ markets - Polymarket, Kalshi, Binance, Hyperliquid, Solana DEXs, 5 EVM chains. Scans for edge, executes instantly, manages risk while you sleep. Agent commerce protocol for machine-to-machine payments. Self-hosted.",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.9,
+      "tcloud_relevance": 4.9,
+      "tcloud_integration": "**CloddsBot** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台",
+      "tcloud_products": [
+        "IM"
+      ],
+      "tcloud_reasons": [
+        "**CloddsBot** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台"
+      ],
+      "tcloud_evidence": [
+        "chat",
+        "messaging"
+      ],
+      "tcloud_primary_product": "IM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 IM：**CloddsBot** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台",
+      "tcloud_official_matches": [
+        "IM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（IM）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（IM）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「alsk1992/CloddsBot - Open Source AI trading agent…」（Open Source AI trading agent that operates autonomously acr…），涉及 Agent → 可写方向：**CloddsBot** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「CloddsBot」涉及即时通信场景，可结合 IM 写教程或场景解读。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "IM",
+      "official_angle_cn": "围绕 CloddsBot 的核心功能（Open Source AI trading agent that operates autonomously across 1000+ markets -…），以 IM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 CloddsBot 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 IM。",
+      "platform_copies": {
+        "primary_product": "IM",
+        "product_display": "IM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 CloddsBot 的核心功能（Open Source AI trading agent that operates autonomously across 1000+ markets -…），以 IM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Instant Messaging (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 CloddsBot 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 IM。",
+        "x_cn": "Open Source AI trading agent that operates autonomously across 1000…。如果站在腾讯云国际站官方号来写，这条更适合从 IM 切入：如果以腾讯云国际站官方号来写，这条建议主推 IM：**CloddsBo…",
+        "x_en": "alsk1992/CloddsBot - Open Source AI trading agent that operates autonomously across 100…. For Tencent Cloud, this fits Instant Messaging (Tencent Cloud): Build chat and messaging features with Tencent Cloud IM.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Open Source AI trading agent that operates autonomously across 1000…。如果从腾讯云视角切，这条最适合带到 IM，重点聊 技术科普 + 教程拆解 + 产品关联（IM）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: alsk1992/CloddsBot - Open Source AI trading agent that operates autonomously across 100…. From a Tencent Cloud angle, the best hook is Instant Messaging (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (IM). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Open Source AI trading agent that operates autonomously across 1000…。如果用官方号发，建议主推 IM，重点讲 技术科普 + 教程拆解 + 产品关联（IM），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 IM：**CloddsBot** 涉及消息/聊天场景 — 腾讯云 IM 提供全球互通的即时通讯能力，SDK 覆盖 iOS/Android/Web/Flutter 等平台",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. alsk1992/CloddsBot - Open Source AI trading agent that operates autonomously across 100…. For Tencent Cloud, the better angle is Instant Messaging (Tencent Cloud). Build chat and messaging features with Tencent Cloud IM. The content should focus on technical explainer + hands-on walkthrough + product tie-in (IM).",
+        "reddit_title_cn": "这类热点如果从 IM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Open Source AI trading agent that operates autonomously across 1000…。如果站在腾讯云国际站官方号视角，我会更想把它写成 IM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（IM）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Instant Messaging (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: alsk1992/CloddsBot - Open Source AI trading agent that operates autonomously across 100…. Instead of reposting it as news, I'd frame it through Instant Messaging (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (IM). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "CloddsBot：开源人工智能交易代理，在 1000 多个市场中自主运营 - Polymarket、Kalshi、Binance、Hyperliquid、Solana DEX、5 个 EVM 链。扫描边缘，立即执行，在您睡觉时管理风险。",
+    "developer_profile": {
+      "github_username": "alsk1992",
+      "profile_url": "https://github.com/alsk1992",
+      "name": "AL",
+      "bio": "Rust - Automation  - HFT ",
+      "company": "Strata",
+      "location": "England",
+      "blog": "stratabook.app",
+      "twitter_username": "Stratabookdex",
+      "email": "",
+      "followers": 81,
+      "following": 4,
+      "public_repos": 28,
+      "avatar_url": "https://avatars.githubusercontent.com/u/193760801?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/Stratabookdex"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://stratabook.app"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "nashsu/llm_wiki - LLM Wiki is a cross-platform desktop application that turns your documents into an organized, interlinked knowledge base — automatically. Instead of traditional RAG (retrieve-and-answer from scratch every time), the LLM incrementally builds and maintains a persistent wiki from your sources。",
+    "url": "https://github.com/nashsu/llm_wiki",
+    "heat": "18,831 stars",
+    "time": "Today",
+    "developer_name": "nashsu",
+    "developer_url": "https://github.com/nashsu",
+    "developer_email": "",
+    "today_stars": "647 stars today",
+    "language": "TypeScript",
+    "summary": "LLM Wiki is a cross-platform desktop application that turns your documents into an organized, interlinked knowledge base — automatically. Instead of traditional RAG (retrieve-and-answer from scratch every time), the LLM incrementally builds and maintains a persistent wiki from your sources。",
+    "content": "# LLM Wiki\n\n \n   \n \n\n \n   A personal knowledge base that builds itself.  \n  LLM reads your documents, builds a structured wiki, and keeps it current.\n \n\n \n   What is this?  •\n   Features  •\n   Tech Stack  •\n   Installation  •\n   Credits  •\n   License \n \n\n \n  English |  中文  |  日本語  |  한국어 \n \n\n---\n\n \n   \n \n\n## Features\n\n- **Two-Step Chain-of-Thought Ingest** — LLM analyzes first, then generates wiki pages with source traceability and incremental cache\n- **Multimodal Image Ingestion** — extract embedded images from PDFs, generate factual captions with a vision LLM, surface them in image-aware search results with lightbox preview and jump-to-source\n- **Multi-format Document Parsing** — ingest PDF, Office documents, EPUB/MOBI, Org mode, images, media, web clips, and batches of URLs, with built-in, cloud, or local MinerU PDF processing\n- **Flexible Model Configuration** — configure models per project, route Chat and Ingest independently, and manage custom providers, headers, and streaming output\n- **Source-grounded Retrieval** — use Read Sources Only mode to answer exclusively from original imported material\n- **Project Management & Migration** — export and import complete project archives across devices, and rebuild the Wiki index from existing pages\n- **4-Signal Knowledge Graph** — relevance model with direct links, source overlap, Adamic-Adar, and type affinity\n- **Louvain Community Detection** — automatic knowledge cluster discovery with cohesion scoring\n- **Graph Insights** — surprising connections and knowledge gaps with one-click Deep Research\n- **Vector Semantic Search** — optional embedding-based retrieval via LanceDB, supports any OpenAI-compatible endpoint\n- **Persistent Ingest Queue** — serial processing with crash recovery, cancel, retry, and progress visualization\n- **Folder Import** — recursive folder import preserving directory structure, folder context as LLM classification hint\n- **Source Folder Auto-Watch** — detects external changes in `raw/sources/` and keeps ingest/delete cleanup in sync\n- **Deep Research** — LLM-optimized search topics, multi-query web search via Tavily, SerpApi, or SearXNG, auto-ingest results into wiki\n- **Rust Backend Chat Agent** — tool-using chat runtime with wiki/source/graph/web retrieval, workspace file generation, shell approval, cancellation, and streaming tool events\n- **Agent Skills** — scan and enable local `SKILL.md` folders, select skills with `/skill`, and let the Agent read skill instructions on demand\n- **Generated Outputs Preview** — Agent-created Markdown, HTML, images, and other workspace files appear as outputs with preview and quick folder access\n- **Mermaid Diagram Rendering** — render Mermaid code blocks directly in chat and preview, with compact syntax-error cards instead of raw parser output\n- **Async Review System** — LLM flags items for human judgment, predefined actions, pre-generated search queries\n- **Chrome Web Clipper** — one-click web page capture with auto-ingest into knowledge",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "render"
+      ],
+      "ai_hits": [
+        "llm",
+        "agent",
+        "rag",
+        "multimodal",
+        "embedding",
+        "openai",
+        "knowledge graph"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "RAG",
+        "Agent",
+        "Rust"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "LLM Wiki is a cross-platform desktop application that turns your documents into an organized, interlinked knowledge base — automatically. Instead of traditional RAG (retrieve-and-answer from scratch every time), the LLM incrementally builds and maintains a persistent wiki from your sources。",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.1,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「nashsu/llm_wiki - LLM Wiki is a cross-platform de…」（LLM Wiki is a cross-platform desktop application that turns…），涉及 LLM / RAG / Agent → 可写方向：RAG 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「nashsu/llm_wiki - LLM Wiki is a cross-p…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 llm_wiki 的文档解析效果对比图（原始 PDF vs 结构化输出），直观展示工具价值。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 llm_wiki 的文档解析效果对比图（原始 PDF vs 结构化输出），直观展示工具价值。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "LLM Wiki is a cross-platform desktop application that turns your do…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "nashsu/llm_wiki - LLM Wiki is a cross-platform desktop application that turns your docu…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：LLM Wiki is a cross-platform desktop application that turns your do…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: nashsu/llm_wiki - LLM Wiki is a cross-platform desktop application that turns your docu…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。LLM Wiki is a cross-platform desktop application that turns your do…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. nashsu/llm_wiki - LLM Wiki is a cross-platform desktop application that turns your docu…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：LLM Wiki is a cross-platform desktop application that turns your do…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: nashsu/llm_wiki - LLM Wiki is a cross-platform desktop application that turns your docu…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "llm_wiki：LLM Wiki 是一个跨平台桌面应用程序，可自动将您的文档转变为有组织的、相互关联的知识库。法学硕士不是传统的 RAG（每次从头开始检索并回答），而是从您的来源逐步构建和维护持久的 wiki。",
+    "developer_profile": {
+      "github_username": "nashsu",
+      "profile_url": "https://github.com/nashsu",
+      "name": "nash_su",
+      "bio": "e/acc - AI创业者，大部分INTJ，偶尔ENTJ。前 OpenCSG 联合创始人，前 IterCast/LinuxCast 创始人，马拉松爱好者。",
+      "company": "",
+      "location": "Xi'an",
+      "blog": "https://www.nashsu.com",
+      "twitter_username": "nash_su",
+      "email": "",
+      "followers": 791,
+      "following": 53,
+      "public_repos": 91,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2127280?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/nash_su"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.nashsu.com"
+        }
+      ],
+      "is_org": false
+    }
+  }
+]
