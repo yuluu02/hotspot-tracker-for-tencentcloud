@@ -1,48 +1,35 @@
-# 📋 产品 Draft 汇总 — 2026-09-12
+# 📋 产品 Draft 汇总 — 2026-09-13
 
 > 共 3 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CodeBuddy — 今日内容 (3 条)
+# CodeBuddy — 今日内容 (2 条)
 
-## 1. P1 本周发 · ayghri/i-have-adhd
+## 1. P1 本周发 · asgeirtj/system_prompts_leaks
 
-**写什么**: 以 i-have-adhd 引发的开发者效率讨论为切入点
+**写什么**: 以 system_prompts_leaks 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "ayghri/i-have-adhd" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "asgeirtj/system_prompts_leaks" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)*
+*参考: [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks)*
 
 ---
 
-## 2. P1 本周发 · vastsa/PI-Desktop
+## 2. P1 本周发 · jihe520/MathModelAgent
 
-**写什么**: 以 PI-Desktop 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "vastsa/PI-Desktop" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [vastsa/PI-Desktop](https://github.com/vastsa/PI-Desktop)*
-
----
-
-## 3. P0 今天发 · [送码]在手机端 AI 编程最佳应用： Octrix
-
-**写什么**: 借「AI 编程最佳应用：」的讨论热度写一篇 AI 编程工具选型指南
+**写什么**: 以 MathModelAgent 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "[送码]在手机端 AI 编程最佳应用： Octrix" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "jihe520/MathModelAgent" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [[送码]在手机端 AI 编程最佳应用： Octrix](https://www.v2ex.com/t/1241311)*
+*参考: [jihe520/MathModelAgent](https://github.com/jihe520/MathModelAgent)*
 
 ---
 
