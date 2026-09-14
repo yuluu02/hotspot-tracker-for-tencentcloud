@@ -1,4 +1,4 @@
-# 📋 产品 Draft 汇总 — 2026-09-13
+# 📋 产品 Draft 汇总 — 2026-09-14
 
 > 共 3 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
@@ -7,7 +7,20 @@
 
 # CodeBuddy — 今日内容 (2 条)
 
-## 1. P1 本周发 · asgeirtj/system_prompts_leaks
+## 1. P1 本周发 · tech-leads-club/agent-skills
+
+**写什么**: 以 agent-skills 引发的开发者效率讨论为切入点
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "tech-leads-club/agent-skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [tech-leads-club/agent-skills](https://github.com/tech-leads-club/agent-skills)*
+
+---
+
+## 2. P1 本周发 · asgeirtj/system_prompts_leaks
 
 **写什么**: 以 system_prompts_leaks 引发的开发者效率讨论为切入点
 
@@ -20,32 +33,19 @@
 
 ---
 
-## 2. P1 本周发 · jihe520/MathModelAgent
 
-**写什么**: 以 MathModelAgent 引发的开发者效率讨论为切入点
+# Hunyuan — 今日内容 (1 条)
 
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+## 1. P0 今天发 · vxcontrol/pentagi
 
-**参考文案**:
-> 🤖 "jihe520/MathModelAgent" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+**写什么**: 围绕 pentagi 的核心功能（vxcontrol/pentagi: Fully autonomous AI Agents system capable of
 
-*参考: [jihe520/MathModelAgent](https://github.com/jihe520/MathModelAgent)*
-
----
-
-
-# IM — 今日内容 (1 条)
-
-## 1. P1 本周发 · alsk1992/CloddsBot
-
-**写什么**: 围绕 CloddsBot 的核心功能（Open Source AI trading agent that operates autonomously acros
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+**发到哪**: X（快评竞品动态） + LinkedIn（发深度对比分析文章）
 
 **参考文案**:
-> 💬 "alsk1992/CloddsBot" — real-time communication matters! Tencent Cloud IM supports 100M+ concurrent users with global coverage. #RealTime #Messaging
+> 🧠 "vxcontrol/pentagi" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
 
-*参考: [alsk1992/CloddsBot](https://github.com/alsk1992/CloddsBot)*
+*参考: [vxcontrol/pentagi](https://github.com/vxcontrol/pentagi)*
 
 ---
 

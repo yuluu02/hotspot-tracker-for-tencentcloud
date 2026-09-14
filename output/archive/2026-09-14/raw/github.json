@@ -1,0 +1,948 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "JustVugg/colibri - Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦",
+    "url": "https://github.com/JustVugg/colibri",
+    "heat": "30,271 stars",
+    "time": "Today",
+    "developer_name": "JustVugg",
+    "developer_url": "https://github.com/JustVugg",
+    "developer_email": "",
+    "today_stars": "868 stars today",
+    "language": "C",
+    "summary": "Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦",
+    "content": " \n   \n \n\n \n     \n     \n \n\n \n    Website   ·\n    Discord   ·\n  English ·  简体中文  ·  繁體中文  ·  Italiano \n \n\n**Tiny engine, immense model.** Run **frontier MoE models — 744B to 2.8T\nparameters** — on consumer and heterogeneous hardware, in pure C with zero\nengine dependencies, by treating storage, RAM, and VRAM as a single inference\nhierarchy (AI memory multitiering).\n\nNine families run today: **GLM-5.2/5.3** (744B), **GLM-5.3-Flash** (321B, with\nvision), **Inkling** (975B), **Kimi K3** (2.8T), **DeepSeek V4 Flash** (284B), **DeepSeek V4.1 Flash** (552B, with vision),\n**Qwen3.8-Flash-Next** (125B + 51B n-gram), **Qwen3.6** (35B-A3B) and\n**OLMoE** (7B) —\none C file each, the same `coli chat` / `coli serve` / `coli web` front end.\nFull roster ↓\n\n> **Colibrì is an inference engine you can run today, and an open research\n> platform.** Its primary goal is to pursue inference-side performance across\n> the entire software/hardware boundary — model formats, memory hierarchy,\n> storage I/O, placement, scheduling, kernels, speculation, and CPU/GPU\n> overlap — so large models depend less on scarce hardware and cost less to run.\n\nColibrì treats VRAM, RAM, and storage as a single multitier hierarchy, and it is\ndeliberately a place to test aggressive systems ideas — so there is **no SLA on\nspeed, and a hard guarantee on semantics**: experiments must earn their place\nthrough reproducible end-to-end measurements, and the default policy **never\nsilently changes model precision or router semantics**. Insufficient fast memory\nmay reduce speed; it must not quietly redefine the model.\n\n```\n$ ./coli chat\n  🐦 colibri v1.11.0 — GLM-5.2 · 744B MoE · int4 · streaming CPU\n  ✓ ready in 32s · resident 9.9 GB\n  › ciao!\n  ◆ Ciao! 😊 Come posso aiutarti oggi?\n```\n\n## See it running\n\n \n   \n \n  The web dashboard ( ./coli web ): a 744B model at  4 tok/s, TTFT 1.6 s, disk 0  —\nfull expert residency on 6× RTX 5090, with live token metrics, the per-turn time breakdown,\nthe VRAM/RAM/disk tier bar and the live mini-brain in the corner.  \n\n \n   \n \n  The  Brain  page: all 19,456 experts as a living cortex — colour is the storage tier,\nbrightness is routing heat, and every expert routed in a turn flashes white. Hovering shows the expert's\n measured topic affinity .  \n\n \n   \n \n  The  Atlas  page: the  measured expert atlas \nas a 3-D galaxy — 13,260 characterised experts, 1,041 replicated specialists clustering by topic\n(poetry, law, Chinese, SQL…). Position is measured routing affinity, not a learned embedding. Drag to spin.  \n\n## The research mission\n\nWith Colibrì, private frontier model access is not limited by availability of hyperscaler-class hardware.\n\nWith its multitiering features Colibrì **removes proprietary hardware dependencies aggressively \noptimizing functional inference engine pipelines**.\n\nOur operational mission includes changing how weights are represented and moved, deciding what\nlives in VRAM, RAM, or storage, overlapping heterogeneous compute, reducing\nlaunch and synchronizat",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "deepseek",
+        "embedding",
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "开发者话题",
+      "products": [
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "JustVugg/colibri: Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.6,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「JustVugg/colibri - Run frontier MoE models on har…」（JustVugg/colibri: Run frontier MoE models on hardware you a…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「JustVugg/colibri - Run frontier MoE mod…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 colibri 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 colibri 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "JustVugg/colibri: Run frontier MoE models on hardware you already o…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "JustVugg/colibri - Run frontier MoE models on hardware you already own — pure C, zero d…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：JustVugg/colibri: Run frontier MoE models on hardware you already o…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: JustVugg/colibri - Run frontier MoE models on hardware you already own — pure C, zero d…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。JustVugg/colibri: Run frontier MoE models on hardware you already o…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. JustVugg/colibri - Run frontier MoE models on hardware you already own — pure C, zero d…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：JustVugg/colibri: Run frontier MoE models on hardware you already o…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: JustVugg/colibri - Run frontier MoE models on hardware you already own — pure C, zero d…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "colibri：在您已经拥有的硬件上运行前沿 MoE 模型 - 纯 C、零依赖、从磁盘流式传输的专家。微小的发动机，巨大的模型。",
+    "developer_profile": {
+      "github_username": "JustVugg",
+      "profile_url": "https://github.com/JustVugg",
+      "name": "",
+      "bio": "Founder of Colibrì a tiny engine, immense model for affordable hardware.",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/justvugg"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://huggingface.co/Justvugg"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "bilawalsidhu/gods-eye-view - A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+    "url": "https://github.com/bilawalsidhu/gods-eye-view",
+    "heat": "32,332 stars",
+    "time": "Today",
+    "developer_name": "bilawalsidhu",
+    "developer_url": "https://github.com/bilawalsidhu",
+    "developer_email": "",
+    "today_stars": "2,680 stars today",
+    "language": "JavaScript",
+    "summary": "A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+    "content": " \n\n# 🌐 God's Eye View\n\n[](https://github.com/bilawalsidhu/gods-eye-view/actions/workflows/ci.yml)\n\n### A spy-satellite simulator in your browser — then you realize the sources are public and the data is real.\n\nPhotorealistic 3D globe. Live aircraft, ships, satellites, earthquakes, traffic, and public cameras. Hands-free voice control powered by a realtime AI agent.\n\n*No place left behind.*\n\n \n   \n \n\n▶️ **From the project behind the viral God's Eye View series** *(formerly WorldView)* — 5M+ on YouTube · 25M+ across socials\n\n[](https://x.com/bilawalsidhu/status/2093798887815348521)\n\n🏆 **Reached #1 on GitHub Trending, daily and weekly · August 2026**\n\n**#8 Product of the Day** · Hunted by Chris Messina, creator of the hashtag\n\n*“pretty cool”* — Brendan Eich, creator of JavaScript and co-founder of Mozilla and Brave · Featured on **Pinokio**\n\n⚡ **Start without API keys.** Install with Pinokio or run locally from the terminal. Add optional keys inside the app. **→ Quick Start**\n\n \n\n---\n\n \n\n**Quick Start · First Five Minutes · Talk to It · What's Live · Under the Hood · Keys & Costs**\n\n \n\n---\n\n## 🌍 Why This Exists\n\nGod's Eye View brings public signals into one explorable globe. Track the world live. Talk to it. Break it. Extend it.\n\nFlight transponders, ship beacons, orbital elements, seismographs, and public cameras already tell us a lot about the world. God's Eye View puts them in the same place, so you can move between a global picture and an individual aircraft, ship, or street. It runs locally in your browser, with source code you can inspect and extend.\n\n> Half the magic is that it looks like a forbidden cockpit. The other half is that every line of code is inspectable.\n\nMost feeds are live or regularly refreshed. Traffic is simulated along real\nroads using aggregate location data. CCTV camera poses and rocket launch\ntrajectories are coarse estimates.\n\nStart with the included data sources, then add your own. Each layer is a separate module.\n\n---\n\n## 🎛️ What This Thing Does\n\n- **🛩️ Cockpit view:** Ride inside a tracked flight — the camera holds the terrain under you all the way down.\n- **📡 Contacts:** A 250 km roster of everything near your target — step through live aircraft and drop into any cockpit.\n- **🎯 Click-to-track anything:** Camera locks on, draws a fading trail, surfaces full metadata — and a tracked fire or vessel hands you off to the nearest live camera in one click.\n- **🖊️ Voice whiteboard:** Speak annotations onto the world — real boundary polygons, marks, and routes.\n- **🛫 3D hangar:** Real per-class aircraft models — 787, ATR-72, Citation, Bell 206, MQ-9 — and a tracked contact swaps from glyph to 3D model as you close in.\n- **🎨 Reskin reality:** GLSL sensor looks over the normal globe — CRT, NVG, FLIR/thermal, Noir, Snow.\n- **🟩 Detection overlay:** Screen-space bounding boxes and IDs on everything in view.\n- **🎖️ Military HUD:** Tactical heads-up display with intelligence-style telemetry.\n- **🌐 Global Context:** Stage the full si",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "3D Generation"
+      ],
+      "tone": "热点事件",
+      "detail_brief": "bilawalsidhu/gods-eye-view: A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.8,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「bilawalsidhu/gods-eye-view - A spy satellite simu…」（bilawalsidhu/gods-eye-view: A spy satellite simulator in yo…），涉及 Agent / 3D Generation → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「bilawalsidhu/gods-eye-view - A spy sate…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 gods-eye-view 的 3D 效果展示图或 Demo 截图，展示技术效果比文字更有说服力。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 gods-eye-view 的 3D 效果展示图或 Demo 截图，展示技术效果比文字更有说服力。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "bilawalsidhu/gods-eye-view: A spy satellite simulator in your brows…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "bilawalsidhu/gods-eye-view - A spy satellite simulator in your browser, except the data…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：bilawalsidhu/gods-eye-view: A spy satellite simulator in your brows…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: bilawalsidhu/gods-eye-view - A spy satellite simulator in your browser, except the data…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。bilawalsidhu/gods-eye-view: A spy satellite simulator in your brows…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. bilawalsidhu/gods-eye-view - A spy satellite simulator in your browser, except the data…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：bilawalsidhu/gods-eye-view: A spy satellite simulator in your brows…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: bilawalsidhu/gods-eye-view - A spy satellite simulator in your browser, except the data…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "gods-eye-view：浏览器中的间谍卫星模拟器，只不过数据是真实的。在逼真的 3D 地球仪上实时呈现开源空间智能。",
+    "developer_profile": {
+      "github_username": "bilawalsidhu",
+      "profile_url": "https://github.com/bilawalsidhu",
+      "name": "",
+      "bio": "Connecting the world of bits & atoms. Blending reality & imagination.",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "https://spatialintelligence.ai"
+        },
+        {
+          "platform": "twitter",
+          "url": "http://x.com/@bilawalsidhu"
+        },
+        {
+          "platform": "linkedin",
+          "url": "http://linkedin.com/in/bilawalsidhu"
+        },
+        {
+          "platform": "youtube",
+          "url": "http://youtube.com/@bilawalsidhu"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://halfpixel.ai"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "tech-leads-club/agent-skills - The secure, validated skill registry for professional AI coding agents. Extend Antigravity, Claude Code, Cursor, Copilot and more with absolute confidence.",
+    "url": "https://github.com/tech-leads-club/agent-skills",
+    "heat": "5,777 stars",
+    "time": "Today",
+    "developer_name": "tech-leads-club",
+    "developer_url": "https://github.com/tech-leads-club",
+    "developer_email": "contato@techleads.club",
+    "today_stars": "265 stars today",
+    "language": "TypeScript",
+    "summary": "The secure, validated skill registry for professional AI coding agents. Extend Antigravity, Claude Code, Cursor, Copilot and more with absolute confidence.",
+    "content": " \n   \n \n\n \n   \n   \n   \n   \n   \n \n\n \n   \n   \n   \n   \n \n\n \n   \n   \n   \n   \n \n\n 🧠 Agent Skills \n\n \n   The secure, validated skill registry for professional AI coding agents \n \n\n \n  In an ecosystem where  over 13% of marketplace skills contain critical vulnerabilities ,\n   Agent Skills  stands apart as a hardened library of  verified ,  tested , and  safe  capabilities.\n  Extend  Antigravity ,  Claude Code ,  Cursor , and more with absolute confidence.\n \n\n \n   https://tech-leads-club.github.io/agent-skills/ \n \n\n## 📖 Table of Contents\n\n- ✨ What are Skills?\n- 🛡️ Security & Trust\n- 🤖 Supported Agents\n- 🌟 Featured Skills\n- 🚀 Quick Start\n- ⚡ How It Works\n- 🔌 MCP Server\n- 🤝 Contributing\n- 🛡️ Content & Authorship\n- 📄 License and Attribution\n\n## ✨ What are Skills?\n\nSkills are packaged instructions and resources that extend AI agent capabilities. Think of them as **plugins for your AI assistant** — they teach your agent new workflows, patterns, and specialized knowledge.\n\n```\npackages/skills-catalog/skills/\n  (category-name)/\n    skill/\n      SKILL.md          ← Main instructions\n      templates/        ← File templates\n      references/       ← On-demand documentation\n```\n\n## 🛡️ Security & Trust\n\nYour environment's safety is our top priority. Unlike open marketplaces where **13.4% of skills contain critical issues**, `agent-skills` is a managed, hardened library: 100% open source (no binaries), static analysis in CI/CD, immutable integrity via lockfiles and content hashing, and human-curated prompts. The CLI uses defense-in-depth (sanitization, path isolation, symlink guards, atomic lockfile, audit trail); every skill is scanned with Snyk Agent Scan (formerly mcp-scan) before publishing.\n\n→ **Full threat model, implementation details, and vulnerability reporting:** SECURITY.md\n\n## 🤖 Supported Agents\n\nInstall skills to any of these AI coding agents:\n\n \n \n\n|                     Tier 1 (Popular)                      |                            Tier 2 (Rising)                             |                   Tier 3 (Enterprise)                   |\n| :-------------------------------------------------------: | :--------------------------------------------------------------------: | :-----------------------------------------------------: |\n|         **Claude Code**         |                    **Aider**                     |   **Amazon Q**   |\n|        **Cline**        |               **Antigravity**                |       **Augment**        |\n|             **Cursor**              | **Gemini CLI** |    **Droid (Factory.ai)**     |\n| **GitHub Copilot** |                  **Kilo Code**                  |           **OpenCode**           |\n|       **Windsurf**        |                     **Kiro**                      |  **Sourcegraph Cody**   |\n|                                                           |    **OpenAI Codex**     |         **Tabnine**          |\n|                                                           |                    **Roo Code**              ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "mcp",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "tech-leads-club/agent-skills: The secure, validated skill registry for professional AI coding agents. Extend Antigravity, Claude Code, Cursor, Copilot and more with absolute confidence.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.3,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "ai coding",
+        "coding agent",
+        "copilot",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「tech-leads-club/agent-skills - The secure, valida…」（tech-leads-club/agent-skills: The secure, validated skill r…），涉及 Agent / MCP → 可写方向：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「tech-leads-club/agent-skills - The secu…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 agent-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 agent-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 agent-skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 agent-skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "tech-leads-club/agent-skills: The secure, validated skill registry…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "tech-leads-club/agent-skills - The secure, validated skill registry for professional AI…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：tech-leads-club/agent-skills: The secure, validated skill registry…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: tech-leads-club/agent-skills - The secure, validated skill registry for professional AI…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。tech-leads-club/agent-skills: The secure, validated skill registry…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**agent-skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs agent-skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. tech-leads-club/agent-skills - The secure, validated skill registry for professional AI…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：tech-leads-club/agent-skills: The secure, validated skill registry…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: tech-leads-club/agent-skills - The secure, validated skill registry for professional AI…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "agent-skills：专业人工智能编码代理的安全、经过验证的技能注册表。绝对有信心扩展反重力、克劳德密码、光标、副驾驶等。",
+    "developer_profile": {
+      "github_username": "tech-leads-club",
+      "profile_url": "https://github.com/tech-leads-club",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "contato@techleads.club",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "https://www.instagram.com/techleads.club"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/tech-leads-club"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://techleadsclub.substack.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agents + WhatsApp (WAHA). Open alternative to Kommo, Octadesk & Intercom for any business that sells by chat. MCP-ready, multi-tenant, LGPD.",
+    "url": "https://github.com/melgarafael/DeskcommCRM",
+    "heat": "2,322 stars",
+    "time": "Today",
+    "developer_name": "melgarafael",
+    "developer_url": "https://github.com/melgarafael",
+    "developer_email": "",
+    "today_stars": "432 stars today",
+    "language": "TypeScript",
+    "summary": "Open-source AI sales OS — self-hosted CRM with native AI agents + WhatsApp (WAHA). Open alternative to Kommo, Octadesk & Intercom for any business that sells by chat. MCP-ready, multi-tenant, LGPD.",
+    "content": " \n\n🇧🇷 Português · 🇺🇸 English · 🇪🇸 Español\n\n \n   \n   \n \n\n# 🛠️ DeskcommCRM — o Sistema Operacional de Vendas com IA, open source, pro WhatsApp\n\n**Agentes de IA que atendem, qualificam e vendem no WhatsApp — dentro de um CRM open source rodando no seu servidor.**\n**Sem mensalidade, sem feature travada, seus dados com você. A alternativa aberta a Kommo, Octadesk e Intercom.**\n\n[](https://nextjs.org)\n[](https://www.typescriptlang.org)\n[](https://supabase.com)\n[](hostgator-setup-kit/)\n[](https://github.com/melgarafael/DeskcommCRM/actions/workflows/ci.yml)\n[](LICENSE)\n\n**⚡ Instalar** · **🔄 Atualizar** · **🧭 Visão** · **🏗️ Arquitetura** · **🤝 Contribuir** · **🗺️ Roadmap**\n\n \n\n---\n\n> ### ☁️ Rode este CRM em produção com 1 comando\n>\n> O DeskcommCRM foi desenvolvido em **parceria com a HostGator**: o `hostgator-setup-kit/`\n> instala o CRM completo (app + WhatsApp + banco) numa VPS com um único comando, e o\n> runbook de produção já assume esse ambiente.\n>\n> **👉 Assinar a VPS HostGator com desconto da parceria** —\n> datacenter em São Paulo, ideal pro WhatsApp rodando 24/7. *(link de parceiro — assinar por ele apoia o projeto e sai mais barato)*\n>\n> **Ainda não tem servidor?** Rode isto **no seu computador** (macOS, Linux ou WSL). Ele diz\n> qual plano contratar — com os números do runbook, não um \"depende\" — e te devolve o\n> comando certo pro seu caso:\n>\n> ```bash\n> curl -fsSL https://raw.githubusercontent.com/melgarafael/DeskcommCRM/main/hostgator-setup-kit/comecar.sh | bash\n> ```\n>\n> *(prefere ler antes de executar? clone o repo e rode `bash hostgator-setup-kit/comecar.sh` —\n> ele não instala nada sem você confirmar.)*\n\n---\n\n## ⚡ Instalar na sua VPS (o caminho principal)\n\n### 1. Entre na sua VPS\n\nAbra o **Terminal** no seu computador (no Windows, o **PowerShell**; no Mac ou Linux, o\n**Terminal**) e conecte com o IP e a porta que a hospedagem te mandou por e-mail:\n\n```bash\nssh -p PORTA root@SEU_IP\n```\n\nTroque `PORTA` e `SEU_IP` pelos seus. Se a hospedagem não mencionou porta nenhuma, é a padrão\n(22) e você pode omitir: `ssh root@SEU_IP`.\n\nEle pede a senha. **Ao digitar, não aparece nada na tela — nem asteriscos.** Isso não é\ntravamento: é o terminal escondendo a senha. Digite (ou cole) e dê Enter.\n\n> Na primeira conexão ele pergunta `Are you sure you want to continue connecting?` — responda\n> `yes`. É o servidor se apresentando pela primeira vez.\n\n### 2. Rode o instalador\n\nJá dentro da VPS:\n\n```bash\ngit clone https://github.com/melgarafael/DeskcommCRM.git\ncd DeskcommCRM\nbash hostgator-setup-kit/install.sh\n```\n\nÉ isso. **Você não instala Node, nem pnpm, nem compila nada** — a imagem do app já vem pronta.\nSe faltar Docker, o instalador pergunta e instala sozinho.\n\n### O que você precisa ter em mãos\n\n| Item | Onde conseguir |\n|---|---|\n| **VPS com Docker** | HostGator (parceria) — ou qualquer VPS com Docker. 4 GB de RAM recomendados |\n| **Domínio** | Um registro **A** apontando pro IP da VPS (ex.: `crm.suaempresa.com.br`) |\n| **Banco** | Conta grátis no supabase",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "vps"
+      ],
+      "ai_hits": [
+        "ai",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "MCP",
+        "React"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM with native AI agents + WhatsApp (WAHA). Open alternative to Kommo, Octadesk & Intercom for any business that sells by chat. MCP-ready, multi-tenant, LGPD.",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.1,
+      "tcloud_relevance": 6.4,
+      "tcloud_integration": "**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行"
+      ],
+      "tcloud_evidence": [
+        "self-hosted",
+        "24/7",
+        "vps"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「melgarafael/DeskcommCRM - Open-source AI sales OS…」（melgarafael/DeskcommCRM: Open-source AI sales OS — self-hos…），涉及 MCP / React → 可写方向：**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — se…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「DeskcommCRM」支持自部署，可写『Lighthouse 一键部署 DeskcommCRM』实操教程。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 DeskcommCRM」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 DeskcommCRM 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 DeskcommCRM」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 DeskcommCRM 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Lighth…",
+        "x_en": "melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "DeskcommCRM：开源人工智能销售操作系统——带有原生人工智能代理的自托管 CRM + WhatsApp (WAHA)。为任何通过聊天进行销售的企业提供 Kommo、Octadesk 和 Intercom 的开放替代方案。",
+    "developer_profile": {
+      "github_username": "melgarafael",
+      "profile_url": "https://github.com/melgarafael",
+      "name": "",
+      "bio": "Despertando o potencial do ser humano com as IAs",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "https://instagram.com/melgarafael"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@melgarafael"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "calesthio/OpenMontage - World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+    "url": "https://github.com/calesthio/OpenMontage",
+    "heat": "58,670 stars",
+    "time": "Today",
+    "developer_name": "calesthio",
+    "developer_url": "https://github.com/calesthio",
+    "developer_email": "",
+    "today_stars": "380 stars today",
+    "language": "Python",
+    "summary": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+    "content": " \n   \n     \n     \n   \n \n\n   Monty the Clapper — the official mascot of OpenMontage   \n\n OpenMontage \n\n  The first open-source, agentic video production system.  \n\n \n     \n \n\n \n   Paste A Video  &nbsp;·&nbsp;\n   Quick Start  &nbsp;·&nbsp;\n   Try These Prompts  &nbsp;·&nbsp;\n   Pipelines  &nbsp;·&nbsp;\n   How It Works  &nbsp;·&nbsp;\n   Sponsors  &nbsp;·&nbsp;\n   Providers  &nbsp;·&nbsp;\n   Review Guide  &nbsp;·&nbsp;\n   Agent Guide \n \n\n \n     \n \n\n \n   \n     \n       \n       \n     \n   \n \n\n  Follow The Build  \n\n \n     \n     \n     \n \n\n## Sponsors\n\n> Want to support OpenMontage? Sponsor the project.\n\n \n Click to collapse \n\n \n \n     \n  Bloome  lets multiple AI agents (Claude, ChatGPT, DeepSeek, and more) collaborate in one conversation for agentic video pipelines. It has zero setup, runs in the cloud, works on web and mobile, and lets you share a configured agent with your whole team.   Try Bloome  . \n \n \n     \n  Atlas Cloud  is a full-modal AI inference platform that gives developers a single AI API for video generation, image generation, and LLM APIs. Instead of managing multiple vendor integrations, you connect once and get unified access to 300+ curated models across all modalities. Check out Atlas Cloud's new  coding plan  promotion for more budget-friendly API access. \n \n \n\n \n\n---\n\nTurn your AI coding assistant into a full video production studio. Describe what you want in plain language — your agent handles research, scripting, asset generation, editing, and final composition.\n\n**Important distinction:** OpenMontage can make image-based videos, but it can also make a real **video video** for free/open-source workflows: the agent builds a corpus from free stock footage and open archives, retrieves actual motion clips, edits them into a timeline, and renders a finished piece. That is not the usual \"animate a handful of stills and call it video\" trick.\n\n \n    \n \n\n> **\"SIGNAL FROM TOMORROW\"** — a cinematic sci-fi trailer fully produced through OpenMontage: concept, script, scene plan, Veo-generated motion clips, soundtrack, and Remotion composition.\n\n \n    \n \n\n> **\"THE LAST BANANA\"** — a 60-second Pixar-style animated short about a lonely banana who finds friendship with a kiwi. 6 Kling v3-generated motion clips (via fal.ai), Google Chirp3-HD narration, royalty-free piano music, TikTok-style word-level captions, and Remotion composition. Total cost: **$1.33**.\n\n \n    \n \n\n> **\"OBJECTS IN OVERDRIVE\"** — a 54-second, music-driven 3D showcase featuring ten objects with distinct choreography: gravity-shifting furniture, frozen car drifts, cloth impacts, refractive lenses, moving gears, an acrobatic robot, and more. Custom Blender animation and physics, kinetic typography, and a phonk soundtrack. Rendered with Blender Eevee/Cycles and assembled with FFmpeg. No narration.\n\n \n    \n \n\n> **\"Reimagine Your Universe\"** — a 50-second vertical transformation film in which one visual idea moves across objects, eras, materials, and scale. Five generated motion scenes",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": true,
+      "cloud_score": 1,
+      "ai_score": 8,
+      "anxiety_score": 1,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "chatgpt",
+        "claude",
+        "deepseek",
+        "agent",
+        "inference",
+        "agentic"
+      ],
+      "anxiety_hits": [
+        "collapse"
+      ],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "3D Generation"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.9,
+      "tcloud_relevance": 4.6,
+      "tcloud_integration": "**OpenMontage** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**OpenMontage** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "llm",
+        "ai api",
+        "claude",
+        "deepseek"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**OpenMontage** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan）",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「calesthio/OpenMontage - World's first open-source…」（World's first open-source, agentic video production system.…），涉及 LLM / Agent / 3D Generation → 可写方向：**OpenMontage** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「OpenMontage」可结合 Hunyuan 写应用实践内容。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 OpenMontage 的核心功能（World's first open-source, agentic video production system. 12 production pipel…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 OpenMontage 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 OpenMontage 的核心功能（World's first open-source, agentic video production system. 12 production pipel…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 OpenMontage 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "World's first open-source, agentic video production system. 12 prod…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：World's first open-source, agentic video production system. 12 prod…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。World's first open-source, agentic video production system. 12 prod…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**OpenMontage** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：World's first open-source, agentic video production system. 12 prod…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "OpenMontage：世界上第一个开源的代理视频制作系统。12 条生产管道、100 多种工具、700 多种代理技能和生产知识文件。",
+    "developer_profile": {
+      "github_username": "calesthio",
+      "profile_url": "https://github.com/calesthio",
+      "name": "",
+      "bio": "Building open source AI Assisted and Agentic Tools.\nCreator of OpenMontage and Crucix — https://www.openmontage.video/",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/calesthioailabs"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@OpenMontage"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.instagram.com/theopenmontage/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "asgeirtj/system_prompts_leaks - Extracted system prompts from Anthropic - Claude Fable 5.1, Opus 5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
+    "url": "https://github.com/asgeirtj/system_prompts_leaks",
+    "heat": "66,234 stars",
+    "time": "Today",
+    "developer_name": "asgeirtj",
+    "developer_url": "https://github.com/asgeirtj",
+    "developer_email": "asgeirtj@gmail.com",
+    "today_stars": "706 stars today",
+    "language": "JavaScript",
+    "summary": "Extracted system prompts from Anthropic - Claude Fable 5.1, Opus 5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
+    "content": " \n   Thanks to   \n \n\n \n   \n     \n   \n \n\n \n\n### Open Source Agent Analytics  \nUnderstand your agents in production\n\n \n\n---\n\n> **The Washington Post** built its interactive story on prompts from this repo: See the hidden rules behind AI. Then use them to rewrite this article. (May 11, 2026)\n> \n> **CEPS' AI World** built a live data dashboard from this repo's files: System prompts and what they tell us about the chat before the chat  (July 10, 2026)\n# System Prompts Leaks\nLeaked system prompts, captured verbatim — the hidden instructions and rules that ChatGPT, Claude, Gemini, Grok and every other AI chatbot receives before your first message.\n\n[](http://makeapullrequest.com)\n\n## Most recent additions/changes\n\n| What | Date | Link |\n|------|------|------|\n| **ChatGPT Work Codex (local)** | September 13, 2026 | ChatGPT Work Codex local system prompt |\n| **Gemini 3.8 Flash** | September 13, 2026 | Gemini 3.8 Flash System Prompt |\n| **Claude Code headless (Fable 5.1)** | September 5, 2026 | Claude Code headless system prompt (Fable 5.1) |\n| **Codex GPT-6-Astra** | September 4, 2026 | Codex GPT-6-Astra system prompt |\n| **Claude Fable 5.1** | September 1, 2026 | Claude Fable 5.1 system prompt · Claude Code (Fable 5.1) |\n| **Grok 4.6** | August 29, 2026 | Grok 4.6 system prompt |\n| **Grok Bot** | August 21, 2026 | Grok Bot System Prompt |\n| **Gemini 3.7 Flash** | August 18, 2026 | Gemini 3.7 Flash System Prompt |\n| **Muse Code (Meta's coding CLI)** | August 17, 2026 | Muse Code system prompt |\n| **Claude Cowork (new capture + setup skills)** | August 17, 2026 | Claude Cowork system prompt · setup skills |\n| **Claude Science** | August 14, 2026 | Claude Science system prompt |\n| **Codex GPT-5.6 (Sol variant)** | July 26, 2026 | Codex GPT-5.6 system prompt |\n| **Grok 4.5** | July 26, 2026 | Grok 4.5 system prompt |\n| **Claude Opus 5** | July 24, 2026 | Claude Opus 5 system prompt · Claude Code (Opus 5) |\n| **Claude Design (full prompt + 53 tools + 22 skills + 10 starter components)** | July 23, 2026 | Claude Design system prompt · skills · starter components |\n| **Perplexity** | July 17, 2026 | Perplexity AI system prompt |\n| **Claude Code (new models)** | July 16, 2026 | Claude Code system prompt (Fable 5) · Sonnet 5  |\n| **OpenCode · Pi · CommandCode** | July 16, 2026 | OpenCode system prompt · Pi system prompt · CommandCode CLI system prompt |\n| **Kimi K2.6** | July 14, 2026 | Kimi K2.6 system prompt |\n| **Perplexity Deep Research** | July 14, 2026 | Perplexity Deep Research system prompt |\n| **ChatGPT 5.6** | July 10, 2026 | ChatGPT 5.6 system prompt (Sol, extra high) · Codex GPT-5.6 system prompt |\n\n---\n\n## Anthropic — Claude system prompts\n\n### Claude.ai system prompts (web, desktop & mobile)\n\n| Model | Prompt |\n|-------|--------|\n| **Claude Fable 5.1** | **Claude Fable 5.1 system prompt** |\n| Claude Fable 5 | Claude Fable 5 system prompt |\n| **Claude Opus 5** | **Claude Opus 5 system prompt** |\n| Claude Opus 4.8 | Claude Opus 4.8 system prompt |\n| *",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 9,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "gpt",
+        "chatgpt",
+        "claude",
+        "gemini",
+        "agent",
+        "prompt",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "asgeirtj/system_prompts_leaks: Extracted system prompts from Anthropic - Claude Fable 5. 1, Opus 5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.5,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**system_prompts_leaks** 的用户群和 CodeBuddy 高度重合 — 可以写「system_prompts_leaks 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**system_prompts_leaks** 的用户群和 CodeBuddy 高度重合 — 可以写「system_prompts_leaks 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**system_prompts_leaks** 的用户群和 CodeBuddy 高度重合 — 可以写「system_prompts_leaks 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「asgeirtj/system_prompts_leaks - Extracted system…」（asgeirtj/system_prompts_leaks: Extracted system prompts fro…），涉及 Agent → 可写方向：**system_prompts_leaks** 的用户群和 CodeBuddy 高度重合 — 可以写「system_prompts_leaks 用户迁移到…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「asgeirtj/system_prompts_leaks - Extract…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 system_prompts_leaks 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 system_prompts_leaks 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 system_prompts_leaks 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 system_prompts_leaks 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "asgeirtj/system_prompts_leaks: Extracted system prompts from Anthro…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "asgeirtj/system_prompts_leaks - Extracted system prompts from Anthropic - Claude Fable…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：asgeirtj/system_prompts_leaks: Extracted system prompts from Anthro…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: asgeirtj/system_prompts_leaks - Extracted system prompts from Anthropic - Claude Fable…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。asgeirtj/system_prompts_leaks: Extracted system prompts from Anthro…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**system_prompts_leaks** 的用户群和 CodeBuddy 高度重合 — 可以写「system_prompts_leaks 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. asgeirtj/system_prompts_leaks - Extracted system prompts from Anthropic - Claude Fable…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：asgeirtj/system_prompts_leaks: Extracted system prompts from Anthro…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: asgeirtj/system_prompts_leaks - Extracted system prompts from Anthropic - Claude Fable…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "system_prompts_leaks：从 Anthropic 中提取的系统提示 - Claude Fable 5.1、Opus 5、Claude Design、Claude Code。",
+    "developer_profile": {
+      "github_username": "asgeirtj",
+      "profile_url": "https://github.com/asgeirtj",
+      "name": "",
+      "bio": "asgeirtj@gmail.com",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "vxcontrol/pentagi - Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
+    "url": "https://github.com/vxcontrol/pentagi",
+    "heat": "24,122 stars",
+    "time": "Today",
+    "developer_name": "vxcontrol",
+    "developer_url": "https://github.com/vxcontrol",
+    "developer_email": "info@vxcontrol.com",
+    "today_stars": "590 stars today",
+    "language": "Go",
+    "summary": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
+    "content": "# PentAGI\n\n \n     P enetration testing  A rtificial  G eneral  I ntelligence\n \n \n \n\n> **Join the Community!** Connect with security researchers, AI enthusiasts, and fellow ethical hackers. Get support, share insights, and stay updated with the latest PentAGI developments.\n\n[](https://discord.gg/2xrMh7qX6m)⠀[](https://t.me/+Ka9i6CNwe71hMWQy)\n\n   \n\n \n\n## Table of Contents\n\n- Overview\n- Features\n- Architecture\n  - Agent Supervision\n- Quick Start\n  - Agent Docker Access\n  - Running Several Instances\n- How to Use PentAGI After Login\n- API Access\n  - LLM Provider Configuration\n    - Ollama\n    - OpenAI\n    - Anthropic\n    - Google AI (Gemini)\n    - AWS Bedrock\n    - DeepSeek\n    - GLM\n    - Kimi\n    - Qwen\n    - MiniMax\n- Advanced Setup\n  - Langfuse Integration\n  - Monitoring and Observability\n  - Knowledge Graph (Graphiti)\n  - OAuth Integration\n  - Docker Image Configuration\n- Development\n- Testing LLM Agents\n- Embedding Configuration and Testing\n- Function Testing with ftester\n- Building\n- Credits\n- License\n\n## Overview\n\nPentAGI is an innovative tool for automated security testing that leverages cutting-edge artificial intelligence technologies. The project is designed for information security professionals, researchers, and enthusiasts who need a powerful and flexible solution for conducting penetration tests.\n\nYou can watch the video **PentAGI overview**:\n[](https://youtu.be/R70x5Ddzs1o)\n\n## Features\n\n- Secure & Isolated. All operations are performed in a sandboxed Docker environment with complete isolation.\n- Fully Autonomous. AI-powered agent that automatically determines and executes penetration testing steps with optional execution monitoring and intelligent task planning for enhanced reliability.\n- Professional Pentesting Tools. Built-in suite of 20+ professional security tools including nmap, metasploit, sqlmap, and more.\n- Smart Memory System. Long-term storage of research results and successful approaches for future use.\n- Optional Knowledge Graph Integration. Graphiti-powered knowledge graph using Neo4j for semantic relationship tracking and advanced context understanding.\n- Web Intelligence. Built-in browser via scraper for gathering latest information from web sources.\n- External Search Systems. Integration with advanced search APIs including Tavily, Firecrawl, Traversaal, Perplexity, DuckDuckGo, Google Custom Search, Sploitus Search and Searxng for comprehensive information gathering.\n- Team of Specialists. Delegation system with specialized AI agents for research, development, and infrastructure tasks, enhanced with optional execution monitoring and intelligent task planning for optimal performance with smaller models.\n- Comprehensive Monitoring. Detailed logging and integration with Grafana/Prometheus for real-time system observation.\n- Detailed Reporting. Generation of thorough vulnerability reports with exploitation guides.\n- Smart Container Management. Automatic Docker image selection based on specific task requirements.\n- Modern I",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 12,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "aws",
+        "docker",
+        "edge"
+      ],
+      "ai_hits": [
+        "ai",
+        "artificial intelligence",
+        "llm",
+        "gemini",
+        "qwen",
+        "deepseek",
+        "agent",
+        "embedding"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "竞品动态",
+      "products": [
+        "Gemini",
+        "DeepSeek",
+        "通义千问"
+      ],
+      "competitors": [
+        "AWS"
+      ],
+      "competitor_products": [
+        "Amazon Bedrock"
+      ],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "vxcontrol/pentagi: Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.8,
+      "tcloud_relevance": 10.0,
+      "tcloud_integration": "**pentagi** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 EdgeOne：**pentagi** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+      "tcloud_products": [
+        "Hunyuan",
+        "EdgeOne",
+        "ES"
+      ],
+      "tcloud_reasons": [
+        "**pentagi** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**pentagi** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+        "**pentagi** 涉及搜索场景 — 腾讯云 ES 提供全文搜索 + 向量搜索 + 日志分析的一站式能力"
+      ],
+      "tcloud_evidence": [
+        "edge",
+        "security",
+        "observability",
+        "logging",
+        "llm",
+        "gemini",
+        "deepseek",
+        "qwen"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**pentagi** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 EdgeOne：**pentagi** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "EdgeOne",
+        "ES"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "产品关联（Hunyuan / EdgeOne）",
+        "竞品对比（Amazon Bedrock）"
+      ],
+      "editorial_angles_text": "教程拆解 + 产品关联（Hunyuan / EdgeOne） + 竞品对比（Amazon Bedrock）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「vxcontrol/pentagi - Fully autonomous AI Agents sy…」（vxcontrol/pentagi: Fully autonomous AI Agents system capabl…），涉及 LLM / Agent → 可写方向：Amazon Bedrock 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「pentagi」可结合 Hunyuan 写应用实践内容。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 pentagi 的核心功能（vxcontrol/pentagi: Fully autonomous AI Agents system capable of performing comp…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 pentagi 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 pentagi 的核心功能（vxcontrol/pentagi: Fully autonomous AI Agents system capable of performing comp…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 pentagi 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "vxcontrol/pentagi: Fully autonomous AI Agents system capable of per…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "vxcontrol/pentagi - Fully autonomous AI Agents system capable of performing complex pen…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：vxcontrol/pentagi: Fully autonomous AI Agents system capable of per…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 教程拆解 + 产品关联（Hunyuan / EdgeOne） + 竞品对比（Amazon Bedrock）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: vxcontrol/pentagi - Fully autonomous AI Agents system capable of performing complex pen…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around hands-on walkthrough + product tie-in (Hunyuan / EdgeOne) + competitor comparison (Amazon Bedrock). What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。vxcontrol/pentagi: Fully autonomous AI Agents system capable of per…。如果用官方号发，建议主推 Hunyuan，重点讲 教程拆解 + 产品关联（Hunyuan / EdgeOne） + 竞品对比（Amazon Bedrock），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**pentagi** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 EdgeOne：**pentagi** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. vxcontrol/pentagi - Fully autonomous AI Agents system capable of performing complex pen…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on hands-on walkthrough + product tie-in (Hunyuan / EdgeOne) + competitor comparison (Amazon Bedrock).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：vxcontrol/pentagi: Fully autonomous AI Agents system capable of per…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 教程拆解 + 产品关联（Hunyuan / EdgeOne） + 竞品对比（Amazon Bedrock）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: vxcontrol/pentagi - Fully autonomous AI Agents system capable of performing complex pen…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on hands-on walkthrough + product tie-in (Hunyuan / EdgeOne) + competitor comparison (Amazon Bedrock). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "pentagi：完全自主的人工智能代理系统能够执行复杂的渗透测试任务",
+    "developer_profile": {
+      "github_username": "vxcontrol",
+      "profile_url": "https://github.com/vxcontrol",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "info@vxcontrol.com",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@vxcontrol"
+        }
+      ],
+      "is_org": false
+    }
+  }
+]
