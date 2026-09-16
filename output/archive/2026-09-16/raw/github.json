@@ -1,0 +1,642 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "alibaba/open-code-review - Fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+    "url": "https://github.com/alibaba/open-code-review",
+    "heat": "29,219 stars",
+    "time": "Today",
+    "developer_name": "alibaba",
+    "developer_url": "https://github.com/alibaba",
+    "developer_email": "",
+    "today_stars": "2,756 stars today",
+    "language": "Go",
+    "summary": "Fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+    "content": " \n   \n     \n   \n   OpenCodeReview \n \n\n \n   \n     \n   \n \n \n   \n     \n   \n   \n     \n   \n \n \n     \n     \n     \n     \n     \n \n \n     \n     \n     \n     \n     \n     \n \n \n  English |  简体中文  |  日本語  |  한국어  |  Русский \n \n\n---\n\n## What is Open Code Review?\n\nOpen Code Review is an AI-powered code review CLI tool. It originated as Alibaba Group's internal official AI code review assistant — over the past two years, it has served tens of thousands of developers and identified millions of code defects. After thorough validation at massive scale, we incubated it into an open source project for the community. Simply configure a model endpoint to get started.\n\nIt reads Git diffs, sends changed files to a configurable LLM via an agent with tool-use capabilities, and generates structured review comments with line-level precision. The agent can read full file contents, search the codebase, inspect other changed files for context, and produce deep reviews — not just surface-level diff feedback. Beyond diff review, `ocr scan` reviews entire files for auditing unfamiliar codebases or directories that have no meaningful diff.\n\nVisit the official website for more details.\n\n## Benchmark\n\n> Compared to general-purpose agents (Claude Code), Open Code Review achieves significantly higher **Precision** and **F1** with the same underlying model, while consuming only **~1/9 of the tokens** and completing reviews faster. Note that its Recall is lower than general-purpose agents — a deliberate trade-off favoring precision over noise.\n\nA real-world code review benchmark built from **50** popular open-source repositories, **200** real Pull Requests, and **10** programming languages — cross-validated by 80+ senior engineers (**1,505** annotated ground-truth issues).\n\n   Explore the AACR-Bench dataset on Hugging Face .\n\n| Metric | What it measures | Why it matters |\n|--------|-----------------|----------------|\n| **F1** | Harmonic mean of precision and recall | Best single number for overall review quality |\n| **Precision** | Proportion of reported issues that are real defects | Higher = fewer false alarms to triage |\n| **Recall** | Proportion of real defects that are found | Higher = fewer issues slip through review |\n| **Avg Time** | Wall-clock time per review | Matters for CI pipeline latency |\n| **Avg Token** | Total tokens consumed per review | Directly impacts API cost |\n\n## Why Open Code Review?\n\n### The Problem with General-Purpose Agents\n\nIf you've used general-purpose agents like Claude Code with Skills for code review, you've likely encountered these pain points:\n\n- **Incomplete coverage** — On larger changesets, agents tend to \"cut corners,\" selectively reviewing only some files and missing others.\n- **Position drift** — Reported issues frequently don't match the actual code location, with line numbers or file references drifting off target.\n- **Unstable quality** — Natural-language-driven Skills are hard to debug, and review quality fluctuates significantly with minor p",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "agent",
+        "openai",
+        "anthropic",
+        "ocr"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.2,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**open-code-review** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**open-code-review** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**open-code-review** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「alibaba/open-code-review - Fast, efficient, battl…」（Fast, efficient, battle-tested at Alibaba's scale. Hybrid a…），涉及 LLM / Agent → 可写方向：**open-code-review** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「alibaba/open-code-review - Fast, effici…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 open-code-review 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 open-code-review 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 open-code-review 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 open-code-review 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Fast, efficient, battle-tested at Alibaba's scale. Hybrid architect…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "alibaba/open-code-review - Fast, efficient, battle-tested at Alibaba's scale. Hybrid ar…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Fast, efficient, battle-tested at Alibaba's scale. Hybrid architect…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: alibaba/open-code-review - Fast, efficient, battle-tested at Alibaba's scale. Hybrid ar…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Fast, efficient, battle-tested at Alibaba's scale. Hybrid architect…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**open-code-review** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. alibaba/open-code-review - Fast, efficient, battle-tested at Alibaba's scale. Hybrid ar…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Fast, efficient, battle-tested at Alibaba's scale. Hybrid architect…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: alibaba/open-code-review - Fast, efficient, battle-tested at Alibaba's scale. Hybrid ar…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "open-code-review：快速、高效，经过阿里巴巴规模的实战考验。混合架构代码审查工具：确定性管道+LLM代理，精确的行级注释，内置多语言规则集（NPE，线程安全，XSS，SQL注入），兼容OpenAI和Anthropic。",
+    "developer_profile": {
+      "github_username": "alibaba",
+      "profile_url": "https://github.com/alibaba",
+      "name": "Alibaba",
+      "bio": "Alibaba Open Source",
+      "company": "",
+      "location": "Hangzhou, China",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 21014,
+      "following": 0,
+      "public_repos": 540,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1961952?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "JustVugg/colibri - Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦",
+    "url": "https://github.com/JustVugg/colibri",
+    "heat": "34,122 stars",
+    "time": "Today",
+    "developer_name": "JustVugg",
+    "developer_url": "https://github.com/JustVugg",
+    "developer_email": "",
+    "today_stars": "2,026 stars today",
+    "language": "C",
+    "summary": "Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦",
+    "content": " \n   \n \n\n \n     \n     \n \n\n \n    Website   ·\n    Discord   ·\n  English ·  简体中文  ·  繁體中文  ·  Italiano \n \n\n**Tiny engine, immense model.** Run **frontier MoE models — 744B to 2.8T\nparameters** — on consumer and heterogeneous hardware, in pure C with zero\nengine dependencies, by treating storage, RAM, and VRAM as a single inference\nhierarchy (AI memory multitiering).\n\nNine families run today: **GLM-5.2/5.3** (744B), **GLM-5.3-Flash** (321B, with\nvision), **Inkling** (975B), **Kimi K3** (2.8T), **DeepSeek V4 Flash** (284B), **DeepSeek V4.1 Flash** (552B, with vision),\n**Qwen3.8-Flash-Next** (125B + 51B n-gram), **Qwen3.6** (35B-A3B) and\n**OLMoE** (7B) —\none C file each, the same `coli chat` / `coli serve` / `coli web` front end.\nFull roster ↓\n\n> **Colibrì is an inference engine you can run today, and an open research\n> platform.** Its primary goal is to pursue inference-side performance across\n> the entire software/hardware boundary — model formats, memory hierarchy,\n> storage I/O, placement, scheduling, kernels, speculation, and CPU/GPU\n> overlap — so large models depend less on scarce hardware and cost less to run.\n\nColibrì treats VRAM, RAM, and storage as a single multitier hierarchy, and it is\ndeliberately a place to test aggressive systems ideas — so there is **no SLA on\nspeed, and a hard guarantee on semantics**: experiments must earn their place\nthrough reproducible end-to-end measurements, and the default policy **never\nsilently changes model precision or router semantics**. Insufficient fast memory\nmay reduce speed; it must not quietly redefine the model.\n\n```\n$ ./coli chat\n  🐦 colibri v1.11.0 — GLM-5.2 · 744B MoE · int4 · streaming CPU\n  ✓ ready in 32s · resident 9.9 GB\n  › ciao!\n  ◆ Ciao! 😊 Come posso aiutarti oggi?\n```\n\n## See it running\n\n \n   \n \n  The web dashboard ( ./coli web ): a 744B model at  4 tok/s, TTFT 1.6 s, disk 0  —\nfull expert residency on 6× RTX 5090, with live token metrics, the per-turn time breakdown,\nthe VRAM/RAM/disk tier bar and the live mini-brain in the corner.  \n\n \n   \n \n  The  Brain  page: all 19,456 experts as a living cortex — colour is the storage tier,\nbrightness is routing heat, and every expert routed in a turn flashes white. Hovering shows the expert's\n measured topic affinity .  \n\n \n   \n \n  The  Atlas  page: the  measured expert atlas \nas a 3-D galaxy — 13,260 characterised experts, 1,041 replicated specialists clustering by topic\n(poetry, law, Chinese, SQL…). Position is measured routing affinity, not a learned embedding. Drag to spin.  \n\n## The research mission\n\nWith Colibrì, private frontier model access is not limited by availability of hyperscaler-class hardware.\n\nWith its multitiering features Colibrì **removes proprietary hardware dependencies aggressively \noptimizing functional inference engine pipelines**.\n\nOur operational mission includes changing how weights are represented and moved, deciding what\nlives in VRAM, RAM, or storage, overlapping heterogeneous compute, reducing\nlaunch and synchronizat",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "deepseek",
+        "embedding",
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "行业动态",
+      "topic_type": "开发者话题",
+      "products": [
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "JustVugg/colibri: Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.6,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「JustVugg/colibri - Run frontier MoE models on har…」（JustVugg/colibri: Run frontier MoE models on hardware you a…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「JustVugg/colibri - Run frontier MoE mod…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 colibri 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 colibri 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "JustVugg/colibri: Run frontier MoE models on hardware you already o…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "JustVugg/colibri - Run frontier MoE models on hardware you already own — pure C, zero d…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：JustVugg/colibri: Run frontier MoE models on hardware you already o…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: JustVugg/colibri - Run frontier MoE models on hardware you already own — pure C, zero d…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。JustVugg/colibri: Run frontier MoE models on hardware you already o…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 观点评论，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. JustVugg/colibri - Run frontier MoE models on hardware you already own — pure C, zero d…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：JustVugg/colibri: Run frontier MoE models on hardware you already o…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: JustVugg/colibri - Run frontier MoE models on hardware you already own — pure C, zero d…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "colibri：在您已经拥有的硬件上运行前沿 MoE 模型 - 纯 C、零依赖、从磁盘流式传输的专家。微小的发动机，巨大的模型。",
+    "developer_profile": {
+      "github_username": "JustVugg",
+      "profile_url": "https://github.com/JustVugg",
+      "name": "Vincenzo Fornaro",
+      "bio": "Founder of Colibrì a tiny engine, immense model for affordable hardware.",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "justvugg",
+      "email": "",
+      "followers": 1534,
+      "following": 38,
+      "public_repos": 120,
+      "avatar_url": "https://avatars.githubusercontent.com/u/13022503?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/justvugg"
+        },
+        {
+          "platform": "generic",
+          "url": "https://huggingface.co/Justvugg"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/vincenzo-fornaro-a603721bb"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "debpalash/VoiceStudio - VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+    "url": "https://github.com/debpalash/VoiceStudio",
+    "heat": "31,259 stars",
+    "time": "Today",
+    "developer_name": "debpalash",
+    "developer_url": "https://github.com/debpalash",
+    "developer_email": "hi@palash.dev",
+    "today_stars": "2,072 stars today",
+    "language": "Python",
+    "summary": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+    "content": " \n\n   NOTE: Electron Rewrite Ongoing: Please dont't create desktop app related issues and pr \n \n     \n   VoiceStudio \n   \n       \n   \n    Previously OmniVoice-Studio  \n   Clone voices, dub video, dictate, and produce long-form audio on your own hardware. \n   16 TTS engines · 11 ASR engines · 646-language catalogue · macOS, Windows, Linux, and Docker \n   No account, API key, subscription, or usage meter for the local workflow. \n\n   \n     Install  ·\n     Features  ·\n     Compare  ·\n     Requirements  ·\n     Hardware  ·\n     Engines  ·\n     Architecture  ·\n     API  ·\n     Docs  ·\n     FAQ  ·\n      简体中文  \n   \n\n   \n       \n       \n       \n       \n       \n       \n   \n\n   \n       \n   \n \n\n \n   \n \n\n> [!WARNING]\n> **Active beta.** Use the latest release for stable work. `main` contains the newest fixes and may change between releases. Report problems through GitHub Issues.\n\n## At a glance\n\n| | VoiceStudio |\n|---|---|\n| **Workflows** | Voice cloning and design, video dubbing, dictation, stories, audiobooks, batch generation |\n| **Language catalogue** | 646 TTS languages; actual coverage and quality depend on the selected engine |\n| **Engines** | 16 TTS · 11 ASR · switch in Model Catalogue or with  Ctrl / Cmd + E  |\n| **Platforms** | macOS 13.3+ on Apple Silicon · Windows 10/11 x64 · Linux x86_64 with glibc 2.39+ |\n| **Compute** | CUDA · Apple Silicon MPS/MLX · ROCm on Linux · CPU · optional remote workers |\n| **Interfaces** | Desktop app · local REST/SSE/WebSocket API · OpenAI-compatible audio API · MCP Server |\n| **Storage** | Voices, projects, settings, and outputs stay on the machine by default |\n| **License** | AGPL-3.0 application; downloaded models keep their upstream terms |\n\nThe Voice workspace starts with three tabs: **From audio** for cloning, **By design** for creating a voice, and **Convert** for speech-to-speech conversion. Each tab displays its own workflow, with Synthesize Audio or Convert pinned below the scrolling form. The top-bar **Engines** panel combines engine selection, loaded models, and unload/flush controls;  Ctrl / Cmd + E  opens it. The searchable language picker shares Dubbing’s flags and language list layout, selects one output language, and retains Auto and the full cloning catalogue. Language options flow into multiple columns when space allows. Expand **Workspaces** in the sidebar to reveal navigation labels; Escape collapses it.\n\nDubbing starts with file upload or URL import and nearby language choices. Its **Projects** panel lists previous dubs so they can be reopened by clicking anywhere on a card; action buttons operate independently. Advanced import options include captions and optional YouTube sign-in. Dubbing places playback controls over the video with background blur and combines the waveform and timed transcript in one compact editing surface. Drag the zoomed waveform left or right to pan; click to seek. Translation language and ISO-code controls stay synchronized; Auto clears any previous language code and dialec",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker"
+      ],
+      "ai_hits": [
+        "mcp",
+        "openai",
+        "tts",
+        "speech"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "MCP"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.3,
+      "tcloud_relevance": 5.1,
+      "tcloud_integration": "**VoiceStudio** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+      "tcloud_products": [
+        "COS"
+      ],
+      "tcloud_reasons": [
+        "**VoiceStudio** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发"
+      ],
+      "tcloud_evidence": [
+        "storage",
+        "file upload"
+      ],
+      "tcloud_primary_product": "COS",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 COS：**VoiceStudio** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+      "tcloud_official_matches": [
+        "COS"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（COS）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（COS）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「debpalash/VoiceStudio - VoiceStudio is the open-s…」（debpalash/VoiceStudio: VoiceStudio is the open-source, full…），涉及 MCP → 可写方向：**VoiceStudio** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「VoiceStudio」涉及对象存储场景，可结合 COS 写教程或场景解读。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "COS",
+      "official_angle_cn": "围绕 VoiceStudio 的核心功能（debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local ElevenLabs a…），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 VoiceStudio 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+      "platform_copies": {
+        "primary_product": "COS",
+        "product_display": "COS",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 VoiceStudio 的核心功能（debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local ElevenLabs a…），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Cloud Object Storage (COS) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 VoiceStudio 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+        "x_cn": "debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local…。如果站在腾讯云国际站官方号来写，这条更适合从 COS 切入：如果以腾讯云国际站官方号来写，这条建议主推 COS：**VoiceSt…",
+        "x_en": "debpalash/VoiceStudio - VoiceStudio is the open-source, fully-local ElevenLabs alternat…. For Tencent Cloud, this fits Cloud Object Storage (COS): Object storage for knowledge bases, datasets, files, and AI workflow persistence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local…。如果从腾讯云视角切，这条最适合带到 COS，重点聊 技术科普 + 教程拆解 + 产品关联（COS）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: debpalash/VoiceStudio - VoiceStudio is the open-source, fully-local ElevenLabs alternat…. From a Tencent Cloud angle, the best hook is Cloud Object Storage (COS), especially around technical explainer + hands-on walkthrough + product tie-in (COS). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local…。如果用官方号发，建议主推 COS，重点讲 技术科普 + 教程拆解 + 产品关联（COS），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 COS：**VoiceStudio** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. debpalash/VoiceStudio - VoiceStudio is the open-source, fully-local ElevenLabs alternat…. For Tencent Cloud, the better angle is Cloud Object Storage (COS). Object storage for knowledge bases, datasets, files, and AI workflow persistence. The content should focus on technical explainer + hands-on walkthrough + product tie-in (COS).",
+        "reddit_title_cn": "这类热点如果从 COS 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：debpalash/VoiceStudio: VoiceStudio is the open-source, fully-local…。如果站在腾讯云国际站官方号视角，我会更想把它写成 COS 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（COS）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Cloud Object Storage (COS)?",
+        "reddit_body_en": "A recent trend caught my eye: debpalash/VoiceStudio - VoiceStudio is the open-source, fully-local ElevenLabs alternat…. Instead of reposting it as news, I'd frame it through Cloud Object Storage (COS) and focus on technical explainer + hands-on walkthrough + product tie-in (COS). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "VoiceStudio 是 ElevenLabs 的开源、完全本地化替代方案 — 提供 646 种语言的语音克隆、语音设计、视频配音、听写、转录和有声读物创建。",
+    "developer_profile": {
+      "github_username": "debpalash",
+      "profile_url": "https://github.com/debpalash",
+      "name": "Palash Debnath",
+      "bio": "every voice has a story to tell.. \r\nhere's mine in open-source",
+      "company": "voicestudio.sh yupcha.com",
+      "location": "palash.dev",
+      "blog": "https://discord.gg/bzQavDfVV9",
+      "twitter_username": "idebpalash",
+      "email": "hi@palash.dev",
+      "followers": 520,
+      "following": 10,
+      "public_repos": 29,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4178343?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/idebpalash"
+        },
+        {
+          "platform": "generic",
+          "url": "https://paypal.me/palashcoder"
+        },
+        {
+          "platform": "generic",
+          "url": "https://ko-fi.com/debpalash"
+        },
+        {
+          "platform": "discord",
+          "url": "https://discord.gg/bzQavDfVV9"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agents + WhatsApp (WAHA). Open alternative to Kommo, Octadesk & Intercom for any business that sells by chat. MCP-ready, multi-tenant, LGPD.",
+    "url": "https://github.com/melgarafael/DeskcommCRM",
+    "heat": "2,946 stars",
+    "time": "Today",
+    "developer_name": "melgarafael",
+    "developer_url": "https://github.com/melgarafael",
+    "developer_email": "",
+    "today_stars": "193 stars today",
+    "language": "TypeScript",
+    "summary": "Open-source AI sales OS — self-hosted CRM with native AI agents + WhatsApp (WAHA). Open alternative to Kommo, Octadesk & Intercom for any business that sells by chat. MCP-ready, multi-tenant, LGPD.",
+    "content": " \n\n🇧🇷 Português · 🇺🇸 English · 🇪🇸 Español\n\n \n   \n   \n \n\n# 🛠️ DeskcommCRM — o Sistema Operacional de Vendas com IA, open source, pro WhatsApp\n\n**Agentes de IA que atendem, qualificam e vendem no WhatsApp — dentro de um CRM open source rodando no seu servidor.**\n**Sem mensalidade, sem feature travada, seus dados com você. A alternativa aberta a Kommo, Octadesk e Intercom.**\n\n[](https://nextjs.org)\n[](https://www.typescriptlang.org)\n[](https://supabase.com)\n[](hostgator-setup-kit/)\n[](https://github.com/melgarafael/DeskcommCRM/actions/workflows/ci.yml)\n[](LICENSE)\n\n**⚡ Instalar** · **🔄 Atualizar** · **🧭 Visão** · **🏗️ Arquitetura** · **🤝 Contribuir** · **🗺️ Roadmap**\n\n \n\n---\n\n> ### ☁️ Rode este CRM em produção com 1 comando\n>\n> O DeskcommCRM foi desenvolvido em **parceria com a HostGator**: o `hostgator-setup-kit/`\n> instala o CRM completo (app + WhatsApp + banco) numa VPS com um único comando, e o\n> runbook de produção já assume esse ambiente.\n>\n> **👉 Assinar a VPS HostGator com desconto da parceria** —\n> datacenter em São Paulo, ideal pro WhatsApp rodando 24/7. *(link de parceiro — assinar por ele apoia o projeto e sai mais barato)*\n>\n> **Ainda não tem servidor?** Rode isto **no seu computador** (macOS, Linux ou WSL). Ele diz\n> qual plano contratar — com os números do runbook, não um \"depende\" — e te devolve o\n> comando certo pro seu caso:\n>\n> ```bash\n> curl -fsSL https://raw.githubusercontent.com/melgarafael/DeskcommCRM/main/hostgator-setup-kit/comecar.sh | bash\n> ```\n>\n> *(prefere ler antes de executar? clone o repo e rode `bash hostgator-setup-kit/comecar.sh` —\n> ele não instala nada sem você confirmar.)*\n\n---\n\n## ⚡ Instalar na sua VPS (o caminho principal)\n\n### 1. Entre na sua VPS\n\nAbra o **Terminal** no seu computador (no Windows, o **PowerShell**; no Mac ou Linux, o\n**Terminal**) e conecte com o IP e a porta que a hospedagem te mandou por e-mail:\n\n```bash\nssh -p PORTA root@SEU_IP\n```\n\nTroque `PORTA` e `SEU_IP` pelos seus. Se a hospedagem não mencionou porta nenhuma, é a padrão\n(22) e você pode omitir: `ssh root@SEU_IP`.\n\nEle pede a senha. **Ao digitar, não aparece nada na tela — nem asteriscos.** Isso não é\ntravamento: é o terminal escondendo a senha. Digite (ou cole) e dê Enter.\n\n> Na primeira conexão ele pergunta `Are you sure you want to continue connecting?` — responda\n> `yes`. É o servidor se apresentando pela primeira vez.\n\n### 2. Rode o instalador\n\nJá dentro da VPS:\n\n```bash\ngit clone https://github.com/melgarafael/DeskcommCRM.git\ncd DeskcommCRM\nbash hostgator-setup-kit/install.sh\n```\n\nÉ isso. **Você não instala Node, nem pnpm, nem compila nada** — a imagem do app já vem pronta.\nSe faltar Docker, o instalador pergunta e instala sozinho.\n\n### O que você precisa ter em mãos\n\n| Item | Onde conseguir |\n|---|---|\n| **VPS com Docker** | HostGator (parceria) — ou qualquer VPS com Docker. 4 GB de RAM recomendados |\n| **Domínio** | Um registro **A** apontando pro IP da VPS (ex.: `crm.suaempresa.com.br`) |\n| **Banco** | Conta grátis no supabase",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "docker",
+        "vps"
+      ],
+      "ai_hits": [
+        "ai",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "MCP",
+        "React"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM with native AI agents + WhatsApp (WAHA). Open alternative to Kommo, Octadesk & Intercom for any business that sells by chat. MCP-ready, multi-tenant, LGPD.",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.1,
+      "tcloud_relevance": 6.4,
+      "tcloud_integration": "**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_products": [
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行"
+      ],
+      "tcloud_evidence": [
+        "self-hosted",
+        "24/7",
+        "vps"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+      "tcloud_official_matches": [
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「melgarafael/DeskcommCRM - Open-source AI sales OS…」（melgarafael/DeskcommCRM: Open-source AI sales OS — self-hos…），涉及 MCP / React → 可写方向：**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — se…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「DeskcommCRM」支持自部署，可写『Lighthouse 一键部署 DeskcommCRM』实操教程。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 DeskcommCRM」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 DeskcommCRM 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 DeskcommCRM」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 DeskcommCRM 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Lighth…",
+        "x_en": "melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**DeskcommCRM** 明确支持自托管部署（melgarafael/DeskcommCRM: Open-source AI sales OS — self-host），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：melgarafael/DeskcommCRM: Open-source AI sales OS — self-hosted CRM…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: melgarafael/DeskcommCRM - Open-source AI sales OS — self-hosted CRM with native AI agen…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "DeskcommCRM：开源人工智能销售操作系统——带有原生人工智能代理的自托管 CRM + WhatsApp (WAHA)。为任何通过聊天进行销售的企业提供 Kommo、Octadesk 和 Intercom 的开放替代方案。",
+    "developer_profile": {
+      "github_username": "melgarafael",
+      "profile_url": "https://github.com/melgarafael",
+      "name": "Rafael Melgaço",
+      "bio": "Despertando o potencial do ser humano com as IAs",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 111,
+      "following": 1,
+      "public_repos": 18,
+      "avatar_url": "https://avatars.githubusercontent.com/u/119944436?v=4",
+      "social_links": [
+        {
+          "platform": "instagram",
+          "url": "https://instagram.com/melgarafael"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@melgarafael"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "alphaXiv/OpenResearch - Turn your coding agents into research agents",
+    "url": "https://github.com/alphaXiv/OpenResearch",
+    "heat": "3,573 stars",
+    "time": "Today",
+    "developer_name": "alphaXiv",
+    "developer_url": "https://github.com/alphaXiv",
+    "developer_email": "contact@alphaxiv.org",
+    "today_stars": "531 stars today",
+    "language": "Rust",
+    "summary": "Turn your coding agents into research agents",
+    "content": " \n\n   OpenResearch \n\n**The local-first workspace for research agents and autoresearch.**\n\n Turn   Claude Code,\n  Codex,\n  OpenCode, or\n  Cursor into research agents that can review\nliterature, develop hypotheses, run experiments, and produce research artifacts. \n\n \n      \n      \n      \n \n\n \n    \n   \n \n\n  macOS 11+ · Windows beta requires  Git for Windows   \n\n     \n\n \n\n## Get started\n\nInstall the CLI on macOS or Linux, then launch OpenResearch:\n\n```sh\ncurl -LsSf https://openresearch.sh/install.sh | sh\norx up\n```\n\nOn Windows, use the beta download above after installing\nGit for Windows.\n\n`orx up` opens the local dashboard at `http://127.0.0.1:4791`.\n\nConnect a local model to use LM Studio, oMLX, Ollama,\nor a custom endpoint with OpenCode.\n\nCreate an account at openresearch.sh to receive email\nupdates and use managed OpenResearch compute.\n\n## Built for research agents\n\n| | OpenResearch gives you |\n|---|---|\n| **Parallel exploration** | Give each research direction an independent agent session and isolated git worktree. |\n| **Reproducible experiments** | Track variants in a git-native experiment tree; every run receives an immutable archive of its recorded commit. |\n| **Evidence in context** | Keep logs, diffs, files, results, and artifacts tied to the work that produced them. |\n| **Your choice of agent** | Use Claude Code, Codex, OpenCode, or Cursor, with the harness and model selected per session. |\n| **Your choice of compute** | Run locally, on your own infrastructure, or with managed OpenResearch compute. |\n| **Local ownership** | Keep projects, conversations, experiments, runs, logs, code, and artifacts on your machine. |\n\n### Autoresearch\n\nOpenResearch can run the full loop autonomously: propose an idea, change the\ncode, launch an experiment, inspect the evidence, and decide what to try next.\nMultiple agents can explore different directions in parallel while the\nexperiment tree preserves their lineage.\n\n## Run anywhere\n\nThe same committed source snapshot can run locally, over SSH, or on Slurm,\nKubernetes, Ray, Hugging Face Jobs, Modal, Tinker, and managed OpenResearch compute.\nPublishing the repository is not required.\n\nRun the workspace next to remote GPUs while using the browser on your laptop:\n\n```sh\norx up --remote user@host\n```\n\nSSH config aliases and custom ports are supported. The remote service binds to\nloopback and has no application-level authentication, so other users on that\nhost can reach it.\n\n## CLI and agent integration\n\nInstall the OpenResearch skill into supported coding agents:\n\n```sh\norx install-skills\n```\n\nCommon commands:\n\n```sh\norx projects\norx project view  \norx runs  \norx logs  \norx exp run  \norx discover keyword  \norx paper  \n```\n\nRun `orx --help` or `orx   --help` for the complete interface.\n\n## Local by default\n\nOpenResearch runs on `127.0.0.1` with a local SQLite store. Creating a project\nor launching a run does not publish your code. An\nopenresearch.sh account is only used for\nservice-owned capabilities such as orga",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "kubernetes"
+      ],
+      "ai_hits": [
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "学术研究",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor",
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Kubernetes"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "alphaXiv/OpenResearch: Turn your coding agents into research agents",
+      "heat_score": 7.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.8,
+      "tcloud_relevance": 6.0,
+      "tcloud_integration": "**OpenResearch** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs OpenResearch 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**OpenResearch** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs OpenResearch 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**OpenResearch** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs OpenResearch 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "研究解读"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 研究解读",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「alphaXiv/OpenResearch - Turn your coding agents i…」（alphaXiv/OpenResearch: Turn your coding agents into researc…），涉及 Agent / Kubernetes → 可写方向：**OpenResearch** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs OpenResearch 的横向对比：CodeBuddy 覆盖…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「alphaXiv/OpenResearch - Turn your codin…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 OpenResearch 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 OpenResearch 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 OpenResearch 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 OpenResearch 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "alphaXiv/OpenResearch: Turn your coding agents into research agents。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "alphaXiv/OpenResearch - Turn your coding agents into research agents. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：alphaXiv/OpenResearch: Turn your coding agents into research agents。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 研究解读。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: alphaXiv/OpenResearch - Turn your coding agents into research agents. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + research takeaway. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。alphaXiv/OpenResearch: Turn your coding agents into research agents。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 研究解读，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**OpenResearch** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs OpenResearch 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. alphaXiv/OpenResearch - Turn your coding agents into research agents. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + research takeaway.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：alphaXiv/OpenResearch: Turn your coding agents into research agents。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 研究解读。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: alphaXiv/OpenResearch - Turn your coding agents into research agents. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + research takeaway. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "OpenResearch：将您的编码代理转变为研究代理",
+    "developer_profile": {
+      "github_username": "alphaXiv",
+      "profile_url": "https://github.com/alphaXiv",
+      "name": "alphaXiv",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://www.alphaxiv.org",
+      "twitter_username": "",
+      "email": "contact@alphaxiv.org",
+      "followers": 277,
+      "following": 0,
+      "public_repos": 119,
+      "avatar_url": "https://avatars.githubusercontent.com/u/153782766?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  }
+]
