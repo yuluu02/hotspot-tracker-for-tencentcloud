@@ -1,65 +1,29 @@
-# 📋 产品 Draft 汇总 — 2026-09-19
+# 📋 产品 Draft 汇总 — 2026-09-20
 
 > 共 3 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CodeBuddy — 今日内容 (7 条)
+# CVM — 今日内容 (1 条)
 
-## 1. P0 今天发 · anthropics/claude-code
+## 1. P1 本周发 · trycua/cua
 
-**写什么**: 以 claude-code 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "anthropics/claude-code" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [anthropics/claude-code](https://github.com/anthropics/claude-code)*
-
----
-
-## 2. P1 本周发 · alibaba/open-code-review
-
-**写什么**: 以 open-code-review 引发的开发者效率讨论为切入点
+**写什么**: 以 cua 的算力需求为切入
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "alibaba/open-code-review" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🔥 "trycua/cua" — **cua** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，支持弹性扩. Check out Tencent Cloud CVM for a production-ready solution. #TencentCloud #CloudComputing
 
-*参考: [alibaba/open-code-review](https://github.com/alibaba/open-code-review)*
-
----
-
-## 3. P0 今天发 · affaan-m/ECC
-
-**写什么**: 以 ECC 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "affaan-m/ECC" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [affaan-m/ECC](https://github.com/affaan-m/ECC)*
+*参考: [trycua/cua](https://github.com/trycua/cua)*
 
 ---
 
-## 4. P1 本周发 · Tencent/BrowserSkill
 
-**写什么**: 以 BrowserSkill 引发的开发者效率讨论为切入点
+# CodeBuddy — 今日内容 (3 条)
 
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "Tencent/BrowserSkill" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill)*
-
----
-
-## 5. P1 本周发 · addyosmani/agent-skills
+## 1. P1 本周发 · addyosmani/agent-skills
 
 **写什么**: 以 agent-skills 引发的开发者效率讨论为切入点
 
@@ -72,61 +36,45 @@
 
 ---
 
-## 6. P0 今天发 · TencentCloud/Octop
+## 2. P0 今天发 · coder/coder
 
-**写什么**: 以 Octop 引发的开发者效率讨论为切入点
+**写什么**: 以 coder 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "TencentCloud/Octop" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "coder/coder" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [TencentCloud/Octop](https://github.com/TencentCloud/Octop)*
+*参考: [coder/coder](https://github.com/coder/coder)*
 
 ---
 
-## 7. P1 本周发 · Fission-AI/OpenSpec
+## 3. P0 今天发 · anthropics/claude-code
 
-**写什么**: 以 OpenSpec 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "Fission-AI/OpenSpec" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec)*
-
----
-
-
-# EdgeOne — 今日内容 (1 条)
-
-## 1. P1 本周发 · Cloudflare Quick Tunnels
-
-**写什么**: 从 Cloudflare Quick Tunnels 的性能/安全需求出发
+**写什么**: 以 claude-code 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> ⚡ Interesting project: "Cloudflare Quick Tunnels". For teams needing global acceleration + DDoS protection, check out EdgeOne — 3,200+ PoP nodes worldwide. #CDN #WebSecurity #EdgeComputing
+> 🤖 "anthropics/claude-code" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [Cloudflare Quick Tunnels](https://try.cloudflare.com/)*
+*参考: [anthropics/claude-code](https://github.com/anthropics/claude-code)*
 
 ---
 
 
-# Hunyuan — 今日内容 (1 条)
+# GPU CVM — 今日内容 (1 条)
 
-## 1. P0 今天发 · 锐评一下用过的 Agents/Harness
+## 1. P0 今天发 · higgsfield-ai/higgsfield
 
-**写什么**: 以「锐评一下用过的」话题为引子
+**写什么**: 围绕 higgsfield 的核心功能（higgsfield-ai/higgsfield: Fault-tolerant, highly scalable GP
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "锐评一下用过的 Agents/Harness" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🔥 "higgsfield-ai/higgsfield" — **higgsfield** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容. Check out Tencent Cloud GPU CVM for a production-ready solution. #TencentCloud #CloudComputing
 
-*参考: [锐评一下用过的 Agents/Harness](https://www.v2ex.com/t/1242976)*
+*参考: [higgsfield-ai/higgsfield](https://github.com/higgsfield-ai/higgsfield)*
 
 ---
 
