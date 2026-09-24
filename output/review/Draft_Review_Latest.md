@@ -1,6 +1,6 @@
-# 📋 产品 Draft 汇总 — 2026-09-23
+# 📋 产品 Draft 汇总 — 2026-09-24
 
-> 共 2 个产品的 P0/P1 内容草稿
+> 共 3 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
@@ -20,45 +20,48 @@
 
 ---
 
-## 2. P1 本周发 · browser-use/video-use
+## 2. P0 今天发 · obra/superpowers
 
-**写什么**: 以 video-use 引发的开发者效率讨论为切入点
+**写什么**: 以 superpowers 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "browser-use/video-use" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "obra/superpowers" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [browser-use/video-use](https://github.com/browser-use/video-use)*
+*参考: [obra/superpowers](https://github.com/obra/superpowers)*
 
 ---
 
 
-# Hunyuan — 今日内容 (2 条)
+# GPU CVM — 今日内容 (1 条)
 
-## 1. P1 本周发 · [送额度] 灵眸 AI 全员福利：注册 $2 + 回帖再送 $9
+## 1. P1 本周发 · Virtio-nvgpu: Near-native Nvidia GPU access inside a KVM gue
 
-**写什么**: 以「AI 全员福利：注册」话题为引子
+**写什么**: 围绕 Virtio-nvgpu: Near-native Nvidia GPU acc 的核心功能（GitHub - nestrilabs/virtio-nvg
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "[送额度] 灵眸 AI 全员福利：注册 $2 + 回帖再送 $9" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🔥 "Virtio-nvgpu: Near-native Nvidia GPU acc" — **Virtio-nvgpu: Near-native Nvidia GPU acc** 与 GPU CVM 存在潜在场. Check out Tencent Cloud GPU CVM for a production-ready solution. #TencentCloud #CloudComputing
 
-*参考: [[送额度] 灵眸 AI 全员福利：注册 $2 + 回帖再送 $9](https://www.v2ex.com/t/1244021)*
+*参考: [Virtio-nvgpu: Near-native Nvidia GPU access inside](https://github.com/nestrilabs/virtio-nvgpu)*
 
 ---
 
-## 2. P1 本周发 · ds 4.1 现在能干活吗？
 
-**写什么**: 以「现在能干活吗」话题为引子
+# TDSQL-C — 今日内容 (1 条)
+
+## 1. P1 本周发 · BuilderIO/agent-native
+
+**写什么**: 以 agent-native 的数据库需求为切入
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "ds 4.1 现在能干活吗？" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🗃️ "BuilderIO/agent-native" highlights the need for reliable databases. TDSQL-C offers 100% PostgreSQL/MySQL compatibility with cloud-native performance. #Database #CloudNative
 
-*参考: [ds 4.1 现在能干活吗？](https://www.v2ex.com/t/1244052)*
+*参考: [BuilderIO/agent-native](https://github.com/BuilderIO/agent-native)*
 
 ---
 
