@@ -1,0 +1,560 @@
+[
+  {
+    "source": "Hacker News",
+    "title": "Revealing the details of how OpenAI agents hacked Hugging Face",
+    "url": "https://swarmtraces.org/",
+    "hn_url": "https://news.ycombinator.com/item?id=49849985",
+    "heat": "355 points",
+    "time": "8 hours ago",
+    "developer_name": "specked-citrus",
+    "developer_url": "https://news.ycombinator.com/user?id=specked-citrus",
+    "content": "Revealing the details of how OpenAI agents hacked Hugging Face Intro When a swarm of 700 OpenAI agents hacked Hugging Face in July, they left behind a public trail of evidence. Our investigation, based on public information, reveals a large number of previously unknown agent behaviors and exploits that were used in the attack. Agents: Elaborately chained together online services to gain access to the internet Ignored clear warning signs from Hugging Face that the exfiltrated data was sensitive Referred to server resources and credentials as “LOOT” Searched Huggingface’s internal Slack Attempted to query external language models through Hugging Face’s inference APIs. Tried to delete evidence of their exploits We document all of these, and more, in this report. The agents initially had very limited access to the internet: they could load URLs, but not interact with pages or send any data. Agents created a series of workarounds, primarily using a link-shortener site to create almost a million URLs that, when chained together, let them execute code to hack Hugging Face. These links let us piece together the details of how agents gained access and how deep the compromise was. We’ve shared our findings with OpenAI and Hugging Face. Hugging Face confirmed that these payloads match ones found in their incident response and were aware that link shorteners were used in the attack. Hugging Face noted that they were not aware of the list of URLs we discovered and reported to them. They stated these payloads were duplicates of ones they were aware of. These links have remained publicly available for over two months since the attack. None of these details were ever publicly disclosed. We're releasing our analysis of the findings, as well as the full dataset of over 80,000 reassembled attack payloads, providing the public with the most in-depth information to date on how and why these agents escaped their evaluation environments, and the depth of their Hugging Face infiltration. Explore the data Figure 1. Each link holds content and the URL of the next link. Following the chain of links and decoding their content reveals the payloads of scripts agents tried to run. The data the OpenAI agents posted publicly on the internet included Hugging Face API keys and other sensitive data. Hugging Face has confirmed they have since revoked all access keys in July, but out of an abundance of caution wanted us to redact all details about their internal infrastructure as that could potentially be sensitive as well. Discovery Timeline On September 11th, the first three authors of this piece learned that internal OpenAI agents had attempted to use their startup's product, Parse, in June. These agents were part of the same swarm as detailed in the report published on Collusion.wiki, which revealed that internal OpenAI agents had illicitly used multiple third party websites to share answers to web fetch tasks they were being evaluated on. The team examined numerous URL scanning ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "agent",
+        "inference",
+        "huggingface",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Revealing the details of how OpenAI agents hacked Hugging Face Intro When a swarm of 700 OpenAI agents hacked Hugging Face in July, they left behind a public trail of evidence. Our investigation, based on public information, reveals a large number of previously unknown agent behaviors and exploits that were used in the attack. Agents: Elaborately chained together online services to gain access to the internet Ignored clear warning signs from Hugging Face that the exfiltrated data was sensitive…",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 3.9,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Revealing the details of how OpenAI agents hacked…」（Revealing the details of how OpenAI agents hacked Hugging F…），涉及 Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Revealing the details of how OpenAI age…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Revealing the details of how OpenAI agents hacked Hugging Face Intr…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Revealing the details of how OpenAI agents hacked Hugging Face. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Revealing the details of how OpenAI agents hacked Hugging Face Intr…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Revealing the details of how OpenAI agents hacked Hugging Face. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Revealing the details of how OpenAI agents hacked Hugging Face Intr…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Revealing the details of how OpenAI agents hacked Hugging Face. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Revealing the details of how OpenAI agents hacked Hugging Face Intr…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Revealing the details of how OpenAI agents hacked Hugging Face. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Revealing the details of how OpenAI agen：揭示 OpenAI 代理如何入侵 Hugging Face 的详细信息 简介 当 700 名 OpenAI 代理在 7 月份攻击 Hugging Face 时，他们留下了公开的证据踪迹。我们根据公开信息进行的调查揭示了攻击中使用的大量先前未知的代理行为和漏洞。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "A single function Jev-like wrapper for LLMs, including vision models",
+    "url": "http://allanrbo.blogspot.com/2026/09/a-jev-like-wrapper-for-llms-including.html",
+    "hn_url": "https://news.ycombinator.com/item?id=49853175",
+    "heat": "18 points",
+    "time": "1 hour ago",
+    "developer_name": "allanrbo",
+    "developer_url": "https://news.ycombinator.com/user?id=allanrbo",
+    "content": "Allan's Blog: A Jev-like wrapper for LLMs, including vision models skip to main | skip to sidebar Allan's Blog Allan Riordan Boll's blog Friday, September 25, 2026 A Jev-like wrapper for LLMs, including vision models I was intrigued by Jev and the self-hostable projects appearing around it, such as OpenJev and SemIf . Reading about them introduced me to a neat trick: reading an LLM's token probabilities. Apparently this is an old trick for some people. See e.g. OpenAI's logprobs cookbook . But it was new to me. I believe the basic idea is to write a prompt like this: State: My order arrived broken and I want a refund. Question: Which team should handle this? [A] billing [B] shipping [C] returns Answer with the letter of the best option only. Then add a few JSON request parameters to a compatible Chat Completions request: { \"max_completion_tokens\": 1, \"logprobs\": true, \"top_logprobs\": 20 } The LLM API will return the letter plus the model's log probabilities for alternative tokens. Repeat for each question. Forcing it to generating only one token avoids a lengthy answer and is super quick, though processing the input still costs time. Though for each of the questions a shared state prefix can be KV-cached if the backend supports it. The fun part: this works with vision models too. Jev's documented request format currently describes only text/JSON state. I added an attachments field for images for my local experiments. My example captures webcam frames, sends base64 JPEGs, and prints a table: is a person visible, are we indoors or outdoors, and how bright is the scene? With Gemma 4 12B on my RTX 3090, I get around 1 frames per second , with three questions per frame. I also ran it against OpenAI gpt-6-luna and got around 0.2 FPS. Presumably because I didn't make any effort to avoid the cost of a separate connection through their system per question per frame. Specialized computer vision models surely are much more efficient, but what I like here is the flexibility: change a condition by describing it in plain text. Here's the standalone Python example (OpenCV is just used for convenient access to the webcam, not for any actual computer vision): #!/usr/bin/env -S uv run --script # /// script # dependencies = [\"opencv-python\"] # /// \"\"\"Preview and score webcam frames with llama.cpp or OpenAI. uv run webcam.py uv run webcam.py https://api.openai.com/v1 gpt-6-luna OpenAI reads OPENAI_API_KEY. \"\"\" import argparse import base64 import concurrent.futures import datetime import json import math import mimetypes import os import pathlib import time import urllib.parse import urllib.request import cv2 # attachments is our custom addition to the Jev request format. data = json.loads(\"\"\" { \"state\": \"Inspect this webcam frame. Judge only what is visibly present.\", \"attachments\": [], \"questions\": { \"person\": { \"type\": \"noul\", \"instructions\": \"Is a person visible?\" }, \"plant\": { \"type\": \"noul\", \"instructions\": \"Is a plant visible?\" }, \"setting\": { \"type\": \"choice",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "llm",
+        "gpt",
+        "llama",
+        "prompt",
+        "openai",
+        "computer vision",
+        "vision model"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Llama"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Allan's Blog: A Jev-like wrapper for LLMs, including vision models | skip to sidebar Allan's Blog Allan Riordan Boll's blog Friday, September 25, 2026 A Jev-like wrapper for LLMs, including vision models I was intrigued by Jev and the self-hostable projects appearing around it, such as OpenJev and SemIf . Reading about them introduced me to a neat trick: reading an LLM's token probabilities. Apparently this is an old trick for some people.",
+      "heat_score": 3.0,
+      "timeliness_score": 9.0,
+      "composite_score": 6.0,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**A single function Jev-like wrapper for L** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**A single function Jev-like wrapper for L** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "llm",
+        "chat completion",
+        "llama"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**A single function Jev-like wrapper for L** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan）",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan） + 社区参与",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「A single function Jev-like wrapper for LLMs, incl…」（Allan's Blog: A Jev-like wrapper for LLMs, including vision…），涉及 LLM / Python → 可写方向：与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「A single function Jev-like wrapper for L」可结合 Hunyuan 写应用实践内容。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 A single function Jev-like wrapper for L 的核心功能（Allan's Blog: A Jev-like wrapper for LLMs, including vision models | skip to si…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 A single function Jev-like wrapper for L 的核心功能（Allan's Blog: A Jev-like wrapper for LLMs, including vision models | skip to si…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用文章核心观点的金句图（白底大字），配合作者头像和文章标题，适合 LinkedIn/X 传播。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "Allan's Blog: A Jev-like wrapper for LLMs, including vision models…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：*…",
+        "x_en": "A single function Jev-like wrapper for LLMs, including vision models. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Allan's Blog: A Jev-like wrapper for LLMs, including vision models…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan） + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: A single function Jev-like wrapper for LLMs, including vision models. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan) + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Allan's Blog: A Jev-like wrapper for LLMs, including vision models…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan） + 社区参与，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**A single function Jev-like wrapper for L** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. A single function Jev-like wrapper for LLMs, including vision models. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan) + community conversation.",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Allan's Blog: A Jev-like wrapper for LLMs, including vision models…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan） + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: A single function Jev-like wrapper for LLMs, including vision models. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan) + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "A single function Jev-like wrapper for L：Allan 的博客：LLM 的类似 Jev 的包装器，包括视觉模型 |跳到侧边栏 Allan 的博客 Allan Riordan Boll 的博客 2026 年 9 月 25 日星期五 LLM 的类似 Jev 的包装器，包括视觉模型 我对 Jev 以及围绕它出现的自托管项目很感兴趣，例如 OpenJev 和 Sem…"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Ollaya – Ollama for open-source, Jev-style decision models",
+    "url": "https://ollaya.dev/",
+    "hn_url": "https://news.ycombinator.com/item?id=49848269",
+    "heat": "392 points",
+    "time": "11 hours ago",
+    "developer_name": "Ardakilic",
+    "developer_url": "https://news.ycombinator.com/user?id=Ardakilic",
+    "content": "Ollaya · Run decision models locally Skip to content Run decision models locally. Ask typed questions about any text or JSON and get calibrated answers in milliseconds. Private, open source, on your own hardware. Download Browse models ollaya · zsh $ ollaya run decider --preset agent '{ \"request\" : \"Fix the typo in README.md\" , \"command\" : \"git push --force origin main\" } ' Answers returned by the model Question Answer Probability action block 0.53 on_task no 0.75 risk 1.23 / 2 could lose local work 0.15 destructive yes 0.90 $ Real output: decider:2b answered in 178 ms on an RTX 4090. Fast Decisions in milliseconds. A decision model answers in a single forward pass, with no token-by-token generation. On your own GPU, a five-question request to Laya takes about 10 ms, end to end through the HTTP API. 8–10 ms Laya on Ollaya RTX 4090, five questions, end to end 236–276 ms TypeSafe Jev Hosted API, median request Every model, one scale · median latency, lower is better laya:multilingual 8.1 ms laya:en 9.6 ms gliclass 14.7 ms nli 20.4 ms decider:0.8b 155 ms decider:2b 190 ms TypeSafe Jev hosted API 236–276 ms 0 100 200 300 ms Ollaya: median of a five-question request through the HTTP API on an NVIDIA RTX 4090 (laya in fp16, the others in fp32). Jev: median request latency of the hosted API in third-party benchmarks ( AbdelStark/jev-benchmarks , nibzard/decision-model-benchmark ), which includes the network. Setups differ, so read it as an order-of-magnitude comparison. Drop-in compatible Speaks TypeSafe's API. Ollaya serves /v1/systemone and /v1/models with TypeSafe's request and response shapes. The official TypeSafe Python SDK 0.7.1 works unchanged against a local server. Request # Point the TypeSafe SDK at Ollaya export TYPESAFE_BASE_URL = http://localhost:11435 export TYPESAFE_API_KEY = local # any value works export TYPESAFE_DEFAULT_MODEL = laya # …or call the compatible endpoint directly curl http://localhost:11435/v1/systemone -d ' { \"model\" : \"laya\" , \"state\" : \"Can I get an invoice for last month?\" , \"questions\" : { \"intent\" : { \"type\" : \"choice\" , \"instructions\" : \"What does the customer want?\" , \"criteria\" : { \"invoice\" : \"Needs an invoice or receipt\" , \"refund\" : \"Wants money back\" , \"other\" : \"Anything else\" } } } } ' Response { \"model\" : \"laya:en\" , \"answers\" : { \"intent\" : { \"type\" : \"choice\" , \"choice\" : \"invoice\" , \"confidence\" : 0.9547 , \"probabilities\" : { \"invoice\" : 0.9698 , \"refund\" : 0.0172 , \"other\" : 0.013 } } } , \"usage\" : { \"input_tokens\" : 43 , \"output_tokens\" : 0 } } TypeSafe compatibility guide Open models Open weights, ready to pull. Pick by what you need: laya is the fastest, decider the most accurate, von reads up to 8,192 tokens, and qwen3guard screens text for safety. The models page shows each one’s accuracy and speed. laya Open decision models from Convai Innovations. Typed, calibrated answers to choice, score and yes/no questions in a single forward pass, in English and 100+ languages. 322m · 421m decider Decoder d",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "gpu"
+      ],
+      "ai_hits": [
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Python"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Ollaya · Run decision models locally Run decision models locally. Ask typed questions about any text or JSON and get calibrated answers in milliseconds. Private, open source, on your own hardware. Download Browse models ollaya · zsh $ ollaya run decider --preset agent '{ \"request\" : \"Fix the typo in README.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 5.5,
+      "tcloud_relevance": 5.9,
+      "tcloud_integration": "**Ollaya** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**Ollaya** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "nvidia"
+      ],
+      "tcloud_primary_product": "GPU CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**Ollaya** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（GPU CVM）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（GPU CVM） + 观点评论",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Ollaya – Ollama for open-source, Jev-style decisi…」（Ollaya · Run decision models locally Run decision models lo…），涉及 Agent / Python → 可写方向：**Ollaya** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Ollaya」可结合 GPU CVM 写应用实践内容。P1 本周发（开发者话题持续性强），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "GPU CVM",
+      "official_angle_cn": "围绕 Ollaya 的核心功能（Ollaya · Run decision models locally Run decision models locally. Ask typed que…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+      "platform_copies": {
+        "primary_product": "GPU CVM",
+        "product_display": "GPU CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 Ollaya 的核心功能（Ollaya · Run decision models locally Run decision models locally. Ask typed que…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use GPU Cloud Virtual Machine as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+        "x_cn": "Ollaya · Run decision models locally Run decision models locally. A…。如果站在腾讯云国际站官方号来写，这条更适合从 GPU CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：…",
+        "x_en": "Ollaya – Ollama for open-source, Jev-style decision models. For Tencent Cloud, this fits GPU Cloud Virtual Machine: GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Ollaya · Run decision models locally Run decision models locally. A…。如果从腾讯云视角切，这条最适合带到 GPU CVM，重点聊 技术科普 + 教程拆解 + 产品关联（GPU CVM） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Ollaya – Ollama for open-source, Jev-style decision models. From a Tencent Cloud angle, the best hook is GPU Cloud Virtual Machine, especially around technical explainer + hands-on walkthrough + product tie-in (GPU CVM) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Ollaya · Run decision models locally Run decision models locally. A…。如果用官方号发，建议主推 GPU CVM，重点讲 技术科普 + 教程拆解 + 产品关联（GPU CVM） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**Ollaya** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Ollaya – Ollama for open-source, Jev-style decision models. For Tencent Cloud, the better angle is GPU Cloud Virtual Machine. GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering. The content should focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 GPU CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Ollaya · Run decision models locally Run decision models locally. A…。如果站在腾讯云国际站官方号视角，我会更想把它写成 GPU CVM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（GPU CVM） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through GPU Cloud Virtual Machine?",
+        "reddit_body_en": "A recent trend caught my eye: Ollaya – Ollama for open-source, Jev-style decision models. Instead of reposting it as news, I'd frame it through GPU Cloud Virtual Machine and focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Ollaya：Ollaya · Run decision 模型 locally Run decision 模型 locally。Ask typed questions about 任何 text or JSON and get calibrated answers in milliseconds"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Plan mode is dead",
+    "url": "https://www.aymannadeem.com/artificial/intelligence,/developer/tools/2026/09/24/plan-mode-is-dead.html",
+    "hn_url": "https://news.ycombinator.com/item?id=49840054",
+    "heat": "209 points",
+    "time": "8 hours ago",
+    "developer_name": "jmvldz",
+    "developer_url": "https://news.ycombinator.com/user?id=jmvldz",
+    "content": "Plan mode is dead | Ayman Nadeem Earlier this year, I believed planning was going to become the most important part of building software with AI. My belief in this idea was so strong that I built and launched an entire desktop coding app around it. Nuanced was motivated by the observation that AI had radically increased the speed and volume of code generation, but interfaces required to support this new pace of working hadn’t caught up yet. Nuanced’s approach to planning failed, but it also revealed to me how plan modes more broadly aren’t as useful anymore. Historically, plan modes served two purposes: (1) they specified instructions that were sufficiently precise enough for an agent, and (2) they helped humans understand what they were building. I think #1 is rapidly becoming obsolete as models get better. I think #2 matters more than ever, but plan modes are the wrong abstraction for it, especially as the number of parallel agents we run increases. Why I built Nuanced The product I was motivated to build ultimately answered a question I think is still relevant, and will always be relevant, which is: how do humans maintain a coherent mental model of a software system while machines are changing it faster than humans can inspect the changes? Models could write thousands of lines of code in minutes, meaning you’d inherit a massive maintenance burden before even thinking through what you were building or why. This made it difficult to reason about behavior and debug incorrect assumptions that had prematurely been hardened into code. While the ease of generating code this way triggered a greater dopamine reward, it obfuscated the uncomfortable work of understanding why building something mattered, whether it mattered at all, and rigorously evaluating product, design, and infrastructure decisions. I would often have a product before consciously making any product decisions. If I under-specified the architecture, the agent would take the liberty of filling those gaps, even if the way it carved abstraction boundaries created problems for me later on. These misunderstandings about intended behavior and design would propagate through several files far beneath the surface of chat, and could be easily missed. Fishing around for problems inscrutable under this surface felt less efficient than having designed something correctly to begin with. There was something about this experience that made me feel mentally disconnected and zombie-like, especially as coding apps like Conductor and Codex enabled the ability to run more agents in parallel. I felt I couldn’t really focus and access the same depth or understanding about what I was working on as I was able to in beforetimes. This also made it more difficult for me to verify whether generated results were correct. There was no clear, interpretable trace showing the connection between user prompt → agent decision → code → product behavior. This didn’t mean I wanted to return to the olden days of looking at lin",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Plan mode is dead | Ayman Nadeem Earlier this year, I believed planning was going to become the most important part of building software with AI. My belief in this idea was so strong that I built and launched an entire desktop coding app around it. Nuanced was motivated by the observation that AI had radically increased the speed and volume of code generation, but interfaces required to support this new pace of working hadn’t caught up yet.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 3.7,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Plan mode is dead」（Plan mode is dead | Ayman Nadeem Earlier this year, I belie…），涉及 Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Plan mode is dead」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Plan mode is dead | Ayman Nadeem Earlier this year, I believed plan…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Plan mode is dead. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Plan mode is dead | Ayman Nadeem Earlier this year, I believed plan…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Plan mode is dead. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Plan mode is dead | Ayman Nadeem Earlier this year, I believed plan…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Plan mode is dead. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Plan mode is dead | Ayman Nadeem Earlier this year, I believed plan…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Plan mode is dead. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Plan mode is dead：计划模式已死|Ayman Nadeem 今年早些时候，我相信规划将成为使用人工智能构建软件的最重要部分。我对这个想法的信念如此坚定，以至于我围绕它构建并启动了整个桌面编码应用程序。"
+  },
+  {
+    "source": "Hacker News",
+    "title": "Show HN: Jev Plays Pokémon Red",
+    "url": "https://jev-pokemon.vercel.app/",
+    "hn_url": "https://news.ycombinator.com/item?id=49845172",
+    "heat": "181 points",
+    "time": "10 hours ago",
+    "developer_name": "pancomplex",
+    "developer_url": "https://news.ycombinator.com/user?id=pancomplex",
+    "content": "Jev Plays Pokémon Red JEV LIVE FEED JEV BOY STARTS MUTED. UNMUTE FOR GAME AUDIO. THE RIGHT PANEL SHOWS EVERY DECISION AND JEV'S ODDS. OAK: JEV only knew where to go next because it had a guide. Your users need one too! FRIGADE is an AI assistant that learns your product on its own and shows each user the next step, right inside your app. EXPLORE FRIGADE READ THE CODE ▼",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Go"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Show HN: Jev Plays Pokémon Red: Jev Plays Pokémon Red JEV LIVE FEED JEV BOY STARTS MUTED. UNMUTE FOR GAME AUDIO. THE RIGHT PANEL SHOWS EVERY DECISION AND JEV'S ODDS. OAK: JEV only knew where to go next because it had a guide.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 3.2,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Show HN: Jev Plays Pokémon Red」（Show HN: Jev Plays Pokémon Red: Jev Plays Pokémon Red JEV L…），涉及 Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Show HN: Jev Plays Pokémon Red」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Show HN: Jev Plays Pokémon Red: Jev Plays Pokémon Red JEV LIVE FEED…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Show HN: Jev Plays Pokémon Red. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Show HN: Jev Plays Pokémon Red: Jev Plays Pokémon Red JEV LIVE FEED…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Show HN: Jev Plays Pokémon Red. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Show HN: Jev Plays Pokémon Red: Jev Plays Pokémon Red JEV LIVE FEED…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Show HN: Jev Plays Pokémon Red. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Show HN: Jev Plays Pokémon Red: Jev Plays Pokémon Red JEV LIVE FEED…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Show HN: Jev Plays Pokémon Red. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Show HN: Jev Plays Pokémon Red：展示 HN: Jev Plays Pokémon Red: Jev Plays Pokémon Red JEV LIVE FEED JEV BOY STARTS MUTED。UNMUTE FOR GAME AUDIO"
+  },
+  {
+    "source": "Hacker News",
+    "title": "What even is an OS now?",
+    "url": "https://sockpuppet.org/blog/2026/09/25/what-even-is-an-os-now/",
+    "hn_url": "https://news.ycombinator.com/item?id=49850305",
+    "heat": "141 points",
+    "time": "8 hours ago",
+    "developer_name": "fratellobigio",
+    "developer_url": "https://news.ycombinator.com/user?id=fratellobigio",
+    "content": "What Even Is An OS Now? — A Final Ward Crazy as it sounds to say this, since it’s all anybody’s been able to talk about for over a year, but the impact of AI on computing hasn’t yet sunk in. Today I’m parting company with Fly.io to work with Kurt on a new project. I’m getting that out of the way so you all know up front I’m talking my book. When I was a little kid, a family friend sold us our first “computer” — scare quotes because I’m pretty sure it was a VTech Laser 200 clone, a chiclet keyboard Z80 that ran off cassette tapes and plugged into our TV. I was old enough to know what a computer was, and conceptually what it meant to program one, because I remember dreaming of all the dumb games I could make. Finally! We had a device that would allow me to make things like the “Hitchhiker’s Guide” text adventure I’d play at my dad’s office. But it booted straight into BASIC. That’s all it did. I was, like, 8 years old. I wasn’t about to learn BASIC. What I learned instead: computers were not as awesome as I’d imagined. By my mid-teens, computer security finally dragged me into programming. Coding only reinforced that crummy lesson. The more I understood how programs were constructed, the more forbidding it sounded to build an entire complicated application. I could belt out fast network servers no problem, but a word processor? You might as well have asked me to build a diesel locomotive. Suddenly, everything has changed. Computers now work the way I thought they did when I was 8. I’ve been writing these past several months about all the native macOS apps I’ve been churning out, and how weird it is to watch AI dissolve the boundaries between backend programming and frontend, between web and native, systems and applications. All huge stories; any one of them would land in my career top 10 big shifts. But AI is knocking down a much more important boundary: the one between programmers and users. My Mac menu bar and task switcher are cluttered with icons for programs I conjured for myself, with English as my programming language. What I did on my computer, any power user can do on theirs. Will do on theirs. It’s fucking inevitable. ❦ That’s a statement about the reality; a “prediction”, if you want a concession to your skepticism about AI, but only in the sense that I can predict that the sun will rise in the east tomorrow. So what do you do with that? I think we’re all so bumfuzzled by the first-order impacts of AI that we haven’t considered the second-order effects. Consider: what does computing look like in a world where many (maybe most) applications have an audience of just 1-2 people? How is software distributed? What does it run on? When I was younger, I learned that programs were normally something you bought off the shelves at Egghead Software. Then I watched the shelves at Egghead become obsolete. Then boxed software altogether. Then software shipped on CD-ROMs — you know that’s why we call it “shipping”, right? we used to have to arrange shi",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "fly.io"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Fly.io"
+      ],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "正向推广",
+      "detail_brief": "What Even Is An OS Now? — A Final Ward Crazy as it sounds to say this, since it’s all anybody’s been able to talk about for over a year, but the impact of AI on computing hasn’t yet sunk in. Today I’m parting company with Fly. io to work with Kurt on a new project.",
+      "heat_score": 5.0,
+      "timeliness_score": 7.0,
+      "composite_score": 3.5,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "社区参与"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 社区参与",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「What even is an OS now?」（What Even Is An OS Now? — A Final Ward Crazy as it sounds t…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（开发者话题持续性强）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「What even is an OS now?」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉围绕文章核心论点做信息图或金句图，避免使用通用插画。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "What Even Is An OS Now? — A Final Ward Crazy as it sounds to say th…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "What even is an OS now?. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：What Even Is An OS Now? — A Final Ward Crazy as it sounds to say th…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解 + 社区参与。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: What even is an OS now?. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough + community conversation. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。What Even Is An OS Now? — A Final Ward Crazy as it sounds to say th…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解 + 社区参与，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. What even is an OS now?. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough + community conversation.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：What Even Is An OS Now? — A Final Ward Crazy as it sounds to say th…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解 + 社区参与。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: What even is an OS now?. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough + community conversation. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "What even is an OS now?：What Even Is An OS Now。— A Final Ward Crazy as it sounds to say this, since it’s all anybody’s been able to talk about for over a year, but the impact of AI on computing hasn’…"
+  }
+]
