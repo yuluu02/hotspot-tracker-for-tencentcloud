@@ -1,0 +1,925 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "tester-army/e2e - Next generation e2e testing framework for web and mobile apps.",
+    "url": "https://github.com/tester-army/e2e",
+    "heat": "5,184 stars",
+    "time": "Today",
+    "developer_name": "tester-army",
+    "developer_url": "https://github.com/tester-army",
+    "developer_email": "hello@tester.army",
+    "today_stars": "1,398 stars today",
+    "language": "TypeScript",
+    "summary": "Next generation e2e testing framework for web and mobile apps.",
+    "content": "   \n\n \n     \n     \n     \n     \n \n\n \n        \n \n\n# e2e\n\ne2e is an end-to-end testing framework for web and mobile apps. Describe a goal in natural language and an agent drives the app to reach it. Check the result with locators and assertions in the same test.\n\n```ts\n// tests/checkout.e2e.ts\nimport { test, expect } from 'e2e';\n\ntest('a member upgrades to Pro', async ({ app, agent, screen }) => {\n  await app.open('/settings/billing');\n\n  await agent.act('upgrade the workspace to the Pro plan');\n  await agent.assert('the invoice preview shows a prorated amount');\n\n  await expect(screen.getByRole('status')).toContainText('Pro');\n});\n```\n\nAn agent step that a later assertion verifies records its actions, and the\nnext run replays them with no model calls until the app changes. Tests\nwithout agent steps need no model. Bring your own subscription, API key, or\nlocal model.\n\n## Quick start\n\n```bash\nnpx e2e init\n```\n\n`init` asks for an engine, web or mobile, and a model provider, then writes a\nconfig and an example test. The\nquickstart covers the rest.\n\nTo see a finished setup in your stack, open\n`examples/`:\nVite, Next.js, Expo, and SwiftUI, each a standalone project with a passing\nsuite.\n\n## Packages\n\n| Package | What it does |\n| --- | --- |\n| `e2e` | The SDK, runner, and CLI. |\n| `@e2e-dev/web` | Browser engine: Chromium, Firefox, and WebKit through Playwright. |\n| `@e2e-dev/mobile` | iOS and Android engine: simulators and emulators through agent-device. |\n| `@e2e-dev/github` | Reporter that posts results as a pull request comment. |\n| `@e2e-dev/kernel` | Kernel hosted browsers for the web engine. |\n| `@e2e-dev/eas` | EAS Simulators hosted iOS simulators and Android emulators for the mobile engine. |\n| `@e2e-dev/decision` | Decision-model executors for bounded semantic actions and assertions. |\n\n## Documentation\n\ne2e.tester.army/docs. The `e2e` package ships\nevery page, so coding agents can read them offline in `node_modules/e2e/docs`.\n\n## Contributing\n\nSee CONTRIBUTING.md. Questions go to\nDiscord.\n\n## Security\n\nPlease don't open public issues for security vulnerabilities. Follow\nSECURITY.md and report them to\nsecurity@tester.army.\n\n## Telemetry\n\nThe CLI sends anonymous usage data, such as which commands and engines run and\nwhere runs fail, but no test content, app content, or credentials. Opt out with\n`npx e2e telemetry disable` or `E2E_TELEMETRY_DISABLED=1`.\nTelemetry lists every field.\n\n## Status\n\n> [!NOTE]\n> e2e is in active development on the way to 1.0. APIs and config can still\n> change between minor releases.\n\n## Made by TesterArmy\n\ne2e is built by TesterArmy,\nthe agentic testing platform that runs natural language tests on web and mobile\napps, on every pull request or on a schedule.\n\nApache-2.0.",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "agent",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go",
+        "TypeScript",
+        "React"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "tester-army/e2e: Next generation e2e testing framework for web and mobile apps.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.6,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「tester-army/e2e - Next generation e2e testing fra…」（tester-army/e2e: Next generation e2e testing framework for…），涉及 Agent / Go / TypeScript → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「tester-army/e2e - Next generation e2e t…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 e2e 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 e2e 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "tester-army/e2e: Next generation e2e testing framework for web and…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "tester-army/e2e - Next generation e2e testing framework for web and mobile apps.. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：tester-army/e2e: Next generation e2e testing framework for web and…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: tester-army/e2e - Next generation e2e testing framework for web and mobile apps.. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。tester-army/e2e: Next generation e2e testing framework for web and…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. tester-army/e2e - Next generation e2e testing framework for web and mobile apps.. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：tester-army/e2e: Next generation e2e testing framework for web and…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: tester-army/e2e - Next generation e2e testing framework for web and mobile apps.. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "适用于 Web 和移动应用程序的下一代 e2e 测试框架。",
+    "developer_profile": {
+      "github_username": "tester-army",
+      "profile_url": "https://github.com/tester-army",
+      "name": "TesterArmy",
+      "bio": "Start catching bugs in minutes",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://tester.army",
+      "twitter_username": "TesterArmy",
+      "email": "hello@tester.army",
+      "followers": 100,
+      "following": 0,
+      "public_repos": 7,
+      "avatar_url": "https://avatars.githubusercontent.com/u/252887899?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/TesterArmy"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/testerarmy"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "heat": "96,741 stars",
+    "time": "Today",
+    "developer_name": "thedotmack",
+    "developer_url": "https://github.com/thedotmack",
+    "developer_email": "",
+    "today_stars": "534 stars today",
+    "language": "TypeScript",
+    "summary": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+    "content": " \n   \n   \n     \n       \n       \n       \n     \n   \n \n\n \n   \n  &nbsp;&nbsp;&nbsp;\n   \n  &nbsp;&nbsp;&nbsp;\n   \n \n\n \n   🇨🇳 中文  •\n   🇹🇼 繁體中文  •\n   🇯🇵 日本語  •\n   🇵🇹 Português  •\n   🇧🇷 Português  •\n   🇰🇷 한국어  •\n   🇪🇸 Español  •\n   🇩🇪 Deutsch  •\n   🇫🇷 Français  •\n   🇮🇱 עברית  •\n   🇸🇦 العربية  •\n   🇷🇺 Русский  •\n   🇵🇱 Polski  •\n   🇨🇿 Čeština  •\n   🇳🇱 Nederlands  •\n   🇹🇷 Türkçe  •\n   🇺🇦 Українська  •\n   🇻🇳 Tiếng Việt  •\n   🇵🇭 Tagalog  •\n   🇮🇩 Indonesia  •\n   🇹🇭 ไทย  •\n   🇮🇳 हिन्दी  •\n   🇧🇩 বাংলা  •\n   🇵🇰 اردو  •\n   🇷🇴 Română  •\n   🇸🇪 Svenska  •\n   🇮🇹 Italiano  •\n   🇬🇷 Ελληνικά  •\n   🇭🇺 Magyar  •\n   🇫🇮 Suomi  •\n   🇩🇰 Dansk  •\n   🇳🇴 Norsk \n \n\n Persistent memory compression system built for  Claude Code . \n\n \n   \n     \n   \n   \n     \n   \n   \n     \n   \n   \n     \n   \n \n\n \n   \n     \n       \n       \n       \n     \n   \n \n\n \n\n \n   \n     \n       \n         \n           \n         \n       \n     \n     \n       \n         \n           \n           \n           \n         \n       \n     \n   \n \n\n \n   Quick Start  •\n   How It Works  •\n   Search Tools  •\n   Documentation  •\n   Configuration  •\n   Troubleshooting  •\n   License \n \n\n \n  Claude-Mem seamlessly preserves context across sessions by automatically capturing tool usage observations, generating semantic summaries, and making them available to future sessions. This enables Claude to maintain continuity of knowledge about projects even after sessions end or reconnect.\n \n\n---\n\n## Quick Start\n\nInstall claude-mem for Grok Bot:\n\n```bash\nnpx claude-mem install --ide grok-bot\n```\n\nGrok Bot has no host hooks, so we watch the chat log files. Default is CMEM Pro, the hosted memory. Local observer is opt-in: `--provider host`. Installing this plugin does not install Cursor.\n\n**Awareness push pilot (LFG + Orifice):** needle observations (`decision`, `bugfix`, `security_alert`, `sensitive`) are appended as dated `- YYYY-MM-DD [awareness] …` lines into that bot's `memory/log/YYYY-MM.md`. Grok Bot already re-reads the log from disk. This does not write `profile.md`, user-memory, or project memory. Disable with `CLAUDE_MEM_GROK_BOT_AWARENESS_ENABLED=false`.\n\nInstall with a single command:\n\n```bash\nnpx claude-mem install\n```\n\nThe installer sets everything up first, then asks you to sign in to claude-mem in your browser (email magic link — no card required). Signing in provisions a memory key for your account and unlocks the **claude-mem observer**: memory that runs off-plan, free for up to 14 days, so you get up to 100% more usage from your plan. When the free trial ends, memory automatically falls back to your Anthropic plan unless you subscribe. After sign-in you pick your memory provider — the claude-mem observer, your own OpenRouter or Gemini key, or your Anthropic plan.\n\nPrefer to skip the sign-in? Pass an explicit `--provider` flag, set `CLAUDE_MEM_ONLINE_OPTIN=false`, or run in CI/non-interactive shells — the installer completes without any account interaction.\n\nOr install for OpenCode:\n\n```bash\nnpx claude-mem install --ide opencode\n```\n\nO",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.6,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "copilot",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「thedotmack/claude-mem - Persistent Context Across…」（Persistent Context Across Sessions for Every Agent – Captur…），涉及 Agent → 可写方向：**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「thedotmack/claude-mem - Persistent Cont…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 claude-mem 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 claude-mem 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 claude-mem 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 claude-mem 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Persistent Context Across Sessions for Every Agent – Captures every…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Persistent Context Across Sessions for Every Agent – Captures every…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Persistent Context Across Sessions for Every Agent – Captures every…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Persistent Context Across Sessions for Every Agent – Captures every…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "claude-mem：每个座席跨会话的持久上下文 – 捕获座席在会话期间所做的所有操作，使用 AI 对其进行压缩，并将相关上下文注入到未来的会话中。适用于 Claude Code、OpenClaw、Codex、Gemini、Hermes、Copilot、OpenCode 等",
+    "developer_profile": {
+      "github_username": "thedotmack",
+      "profile_url": "https://github.com/thedotmack",
+      "name": "Alex Newman",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "Claude_Memory",
+      "email": "",
+      "followers": 2071,
+      "following": 128,
+      "public_repos": 127,
+      "avatar_url": "https://avatars.githubusercontent.com/u/683968?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/Claude_Memory"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "earthtojake/text-to-cad - Give your agent CAD superpowers.",
+    "url": "https://github.com/earthtojake/text-to-cad",
+    "heat": "17,568 stars",
+    "time": "Today",
+    "developer_name": "earthtojake",
+    "developer_url": "https://github.com/earthtojake",
+    "developer_email": "",
+    "today_stars": "437 stars today",
+    "language": "Python",
+    "summary": "Give your agent CAD superpowers.",
+    "content": " \n\n \n\nGive your agent CAD superpowers.\n\nDocs\n\n[](https://github.com/earthtojake/text-to-cad/stargazers)\n[](https://skills.sh/earthtojake/text-to-cad)\n[](https://x.com/earthtojake)\n[](https://discord.gg/5FGB9DwJYU)\n[](LICENSE)\n[](https://github.com/earthtojake/text-to-cad/actions/workflows/test.yml?query=branch%3Amain)\n[](https://pypi.org/project/cadgen/)\n[](https://github.com/gumyr/build123d)\n[](https://dev.opencascade.org)\n[](packages/cadgen/pyproject.toml)\n[](https://nodejs.org)\n\n \n\n# text-to-cad\n\nThe text-to-cad plugin gives your agent local workflows for generating 3D models\nas STEP, GLB, STL or 3MF files. It also does design for manufacturing checks,\ngenerates engineering drawings, and connects to popular 3D printing, sheet metal\nand CNC fabrication services.\n\nIt is supported by all popular agents that support plugins or the\nskills framework, including Claude Code, Codex, Cursor,\nGemini and Grok.\n\n## 💻 Install\n\n### Ask your agent (recommended)\n\nSend this message to your agent and it will install text-to-cad for you.\n\n```text\nInstall text-to-cad from https://github.com/earthtojake/text-to-cad\n```\n\nOr install it yourself:\n\n1. CAD runs through uv: check that it is installed\n   (`uv --version`), and if it is missing, install it with\n   uv's installer.\n2. Run the commands under your agent app's heading below, or under\n   Other Agents if it has none.\n3. Restart the app. Its first start downloads CAD's runtime, so it needs a network\n   connection.\n\nThe plugin for your agent app brings the skills and CAD's viewer, a local server\n(`cadgen mcp`). For an agent without a plugin, install the skills alone. Install\none or the other in an app, not both: two copies means every skill twice.\n\nThe install commands below take the `latest` branch: it holds the plugin alone\nand gets each release once it is on PyPI. `main`, where development happens,\ninstalls too, but can hold changes that aren't released yet. Each app names the\nbranch in its own way (`#latest`, `--ref latest`, `@latest` or\n`--branch latest`); leave it out and the app installs `main`.\n\nEach app's heading also says how to update text-to-cad, and how to reinstall it:\nremove it, then install it again. Updating the plugin updates CAD: the new\nrelease's cadgen is downloaded the first time it runs, and the skills and the\nserver share it. Earlier releases stay in uv's cache until you run `uv cache prune`.\n\n### Claude Code\n\n```bash\nclaude plugin marketplace add earthtojake/text-to-cad#latest\nclaude plugin install text-to-cad@earthtojake\n```\n\nThe plugin also starts CAD's server. Where Claude Code can show app views, CAD\nshows models as viewer cards in the conversation; otherwise, as in a terminal,\nasking it to show a model gives you a link that opens the model in the CAD\nViewer in your browser.\n\nTo update, run these, then restart Claude Code:\n\n```bash\nclaude plugin marketplace update earthtojake\nclaude plugin update text-to-cad@earthtojake\n```\n\nTo reinstall, remove it with these, then run the install comman",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "gemini",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "3D Generation"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "earthtojake/text-to-cad: Give your agent CAD superpowers.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.2,
+      "tcloud_relevance": 8.3,
+      "tcloud_integration": "**text-to-cad** 的用户群和 CodeBuddy 高度重合 — 可以写「text-to-cad 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式\n补充关联 Hunyuan3D：**text-to-cad** 产出的 3D 资产可以用 Hunyuan3D 辅助生成 — Hunyuan3D 支持自动生成 mesh 和纹理，降低 3D 内容生产的人力成本",
+      "tcloud_products": [
+        "CodeBuddy",
+        "Hunyuan3D"
+      ],
+      "tcloud_reasons": [
+        "**text-to-cad** 的用户群和 CodeBuddy 高度重合 — 可以写「text-to-cad 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "**text-to-cad** 产出的 3D 资产可以用 Hunyuan3D 辅助生成 — Hunyuan3D 支持自动生成 mesh 和纹理，降低 3D 内容生产的人力成本"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor",
+        "3d model",
+        "3d printing"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**text-to-cad** 的用户群和 CodeBuddy 高度重合 — 可以写「text-to-cad 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式\n补充关联 Hunyuan3D：**text-to-cad** 产出的 3D 资产可以用 Hunyuan3D 辅助生成 — Hunyuan3D 支持自动生成 mesh 和纹理，降低 3D 内容生产的人力成本",
+      "tcloud_official_matches": [
+        "CodeBuddy",
+        "Hunyuan3D"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy / Hunyuan3D）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan3D）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「earthtojake/text-to-cad - Give your agent CAD sup…」（earthtojake/text-to-cad: Give your agent CAD superpowers.），涉及 Agent / MCP / 3D Generation → 可写方向：**text-to-cad** 的用户群和 CodeBuddy 高度重合 — 可以写「text-to-cad 用户迁移到 CodeBuddy 的体验对比」，突…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「earthtojake/text-to-cad - Give your age…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 text-to-cad 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 text-to-cad 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 text-to-cad 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 text-to-cad 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "earthtojake/text-to-cad: Give your agent CAD superpowers.。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**text-…",
+        "x_en": "earthtojake/text-to-cad - Give your agent CAD superpowers.. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：earthtojake/text-to-cad: Give your agent CAD superpowers.。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan3D）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: earthtojake/text-to-cad - Give your agent CAD superpowers.. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan3D). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。earthtojake/text-to-cad: Give your agent CAD superpowers.。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan3D），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**text-to-cad** 的用户群和 CodeBuddy 高度重合 — 可以写「text-to-cad 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式 补充关联 Hunyuan3D：**text-to-cad** 产出的 3D 资产可以用 Hunyuan3D 辅助生成 — Hunyuan3D 支持自动生成 mesh 和纹理，降低 3D 内容生产的人力成本",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. earthtojake/text-to-cad - Give your agent CAD superpowers.. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan3D).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：earthtojake/text-to-cad: Give your agent CAD superpowers.。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan3D）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: earthtojake/text-to-cad - Give your agent CAD superpowers.. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan3D). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "text-to-cad：赋予您的代理 CAD 超能力。",
+    "developer_profile": {
+      "github_username": "earthtojake",
+      "profile_url": "https://github.com/earthtojake",
+      "name": "earthtojake",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "www.earthtojake.com",
+      "twitter_username": "earthtojake",
+      "email": "",
+      "followers": 464,
+      "following": 18,
+      "public_repos": 18,
+      "avatar_url": "https://avatars.githubusercontent.com/u/10742417?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/earthtojake"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/jake-fitzgerald-680855b1/"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.earthtojake.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "pingdotgg/t3code",
+    "url": "https://github.com/pingdotgg/t3code",
+    "heat": "25,710 stars",
+    "time": "Today",
+    "developer_name": "pingdotgg",
+    "developer_url": "https://github.com/pingdotgg",
+    "developer_email": "oss@ping.gg",
+    "today_stars": "485 stars today",
+    "language": "TypeScript",
+    "content": "# T3 Code\n\nT3 Code is an \"agent harness control surface\". It enables control of the agents on your machine with a best-in-class mobile app (iOS, Android), web app and Electron-based desktop app.\n\nWorks with your subscriptions on Claude Code, Codex, Cursor, Grok Build, OpenCode, and Google Antigravity. If they're set up on your computer, T3 Code can control them.\n\n## \"Wait, what are you selling me?\"\n\nNothing. We built T3 Code because we wanted the best possible development experience with agents. We were inspired by existing solutions like the Codex desktop app, Conductor, Claude Desktop and Cursor Glass, but none met our bar.\n\nWe wanted something performant, remote-ready, and truly open. If we ever go the wrong direction, we want you to have everything you need to fork and build the editor that you want.\n\n## Installation\n\n> [!WARNING]\n> T3 Code currently supports Codex, Claude, Cursor, Grok Build, OpenCode, and Antigravity. Install and authenticate at least one provider before use:\n>\n> - Codex: install Codex CLI and run `codex login`\n> - Claude: install Claude Code and run `claude auth login`\n> - Cursor: install Cursor CLI and run `agent login`\n> - Grok Build: install Grok Build CLI and run `grok login`\n> - OpenCode: install OpenCode and run `opencode auth login`\n> - Antigravity: enable it in Settings, then use **Install Antigravity** and **Sign in with Google**. No CLI is required.\n\n### Command line\n\n```bash\ncurl -fsSL https://t3.codes/install.sh | sh\n```\n\nOn Windows, in PowerShell:\n\n```powershell\nirm https://t3.codes/install.ps1 | iex\n```\n\nThen run `t3` to start the server and open the local web app. `t3 service install` keeps it running in the background, `t3 update` moves to a newer release, and `t3 --help` has the full reference.\n\nTo try it once without installing, run `npx t3@latest` instead.\n\n### Desktop app\n\nInstall the latest version of the desktop app from GitHub Releases, or from your favorite package registry:\n\n#### Windows (`winget`)\n\n```bash\nwinget install T3Tools.T3Code\n```\n\n#### macOS (Homebrew)\n\n```bash\nbrew install --cask t3-code\n```\n\n#### Debian, Ubuntu (`.deb`)\n\nDownload the `.deb` from GitHub Releases, then:\n\n```bash\nsudo apt install ./T3-Code-*.deb\n```\n\n#### Arch Linux (AUR)\n\nStable:\n\n```bash\nyay -S t3code-bin\n```\n\nNightly:\n\n```bash\nyay -S t3code-nightly-bin\n```\n\nThe AUR packaging is maintained in this repository under `packaging/aur`.\n\n## Some notes\n\nWe are very very early in this project. Expect bugs.\n\nWe are (mostly) not accepting contributions yet. Small fixes may be considered. Big features will not be.\n\n## Documentation\n\nFull docs live in docs/. There's no docs site yet.\n\n- Install and first run\n- Permission modes\n- Keyboard shortcuts\n- Project settings\n- Appearance preferences\n- Remote access from a phone or another machine\n- Keeping app and server in sync\n- Source control integrations\n- Multiple accounts: Codex · Claude\n- Run T3 Code as a background service\n\nBuilding from source? Start at docs/internals/overview.md.\n",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "# T3 Code T3 Code is an \"agent harness control surface\". It enables control of the agents on your machine with a best-in-class mobile app (iOS, Android), web app and Electron-based desktop app. Works with your subscriptions on Claude Code, Codex, Cursor, Grok Build, OpenCode, and Google Antigravity. If they're set up on your computer, T3 Code can control them.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.5,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**t3code** 的用户群和 CodeBuddy 高度重合 — 可以写「t3code 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**t3code** 的用户群和 CodeBuddy 高度重合 — 可以写「t3code 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**t3code** 的用户群和 CodeBuddy 高度重合 — 可以写「t3code 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「pingdotgg/t3code」（# T3 Code T3 Code is an \"agent harness control surface\". It…），涉及 Agent / Go → 可写方向：**t3code** 的用户群和 CodeBuddy 高度重合 — 可以写「t3code 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBudd…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「pingdotgg/t3code」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 t3code 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 t3code 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 t3code 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 t3code 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "# T3 Code T3 Code is an \"agent harness control surface\". It enables…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "pingdotgg/t3code. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：# T3 Code T3 Code is an \"agent harness control surface\". It enables…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: pingdotgg/t3code. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。# T3 Code T3 Code is an \"agent harness control surface\". It enables…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**t3code** 的用户群和 CodeBuddy 高度重合 — 可以写「t3code 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. pingdotgg/t3code. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：# T3 Code T3 Code is an \"agent harness control surface\". It enables…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: pingdotgg/t3code. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "t3code：# T3 Code T3 Code 是“代理线束控制界面”。它可以通过一流的移动应用程序（iOS、Android）、Web 应用程序和基于 Electron 的桌面应用程序来控制机器上的代理。",
+    "developer_profile": {
+      "github_username": "pingdotgg",
+      "profile_url": "https://github.com/pingdotgg",
+      "name": "Ping.gg",
+      "bio": "We build tools for modern devs",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://ping.gg/",
+      "twitter_username": "pingdotgg",
+      "email": "oss@ping.gg",
+      "followers": 1776,
+      "following": 0,
+      "public_repos": 11,
+      "avatar_url": "https://avatars.githubusercontent.com/u/89191727?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/pingdotgg"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Panniantong/Agent-Reach - Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "heat": "92,134 stars",
+    "time": "Today",
+    "developer_name": "Panniantong",
+    "developer_url": "https://github.com/Panniantong",
+    "developer_email": "",
+    "today_stars": "1,155 stars today",
+    "language": "Python",
+    "summary": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+    "content": " 👁️ Agent Reach \n\n \n   给你的 AI Agent 一键装上互联网能力 \n \n\n \n  当下最稳的接入方式，替你选好、装好、体检好——接入方式会换代，你不用操心\n \n\n \n     \n     \n \n\n \n     \n     \n     \n \n\n \n   快速开始  ·  English  ·  日本語  ·  한국어  ·  支持平台  ·  设计理念 \n \n\n---\n\n## ❤️赞助商\n\n> 想出现在这里？\n\n \n 点击折叠 \n\n \n \n     \n  BrowserAct  支持从 Amazon、LinkedIn、X、Google Maps 等复杂网站提取你需要的任意数据。你只需用自然语言描述抓取需求，Agent 就会基于真实浏览器自动探索并测试页面流程，生成可靠、可复用的数据采集 Bot，并返回结构化结果。无需手动构建爬虫，无需编写代码。BrowserAct 内置隐身浏览、验证码处理和高质量住宅代理，帮助你更稳定地完成复杂网页数据采集。新用户注册即送 1000 积分， 立即免费试用 。 \n \n \n     \n 在腾讯云 Lighthouse 秒级部署 OpenClaw 全能助手，可通过对话丝滑接入 Agent Reach，给你的 OpenClaw 一键装上互联网能力。 \n \n \n     \n  CoreClaw  | 网页抓取平台与现成数据采集工具，CoreClaw 提供 100+ 现成数据采集工具，支持 Amazon、TikTok、Google Maps、Instagram、Facebook、YouTube 等平台，无需代码，支持 JSON/CSV 导出，仅对成功结果计费。 免费$3测试！  \n \n \n     \n  优刻得星图astraflow大模型 ，支持200+模型一键调用：内置 Kimi K3、DeepSeek V4/V3、Qwen 3、GLM5.2、happyhorse等全球领先开源大模型，无需自训，开箱即用 \n \n \n\n \n\n---\n\n## 为什么需要 Agent Reach？\n\nAI Agent 已经能帮你写代码、改文档、管项目——但你让它去网上找点东西，它就抓瞎了：\n\n- 📺 \"帮我看看这个 YouTube 教程讲了什么\" → **看不了**，拿不到字幕\n- 🐦 \"帮我搜一下推特上大家怎么评价这个产品\" → **搜不了**，Twitter API 要付费\n- 📖 \"去 Reddit 上看看有没有人遇到过同样的 bug\" → **403 被封**，服务器 IP 被拒\n- 📕 \"帮我看看小红书上这个品的口碑\" → **打不开**，必须登录才能看\n- 📺 \"B站上有个技术视频，帮我总结一下\" → **拿不到**，通用下载工具被 B站风控全面拦截\n- 🔍 \"帮我在网上搜一下最新的 LLM 框架对比\" → **没有好用的搜索**，要么付费要么质量差\n- 🌐 \"帮我看看这个网页写了啥\" → **抓回来一堆 HTML 标签**，根本没法读\n- 📦 \"这个 GitHub 仓库是干嘛的？Issue 里说了什么？\" → 能用，但认证配置很麻烦\n- 📡 \"帮我订阅这几个 RSS 源，有更新告诉我\" → 要自己装库写代码\n\n**这些不难实现，但是需要自己折腾配置**\n\n每个平台都有自己的门槛——要付费的 API、要绕过的封锁、要登录的账号、要清洗的数据。你要一个一个去踩坑、装工具、调配置，光是让 Agent 能读个推特就得折腾半天。\n\n**Agent Reach 把这件事变成一句话：**\n\n```\n帮我安装 Agent Reach：https://raw.githubusercontent.com/Panniantong/agent-reach/main/docs/install.md\n```\n\n复制给你的 Agent，几分钟后它就能读推特、搜 Reddit、看 YouTube、刷小红书了。\n\n**已经装过了？更新也是一句话：**\n\n```\n帮我更新 Agent Reach：https://raw.githubusercontent.com/Panniantong/agent-reach/main/docs/update.md\n```\n\n> ⭐ **Star 这个项目**，我们会持续追踪各平台的变化、接入新的渠道。你不用自己盯——平台封了我们修，有新渠道我们加。\n\n### ✅ 在你用之前，你可能想知道\n\n| | |\n|---|---|\n| 💰 **完全免费** | 所有工具开源、所有 API 免费。唯一可能花钱的是服务器代理（$1/月），本地电脑不需要 |\n| 🔒 **隐私安全** | Cookie 只存在你本地，不上传不外传。代码完全开源，随时可审查 |\n| 🔄 **持续换代** | 每个平台都是「首选 + 备选」多后端路由。某个接入方式失效了，我们换下一个，你无感（2026-06 实例：yt-dlp 被 B站风控封死 → 已切换 bili-cli，用户零操作） |\n| 🤖 **兼容所有 Agent** | Claude Code、OpenClaw、Cursor、Windsurf……任何能跑命令行的 Agent 都能用 |\n| 🩺 **自带诊断** | `agent-reach doctor` 一条命令告诉你哪个通、哪个不通、怎么修 |\n\n---\n\n## 支持的平台\n\n| 平台 | 装好即用 | 配置后解锁 | 怎么配 |\n|------|---------|-----------|-------|\n| 🌐 **网页** | 阅读任意网页 | — | 无需配置 |\n| 📺 **YouTube** | 字幕提取 + 视频搜索 | — | 无需配置 |\n| 📡 **RSS** | 阅读任意 RSS/Atom 源 | — | 无需配置 |\n| 🔍 **全网搜索** | — | 全网语义搜索 | 自动配置（MCP 接入，免费无需 Key） |\n| 📦 **GitHub** | 读公开仓库 + 搜索 | 私有仓库、提 Issue/PR、Fork | 告诉 Agent「帮我登录 GitHub」 |\n| 🐦 **Twitter/X** | 读单条推文 | 搜索推文、浏览时间线、读长文 | 告诉 Agent「帮我配 Twitter」 |\n| 📺 **B站** | 搜索 + 视频详情（bili-cli，无需登录） | 字幕（OpenCLI） | 告诉 Agent「帮我配 B站」 |\n| 📖 **Reddit** | —（没有零配置路径：匿名接口已被封） | 搜索 + 读帖子和评论 | 桌面装 OpenCLI 用浏览器登录态；或 rdt-cli + Cookie |\n| 📘 **Facebook** | — | 搜索、主页、Feed、群组列表 | 桌面装 OpenCLI（复用 Chrome 登录态） |\n| 📷 **Instagram** | — | 用户搜索、Profile、用户最近帖子、Explore | 桌面装 OpenCLI（复用 Chrome 登录态） |\n| 📕 **小红书** | — | 搜索、阅读、评论 | OpenCLI 只用用户已有 Chrome 会话；MCP/",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 8,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "腾讯云"
+      ],
+      "ai_hits": [
+        "ai",
+        "大模型",
+        "llm",
+        "claude",
+        "qwen",
+        "deepseek",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "腾讯云",
+        "Lighthouse",
+        "Claude",
+        "DeepSeek",
+        "通义千问",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "MCP"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "Panniantong/Agent-Reach: Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.5,
+      "tcloud_relevance": 9.9,
+      "tcloud_integration": "**Agent-Reach** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**Agent-Reach** 的用户群和 CodeBuddy 高度重合 — 可以写「Agent-Reach 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "Hunyuan",
+        "CodeBuddy",
+        "Lighthouse"
+      ],
+      "tcloud_reasons": [
+        "**Agent-Reach** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**Agent-Reach** 的用户群和 CodeBuddy 高度重合 — 可以写「Agent-Reach 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "**Agent-Reach** 涉及服务器部署场景，Lighthouse 轻量应用服务器提供海外多区域节点和开箱即用环境，适合中小型项目的快速上线"
+      ],
+      "tcloud_evidence": [
+        "lighthouse",
+        "claude code",
+        "cursor",
+        "windsurf",
+        "大模型",
+        "llm",
+        "claude",
+        "deepseek",
+        "qwen"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**Agent-Reach** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**Agent-Reach** 的用户群和 CodeBuddy 高度重合 — 可以写「Agent-Reach 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "CodeBuddy",
+        "Lighthouse"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Panniantong/Agent-Reach - Give your AI agent eyes…」（Panniantong/Agent-Reach: Give your AI agent eyes to see the…），涉及 LLM / Agent / MCP → 可写方向：**Agent-Reach** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**Agent-R…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Agent-Reach」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 Agent-Reach 的核心功能（Panniantong/Agent-Reach: Give your AI agent eyes to see the entire internet. Re…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 Agent-Reach 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 Agent-Reach 的核心功能（Panniantong/Agent-Reach: Give your AI agent eyes to see the entire internet. Re…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 Agent-Reach 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "Panniantong/Agent-Reach: Give your AI agent eyes to see the entire…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：*…",
+        "x_en": "Panniantong/Agent-Reach - Give your AI agent eyes to see the entire internet. Read & se…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Panniantong/Agent-Reach: Give your AI agent eyes to see the entire…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Panniantong/Agent-Reach - Give your AI agent eyes to see the entire internet. Read & se…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + opinionated commentary. What matters more to you: deplo…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Panniantong/Agent-Reach: Give your AI agent eyes to see the entire…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**Agent-Reach** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**Agent-Reach** 的用户群和 CodeBuddy 高度重合 — 可以写「Agent-Reach 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Panniantong/Agent-Reach - Give your AI agent eyes to see the entire internet. Read & se…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Panniantong/Agent-Reach: Give your AI agent eyes to see the entire…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Panniantong/Agent-Reach - Give your AI agent eyes to see the entire internet. Read & se…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Agent-Reach：让您的人工智能代理有一双能够看到整个互联网的眼睛。阅读和搜索 Twitter、Reddit、YouTube、GitHub、Bilibili、小红书 — 一个 CLI，零 API 费用。",
+    "developer_profile": {
+      "github_username": "Panniantong",
+      "profile_url": "https://github.com/Panniantong",
+      "name": "Pnant",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 1414,
+      "following": 6,
+      "public_repos": 38,
+      "avatar_url": "https://avatars.githubusercontent.com/u/73925474?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "calesthio/OpenMontage - World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+    "url": "https://github.com/calesthio/OpenMontage",
+    "heat": "64,262 stars",
+    "time": "Today",
+    "developer_name": "calesthio",
+    "developer_url": "https://github.com/calesthio",
+    "developer_email": "",
+    "today_stars": "742 stars today",
+    "language": "Python",
+    "summary": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+    "content": " \n   \n     \n     \n   \n \n\n   Monty the Clapper — the official mascot of OpenMontage   \n\n OpenMontage \n\n  The first open-source, agentic video production system.  \n\n \n     \n \n\n \n   Paste A Video  &nbsp;·&nbsp;\n   Quick Start  &nbsp;·&nbsp;\n   Try These Prompts  &nbsp;·&nbsp;\n   Pipelines  &nbsp;·&nbsp;\n   How It Works  &nbsp;·&nbsp;\n   Sponsors  &nbsp;·&nbsp;\n   Providers  &nbsp;·&nbsp;\n   Review Guide  &nbsp;·&nbsp;\n   Agent Guide \n \n\n \n     \n \n\n \n   \n     \n       \n       \n     \n   \n \n\n  Follow The Build  \n\n \n     \n     \n     \n \n\n## Sponsors\n\n> Want to support OpenMontage? Sponsor the project.\n\n \n Click to collapse \n\n \n \n     \n  Bloome  lets multiple AI agents (Claude, ChatGPT, DeepSeek, and more) collaborate in one conversation for agentic video pipelines. It has zero setup, runs in the cloud, works on web and mobile, and lets you share a configured agent with your whole team.   Try Bloome  . \n \n \n     \n  Atlas Cloud  is a full-modal AI inference platform that gives developers a single AI API for video generation, image generation, and LLM APIs. Instead of managing multiple vendor integrations, you connect once and get unified access to 300+ curated models across all modalities. Check out Atlas Cloud's new  coding plan  promotion for more budget-friendly API access. \n \n \n\n \n\n---\n\nTurn your AI coding assistant into a full video production studio. Describe what you want in plain language — your agent handles research, scripting, asset generation, editing, and final composition.\n\n**Important distinction:** OpenMontage can make image-based videos, but it can also make a real **video video** for free/open-source workflows: the agent builds a corpus from free stock footage and open archives, retrieves actual motion clips, edits them into a timeline, and renders a finished piece. That is not the usual \"animate a handful of stills and call it video\" trick.\n\n \n    \n \n\n> **\"SIGNAL FROM TOMORROW\"** — a cinematic sci-fi trailer fully produced through OpenMontage: concept, script, scene plan, Veo-generated motion clips, soundtrack, and Remotion composition.\n\n \n    \n \n\n> **\"THE LAST BANANA\"** — a 60-second Pixar-style animated short about a lonely banana who finds friendship with a kiwi. 6 Kling v3-generated motion clips (via fal.ai), Google Chirp3-HD narration, royalty-free piano music, TikTok-style word-level captions, and Remotion composition. Total cost: **$1.33**.\n\n \n    \n \n\n> **\"OBJECTS IN OVERDRIVE\"** — a 54-second, music-driven 3D showcase featuring ten objects with distinct choreography: gravity-shifting furniture, frozen car drifts, cloth impacts, refractive lenses, moving gears, an acrobatic robot, and more. Custom Blender animation and physics, kinetic typography, and a phonk soundtrack. Rendered with Blender Eevee/Cycles and assembled with FFmpeg. No narration.\n\n \n    \n \n\n> **\"Reimagine Your Universe\"** — a 50-second vertical transformation film in which one visual idea moves across objects, eras, materials, and scale. Five generated motion scenes",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": true,
+      "cloud_score": 1,
+      "ai_score": 8,
+      "anxiety_score": 1,
+      "cloud_hits": [
+        "cloud"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "chatgpt",
+        "claude",
+        "deepseek",
+        "agent",
+        "inference",
+        "agentic"
+      ],
+      "anxiety_hits": [
+        "collapse"
+      ],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "3D Generation"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.9,
+      "tcloud_relevance": 4.6,
+      "tcloud_integration": "**OpenMontage** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**OpenMontage** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "llm",
+        "ai api",
+        "claude",
+        "deepseek"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**OpenMontage** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan）",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「calesthio/OpenMontage - World's first open-source…」（World's first open-source, agentic video production system.…），涉及 LLM / Agent / 3D Generation → 可写方向：**OpenMontage** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「OpenMontage」可结合 Hunyuan 写应用实践内容。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 OpenMontage 的核心功能（World's first open-source, agentic video production system. 12 production pipel…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 OpenMontage 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 OpenMontage 的核心功能（World's first open-source, agentic video production system. 12 production pipel…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 OpenMontage 的工作流程图或产出效果截图，展示自动化流程的关键步骤。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "World's first open-source, agentic video production system. 12 prod…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：World's first open-source, agentic video production system. 12 prod…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。World's first open-source, agentic video production system. 12 prod…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**OpenMontage** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：World's first open-source, agentic video production system. 12 prod…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: calesthio/OpenMontage - World's first open-source, agentic video production system. 12…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "OpenMontage：世界上第一个开源的代理视频制作系统。12 条生产管道、100 多种工具、700 多种代理技能和生产知识文件。",
+    "developer_profile": {
+      "github_username": "calesthio",
+      "profile_url": "https://github.com/calesthio",
+      "name": "Calesthio",
+      "bio": "Building open source AI Assisted and Agentic Tools.\r\nCreator of OpenMontage and Crucix — https://www.openmontage.video/\r\n",
+      "company": "Microsoft",
+      "location": "Seattle, WA",
+      "blog": "https://www.openmontage.video/",
+      "twitter_username": "calesthioailabs",
+      "email": "",
+      "followers": 1303,
+      "following": 0,
+      "public_repos": 9,
+      "avatar_url": "https://avatars.githubusercontent.com/u/213189893?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/calesthioailabs"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/@OpenMontage"
+        },
+        {
+          "platform": "instagram",
+          "url": "https://www.instagram.com/theopenmontage/"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://www.openmontage.video/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "caddyserver/caddy - Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS",
+    "url": "https://github.com/caddyserver/caddy",
+    "heat": "77,266 stars",
+    "time": "Today",
+    "developer_name": "caddyserver",
+    "developer_url": "https://github.com/caddyserver",
+    "developer_email": "caddy@dyanim.com",
+    "today_stars": "515 stars today",
+    "language": "Go",
+    "summary": "Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS",
+    "content": " \n\t \n\t\t \n\t\t\t \n\t\t\t \n\t\t\t \n\t\t \n\t \n\t \n\t a     project \n \n \n Every site on HTTPS \n Caddy is an extensible server platform that uses TLS by default. \n \n\t Releases  ·\n\t Documentation  ·\n\t Get Help \n \n \n\t   \n\t&nbsp;\n\t   \n\t&nbsp;\n\t   \n\t&nbsp;\n\t   \n\t&nbsp;\n\t   \n\t \n\t   \n\t&nbsp;\n\t   \n \n \n\t Powered by \n\t \n\t \n\t\t \n\t\t\t \n\t\t\t \n\t\t\t \n\t\t \n\t \n \n\n \n \n\t \n\t Special thanks to: \n\t \n\t \n\t\t \n\t \n\n### Warp, built for coding with multiple AI agents\nAvailable for MacOS, Linux, & Windows \n \n\n \n\n### Menu\n\n- Features\n- Install\n- Build from source\n\t- For development\n\t- With version information and/or plugins\n- Quick start\n- Overview\n- Full documentation\n- Getting help\n- About\n\n## Features\n\n- **Easy configuration** with the Caddyfile\n- **Powerful configuration** with its native JSON config\n- **Dynamic configuration** with the JSON API\n- **Config adapters** if you don't like JSON\n- **Automatic HTTPS** by default\n\t- ZeroSSL and Let's Encrypt for public names\n\t- Fully-managed local CA for internal names & IPs\n\t- Can coordinate with other Caddy instances in a cluster\n\t- Multi-issuer fallback\n\t- Encrypted ClientHello (ECH) support\n- **Stays up when other servers go down** due to TLS/OCSP/certificate-related issues\n- **Production-ready** after serving trillions of requests and managing millions of TLS certificates\n- **Scales to hundreds of thousands of sites** as proven in production\n- **HTTP/1.1, HTTP/2, and HTTP/3** all supported by default\n- **Highly extensible** modular architecture lets Caddy do anything without bloat\n- **Runs anywhere** with **no external dependencies** (not even libc)\n- Written in Go, a language with higher **memory safety guarantees** than other servers\n- Actually **fun to use**\n- So much more to discover\n\n## Install\n\nThe simplest, cross-platform way to get started is to download Caddy from GitHub Releases and place the executable file in your PATH.\n\nSee our online documentation for other install instructions.\n\n## Build from source\n\nRequirements:\n\n- Go 1.26.0 or newer\n\n### For development\n\n_**Note:** These steps will not embed proper version information. For that, please follow the instructions in the next section._\n\n```bash\n$ git clone \"https://github.com/caddyserver/caddy.git\"\n$ cd caddy/cmd/caddy/\n$ go build\n```\n\nWhen you run Caddy, it may try to bind to low ports unless otherwise specified in your config. If your OS requires elevated privileges for this, you will need to give your new binary permission to do so. On Linux, this can be done easily with: `sudo setcap cap_net_bind_service=+ep ./caddy`\n\nIf you prefer to use `go run` which only creates temporary binaries, you can still do this with the included `setcap.sh` like so:\n\n```bash\n$ go run -exec ./setcap.sh main.go\n```\n\nIf you don't want to type your password for `setcap`, use `sudo visudo` to edit your sudoers file and allow your user account to run that command without a password, for example:\n\n```\nusername ALL=(ALL:ALL) NOPASSWD: /usr/sbin/setcap\n```\n\nreplacing `username` with your actual username. Please",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Go"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "caddyserver/caddy: Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.8,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「caddyserver/caddy - Fast and extensible multi-pla…」（caddyserver/caddy: Fast and extensible multi-platform HTTP/…），涉及 Go → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「caddyserver/caddy - Fast and extensible…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 caddy 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 caddy 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "caddyserver/caddy: Fast and extensible multi-platform HTTP/1-2-3 we…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "caddyserver/caddy - Fast and extensible multi-platform HTTP/1-2-3 web server with autom…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：caddyserver/caddy: Fast and extensible multi-platform HTTP/1-2-3 we…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: caddyserver/caddy - Fast and extensible multi-platform HTTP/1-2-3 web server with autom…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。caddyserver/caddy: Fast and extensible multi-platform HTTP/1-2-3 we…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. caddyserver/caddy - Fast and extensible multi-platform HTTP/1-2-3 web server with autom…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：caddyserver/caddy: Fast and extensible multi-platform HTTP/1-2-3 we…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: caddyserver/caddy - Fast and extensible multi-platform HTTP/1-2-3 web server with autom…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "caddy：具有自动 HTTPS 功能的快速且可扩展的多平台 HTTP/1-2-3 Web 服务器",
+    "developer_profile": {
+      "github_username": "caddyserver",
+      "profile_url": "https://github.com/caddyserver",
+      "name": "Caddy",
+      "bio": "The ultimate server: enterprise-ready, extensible, open source, and automatic HTTPS with a configuration API",
+      "company": "",
+      "location": "",
+      "blog": "https://caddyserver.com",
+      "twitter_username": "caddyserver",
+      "email": "caddy@dyanim.com",
+      "followers": 1430,
+      "following": 0,
+      "public_repos": 32,
+      "avatar_url": "https://avatars.githubusercontent.com/u/12955528?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/caddyserver"
+        }
+      ],
+      "is_org": true
+    }
+  }
+]
