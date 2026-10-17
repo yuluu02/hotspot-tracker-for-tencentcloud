@@ -1,26 +1,13 @@
-# 📋 产品 Draft 汇总 — 2026-10-16
+# 📋 产品 Draft 汇总 — 2026-10-17
 
 > 共 2 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CodeBuddy — 今日内容 (7 条)
+# CodeBuddy — 今日内容 (8 条)
 
-## 1. P1 本周发 · morluto/rea
-
-**写什么**: 以 rea 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "morluto/rea" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [morluto/rea](https://github.com/morluto/rea)*
-
----
-
-## 2. P1 本周发 · anthropics/claude-plugins-official
+## 1. P1 本周发 · anthropics/claude-plugins-official
 
 **写什么**: 以 claude-plugins-official 引发的开发者效率讨论为切入点
 
@@ -33,7 +20,7 @@
 
 ---
 
-## 3. P1 本周发 · K-Dense-AI/scientific-agent-skills
+## 2. P1 本周发 · K-Dense-AI/scientific-agent-skills
 
 **写什么**: 以 scientific-agent-skills 引发的开发者效率讨论为切入点
 
@@ -46,29 +33,42 @@
 
 ---
 
-## 4. P0 今天发 · JuliusBrussee/caveman
+## 3. P0 今天发 · affaan-m/ECC
 
-**写什么**: 以 caveman 引发的开发者效率讨论为切入点
+**写什么**: 以 ECC 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "JuliusBrussee/caveman" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "affaan-m/ECC" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)*
+*参考: [affaan-m/ECC](https://github.com/affaan-m/ECC)*
 
 ---
 
-## 5. P0 今天发 · obra/superpowers
+## 4. P1 本周发 · HKUDS/CLI-Anything
 
-**写什么**: 以 superpowers 引发的开发者效率讨论为切入点
+**写什么**: 以 CLI-Anything 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "obra/superpowers" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "HKUDS/CLI-Anything" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [obra/superpowers](https://github.com/obra/superpowers)*
+*参考: [HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything)*
+
+---
+
+## 5. P1 本周发 · mksglu/context-mode
+
+**写什么**: 以 context-mode 引发的开发者效率讨论为切入点
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "mksglu/context-mode" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [mksglu/context-mode](https://github.com/mksglu/context-mode)*
 
 ---
 
@@ -85,32 +85,45 @@
 
 ---
 
-## 7. P1 本周发 · mksglu/context-mode
+## 7. P1 本周发 · android/skills
 
-**写什么**: 以 context-mode 引发的开发者效率讨论为切入点
+**写什么**: 以 skills 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "mksglu/context-mode" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "android/skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [mksglu/context-mode](https://github.com/mksglu/context-mode)*
+*参考: [android/skills](https://github.com/android/skills)*
+
+---
+
+## 8. P0 今天发 · obra/superpowers
+
+**写什么**: 以 superpowers 引发的开发者效率讨论为切入点
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "obra/superpowers" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [obra/superpowers](https://github.com/obra/superpowers)*
 
 ---
 
 
-# GPU CVM — 今日内容 (1 条)
+# Hunyuan — 今日内容 (1 条)
 
-## 1. P0 今天发 · debpalash/VoiceStudio
+## 1. P1 本周发 · 如何评价 rea 逆向一切？
 
-**写什么**: 围绕 VoiceStudio 的核心功能（debpalash/VoiceStudio: VoiceStudio is the open-source, full
+**写什么**: 以「如何评价逆向一切」话题为引子
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🔥 "debpalash/VoiceStudio" — **VoiceStudio** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容. Check out Tencent Cloud GPU CVM for a production-ready solution. #TencentCloud #CloudComputing
+> 🧠 "如何评价 rea 逆向一切？" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
 
-*参考: [debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)*
+*参考: [如何评价 rea 逆向一切？](https://www.v2ex.com/t/1249389)*
 
 ---
 
