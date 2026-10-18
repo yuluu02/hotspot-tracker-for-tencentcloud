@@ -1,6 +1,6 @@
-# 📋 产品 Draft 汇总 — 2026-10-17
+# 📋 产品 Draft 汇总 — 2026-10-18
 
-> 共 2 个产品的 P0/P1 内容草稿
+> 共 3 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
@@ -20,16 +20,16 @@
 
 ---
 
-## 2. P1 本周发 · K-Dense-AI/scientific-agent-skills
+## 2. P1 本周发 · MadsLorentzen/ai-job-search
 
-**写什么**: 以 scientific-agent-skills 引发的开发者效率讨论为切入点
+**写什么**: 以 ai-job-search 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "K-Dense-AI/scientific-agent-skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "MadsLorentzen/ai-job-search" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills)*
+*参考: [MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search)*
 
 ---
 
@@ -59,29 +59,29 @@
 
 ---
 
-## 5. P1 本周发 · mksglu/context-mode
+## 5. P1 本周发 · K-Dense-AI/scientific-agent-skills
 
-**写什么**: 以 context-mode 引发的开发者效率讨论为切入点
+**写什么**: 以 scientific-agent-skills 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "mksglu/context-mode" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "K-Dense-AI/scientific-agent-skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [mksglu/context-mode](https://github.com/mksglu/context-mode)*
+*参考: [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills)*
 
 ---
 
-## 6. P1 本周发 · ruvnet/ruflo
+## 6. P1 本周发 · akitaonrails/ai-memory
 
-**写什么**: 以 ruflo 引发的开发者效率讨论为切入点
+**写什么**: 以 ai-memory 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "ruvnet/ruflo" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "akitaonrails/ai-memory" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [ruvnet/ruflo](https://github.com/ruvnet/ruflo)*
+*参考: [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory)*
 
 ---
 
@@ -98,32 +98,48 @@
 
 ---
 
-## 8. P0 今天发 · obra/superpowers
+## 8. P1 本周发 · stablyai/orca
 
-**写什么**: 以 superpowers 引发的开发者效率讨论为切入点
+**写什么**: 以 orca 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "obra/superpowers" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "stablyai/orca" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [obra/superpowers](https://github.com/obra/superpowers)*
+*参考: [stablyai/orca](https://github.com/stablyai/orca)*
 
 ---
 
 
 # Hunyuan — 今日内容 (1 条)
 
-## 1. P1 本周发 · 如何评价 rea 逆向一切？
+## 1. P1 本周发 · deepseek-v4.1-flash-1017 发布了
 
-**写什么**: 以「如何评价逆向一切」话题为引子
+**写什么**: 以「发布了」话题为引子
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "如何评价 rea 逆向一切？" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🧠 "deepseek-v4.1-flash-1017 发布了" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
 
-*参考: [如何评价 rea 逆向一切？](https://www.v2ex.com/t/1249389)*
+*参考: [deepseek-v4.1-flash-1017 发布了](https://www.v2ex.com/t/1249603)*
+
+---
+
+
+# Lighthouse — 今日内容 (1 条)
+
+## 1. P1 本周发 · 肉身在墙外，现在做物理机远程 Claude 的生意怎么样？
+
+**写什么**: 以「肉身在墙外现在做」话题中的开发者痛点为引子
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🚀 "肉身在墙外，现在做物理机远程 Claude 的生意怎么样？" caught our eye! Deploy it in minutes on Tencent Cloud Lighthouse — Docker pre-installed, global nodes, from $3.5/mo. Try it: https://www.tencentcloud.com/products/lighthouse #CloudComputing #DevOps
+
+*参考: [肉身在墙外，现在做物理机远程 Claude 的生意怎么样？](https://www.v2ex.com/t/1249581)*
 
 ---
 
