@@ -1,0 +1,1056 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "cloudflare/security-audit-skill - A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "url": "https://github.com/cloudflare/security-audit-skill",
+    "heat": "37,166 stars",
+    "time": "Today",
+    "developer_name": "cloudflare",
+    "developer_url": "https://github.com/cloudflare",
+    "developer_email": "",
+    "today_stars": "2,012 stars today",
+    "language": "JavaScript",
+    "summary": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "content": "# security-audit\n\nA coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.\n\nThis is the skill that seeded Cloudflare's vulnerability discovery harness, described in Build your own vulnerability harness. The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.\n\n## What it does\n\nThe skill runs a structured audit in six phases:\n\n1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.\n2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.\n3. **Candidate validation** -- give every unique candidate to a fresh verifier that tries to disprove it.\n4. **Structured output** -- write `confirmed`, `needs_validation`, and `rejected` records to `findings.json` and validate them against `report-schema.json`.\n5. **Independent record verification** -- fresh agents verify final source claims. Material replacements receive another independent verifier.\n6. **Target-neutral reporting** -- derive `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md` from the verified records and coverage ledger.\n\nThe parent runs `validate-coverage-ledger.cjs` after creating the ledger and after each later ledger update. It runs `validate-findings.cjs` in Phase 4 and again after every Phase 5 replacement.\n\nThe verdicts are distinct: `confirmed` has a complete source trace and bounded observed result, `needs_validation` has an exact unresolved fact and no severity, and `rejected` records a disproved candidate.\n\nMultiple runs against the same repo are additive. The skill uses prior ledgers and findings to target gaps, revalidate changed source, and carry forward current-source evidence without treating stale or unresolved work as covered.\n\n## Files\n\n| File | Purpose |\n|------|---------|\n| `SKILL.md` | Setup, core principles, platform terminology, workflow overview, and audit anti-patterns |\n| `RECONNAISSANCE.md` | Phase 1 reconnaissance prompts and synthesis instructions |\n| `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |\n| `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |\n| `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |\n| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |\n| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |\n| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |\n| `SUPPLY-CHAIN-AND-RELEASE.",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloudflare"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Cloudflare"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "cloudflare/security-audit-skill: A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.6,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「cloudflare/security-audit-skill - A coding-agent…」（cloudflare/security-audit-skill: A coding-agent skill for m…），涉及 LLM / Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「cloudflare/security-audit-skill - A cod…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 security-audit-skill 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 security-audit-skill 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "cloudflare/security-audit-skill: A coding-agent skill for multi-pha…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "cloudflare/security-audit-skill - A coding-agent skill for multi-phase security audits…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：cloudflare/security-audit-skill: A coding-agent skill for multi-pha…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: cloudflare/security-audit-skill - A coding-agent skill for multi-phase security audits…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。cloudflare/security-audit-skill: A coding-agent skill for multi-pha…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. cloudflare/security-audit-skill - A coding-agent skill for multi-phase security audits…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：cloudflare/security-audit-skill: A coding-agent skill for multi-pha…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: cloudflare/security-audit-skill - A coding-agent skill for multi-phase security audits…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "security-audit-skill：用于多阶段安全审计的编码代理技能，具有独立验证的机器可读结果",
+    "developer_profile": {
+      "github_username": "cloudflare",
+      "profile_url": "https://github.com/cloudflare",
+      "name": "Cloudflare",
+      "bio": "",
+      "company": "",
+      "location": "San Francisco, London, Austin, Lisbon, Singapore",
+      "blog": "https://www.cloudflare.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 17982,
+      "following": 0,
+      "public_repos": 580,
+      "avatar_url": "https://avatars.githubusercontent.com/u/314135?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "vllm-project/vllm - A high-throughput and memory-efficient inference and serving engine for LLMs",
+    "url": "https://github.com/vllm-project/vllm",
+    "heat": "94,983 stars",
+    "time": "Today",
+    "developer_name": "vllm-project",
+    "developer_url": "https://github.com/vllm-project",
+    "developer_email": "",
+    "today_stars": "441 stars today",
+    "language": "Python",
+    "summary": "A high-throughput and memory-efficient inference and serving engine for LLMs",
+    "content": " \n \n   \n     \n     \n   \n \n\n \nEasy, fast, and cheap LLM serving for everyone\n \n\n \n|   Documentation   |   Blog   |   Paper   |   Twitter/X   |   User Forum   |   Developer Slack   |\n \n\n🔥 We have built a vLLM website to help you get started with vLLM. Please visit vllm.ai to learn more.\nFor events, please visit vllm.ai/events to join us.\n\n---\n\n## About\n\nvLLM is a fast and easy-to-use library for LLM inference and serving.\n\nOriginally developed in the Sky Computing Lab at UC Berkeley, vLLM has grown into one of the most active open-source AI projects built and maintained by a diverse community of many dozens of academic institutions and companies from over 2000 contributors.\n\nvLLM is fast with:\n\n- State-of-the-art serving throughput\n- Efficient management of attention key and value memory with **PagedAttention**\n- Continuous batching of incoming requests, chunked prefill, prefix caching\n- Fast and flexible model execution with piecewise and full CUDA/HIP graphs\n- Quantization: FP8, MXFP8/MXFP4, NVFP4, INT8, INT4, GPTQ/AWQ, GGUF, compressed-tensors, ModelOpt, TorchAO, and more\n- Optimized attention kernels including FlashAttention, FlashInfer, TRTLLM-GEN, FlashMLA, and Triton\n- Optimized GEMM/MoE kernels for various precisions using CUTLASS, TRTLLM-GEN, CuTeDSL\n- Speculative decoding including n-gram, suffix, EAGLE, DFlash\n- Automatic kernel generation and graph-level transformations using torch.compile\n- Disaggregated prefill, decode, and encode\n\nvLLM is flexible and easy to use with:\n\n- Seamless integration with popular Hugging Face models\n- High-throughput serving with various decoding algorithms, including *parallel sampling*, *beam search*, and more\n- Tensor, pipeline, data, expert, and context parallelism for distributed inference\n- Streaming outputs\n- Generation of structured outputs using xgrammar or guidance\n- Tool calling and reasoning parsers\n- OpenAI-compatible API server, plus Anthropic Messages API and gRPC support\n- Efficient multi-LoRA support for dense and MoE layers\n- Support for NVIDIA GPUs, AMD GPUs, Intel GPUs, and x86/ARM/PowerPC CPUs. Additionally, diverse hardware plugins such as Google TPUs, Intel Gaudi, IBM Spyre, Huawei Ascend, Rebellions NPU, Apple Silicon, MetaX GPU, and more.\n\nvLLM seamlessly supports 200+ model architectures on Hugging Face, including:\n\n- Decoder-only LLMs (e.g., Llama, Qwen, Gemma)\n- Mixture-of-Expert LLMs (e.g., Mixtral, DeepSeek-V3, Qwen-MoE, GPT-OSS)\n- Hybrid attention and state-space models (e.g., Mamba, Qwen3.5)\n- Multi-modal models (e.g., LLaVA, Qwen-VL, Pixtral)\n- Embedding and retrieval models (e.g., E5-Mistral, GTE, ColBERT)\n- Reward and classification models (e.g., Qwen-Math)\n\nFind the full list of supported models here.\n\n## Getting Started\n\nInstall vLLM with `uv` (recommended) or `pip`:\n\n```bash\nuv pip install vllm\nvllm download-kernels  # precompiled kernels for faster startup\n```\n\nOr build from source for development.\n\nVisit our documentation to learn more.\n\n- Installation\n- Quickstart\n- L",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 12,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "oss",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "gpt",
+        "llama",
+        "mistral",
+        "qwen",
+        "deepseek",
+        "embedding"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "DeepSeek",
+        "Llama",
+        "Mistral",
+        "通义千问",
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Fine-tuning"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "vllm-project/vllm: A high-throughput and memory-efficient inference and serving engine for LLMs",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.7,
+      "tcloud_relevance": 9.9,
+      "tcloud_integration": "**vllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 GPU CVM：**vllm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan",
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**vllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**vllm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "nvidia",
+        "cuda",
+        "llm",
+        "deepseek",
+        "qwen",
+        "llama"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**vllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 GPU CVM：**vllm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / GPU CVM）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「vllm-project/vllm - A high-throughput and memory-…」（vllm-project/vllm: A high-throughput and memory-efficient i…），涉及 LLM / Fine-tuning → 可写方向：**vllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 GPU CVM：**vllm** 与 GPU CVM…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「vllm」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 vllm 的核心功能（vllm-project/vllm: A high-throughput and memory-efficient inference and serving…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 vllm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 vllm 的核心功能（vllm-project/vllm: A high-throughput and memory-efficient inference and serving…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 vllm 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "vllm-project/vllm: A high-throughput and memory-efficient inference…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "vllm-project/vllm - A high-throughput and memory-efficient inference and serving engine…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：vllm-project/vllm: A high-throughput and memory-efficient inference…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: vllm-project/vllm - A high-throughput and memory-efficient inference and serving engine…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / GPU CVM). What matters more to you: deployment, performance, or work…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。vllm-project/vllm: A high-throughput and memory-efficient inference…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**vllm** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 GPU CVM：**vllm** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. vllm-project/vllm - A high-throughput and memory-efficient inference and serving engine…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / GPU CVM).",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：vllm-project/vllm: A high-throughput and memory-efficient inference…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: vllm-project/vllm - A high-throughput and memory-efficient inference and serving engine…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / GPU CVM). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "vllm：适用于法学硕士的高吞吐量和内存高效推理和服务引擎",
+    "developer_profile": {
+      "github_username": "vllm-project",
+      "profile_url": "https://github.com/vllm-project",
+      "name": "vLLM",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 4390,
+      "following": 0,
+      "public_repos": 52,
+      "avatar_url": "https://avatars.githubusercontent.com/u/136984999?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "stablyai/orca - Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+    "url": "https://github.com/stablyai/orca",
+    "heat": "101,665 stars",
+    "time": "Today",
+    "developer_name": "stablyai",
+    "developer_url": "https://github.com/stablyai",
+    "developer_email": "",
+    "today_stars": "1,541 stars today",
+    "language": "TypeScript",
+    "summary": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+    "content": " \n      Orca\n \n\n \n     \n     \n   \n     \n     \n   \n \n\n \n    中文  ·  日本語  ·  한국어  ·  Español  ·  Français  ·  Português  \n \n\n \n   The AI Orchestrator for 100x builders.  \n  Run Codex, ClaudeCode, OpenCode or Pi side-by-side — each in its own worktree, tracked in one place.\n \n\n   Download Orca   \n\n \n   \n \n\n## Features\n\n \n \n \n\n### Mobile Companion\n\nMonitor and steer your agents from your phone — get notified when an agent finishes and send follow-ups from anywhere.\n\niOS App Store · Android APK · Docs →\n\n \n \n        \n \n \n \n \n\n### Parallel Worktrees\n\nFan one prompt across five agents, each in its own isolated git worktree — compare the results and merge the winner.\n\nDocs →\n\n \n \n        \n \n \n \n \n\n### Terminal Splits\n\nGhostty-class terminals with WebGL rendering, infinite splits, and scrollback that survives restarts.\n\nDocs →\n\n \n \n        \n \n \n \n \n\n### Design Mode\n\nClick any UI element in a real Chromium window to send its HTML, CSS, and a cropped screenshot straight into your agent's prompt.\n\nDocs →\n\n \n \n        \n \n \n \n \n\n### GitHub &amp; Linear, Native\n\nBrowse PRs, issues, and project boards in-app — open a worktree from any task and review without a context switch.\n\nDocs →\n\n \n \n        \n \n \n \n \n\n### SSH Worktrees\n\nRun agents on a beefy remote box with full file editing, git, and terminals — auto-reconnect and port forwarding included.\n\nDocs →\n\n \n \n        \n \n \n \n \n\n### Annotate AI Diffs\n\nDrop comments on any diff line and ship them back to the agent — review, edit, and commit without leaving Orca.\n\nDocs →\n\n \n \n        \n \n \n \n \n\n### Drag Files to Agents\n\nVS Code's editor with autosave everywhere — drag files or images straight into an agent prompt.\n\nDocs →\n\n \n \n        \n \n \n \n \n\n### Orca CLI\n\nAgents drive Orca too — script every workflow with `orca worktree create`, `snapshot`, `click`, and `fill`.\n\nDocs →\n\n \n \n        \n \n \n \n\n**Also in the box:**\n\n- **Quick open** — Search across worktrees, files, agents, commands, and repo context without leaving your flow.\n- **Account switcher &amp; usage tracking** — See Claude and Codex usage and rate-limit resets, and hot-swap accounts without re-logging in.\n- **Rich repo previews** — Preview Markdown, images, PDFs, and repo docs in the workspace.\n- **Computer Use** — Let agents operate desktop apps and visible UI when a workflow needs real interaction.\n- **Notifications and unread state** — Know when an agent finishes or needs attention, then mark threads unread to come back later.\n- **And many, many more** — we ship daily, so this list is perpetually behind. The changelog is the real feature list.\n\n---\n\n## Supported Agents\n\nWorks with **any CLI agent** — if it runs in a terminal, it runs in Orca.\n\n \n      Claude Code   &nbsp;\n      Codex   &nbsp;\n      Grok   &nbsp;\n      Cursor   &nbsp;\n      GitHub Copilot   &nbsp;\n      Muse   &nbsp;\n      DeepSeek Harness   &nbsp;\n      ZCode   &nbsp;\n      OpenCode   &nbsp;\n      MiMo Code   &nbsp;\n      Amp   &nbsp;\n      OpenClaude   &nbsp;\n      Antigravity   &nbsp;\n    ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "deepseek",
+        "copilot",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "观点评论",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "DeepSeek",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "stablyai/orca: Orca is the place for working with a fleet of agents (e. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**orca** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs orca 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**orca** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs orca 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent",
+        "copilot",
+        "cursor",
+        "github copilot"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**orca** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs orca 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「stablyai/orca - Orca is the place for working wit…」（stablyai/orca: Orca is the place for working with a fleet o…），涉及 Agent → 可写方向：**orca** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs orca 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，I…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「stablyai/orca - Orca is the place for w…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 orca 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 orca 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 orca 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 orca 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "stablyai/orca: Orca is the place for working with a fleet of agents…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "stablyai/orca - Orca is the place for working with a fleet of agents (e.g. Grok Bot, Cl…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：stablyai/orca: Orca is the place for working with a fleet of agents…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: stablyai/orca - Orca is the place for working with a fleet of agents (e.g. Grok Bot, Cl…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。stablyai/orca: Orca is the place for working with a fleet of agents…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**orca** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs orca 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. stablyai/orca - Orca is the place for working with a fleet of agents (e.g. Grok Bot, Cl…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：stablyai/orca: Orca is the place for working with a fleet of agents…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: stablyai/orca - Orca is the place for working with a fleet of agents (e.g. Grok Bot, Cl…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Orca 是与代理团队（例如 Grok Bot、Claude Code）合作的地方。",
+    "developer_profile": {
+      "github_username": "stablyai",
+      "profile_url": "https://github.com/stablyai",
+      "name": "Stably",
+      "bio": "",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://stably.ai",
+      "twitter_username": "stably_ai",
+      "email": "",
+      "followers": 611,
+      "following": 0,
+      "public_repos": 23,
+      "avatar_url": "https://avatars.githubusercontent.com/u/127256420?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/stably_ai"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/stably-ai/"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "headroomlabs-ai/headroom - Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+    "url": "https://github.com/headroomlabs-ai/headroom",
+    "heat": "77,369 stars",
+    "time": "Today",
+    "developer_name": "headroomlabs-ai",
+    "developer_url": "https://github.com/headroomlabs-ai",
+    "developer_email": "hello@headroomlabs.ai",
+    "today_stars": "474 stars today",
+    "language": "Python",
+    "summary": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+    "content": " \n\n \n\n   \n\n \n     \n     \n     \n     \n     \n     \n     \n \n\n \n    Quickstart   ·\n    Headroom for Teams   ·\n   Install  ·\n   Proof  ·\n   Agents  ·\n   Docs  ·\n   Discord  ·\n   llms.txt \n \n\n  AI agents / LLMs:  read   /llms.txt   here, or fetch\n the live index  ·\n full docs blob . \n\n \n\n \n\nHeadroom compresses everything your AI agent reads — tool outputs, logs, RAG\nchunks, files, and conversation history — before it reaches the LLM. Same\nanswers, fraction of the tokens. Compression runs on your machine; no prompt or\nfile content is sent anywhere to be compressed.\n\n \n     \n \n\n \n   \n    10,144 → 1,260 tokens. The same  FATAL  found. \n \n\n## What it does\n\n- **Library** — `compress(messages)` in Python or TypeScript, inline in any app.\n- **Proxy** — `headroom proxy --port 8787`, zero code changes, any language.\n- **Agent wrap** — `headroom wrap claude|codex|grok|copilot|cursor|aider|opencode|cline|continue|goose|openhands|openclaw|vibe|omp|zcode` in one command; undo with `headroom unwrap  `.\n- **MCP server** — `headroom_compress`, `headroom_retrieve`, `headroom_stats` for any MCP client.\n- **Cross-agent memory** — one shared store across Claude, Codex, Gemini and Grok, with automatic dedup.\n- **`headroom learn`** — mines failed sessions and writes corrections to `CLAUDE.local.md` (default, gitignored), `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` or `GROK.md`.\n- **Output token reduction** — trims what the model *writes back*, not only what you send. See below.\n- **Reversible (CCR)** — originals are cached locally and retrieved on demand.\n\n## How it works\n\n```\n Your agent / app\n   (Claude Code, Cursor, Codex, LangChain, Agno, Strands, your own code…)\n        │   prompts · tool outputs · logs · RAG results · files\n        ▼\n    ┌────────────────────────────────────────────────────┐\n    │  Headroom   (runs locally — your data stays here)  │\n    │  ────────────────────────────────────────────────  │\n    │  CacheAligner  →  ContentRouter  →  CCR            │\n    │                    ├─ SmartCrusher   (JSON)        │\n    │                    ├─ CodeCompressor (AST)         │\n    │                    └─ Kompress-v2-base (text, HF)  │\n    │                                                    │\n    │  Cross-agent memory  ·  headroom learn  ·  MCP     │\n    └────────────────────────────────────────────────────┘\n        │   compressed prompt  +  retrieval tool\n        ▼\n LLM provider  (Anthropic · OpenAI · Bedrock · …)\n```\n\n- **ContentRouter** detects the content type and selects a compressor for it.\n- **SmartCrusher / CodeCompressor / Kompress-v2-base** handle JSON, source code and prose respectively.\n- **CacheAligner** flags volatile content that would bust a provider KV-cache prefix. It never rewrites prompts.\n- **CCR** stores originals locally so the model can call `headroom_retrieve` when it needs the full text.\n\n→ Architecture ·\nCCR ·\nKompress-v2-base model card\n\n## Get started (60 seconds)\n\n```bash\n# 1 — Install\nuv tool install --python 3.13 \"headroom-ai[all]\"  # CLI",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 12,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "rag",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor",
+        "LangChain"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "RAG",
+        "Agent",
+        "MCP",
+        "Python",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "headroomlabs-ai/headroom: Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.0,
+      "tcloud_relevance": 9.2,
+      "tcloud_integration": "**headroom** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs headroom 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件\n补充关联 Hunyuan：**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**headroom** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs headroom 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent",
+        "copilot",
+        "cursor",
+        "aider",
+        "llm",
+        "claude",
+        "gemini"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**headroom** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs headroom 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件\n补充关联 Hunyuan：**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy / Hunyuan）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「headroomlabs-ai/headroom - Compress tool outputs,…」（headroomlabs-ai/headroom: Compress tool outputs, logs, file…），涉及 LLM / RAG / Agent → 可写方向：**headroom** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs headroom 的横向对比：CodeBuddy 覆盖需求→设计→编码…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「headroomlabs-ai/headroom - Compress too…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 headroom 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 headroom 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 headroom 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 headroom 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "headroomlabs-ai/headroom: Compress tool outputs, logs, files, and R…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "headroomlabs-ai/headroom - Compress tool outputs, logs, files, and RAG chunks before th…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：headroomlabs-ai/headroom: Compress tool outputs, logs, files, and R…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: headroomlabs-ai/headroom - Compress tool outputs, logs, files, and RAG chunks before th…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan). What matters more to you: deployment, performance, or…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。headroomlabs-ai/headroom: Compress tool outputs, logs, files, and R…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**headroom** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs headroom 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件 补充关联 Hunyuan：**headroom** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. headroomlabs-ai/headroom - Compress tool outputs, logs, files, and RAG chunks before th…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：headroomlabs-ai/headroom: Compress tool outputs, logs, files, and R…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: headroomlabs-ai/headroom - Compress tool outputs, logs, files, and RAG chunks before th…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "headroom：在工具输出、日志、文件和 RAG 块到达 LLM 之前对其进行压缩。编码代理的标记减少了 20%，JSON 的标记减少了 60-95%，答案相同。",
+    "developer_profile": {
+      "github_username": "headroomlabs-ai",
+      "profile_url": "https://github.com/headroomlabs-ai",
+      "name": "Headroom Labs",
+      "bio": "Make every token count",
+      "company": "",
+      "location": "",
+      "blog": "headroomlabs.ai",
+      "twitter_username": "",
+      "email": "hello@headroomlabs.ai",
+      "followers": 305,
+      "following": 0,
+      "public_repos": 3,
+      "avatar_url": "https://avatars.githubusercontent.com/u/294291659?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "DietrichGebert/ponytail - Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "heat": "172,032 stars",
+    "time": "Today",
+    "developer_name": "DietrichGebert",
+    "developer_url": "https://github.com/DietrichGebert",
+    "developer_email": "",
+    "today_stars": "2,079 stars today",
+    "language": "JavaScript",
+    "summary": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+    "content": " \n   \n     \n     \n   \n \n\n Ponytail \n\n \n   He says nothing. He writes one line. It works. \n \n\n \n     \n \n\n \n   \n   \n   \n   \n   \n \n\n \n     \n \n\n \n     \n     \n     \n \n\n \n   \n \n\n \n   Ponytail 5: rebuilt from the ground up.  \n   -53% code &middot; -41% time &middot; -26% cost &middot; -45% tokens  \n   And yet: 98% of risky logic ships with a test.  Without Ponytail: 68%. \n   Benchmarked in Claude Code, the same agent with and without the skill: 39 tasks including a real FastAPI + React repo, Opus 5.5, 5 runs each.  Details . \n \n\n \n    Español  &middot;  한국어  &middot;  简体中文  &middot;  日本語  \n \n\n---\n\n \n     \n \n\n## Already built with Ponytail\n\n \n   \n     \n     \n   \n \n\n---\n\nYou know him. Long ponytail. Oval glasses. Has been at the company longer than the version control. You show him fifty lines; he looks at them, says nothing, and replaces them with one.\n\nPonytail puts him inside your AI agent.\n\n## Numbers\n\n \n   \n \n\n \n   \n \n\nTwo things the chart does not show: in a blind comparison, Ponytail 5's replies beat the previous Ponytail's 110 to 67. And on the six security tasks (SQL injection, path traversal, forged tokens, rate limiting, malformed CSV rows, caching) it passed all 30 runs: less code, no less safe. Method, per-task tables and limits: benchmarks/results/2026-10-07-agentic.md.\n\n**The rule was never \"fewest tokens.\"** It is: write only what the task needs, and never cut validation, error handling, security, or accessibility. The code ends up small because it is necessary, not golfed. Lower cost and latency are a side effect.\n\n## Before / after\n\n \n   \n \n\nYou ask for a date picker. Without Ponytail, the agent installs a date picker library or builds a whole calendar by hand: 335 lines. Ponytail 5 first looks at what is already there: the repo has an `Input` component, and every browser has a date picker. It puts the two together. 10 lines.\n\nMore survivors in examples/.\n\n## The review, rebuilt\n\n \n   \n \n\n`/ponytail-review` used to look only for code to cut. Now it reviews like the senior dev who gets paged when it breaks: it reads the code your change touches, not just the diff, and checks bugs, security, real load, missing tests, speed, and what to cut. Each finding says what the code does, what goes wrong, how to fix it, and what happens if you don't.\n\n## The audit, rebuilt\n\n \n   \n \n\n`/ponytail-audit` runs the same checks on the whole repo. It maps the code first: entry points, how data moves, what load the project expects. Then it ranks what it finds and tells you what to fix first. The old audit only listed what to delete.\n\n## New in 5.3: the band\n\n \n   \n \n\nIn Claude Code, ponytail now shows a band above the prompt: what the current task costs, how many tokens and how much agent time it used, how often it reused existing code instead of writing new code, and whether the tests passed after the last change. Its buttons switch the level, run `/ponytail-review` or `/ponytail-audit`, copy the task as Markdown, and fold the band into one line. Don't want ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "prompt",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "React"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "DietrichGebert/ponytail: Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.6,
+      "tcloud_relevance": 8.2,
+      "tcloud_integration": "**ponytail** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示\n补充关联 CodeBuddy：**ponytail** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "EdgeOne",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**ponytail** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+        "**ponytail** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "security",
+        "latency",
+        "claude code"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**ponytail** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示\n补充关联 CodeBuddy：**ponytail** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "EdgeOne",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（EdgeOne / CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「DietrichGebert/ponytail - Makes your AI agent thi…」（DietrichGebert/ponytail: Makes your AI agent think like the…），涉及 Agent / React → 可写方向：**ponytail** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「ponytail」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 ponytail 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉用 ponytail 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 ponytail 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 ponytail 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "DietrichGebert/ponytail: Makes your AI agent think like the laziest…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：…",
+        "x_en": "DietrichGebert/ponytail - Makes your AI agent think like the laziest senior dev in the…. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：DietrichGebert/ponytail: Makes your AI agent think like the laziest…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: DietrichGebert/ponytail - Makes your AI agent think like the laziest senior dev in the…. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy) + opinionated commentary. What matters more to you: deploy…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。DietrichGebert/ponytail: Makes your AI agent think like the laziest…。如果用官方号发，建议主推 EdgeOne，重点讲 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**ponytail** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示 补充关联 CodeBuddy：**ponytail** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. DietrichGebert/ponytail - Makes your AI agent think like the laziest senior dev in the…. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：DietrichGebert/ponytail: Makes your AI agent think like the laziest…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: DietrichGebert/ponytail - Makes your AI agent think like the laziest senior dev in the…. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ponytail：让你的人工智能代理像房间里最懒的高级开发人员一样思考。最好的代码是你从未编写过的代码。",
+    "developer_profile": {
+      "github_username": "DietrichGebert",
+      "profile_url": "https://github.com/DietrichGebert",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 2599,
+      "following": 1,
+      "public_repos": 3,
+      "avatar_url": "https://avatars.githubusercontent.com/u/137048761?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Comfy-Org/ComfyUI - The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "heat": "141,677 stars",
+    "time": "Today",
+    "developer_name": "Comfy-Org",
+    "developer_url": "https://github.com/Comfy-Org",
+    "developer_email": "hello@comfy.org",
+    "today_stars": "939 stars today",
+    "language": "Python",
+    "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
+    "content": " \n\n# ComfyUI\n**The most powerful and modular AI engine for content creation.**\n\n[![Website][website-shield]][website-url]\n[![Dynamic JSON Badge][discord-shield]][discord-url]\n[![Twitter][twitter-shield]][twitter-url]\n[![Matrix][matrix-shield]][matrix-url]\n \n[![][github-release-shield]][github-release-link]\n[![][github-release-date-shield]][github-release-link]\n[![][github-downloads-shield]][github-downloads-link]\n[![][github-downloads-latest-shield]][github-downloads-link]\n\n[matrix-shield]: https://img.shields.io/badge/Matrix-000000?style=flat&logo=matrix&logoColor=white\n[matrix-url]: https://app.element.io/#/room/%23comfyui_space%3Amatrix.org\n[website-shield]: https://img.shields.io/badge/ComfyOrg-4285F4?style=flat\n[website-url]: https://www.comfy.org/\n \n[discord-shield]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2Fcomfyorg%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&logo=discord&logoColor=white&label=Discord&color=green&suffix=%20total\n[discord-url]: https://discord.com/invite/comfyorg\n[twitter-shield]: https://img.shields.io/twitter/follow/ComfyUI\n[twitter-url]: https://x.com/ComfyUI\n\n[github-release-shield]: https://img.shields.io/github/v/release/comfyanonymous/ComfyUI?style=flat&sort=semver\n[github-release-link]: https://github.com/comfyanonymous/ComfyUI/releases\n[github-release-date-shield]: https://img.shields.io/github/release-date/comfyanonymous/ComfyUI?style=flat\n[github-downloads-shield]: https://img.shields.io/github/downloads/comfyanonymous/ComfyUI/total?style=flat\n[github-downloads-latest-shield]: https://img.shields.io/github/downloads/comfyanonymous/ComfyUI/latest/total?style=flat&label=downloads%40latest\n[github-downloads-link]: https://github.com/comfyanonymous/ComfyUI/releases\n\n \n \n \n\nComfyUI is the AI creation engine for visual professionals who demand control over every model, every parameter, and every output. Its powerful and modular node graph interface empowers creatives to generate images, videos, 3D models, audio, and more...\n- ComfyUI natively supports the latest open-source state of the art models.\n- It is by far the most optimized inference engine for diffusion models in the world with a focus on local consumer hardware.\n- Can run even the biggest open source models on as low as 4GB vram + 8GB ram relatively quickly (saturating your GPU compute) using our state of the art asynchronous weight streaming technology.\n- Partner nodes provide access to the best closed source models such as Nano Banana, Seedance, Hunyuan3D, etc.\n- It is available on Windows, Linux, and macOS, locally with our desktop application, our portable install or on our cloud.\n- The most sophisticated workflows can be exposed through a simple UI thanks to App Mode.\n- It integrates seamlessly into production pipelines with our API endpoints.\n\n## Get Started\n\n### Local\n\n#### Desktop Application\n- The easiest way to get started.\n- Available on Windows & macOS.\n\n#### Manual Install\nSupports all o",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "diffusion",
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Hunyuan3D"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Diffusion",
+        "3D Generation"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "Comfy-Org/ComfyUI: The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**ComfyUI** 产出的 3D 资产可以用 Hunyuan3D 辅助生成 — Hunyuan3D 支持自动生成 mesh 和纹理，降低 3D 内容生产的人力成本",
+      "tcloud_products": [
+        "Hunyuan3D"
+      ],
+      "tcloud_reasons": [
+        "**ComfyUI** 产出的 3D 资产可以用 Hunyuan3D 辅助生成 — Hunyuan3D 支持自动生成 mesh 和纹理，降低 3D 内容生产的人力成本"
+      ],
+      "tcloud_evidence": [
+        "hunyuan3d",
+        "3d model"
+      ],
+      "tcloud_primary_product": "Hunyuan3D",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan3D：**ComfyUI** 产出的 3D 资产可以用 Hunyuan3D 辅助生成 — Hunyuan3D 支持自动生成 mesh 和纹理，降低 3D 内容生产的人力成本",
+      "tcloud_official_matches": [
+        "Hunyuan3D"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan3D）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan3D）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Comfy-Org/ComfyUI - The most powerful and modular…」（Comfy-Org/ComfyUI: The most powerful and modular diffusion…），涉及 Diffusion / 3D Generation → 可写方向：**ComfyUI** 产出的 3D 资产可以用 Hunyuan3D 辅助生成 — Hunyuan3D 支持自动生成 mesh 和纹理，降低 3D 内容生产的…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「ComfyUI」涉及3D 内容生成场景，可结合 混元3D / Hunyuan3D 写教程或场景解读。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "混元3D / Hunyuan3D",
+      "official_angle_cn": "以 ComfyUI 引发的 3D 内容创作话题为切入点，写一篇 Hunyuan3D 的效果展示和技术解读，用实际生成结果说话。",
+      "visual_brief": "主视觉用 ComfyUI 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 混元3D / Hunyuan3D。",
+      "platform_copies": {
+        "primary_product": "Hunyuan3D",
+        "product_display": "混元3D / Hunyuan3D",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 ComfyUI 引发的 3D 内容创作话题为切入点，写一篇 Hunyuan3D 的效果展示和技术解读，用实际生成结果说话。",
+        "official_angle_en": "Use Hunyuan3D (Tencent) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 ComfyUI 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 混元3D / Hunyuan3D。",
+        "x_cn": "Comfy-Org/ComfyUI: The most powerful and modular diffusion model GU…。如果站在腾讯云国际站官方号来写，这条更适合从 混元3D / Hunyuan3D 切入：如果以腾讯云国际站官方号来写，这条建议主推…",
+        "x_en": "Comfy-Org/ComfyUI - The most powerful and modular diffusion model GUI, api and backend…. For Tencent Cloud, this fits Hunyuan3D (Tencent): Text/image-to-3D content production and creator efficiency.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Comfy-Org/ComfyUI: The most powerful and modular diffusion model GU…。如果从腾讯云视角切，这条最适合带到 混元3D / Hunyuan3D，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan3D）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Comfy-Org/ComfyUI - The most powerful and modular diffusion model GUI, api and backend…. From a Tencent Cloud angle, the best hook is Hunyuan3D (Tencent), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan3D). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Comfy-Org/ComfyUI: The most powerful and modular diffusion model GU…。如果用官方号发，建议主推 混元3D / Hunyuan3D，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan3D），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan3D：**ComfyUI** 产出的 3D 资产可以用 Hunyuan3D 辅助生成 — Hunyuan3D 支持自动生成 mesh 和纹理，降低 3D 内容生产的人力成本",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Comfy-Org/ComfyUI - The most powerful and modular diffusion model GUI, api and backend…. For Tencent Cloud, the better angle is Hunyuan3D (Tencent). Text/image-to-3D content production and creator efficiency. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan3D).",
+        "reddit_title_cn": "这类热点如果从 混元3D / Hunyuan3D 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Comfy-Org/ComfyUI: The most powerful and modular diffusion model GU…。如果站在腾讯云国际站官方号视角，我会更想把它写成 混元3D / Hunyuan3D 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan3D）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan3D (Tencent)?",
+        "reddit_body_en": "A recent trend caught my eye: Comfy-Org/ComfyUI - The most powerful and modular diffusion model GUI, api and backend…. Instead of reposting it as news, I'd frame it through Hunyuan3D (Tencent) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan3D). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "ComfyUI：最强大的模块化扩散模型 GUI、API 和带有图形/节点接口的后端。世界上最快的本地推理引擎。",
+    "developer_profile": {
+      "github_username": "Comfy-Org",
+      "profile_url": "https://github.com/Comfy-Org",
+      "name": "Comfy Org",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://comfy.org",
+      "twitter_username": "comfyui",
+      "email": "hello@comfy.org",
+      "followers": 3827,
+      "following": 0,
+      "public_repos": 87,
+      "avatar_url": "https://avatars.githubusercontent.com/u/166579949?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/comfyui"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/102048265"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "supabase/supabase - The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+    "url": "https://github.com/supabase/supabase",
+    "heat": "113,137 stars",
+    "time": "Today",
+    "developer_name": "supabase",
+    "developer_url": "https://github.com/supabase",
+    "developer_email": "support@supabase.io",
+    "today_stars": "504 stars today",
+    "language": "TypeScript",
+    "summary": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+    "content": " \n \n \n \n\n# Supabase\n\nSupabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools.\n\n- [x] Hosted Postgres Database. Docs\n- [x] Authentication and Authorization. Docs\n- [x] Auto-generated APIs.\n  - [x] REST. Docs\n  - [x] GraphQL. Docs\n  - [x] Realtime subscriptions. Docs\n- [x] Functions.\n  - [x] Database Functions. Docs\n  - [x] Edge Functions Docs\n- [x] File Storage. Docs\n- [x] AI + Vector/Embeddings Toolkit. Docs\n- [x] Dashboard\n\nWatch \"releases\" of this repo to get notified of major updates.\n\n   \n\n## Documentation\n\nFor full documentation, visit supabase.com/docs\n\nTo see how to Contribute, visit Getting Started\n\n## Community & Support\n\n- Community Forum. Best for: help with building, discussion about database best practices.\n- GitHub Issues. Best for: bugs and errors you encounter using Supabase.\n- Email Support. Best for: problems with your database or infrastructure.\n- Discord. Best for: sharing your applications and hanging out with the community.\n\n## How it works\n\nSupabase is a combination of open source tools. We’re building the features of Firebase using enterprise-grade, open source products. If the tools and communities exist, with an MIT, Apache 2, or equivalent open license, we will use and support that tool. If the tool doesn't exist, we build and open source it ourselves. Supabase is not a 1-to-1 mapping of Firebase. Our aim is to give developers a Firebase-like developer experience using open source tools.\n\n**Architecture**\n\nSupabase is a hosted platform. You can sign up and start using Supabase without installing anything.\nYou can also self-host and develop locally.\n\n- Postgres is an object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.\n- Realtime is an Elixir server that allows you to listen to PostgreSQL inserts, updates, and deletes using websockets. Realtime polls Postgres' built-in replication functionality for database changes, converts changes to JSON, then broadcasts the JSON over websockets to authorized clients.\n- PostgREST is a web server that turns your PostgreSQL database directly into a RESTful API.\n- GoTrue is a JWT-based authentication API that simplifies user sign-ups, logins, and session management in your applications.\n- Storage a RESTful API for managing files in S3, with Postgres handling permissions.\n- pg_graphql a PostgreSQL extension that exposes a GraphQL API.\n- postgres-meta is a RESTful API for managing your Postgres, allowing you to fetch tables, add roles, and run queries, etc.\n- Envoy is a cloud-native, high-performance edge and service proxy.\n\n#### Client libraries\n\nOur approach for client libraries is modular. Each sub-library is a standalone implementation for a single external system. This is one of the ways we support existing tools.\n\n \n   \n     Language \n     Client \n     Feature-Clients (bundled in Supabase client) \n  ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 4,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "edge",
+        "s3",
+        "postgresql"
+      ],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "正向推广",
+      "detail_brief": "supabase/supabase: The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.9,
+      "tcloud_relevance": 9.0,
+      "tcloud_integration": "**supabase** 涉及前端/静态站点，EdgeOne Pages 支持 Git 自动部署 + 全球 CDN + 边缘函数，类似 Vercel/Netlify 但自带安全防护\n补充关联 TDSQL-C：**supabase** 使用 PostgreSQL — TDSQL-C 提供 100% 兼容 PostgreSQL 的云原生数据库，支持向量扩展（pgvector）用于 AI 场景",
+      "tcloud_products": [
+        "EdgeOne",
+        "TDSQL-C"
+      ],
+      "tcloud_reasons": [
+        "**supabase** 涉及前端/静态站点，EdgeOne Pages 支持 Git 自动部署 + 全球 CDN + 边缘函数，类似 Vercel/Netlify 但自带安全防护",
+        "**supabase** 使用 PostgreSQL — TDSQL-C 提供 100% 兼容 PostgreSQL 的云原生数据库，支持向量扩展（pgvector）用于 AI 场景"
+      ],
+      "tcloud_evidence": [
+        "edge",
+        "edge function",
+        "database",
+        "postgresql"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**supabase** 涉及前端/静态站点，EdgeOne Pages 支持 Git 自动部署 + 全球 CDN + 边缘函数，类似 Vercel/Netlify 但自带安全防护\n补充关联 TDSQL-C：**supabase** 使用 PostgreSQL — TDSQL-C 提供 100% 兼容 PostgreSQL 的云原生数据库，支持向量扩展（pgvector）用于 AI 场景",
+      "tcloud_official_matches": [
+        "EdgeOne",
+        "TDSQL-C"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（EdgeOne / TDSQL-C）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（EdgeOne / TDSQL-C）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「supabase/supabase - The Postgres development plat…」（supabase/supabase: The Postgres development platform. Supab…） → 可写方向：**supabase** 涉及前端/静态站点，EdgeOne Pages 支持 Git 自动部署 + 全球 CDN + 边缘函数，类似 Vercel/Netl…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「supabase」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 supabase 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉用 supabase 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 supabase 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 supabase 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "supabase/supabase: The Postgres development platform. Supabase give…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：…",
+        "x_en": "supabase/supabase - The Postgres development platform. Supabase gives you a dedicated P…. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：supabase/supabase: The Postgres development platform. Supabase give…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 技术科普 + 教程拆解 + 产品关联（EdgeOne / TDSQL-C）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: supabase/supabase - The Postgres development platform. Supabase gives you a dedicated P…. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (EdgeOne / TDSQL-C). What matters more to you: deployment, performance, or work…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。supabase/supabase: The Postgres development platform. Supabase give…。如果用官方号发，建议主推 EdgeOne，重点讲 技术科普 + 教程拆解 + 产品关联（EdgeOne / TDSQL-C），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**supabase** 涉及前端/静态站点，EdgeOne Pages 支持 Git 自动部署 + 全球 CDN + 边缘函数，类似 Vercel/Netlify 但自带安全防护 补充关联 TDSQL-C：**supabase** 使用 PostgreSQL — TDSQL-C 提供 100% 兼容 PostgreSQL 的云原生数据库，支持向量扩展（pgvector）用于 AI 场景",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. supabase/supabase - The Postgres development platform. Supabase gives you a dedicated P…. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne / TDSQL-C).",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：supabase/supabase: The Postgres development platform. Supabase give…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（EdgeOne / TDSQL-C）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: supabase/supabase - The Postgres development platform. Supabase gives you a dedicated P…. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne / TDSQL-C). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Postgres 开发平台。Supabase 为您提供专用的 Postgres 数据库来构建您的 Web、移动和 AI 应用程序。",
+    "developer_profile": {
+      "github_username": "supabase",
+      "profile_url": "https://github.com/supabase",
+      "name": "Supabase",
+      "bio": "The Postgres Development Platform.",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://supabase.com",
+      "twitter_username": "supabase",
+      "email": "support@supabase.io",
+      "followers": 12421,
+      "following": 0,
+      "public_repos": 175,
+      "avatar_url": "https://avatars.githubusercontent.com/u/54469796?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/supabase"
+        },
+        {
+          "platform": "youtube",
+          "url": "https://www.youtube.com/c/supabase"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "twentyhq/twenty - The open alternative to Salesforce, designed for AI.",
+    "url": "https://github.com/twentyhq/twenty",
+    "heat": "59,336 stars",
+    "time": "Today",
+    "developer_name": "twentyhq",
+    "developer_url": "https://github.com/twentyhq",
+    "developer_email": "",
+    "today_stars": "112 stars today",
+    "language": "TypeScript",
+    "summary": "The open alternative to Salesforce, designed for AI.",
+    "content": " \n   \n     \n   \n \n\n The #1 Open-Source CRM \n\n    Website  ·    Documentation  ·    Roadmap   ·    Discord  ·     Figma  \n\n \n   \n     \n       \n       \n       \n     \n   \n \n\n \n\n# Why Twenty\n\nTwenty gives technical teams the building blocks for a custom CRM that meets complex business needs and quickly adapts as the business evolves. Twenty is the CRM you build, ship, and version like the rest of your stack.\n\n   Learn more about why we built Twenty \n\n \n\n# Installation\n\n###   Cloud\n\nThe fastest way to get started. Sign up at twenty.com and spin up a workspace in under a minute, with no infrastructure to manage and always up to date.\n\n###   Build an app\n\nScaffold a new app with the Twenty CLI:\n\n```bash\nnpx create-twenty-app my-app\n```\n\nDefine objects, fields, and views as code:\n\n```ts\nimport { defineObject, FieldType } from 'twenty-sdk/define';\n\nexport default defineObject({\n  nameSingular: 'deal',\n  namePlural: 'deals',\n  labelSingular: 'Deal',\n  labelPlural: 'Deals',\n  fields: [\n    { name: 'name', label: 'Name', type: FieldType.TEXT },\n    { name: 'amount', label: 'Amount', type: FieldType.CURRENCY },\n    { name: 'closeDate', label: 'Close Date', type: FieldType.DATE_TIME },\n  ],\n});\n```\n\nThen ship it to your workspace:\n\n```bash\nnpx twenty app:publish --private\n```\n\nSee the app development guide for objects, views, agents, and logic functions.\n\nBuilding with a coding agent? Install the official Twenty app skills, which work in Claude Code, Codex, Cursor, Pi, and any other harness supported by the `skills` CLI:\n\n```bash\nnpx skills add https://github.com/twentyhq/twenty/tree/agent-skills --list\n```\n\nThe `agent-skills` branch is created by the first successful publish from `main`. Until then, use the local build instructions. `SKILLS.md` explains the other skill families in this repository and who they are for.\n\n###   Self-hosting\n\nRun Twenty on your own infrastructure with Docker Compose, or contribute locally via the local setup guide.\n\n \n \n\n# Everything you need\n\nTwenty gives you the building blocks of a modern CRM (objects, views, workflows, and agents) and lets you extend them as code. Here's a tour of what's in the box.\n\nWant to go deeper? Read the    User Guide  for product walkthroughs, or the    Documentation  for developer reference.\n\n \n   \n     \n       \n         \n         \n         \n       \n          Learn more about apps in doc  \n     \n     \n       \n         \n         \n         \n       \n          Learn more about version control in doc  \n     \n   \n   \n     \n       \n         \n         \n         \n       \n          Learn more about primitives in doc  \n     \n     \n       \n         \n         \n         \n       \n          Learn more about layouts in doc  \n     \n   \n   \n     \n       \n         \n         \n         \n       \n          Learn more about AI in doc  \n     \n     \n       \n         \n         \n         \n       \n          Learn more about CRM features in doc  \n     \n   \n \n\n \n\n# Stack\n\n-    TypeScript \n-    Nx \n-    NestJS , with  BullMQ ,    Po",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "twentyhq/twenty: The open alternative to Salesforce, designed for AI.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.1,
+      "tcloud_relevance": 9.6,
+      "tcloud_integration": "**twenty** 明确支持自托管部署（twentyhq/twenty: The open alternative to Salesforce, designe），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行\n补充关联 CodeBuddy：**twenty** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs twenty 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "Lighthouse",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**twenty** 明确支持自托管部署（twentyhq/twenty: The open alternative to Salesforce, designe），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+        "**twenty** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs twenty 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "self-hosting",
+        "docker compose",
+        "claude code",
+        "coding agent",
+        "cursor"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**twenty** 明确支持自托管部署（twentyhq/twenty: The open alternative to Salesforce, designe），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行\n补充关联 CodeBuddy：**twenty** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs twenty 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "Lighthouse",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Lighthouse / CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「twentyhq/twenty - The open alternative to Salesfo…」（twentyhq/twenty: The open alternative to Salesforce, design…），涉及 Agent / Go / TypeScript → 可写方向：**twenty** 明确支持自托管部署（twentyhq/twenty: The open alternative to Salesforce, desig…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「twenty」支持自部署，可写『Lighthouse 一键部署 twenty』实操教程。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 twenty」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 twenty 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 twenty」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 twenty 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "twentyhq/twenty: The open alternative to Salesforce, designed for A…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "twentyhq/twenty - The open alternative to Salesforce, designed for AI.. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：twentyhq/twenty: The open alternative to Salesforce, designed for A…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: twentyhq/twenty - The open alternative to Salesforce, designed for AI.. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。twentyhq/twenty: The open alternative to Salesforce, designed for A…。如果用官方号发，建议主推 Lighthouse，重点讲 技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**twenty** 明确支持自托管部署（twentyhq/twenty: The open alternative to Salesforce, designe），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行 补充关联 CodeBuddy：**twenty** 是 AI 编程赛道产品 — 可以做 CodeBu…",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. twentyhq/twenty - The open alternative to Salesforce, designed for AI.. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：twentyhq/twenty: The open alternative to Salesforce, designed for A…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Lighthouse / CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: twentyhq/twenty - The open alternative to Salesforce, designed for AI.. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "twenty：Salesforce 的开放替代方案，专为 AI 设计。",
+    "developer_profile": {
+      "github_username": "twentyhq",
+      "profile_url": "https://github.com/twentyhq",
+      "name": "Twenty",
+      "bio": "We are building a modern Open Source CRM",
+      "company": "",
+      "location": "",
+      "blog": "https://twenty.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 1084,
+      "following": 0,
+      "public_repos": 4,
+      "avatar_url": "https://avatars.githubusercontent.com/u/119600397?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  }
+]
