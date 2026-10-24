@@ -1,0 +1,842 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "cloudflare/security-audit-skill - A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "url": "https://github.com/cloudflare/security-audit-skill",
+    "heat": "42,482 stars",
+    "time": "Today",
+    "developer_name": "cloudflare",
+    "developer_url": "https://github.com/cloudflare",
+    "developer_email": "",
+    "today_stars": "2,716 stars today",
+    "language": "JavaScript",
+    "summary": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "content": "# security-audit\n\nA coding-agent skill that turns your agent into a security auditor. It orchestrates isolated agents through reconnaissance, coverage-led hunting, candidate validation, structured output, independent record verification, and target-neutral reporting.\n\nThis is the skill that seeded Cloudflare's vulnerability discovery harness, described in Build your own vulnerability harness. The harness grew into a multi-stage, fleet-wide system; this skill is the single-repo starting point it evolved from.\n\n## What it does\n\nThe skill runs a structured audit in six phases:\n\n1. **Reconnaissance** -- map architecture, trust boundaries, input surfaces, prior evidence, and deterministic coverage in `architecture.md` and `coverage-ledger.json`.\n2. **Coverage-led hunting** -- assign isolated hunters from ledger units, record their checks, and use coverage critics to find gaps.\n3. **Candidate validation** -- give every unique candidate to a fresh verifier that tries to disprove it.\n4. **Structured output** -- write `confirmed`, `needs_validation`, and `rejected` records to `findings.json` and validate them against `report-schema.json`.\n5. **Independent record verification** -- fresh agents verify final source claims. Material replacements receive another independent verifier.\n6. **Target-neutral reporting** -- derive `REPORT.md`, `FINDINGS-DETAIL.md`, and `NEEDS-VALIDATION.md` from the verified records and coverage ledger.\n\nThe parent runs `validate-coverage-ledger.cjs` after creating the ledger and after each later ledger update. It runs `validate-findings.cjs` in Phase 4 and again after every Phase 5 replacement.\n\nThe verdicts are distinct: `confirmed` has a complete source trace and bounded observed result, `needs_validation` has an exact unresolved fact and no severity, and `rejected` records a disproved candidate.\n\nMultiple runs against the same repo are additive. The skill uses prior ledgers and findings to target gaps, revalidate changed source, and carry forward current-source evidence without treating stale or unresolved work as covered.\n\n## Files\n\n| File | Purpose |\n|------|---------|\n| `SKILL.md` | Setup, core principles, platform terminology, workflow overview, and audit anti-patterns |\n| `RECONNAISSANCE.md` | Phase 1 reconnaissance prompts and synthesis instructions |\n| `HUNTING.md` | Phase 2 orchestration, hunting methodology, and validation rules |\n| `ATTACK-CLASSES.md` | Core, wildcard, and obvious-things attack prompts |\n| `MEMORY-SAFETY-AND-BINARY.md` | Memory-safety, binary, and kernel hunting classes for native targets |\n| `AI-AND-LLM.md` | Prompt-injection, agent/tool, and output-handling hunting classes for LLM-backed targets |\n| `WEB-PROTOCOL-AND-AUTH.md` | HTTP request-framing, cache, and authentication-protocol hunting classes for HTTP-protocol and auth targets |\n| `CLIENT-SIDE.md` | DOM-injection, messaging-trust, UI-redress, and prototype-pollution hunting classes for client-side/browser targets |\n| `SUPPLY-CHAIN-AND-RELEASE.",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloudflare"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Cloudflare"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "cloudflare/security-audit-skill: A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.6,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「cloudflare/security-audit-skill - A coding-agent…」（cloudflare/security-audit-skill: A coding-agent skill for m…），涉及 LLM / Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「cloudflare/security-audit-skill - A cod…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 security-audit-skill 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 security-audit-skill 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "cloudflare/security-audit-skill: A coding-agent skill for multi-pha…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "cloudflare/security-audit-skill - A coding-agent skill for multi-phase security audits…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：cloudflare/security-audit-skill: A coding-agent skill for multi-pha…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: cloudflare/security-audit-skill - A coding-agent skill for multi-phase security audits…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。cloudflare/security-audit-skill: A coding-agent skill for multi-pha…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. cloudflare/security-audit-skill - A coding-agent skill for multi-phase security audits…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：cloudflare/security-audit-skill: A coding-agent skill for multi-pha…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: cloudflare/security-audit-skill - A coding-agent skill for multi-phase security audits…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "security-audit-skill：用于多阶段安全审计的编码代理技能，具有独立验证的机器可读结果",
+    "developer_profile": {
+      "github_username": "cloudflare",
+      "profile_url": "https://github.com/cloudflare",
+      "name": "Cloudflare",
+      "bio": "",
+      "company": "",
+      "location": "San Francisco, London, Austin, Lisbon, Singapore",
+      "blog": "https://www.cloudflare.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 18142,
+      "following": 0,
+      "public_repos": 580,
+      "avatar_url": "https://avatars.githubusercontent.com/u/314135?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "php/php-src - The PHP Interpreter",
+    "url": "https://github.com/php/php-src",
+    "heat": "41,597 stars",
+    "time": "Today",
+    "developer_name": "php",
+    "developer_url": "https://github.com/php",
+    "developer_email": "",
+    "today_stars": "716 stars today",
+    "language": "C",
+    "summary": "The PHP Interpreter",
+    "content": " \n     \n         \n     \n \n\n# The PHP Interpreter\n\nPHP is a popular general-purpose scripting language that is especially suited to\nweb development. Fast, flexible and pragmatic, PHP powers everything from your\nblog to the most popular websites in the world.\n\nPHP is distributed under the Modified BSD License\n(SPDX-License-Identifier: `BSD-3-Clause`).\n\n[](https://github.com/php/php-src/actions/workflows/test.yml)\n[](https://issues.oss-fuzz.com/issues?q=project:php)\n\n## Documentation\n\nThe PHP manual is available at php.net/docs.\n\n## Installation\n\n### Prebuilt packages and binaries\n\nPrebuilt packages and binaries can be used to get up and running fast with PHP.\n\nFor Windows, the PHP binaries can be obtained from\nwindows.php.net. After extracting the archive the\n`*.exe` files are ready to use.\n\nFor other systems, see the installation chapter.\n\n### Building PHP source code\n\n*For Windows, see Build your own PHP on Windows.*\n\nFor a minimal PHP build from Git, you will need autoconf, bison, and re2c. For\na default build, you will additionally need libxml2 and libsqlite3.\n\nOn Ubuntu, you can install these using:\n\n```shell\nsudo apt install -y pkg-config build-essential autoconf bison re2c libxml2-dev libsqlite3-dev\n```\n\nOn Fedora, you can install these using:\n\n```shell\nsudo dnf install re2c bison autoconf make ccache libxml2-devel sqlite-devel\n```\n\nOn MacOS, you can install these using `brew`:\n\n```shell\nbrew install autoconf bison re2c libiconv libxml2 sqlite\n```\n\nor with `MacPorts`:\n\n```shell\nsudo port install autoconf bison re2c libiconv libxml2 sqlite3\n```\n\nGenerate configure:\n\n```shell\n./buildconf\n```\n\nConfigure your build. `--enable-debug` is recommended for development, see\n`./configure --help` for a full list of options.\n\n```shell\n# For development\n./configure --enable-debug\n# For production\n./configure\n```\n\nBuild PHP. To speed up the build, specify the maximum number of jobs using the\n`-j` argument:\n\n```shell\nmake -j4\n```\n\nThe number of jobs should usually match the number of available cores, which\ncan be determined using `nproc`.\n\n## Testing PHP source code\n\nPHP ships with an extensive test suite, the command `make test` is used after\nsuccessful compilation of the sources to run this test suite.\n\nTests run in parallel by default, using up to 10 detected logical processors.\nSet `-jN` in `TEST_PHP_ARGS` or `TESTS` to override the worker count:\n\n```shell\nmake TEST_PHP_ARGS=-j4 test\n```\n\nThis runs `make test` with a maximum of 4 concurrent jobs. Alternatively,\nuse `-j1` to run tests sequentially.\n\nUse the `TEST_PHP_ARGS` or `TESTS` variable to test only specific directories:\n\n```shell\nmake TESTS=tests/lang/ test\n```\n\nThe qa.php.net site provides more detailed info about\ntesting and quality assurance.\n\n## Installing PHP built from source\n\nAfter a successful build (and test), PHP may be installed with:\n\n```shell\nmake install\n```\n\nDepending on your permissions and prefix, `make install` may need superuser\npermissions.\n\n## PHP extensions\n\nExtensions provid",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "oss"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "php/php-src: The PHP Interpreter",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「php/php-src - The PHP Interpreter」（php/php-src: The PHP Interpreter） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「php/php-src - The PHP Interpreter」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 php-src 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 php-src 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "php/php-src: The PHP Interpreter。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "php/php-src - The PHP Interpreter. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：php/php-src: The PHP Interpreter。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: php/php-src - The PHP Interpreter. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。php/php-src: The PHP Interpreter。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. php/php-src - The PHP Interpreter. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：php/php-src: The PHP Interpreter。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: php/php-src - The PHP Interpreter. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "php-src：PHP 解释器",
+    "developer_profile": {
+      "github_username": "php",
+      "profile_url": "https://github.com/php",
+      "name": "php.net",
+      "bio": "PHP is a popular general-purpose scripting language that is especially suited to web development",
+      "company": "",
+      "location": "",
+      "blog": "https://www.php.net",
+      "twitter_username": "",
+      "email": "",
+      "followers": 4304,
+      "following": 0,
+      "public_repos": 153,
+      "avatar_url": "https://avatars.githubusercontent.com/u/25158?v=4",
+      "social_links": [
+        {
+          "platform": "mastodon",
+          "url": "https://fosstodon.org/@php"
+        },
+        {
+          "platform": "bluesky",
+          "url": "https://bsky.app/profile/official-php.bsky.social"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "anthropics/knowledge-work-plugins - Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+    "url": "https://github.com/anthropics/knowledge-work-plugins",
+    "heat": "32,330 stars",
+    "time": "Today",
+    "developer_name": "anthropics",
+    "developer_url": "https://github.com/anthropics",
+    "developer_email": "",
+    "today_stars": "635 stars today",
+    "language": "Python",
+    "summary": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+    "content": "# Knowledge Work Plugins\n\nPlugins that turn Claude into a specialist for your role, team, and company. Built for Claude Cowork, also compatible with Claude Code.\n\n## Why Plugins\n\nCowork lets you set the goal and Claude delivers finished, professional work. Plugins let you go further: tell Claude how you like work done, which tools and data to pull from, how to handle critical workflows, and what slash commands to expose — so your team gets better and more consistent outcomes.\n\nEach plugin bundles the skills, connectors, slash commands, and sub-agents for a specific job function. Out of the box, they give Claude a strong starting point for helping anyone in that role. The real power comes when you customize them for your company — your tools, your terminology, your processes — so Claude works like it was built for your team.\n\n## Plugin Marketplace\n\nWe're open-sourcing 11 plugins built and inspired by our own work:\n\n| Plugin | How it helps | Connectors |\n|--------|-------------|------------|\n| **productivity** | Manage tasks, calendars, daily workflows, and personal context so you spend less time repeating yourself. | Slack, Notion, Asana, Linear, Jira, Monday, ClickUp, Microsoft 365 |\n| **sales** | Research prospects, prep for calls, review your pipeline, draft outreach, and build competitive battlecards. | Slack, HubSpot, Close, Clay, ZoomInfo, Notion, Jira, Fireflies, Microsoft 365 |\n| **customer-support** | Triage tickets, draft responses, package escalations, research customer context, and turn resolved issues into knowledge base articles. | Slack, Intercom, HubSpot, Guru, Jira, Notion, Microsoft 365 |\n| **product-management** | Write specs, plan roadmaps, synthesize user research, keep stakeholders updated, and track the competitive landscape. | Slack, Linear, Asana, Monday, ClickUp, Jira, Notion, Figma, Amplitude, Pendo, Intercom, Fireflies |\n| **marketing** | Draft content, plan campaigns, enforce brand voice, brief on competitors, and report on performance across channels. | Slack, Canva, Figma, HubSpot, Amplitude, Notion, Ahrefs, SimilarWeb, Klaviyo |\n| **legal** | Review contracts, triage NDAs, navigate compliance, assess risk, prep for meetings, and draft templated responses. | Slack, Box, Egnyte, Jira, Microsoft 365 |\n| **finance** | Prep journal entries, reconcile accounts, generate financial statements, analyze variances, manage close, and support audits. | Snowflake, Databricks, BigQuery, Slack, Microsoft 365 |\n| **data** | Query, visualize, and interpret datasets — write SQL, run statistical analysis, build dashboards, and validate your work before sharing. | Snowflake, Databricks, BigQuery, Definite, Hex, Amplitude, Jira |\n| **enterprise-search** | Find anything across email, chat, docs, and wikis — one query across all your company's tools. | Slack, Notion, Guru, Jira, Asana, Microsoft 365 |\n| **bio-research** | Connect to preclinical research tools and databases (literature search, genomics analysis, target prioritization) to ac",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Go"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "anthropics/knowledge-work-plugins: Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.2,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**knowledge-work-plugins** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**knowledge-work-plugins** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**knowledge-work-plugins** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「anthropics/knowledge-work-plugins - Open source r…」（anthropics/knowledge-work-plugins: Open source repository o…），涉及 Go → 可写方向：**knowledge-work-plugins** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「anthropics/knowledge-work-plugins - Ope…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 knowledge-work-plugins 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 knowledge-work-plugins 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 knowledge-work-plugins 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 knowledge-work-plugins 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "anthropics/knowledge-work-plugins: Open source repository of plugin…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "anthropics/knowledge-work-plugins - Open source repository of plugins primarily intende…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：anthropics/knowledge-work-plugins: Open source repository of plugin…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: anthropics/knowledge-work-plugins - Open source repository of plugins primarily intende…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。anthropics/knowledge-work-plugins: Open source repository of plugin…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**knowledge-work-plugins** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. anthropics/knowledge-work-plugins - Open source repository of plugins primarily intende…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：anthropics/knowledge-work-plugins: Open source repository of plugin…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: anthropics/knowledge-work-plugins - Open source repository of plugins primarily intende…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "knowledge-work-plugins：主要供知识工作者在 Claude Cowork 中使用的开源插件存储库",
+    "developer_profile": {
+      "github_username": "anthropics",
+      "profile_url": "https://github.com/anthropics",
+      "name": "Anthropic",
+      "bio": "",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://anthropic.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 93098,
+      "following": 0,
+      "public_repos": 116,
+      "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "NVIDIA/OpenShell - OpenShell is the safe, private runtime for autonomous AI agents.",
+    "url": "https://github.com/NVIDIA/OpenShell",
+    "heat": "18,921 stars",
+    "time": "Today",
+    "developer_name": "NVIDIA",
+    "developer_url": "https://github.com/NVIDIA",
+    "developer_email": "",
+    "today_stars": "1,119 stars today",
+    "language": "Rust",
+    "summary": "OpenShell is the safe, private runtime for autonomous AI agents.",
+    "content": " \n\n \n   \n   \n   \n \n\n \n\n[](https://github.com/NVIDIA/OpenShell/blob/main/LICENSE)\n[](https://pypi.org/project/openshell/)\n[](SECURITY.md)\n[](https://docs.nvidia.com/openshell/latest/index.html)\n\n> [!IMPORTANT]\n> **New in OpenShell 0.1.x:** a stable release cadence, new isolation primitives, an expanded extension surface, and new APIs. Read the 0.1.0 upgrade guide.\n\nOpenShell is the safe, private runtime for fleets of autonomous AI agents. Agents are most useful when they can read files, install packages, call APIs, and use credentials. OpenShell gives them that capability without giving them unrestricted access to your data, secrets, or network. You declare what each agent can touch in a policy, and OpenShell enforces it.\n\n## How It Works\n\nOpenShell governs what agents can do in two ways: it instruments the kernel to enforce policy on every file access, system call, and network connection at runtime, and it uses formal verification to check what a policy change would allow before it is applied.\n\n- **Kernel-level enforcement.** Each agent runs in an isolated sandbox. Kernel controls confine which files it can access and which system calls it can make, and every network connection passes through a policy check before it leaves the sandbox. Agents never see real credentials; OpenShell adds them only to requests bound for approved endpoints.\n- **Formally verified policy changes.** Before a policy change is approved, OpenShell uses formal verification to flag risky new access it would grant, such as reaching a new host with credentials or calling a new API method, so those changes wait for human review.\n\nSee Architecture for how the gateway, supervisor, and sandbox fit together.\n\n## Quickstart\n\nYou need Linux, macOS on Apple Silicon, or Windows with WSL 2 (experimental), plus Docker, Podman, or host virtualization. See the Support Matrix for details.\n\n```shell\ncurl -LsSf https://raw.githubusercontent.com/NVIDIA/OpenShell/main/install.sh | sh\nopenshell sandbox create --name demo\n```\n\nThe installer sets up the CLI and a local gateway. The default sandbox image is minimal Ubuntu with no agent installed. To run a real agent, follow Run Your First Agent: it runs OpenCode against a free OpenRouter model and shows how to approve new access as the agent needs it.\n\n## Explore Further\n\n- Sandboxes: images, runtimes, GPUs, and lifecycle.\n- Policies: filesystem, network, and process rules, with the advisor and prover for reviewing changes.\n- Providers: credentials that work only at approved endpoints, including inference.\n- Gateways: the control plane for sandboxes, policy, and access.\n- Kubernetes: deploy the gateway with Helm. Your CNI must enforce `NetworkPolicy`.\n- Extensibility: middleware, interceptors, and compute drivers.\n- Tutorials: step-by-step policy and agent walkthroughs.\n- Prerelease and development builds: try an upcoming release or the latest commit on `main`.\n\n## Agent Skills\n\nInstall the public OpenShell skills for your coding agent:\n\n```shell\nn",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "kubernetes",
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "agent",
+        "inference"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Kubernetes"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "NVIDIA/OpenShell: OpenShell is the safe, private runtime for autonomous AI agents.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.6,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「NVIDIA/OpenShell - OpenShell is the safe, private…」（NVIDIA/OpenShell: OpenShell is the safe, private runtime fo…），涉及 Agent / Kubernetes → 可写方向：Kubernetes 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「NVIDIA/OpenShell - OpenShell is the saf…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 OpenShell 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 OpenShell 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "NVIDIA/OpenShell: OpenShell is the safe, private runtime for autono…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "NVIDIA/OpenShell - OpenShell is the safe, private runtime for autonomous AI agents.. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：NVIDIA/OpenShell: OpenShell is the safe, private runtime for autono…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: NVIDIA/OpenShell - OpenShell is the safe, private runtime for autonomous AI agents.. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。NVIDIA/OpenShell: OpenShell is the safe, private runtime for autono…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. NVIDIA/OpenShell - OpenShell is the safe, private runtime for autonomous AI agents.. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：NVIDIA/OpenShell: OpenShell is the safe, private runtime for autono…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: NVIDIA/OpenShell - OpenShell is the safe, private runtime for autonomous AI agents.. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "OpenShell 是自主 AI 代理的安全、私有运行时。",
+    "developer_profile": {
+      "github_username": "NVIDIA",
+      "profile_url": "https://github.com/NVIDIA",
+      "name": "NVIDIA Corporation",
+      "bio": "",
+      "company": "",
+      "location": "2788 San Tomas Expressway, Santa Clara, CA, 95051",
+      "blog": "https://nvidia.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 31729,
+      "following": 0,
+      "public_repos": 829,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1728152?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Renhuai123/ziwei-doushu - 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+    "url": "https://github.com/Renhuai123/ziwei-doushu",
+    "heat": "7,000 stars",
+    "time": "Today",
+    "developer_name": "Renhuai123",
+    "developer_url": "https://github.com/Renhuai123",
+    "developer_email": "",
+    "today_stars": "546 stars today",
+    "language": "TypeScript",
+    "summary": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+    "content": " \n\n# 紫微斗数 · 开源排盘引擎\n\n### 算法是公开的传统智慧，不应该被锁在围墙里\n\n[](https://github.com/Renhuai123/ziwei-doushu/actions/workflows/ci.yml)\n[](./LICENSE)\n[](./DATASET-LICENSE)\n\n**中文** · English\n\n \n\n**一、项目理念**：紫微斗数是中国传统命理学的瑰宝，倪海厦老师在《天纪》中系统梳理了正宗的紫微斗数体系。我们希望通过技术手段让更多人接触和学习这门学问。\n\n开源排盘算法和知识库，是因为我们相信：**算法是公开的传统智慧，不应该被锁在围墙里**。真正的价值在于解读的深度、用户体验的打磨、以及持续运营的积累。\n\n**二、项目信息**：基于 倪海厦《天纪》 教学体系的紫微斗数排盘系统，包含完整排盘算法、四化系统、格局知识库、古籍原文数据，以及一套完整开源的紫微斗数解读数据：**v4.0 解读数据集——67.5 万张命盘 × 13 维 = 877 万段解读，正文约 204 亿字，解压后 56.6 GB**（2026-10-15 发布）。\n\n| 数据集 | 命盘 | 解读段数 | 解压后 | 覆盖年份 | 每张盘解读字数 |\n|---|---|---|---|---|---|\n| **v4.0 解读数据集**（2026-10-15） | **674,976** | **8,774,688** | **56.6 GB** | **1950–2026**（只含真实日期） | **约 3.0 万字** |\n| v3.0 样本数据集 | 518,400 | 6,739,200 | 33.1 GB | 1924–1983 | 约 2.1 万字 |\n| 变化 | +30% | +30% | **+71%** | +17 年 | +44% |\n\n v3.0 每张盘解读字数按 2,160 张盘抽样估算，其余数字为全量统计；两版每张盘都是 13 维。 \n\n在线体验：metisziwei.com，排盘、AI 解读、命盘历史全部开放。\n\n> **注：关于六亲判断**\n>\n> 紫微斗数在六亲（父母、兄弟、子女等）判断上存在一定局限。倪师在《天纪》中指出：“斗数批六亲本来就比较差一点。”（2上 · 00:25:27）在传统术数中，铁板神数在核对六亲方面有其独特优势（2上 · 00:03:15）；倪师仍以紫微斗数为核心，是因为它能结合地理、环境与人事进行综合判断，形成“上知天文、下知地理、中知人事”的完整体系（2上 · 00:25:43）。因此，与六亲相关的分析仅供参考；metisziwei.com 上父母、兄弟、子女三个维度也附有同样的说明。\n\n---\n\n## 目录\n\n| | 章节 | 一句话 |\n|---|------|--------|\n| 一 | 本轮更新 | 13 维断语按倪师原话与《全书》逐句校正，发布 67.5 万命盘 × 13 维解读数据集 v4.0 |\n| 二·新 | 13 维解读数据集 v4.0 | 2026-10-15 新版断语，67.5 万命盘，按年份下载 |\n| 二 | 51.8 万命盘样本数据集 | 规格、下载、用途、许可 |\n| 三 | 快速开始 | 克隆到跑起来 |\n| 四 | 排盘引擎 | 能做到什么、文件怎么分、古籍数据 |\n| 五 | 倪师《天纪·紫微斗数》原话 | 14 讲 + 2 段补充、1848 条，一图看全，每条可回放 |\n| 六 | 界面是一份 Demo | 不是线上那套，差距写明 |\n| 七 | 开源边界 | 什么开源、什么不开源 |\n| 八 | 维护节奏与贡献 | 同步节奏、issue / PR 口径 |\n| 九 | 协议 | 代码 MIT / 数据 CC BY 4.0 / 古籍公版 / 倪师原话非商用 |\n| 十 | 关于与联系 | 项目理念、技术栈、联系方式 |\n\n---\n\n## 一、本轮更新（2026-10-15）\n\n本轮跟随网站 2026-10-15 发版（网站内容版本 `ca268829f7a9`）：\n\n**1. 发布 13 维解读数据集 v4.0** —— 674,976 张命盘（公历 1950–2026 年每一个真实日期 × 12 时辰 × 男女）× 13 维 = **8,774,688 段解读**，正文约 204 亿字。解压后 56.6 GB（v3.0 为 33.1 GB，增加 71%），压缩后只有 161 MB，按年份分 77 个文件，可以只下需要的年份，也可以一次下全年份总包。下载见 Release v4.0-13d，规格和字段见第二·新章。发布前 77 个文件逐个解压，与原始数据逐字节比对一致。\n\n**2. 13 维断语按倪师原话与《全书》原文逐句校正**（断语库仍不开源，校正结果体现在 v4.0 数据集里）：\n\n- 标着倪师或《全书》却查不到出处的引文，删掉或换成逐字可查的原话；倪师原话注明《天纪》第几集、几分几秒\n- 不会发生的四化（如七杀化权、紫微化忌）相关的句子删去；只在某种条件下才成立的断语补上条件\n- 「力量强时……落陷时……」这类两头说的句子，改为按命盘只显示成立的那一种\n- 健康：哪个脏腑要留意，改按倪师的看法——全盘杀星最集中的那一宫，按它的地支对应脏腑；不再按星的五行推脏器\n- 网站知识库「古籍引证」由 244 处增至 405 处，每一处都能在《紫微斗数全书》原文里逐字找到\n\n**3. 排盘引擎同步**（PR #39）—— `dst-cn.ts` 新增 `chinaDSTSpan(year)`，查某年中国夏令时起止；`cities.ts` 补全省直辖县级单位与新疆兵团各市的经度（神农架、海南各市县、阿拉尔等），出生地选这些城市时真太阳时校正可用。\n\n**4. 许可** —— `DATASET-LICENSE` 适用范围加上 v4.0；写明解读里引用的倪师原话不在数据授权范围内，与第五章倪师原话的 CC BY-NC-SA 4.0 一致。v3.0 样本数据集及其条款不变。\n\n> **2026-10-24 补充**：项目理念移到页首——标题下居中一句「算法是公开的传统智慧，不应该被锁在围墙里」，紧接两段理念原文（前标「项目理念」），原有介绍段前标「项目信息」；第十章「项目理念」改为指向页首。\n\n> **2026-10-20 补充**：星曜亮度默认改为《斗数全书》，与主流排盘软件默认一致，此前默认的「现代修正 v2」仍可在流派设置里选；补齐天姚、天刑、天喜、大耗、解神、截空、副截、旬空的亮度，月德不再标亮度。用 5 张金标准盘逐宫核对，星曜落宫与亮度全部吻合。注意：v4.0 数据集（10-15）是按旧默认「现代修正 v2」生成的，其中亮度字和少量随亮度变化的解读句会与新默认不同。\n\n> **2026-10-06 ~ 10-07 补充**：README 加「注：关于六亲判断」（倪师原话 + 出处链接，中英两份）；网站链接加渠道码 `?from=`；同步倪师原话语料勘误（主星南斗、北斗归属）。\n\n### 上一轮更新（2026-09-21）\n\n> **2026-10-03 补充**：倪师《天纪·紫微",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Renhuai123/ziwei-doushu: 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.3,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Renhuai123/ziwei-doushu - 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体…」（Renhuai123/ziwei-doushu: 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四…），涉及 TypeScript → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Renhuai123/ziwei-doushu - 紫微斗数开源排盘引擎 —…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 ziwei-doushu 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 ziwei-doushu 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "Renhuai123/ziwei-doushu: 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "Renhuai123/ziwei-doushu - 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Renhuai123/ziwei-doushu: 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Renhuai123/ziwei-doushu - 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Renhuai123/ziwei-doushu: 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Renhuai123/ziwei-doushu - 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Renhuai123/ziwei-doushu: 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: Renhuai123/ziwei-doushu - 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Renhuai123/ziwei-doushu: 紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+    "developer_profile": {
+      "github_username": "Renhuai123",
+      "profile_url": "https://github.com/Renhuai123",
+      "name": "王多鱼AI",
+      "bio": "全网同名：王多鱼AI   ",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 298,
+      "following": 0,
+      "public_repos": 25,
+      "avatar_url": "https://avatars.githubusercontent.com/u/91890238?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "SnailSploit/Claude-Red - claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+    "url": "https://github.com/SnailSploit/Claude-Red",
+    "heat": "8,608 stars",
+    "time": "Today",
+    "developer_name": "SnailSploit",
+    "developer_url": "https://github.com/SnailSploit",
+    "developer_email": "",
+    "today_stars": "226 stars today",
+    "language": "Python",
+    "summary": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+    "content": "\n\n \n\n# claude-red\n\n**Offensive security skills for Claude — drop-in `SKILL.md` files that turn Claude into a context-aware red team operator.**\n\n[](LICENSE)\n[](#skill-index)\n[](#categories)\n[](https://github.com/SnailSploit/claude-red)\n[](https://github.com/SnailSploit/claude-red/network/members)\n   \n\nOverview &bull; Quickstart &bull; Categories &bull; Skill Index &bull; Roadmap &bull; Contributing\n\n \n\n---\n\n## Overview\n\n`claude-red` is a curated library of offensive security skills for the Claude Skills system. Each skill is a structured `SKILL.md` file that primes Claude with expert-level methodology for a specific attack surface — from SQL injection to shellcode, EDR evasion to ADCS abuse.\n\nDrop a skill into your Claude environment and it behaves like a domain specialist: it knows the techniques, the tooling, the edge cases, and the escalation paths. Skills load on demand based on conversational triggers — you don't pay context for skills you aren't using.\n\n**Use cases:** authorized red team engagements, bug bounty triage, security research, CTF preparation, operator training, and methodical attack surface exploration.\n\n**for our actual research using skills -> https://snailsploit.com**\n---\n\n## Quickstart\n\n### Claude Skills System (Recommended)\n\n```bash\ngit clone https://github.com/SnailSploit/claude-red ~/.claude/skills/claude-red\n```\n\nClaude auto-loads matching skills based on conversational triggers (e.g., mentioning SQL injection loads `offensive-sqli`).\n\nTo install a single category:\n\n```bash\ngit clone --filter=blob:none --sparse https://github.com/SnailSploit/claude-red\ncd claude-red && git sparse-checkout set Skills/web Skills/active-directory\n```\n\n### Claude Code\n\n```bash\ncat Skills/web/offensive-sqli/SKILL.md | claude --system-file -\n\ncat Skills/active-directory/**/SKILL.md | claude --system-file -\n```\n\n### Claude.ai (Manual)\n\nPaste the contents of a `SKILL.md` into a Project's system prompt or prepend it to your conversation.\n\n### Install Script\n\n```bash\n./install.sh                           # interactive\n./install.sh --target ~/.claude/skills # explicit target\n./install.sh --category web            # single category\n```\n\n---\n\n## Categories\n\n| Category | Skills | Focus |\n|---|---:|---|\n| Web Application | 16 | OWASP Top 10, business logic, advanced web vulnerability classes |\n| Auth & Identity | 2 | JWT exploitation, OAuth/OIDC abuse |\n| Active Directory | 1 | On-prem AD attack methodology |\n| Wireless | 14 | 802.11, WPA2/3, EAP, WPS, evil-twin, BLE, Zigbee, Z-Wave, LoRa, sub-GHz |\n| Cloud | 1 | AWS, Azure, GCP attack paths |\n| Mobile | 1 | Android and iOS application testing |\n| IoT & Embedded | 1 | Hardware, firmware, RTOS, ICS/OT |\n| Infrastructure & Red Team | 7 | Initial access, EDR evasion, advanced red team operations, Windows internals |\n| Exploit Development | 6 | Stack/heap corruption, ROP, mitigations, crash analysis, TOCTOU |\n| Fuzzing & Vulnerability Research | 4 | libFuzzer, AFL++, coverage-guided fuzzing, vulnerability",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 5,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "aws",
+        "azure",
+        "gcp",
+        "edge"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "prompt"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Fine-tuning"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL. md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.5,
+      "tcloud_relevance": 9.6,
+      "tcloud_integration": "**Claude-Red** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示\n补充关联 CodeBuddy：**Claude-Red** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "EdgeOne",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Claude-Red** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+        "**Claude-Red** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "edge",
+        "security",
+        "web app",
+        "claude code"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**Claude-Red** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示\n补充关联 CodeBuddy：**Claude-Red** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "EdgeOne",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（EdgeOne / CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「SnailSploit/Claude-Red - claude-red is a curated…」（claude-red is a curated library of offensive security skill…），涉及 Fine-tuning → 可写方向：**Claude-Red** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Claude-Red」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 Claude-Red 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉用 Claude-Red 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 Claude-Red 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 Claude-Red 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "claude-red is a curated library of offensive security skills design…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：…",
+        "x_en": "SnailSploit/Claude-Red - claude-red is a curated library of offensive security skills d…. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：claude-red is a curated library of offensive security skills design…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: SnailSploit/Claude-Red - claude-red is a curated library of offensive security skills d…. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy). What matters more to you: deployment, performance, or wo…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。claude-red is a curated library of offensive security skills design…。如果用官方号发，建议主推 EdgeOne，重点讲 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**Claude-Red** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示 补充关联 CodeBuddy：**Claude-Red** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. SnailSploit/Claude-Red - claude-red is a curated library of offensive security skills d…. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：claude-red is a curated library of offensive security skills design…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: SnailSploit/Claude-Red - claude-red is a curated library of offensive security skills d…. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "claude-red 是一个专为 Claude 技能系统设计的进攻性安全技能库。每项技能都是结构化的技能。",
+    "developer_profile": {
+      "github_username": "SnailSploit",
+      "profile_url": "https://github.com/SnailSploit",
+      "name": "SnailSploit | Kai Aizen",
+      "bio": "GenAI Security Researcher | AI Red Teamer | Offensive Security \r\nAuthor of AATMF /P.R.O.M.P.T/ SEF frameworks|\r\n50+ CVEs |  Same Attack, Different Substrate",
+      "company": "https://snailsploit.com/",
+      "location": "",
+      "blog": "https://snailsploit.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 429,
+      "following": 7,
+      "public_repos": 50,
+      "avatar_url": "https://avatars.githubusercontent.com/u/95986478?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/kaiaizen/"
+        },
+        {
+          "platform": "generic",
+          "url": "https://snailsploit.com/"
+        },
+        {
+          "platform": "generic",
+          "url": "https://www.researchgate.net/profile/Kai-Aizen-2"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://snailsploit.com"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://orcid.org/0009-0003-7208-4223"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "OpenBMB/VoxCPM - VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+    "url": "https://github.com/OpenBMB/VoxCPM",
+    "heat": "40,349 stars",
+    "time": "Today",
+    "developer_name": "OpenBMB",
+    "developer_url": "https://github.com/OpenBMB",
+    "developer_email": "openbmb@gmail.com",
+    "today_stars": "150 stars today",
+    "language": "Python",
+    "summary": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+    "content": " VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning \n\n \n   English  |  中文 \n \n\n \n     \n     \n     \n     \n     \n     \n     \n \n\n \n   \n    \n     \n \n\n \n\n \n  👋 Join our community for discussion and support!\n   \n   \n      Feishu\n   \n  &nbsp;|&nbsp;\n   \n      Discord\n   \n  &nbsp;|&nbsp;\n   \n    📚 MiniCPM Wiki\n   \n \n\nVoxCPM is a **tokenizer-free** Text-to-Speech system that directly generates continuous speech representations via an end-to-end **diffusion autoregressive architecture**, bypassing discrete tokenization to achieve highly natural and expressive synthesis.\n\n**VoxCPM2** is the latest major release — a **2B** parameter model trained on **over 2 million hours** of multilingual speech data, now supporting **30 languages**, **Voice Design**, **Controllable Voice Cloning**, and **48kHz** studio-quality audio output. Built on a MiniCPM-4 backbone.\n\n### ✨ Highlights\n\n- 🌍 **30-Language Multilingual** — Input text in any of the 30 supported languages and synthesize directly, no language tag needed\n- 🎨 **Voice Design** — Create a brand-new voice from a natural-language description alone (gender, age, tone, emotion, pace …), no reference audio required\n- 🎛️ **Controllable Cloning** — Clone any voice from a short reference clip, with optional style guidance to steer emotion, pace, and expression while preserving the original timbre\n- 🎙️ **Ultimate Cloning** — Reproduce every vocal nuance: provide both reference audio and its transcript, and the model continues seamlessly from the reference, faithfully preserving every vocal detail — timbre, rhythm, emotion, and style (same as VoxCPM1.5)\n- 🔊 **48kHz High-Quality Audio** — Accepts 16kHz reference audio and directly outputs 48kHz studio-quality audio via AudioVAE V2's asymmetric encode/decode design, with built-in super-resolution — no external upsampler needed\n- 🧠 **Context-Aware Synthesis** — Automatically infers appropriate prosody and expressiveness from text content\n- ⚡ **Real-Time Streaming** — RTF as low as ~0.3 on NVIDIA RTX 4090, and ~0.13 accelerated by Nano-vLLM or vLLM-Omni — official vLLM omni-modal serving for VoxCPM2 with PagedAttention and an OpenAI-compatible API\n- 📜 **Fully Open-Source & Commercial-Ready** — Weights and code released under the Apache-2.0 license, free for commercial use\n\n**🌍 Supported Languages (30)**  \nArabic, Burmese, Chinese, Danish, Dutch, English, Finnish, French, German, Greek, Hebrew, Hindi, Indonesian, Italian, Japanese, Khmer, Korean, Lao, Malay, Norwegian, Polish, Portuguese, Russian, Spanish, Swahili, Swedish, Tagalog, Thai, Turkish, Vietnamese\n\nChinese Dialect: 四川话, 粤语, 吴语, 东北话, 河南话, 陕西话, 山东话, 天津话, 闽南话\n\n### News\n\n- **[2026.04]** 🔥 We release **VoxCPM2** — 2B, 30 languages, Voice Design & Controllable Voice Cloning, 48kHz audio output! Weights | Docs | Playground | Technical Report\n- **[2025.12]** 🎉 Open-source **VoxCPM1.5** weights with SFT & LoRA fine-tuning. (**🏆 #1 GitHub Trending**)\n- **[2025.09]** ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "diffusion",
+        "openai",
+        "tts",
+        "speech"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Diffusion",
+        "Fine-tuning"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "OpenBMB/VoxCPM: VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.1,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**VoxCPM** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**VoxCPM** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "nvidia",
+        "fine-tuning"
+      ],
+      "tcloud_primary_product": "GPU CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**VoxCPM** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（GPU CVM）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（GPU CVM）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「OpenBMB/VoxCPM - VoxCPM2: Tokenizer-Free TTS for…」（OpenBMB/VoxCPM: VoxCPM2: Tokenizer-Free TTS for Multilingua…），涉及 Diffusion / Fine-tuning → 可写方向：**VoxCPM** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「VoxCPM」可结合 GPU CVM 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "GPU CVM",
+      "official_angle_cn": "围绕 VoxCPM 的核心功能（OpenBMB/VoxCPM: VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation,…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 VoxCPM 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+      "platform_copies": {
+        "primary_product": "GPU CVM",
+        "product_display": "GPU CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 VoxCPM 的核心功能（OpenBMB/VoxCPM: VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation,…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use GPU Cloud Virtual Machine as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 VoxCPM 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+        "x_cn": "OpenBMB/VoxCPM: VoxCPM2: Tokenizer-Free TTS for Multilingual Speech…。如果站在腾讯云国际站官方号来写，这条更适合从 GPU CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：…",
+        "x_en": "OpenBMB/VoxCPM - VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creati…. For Tencent Cloud, this fits GPU Cloud Virtual Machine: GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：OpenBMB/VoxCPM: VoxCPM2: Tokenizer-Free TTS for Multilingual Speech…。如果从腾讯云视角切，这条最适合带到 GPU CVM，重点聊 技术科普 + 教程拆解 + 产品关联（GPU CVM）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: OpenBMB/VoxCPM - VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creati…. From a Tencent Cloud angle, the best hook is GPU Cloud Virtual Machine, especially around technical explainer + hands-on walkthrough + product tie-in (GPU CVM). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。OpenBMB/VoxCPM: VoxCPM2: Tokenizer-Free TTS for Multilingual Speech…。如果用官方号发，建议主推 GPU CVM，重点讲 技术科普 + 教程拆解 + 产品关联（GPU CVM），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**VoxCPM** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. OpenBMB/VoxCPM - VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creati…. For Tencent Cloud, the better angle is GPU Cloud Virtual Machine. GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering. The content should focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM).",
+        "reddit_title_cn": "这类热点如果从 GPU CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：OpenBMB/VoxCPM: VoxCPM2: Tokenizer-Free TTS for Multilingual Speech…。如果站在腾讯云国际站官方号视角，我会更想把它写成 GPU CVM 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（GPU CVM）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through GPU Cloud Virtual Machine?",
+        "reddit_body_en": "A recent trend caught my eye: OpenBMB/VoxCPM - VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creati…. Instead of reposting it as news, I'd frame it through GPU Cloud Virtual Machine and focus on technical explainer + hands-on walkthrough + product tie-in (GPU CVM). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "VoxCPM2：用于多语言语音生成、创意语音设计和逼真克隆的无分词器 TTS",
+    "developer_profile": {
+      "github_username": "OpenBMB",
+      "profile_url": "https://github.com/OpenBMB",
+      "name": "OpenBMB",
+      "bio": "OpenBMB (Open Lab for Big Model Base) aims to build foundation models and systems towards AGI.",
+      "company": "",
+      "location": "",
+      "blog": "https://www.openbmb.cn",
+      "twitter_username": "OpenBMB",
+      "email": "openbmb@gmail.com",
+      "followers": 7431,
+      "following": 0,
+      "public_repos": 91,
+      "avatar_url": "https://avatars.githubusercontent.com/u/89920203?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/OpenBMB"
+        },
+        {
+          "platform": "generic",
+          "url": "https://space.bilibili.com/493282299"
+        }
+      ],
+      "is_org": true
+    }
+  }
+]
