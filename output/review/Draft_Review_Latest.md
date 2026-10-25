@@ -1,70 +1,61 @@
-# 📋 产品 Draft 汇总 — 2026-10-24
+# 📋 产品 Draft 汇总 — 2026-10-25
 
-> 共 4 个产品的 P0/P1 内容草稿
+> 共 1 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CodeBuddy — 今日内容 (1 条)
+# CodeBuddy — 今日内容 (4 条)
 
-## 1. P1 本周发 · anthropics/knowledge-work-plugins
+## 1. P0 今天发 · aws/agent-toolkit-for-aws
 
-**写什么**: 以 knowledge-work-plugins 引发的开发者效率讨论为切入点
+**写什么**: 以 agent-toolkit-for-aws 引发的开发者效率讨论为切入点
 
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+**发到哪**: X（快评竞品动态） + LinkedIn（发深度对比分析文章）
 
 **参考文案**:
-> 🤖 "anthropics/knowledge-work-plugins" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "aws/agent-toolkit-for-aws" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins)*
+*参考: [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws)*
 
 ---
 
+## 2. P1 本周发 · Nutlope/hallmark
 
-# EdgeOne — 今日内容 (1 条)
-
-## 1. P0 今天发 · SnailSploit/Claude-Red
-
-**写什么**: 从 Claude-Red 的性能/安全需求出发
+**写什么**: 以 hallmark 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> ⚡ Interesting project: "SnailSploit/Claude-Red". For teams needing global acceleration + DDoS protection, check out EdgeOne — 3,200+ PoP nodes worldwide. #CDN #WebSecurity #EdgeComputing
+> 🤖 "Nutlope/hallmark" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [SnailSploit/Claude-Red](https://github.com/SnailSploit/Claude-Red)*
+*参考: [Nutlope/hallmark](https://github.com/Nutlope/hallmark)*
 
 ---
 
+## 3. P1 本周发 · luongnv89/claude-howto
 
-# GPU CVM — 今日内容 (1 条)
-
-## 1. P1 本周发 · OpenBMB/VoxCPM
-
-**写什么**: 围绕 VoxCPM 的核心功能（OpenBMB/VoxCPM: VoxCPM2: Tokenizer-Free TTS for Multilingual Spe
+**写什么**: 以 claude-howto 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🔥 "OpenBMB/VoxCPM" — **VoxCPM** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容. Check out Tencent Cloud GPU CVM for a production-ready solution. #TencentCloud #CloudComputing
+> 🤖 "luongnv89/claude-howto" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM)*
+*参考: [luongnv89/claude-howto](https://github.com/luongnv89/claude-howto)*
 
 ---
 
+## 4. P0 今天发 · pbakaus/impeccable
 
-# Hunyuan — 今日内容 (1 条)
-
-## 1. P1 本周发 · 为什么很多人都把 DeepSeek 神化了，看不起国内豆包和其它 LLM？
-
-**写什么**: 以「为什么很多人都把」话题为引子
+**写什么**: 以 impeccable 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "为什么很多人都把 DeepSeek 神化了，看不起国内豆包和其它 LLM？" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🤖 "pbakaus/impeccable" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [为什么很多人都把 DeepSeek 神化了，看不起国内豆包和其它 LLM？](https://www.v2ex.com/t/1251402)*
+*参考: [pbakaus/impeccable](https://github.com/pbakaus/impeccable)*
 
 ---
 
