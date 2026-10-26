@@ -1,22 +1,22 @@
-# 📋 产品 Draft 汇总 — 2026-10-25
+# 📋 产品 Draft 汇总 — 2026-10-26
 
-> 共 1 个产品的 P0/P1 内容草稿
+> 共 3 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CodeBuddy — 今日内容 (4 条)
+# CodeBuddy — 今日内容 (3 条)
 
-## 1. P0 今天发 · aws/agent-toolkit-for-aws
+## 1. P1 本周发 · makecindy/cindy
 
-**写什么**: 以 agent-toolkit-for-aws 引发的开发者效率讨论为切入点
+**写什么**: 以 cindy 引发的开发者效率讨论为切入点
 
-**发到哪**: X（快评竞品动态） + LinkedIn（发深度对比分析文章）
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "aws/agent-toolkit-for-aws" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "makecindy/cindy" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws)*
+*参考: [makecindy/cindy](https://github.com/makecindy/cindy)*
 
 ---
 
@@ -33,20 +33,7 @@
 
 ---
 
-## 3. P1 本周发 · luongnv89/claude-howto
-
-**写什么**: 以 claude-howto 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "luongnv89/claude-howto" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [luongnv89/claude-howto](https://github.com/luongnv89/claude-howto)*
-
----
-
-## 4. P0 今天发 · pbakaus/impeccable
+## 3. P0 今天发 · pbakaus/impeccable
 
 **写什么**: 以 impeccable 引发的开发者效率讨论为切入点
 
@@ -56,6 +43,38 @@
 > 🤖 "pbakaus/impeccable" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
 *参考: [pbakaus/impeccable](https://github.com/pbakaus/impeccable)*
+
+---
+
+
+# GPU CVM — 今日内容 (1 条)
+
+## 1. P1 本周发 · debpalash/VoiceStudio
+
+**写什么**: 围绕 VoiceStudio 的核心功能（debpalash/VoiceStudio: VoiceStudio is the open-source, full
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🔥 "debpalash/VoiceStudio" — **VoiceStudio** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容. Check out Tencent Cloud GPU CVM for a production-ready solution. #TencentCloud #CloudComputing
+
+*参考: [debpalash/VoiceStudio](https://github.com/debpalash/VoiceStudio)*
+
+---
+
+
+# Hunyuan — 今日内容 (1 条)
+
+## 1. P1 本周发 · TauricResearch/TradingAgents
+
+**写什么**: 围绕 TradingAgents 的核心功能（TauricResearch/TradingAgents: TradingAgents: Multi-Agents
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🧠 "TauricResearch/TradingAgents" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+
+*参考: [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents)*
 
 ---
 
