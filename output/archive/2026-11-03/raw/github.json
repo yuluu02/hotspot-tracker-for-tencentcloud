@@ -1,0 +1,975 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "vercel-labs/agent-desktop - Computer use CLI for AI agents",
+    "url": "https://github.com/vercel-labs/agent-desktop",
+    "heat": "10,885 stars",
+    "time": "Today",
+    "developer_name": "vercel-labs",
+    "developer_url": "https://github.com/vercel-labs",
+    "developer_email": "support@vercel.com",
+    "today_stars": "2,275 stars today",
+    "language": "Rust",
+    "summary": "Computer use CLI for AI agents",
+    "content": "# agent-desktop\n\nComputer use for AI agents: read and operate desktop apps through the OS accessibility tree.\n\n \n     \n     \n     \n     \n \n\nA CLI and C library for macOS, Windows and Linux. A snapshot returns JSON with a ref for every element an agent can act on. The agent acts on a ref and snapshots again to check, with no pixel matching; the loop stays in your agent.\n\nEvery CLI call runs in its own process. Headless calls still prohibit foreground activation and synthesized input.\n\nSnapshots, clipboard reads, screenshots, command output and debug artifacts can contain private desktop content. Keep them out of public logs and uploads. The optional JEV helper sends screen descriptions to a configured model provider; it is separate from the native CLI. See privacy and data handling.\n\n## Installation\n\nInstall on macOS, Windows or Linux with npm:\n\n```bash\nnpm install -g agent-desktop\nagent-desktop version\n```\n\nBun, Yarn and pnpm can install the same package. It includes native binaries and platform helpers for x64 and ARM64.\nFor direct execution without a JavaScript launcher, download the matching native archive from\nGitHub Releases and keep its helper beside the executable.\n\nOfficial Homebrew and Scoop packages are being submitted; they are not yet available in the default catalogs.\nThe repository no longer maintains a custom Homebrew tap or Scoop bucket.\n\n- **macOS** needs Accessibility permission: `agent-desktop permissions --guide`.\n- **Windows** needs no grant for apps at your terminal's integrity level.\n- **Linux** needs the user's graphical session with `at-spi2-core`.\n\nSee installation and permissions for package-manager behavior, release archives, and building from source.\n\n## Quick start\n\nObserve, act on a ref, observe again. Any app name from `agent-desktop list-apps` works; Finder is the macOS example.\nEach command prints one JSON envelope; a trimmed snapshot follows the commands.\n\n```bash\nagent-desktop snapshot --app Finder -i      # interactive elements, each with a ref\nagent-desktop click @s8f3k2p9:e8            # act on a ref from that snapshot\nagent-desktop snapshot --app Finder -i      # observe again to verify\n```\n\n```json\n{\n  \"version\": \"2.6\",\n  \"ok\": true,\n  \"command\": \"snapshot\",\n  \"data\": {\n    \"app\": \"Finder\",\n    \"window\": { \"id\": \"w-204749\", \"title\": \"Downloads\" },\n    \"snapshot_id\": \"s8f3k2p9\",\n    \"ref_count\": 59,\n    \"complete\": true,\n    \"tree\": {\n      \"role\": \"window\",\n      \"name\": \"Downloads\",\n      \"children\": [\n        { \"role\": \"treeitem\", \"name\": \"Documents\", \"ref_id\": \"@s8f3k2p9:e8\", \"available_actions\": [\"Click\"] }\n      ]\n    }\n  }\n}\n```\n\n- **Refs belong to their snapshot.** A bare `@e8` is rejected with `INVALID_ARGS`. When the UI changes, an action\n  returns `STALE_REF` or `AMBIGUOUS_TARGET`: take a new snapshot and use its refs.\n- **Several windows** give `AMBIGUOUS_TARGET`; `snapshot` lists the candidate window ids in `error.details`. Pass one\n  with `--window-id`.\n- **Dense apps:** map first with `snapsh",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "vercel"
+      ],
+      "ai_hits": [
+        "ai",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "竞品动态",
+      "products": [],
+      "competitors": [
+        "Vercel"
+      ],
+      "competitor_products": [
+        "Vercel"
+      ],
+      "techs": [
+        "Agent",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "vercel-labs/agent-desktop: Computer use CLI for AI agents",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.8,
+      "tcloud_relevance": 5.1,
+      "tcloud_integration": "**agent-desktop** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+      "tcloud_products": [
+        "COS"
+      ],
+      "tcloud_reasons": [
+        "**agent-desktop** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发"
+      ],
+      "tcloud_evidence": [
+        "bucket",
+        "archive"
+      ],
+      "tcloud_primary_product": "COS",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 COS：**agent-desktop** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+      "tcloud_official_matches": [
+        "COS"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "产品关联（COS）",
+        "竞品对比（Vercel）"
+      ],
+      "editorial_angles_text": "教程拆解 + 产品关联（COS） + 竞品对比（Vercel）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「vercel-labs/agent-desktop - Computer use CLI for…」（vercel-labs/agent-desktop: Computer use CLI for AI agents），涉及 Agent / TypeScript → 可写方向：Vercel 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「agent-desktop」涉及对象存储场景，可结合 COS 写教程或场景解读。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "COS",
+      "official_angle_cn": "围绕 agent-desktop 的核心功能（vercel-labs/agent-desktop: Computer use CLI for AI agents），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 agent-desktop 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+      "platform_copies": {
+        "primary_product": "COS",
+        "product_display": "COS",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 agent-desktop 的核心功能（vercel-labs/agent-desktop: Computer use CLI for AI agents），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Cloud Object Storage (COS) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 agent-desktop 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+        "x_cn": "vercel-labs/agent-desktop: Computer use CLI for AI agents。如果站在腾讯云国际站官方号来写，这条更适合从 COS 切入：如果以腾讯云国际站官方号来写，这条建议主推 COS：**agent-desktop** 产…",
+        "x_en": "vercel-labs/agent-desktop - Computer use CLI for AI agents. For Tencent Cloud, this fits Cloud Object Storage (COS): Object storage for knowledge bases, datasets, files, and AI workflow persistence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：vercel-labs/agent-desktop: Computer use CLI for AI agents。如果从腾讯云视角切，这条最适合带到 COS，重点聊 教程拆解 + 产品关联（COS） + 竞品对比（Vercel）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: vercel-labs/agent-desktop - Computer use CLI for AI agents. From a Tencent Cloud angle, the best hook is Cloud Object Storage (COS), especially around hands-on walkthrough + product tie-in (COS) + competitor comparison (Vercel). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。vercel-labs/agent-desktop: Computer use CLI for AI agents。如果用官方号发，建议主推 COS，重点讲 教程拆解 + 产品关联（COS） + 竞品对比（Vercel），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 COS：**agent-desktop** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. vercel-labs/agent-desktop - Computer use CLI for AI agents. For Tencent Cloud, the better angle is Cloud Object Storage (COS). Object storage for knowledge bases, datasets, files, and AI workflow persistence. The content should focus on hands-on walkthrough + product tie-in (COS) + competitor comparison (Vercel).",
+        "reddit_title_cn": "这类热点如果从 COS 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：vercel-labs/agent-desktop: Computer use CLI for AI agents。如果站在腾讯云国际站官方号视角，我会更想把它写成 COS 相关内容，重点是 教程拆解 + 产品关联（COS） + 竞品对比（Vercel）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Cloud Object Storage (COS)?",
+        "reddit_body_en": "A recent trend caught my eye: vercel-labs/agent-desktop - Computer use CLI for AI agents. Instead of reposting it as news, I'd frame it through Cloud Object Storage (COS) and focus on hands-on walkthrough + product tie-in (COS) + competitor comparison (Vercel). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "agent-desktop：计算机使用 CLI 进行 AI 代理",
+    "developer_profile": {
+      "github_username": "vercel-labs",
+      "profile_url": "https://github.com/vercel-labs",
+      "name": "Vercel Labs",
+      "bio": "Develop. Preview. Ship. Creators of Next.js.",
+      "company": "",
+      "location": "",
+      "blog": "https://vercel.com",
+      "twitter_username": "vercel",
+      "email": "support@vercel.com",
+      "followers": 10018,
+      "following": 0,
+      "public_repos": 395,
+      "avatar_url": "https://avatars.githubusercontent.com/u/108547162?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/vercel"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "heat": "111,078 stars",
+    "time": "Today",
+    "developer_name": "thedotmack",
+    "developer_url": "https://github.com/thedotmack",
+    "developer_email": "",
+    "today_stars": "1,803 stars today",
+    "language": "TypeScript",
+    "summary": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+    "content": " \n   \n   \n     \n       \n       \n       \n     \n   \n \n\n \n   \n  &nbsp;&nbsp;&nbsp;\n   \n  &nbsp;&nbsp;&nbsp;\n   \n \n\n \n   🇨🇳 中文  •\n   🇹🇼 繁體中文  •\n   🇯🇵 日本語  •\n   🇵🇹 Português  •\n   🇧🇷 Português  •\n   🇰🇷 한국어  •\n   🇪🇸 Español  •\n   🇩🇪 Deutsch  •\n   🇫🇷 Français  •\n   🇮🇱 עברית  •\n   🇸🇦 العربية  •\n   🇷🇺 Русский  •\n   🇵🇱 Polski  •\n   🇨🇿 Čeština  •\n   🇳🇱 Nederlands  •\n   🇹🇷 Türkçe  •\n   🇺🇦 Українська  •\n   🇻🇳 Tiếng Việt  •\n   🇵🇭 Tagalog  •\n   🇮🇩 Indonesia  •\n   🇹🇭 ไทย  •\n   🇮🇳 हिन्दी  •\n   🇧🇩 বাংলা  •\n   🇵🇰 اردو  •\n   🇷🇴 Română  •\n   🇸🇪 Svenska  •\n   🇮🇹 Italiano  •\n   🇬🇷 Ελληνικά  •\n   🇭🇺 Magyar  •\n   🇫🇮 Suomi  •\n   🇩🇰 Dansk  •\n   🇳🇴 Norsk \n \n\n Persistent memory compression system built for  Claude Code . \n\n \n   \n     \n   \n   \n     \n   \n   \n     \n   \n   \n     \n   \n \n\n \n  \n             \n  \n \n\n \n\n \n   \n     \n       \n         \n           \n         \n       \n     \n     \n       \n         \n           \n           \n           \n         \n       \n     \n   \n \n\n \n   Quick Start  •\n   How It Works  •\n   Search Tools  •\n   Documentation  •\n   Configuration  •\n   Troubleshooting  •\n   License \n \n\n \n  Claude-Mem seamlessly preserves context across sessions by automatically capturing tool usage observations, generating semantic summaries, and making them available to future sessions. This enables Claude to maintain continuity of knowledge about projects even after sessions end or reconnect.\n \n\n---\n\n## Quick Start\n\nInstall claude-mem for Grok Bot:\n\n```bash\nnpx claude-mem install --ide grok-bot\n```\n\nGrok Bot has no host hooks, so we watch the chat log files. Default is CMEM Pro, the hosted memory. Local observer is opt-in: `--provider host`. Installing this plugin does not install Cursor.\n\n**Awareness push pilot (LFG + Orifice):** needle observations (`decision`, `bugfix`, `security_alert`, `sensitive`) are appended as dated `- YYYY-MM-DD [awareness] …` lines into that bot's `memory/log/YYYY-MM.md`. Grok Bot already re-reads the log from disk. This does not write `profile.md`, user-memory, or project memory. Disable with `CLAUDE_MEM_GROK_BOT_AWARENESS_ENABLED=false`.\n\nInstall with a single command:\n\n```bash\nnpx claude-mem install\n```\n\nThe installer sets everything up first, then asks you to sign in to claude-mem in your browser (email magic link — no card required). Signing in provisions a memory key for your account and unlocks the **claude-mem observer** with a **30 Day Free Trial**: memory runs off-plan, so you get up to 100% more usage from your plan. When the free trial ends, memory automatically falls back to your Anthropic plan unless you subscribe. After sign-in you pick your memory provider — the claude-mem observer, your own OpenRouter or Gemini key, or your Anthropic plan.\n\nPrefer to skip the sign-in? Pass an explicit `--provider` flag, set `CLAUDE_MEM_ONLINE_OPTIN=false`, or run in CI/non-interactive shells — the installer completes without any account interaction.\n\nOr install for OpenCode:\n\n```bash\nnpx claude-mem install --ide opencode\n```\n\nThis works with OpenCode ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.6,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "copilot",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「thedotmack/claude-mem - Persistent Context Across…」（Persistent Context Across Sessions for Every Agent – Captur…），涉及 Agent → 可写方向：**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「thedotmack/claude-mem - Persistent Cont…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 claude-mem 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 claude-mem 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 claude-mem 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 claude-mem 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Persistent Context Across Sessions for Every Agent – Captures every…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Persistent Context Across Sessions for Every Agent – Captures every…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Persistent Context Across Sessions for Every Agent – Captures every…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Persistent Context Across Sessions for Every Agent – Captures every…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "claude-mem：每个座席跨会话的持久上下文 – 捕获座席在会话期间所做的所有操作，使用 AI 对其进行压缩，并将相关上下文注入到未来的会话中。适用于 Claude Code、OpenClaw、Codex、Gemini、Hermes、Copilot、OpenCode 等",
+    "developer_profile": {
+      "github_username": "thedotmack",
+      "profile_url": "https://github.com/thedotmack",
+      "name": "Alex Newman",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "Claude_Memory",
+      "email": "",
+      "followers": 2405,
+      "following": 128,
+      "public_repos": 135,
+      "avatar_url": "https://avatars.githubusercontent.com/u/683968?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/Claude_Memory"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "D4Vinci/Scrapling - 🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here:https://discord.gg/EMgGbDceNQand follow here for daily tips and tricks:https://x.com/Scrapling_dev",
+    "url": "https://github.com/D4Vinci/Scrapling",
+    "heat": "93,409 stars",
+    "time": "Today",
+    "developer_name": "D4Vinci",
+    "developer_url": "https://github.com/D4Vinci",
+    "developer_email": "karim.shoair@pm.me",
+    "today_stars": "706 stars today",
+    "language": "Python",
+    "summary": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here:https://discord.gg/EMgGbDceNQand follow here for daily tips and tricks:https://x.com/Scrapling_dev",
+    "content": " \n\n \n     \n         \n           \n           \n         \n     \n     \n     Effortless Web Scraping for the Modern Web \n \n\n \n       \n       \n     \n       \n       \n       \n       \n       \n       \n       \n       \n       \n     \n     \n          \n     \n          \n     \n          \n       \n     \n          \n     \n          \n     \n     \n       \n     \n     \n       \n     \n     \n     \n          \n \n\n \n      Selection methods  \n    &middot;\n      Fetchers  \n    &middot;\n      Spiders  \n    &middot;\n      Proxy Rotation  \n    &middot;\n      CLI  \n    &middot;\n      MCP  \n \n\nScrapling is a Python Web Scraping framework that brings fast HTTP requests, stealth browsers, powerful parsing, and concurrent crawling into one library.\n\nScrape static pages, render JavaScript, interact with websites, and extract data from the API calls behind them. Build crawlers with reusable sessions, proxy rotation, automatic retries, pause/resume, and built-in data exports.\n\nUse it from Python, the terminal, or your AI agent through its MCP server and Agent Skill. From extracting a few fields to collecting a whole website as clean Markdown, Scrapling covers the full scraping workflow.\n\n## What you can do with Scrapling\n\n- **Fetch & interact**: Fast HTTP requests, stealth browsers, JavaScript rendering, Cloudflare Turnstile/Interstitial handling, persistent sessions, and background API capture.\n- **Parse & extract**: CSS, XPath, text and regex search, adaptive element tracking, similar-element matching, and clean Markdown output.\n- **Crawl & export**: Concurrent spiders, proxy rotation, retries, AutoThrottle, pause/resume, streaming, ready-made templates, and JSON/JSONL/CSV/XML exports.\n- **Scrape with AI or from your terminal**: An MCP server for AI agents to browse and extract data, an Agent Skill, CLI commands, and an interactive shell.\n\nStart with a single page:\n\n```python\nfrom scrapling.fetchers import Fetcher\n\npage = Fetcher.get('https://quotes.toscrape.com/')\nquotes = page.css('.quote .text::text').getall()\nprint(quotes)\n```\n\nOr scale up with a spider:\n\n```python\nfrom scrapling.spiders import Spider, Response\n\nclass QuotesSpider(Spider):\n    name = \"quotes\"\n    start_urls = [\"https://quotes.toscrape.com/\"]\n\n    async def parse(self, response: Response):\n        for quote in response.css('.quote'):\n            yield {\n                \"text\": quote.css('.text::text').get(),\n                \"author\": quote.css('.author::text').get(),\n            }\n\nresult = QuotesSpider().start()\nprint(len(result.items))\nresult.items.to_json(\"quotes.json\")\n```\n\nThis prints `10` and saves the quotes and authors to `quotes.json`.\n\n \n     \n         \n     \n \n\n# Platinum Sponsors\n \n   \n     \n       \n         \n       \n     \n     \n     NodeMaven  - The most efficient proxy provider for Web Scraping and Automation with the Highest Quality IP on the market. Use code SCRAPLING35 for 35% discount.\n     \n   \n   \n     \n       \n         \n       \n     \n      Scrapling handles Cloudflare Turnstile. For enterprise-grad",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloudflare",
+        "render"
+      ],
+      "ai_hits": [
+        "ai",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Cloudflare"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Python"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here:https://discord. gg/EMgGbDceNQand follow here for daily tips and tricks:https://x. com/Scrapling_dev",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.8,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「D4Vinci/Scrapling - 🕷️ The BEST Web Scraping fram…」（🕷️ The BEST Web Scraping framework that handles everything…），涉及 Agent / MCP / Python → 可写方向：MCP 技术实践教程 + 腾讯云产品实操演示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「D4Vinci/Scrapling - 🕷️ The BEST Web Scr…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 Scrapling 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 Scrapling 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "🕷️ The BEST Web Scraping framework that handles everything from a s…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "D4Vinci/Scrapling - 🕷️ The BEST Web Scraping framework that handles everything from a s…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：🕷️ The BEST Web Scraping framework that handles everything from a s…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: D4Vinci/Scrapling - 🕷️ The BEST Web Scraping framework that handles everything from a s…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。🕷️ The BEST Web Scraping framework that handles everything from a s…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. D4Vinci/Scrapling - 🕷️ The BEST Web Scraping framework that handles everything from a s…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：🕷️ The BEST Web Scraping framework that handles everything from a s…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: D4Vinci/Scrapling - 🕷️ The BEST Web Scraping framework that handles everything from a s…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Scrapling：🕷️ 最好的网页抓取框架，可以处理从单个请求到全面抓取的所有内容！不要害羞，加入这里：https://discord。",
+    "developer_profile": {
+      "github_username": "D4Vinci",
+      "profile_url": "https://github.com/D4Vinci",
+      "name": "Karim shoair",
+      "bio": "An extremely curious creature who loves to learn. A Computer Science and Information Security enthusiast. Web Scraping Expert.",
+      "company": "",
+      "location": "Egypt",
+      "blog": "",
+      "twitter_username": "D4Vinci1",
+      "email": "karim.shoair@pm.me",
+      "followers": 4033,
+      "following": 90,
+      "public_repos": 45,
+      "avatar_url": "https://avatars.githubusercontent.com/u/20604835?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/D4Vinci1"
+        },
+        {
+          "platform": "generic",
+          "url": "https://t.me/D4Vinci_0x"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/karim-shoair/"
+        },
+        {
+          "platform": "threads",
+          "url": "https://www.threads.net/@karim_shoair"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "hyprwm/Hyprland - Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
+    "url": "https://github.com/hyprwm/Hyprland",
+    "heat": "40,093 stars",
+    "time": "Today",
+    "developer_name": "hyprwm",
+    "developer_url": "https://github.com/hyprwm",
+    "developer_email": "",
+    "today_stars": "509 stars today",
+    "language": "C++",
+    "summary": "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
+    "content": " \n\n \n\n \n\n[![Badge Workflow]][Workflow]\n[![Badge License]][License] \n![Badge Language] \n[![Badge Pull Requests]][Pull Requests] \n[![Badge Issues]][Issues] \n![Badge Hi Mom] \n\n \n\nHyprland is a 100% independent, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.\n\nIt provides the latest Wayland features, is highly customizable, has all the eyecandy, the most powerful plugins,\neasy IPC, much more QoL stuff than other compositors and more...\n \n \n\n---\n\n**[    Install    ][Install]** \n**[    Quick Start    ][Quick Start]** \n**[    Configure    ][Configure]** \n**[    Contribute    ][Contribute]**\n\n---\n\n \n\n \n\n# Features\n\n- All of the eyecandy: gradient borders, many types of blur, animations, glow, shadows and much more\n- A lot of customization\n- 100% independent, no wlroots, no libweston, no kwin, no mutter.\n- Custom bezier and spring curves for the best animations\n- Powerful plugin support\n- Built-in plugin manager\n- Tearing support for better gaming performance\n- Easily expandable and readable codebase\n- Fast and active development\n- Not afraid to provide bleeding-edge features\n- Config reloaded instantly upon saving\n- Global keybinds passed to your apps of choice\n- Tiling/pseudotiling/floating/fullscreen windows\n- Special workspaces (scratchpads)\n- Window groups (tabbed mode)\n- Powerful window/monitor/layer rules\n- Socket-based IPC\n- Native IME and Input Panels Support\n- Fully dynamic workspaces\n- Extensive layout support\n    - Dwindle\n    - Scrolling\n    - Master\n    - Monocle\n    - Custom layout with Lua\n    - Custom layouts with plugins\n- Per Workspace Layouts\n- and much more...\n\n \n \n\n \n\n# Gallery\n\n \n\n![Preview A]\n\n \n\n![Preview B]\n\n \n\n![Preview C]\n\n \n \n\n \n\n# Special Thanks\n\n \n\n**[wlroots]** - *For powering Hyprland in the past*\n\n**[tinywl]** - *For showing how 2 do stuff*\n\n**[Sway]** - *For showing how 2 do stuff the overkill way*\n\n**[Vivarium]** - *For showing how 2 do stuff the simple way*\n\n**[dwl]** - *For showing how 2 do stuff the hacky way*\n\n**[Wayfire]** - *For showing how 2 do some graphics stuff*\n\n \n\n[Configure]: https://wiki.hypr.land/configuring/\n[Stars]: https://starchart.cc/hyprwm/Hyprland\n[Hypr]: https://github.com/hyprwm/Hypr\n\n[Pull Requests]: https://github.com/hyprwm/Hyprland/pulls\n[Issues]: https://github.com/hyprwm/Hyprland/issues\n[Todo]: https://github.com/hyprwm/Hyprland/projects?type=beta\n\n[Contribute]: https://wiki.hypr.land/contributing-and-debugging/\n[Install]: https://wiki.hypr.land/getting-started/installation/\n[Quick Start]: https://wiki.hypr.land/getting-started/master-tutorial/\n[Workflow]: https://github.com/hyprwm/Hyprland/actions/workflows/ci.yaml\n[License]: LICENSE\n\n \n\n[Vivarium]: https://github.com/inclement/vivarium\n[WlRoots]: https://gitlab.freedesktop.org/wlroots/wlroots\n[Wayfire]: https://github.com/WayfireWM/wayfire\n[TinyWl]: https://gitlab.freedesktop.org/wlroots/wlroots/-/blob/master/tinywl/tinywl.c\n[Sway]: https://github.com/swaywm/sway\n[DWL]: https://codeberg.org/dwl/dwl\n\n \n\n[Preview A]: ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "edge"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "正向推广",
+      "detail_brief": "hyprwm/Hyprland: Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「hyprwm/Hyprland - Hyprland is an independent, hig…」（hyprwm/Hyprland: Hyprland is an independent, highly customi…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「hyprwm/Hyprland - Hyprland is an indepe…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 Hyprland 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 Hyprland 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "hyprwm/Hyprland: Hyprland is an independent, highly customizable, d…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "hyprwm/Hyprland - Hyprland is an independent, highly customizable, dynamic tiling Wayla…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：hyprwm/Hyprland: Hyprland is an independent, highly customizable, d…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: hyprwm/Hyprland - Hyprland is an independent, highly customizable, dynamic tiling Wayla…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。hyprwm/Hyprland: Hyprland is an independent, highly customizable, d…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. hyprwm/Hyprland - Hyprland is an independent, highly customizable, dynamic tiling Wayla…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：hyprwm/Hyprland: Hyprland is an independent, highly customizable, d…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: hyprwm/Hyprland - Hyprland is an independent, highly customizable, dynamic tiling Wayla…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Hyprland 是一个独立的、高度可定制的、动态平铺 Wayland 合成器，并且不会牺牲其外观。",
+    "developer_profile": {
+      "github_username": "hyprwm",
+      "profile_url": "https://github.com/hyprwm",
+      "name": "Hypr Development",
+      "bio": "Hyprland development team.",
+      "company": "",
+      "location": "",
+      "blog": "https://hyprland.org",
+      "twitter_username": "",
+      "email": "",
+      "followers": 3032,
+      "following": 0,
+      "public_repos": 42,
+      "avatar_url": "https://avatars.githubusercontent.com/u/107882187?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "Donchitos/Claude-Code-Game-Studios - Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+    "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+    "heat": "33,919 stars",
+    "time": "Today",
+    "developer_name": "Donchitos",
+    "developer_url": "https://github.com/Donchitos",
+    "developer_email": "",
+    "today_stars": "1,379 stars today",
+    "language": "Shell",
+    "summary": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+    "content": " \n   Claude Code Game Studios \n   \n    Turn a single Claude Code session into a full game development studio.\n     \n    49 agents. 74 skills. One coordinated AI team.\n   \n \n\n \n     \n     \n     \n     \n     \n     \n     \n     \n \n\n---\n\n## Why This Exists\n\nBuilding a game solo with AI is powerful — but a single chat session has no structure. No one stops you from hardcoding magic numbers, skipping design docs, or writing spaghetti code. There's no QA pass, no design review, no one asking \"does this actually fit the game's vision?\"\n\n**Claude Code Game Studios** solves this by giving your AI session the structure of a real studio. Instead of one general-purpose assistant, you get 49 specialized agents organized into a studio hierarchy — directors who guard the vision, department leads who own their domains, and specialists who do the hands-on work. Each agent has defined responsibilities, escalation paths, and quality gates.\n\nThe result: you still make every decision, but now you have a team that asks the right questions, catches mistakes early, and keeps your project organized from first brainstorm to launch.\n\n---\n\n## Table of Contents\n\n- What's Included\n- Studio Hierarchy\n- Slash Commands\n- Does it produce games, or documents?\n- Getting Started\n- Configuration\n- Upgrading\n- Project Structure\n- How It Works\n- Design Philosophy\n- Customization\n- Platform Support\n- Community\n- Supporting This Project\n- License\n\n---\n\n## What's Included\n\n| Category | Count | Description |\n|----------|-------|-------------|\n| **Agents** | 49 | Specialized subagents across design, programming, art, audio, narrative, QA, and production |\n| **Skills** | 74 | Slash commands for every workflow phase (`/start`, `/design-system`, `/create-epics`, `/create-stories`, `/dev-story`, `/story-done`, etc.) |\n| **Hooks** | 15 | Automated validation on commits, pushes, asset changes, design-doc reads, writes and registries, session lifecycle, agent audit trail, and gap detection |\n| **Rules** | 14 | Path-scoped coding standards enforced when editing gameplay, engine, AI, UI, network code, scene and asset files, and more |\n| **Templates** | 62 | Document templates for GDDs, UX specs, ADRs, sprint plans, HUD design, accessibility, and more |\n\n## Studio Hierarchy\n\nAgents are organized into three tiers, matching how real studios operate:\n\n```\nTier 1 — Directors\n  creative-director    technical-director    producer\n\nTier 2 — Department Leads\n  game-designer        lead-programmer       art-director\n  audio-director       narrative-director    qa-lead\n  release-manager      localization-lead\n\nTier 3 — Specialists\n  gameplay-programmer  engine-programmer     ai-programmer\n  network-programmer   tools-programmer      ui-programmer\n  systems-designer     level-designer        economy-designer\n  technical-artist     sound-designer        writer\n  world-builder        ux-designer           prototyper\n  performance-analyst  devops-engineer       analytics-engineer\n  security-engineer    qa-tester     ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 3,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Donchitos/Claude-Code-Game-Studios: Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.7,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**Claude-Code-Game-Studios** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Claude-Code-Game-Studios** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Claude-Code-Game-Studios** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「Donchitos/Claude-Code-Game-Studios - Turn Claude…」（Donchitos/Claude-Code-Game-Studios: Turn Claude Code into a…），涉及 Agent → 可写方向：**Claude-Code-Game-Studios** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Donchitos/Claude-Code-Game-Studios - Tu…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 Claude-Code-Game-Studios 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 Claude-Code-Game-Studios 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 Claude-Code-Game-Studios 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 Claude-Code-Game-Studios 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Donchitos/Claude-Code-Game-Studios: Turn Claude Code into a full ga…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "Donchitos/Claude-Code-Game-Studios - Turn Claude Code into a full game dev studio — 49…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Donchitos/Claude-Code-Game-Studios: Turn Claude Code into a full ga…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: Donchitos/Claude-Code-Game-Studios - Turn Claude Code into a full game dev studio — 49…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Donchitos/Claude-Code-Game-Studios: Turn Claude Code into a full ga…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**Claude-Code-Game-Studios** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. Donchitos/Claude-Code-Game-Studios - Turn Claude Code into a full game dev studio — 49…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Donchitos/Claude-Code-Game-Studios: Turn Claude Code into a full ga…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: Donchitos/Claude-Code-Game-Studios - Turn Claude Code into a full game dev studio — 49…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Claude-Code-Game-Studios：将 Claude Code 转变为完整的游戏开发工作室 — 49 个 AI 代理、72 种工作流程技能以及反映真实工作室层次结构的完整协调系统。",
+    "developer_profile": {
+      "github_username": "Donchitos",
+      "profile_url": "https://github.com/Donchitos",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "Melbourne, Australia",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 347,
+      "following": 1,
+      "public_repos": 1,
+      "avatar_url": "https://avatars.githubusercontent.com/u/150119193?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "FlashML-org/FreeToken - FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently.",
+    "url": "https://github.com/FlashML-org/FreeToken",
+    "heat": "16,294 stars",
+    "time": "Today",
+    "developer_name": "FlashML-org",
+    "developer_url": "https://github.com/FlashML-org",
+    "developer_email": "",
+    "today_stars": "653 stars today",
+    "language": "Python",
+    "summary": "FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently.",
+    "content": " \n   \n     \n     \n     \n   \n \n\n \n|   Download   |   Paper   |   Developer Slack   |   Community Discord   |   Community WeChat   |\n \n\nUnlock datacenter-class intelligence on the hardware you already own — Run 290B+ frontier MoE models locally on your gaming PC at blistering interactive speeds.\n\n## About\n\nFreeToken is an edge-native Mixture-of-Experts (MoE) serving engine designed for running frontier-scale open-weight models on personal and consumer hardware. It treats heterogeneous edge resources—GPUs, CPUs, host memory, and interconnects—as a unified, elastic inference platform. Its core features include:  \n\n- **Fast Edge-Native Runtime**: Provides efficient MoE serving with bandwidth-adaptive CPU–GPU co-execution ($q^\\star$ policy), full-layer double-buffered prefill streaming, global LRU expert caching, graph-compatible execution, and the FTW fast weight format.  \n- **Semantic-Aware Caching**: Features semantic anchor checkpoints for recurrent state and KV caches, allowing agentic context edits (e.g., tool calls, thinking blocks) to avoid redundant context recomputation.  \n- **Elastic Memory Management**: Supports dynamic, runtime VRAM re-allocation between expert caches and KV memory without engine restarts or weight reloading.  \n- **Broad MoE & Ecosystem Support**: Supports frontier open-weight MoE models (e.g., DeepSeek-V4-Flash, Qwen3.6-35B-A3B, GLM-5.2) across various parameter scales and quantization formats (e.g., MXFP4, NVFP4, FP8, BF16), with Anthropic/OpenAI-compatible APIs for seamless integration with real-world coding and tool-calling agents (e.g., Codex, Claude Code, OpenCode, OpenClaw, DeepSeek Harness). \n- **Diverse Consumer Hardware**: Scales across consumer laptops, gaming desktops, and workstation GPUs, with native support for NVIDIA RTX 30, RTX 40, and RTX 50 series GPUs.  \n\n## Getting Started\n\n### Desktop app\n\nDownload FreeToken for Windows or Linux at flashml.ai. It sets the engine up for you and gives you a GUI for running models, chatting, and tuning the engine.\n\n \n   \n \n\n### CLI\n\nInstall FreeToken with uv (recommended) or pip:\n\n```bash\nuv pip install \"freetoken[accel]\"\n```\n\nOr build from source:\n\n```bash\ngit clone https://github.com/FlashML-org/FreeToken.git && cd FreeToken\nuv venv && source .venv/bin/activate\nuv pip install -e \".[accel]\"\n```\n\nFor More details:\n\n- Install FreeToken\n- Quick start\n- Supported models\n- CLI reference\n- Repairing old FTW checkpoints\n- Diagnosing a checkpoint that fails to load\n\n## Citation\n\nIf you use FreeToken for your research, please cite our paper:\n\n```bibtex\n@article{yang2026freetoken,\n  title={FreeToken: Efficient Edge-Native MoE Serving with Bandwidth-Adaptive Execution},\n  author={Yang, Shuo and Fan, Xiaoze and Pan, Melissa and Xi, Haocheng and Wang, Zhe and Sun, Shanlin and Keutzer, Kurt and Han, Song and Zaharia, Matei and Xu, Chenfeng and Stoica, Ion},\n  journal={arXiv preprint arXiv:2608.16157},\n  year={2026}\n}\n```\n\n## Acknowledgment\n\nFreeToken was deeply inspired by mini-sglan",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "edge",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "deepseek",
+        "inference",
+        "openai",
+        "anthropic",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "学术研究",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "DeepSeek"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "FlashML-org/FreeToken: FreeToken brings datacenter-scale model serving to your desktop. Run massive models locally, fast and efficiently.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.2,
+      "tcloud_relevance": 8.9,
+      "tcloud_integration": "**FreeToken** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**FreeToken** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "GPU CVM",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**FreeToken** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**FreeToken** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "gpu",
+        "nvidia"
+      ],
+      "tcloud_primary_product": "GPU CVM",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**FreeToken** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 CodeBuddy：**FreeToken** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "GPU CVM",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "产品关联（GPU CVM / CodeBuddy）",
+        "研究解读"
+      ],
+      "editorial_angles_text": "技术科普 + 产品关联（GPU CVM / CodeBuddy） + 研究解读",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「FlashML-org/FreeToken - FreeToken brings datacent…」（FlashML-org/FreeToken: FreeToken brings datacenter-scale mo…），涉及 Agent → 可写方向：**FreeToken** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**FreeToken…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「FreeToken」可结合 GPU CVM 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "GPU CVM",
+      "official_angle_cn": "围绕 FreeToken 的核心功能（FlashML-org/FreeToken: FreeToken brings datacenter-scale model serving to your…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 FreeToken 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+      "platform_copies": {
+        "primary_product": "GPU CVM",
+        "product_display": "GPU CVM",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 FreeToken 的核心功能（FlashML-org/FreeToken: FreeToken brings datacenter-scale model serving to your…），以 GPU CVM 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use GPU Cloud Virtual Machine as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 FreeToken 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 GPU CVM。",
+        "x_cn": "FlashML-org/FreeToken: FreeToken brings datacenter-scale model serv…。如果站在腾讯云国际站官方号来写，这条更适合从 GPU CVM 切入：如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：…",
+        "x_en": "FlashML-org/FreeToken - FreeToken brings datacenter-scale model serving to your desktop…. For Tencent Cloud, this fits GPU Cloud Virtual Machine: GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：FlashML-org/FreeToken: FreeToken brings datacenter-scale model serv…。如果从腾讯云视角切，这条最适合带到 GPU CVM，重点聊 技术科普 + 产品关联（GPU CVM / CodeBuddy） + 研究解读。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: FlashML-org/FreeToken - FreeToken brings datacenter-scale model serving to your desktop…. From a Tencent Cloud angle, the best hook is GPU Cloud Virtual Machine, especially around technical explainer + product tie-in (GPU CVM / CodeBuddy) + research takeaway. What matters more to you: deployment, performance, or wor…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。FlashML-org/FreeToken: FreeToken brings datacenter-scale model serv…。如果用官方号发，建议主推 GPU CVM，重点讲 技术科普 + 产品关联（GPU CVM / CodeBuddy） + 研究解读，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 GPU CVM：**FreeToken** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 CodeBuddy：**FreeToken** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. FlashML-org/FreeToken - FreeToken brings datacenter-scale model serving to your desktop…. For Tencent Cloud, the better angle is GPU Cloud Virtual Machine. GPU instances powered by NVIDIA A100/H100 for AI training, inference, and rendering. The content should focus on technical explainer + product tie-in (GPU CVM / CodeBuddy) + research takeaway.",
+        "reddit_title_cn": "这类热点如果从 GPU CVM 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：FlashML-org/FreeToken: FreeToken brings datacenter-scale model serv…。如果站在腾讯云国际站官方号视角，我会更想把它写成 GPU CVM 相关内容，重点是 技术科普 + 产品关联（GPU CVM / CodeBuddy） + 研究解读。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through GPU Cloud Virtual Machine?",
+        "reddit_body_en": "A recent trend caught my eye: FlashML-org/FreeToken - FreeToken brings datacenter-scale model serving to your desktop…. Instead of reposting it as news, I'd frame it through GPU Cloud Virtual Machine and focus on technical explainer + product tie-in (GPU CVM / CodeBuddy) + research takeaway. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "FreeToken 将数据中心规模的模型服务带到您的桌面。在本地快速高效地运行大规模模型。",
+    "developer_profile": {
+      "github_username": "FlashML-org",
+      "profile_url": "https://github.com/FlashML-org",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 321,
+      "following": 0,
+      "public_repos": 5,
+      "avatar_url": "https://avatars.githubusercontent.com/u/286493426?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "pingdotgg/t3code",
+    "url": "https://github.com/pingdotgg/t3code",
+    "heat": "42,589 stars",
+    "time": "Today",
+    "developer_name": "pingdotgg",
+    "developer_url": "https://github.com/pingdotgg",
+    "developer_email": "oss@ping.gg",
+    "today_stars": "3,229 stars today",
+    "language": "TypeScript",
+    "content": "# T3 Code\n\nT3 Code is an \"agent harness control surface\". It enables control of the agents on your machine with a best-in-class mobile app (iOS, Android), web app and Electron-based desktop app.\n\nWorks with your subscriptions on Claude Code, Codex, Cursor, Grok Build, OpenCode, Google Antigravity, and fx. If they're set up on your computer, T3 Code can control them.\n\n## \"Wait, what are you selling me?\"\n\nNothing. We built T3 Code because we wanted the best possible development experience with agents. We were inspired by existing solutions like the Codex desktop app, Conductor, Claude Desktop and Cursor Glass, but none met our bar.\n\nWe wanted something performant, remote-ready, and truly open. If we ever go the wrong direction, we want you to have everything you need to fork and build the editor that you want.\n\n## Installation\n\n> [!WARNING]\n> T3 Code currently supports Codex, Claude, Cursor, Grok Build, OpenCode, Antigravity, and fx. Install and authenticate at least one provider before use:\n>\n> - Codex: install Codex CLI and run `codex login`\n> - Claude: install Claude Code and run `claude auth login`\n> - Cursor: install Cursor CLI and run `agent login`\n> - Grok Build: install Grok Build CLI and run `grok login`\n> - OpenCode: install OpenCode and run `opencode auth login`\n> - Antigravity: enable it in Settings, then use **Install Antigravity** and **Sign in with Google**. No CLI is required.\n> - fx: install fx and run `fx login` on the machine running the T3 Code server (setup guide)\n\n### Command line\n\n```bash\ncurl -fsSL https://t3.codes/install.sh | sh\n```\n\nOn Windows, in PowerShell:\n\n```powershell\nirm https://t3.codes/install.ps1 | iex\n```\n\nThen run `t3` to start the server and open the local web app. `t3 service install` keeps it running in the background, `t3 update` moves to a newer release, and `t3 --help` has the full reference.\n\nTo try it once without installing, run `npx t3@latest` instead.\n\n### Desktop app\n\nInstall the latest version of the desktop app from GitHub Releases, or from your favorite package registry:\n\n#### Windows (`winget`)\n\n```bash\nwinget install T3Tools.T3Code\n```\n\n#### Windows (`scoop`)\n\n```bash\nscoop install extras/t3code\n```\n\n#### macOS (Homebrew)\n\n```bash\nbrew install --cask t3-code\n```\n\n#### Debian, Ubuntu (`.deb`)\n\nDownload the `.deb` from GitHub Releases, then:\n\n```bash\nsudo apt install ./T3-Code-*.deb\n```\n\n#### Arch Linux (AUR)\n\nStable:\n\n```bash\nyay -S t3code-bin\n```\n\nNightly:\n\n```bash\nyay -S t3code-nightly-bin\n```\n\nThe AUR packaging is maintained in this repository under `packaging/aur`.\n\n#### Nix (nixpkgs)\n\n```bash\nnix profile add github:NixOS/nixpkgs/nixos-unstable#t3code\n```\n\nThe package is maintained in nixpkgs\nand includes the desktop app (`t3code-desktop`) and the `t3` command.\nSee Nix installation for NixOS configuration and updates.\n\n## Some notes\n\nWe are very very early in this project. Expect bugs.\n\nWe are (mostly) not accepting contributions yet. Small fixes may be considered. Big features will not be.",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "# T3 Code T3 Code is an \"agent harness control surface\". It enables control of the agents on your machine with a best-in-class mobile app (iOS, Android), web app and Electron-based desktop app. Works with your subscriptions on Claude Code, Codex, Cursor, Grok Build, OpenCode, Google Antigravity, and fx. If they're set up on your computer, T3 Code can control them.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.5,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**t3code** 的用户群和 CodeBuddy 高度重合 — 可以写「t3code 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**t3code** 的用户群和 CodeBuddy 高度重合 — 可以写「t3code 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**t3code** 的用户群和 CodeBuddy 高度重合 — 可以写「t3code 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「pingdotgg/t3code」（# T3 Code T3 Code is an \"agent harness control surface\". It…），涉及 Agent / Go → 可写方向：**t3code** 的用户群和 CodeBuddy 高度重合 — 可以写「t3code 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBudd…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「pingdotgg/t3code」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 t3code 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 t3code 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 t3code 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 t3code 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "# T3 Code T3 Code is an \"agent harness control surface\". It enables…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "pingdotgg/t3code. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：# T3 Code T3 Code is an \"agent harness control surface\". It enables…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: pingdotgg/t3code. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。# T3 Code T3 Code is an \"agent harness control surface\". It enables…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**t3code** 的用户群和 CodeBuddy 高度重合 — 可以写「t3code 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. pingdotgg/t3code. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：# T3 Code T3 Code is an \"agent harness control surface\". It enables…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: pingdotgg/t3code. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "t3code：# T3 Code T3 Code 是“代理线束控制界面”。它可以通过一流的移动应用程序（iOS、Android）、Web 应用程序和基于 Electron 的桌面应用程序来控制机器上的代理。",
+    "developer_profile": {
+      "github_username": "pingdotgg",
+      "profile_url": "https://github.com/pingdotgg",
+      "name": "Ping.gg",
+      "bio": "We build tools for modern devs",
+      "company": "",
+      "location": "United States of America",
+      "blog": "https://ping.gg/",
+      "twitter_username": "pingdotgg",
+      "email": "oss@ping.gg",
+      "followers": 2000,
+      "following": 0,
+      "public_repos": 15,
+      "avatar_url": "https://avatars.githubusercontent.com/u/89191727?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/pingdotgg"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "shiyu-coder/Kronos - Kronos: A Foundation Model for the Language of Financial Markets",
+    "url": "https://github.com/shiyu-coder/Kronos",
+    "heat": "46,129 stars",
+    "time": "Today",
+    "developer_name": "shiyu-coder",
+    "developer_url": "https://github.com/shiyu-coder",
+    "developer_email": "",
+    "today_stars": "857 stars today",
+    "language": "Python",
+    "summary": "Kronos: A Foundation Model for the Language of Financial Markets",
+    "content": " \r\n    Kronos: A Foundation Model for the Language of Financial Markets   \r\n \r\n\r\n\r\n \r\n\r\n  \r\n  \r\n  \r\n  \r\n     \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n  \r\n \r\n\r\n \r\n\r\n \r\n   \r\n   Deutsch  | \r\n   Español  | \r\n   Français  | \r\n   日本語  | \r\n   한국어  | \r\n   Português  | \r\n   Русский  | \r\n   中文 \r\n \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n> Kronos is the **first open-source foundation model** for financial candlesticks (K-lines), \r\n> trained on data from over **45 global exchanges**.\r\n\r\n\r\n \r\n\r\n## 📰 News\r\n*   🚩 **[2025.11.10]** Kronos has been accpeted by AAAI 2026.\r\n*   🚩 **[2025.08.17]** We have released the scripts for fine-tuning! Check them out to adapt Kronos to your own tasks.\r\n*   🚩 **[2025.08.02]** Our paper is now available on arXiv!\r\n\r\n \r\n\r\n## 📜 Introduction\r\n\r\n**Kronos** is a family of decoder-only foundation models, pre-trained specifically for the \"language\" of financial markets—K-line sequences. Unlike general-purpose TSFMs, Kronos is designed to handle the unique, high-noise characteristics of financial data. It leverages a novel two-stage framework: \r\n1. A specialized tokenizer first quantizes continuous, multi-dimensional K-line data (OHLCV) into **hierarchical discrete tokens**. \r\n2. A large, autoregressive Transformer is then pre-trained on these tokens, enabling it to serve as a unified model for diverse quantitative tasks.\r\n\r\n \r\n     \r\n \r\n\r\n## ✨ Live Demo \r\nWe have set up a live demo to visualize Kronos's forecasting results. The webpage showcases a forecast for the **BTC/USDT** trading pair over the next 24 hours. \r\n\r\n**👉 Access the Live Demo Here** \r\n\r\n## 📦 Model Zoo \r\nWe release a family of pre-trained models with varying capacities to suit different computational and application needs. All models are readily accessible from the Hugging Face Hub.\r\n\r\n| Model        | Tokenizer                                                                       | Context length | Params  | Open-source                                                               |\r\n|--------------|---------------------------------------------------------------------------------| -------------- | ------ |---------------------------------------------------------------------------|\r\n| Kronos-mini  | Kronos-Tokenizer-2k     | 2048           | 4.1M   | ✅ NeoQuasar/Kronos-mini  |\r\n| Kronos-small | Kronos-Tokenizer-base | 512            | 24.7M  | ✅ NeoQuasar/Kronos-small |\r\n| Kronos-base  | Kronos-Tokenizer-base | 512            | 102.3M | ✅ NeoQuasar/Kronos-base   |\r\n| Kronos-large | Kronos-Tokenizer-base | 512            | 499.2M | ❌                                                                         |\r\n\r\n\r\n## 🚀 Getting Started\r\n\r\n### Installation\r\n\r\n1. Install Python 3.10+, and then install the dependencies:\r\n\r\n```shell\r\npip install -r requirements.txt\r\n```\r\n\r\n### 📈 Making Forecasts\r\n\r\nForecasting with Kronos is straightforward using the `KronosPredictor` class. It handles data preprocessing, normalization, prediction, and inverse normalization, allowing you to get from raw data to forec",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 1,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "transformer"
+      ],
+      "anxiety_hits": [],
+      "topic": "学术研究",
+      "topic_type": "开发者话题",
+      "products": [
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Transformer",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "shiyu-coder/Kronos: Kronos: A Foundation Model for the Language of Financial Markets",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 4.5,
+      "tcloud_relevance": 0.0,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "研究解读"
+      ],
+      "editorial_angles_text": "技术科普 + 研究解读",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「shiyu-coder/Kronos - Kronos: A Foundation Model f…」（shiyu-coder/Kronos: Kronos: A Foundation Model for the Lang…），涉及 Transformer / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「shiyu-coder/Kronos - Kronos: A Foundati…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 Kronos 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 Kronos 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "shiyu-coder/Kronos: Kronos: A Foundation Model for the Language of…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "shiyu-coder/Kronos - Kronos: A Foundation Model for the Language of Financial Markets. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：shiyu-coder/Kronos: Kronos: A Foundation Model for the Language of…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 研究解读。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: shiyu-coder/Kronos - Kronos: A Foundation Model for the Language of Financial Markets. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + research takeaway. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。shiyu-coder/Kronos: Kronos: A Foundation Model for the Language of…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 研究解读，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. shiyu-coder/Kronos - Kronos: A Foundation Model for the Language of Financial Markets. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + research takeaway.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：shiyu-coder/Kronos: Kronos: A Foundation Model for the Language of…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 研究解读。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: shiyu-coder/Kronos - Kronos: A Foundation Model for the Language of Financial Markets. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + research takeaway. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Kronos：金融市场语言的基础模型",
+    "developer_profile": {
+      "github_username": "shiyu-coder",
+      "profile_url": "https://github.com/shiyu-coder",
+      "name": "ShiYu",
+      "bio": "Nanjing University (bachelor)           \r\n - Tsinghua University (PhD student)",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 1299,
+      "following": 3,
+      "public_repos": 7,
+      "avatar_url": "https://avatars.githubusercontent.com/u/65760973?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  }
+]
