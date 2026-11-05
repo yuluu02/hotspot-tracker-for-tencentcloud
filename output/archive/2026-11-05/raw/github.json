@@ -1,0 +1,1020 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "NVIDIA/auto-ontology - Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+    "url": "https://github.com/NVIDIA/auto-ontology",
+    "heat": "5,847 stars",
+    "time": "Today",
+    "developer_name": "NVIDIA",
+    "developer_url": "https://github.com/NVIDIA",
+    "developer_email": "",
+    "today_stars": "2,050 stars today",
+    "language": "Python",
+    "summary": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+    "content": " \n\n# Auto Ontology\n\nAgents can retrieve documents and query databases, but reliability gates agentic analytics: a revenue metric answered faster is worth nothing if the number is wrong. Agents need a context layer that tells them where data lives, what it means, whether to use it, how to use it, where it came from, and what is similar. NVIDIA Auto Ontology is an open library that builds that layer from enterprise metadata, reconciles definitions across systems, and exposes it to any agent harness through MCP, CLI, and API. It complements the semantic models customers already own.\n\nIt enables developers to:\n\n- Discover: generate enterprise ontologies from metadata; connect existing ontologies and semantic models; build AI-ready knowledge graphs.\n- Ground: give agents trusted business meaning for metrics, entities, and relationships; reconcile inconsistent definitions across systems.\n- Validate: check generated queries against certified definitions and lineage; return provenance with every answer.\n- Expose: serve context to any agent harness through MCP, CLI, and API.\nLearn: fold certified corrections and usage back into the ontology, so shared context improves with every question.\n\n## Benchmarks\n\nTo run a text-to-SQL benchmark such as BIRD, refer to the\nontology SQL evaluation repository.\n\n> **Licensing & contributions.** Auto Ontology is distributed under the\n> Apache License 2.0. Third-party open-source components\n> bundled, linked, or otherwise used by this project are listed in\n> `THIRD_PARTY_NOTICES.md`. **This project\n> is currently not accepting external contributions.**\n\n \n \n \n\n## Key Features\n\n- **Natural-language querying** of structured data — questions are translated to\n  SQL and executed against connected databases, powered by NVIDIA NIM.\n- **Semantic catalog / ontology layer** over relational sources, stored in\n  Postgres alongside the catalog it describes.\n- **Authentication & RBAC** —using Better Auth.\n- **Web UI** for chat, analysis, data catalog, analytics, and settings.\n- **Flexible deployment** — Helm chart for Kubernetes or Docker Compose for a\n  local stack.\n\n## Software Components\n\n| Component           | Technology                                                             | Role                                       | Default port |\n| ------------------- | ---------------------------------------------------------------------- | ------------------------------------------ | ------------ |\n| Frontend            | Next.js 16 (React 19, TypeScript, Tailwind CSS 4), Better Auth, Prisma | Web UI, authentication, API gateway        | 3000         |\n| Backend             | FastAPI (Python 3.12+), LangChain                                      | Chat / NL-to-SQL, catalog, datasource APIs | 3001         |\n| Ingestion worker    | FastAPI (Python 3.12+)                                                 | Ingests tabular data and writes embeddings | 3002         |\n| Postgres + pgvector | Relational Database                               ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 8,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "kubernetes",
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "mcp",
+        "langchain",
+        "knowledge graph",
+        "agentic",
+        "reasoning"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "LangChain"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "MCP",
+        "Kubernetes",
+        "Python",
+        "TypeScript",
+        "React"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+      "heat_score": 8.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.6,
+      "tcloud_relevance": 5.1,
+      "tcloud_integration": "**auto-ontology** 需要数据库后端 — TDSQL-C 云原生数据库兼容 MySQL/PostgreSQL，支持秒级扩缩容 + Serverless 按量付费，适合从个人项目到企业级的弹性场景",
+      "tcloud_products": [
+        "TDSQL-C"
+      ],
+      "tcloud_reasons": [
+        "**auto-ontology** 需要数据库后端 — TDSQL-C 云原生数据库兼容 MySQL/PostgreSQL，支持秒级扩缩容 + Serverless 按量付费，适合从个人项目到企业级的弹性场景"
+      ],
+      "tcloud_evidence": [
+        "database",
+        "sql"
+      ],
+      "tcloud_primary_product": "TDSQL-C",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 TDSQL-C：**auto-ontology** 需要数据库后端 — TDSQL-C 云原生数据库兼容 MySQL/PostgreSQL，支持秒级扩缩容 + Serverless 按量付费，适合从个人项目到企业级的弹性场景",
+      "tcloud_official_matches": [
+        "TDSQL-C"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（TDSQL-C）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（TDSQL-C） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「NVIDIA/auto-ontology - Auto Ontology is a Python…」（Auto Ontology is a Python framework for building semantic,…），涉及 LLM / Agent / MCP → 可写方向：**auto-ontology** 需要数据库后端 — TDSQL-C 云原生数据库兼容 MySQL/PostgreSQL，支持秒级扩缩容 + Serverl…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「auto-ontology」涉及云原生数据库场景，可结合 TDSQL-C 写教程或场景解读。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "TDSQL-C",
+      "official_angle_cn": "以 auto-ontology 的数据库需求为切入，写一篇从自建数据库迁移到 TDSQL-C 的实操指南，重点对比运维成本和性能提升。",
+      "visual_brief": "主视觉用 auto-ontology 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 TDSQL-C。",
+      "platform_copies": {
+        "primary_product": "TDSQL-C",
+        "product_display": "TDSQL-C",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 auto-ontology 的数据库需求为切入，写一篇从自建数据库迁移到 TDSQL-C 的实操指南，重点对比运维成本和性能提升。",
+        "official_angle_en": "Use TDSQL-C (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 auto-ontology 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 TDSQL-C。",
+        "x_cn": "Auto Ontology is a Python framework for building semantic, graph-ba…。如果站在腾讯云国际站官方号来写，这条更适合从 TDSQL-C 切入：如果以腾讯云国际站官方号来写，这条建议主推 TDSQL-C：…",
+        "x_en": "NVIDIA/auto-ontology - Auto Ontology is a Python framework for building semantic, graph…. For Tencent Cloud, this fits TDSQL-C (Tencent Cloud): Cloud-native database compatible with MySQL/PostgreSQL for app backends.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Auto Ontology is a Python framework for building semantic, graph-ba…。如果从腾讯云视角切，这条最适合带到 TDSQL-C，重点聊 技术科普 + 教程拆解 + 产品关联（TDSQL-C） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: NVIDIA/auto-ontology - Auto Ontology is a Python framework for building semantic, graph…. From a Tencent Cloud angle, the best hook is TDSQL-C (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (TDSQL-C) + opinionated commentary. What matters more to you: deployment, perfo…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Auto Ontology is a Python framework for building semantic, graph-ba…。如果用官方号发，建议主推 TDSQL-C，重点讲 技术科普 + 教程拆解 + 产品关联（TDSQL-C） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 TDSQL-C：**auto-ontology** 需要数据库后端 — TDSQL-C 云原生数据库兼容 MySQL/PostgreSQL，支持秒级扩缩容 + Serverless 按量付费，适合从个人项目到企业级的弹性场景",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. NVIDIA/auto-ontology - Auto Ontology is a Python framework for building semantic, graph…. For Tencent Cloud, the better angle is TDSQL-C (Tencent Cloud). Cloud-native database compatible with MySQL/PostgreSQL for app backends. The content should focus on technical explainer + hands-on walkthrough + product tie-in (TDSQL-C) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 TDSQL-C 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Auto Ontology is a Python framework for building semantic, graph-ba…。如果站在腾讯云国际站官方号视角，我会更想把它写成 TDSQL-C 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（TDSQL-C） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through TDSQL-C (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: NVIDIA/auto-ontology - Auto Ontology is a Python framework for building semantic, graph…. Instead of reposting it as news, I'd frame it through TDSQL-C (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (TDSQL-C) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "auto-ontology：Auto Ontology 是一个 Python 框架，用于在数据上构建语义、基于图形的推理层。它为法学硕士和代理工作流程提供确定性查询生成、更好的上下文检索以及更可解释的人工智能。",
+    "developer_profile": {
+      "github_username": "NVIDIA",
+      "profile_url": "https://github.com/NVIDIA",
+      "name": "NVIDIA Corporation",
+      "bio": "",
+      "company": "",
+      "location": "2788 San Tomas Expressway, Santa Clara, CA, 95051",
+      "blog": "https://nvidia.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 32430,
+      "following": 0,
+      "public_repos": 836,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1728152?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "max-sixty/worktrunk - Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+    "url": "https://github.com/max-sixty/worktrunk",
+    "heat": "11,208 stars",
+    "time": "Today",
+    "developer_name": "max-sixty",
+    "developer_url": "https://github.com/max-sixty",
+    "developer_email": "",
+    "today_stars": "531 stars today",
+    "language": "Rust",
+    "summary": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+    "content": " \n\n  &nbsp;&nbsp;Worktrunk \n\n \n[](https://worktrunk.dev)\n[](https://opensource.org/licenses/MIT)\n[](https://github.com/max-sixty/worktrunk/actions?query=branch%3Amain+workflow%3Aci)\n[](https://codecov.io/gh/max-sixty/worktrunk)\n[](https://github.com/max-sixty/worktrunk/stargazers)\n[](https://github.com/max-sixty/tend)\n\n> **November 2026**: Worktrunk was released at the start of the year, and has quickly become the most popular git worktree manager. It's built with love (there's no slop!). Please let me know any frictions at all; I'm intensely focused on continuing to make Worktrunk excellent, and the biggest help is folks posting problems they perceive.\n\nWorktrunk is a CLI for git worktree management, designed for running AI agents in parallel.\n\nWorktrunk's three core commands make worktrees as easy as branches. Plus, Worktrunk has a bunch of quality-of-life features to simplify working with many parallel changes, including hooks to automate local workflows & copy-on-write build caches.\n\nA quick demo:\n\n> ### 📚 Full documentation at worktrunk.dev 📚\n\n \n\n## Context: git worktrees\n\nAI agents like Claude Code and Codex can handle longer tasks without\nsupervision, such that it's possible to manage 5-10+ in parallel. Git's native\nworktree feature gives each agent its own working directory, so they don't step\non each other's changes.\n\nBut the git worktree UX is clunky. Even a task as small as starting a new\nworktree requires typing the branch name three times: `git worktree add -b feat\n../repo.feat`, then `cd ../repo.feat`.\n\n## Worktrunk makes git worktrees as easy as branches\n\nWorktrees are addressed by branch name; paths are computed from a configurable template. Commands that take a branch also accept the path of the worktree it is checked out in.\n\n Start with the core commands \n\n**Core commands:**\n\n \n   \n     \n       Task \n       Worktrunk \n       Plain git \n     \n   \n   \n     \n       Switch worktrees \n        wt switch feat  \n        cd ../repo.feat  \n     \n     \n       Create + start Claude \n        wt switch -c -x claude feat  \n         git worktree add -b feat ../repo.feat && \\\ncd ../repo.feat && \\\nclaude   \n     \n     \n       Clean up \n        wt remove  \n         cd ../repo && \\\ngit worktree remove ../repo.feat && \\\ngit branch -d feat   \n     \n     \n       List with status \n        wt list  \n         git worktree list  (paths only)  \n     \n   \n \n\n Expand into the more advanced commands as needed \n\n  Workflow automation:  \n\n- **Hooks** — run commands on create, pre-merge, post-merge, etc\n- **LLM commit messages** — generate commit messages from diffs\n- **Merge workflow** — squash, rebase, merge, clean up in one command\n- **Interactive picker** — browse worktrees with streaming CI status and diff, log, PR and comment previews\n- **Share build caches** — ten worktrees get `target/`, `node_modules/`, etc without building or copying them (on APFS, btrfs, and XFS)\n- **`wt list --full`** — CI status and AI-generated summaries per branch\n- **PR checkout",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "claude",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "max-sixty/worktrunk: Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.0,
+      "tcloud_relevance": 4.8,
+      "tcloud_integration": "**worktrunk** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**worktrunk** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "claude code"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**worktrunk** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「max-sixty/worktrunk - Worktrunk is a CLI for Git…」（max-sixty/worktrunk: Worktrunk is a CLI for Git worktree ma…），涉及 LLM / Agent → 可写方向：**worktrunk** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「max-sixty/worktrunk - Worktrunk is a CL…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 worktrunk 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 worktrunk 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 worktrunk 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 worktrunk 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "max-sixty/worktrunk: Worktrunk is a CLI for Git worktree management…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "max-sixty/worktrunk - Worktrunk is a CLI for Git worktree management, designed for para…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：max-sixty/worktrunk: Worktrunk is a CLI for Git worktree management…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: max-sixty/worktrunk - Worktrunk is a CLI for Git worktree management, designed for para…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。max-sixty/worktrunk: Worktrunk is a CLI for Git worktree management…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**worktrunk** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. max-sixty/worktrunk - Worktrunk is a CLI for Git worktree management, designed for para…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：max-sixty/worktrunk: Worktrunk is a CLI for Git worktree management…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: max-sixty/worktrunk - Worktrunk is a CLI for Git worktree management, designed for para…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Worktrunk 是一个用于 Git 工作树管理的 CLI，专为并行 AI 代理工作流程而设计",
+    "developer_profile": {
+      "github_username": "max-sixty",
+      "profile_url": "https://github.com/max-sixty",
+      "name": "Maximilian Roos",
+      "bio": "Developer of worktrunk, prql, xarray & insta.\r\n\r\nAlso pytest-accept and numbagg.\r\n\r\n\r\nYou can give me feedback at feedback.maxroos.com",
+      "company": "",
+      "location": "Los Angeles",
+      "blog": "",
+      "twitter_username": "max_sixty",
+      "email": "",
+      "followers": 2132,
+      "following": 163,
+      "public_repos": 96,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5635139?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/max_sixty"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "mattpocock/skills - Skills for Real Engineers. Straight from my .agents directory.",
+    "url": "https://github.com/mattpocock/skills",
+    "heat": "313,778 stars",
+    "time": "Today",
+    "developer_name": "mattpocock",
+    "developer_url": "https://github.com/mattpocock",
+    "developer_email": "",
+    "today_stars": "1,379 stars today",
+    "language": "Shell",
+    "summary": "Skills for Real Engineers. Straight from my .agents directory.",
+    "content": " \n   \n     \n       \n       \n       \n     \n   \n \n\n# Skills For Real Engineers\n\n[](https://skills.sh/mattpocock/skills)\n\nMy agent skills that I use every day to do real engineering - not vibe coding.\n\nDeveloping real applications is hard. Approaches like GSD, BMAD, and Spec-Kit try to help by owning the process. But while doing so, they take away your control and make bugs in the process hard to resolve.\n\nThese skills are designed to be small, easy to adapt, and composable. They work with any model. They're based on decades of engineering experience. Hack around with them. Make them your own. Enjoy.\n\nIf you want to keep up with changes to these skills, and any new ones I create, you can join ~60,000 other devs on my newsletter:\n\nSign Up To The Newsletter\n\n## Installation (30-second setup)\n\nA plugin updates itself. skills.sh copies editable files into your project, and you update them by hand. Pick one per agent, because installing both gives you every skill twice.\n\n### 1. Get the skills\n\n \n  Claude Code  \n\n```bash\nclaude plugin install mattpocock-skills@claude-plugins-official\n```\n\nUpdates itself by default.\n\n \n\n \n  Codex  \n\n```bash\ncodex plugin marketplace add mattpocock/skills\ncodex plugin add mattpocock-skills@mattpocock\n```\n\nUpdates itself at startup.\n\n \n\n \n  GitHub Copilot  (CLI and VS Code) \n\n```bash\ncopilot plugin marketplace add mattpocock/skills\ncopilot plugin install mattpocock-skills@mattpocock\n```\n\nThen, once, add to `~/.copilot/settings.json`:\n\n```json\n{\n  \"extraKnownMarketplaces\": {\n    \"mattpocock\": { \"source\": { \"source\": \"github\", \"repo\": \"mattpocock/skills\" }, \"autoUpdate\": true }\n  }\n}\n```\n\nIn VS Code, run **Chat: Install Plugin From Source** and enter `https://github.com/mattpocock/skills`. It updates daily.\n\n \n\n \n  Gemini CLI  (manual updates) \n\n```bash\ngemini skills install https://github.com/mattpocock/skills.git --path skills/engineering\ngemini skills install https://github.com/mattpocock/skills.git --path skills/productivity\n```\n\nRe-run both commands to update.\n\n \n\n \n  Any other agent, or editable files  (manual updates) \n\n```bash\nnpx skills@latest add mattpocock/skills -a    # cursor, opencode, devin, windsurf, amp, pi; omit -a to choose\n```\n\nWhen the installer asks which skills to take, include `setup-matt-pocock-skills`. To update, run `npx skills@latest update`, and re-run `add` to pick up new skills.\n\n \n\n### 2. Run `/setup-matt-pocock-skills`\n\nIn your agent, run it once per repo. It will:\n\n- Ask you which issue tracker you want to use (GitHub, GitLab, local files, or anything else you describe)\n- Ask you what labels you apply to tickets when you triage them (`/triage` uses labels)\n- Ask you where you want to save any docs we create\n\n### 3. Bam - you're ready to go.\n\n## Why These Skills Exist\n\nI built these skills as a way to fix common failure modes I see with Claude Code, Codex, and other coding agents.\n\n### #1: The Agent Didn't Do What I Want\n\n> \"No-one knows exactly what they want\"\n>\n> David Thomas & Andrew Hunt, Th",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "gemini",
+        "copilot",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "mattpocock/skills: Skills for Real Engineers. Straight from my . agents directory.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.5,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent",
+        "copilot",
+        "cursor",
+        "windsurf"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「mattpocock/skills - Skills for Real Engineers. St…」（mattpocock/skills: Skills for Real Engineers. Straight from…），涉及 Agent / Go → 可写方向：**skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「mattpocock/skills - Skills for Real Eng…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 skills 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 skills 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "mattpocock/skills: Skills for Real Engineers. Straight from my . ag…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "mattpocock/skills - Skills for Real Engineers. Straight from my .agents directory.. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：mattpocock/skills: Skills for Real Engineers. Straight from my . ag…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: mattpocock/skills - Skills for Real Engineers. Straight from my .agents directory.. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, perform…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。mattpocock/skills: Skills for Real Engineers. Straight from my . ag…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**skills** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs skills 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. mattpocock/skills - Skills for Real Engineers. Straight from my .agents directory.. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：mattpocock/skills: Skills for Real Engineers. Straight from my . ag…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: mattpocock/skills - Skills for Real Engineers. Straight from my .agents directory.. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "skills：真正工程师的技能。直接来自我的。",
+    "developer_profile": {
+      "github_username": "mattpocock",
+      "profile_url": "https://github.com/mattpocock",
+      "name": "",
+      "bio": "TypeScript wizard. Building Total TypeScript - a comprehensive, production-grade TypeScript course.\n\nEx-Vercel, Stately.",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "unknown",
+          "url": "https://aihero.dev"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/mattpocockuk"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "floci-io/floci - Light, fluffy, and always free - The AWS Local Emulator alternative",
+    "url": "https://github.com/floci-io/floci",
+    "heat": "29,843 stars",
+    "time": "Today",
+    "developer_name": "floci-io",
+    "developer_url": "https://github.com/floci-io",
+    "developer_email": "info@floci.io",
+    "today_stars": "1,090 stars today",
+    "language": "Java",
+    "summary": "Light, fluffy, and always free - The AWS Local Emulator alternative",
+    "content": " \n   \n   \n \n\n \n   Any Cloud. Locally.  \n  Light, fluffy, and always free \n  No account. No auth token. No feature gates. Just  docker compose up .\n \n\n \n     \n     \n     \n     \n     \n     \n \n\n \n   Quick Start  ·\n   Features  ·\n   Services  ·\n   SDKs  ·\n   Testcontainers  ·\n   Migration  ·\n   Docs \n \n\n---\n\n## What is Floci?\n\nFloci is a free, open-source local AWS emulator for development, testing, and CI.\n\nIt gives you AWS-shaped services on your machine without requiring a cloud account, an auth token, or paid feature gates. Point your AWS SDK, CLI, Terraform, CDK, OpenTofu, or test suite at `http://localhost:4566` and keep your existing workflows.\n\nAlready using LocalStack? Floci is a drop-in replacement: swap the image and keep going. See Migrating from LocalStack.\n\nFloci is the AWS member of the Floci emulator family, named after floccus, the cloud formation that looks like popcorn.\n\n| Emulator | Cloud | Port |\n|---|---|:---:|\n| **floci** | **AWS** | **4566** |\n| floci-az | Azure | 4577 |\n| floci-gcp | GCP | 4588 |\n| floci-oci | OCI | 4599 |\n\n## Quick Start\n\nThe fastest way to run Floci is with the official CLI\n\n```bash\nfloci start\n```\n\nNo Docker? Each release also ships a standalone `floci-aws`\nbinary for Linux, macOS and Windows; see Native binary.\n\nExport the AWS environment variables:\n\n```bash\neval $(floci env)\n```\n\nUse your existing AWS tools normally:\n\n```bash\naws s3 mb s3://my-bucket\n\naws dynamodb create-table \\\n  --table-name demo-table \\\n  --attribute-definitions AttributeName=pk,AttributeType=S \\\n  --key-schema AttributeName=pk,KeyType=HASH \\\n  --billing-mode PAY_PER_REQUEST\n\naws dynamodb list-tables\n```\n\n### Watch it run\n\nThis short demo shows the CLI flow: start Floci, export the local AWS environment, run standard AWS CLI commands, and stop the emulator.\n\nhttps://github.com/user-attachments/assets/b55714dc-ef36-40ae-a734-cd2cadc288a8\n\nAll AWS services are available at `http://localhost:4566`. Any published AWS region works, in every partition. Credentials can be any non-empty values unless you explicitly enable stricter service-specific auth checks.\n\n \n Prefer Docker Compose? \n\nCreate a `compose.yaml` file:\n\n```yaml\nservices:\n  floci:\n    image: floci/floci:latest\n    ports:\n      - \"4566:4566\"\n```\n\nStart Floci:\n\n```bash\ndocker compose up\n```\n\nThen configure your AWS environment manually:\n\n```bash\nexport AWS_ENDPOINT_URL=http://localhost:4566\nexport AWS_DEFAULT_REGION=us-east-1\nexport AWS_ACCESS_KEY_ID=test\nexport AWS_SECRET_ACCESS_KEY=test\n```\n\n \n\n \n Using the old  hectorvent/floci  image? \n\nUpdate your image name:\n\n```yaml\n# Before\nimage: hectorvent/floci:latest\n\n# After\nimage: floci/floci:latest\n```\n\nThe old `hectorvent/floci` repository no longer receives updates.\n\n \n\n## Web Console\n\nFloci ships a browser console for inspecting the resources in your local emulator.\n\n**Open it at:** `http://localhost:4566/_floci/ui`\n\nNothing runs at boot. The first request pulls the console image, starts it as a sidecar container on Floci's Dock",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 7,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "aws",
+        "azure",
+        "gcp",
+        "docker",
+        "s3",
+        "dynamodb"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "AWS",
+        "Azure",
+        "GCP"
+      ],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "floci-io/floci: Light, fluffy, and always free - The AWS Local Emulator alternative",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.6,
+      "tcloud_relevance": 0.1,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「floci-io/floci - Light, fluffy, and always free -…」（floci-io/floci: Light, fluffy, and always free - The AWS Lo…） → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「floci-io/floci - Light, fluffy, and alw…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 floci 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 floci 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "floci-io/floci: Light, fluffy, and always free - The AWS Local Emul…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "floci-io/floci - Light, fluffy, and always free - The AWS Local Emulator alternative. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：floci-io/floci: Light, fluffy, and always free - The AWS Local Emul…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: floci-io/floci - Light, fluffy, and always free - The AWS Local Emulator alternative. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。floci-io/floci: Light, fluffy, and always free - The AWS Local Emul…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. floci-io/floci - Light, fluffy, and always free - The AWS Local Emulator alternative. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：floci-io/floci: Light, fluffy, and always free - The AWS Local Emul…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: floci-io/floci - Light, fluffy, and always free - The AWS Local Emulator alternative. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "floci：轻便、蓬松且始终免费 - AWS 本地模拟器替代方案",
+    "developer_profile": {
+      "github_username": "floci-io",
+      "profile_url": "https://github.com/floci-io",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "info@floci.io",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/floci_io"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/floci/"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/floci"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://bsky.app/profile/floci.io"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+    "url": "https://github.com/thedotmack/claude-mem",
+    "heat": "113,106 stars",
+    "time": "Today",
+    "developer_name": "thedotmack",
+    "developer_url": "https://github.com/thedotmack",
+    "developer_email": "",
+    "today_stars": "1,172 stars today",
+    "language": "TypeScript",
+    "summary": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+    "content": " \n   \n   \n     \n       \n       \n       \n     \n   \n \n\n \n   \n  &nbsp;&nbsp;&nbsp;\n   \n  &nbsp;&nbsp;&nbsp;\n   \n \n\n \n   🇨🇳 中文  •\n   🇹🇼 繁體中文  •\n   🇯🇵 日本語  •\n   🇵🇹 Português  •\n   🇧🇷 Português  •\n   🇰🇷 한국어  •\n   🇪🇸 Español  •\n   🇩🇪 Deutsch  •\n   🇫🇷 Français  •\n   🇮🇱 עברית  •\n   🇸🇦 العربية  •\n   🇷🇺 Русский  •\n   🇵🇱 Polski  •\n   🇨🇿 Čeština  •\n   🇳🇱 Nederlands  •\n   🇹🇷 Türkçe  •\n   🇺🇦 Українська  •\n   🇻🇳 Tiếng Việt  •\n   🇵🇭 Tagalog  •\n   🇮🇩 Indonesia  •\n   🇹🇭 ไทย  •\n   🇮🇳 हिन्दी  •\n   🇧🇩 বাংলা  •\n   🇵🇰 اردو  •\n   🇷🇴 Română  •\n   🇸🇪 Svenska  •\n   🇮🇹 Italiano  •\n   🇬🇷 Ελληνικά  •\n   🇭🇺 Magyar  •\n   🇫🇮 Suomi  •\n   🇩🇰 Dansk  •\n   🇳🇴 Norsk \n \n\n Persistent memory compression system built for  Claude Code . \n\n \n   \n     \n   \n   \n     \n   \n   \n     \n   \n   \n     \n   \n \n\n \n  \n             \n  \n \n\n \n\n \n   \n     \n       \n         \n           \n         \n       \n     \n     \n       \n         \n           \n           \n           \n         \n       \n     \n   \n \n\n \n   Quick Start  •\n   How It Works  •\n   Search Tools  •\n   Documentation  •\n   Configuration  •\n   Troubleshooting  •\n   License \n \n\n \n  Claude-Mem seamlessly preserves context across sessions by automatically capturing tool usage observations, generating semantic summaries, and making them available to future sessions. This enables Claude to maintain continuity of knowledge about projects even after sessions end or reconnect.\n \n\n---\n\n## Quick Start\n\nInstall claude-mem for Grok Bot:\n\n```bash\nnpx claude-mem install --ide grok-bot\n```\n\nGrok Bot has no host hooks, so we watch the chat log files. Default is CMEM Pro, the hosted memory. Local observer is opt-in: `--provider host`. Installing this plugin does not install Cursor.\n\n**Awareness push pilot (LFG + Orifice):** needle observations (`decision`, `bugfix`, `security_alert`, `sensitive`) are appended as dated `- YYYY-MM-DD [awareness] …` lines into that bot's `memory/log/YYYY-MM.md`. Grok Bot already re-reads the log from disk. This does not write `profile.md`, user-memory, or project memory. Disable with `CLAUDE_MEM_GROK_BOT_AWARENESS_ENABLED=false`.\n\nInstall with a single command:\n\n```bash\nnpx claude-mem install\n```\n\nThe installer sets everything up first, then asks you to sign in to claude-mem in your browser (email magic link — no card required). Signing in provisions a memory key for your account and unlocks the **claude-mem observer** with a **30 Day Free Trial**: memory runs off-plan, so you get up to 100% more usage from your plan. When the free trial ends, memory automatically falls back to your Anthropic plan unless you subscribe. After sign-in you pick your memory provider — the claude-mem observer, your own OpenRouter or Gemini key, or your Anthropic plan.\n\nPrefer to skip the sign-in? Pass an explicit `--provider` flag, set `CLAUDE_MEM_ONLINE_OPTIN=false`, or run in CI/non-interactive shells — the installer completes without any account interaction.\n\nOr install for OpenCode:\n\n```bash\nnpx claude-mem install --ide opencode\n```\n\nThis works with OpenCode ",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 6,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "copilot",
+        "agent",
+        "anthropic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.6,
+      "tcloud_relevance": 5.2,
+      "tcloud_integration": "**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "copilot",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「thedotmack/claude-mem - Persistent Context Across…」（Persistent Context Across Sessions for Every Agent – Captur…），涉及 Agent → 可写方向：**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「thedotmack/claude-mem - Persistent Cont…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 claude-mem 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 claude-mem 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 claude-mem 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 claude-mem 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "Persistent Context Across Sessions for Every Agent – Captures every…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：Persistent Context Across Sessions for Every Agent – Captures every…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。Persistent Context Across Sessions for Every Agent – Captures every…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**claude-mem** 的用户群和 CodeBuddy 高度重合 — 可以写「claude-mem 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：Persistent Context Across Sessions for Every Agent – Captures every…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: thedotmack/claude-mem - Persistent Context Across Sessions for Every Agent – Captures e…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "claude-mem：每个座席跨会话的持久上下文 – 捕获座席在会话期间所做的所有操作，使用 AI 对其进行压缩，并将相关上下文注入到未来的会话中。适用于 Claude Code、OpenClaw、Codex、Gemini、Hermes、Copilot、OpenCode 等",
+    "developer_profile": {
+      "github_username": "thedotmack",
+      "profile_url": "https://github.com/thedotmack",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/Claude_Memory"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "vercel-labs/agent-desktop - Computer use CLI for AI agents",
+    "url": "https://github.com/vercel-labs/agent-desktop",
+    "heat": "15,788 stars",
+    "time": "Today",
+    "developer_name": "vercel-labs",
+    "developer_url": "https://github.com/vercel-labs",
+    "developer_email": "support@vercel.com",
+    "today_stars": "2,470 stars today",
+    "language": "Rust",
+    "summary": "Computer use CLI for AI agents",
+    "content": "# agent-desktop\n\nComputer use for AI agents: see and operate desktop apps on macOS, Windows, and Linux through the OS accessibility tree.\n\n \n     \n     \n     \n     \n \n\nagent-desktop gives an AI agent computer use without screenshots or pixel matching. It reads the accessibility tree of a desktop app and returns it as JSON, with a ref for every element the agent can act on. The agent clicks or types on a ref, reads the UI again to check the result, and repeats. The loop lives in your agent; agent-desktop has no model inside. It ships as a CLI and a C library.\n\nSnapshots, clipboard reads, screenshots, command output, and debug artifacts can contain private desktop content. Keep them out of public logs and uploads.\n\n## Install\n\n```bash\nnpm install -g agent-desktop\nagent-desktop status                # platform, permissions, supported surfaces\nagent-desktop permissions --guide   # macOS: walks you through the Accessibility grant\n```\n\nBun, Yarn and pnpm can install the same package. It includes native binaries and platform helpers for x64 and ARM64.\nFor direct execution without a JavaScript launcher, download the matching native archive from\nGitHub Releases and keep its helper beside the executable.\n\nOn macOS and Linux, Homebrew also works: `brew install agent-desktop`. There is no official Scoop package yet.\nThe repository no longer maintains a custom Homebrew tap or Scoop bucket.\n\nRelease archives and building from source are covered in Installation.\n\n## Quick start\n\n```bash\nagent-desktop snapshot --app Finder -i      # interactive elements, each with a ref\nagent-desktop click @s8f3k2p9:e8            # act on a ref from that snapshot\nagent-desktop snapshot --app Finder -i      # observe again to verify\n```\n\nEach command prints one JSON envelope. A trimmed snapshot:\n\n```json\n{\n  \"version\": \"2.6\",\n  \"ok\": true,\n  \"command\": \"snapshot\",\n  \"data\": {\n    \"app\": \"Finder\",\n    \"snapshot_id\": \"s8f3k2p9\",\n    \"ref_count\": 59,\n    \"complete\": true,\n    \"tree\": {\n      \"role\": \"window\",\n      \"name\": \"Downloads\",\n      \"children\": [\n        { \"role\": \"treeitem\", \"name\": \"Documents\", \"ref_id\": \"@s8f3k2p9:e8\", \"available_actions\": [\"Click\"] }\n      ]\n    }\n  }\n}\n```\n\n- **Refs belong to their snapshot.** A bare `@e8` is rejected with `INVALID_ARGS`. When the UI changes, an action\n  returns `STALE_REF` or `AMBIGUOUS_TARGET`: take a new snapshot and use its refs.\n- **Several windows** give `AMBIGUOUS_TARGET`; `snapshot` lists the candidate window ids in `error.details`. Pass one\n  with `--window-id`.\n- **Dense apps:** map first with `snapshot --skeleton --app Slack -i --compact`, then drill into one region with\n  `snapshot --root @s8f3k2p9:e3 -i --compact`.\n- **Headless by default.** Ref actions use the accessibility API without moving the pointer or taking focus. The global\n  `--headed` flag allows physical input.\n- **Post-action waits** observe the ref's original process. Window-owned refs stay pinned to their original window,\n  including refs captured from a she",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "vercel"
+      ],
+      "ai_hits": [
+        "ai",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "竞品动态",
+      "products": [],
+      "competitors": [
+        "Vercel"
+      ],
+      "competitor_products": [
+        "Vercel"
+      ],
+      "techs": [
+        "Agent",
+        "TypeScript"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "vercel-labs/agent-desktop: Computer use CLI for AI agents",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.8,
+      "tcloud_relevance": 5.1,
+      "tcloud_integration": "**agent-desktop** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+      "tcloud_products": [
+        "COS"
+      ],
+      "tcloud_reasons": [
+        "**agent-desktop** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发"
+      ],
+      "tcloud_evidence": [
+        "bucket",
+        "archive"
+      ],
+      "tcloud_primary_product": "COS",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 COS：**agent-desktop** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+      "tcloud_official_matches": [
+        "COS"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "产品关联（COS）",
+        "竞品对比（Vercel）"
+      ],
+      "editorial_angles_text": "教程拆解 + 产品关联（COS） + 竞品对比（Vercel）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「vercel-labs/agent-desktop - Computer use CLI for…」（vercel-labs/agent-desktop: Computer use CLI for AI agents），涉及 Agent / TypeScript → 可写方向：Vercel 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「agent-desktop」涉及对象存储场景，可结合 COS 写教程或场景解读。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "COS",
+      "official_angle_cn": "围绕 agent-desktop 的核心功能（vercel-labs/agent-desktop: Computer use CLI for AI agents），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 agent-desktop 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+      "platform_copies": {
+        "primary_product": "COS",
+        "product_display": "COS",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 agent-desktop 的核心功能（vercel-labs/agent-desktop: Computer use CLI for AI agents），以 COS 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Cloud Object Storage (COS) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 agent-desktop 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 COS。",
+        "x_cn": "vercel-labs/agent-desktop: Computer use CLI for AI agents。如果站在腾讯云国际站官方号来写，这条更适合从 COS 切入：如果以腾讯云国际站官方号来写，这条建议主推 COS：**agent-desktop** 产…",
+        "x_en": "vercel-labs/agent-desktop - Computer use CLI for AI agents. For Tencent Cloud, this fits Cloud Object Storage (COS): Object storage for knowledge bases, datasets, files, and AI workflow persistence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：vercel-labs/agent-desktop: Computer use CLI for AI agents。如果从腾讯云视角切，这条最适合带到 COS，重点聊 教程拆解 + 产品关联（COS） + 竞品对比（Vercel）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: vercel-labs/agent-desktop - Computer use CLI for AI agents. From a Tencent Cloud angle, the best hook is Cloud Object Storage (COS), especially around hands-on walkthrough + product tie-in (COS) + competitor comparison (Vercel). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。vercel-labs/agent-desktop: Computer use CLI for AI agents。如果用官方号发，建议主推 COS，重点讲 教程拆解 + 产品关联（COS） + 竞品对比（Vercel），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 COS：**agent-desktop** 产生的文件/数据可以用 COS 对象存储做持久化存储，COS 提供 99.9999999999% 的数据可靠性 + 全球加速分发",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. vercel-labs/agent-desktop - Computer use CLI for AI agents. For Tencent Cloud, the better angle is Cloud Object Storage (COS). Object storage for knowledge bases, datasets, files, and AI workflow persistence. The content should focus on hands-on walkthrough + product tie-in (COS) + competitor comparison (Vercel).",
+        "reddit_title_cn": "这类热点如果从 COS 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：vercel-labs/agent-desktop: Computer use CLI for AI agents。如果站在腾讯云国际站官方号视角，我会更想把它写成 COS 相关内容，重点是 教程拆解 + 产品关联（COS） + 竞品对比（Vercel）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Cloud Object Storage (COS)?",
+        "reddit_body_en": "A recent trend caught my eye: vercel-labs/agent-desktop - Computer use CLI for AI agents. Instead of reposting it as news, I'd frame it through Cloud Object Storage (COS) and focus on hands-on walkthrough + product tie-in (COS) + competitor comparison (Vercel). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "agent-desktop：计算机使用 CLI 进行 AI 代理",
+    "developer_profile": {
+      "github_username": "vercel-labs",
+      "profile_url": "https://github.com/vercel-labs",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "support@vercel.com",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/vercel"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "github/spec-kit - 💫 Toolkit to help you get started with SDD or any other process!",
+    "url": "https://github.com/github/spec-kit",
+    "heat": "147,515 stars",
+    "time": "Today",
+    "developer_name": "github",
+    "developer_url": "https://github.com/github",
+    "developer_email": "",
+    "today_stars": "808 stars today",
+    "language": "Python",
+    "summary": "💫 Toolkit to help you get started with SDD or any other process!",
+    "content": " \n     \n     🌱 Spec Kit \n      Build with a spec, fix a bug, or assess an idea — with your coding agent.  \n \n\n \n       \n       \n       \n       \n \n\n \n     English  ·\n     简体中文  ·\n     日本語  ·\n     한국어 \n \n\nSpec Kit is an open source toolkit that gives AI coding agents structured\nprocesses, reusable templates, and documented outcomes. Start with a ready-made\nprocess, customize it, or bring your own.\n\n## Choose your process\n\n| What you need | Process | Outcome |\n| --- | --- | --- |\n| Build a feature or application | Spec-Driven Development | A specification carried through planning, implementation, and convergence |\n| Diagnose and repair broken behavior | Bug fixing | An assessed cause, scoped fix, and recorded verification |\n| Decide whether an idea deserves investment | Idea assessment | An evidence-backed go, clarify, or stop decision |\n| Adopt or create a different process | Your own process | A process adapted or assembled from reusable primitives |\n\nThese are independent entry points, not mandatory phases. SDD ships in core;\nbug fixing and assessment are bundled extensions you install when needed, and\nthe primitives below let you adopt or create other processes.\n\n## Capabilities\n\nSpec Kit combines ready-to-use processes with composable mechanisms:\n\n| Capability | Spec Kit mechanism |\n| --- | --- |\n| Connect to or switch between coding agents | Integration |\n| Add a command, quality gate, or complete process | Extension |\n| Connect a process to an external tool or service | Extension |\n| React to coding-agent lifecycle events | Extension runtime event |\n| Run extension commands before or after Spec Kit commands | Extension hook |\n| Adapt templates, commands, terminology, or methodology | Preset |\n| Enforce organizational or regulatory standards | Preset |\n| Override a template for one project | Project-local override |\n| Automate prompts, commands, gates, and shell tasks | Workflow |\n| Modify an installed workflow without forking it | Workflow overlay |\n| Add reusable executable behavior to workflows | Workflow step |\n| Install a curated setup for a role or team | Bundle |\n| Discover community components | Catalog |\n| Host a private catalog of approved components | Catalog |\n| Access private catalogs and component downloads | Authentication |\n| Work offline or behind a firewall | Local sources and self-hosted catalogs |\n| Inspect which layer supplies a command, template, or script | Artifact inventory |\n\nSearch the active catalogs with commands such as `specify extension search`,\n`specify preset search`, `specify workflow search`, and `specify bundle search`.\nSpec Kit includes community catalogs, and organizations can add their own\ncurated sources. Catalog listings are not audits or endorsements, so review\ncommunity source code before installing or running it.\n\n  \n  \n\n## Get started\n\nYou need Python 3.11+, uv,\nand a supported AI coding agent on Linux, macOS, or Windows.\n\nRun these commands in your terminal to install Spec Kit and create a project",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go",
+        "Python",
+        "React"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "github/spec-kit: 💫 Toolkit to help you get started with SDD or any other process!",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.8,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**spec-kit** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs spec-kit 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**spec-kit** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs spec-kit 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "ai coding",
+        "coding agent"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**spec-kit** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs spec-kit 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「github/spec-kit - 💫 Toolkit to help you get start…」（github/spec-kit: 💫 Toolkit to help you get started with SDD…），涉及 Agent / Go / Python → 可写方向：**spec-kit** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs spec-kit 的横向对比：CodeBuddy 覆盖需求→设计→编码…\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「github/spec-kit - 💫 Toolkit to help you…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 spec-kit 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 spec-kit 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 spec-kit 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 spec-kit 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "github/spec-kit: 💫 Toolkit to help you get started with SDD or any…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBud…",
+        "x_en": "github/spec-kit - 💫 Toolkit to help you get started with SDD or any other process!. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：github/spec-kit: 💫 Toolkit to help you get started with SDD or any…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: github/spec-kit - 💫 Toolkit to help you get started with SDD or any other process!. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, perform…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。github/spec-kit: 💫 Toolkit to help you get started with SDD or any…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**spec-kit** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs spec-kit 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. github/spec-kit - 💫 Toolkit to help you get started with SDD or any other process!. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：github/spec-kit: 💫 Toolkit to help you get started with SDD or any…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: github/spec-kit - 💫 Toolkit to help you get started with SDD or any other process!. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "spec-kit：💫 帮助您开始使用 SDD 或任何其他流程的工具包！",
+    "developer_profile": {
+      "github_username": "github",
+      "profile_url": "https://github.com/github",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "The-PR-Agent/pr-agent - 🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
+    "url": "https://github.com/The-PR-Agent/pr-agent",
+    "heat": "14,918 stars",
+    "time": "Today",
+    "developer_name": "The-PR-Agent",
+    "developer_url": "https://github.com/The-PR-Agent",
+    "developer_email": "",
+    "today_stars": "280 stars today",
+    "language": "Python",
+    "summary": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
+    "content": " \n\n \n\n \n   \n   \n   \n\n \n \nThe Original Open-Source PR Reviewer\n  \n \n \n \n \n\n---\n\n This repository contains the open-source PR Agent Project.\n It is not the Qodo offering for open-source projects.\n\nPR-Agent is an open-source, AI-powered code review agent and a community-maintained legacy project of Qodo. It is distinct from Qodo's primary AI code review offering, which provides a feature-rich, context-aware experience. Qodo offers a free version for open-source projects and integrates seamlessly with GitHub, GitLab, Bitbucket, and Azure DevOps for high-quality automated reviews.\n\n## Sponsors\n\nPR-Agent is a community-maintained open-source project, with its ongoing development supported by our sponsors. If you'd like to support the project, consider becoming a sponsor.\n\n \n   🥇 Gold Sponsor \n \n\n \n   \n     \n   \n \n\n \n   Free version of Qodo for open-source projects \n \n\n## Table of Contents\n\n- Getting Started\n- Why Use PR-Agent?\n- Features\n- See It in Action\n- How It Works\n- Data Privacy\n- Contributing\n\n## Getting Started\n\n> [!NOTE]\n> **Docker Hub namespace migration.** Releases `0.34.2` and later are published under `pragent/pr-agent`. Older releases (up to and including `v0.31`) remain available at the legacy `codiumai/pr-agent` namespace as a frozen archive — no new images are pushed there. Update any pinned `image:` / `docker pull` / `uses: docker://` references when upgrading to `0.34.2+`.\n\n### 🚀 Quick Start for PR-Agent\n\n#### 1. GitHub Action (Recommended)\n\nAdd automated PR reviews to your repository with a simple workflow file:\n\n```yaml\n# .github/workflows/pr-agent.yml\nname: PR Agent\non:\n  pull_request:\n    types: [opened, synchronize]\njobs:\n  pr_agent_job:\n    runs-on: ubuntu-latest\n    steps:\n    - name: PR Agent action step\n      uses: the-pr-agent/pr-agent@main\n      env:\n        OPENAI_KEY: ${{ secrets.OPENAI_KEY }}\n        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n```\nFull GitHub Action setup guide\n\n#### 2. CLI Usage (Local Development)\n\nRun PR-Agent locally on your repository:\n\n```bash\npip install \"pr-agent[github]\"\nexport OPENAI_KEY=your_key_here\npr-agent --pr_url https://github.com/owner/repo/pull/123 review\n```\nGit provider SDKs are optional extras: install the one for your provider (list), or `pr-agent[all]` for every integration.\nComplete CLI setup guide\n\n#### 3. Other Platforms\n\n- GitLab webhook setup\n- BitBucket app installation\n- Azure DevOps setup\n\n## News and Updates\n\nFull notes for every release are on the Releases page.\n\n## Why Use PR-Agent?\n\n### 🎯 Built for Real Development Teams\n\n**Fast & Affordable**: Each tool (`/review`, `/improve`, `/ask`) uses a single LLM call (~30 seconds, low cost)\n\n**Handles Any PR Size**: Our PR Compression strategy effectively processes both small and large PRs\n\n**Highly Customizable**: JSON-based prompting allows easy customization of review categories and behavior via configuration files\n\n**Platform Agnostic**:\n- **Git Providers**: GitHub, GitLab, BitBucket, Azure DevOps, Gitea\n- **Deployment**: C",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 4,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "azure",
+        "docker"
+      ],
+      "ai_hits": [
+        "ai",
+        "llm",
+        "agent",
+        "openai"
+      ],
+      "anxiety_hits": [],
+      "topic": "部署教程",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [
+        "Azure"
+      ],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "The-PR-Agent/pr-agent: 🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 5.9,
+      "tcloud_relevance": 0.2,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P2 观察中",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「The-PR-Agent/pr-agent - 🚀 PR Agent: The Original…」（The-PR-Agent/pr-agent: 🚀 PR Agent: The Original Open-Source…），涉及 LLM / Agent → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「The-PR-Agent/pr-agent - 🚀 PR Agent: The…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 pr-agent 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 pr-agent 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "The-PR-Agent/pr-agent: 🚀 PR Agent: The Original Open-Source PR Revi…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "The-PR-Agent/pr-agent - 🚀 PR Agent: The Original Open-Source PR Reviewer. This project…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：The-PR-Agent/pr-agent: 🚀 PR Agent: The Original Open-Source PR Revi…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: The-PR-Agent/pr-agent - 🚀 PR Agent: The Original Open-Source PR Reviewer. This project…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。The-PR-Agent/pr-agent: 🚀 PR Agent: The Original Open-Source PR Revi…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. The-PR-Agent/pr-agent - 🚀 PR Agent: The Original Open-Source PR Reviewer. This project…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：The-PR-Agent/pr-agent: 🚀 PR Agent: The Original Open-Source PR Revi…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: The-PR-Agent/pr-agent - 🚀 PR Agent: The Original Open-Source PR Reviewer. This project…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "pr-agent：🚀 公关代理：原始开源公关审核员。该项目不是 Qodo 免费套餐。",
+    "developer_profile": {
+      "github_username": "The-PR-Agent",
+      "profile_url": "https://github.com/The-PR-Agent",
+      "name": "",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 0,
+      "following": 0,
+      "public_repos": 0,
+      "avatar_url": "",
+      "social_links": [],
+      "is_org": false
+    }
+  }
+]
