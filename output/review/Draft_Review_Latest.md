@@ -1,6 +1,6 @@
-# 📋 产品 Draft 汇总 — 2026-11-05
+# 📋 产品 Draft 汇总 — 2026-11-06
 
-> 共 3 个产品的 P0/P1 内容草稿
+> 共 4 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
@@ -23,20 +23,7 @@
 
 # CodeBuddy — 今日内容 (4 条)
 
-## 1. P1 本周发 · max-sixty/worktrunk
-
-**写什么**: 以 worktrunk 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "max-sixty/worktrunk" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [max-sixty/worktrunk](https://github.com/max-sixty/worktrunk)*
-
----
-
-## 2. P1 本周发 · mattpocock/skills
+## 1. P1 本周发 · mattpocock/skills
 
 **写什么**: 以 skills 引发的开发者效率讨论为切入点
 
@@ -49,29 +36,58 @@
 
 ---
 
-## 3. P1 本周发 · thedotmack/claude-mem
+## 2. P1 本周发 · garrytan/gstack
 
-**写什么**: 以 claude-mem 引发的开发者效率讨论为切入点
+**写什么**: 以 gstack 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "thedotmack/claude-mem" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "garrytan/gstack" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)*
+*参考: [garrytan/gstack](https://github.com/garrytan/gstack)*
 
 ---
 
-## 4. P1 本周发 · github/spec-kit
+## 3. P1 本周发 · max-sixty/worktrunk
 
-**写什么**: 以 spec-kit 引发的开发者效率讨论为切入点
+**写什么**: 以 worktrunk 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "github/spec-kit" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "max-sixty/worktrunk" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [github/spec-kit](https://github.com/github/spec-kit)*
+*参考: [max-sixty/worktrunk](https://github.com/max-sixty/worktrunk)*
+
+---
+
+## 4. P1 本周发 · 无人在意的角落， idea 2026.3 发布了
+
+**写什么**: 借「无人在意的角落发」的讨论热度写一篇 AI 编程工具选型指南
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "无人在意的角落， idea 2026.3 发布了" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [无人在意的角落， idea 2026.3 发布了](https://www.v2ex.com/t/1254865)*
+
+---
+
+
+# Lighthouse — 今日内容 (1 条)
+
+## 1. P0 今天发 · Usagi-org/ai-goofish-monitor
+
+**写什么**: 以「5 分钟在 Lighthouse 上部署 ai-goofish-monitor」为主题写一篇实操教程
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🚀 "Usagi-org/ai-goofish-monitor" caught our eye! Deploy it in minutes on Tencent Cloud Lighthouse — Docker pre-installed, global nodes, from $3.5/mo. Try it: https://www.tencentcloud.com/products/lighthouse #CloudComputing #DevOps
+
+*参考: [Usagi-org/ai-goofish-monitor](https://github.com/Usagi-org/ai-goofish-monitor)*
 
 ---
 
