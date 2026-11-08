@@ -1,22 +1,51 @@
-# 📋 产品 Draft 汇总 — 2026-11-07
+# 📋 产品 Draft 汇总 — 2026-11-08
 
-> 共 1 个产品的 P0/P1 内容草稿
+> 共 2 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# TDSQL-C — 今日内容 (1 条)
+# CodeBuddy — 今日内容 (2 条)
 
-## 1. P1 本周发 · NVIDIA/auto-ontology
+## 1. P1 本周发 · mattpocock/skills
 
-**写什么**: 以 auto-ontology 的数据库需求为切入
+**写什么**: 以 skills 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🗃️ "NVIDIA/auto-ontology" highlights the need for reliable databases. TDSQL-C offers 100% PostgreSQL/MySQL compatibility with cloud-native performance. #Database #CloudNative
+> 🤖 "mattpocock/skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [NVIDIA/auto-ontology](https://github.com/NVIDIA/auto-ontology)*
+*参考: [mattpocock/skills](https://github.com/mattpocock/skills)*
+
+---
+
+## 2. P1 本周发 · anthropics/skills
+
+**写什么**: 以 skills 引发的开发者效率讨论为切入点
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "anthropics/skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [anthropics/skills](https://github.com/anthropics/skills)*
+
+---
+
+
+# EdgeOne — 今日内容 (1 条)
+
+## 1. P0 今天发 · google/skills
+
+**写什么**: 从 skills 的性能/安全需求出发
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> ⚡ Interesting project: "google/skills". For teams needing global acceleration + DDoS protection, check out EdgeOne — 3,200+ PoP nodes worldwide. #CDN #WebSecurity #EdgeComputing
+
+*参考: [google/skills](https://github.com/google/skills)*
 
 ---
 
