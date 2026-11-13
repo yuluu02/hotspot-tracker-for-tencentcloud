@@ -1,4 +1,4 @@
-# 📋 产品 Draft 汇总 — 2026-11-12
+# 📋 产品 Draft 汇总 — 2026-11-13
 
 > 共 2 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
@@ -7,32 +7,32 @@
 
 # CodeBuddy — 今日内容 (1 条)
 
-## 1. P1 本周发 · addyosmani/agent-skills
+## 1. P1 本周发 · QwenLM/qwen-code
 
-**写什么**: 以 agent-skills 引发的开发者效率讨论为切入点
+**写什么**: 以 qwen-code 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "addyosmani/agent-skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "QwenLM/qwen-code" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)*
+*参考: [QwenLM/qwen-code](https://github.com/QwenLM/qwen-code)*
 
 ---
 
 
-# Hunyuan — 今日内容 (1 条)
+# GPU CVM — 今日内容 (1 条)
 
-## 1. P0 今天发 · ZhuLinsen/daily_stock_analysis
+## 1. P1 本周发 · ashhart/TensorFold
 
-**写什么**: 围绕 daily_stock_analysis 的核心功能（LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送
+**写什么**: 围绕 TensorFold 的核心功能（ashhart/TensorFold: LLM Inference Engine for Metal, CUDA and
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "ZhuLinsen/daily_stock_analysis" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🔥 "ashhart/TensorFold" — **TensorFold** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容. Check out Tencent Cloud GPU CVM for a production-ready solution. #TencentCloud #CloudComputing
 
-*参考: [ZhuLinsen/daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis)*
+*参考: [ashhart/TensorFold](https://github.com/ashhart/TensorFold)*
 
 ---
 
