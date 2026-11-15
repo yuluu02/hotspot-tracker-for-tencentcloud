@@ -1,26 +1,29 @@
-# 📋 产品 Draft 汇总 — 2026-11-14
+# 📋 产品 Draft 汇总 — 2026-11-15
 
-> 共 3 个产品的 P0/P1 内容草稿
+> 共 2 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CodeBuddy — 今日内容 (2 条)
+# CVM — 今日内容 (1 条)
 
-## 1. P1 本周发 · alibaba/open-code-review
+## 1. P1 本周发 · 有没有 V 友自己搭建过云手机？想实现网页远程操作，不想再用第三方云手机了
 
-**写什么**: 以 open-code-review 引发的开发者效率讨论为切入点
+**写什么**: 以「有没有友自己搭建」话题为引子
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "alibaba/open-code-review" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🔥 "有没有 V 友自己搭建过云手机？想实现网页远程操作，不想再用第三方云手机了" — **有没有友自己搭建** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，. Check out Tencent Cloud CVM for a production-ready solution. #TencentCloud #CloudComputing
 
-*参考: [alibaba/open-code-review](https://github.com/alibaba/open-code-review)*
+*参考: [有没有 V 友自己搭建过云手机？想实现网页远程操作，不想再用第三方云手机了](https://www.v2ex.com/t/1257073)*
 
 ---
 
-## 2. P0 今天发 · backnotprop/plannotator
+
+# CodeBuddy — 今日内容 (6 条)
+
+## 1. P0 今天发 · backnotprop/plannotator
 
 **写什么**: 以 plannotator 引发的开发者效率讨论为切入点
 
@@ -33,48 +36,68 @@
 
 ---
 
+## 2. P1 本周发 · tradermonty/claude-trading-skills
 
-# Hunyuan — 今日内容 (2 条)
-
-## 1. P0 今天发 · ZhuLinsen/daily_stock_analysis
-
-**写什么**: 围绕 daily_stock_analysis 的核心功能（LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送
+**写什么**: 以 claude-trading-skills 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "ZhuLinsen/daily_stock_analysis" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🤖 "tradermonty/claude-trading-skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [ZhuLinsen/daily_stock_analysis](https://github.com/ZhuLinsen/daily_stock_analysis)*
+*参考: [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills)*
 
 ---
 
-## 2. P1 本周发 · 现在不想折腾的话，是不是只能选择中转站了？
+## 3. P1 本周发 · ChromeDevTools/chrome-devtools-mcp
 
-**写什么**: 以「现在不想折腾的话」话题为引子
+**写什么**: 以 chrome-devtools-mcp 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "现在不想折腾的话，是不是只能选择中转站了？" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🤖 "ChromeDevTools/chrome-devtools-mcp" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [现在不想折腾的话，是不是只能选择中转站了？](https://www.v2ex.com/t/1256850)*
+*参考: [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)*
 
 ---
 
+## 4. P1 本周发 · alibaba/open-code-review
 
-# Lighthouse — 今日内容 (1 条)
-
-## 1. P1 本周发 · louislam/uptime-kuma
-
-**写什么**: 以「5 分钟在 Lighthouse 上部署 uptime-kuma」为主题写一篇实操教程
+**写什么**: 以 open-code-review 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🚀 "louislam/uptime-kuma" caught our eye! Deploy it in minutes on Tencent Cloud Lighthouse — Docker pre-installed, global nodes, from $3.5/mo. Try it: https://www.tencentcloud.com/products/lighthouse #CloudComputing #DevOps
+> 🤖 "alibaba/open-code-review" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [louislam/uptime-kuma](https://github.com/louislam/uptime-kuma)*
+*参考: [alibaba/open-code-review](https://github.com/alibaba/open-code-review)*
+
+---
+
+## 5. P1 本周发 · QwenLM/qwen-code
+
+**写什么**: 以 qwen-code 引发的开发者效率讨论为切入点
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "QwenLM/qwen-code" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [QwenLM/qwen-code](https://github.com/QwenLM/qwen-code)*
+
+---
+
+## 6. P1 本周发 · 关于设置中目前提供的 6 种楼中楼样式的 Demo
+
+**写什么**: 借「关于设置中目前提」的讨论热度写一篇 AI 编程工具选型指南
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "关于设置中目前提供的 6 种楼中楼样式的 Demo" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [关于设置中目前提供的 6 种楼中楼样式的 Demo](https://www.v2ex.com/t/1257128)*
 
 ---
 
