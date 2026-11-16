@@ -1,29 +1,26 @@
-# 📋 产品 Draft 汇总 — 2026-11-15
+# 📋 产品 Draft 汇总 — 2026-11-16
 
 > 共 2 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CVM — 今日内容 (1 条)
+# CodeBuddy — 今日内容 (5 条)
 
-## 1. P1 本周发 · 有没有 V 友自己搭建过云手机？想实现网页远程操作，不想再用第三方云手机了
+## 1. P1 本周发 · google-labs-code/stitch-skills
 
-**写什么**: 以「有没有友自己搭建」话题为引子
+**写什么**: 以 stitch-skills 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🔥 "有没有 V 友自己搭建过云手机？想实现网页远程操作，不想再用第三方云手机了" — **有没有友自己搭建** 涉及模型训练/GPU 计算 — CVM 提供 NVIDIA A100/H100 GPU 实例，. Check out Tencent Cloud CVM for a production-ready solution. #TencentCloud #CloudComputing
+> 🤖 "google-labs-code/stitch-skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [有没有 V 友自己搭建过云手机？想实现网页远程操作，不想再用第三方云手机了](https://www.v2ex.com/t/1257073)*
+*参考: [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills)*
 
 ---
 
-
-# CodeBuddy — 今日内容 (6 条)
-
-## 1. P0 今天发 · backnotprop/plannotator
+## 2. P0 今天发 · backnotprop/plannotator
 
 **写什么**: 以 plannotator 引发的开发者效率讨论为切入点
 
@@ -33,19 +30,6 @@
 > 🤖 "backnotprop/plannotator" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
 *参考: [backnotprop/plannotator](https://github.com/backnotprop/plannotator)*
-
----
-
-## 2. P1 本周发 · tradermonty/claude-trading-skills
-
-**写什么**: 以 claude-trading-skills 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "tradermonty/claude-trading-skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [tradermonty/claude-trading-skills](https://github.com/tradermonty/claude-trading-skills)*
 
 ---
 
@@ -75,29 +59,32 @@
 
 ---
 
-## 5. P1 本周发 · QwenLM/qwen-code
+## 5. P1 本周发 · Tencent/LoopForge
 
-**写什么**: 以 qwen-code 引发的开发者效率讨论为切入点
+**写什么**: 以 LoopForge 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "QwenLM/qwen-code" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🤖 "Tencent/LoopForge" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [QwenLM/qwen-code](https://github.com/QwenLM/qwen-code)*
+*参考: [Tencent/LoopForge](https://github.com/Tencent/LoopForge)*
 
 ---
 
-## 6. P1 本周发 · 关于设置中目前提供的 6 种楼中楼样式的 Demo
 
-**写什么**: 借「关于设置中目前提」的讨论热度写一篇 AI 编程工具选型指南
+# Hunyuan — 今日内容 (1 条)
+
+## 1. P1 本周发 · 其实我个人也是比较偏向于使用国模的，但问题是
+
+**写什么**: 以「其实我个人也是比」话题为引子
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🤖 "关于设置中目前提供的 6 种楼中楼样式的 Demo" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+> 🧠 "其实我个人也是比较偏向于使用国模的，但问题是" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
 
-*参考: [关于设置中目前提供的 6 种楼中楼样式的 Demo](https://www.v2ex.com/t/1257128)*
+*参考: [其实我个人也是比较偏向于使用国模的，但问题是](https://www.v2ex.com/t/1257339)*
 
 ---
 
