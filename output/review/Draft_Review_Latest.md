@@ -1,65 +1,13 @@
-# 📋 产品 Draft 汇总 — 2026-11-18
+# 📋 产品 Draft 汇总 — 2026-11-19
 
 > 共 2 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CodeBuddy — 今日内容 (7 条)
+# CodeBuddy — 今日内容 (5 条)
 
-## 1. P1 本周发 · mvanhorn/last30days-skill
-
-**写什么**: 以 last30days-skill 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "mvanhorn/last30days-skill" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)*
-
----
-
-## 2. P1 本周发 · alibaba/open-code-review
-
-**写什么**: 以 open-code-review 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "alibaba/open-code-review" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [alibaba/open-code-review](https://github.com/alibaba/open-code-review)*
-
----
-
-## 3. P1 本周发 · Tencent/LoopForge
-
-**写什么**: 以 LoopForge 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "Tencent/LoopForge" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [Tencent/LoopForge](https://github.com/Tencent/LoopForge)*
-
----
-
-## 4. P1 本周发 · google-labs-code/stitch-skills
-
-**写什么**: 以 stitch-skills 引发的开发者效率讨论为切入点
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "google-labs-code/stitch-skills" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills)*
-
----
-
-## 5. P1 本周发 · cursor/plugins
+## 1. P1 本周发 · cursor/plugins
 
 **写什么**: 以 plugins 引发的开发者效率讨论为切入点
 
@@ -72,45 +20,71 @@
 
 ---
 
-## 6. P1 本周发 · [送码+抽奖] Fotilo：Mac 的截图+录屏软件（用心打磨了很久）
+## 2. P1 本周发 · HKUDS/CLI-Anything
 
-**写什么**: 借「的截图录屏软件用」的讨论热度写一篇 AI 编程工具选型指南
-
-**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
-
-**参考文案**:
-> 🤖 "[送码+抽奖] Fotilo：Mac 的截图+录屏软件（用心打磨了很久）" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [[送码+抽奖] Fotilo：Mac 的截图+录屏软件（用心打磨了很久）](https://www.v2ex.com/t/1257886)*
-
----
-
-## 7. P0 今天发 · 如何合法合规的使用海外模型？
-
-**写什么**: 借「何合法合规的使用海外模型」的讨论热度写一篇 AI 编程工具选型指南
-
-**发到哪**: X（快评竞品动态） + LinkedIn（发深度对比分析文章）
-
-**参考文案**:
-> 🤖 "如何合法合规的使用海外模型？" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
-
-*参考: [如何合法合规的使用海外模型？](https://www.v2ex.com/t/1257817)*
-
----
-
-
-# EdgeOne — 今日内容 (1 条)
-
-## 1. P0 今天发 · elementalsouls/Claude-BugHunter
-
-**写什么**: 从 Claude-BugHunter 的性能/安全需求出发
+**写什么**: 以 CLI-Anything 引发的开发者效率讨论为切入点
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> ⚡ Interesting project: "elementalsouls/Claude-BugHunter". For teams needing global acceleration + DDoS protection, check out EdgeOne — 3,200+ PoP nodes worldwide. #CDN #WebSecurity #EdgeComputing
+> 🤖 "HKUDS/CLI-Anything" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
-*参考: [elementalsouls/Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter)*
+*参考: [HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything)*
+
+---
+
+## 3. P1 本周发 · mvanhorn/last30days-skill
+
+**写什么**: 以 last30days-skill 引发的开发者效率讨论为切入点
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "mvanhorn/last30days-skill" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)*
+
+---
+
+## 4. P1 本周发 · NVIDIA/SkillEvaluator
+
+**写什么**: 以 SkillEvaluator 引发的开发者效率讨论为切入点
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "NVIDIA/SkillEvaluator" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [NVIDIA/SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator)*
+
+---
+
+## 5. P0 今天发 · 有没有什么办法让我忘记开梯子的时候，让 Claude 断网？
+
+**写什么**: 借「有没有什么办法让」的讨论热度写一篇 AI 编程工具选型指南
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "有没有什么办法让我忘记开梯子的时候，让 Claude 断网？" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [有没有什么办法让我忘记开梯子的时候，让 Claude 断网？](https://www.v2ex.com/t/1258094)*
+
+---
+
+
+# Hunyuan — 今日内容 (1 条)
+
+## 1. P1 本周发 · Tideway: Phase-Aware Tiered Memory Management for MoE Infere
+
+**写什么**: 围绕 Tideway: Phase-Aware Tiered Memory Management for MoE Infere 的核心功能（Large lang
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章）
+
+**参考文案**:
+> 🧠 "Tideway: Phase-Aware Tiered Memory Manag" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+
+*参考: [Tideway: Phase-Aware Tiered Memory Management for ](https://huggingface.co/papers/2611.14848)*
 
 ---
 
