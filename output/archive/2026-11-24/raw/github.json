@@ -1,0 +1,1083 @@
+[
+  {
+    "source": "GitHub Trending",
+    "title": "elementalsouls/Claude-BugHunter - A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+    "url": "https://github.com/elementalsouls/Claude-BugHunter",
+    "heat": "20,502 stars",
+    "time": "Today",
+    "developer_name": "elementalsouls",
+    "developer_url": "https://github.com/elementalsouls",
+    "developer_email": "",
+    "today_stars": "2,029 stars today",
+    "language": "Python",
+    "summary": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+    "content": "\n\n# claude-bughunter\n\n> A self-contained Claude skill bundle for bug hunting and external red-team work · **84 skills** · 15 slash commands · **681 disclosed-report patterns** (433 now individually cited & auditable) across 24 core vulnerability classes · enterprise identity + infrastructure attack matrices · engagement-folder scaffolding · Burp MCP integration · battle-tested across authorized red-team and bug-hunting engagements, plus public training platforms (DVWA, OWASP Juice Shop, Hacker101, testphp.vulnweb.com).\n\nBuilt by **Sachin Sharma** — Bug Hunting & GenAI Security Research.\n\n \n   SPONSORED BY \n   \n   \n   \n     \n       \n       \n     \n   \n  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n   \n     \n       \n       \n     \n   \n \n\n---\n\n## What is this?\n\n`claude-bughunter` is a drop-in skill bundle for the Claude Code skills system. Install once and Claude Code stops being a chatbot and starts behaving like a senior bug-hunting researcher or red-team operator: it knows the techniques, the chain templates, the VRT mappings, the platform CVE chains, and the hygiene — and it stays in scope.\n\nFour layers stack:\n\n- **Think** — `bb-methodology` + `redteam-mindset`: the 5-phase non-linear workflow, critical-thinking framework, and red-team operator discipline.\n- **Hunt webapps** — 58 `hunt-*` skills curated from 681 disclosed HackerOne reports: per-class detection patterns, payloads, bypass tables, and chain templates.\n- **Hit the perimeter** — enterprise platform chains (M365/Entra, Okta, vCenter, SSL-VPN appliances, SharePoint, cloud IAM): current 2024–2026 CVE chains + post-credential escalation.\n- **Ship it** — `triage-validation` + reporting + `evidence-hygiene`: the 7-Question Gate, VRT-aware severity, OOS rebuttals, PII redaction, and red-team deliverables.\n\nAll triggered automatically by topic — describe what you're testing in plain English and the relevant skill loads. No invocation by name.\n\n---\n\n## Quickstart\n\n**Option A — install as a Claude Code plugin (recommended).** From inside Claude Code:\n\n```text\n/plugin marketplace add elementalsouls/Claude-BugHunter\n/plugin install claude-bughunter@elementalsouls\n```\n\nAll 84 skills + 15 commands load namespaced under `claude-bughunter:` and update when you bump the plugin version — no files copied into `~/.claude/`.\n\n**A HackerOne account is optional.** The install asks for a HackerOne API username and token. They only let the HackerOne MCP read your private programs and your own reports; leave both blank if you don't need that. Every skill, command and the MCP's public tools (duplicate search, program scope) work without them.\n\n**Option B — copy install (no plugin system / pin to a clone):**\n\n```bash\ngit clone https://github.com/elementalsouls/Claude-BugHunter.git\ncd Claude-BugHunter\n```\n\n```bash\n# macOS / Linux\nbash scripts/install.sh\n\n# Windows (PowerShell)\npwsh ./scripts/install.ps1\n```\n\nBoth copy the skills + commands into `~/.claude/` (macOS/Linux) or `%USERPROFILE%\\.claude\\` (Windows) and wire the ",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "ssl",
+        "vpn"
+      ],
+      "ai_hits": [
+        "claude",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "MCP"
+      ],
+      "tone": "负面拉踩",
+      "detail_brief": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 8.8,
+      "tcloud_relevance": 9.3,
+      "tcloud_integration": "**Claude-BugHunter** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示\n补充关联 CodeBuddy：**Claude-BugHunter** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_products": [
+        "EdgeOne",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**Claude-BugHunter** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+        "**Claude-BugHunter** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐"
+      ],
+      "tcloud_evidence": [
+        "security",
+        "ssl",
+        "claude code"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**Claude-BugHunter** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示\n补充关联 CodeBuddy：**Claude-BugHunter** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+      "tcloud_official_matches": [
+        "EdgeOne",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（EdgeOne / CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「elementalsouls/Claude-BugHunter - A Claude Code s…」（A Claude Code skill bundle for bug hunting and external red…），涉及 MCP → 可写方向：**Claude-BugHunter** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「Claude-BugHunter」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 Claude-BugHunter 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉用 Claude-BugHunter 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 Claude-BugHunter 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 Claude-BugHunter 的扫描结果/漏洞报告截图，展示安全工具的实际输出效果。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "A Claude Code skill bundle for bug hunting and external red-team wo…。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：…",
+        "x_en": "elementalsouls/Claude-BugHunter - A Claude Code skill bundle for bug hunting and extern…. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：A Claude Code skill bundle for bug hunting and external red-team wo…。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: elementalsouls/Claude-BugHunter - A Claude Code skill bundle for bug hunting and extern…. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy) + opinionated commentary. What matters more to you: deplo…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。A Claude Code skill bundle for bug hunting and external red-team wo…。如果用官方号发，建议主推 EdgeOne，重点讲 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**Claude-BugHunter** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示 补充关联 CodeBuddy：**Claude-BugHunter** 涉及 AI 编码场景，CodeBuddy 提供 IDE 集成的全流程 AI 编码能力（需求→设计→编码→测试），可以做横向对比或互补推荐",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. elementalsouls/Claude-BugHunter - A Claude Code skill bundle for bug hunting and extern…. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：A Claude Code skill bundle for bug hunting and external red-team wo…。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（EdgeOne / CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: elementalsouls/Claude-BugHunter - A Claude Code skill bundle for bug hunting and extern…. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne / CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "Claude-BugHunter：用于错误搜寻和外部红队工作的 Claude Code 技能包 - 84 项技能、15 个斜线命令、涵盖 24 个核心漏洞类别的 681 个披露报告模式，以及企业身份 + 基础设施攻击矩阵。",
+    "developer_profile": {
+      "github_username": "elementalsouls",
+      "profile_url": "https://github.com/elementalsouls",
+      "name": "Sachin Sharma",
+      "bio": "Offensive Security Engineer | Adversary Simulation, Custom Tooling & Automated Reconnaissance | Exploring AI Red Teaming & LLM Security",
+      "company": "",
+      "location": "India ",
+      "blog": "https://elementalsouls.github.io/Portfolio/",
+      "twitter_username": "",
+      "email": "",
+      "followers": 707,
+      "following": 13,
+      "public_repos": 41,
+      "avatar_url": "https://avatars.githubusercontent.com/u/49252733?v=4",
+      "social_links": [
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/in/sachinsharma8080"
+        },
+        {
+          "platform": "unknown",
+          "url": "https://elementalsouls.github.io/Portfolio/"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "obra/superpowers - An agentic skills framework & software development methodology that works.",
+    "url": "https://github.com/obra/superpowers",
+    "heat": "325,498 stars",
+    "time": "Today",
+    "developer_name": "obra",
+    "developer_url": "https://github.com/obra",
+    "developer_email": "",
+    "today_stars": "840 stars today",
+    "language": "Shell",
+    "summary": "An agentic skills framework & software development methodology that works.",
+    "content": "# Superpowers\n\nSuperpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.\n\n## Table of Contents\n\n- How it works\n- Commercial Services\n- Getting Started\n  - Claude Code\n  - Antigravity\n  - Codex App\n  - Codex CLI\n  - Cursor\n  - Devin CLI\n  - Factory Droid\n  - Gemini CLI\n  - GitHub Copilot CLI\n  - Grok Build CLI\n  - Kimi Code\n  - OpenCode\n  - Pi\n  - Qwen Code\n  - Hermes Agent\n  - Muse\n- The Basic Workflow\n- When Something Goes Wrong\n- Community\n- What's Inside\n- Philosophy\n- Contributing\n- Updating\n- License\n- Visual companion telemetry\n\n## How it works\n\nIt starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it *doesn't* just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do. \n\nOnce it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest. \n\nAfter you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY. \n\nNext up, once you say \"go\", it launches a *subagent-driven-development* process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for your agent to work autonomously for a couple hours at a time without deviating from the plan you put together.\n\nThere's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.\n\n## Commercial Services\n\nIf you're using Superpowers in enterprise and could benefit from commercial support, additional tooling, or managed spending, please don't hesitate to drop us a line at sales@primeradiant.com.\n\n## Installation\n\nInstallation differs by harness. If you use more than one, install Superpowers separately for each one.\n\n### Claude Code\n\nSuperpowers is available via the official Claude plugin marketplace\n\n#### Official Marketplace\n\n- Install the plugin from Anthropic's official marketplace:\n\n  ```bash\n  /plugin install superpowers@claude-plugins-official\n  ```\n\n#### Superpowers Marketplace\n\nThe Superpowers marketplace provides Superpowers and some other related plugins for Claude Code.\n\n- Register the marketplace:\n\n  ```bash\n  /plugin marketplace add obra/superpowers-marketplace\n  ```\n\n- Install the plugin from this marketplace:\n\n  ```bash\n  /plugin install superpowers@superpowers-marketplace\n  ```\n\n### Antigravity\n\nInstall Superpowers as a plugin from this repository:\n\n```bash\nagy plugin install https://github.com/obra/superpowers\n```\n\nAntigravity lists each installed skill's description, and th",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "claude",
+        "gemini",
+        "qwen",
+        "copilot",
+        "agent",
+        "anthropic",
+        "agentic"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Gemini",
+        "通义千问",
+        "Copilot",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "obra/superpowers: An agentic skills framework & software development methodology that works.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.0,
+      "tcloud_relevance": 9.2,
+      "tcloud_integration": "**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件\n补充关联 Hunyuan：**superpowers** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_reasons": [
+        "**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "**superpowers** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "coding agent",
+        "copilot",
+        "cursor",
+        "github copilot",
+        "claude",
+        "gemini",
+        "qwen"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件\n补充关联 Hunyuan：**superpowers** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "CodeBuddy",
+        "Hunyuan"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy / Hunyuan）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「obra/superpowers - An agentic skills framework &…」（obra/superpowers: An agentic skills framework & software de…），涉及 Agent / Go → 可写方向：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「obra/superpowers - An agentic skills fr…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 superpowers 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 superpowers 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 superpowers 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 superpowers 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "obra/superpowers: An agentic skills framework & software developmen…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "obra/superpowers - An agentic skills framework & software development methodology that…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：obra/superpowers: An agentic skills framework & software developmen…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: obra/superpowers - An agentic skills framework & software development methodology that…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan). What matters more to you: deployment, performance, or w…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。obra/superpowers: An agentic skills framework & software developmen…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**superpowers** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs superpowers 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件 补充关联 Hunyuan：**superpowers** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. obra/superpowers - An agentic skills framework & software development methodology that…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：obra/superpowers: An agentic skills framework & software developmen…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy / Hunyuan）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: obra/superpowers - An agentic skills framework & software development methodology that…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy / Hunyuan). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "superpowers：有效的代理技能框架和软件开发方法。",
+    "developer_profile": {
+      "github_username": "obra",
+      "profile_url": "https://github.com/obra",
+      "name": "Jesse Vincent",
+      "bio": "",
+      "company": "Prime Radiant",
+      "location": "Berkeley, CA 94703",
+      "blog": "http://fsck.com",
+      "twitter_username": "",
+      "email": "",
+      "followers": 9740,
+      "following": 99,
+      "public_repos": 228,
+      "avatar_url": "https://avatars.githubusercontent.com/u/45416?v=4",
+      "social_links": [
+        {
+          "platform": "mastodon",
+          "url": "https://metasocial.com/@jesse"
+        },
+        {
+          "platform": "bluesky",
+          "url": "https://bsky.app/profile/s.ly"
+        },
+        {
+          "platform": "generic",
+          "url": "https://www.threads.com/@obrajesse"
+        },
+        {
+          "platform": "generic",
+          "url": "https://blog.fsck.com"
+        },
+        {
+          "platform": "unknown",
+          "url": "http://fsck.com"
+        }
+      ],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "HKUDS/CLI-Anything - \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https://clianything.cc/",
+    "url": "https://github.com/HKUDS/CLI-Anything",
+    "heat": "64,170 stars",
+    "time": "Today",
+    "developer_name": "HKUDS",
+    "developer_url": "https://github.com/HKUDS",
+    "developer_email": "",
+    "today_stars": "790 stars today",
+    "language": "Python",
+    "summary": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https://clianything.cc/",
+    "content": "  &nbsp; CLI-Anything: Making ALL Software Agent-Native \n\n \n       &#32;   &#32;       \n \n\n \n   Today's Software Serves Humans👨‍💻. Tomorrow's Users will be Agents🤖. \nCLI-Anything: Bridging the Gap Between AI Agents and the World's Software  \n \n\n**🌐 CLI-Hub**: `pip install cli-anything-hub` then `cli-hub install  ` — browse, install, and manage all community-built CLIs. Want to add your own? Open a PR — the hub updates instantly.\n\n**🎬 See Demos**: Watch AI agents use generated CLIs plus preview, live preview, and trajectory loops to produce real artifacts — CAD builds, 3D scenes, diagrams, gameplay, subtitles, and more.\n\n**🙋 [Become a Contributor, or Request a CLI]**: Join us! Sign up to build a new CLI harness — once reviewed and merged, you'll gain access as one of our community contributors! Wish CLI-Anything supported a specific software or service? Submit a wishlist request!\n\n \n     \n     \n     \n     \n     \n     \n \n\n \n   \n   \n   \n   \n   \n     \n   \n \n\n**One Command Line**: Make any software agent-ready for Pi, OpenClaw, nanobot, Cursor, Claude Code, etc.&nbsp;&nbsp;**中文文档** | **日本語ドキュメント** | **Deutsch**\n\n \n   \n \n\n \n   \n \n\n---\n\n## 📰 News\n\n> Thanks to all invaluable efforts from the community! More updates continuously on the way everyday..\n\n- **2026-05-30** 🧭 **Hermes skill** proposed (#320), adding a CLI-Anything orchestration skill with installer scripts and HARNESS fallback guidance. 🗺️ **ArcGIS Pro** was proposed for the public registry (#318) as a Windows/ArcPy CLI for cartography, geoprocessing, feature editing, and live-Pro MCP workflows.\n\n- **2026-05-27** 🔧 **CLI-Hub** registry date updates now handle `python -m pip` install commands (#312), improving package-date detection for registry automation.\n\n- **2026-05-23** 📝 **Obsidian Agent CLI** was proposed for the public registry (#307), bringing a PyPI-installed Obsidian automation CLI with persistent agent memory workflows and a pinned skill link.\n\n- **2026-05-21** 🔒 **Sketch CLI** token-file handling was hardened against path traversal and symlink escapes (#304).\n\n- **2026-05-20** 📓 **Joplin CLI** was proposed (#300) with notebooks, notes, to-dos, tags, attachments, search/sync, import/export, server/E2EE helpers, full docs, packaged skill docs, and a 134-test validation baseline.\n\n- **2026-05-20** 🎛️ **Rekordbox CLI** merged (#252) with guarded SQLCipher write paths, backup-required forced writes, smoke coverage, and root skill sync. 📚 **Calibre CLI** merged (#223) with library/search/metadata/conversion/export workflows, 41 unit tests, real-Calibre E2E evidence, and root skill validation. 🧊 **3MF CLI** merged (#209) with mesh inspection, hole resizing, repair, comparison, and preserved triangle attributes. 🎙️ **MiniMax CLI** merged (#189) with chat/TTS workflows, JSON-safe model/voice listing, REPL quote handling, and smoke/E2E coverage. 🎮 **UEAtelier** joined the registry (#297) as an Unreal Editor MCP self-extension workbench with a Python CLI proxy.\n\n- **2026-05-19** 🛠️ Existing ha",
+    "analysis": {
+      "is_cloud": false,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 0,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "agent",
+        "mcp",
+        "tts"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Claude",
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "MCP",
+        "3D Generation",
+        "Python"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https://clianything.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.5,
+      "tcloud_relevance": 5.0,
+      "tcloud_integration": "**CLI-Anything** 的用户群和 CodeBuddy 高度重合 — 可以写「CLI-Anything 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**CLI-Anything** 的用户群和 CodeBuddy 高度重合 — 可以写「CLI-Anything 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "claude code",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**CLI-Anything** 的用户群和 CodeBuddy 高度重合 — 可以写「CLI-Anything 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「HKUDS/CLI-Anything - \"CLI-Anything: Making ALL So…」（HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agen…），涉及 Agent / MCP / 3D Generation → 可写方向：**CLI-Anything** 的用户群和 CodeBuddy 高度重合 — 可以写「CLI-Anything 用户迁移到 CodeBuddy 的体验对比」…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「HKUDS/CLI-Anything - \"CLI-Anything: Mak…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 CLI-Anything 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 CLI-Anything 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 CLI-Anything 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 CLI-Anything 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agent-Native…。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBu…",
+        "x_en": "HKUDS/CLI-Anything - \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https:…. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agent-Native…。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: HKUDS/CLI-Anything - \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https:…. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. What matters more to you: deployment, p…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agent-Native…。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**CLI-Anything** 的用户群和 CodeBuddy 高度重合 — 可以写「CLI-Anything 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. HKUDS/CLI-Anything - \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https:…. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：HKUDS/CLI-Anything: \"CLI-Anything: Making ALL Software Agent-Native…。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: HKUDS/CLI-Anything - \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub:https:…. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "“CLI-Anything：使所有软件代理原生”--CLI-Hub：https://clianything。",
+    "developer_profile": {
+      "github_username": "HKUDS",
+      "profile_url": "https://github.com/HKUDS",
+      "name": "✨Data Intelligence Lab@HKU✨",
+      "bio": "",
+      "company": "",
+      "location": "Hong Kong",
+      "blog": "https://sites.google.com/view/chaoh",
+      "twitter_username": "",
+      "email": "",
+      "followers": 14379,
+      "following": 0,
+      "public_repos": 93,
+      "avatar_url": "https://avatars.githubusercontent.com/u/118165258?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "jingyaogong/minimind - 🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+    "url": "https://github.com/jingyaogong/minimind",
+    "heat": "69,865 stars",
+    "time": "Today",
+    "developer_name": "jingyaogong",
+    "developer_url": "https://github.com/jingyaogong",
+    "developer_email": "",
+    "today_stars": "828 stars today",
+    "language": "Python",
+    "summary": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+    "content": " \n\n \n\n \n\n[](https://github.com/jingyaogong/minimind/stargazers)\n[](LICENSE)\n[](https://github.com/jingyaogong/minimind/commits/master)\n[](https://github.com/jingyaogong/minimind/pulls)\n[](https://huggingface.co/collections/jingyaogong/minimind-66caf8d999f5c7fa64f399e5)\n\n \n\n \n\n \n\n \n   \"大道至简\" \n \n\n \n\n中文 | English\n\n \n\n* 此开源项目旨在完全从 0 开始，仅用 3 块钱成本与 2 小时训练时间，即可训练出规模约为 64M 的超小语言模型 MiniMind。\n* MiniMind 系列极其轻量，主线最小版本体积约为 GPT-3 的 $\\frac{1}{2700}$，力求让普通个人 GPU 也能快速完成训练与复现。\n* 项目同时开源了大模型的极简结构与完整训练链路，覆盖 MoE、数据清洗、预训练（Pretrain）、监督微调（SFT）、LoRA、RLHF（DPO）、RLAIF（PPO / GRPO / CISPO）、Tool Use、Agentic RL、自适应思考与模型蒸馏等全过程代码。\n* MiniMind 同时拓展了视觉模态模型 MiniMind-V、多模态 Omni 模型 MiniMind-O、扩散语言模型（MiniMind-dLM）、线性模型（MiniMind-Linear），详见 Discussion。\n* 项目所有核心算法代码均从 0 使用 PyTorch 原生实现，不依赖第三方库提供的高层抽象接口。\n* 这不仅是一个大语言模型全阶段开源复现项目，也是一套面向 LLM 入门与实践的教程。\n* 希望此项目能为更多人提供一个可复现、可理解、可扩展的起点，一起感受创造的乐趣，并推动更广泛 AI 社区的进步。\n\n> 注：本项目基于 Apache 2.0 协议开源，完全免费。“2 小时” 指 SFT 阶段在单张 NVIDIA 3090 上跑完 `1 epoch` 的实测耗时，“3 块钱” 指对应时段的 GPU 租用成本。\n\n---\n\n \n\n🔗 在线体验 | 🔗 视频介绍\n\n \n   \n     \n       \n         \n           \n         \n       \n       \n         \n           \n         \n       \n     \n   \n \n\n \n\n---\n\n## ❤️ 赞助\n\n \n\n \n   \n     \n       \n         \n       \n     \n     \n       MiniMind ×  Infistar.cc  ：Claude、GPT、Gemini、DeepSeek等200+模型一个Key搞定，低至官方0.1折（省99%），100%官方纯血可验真，千条线路自动切换。通过  专属链接  注册即送¥5。\n     \n   \n \n\n \n\n \n 关于赞助与合作 \n \n\nMiniMind 以 Apache 2.0 协议完全开源、永久免费。赞助完全自愿，不换取任何特权，也不影响项目使用。感谢每一位支持者，让这个业余时间维护的项目得以持续。\n\n赞助方式包括按月占位，或直接赞助 GPU 服务器（算力可能用于项目相关或不相关的研究性探索）。\n\n如有意向，欢迎通过 邮件 联系。\n\n \n\n---\n\n# 📌 项目介绍\n\n大语言模型（Large Language Model, LLM）的出现，引发了全球范围内对 AI 的空前关注。无论是 ChatGPT、DeepSeek 还是 Qwen，都以惊艳的效果让人真切感受到这场技术浪潮的冲击力。然而，动辄数百亿参数的模型规模，使得它们对个人设备而言不仅难以训练，甚至连部署都显得遥不可及。打开大模型的“黑盒子”，真正去理解其内部运作机制，本应是一件令人心潮澎湃的事。遗憾的是，绝大多数探索最终都止步于使用 LoRA 等技术对现有大模型做少量微调，学习一些新指令或特定任务。这更像是在教牛顿如何使用 21 世纪的智能手机——虽然有趣，却偏离了理解物理本质的初衷。\n\n与此同时，第三方的大模型框架与工具库，如 `transformers` / `trl` / `peft` 等，往往只暴露出高度抽象的接口。只需短短十几行代码，就可以完成“加载模型 + 加载数据集 + 推理 + 强化学习”的全流程训练。这种高效封装固然便利，却也在一定程度上把开发者与底层实现隔离开来，削弱了深入理解 LLM 核心代码的机会。我认为 “用乐高自己拼出一架飞机，远比坐在头等舱里飞行更让人兴奋”，然而更现实的问题是，互联网上充斥着大量付费课程和营销内容，用漏洞百出、一知半解的讲解包装所谓的 AI 教程。正因如此，本项目的初衷就是尽可能降低 LLM 的学习门槛，让每个人都能从理解每一行代码开始，从 0 开始亲手训练一个极小的语言模型。是的，从**零开始训练**，而不是仅仅停留在**推理**层面。最低只需不到 3 块钱的服务器成本，就能亲身体验从 0 到 1 构建一个语言模型的全过程。\n\n😊 一起感受创造的乐趣吧！\n\n---\n\n#### 🎉 本项目包含以下内容\n\n- 提供完整的 MiniMind-LLM 结构代码（Dense + MoE），当前主线结构对齐 `Qwen3 / Qwen3-MoE` 生态。\n- 提供 Tokenizer 与分词器训练代码，支持 ` `、` `、` ` 等模板标记。\n- 覆盖 Pretrain、SFT、LoRA、RLHF-DPO、RLAIF（PPO / GRPO / CISPO）、Tool Use、Agentic RL、自适应思考与模型蒸馏等完整训练流程。\n- 提供全阶段开源数据，覆盖收集、蒸馏、清洗与去重后的高质量数据集。\n- 关键训练算法与核心模块均从 0 实现，不依赖第三方框架封装。\n- 兼容 `transformers`、`trl`、`peft` 等主流框架，以及 `llama.cpp`、`vllm`、`ollama` 等常用推理引擎与 `Llama-Factory` 等训练框架。\n- 支持单机单卡与单机多卡（DDP、DeepSpeed）训练，支持 wandb / swanlab 可视化与动态启停训练。\n- 支持在 C-Eval、C-MMLU、OpenBookQA 等第三方测评集上进行评测，并支持通过 YaRN 实现 RoPE 长文本外推。\n- 提供兼容 OpenAI API 协议的极简服务端，便于接入 FastGPT、Open-WebUI 等第三方 Chat UI，并支持 `reasoning_content`、`tool_calls`、`open_thinking`。\n- 提供基于 Streamlit 的极简聊天 WebUI，支持思考展示、工具选择与多轮 Tool Call。\n- 包含实验性拓展：离散扩散语言模型（dLM）与线性注意力模型（Linear Attention",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 19,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "大模型",
+        "llm",
+        "large language model",
+        "gpt",
+        "chatgpt",
+        "claude",
+        "gemini"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "DeepSeek",
+        "Llama",
+        "通义千问",
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Agent",
+        "Fine-tuning",
+        "Python"
+      ],
+      "tone": "对比测评",
+      "detail_brief": "jingyaogong/minimind: 🧠 两小时从 0 训出你的 64M 大模型。 Train your own 64M LLM from scratch in 2 hours.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.5,
+      "tcloud_relevance": 9.9,
+      "tcloud_integration": "**minimind** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 GPU CVM：**minimind** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_products": [
+        "Hunyuan",
+        "GPU CVM"
+      ],
+      "tcloud_reasons": [
+        "**minimind** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "**minimind** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容"
+      ],
+      "tcloud_evidence": [
+        "gpu",
+        "nvidia",
+        "大模型",
+        "llm",
+        "large language model",
+        "多模态",
+        "ai api"
+      ],
+      "tcloud_primary_product": "Hunyuan",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**minimind** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容\n补充关联 GPU CVM：**minimind** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+      "tcloud_official_matches": [
+        "Hunyuan",
+        "GPU CVM"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（Hunyuan / GPU CVM）",
+        "观点评论"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM） + 观点评论",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「jingyaogong/minimind - 🧠 两小时从 0 训出你的 64M 大模型。Trai…」（jingyaogong/minimind: 🧠 两小时从 0 训出你的 64M 大模型。 Train your own…），涉及 LLM / Agent / Fine-tuning → 可写方向：**minimind** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 GPU CVM：**minimind** 与…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「minimind」可结合 Hunyuan 写应用实践内容。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "Hunyuan",
+      "official_angle_cn": "围绕 minimind 的核心功能（jingyaogong/minimind: 🧠 两小时从 0 训出你的 64M 大模型。 Train your own 64M LLM from scratc…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+      "visual_brief": "主视觉用 minimind 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+      "platform_copies": {
+        "primary_product": "Hunyuan",
+        "product_display": "Hunyuan",
+        "relation_type": "应用场景",
+        "official_angle_cn": "围绕 minimind 的核心功能（jingyaogong/minimind: 🧠 两小时从 0 训出你的 64M 大模型。 Train your own 64M LLM from scratc…），以 Hunyuan 为切入点写实操内容，重点展示产品如何解决热点中的具体问题。",
+        "official_angle_en": "Use Hunyuan (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 minimind 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Hunyuan。",
+        "x_cn": "jingyaogong/minimind: 🧠 两小时从 0 训出你的 64M 大模型。 Train your own 64M LLM…。如果站在腾讯云国际站官方号来写，这条更适合从 Hunyuan 切入：如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：…",
+        "x_en": "jingyaogong/minimind - 🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 h…. For Tencent Cloud, this fits Hunyuan (Tencent Cloud): Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：jingyaogong/minimind: 🧠 两小时从 0 训出你的 64M 大模型。 Train your own 64M LLM…。如果从腾讯云视角切，这条最适合带到 Hunyuan，重点聊 技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM） + 观点评论。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: jingyaogong/minimind - 🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 h…. From a Tencent Cloud angle, the best hook is Hunyuan (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (Hunyuan / GPU CVM) + opinionated commentary. What matters more to you: deploym…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。jingyaogong/minimind: 🧠 两小时从 0 训出你的 64M 大模型。 Train your own 64M LLM…。如果用官方号发，建议主推 Hunyuan，重点讲 技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM） + 观点评论，并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Hunyuan：**minimind** 与 Hunyuan 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容 补充关联 GPU CVM：**minimind** 与 GPU CVM 存在潜在场景关联，建议人工判断关联强度后再决定是否做内容",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. jingyaogong/minimind - 🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 h…. For Tencent Cloud, the better angle is Hunyuan (Tencent Cloud). Tencent Hunyuan LLM — a competitive alternative to GPT-4/Claude for AI app development. The content should focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / GPU CVM) + opinionated commentary.",
+        "reddit_title_cn": "这类热点如果从 Hunyuan 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：jingyaogong/minimind: 🧠 两小时从 0 训出你的 64M 大模型。 Train your own 64M LLM…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Hunyuan 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（Hunyuan / GPU CVM） + 观点评论。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Hunyuan (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: jingyaogong/minimind - 🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 h…. Instead of reposting it as news, I'd frame it through Hunyuan (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (Hunyuan / GPU CVM) + opinionated commentary. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "minimind：🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+    "developer_profile": {
+      "github_username": "jingyaogong",
+      "profile_url": "https://github.com/jingyaogong",
+      "name": "jingyaogong",
+      "bio": "无限进步",
+      "company": "NJU",
+      "location": "China",
+      "blog": "",
+      "twitter_username": "",
+      "email": "",
+      "followers": 2511,
+      "following": 1,
+      "public_repos": 12,
+      "avatar_url": "https://avatars.githubusercontent.com/u/62287848?v=4",
+      "social_links": [],
+      "is_org": false
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "cursor/plugins - Cursor plugin specification and official plugins",
+    "url": "https://github.com/cursor/plugins",
+    "heat": "18,971 stars",
+    "time": "Today",
+    "developer_name": "cursor",
+    "developer_url": "https://github.com/cursor",
+    "developer_email": "hi@cursor.com",
+    "today_stars": "397 stars today",
+    "language": "TypeScript",
+    "summary": "Cursor plugin specification and official plugins",
+    "content": "# Cursor plugins\n\nOfficial Cursor plugins for popular developer tools, frameworks, and SaaS products. Each plugin is a standalone directory at the repository root with its own `.cursor-plugin/plugin.json` manifest.\n\n## Plugins\n\n| `name` | Plugin | Author | Category | `description` (from marketplace) |\n|:-------|:-------|:-------|:---------|:-------------------------------------|\n| `teaching` | Teaching | Cursor | Utilities | Skill mapping, practice plans, and learning retrospectives. |\n| `continual-learning` | Continual Learning | Eric Zakariasson | Developer Tools | Incremental transcript-driven memory updates for AGENTS.md using high-signal bullet points only. |\n| `cursor-team-kit` | Cursor Team Kit | Eric Zakariasson | Developer Tools | Internal team workflows for CI, code review, shipping, local automation, and verification. |\n| `thermos` | Thermos | Cursor | Developer Tools | Thermo-nuclear branch review: deep security/correctness audits, harsh code-quality rubrics, parallel subagents, thermos orchestration, and optional merge-ready PR flows. |\n| `create-plugin` | Create Plugin | Cursor | Developer Tools | Scaffold and validate new agent plugins. |\n| `ralph-loop` | Ralph Loop | Cursor | Developer Tools | Iterative self-referential AI loops using the Ralph Wiggum technique. |\n| `agent-compatibility` | Agent Compatibility | Cursor | Developer Tools | CLI-backed repo compatibility scans plus agents that audit startup, validation, and docs against reality. |\n| `cli-for-agent` | CLI for Agents | Eric Zakariasson | Developer Tools | Patterns for designing CLIs that coding agents can run reliably: flags, help with examples, pipelines, errors, idempotency, dry-run. |\n| `pr-review-canvas` | PR Review Canvas | Cursor | Developer Tools | Render PR diffs as review canvases grouped by importance. |\n| `docs-canvas` | Docs Canvas | Cursor | Developer Tools | Render documentation as a navigable canvas. |\n| `cursor-sdk` | Cursor SDK | Cursor | Developer Tools | Build apps, scripts, and automations with the TypeScript SDK. |\n| `origin-apps` | Origin Apps | Cursor | Developer Tools | Skills for building on the Cursor Origin API. Fetch the live spec first, then follow the Origin rules for credentials, scopes, webhooks, paging, and errors. Includes a skill that plans the port of an existing GitHub App. |\n| `orchestrate` | Orchestrate | Cursor | Developer Tools | Fan large tasks out across parallel cloud agents with planners, workers, verifiers, and structured handoffs. |\n| `pstack` | pstack | Lauren Tan | Developer Tools | if you want to go fast, go deep first. pstack helps you write less, but higher quality code. rigorous agent workflows you can parallelize with confidence. |\n| `dyl-stack` | dyl-stack | Dylan Gattey | Developer Tools | Dylan's agent style on top of pstack: root causes over symptom patches, The Algorithm before design, terse verified delivery, a PR review that fits in a paste, and Figma-to-UI with a visual judge. |\n| `advisor` | Advisor | Cursor",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 2,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "saas",
+        "render"
+      ],
+      "ai_hits": [
+        "ai",
+        "agent"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "Cursor"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "Agent",
+        "Go",
+        "TypeScript"
+      ],
+      "tone": "正向推广",
+      "detail_brief": "cursor/plugins: Cursor plugin specification and official plugins",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 7.7,
+      "tcloud_relevance": 6.1,
+      "tcloud_integration": "**plugins** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs plugins 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_products": [
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**plugins** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs plugins 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件"
+      ],
+      "tcloud_evidence": [
+        "coding agent",
+        "cursor"
+      ],
+      "tcloud_primary_product": "CodeBuddy",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**plugins** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs plugins 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+      "tcloud_official_matches": [
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（CodeBuddy）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（CodeBuddy）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「cursor/plugins - Cursor plugin specification and…」（cursor/plugins: Cursor plugin specification and official pl…），涉及 Agent / Go / TypeScript → 可写方向：**plugins** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs plugins 的横向对比：CodeBuddy 覆盖需求→设计→编码→测…\n优先级：P0 今天发（综合分数高，值得抢先发）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「cursor/plugins - Cursor plugin specific…」是 CodeBuddy 的同赛道竞品，适合做横向对比评测内容，突出 IDE 集成和中文支持的差异化优势。P0 今天发（综合分数高，值得抢先发），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "CodeBuddy",
+      "official_angle_cn": "以 plugins 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+      "visual_brief": "主视觉用 plugins 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+      "platform_copies": {
+        "primary_product": "CodeBuddy",
+        "product_display": "CodeBuddy",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以 plugins 引发的开发者效率讨论为切入点，写一篇 CodeBuddy 的实际使用案例：用 CodeBuddy 的 Agent 模式从零构建一个类似功能，展示 AI 编码的真实生产力。",
+        "official_angle_en": "Use CodeBuddy (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 plugins 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 CodeBuddy。",
+        "x_cn": "cursor/plugins: Cursor plugin specification and official plugins。如果站在腾讯云国际站官方号来写，这条更适合从 CodeBuddy 切入：如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：…",
+        "x_en": "cursor/plugins - Cursor plugin specification and official plugins. For Tencent Cloud, this fits CodeBuddy (Tencent Cloud): AI-powered coding productivity — from idea to product launch.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：cursor/plugins: Cursor plugin specification and official plugins。如果从腾讯云视角切，这条最适合带到 CodeBuddy，重点聊 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: cursor/plugins - Cursor plugin specification and official plugins. From a Tencent Cloud angle, the best hook is CodeBuddy (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。cursor/plugins: Cursor plugin specification and official plugins。如果用官方号发，建议主推 CodeBuddy，重点讲 技术科普 + 教程拆解 + 产品关联（CodeBuddy），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 CodeBuddy：**plugins** 是 AI 编程赛道产品 — 可以做 CodeBuddy vs plugins 的横向对比：CodeBuddy 覆盖需求→设计→编码→测试全流程，IDE 原生集成而非浏览器插件",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. cursor/plugins - Cursor plugin specification and official plugins. For Tencent Cloud, the better angle is CodeBuddy (Tencent Cloud). AI-powered coding productivity — from idea to product launch. The content should focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy).",
+        "reddit_title_cn": "这类热点如果从 CodeBuddy 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：cursor/plugins: Cursor plugin specification and official plugins。如果站在腾讯云国际站官方号视角，我会更想把它写成 CodeBuddy 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（CodeBuddy）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through CodeBuddy (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: cursor/plugins - Cursor plugin specification and official plugins. Instead of reposting it as news, I'd frame it through CodeBuddy (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (CodeBuddy). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "plugins：光标插件规范和官方插件",
+    "developer_profile": {
+      "github_username": "cursor",
+      "profile_url": "https://github.com/cursor",
+      "name": "Cursor",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://cursor.com/",
+      "twitter_username": "",
+      "email": "hi@cursor.com",
+      "followers": 8238,
+      "following": 0,
+      "public_repos": 10,
+      "avatar_url": "https://avatars.githubusercontent.com/u/126759922?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "firecrawl/firecrawl - Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "heat": "208,346 stars",
+    "time": "Today",
+    "developer_name": "firecrawl",
+    "developer_url": "https://github.com/firecrawl",
+    "developer_email": "hello@firecrawl.dev",
+    "today_stars": "924 stars today",
+    "language": "TypeScript",
+    "summary": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+    "content": " \n    \n   \n \n\n \n   \n     \n   \n   \n     \n   \n   \n     \n   \n   \n     \n   \n \n\n \n   \n     \n       \n     \n     \n       \n     \n     \n       \n     \n   \n \n\n---\n\n# **🔥 Firecrawl**\n\n**Knowledge infrastructure to make your agents smarter. 🔥** You can use Firecrawl three ways. This repo holds the code for Firecrawl Local and the self-hosted server, along with SDKs that work with all three.\n\n- **Firecrawl Local.** Run Firecrawl on your own machine as one binary that turns websites into clean markdown, plugs into your AI agent as an MCP server and serves the Firecrawl API on localhost.\n- **Firecrawl Cloud.** Use the hosted service at firecrawl.dev for everything Local does at scale with nothing to run, plus search and the 550+ data providers in Firecrawl Alexandria for far more knowledge than scraping alone.\n- **Self-hosting.** Deploy the full Firecrawl server from `apps/api` with its own queues, workers and databases on your own infrastructure.\n\n_Pst. Hey, you, join our stargazers :)_\n\n \n   \n \n\n---\n\n## Firecrawl Local\n\nFirecrawl Local scrapes, crawls and maps from your own machine without a database, queue or container, and it reaches Firecrawl Cloud when your AI agents need search or Alexandria. It installs from crates.io. You need Rust and a C compiler, which on macOS means `xcode-select --install` and on Debian or Ubuntu means `build-essential`.\n\n```bash\ncargo install firecrawl-local\n```\n\nIf you don't have Rust, Firecrawl Cloud runs the same scrape with nothing to build and no signup.\n\n```bash\nnpx -y firecrawl-cli@latest scrape https://firecrawl.dev\n```\n\nScrape a page and print its markdown.\n\n```bash\nfirecrawl-local scrape https://firecrawl.dev --markdown\n```\n\nCrawl a site and save one markdown file per page.\n\n```bash\nfirecrawl-local crawl https://docs.firecrawl.dev --limit 50 --out ./pages\n```\n\nList every URL on a site.\n\n```bash\nfirecrawl-local map https://firecrawl.dev\n```\n\nPages that need JavaScript render in the Chrome or Chromium already on your machine, and PDFs and Office documents are parsed locally too. Without a browser, static pages still work and a page that needed one comes back with a warning.\n\n### Add it to your AI agent\n\n`init` finds Claude Code, Claude Desktop, Cursor, Windsurf, Gemini CLI and Codex on your machine and adds Firecrawl Local to each one as an MCP server. It backs up every config file first, and the MCP server itself needs Node.js 22 or newer.\n\n```bash\nfirecrawl-local init\n```\n\nRestart your AI tool afterwards. Its scrape, crawl, map and batch scrape tools run on your machine, and the other Firecrawl tools go to Firecrawl Cloud.\n\n### Run the Firecrawl API on localhost\n\n`serve` answers the Firecrawl v2 API on port 3002, so code written for Firecrawl runs against it unchanged and local routes need no API key.\n\n```bash\nfirecrawl-local serve\n```\n\nPoint any Firecrawl SDK at it by setting the API URL.\n\n```python\nfrom firecrawl import Firecrawl\n\napp = Firecrawl(api_url=\"http://localhost:3002\")\nprint(app.scrape(\"https://firecrawl.dev\"",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 2,
+      "ai_score": 5,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "render"
+      ],
+      "ai_hits": [
+        "ai",
+        "claude",
+        "gemini",
+        "agent",
+        "mcp"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "竞品动态",
+      "products": [
+        "Claude",
+        "Gemini",
+        "Cursor"
+      ],
+      "competitors": [
+        "GCP"
+      ],
+      "competitor_products": [
+        "Cloud Run"
+      ],
+      "techs": [
+        "Agent",
+        "MCP",
+        "Rust",
+        "Go",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "firecrawl/firecrawl: Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+      "heat_score": 10.0,
+      "timeliness_score": 10.0,
+      "composite_score": 9.6,
+      "tcloud_relevance": 9.6,
+      "tcloud_integration": "**firecrawl** 明确支持自托管部署（firecrawl/firecrawl: Knowledge infrastructure to make your a），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行\n补充关联 CodeBuddy：**firecrawl** 的用户群和 CodeBuddy 高度重合 — 可以写「firecrawl 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_products": [
+        "Lighthouse",
+        "CodeBuddy"
+      ],
+      "tcloud_reasons": [
+        "**firecrawl** 明确支持自托管部署（firecrawl/firecrawl: Knowledge infrastructure to make your a），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行",
+        "**firecrawl** 的用户群和 CodeBuddy 高度重合 — 可以写「firecrawl 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式"
+      ],
+      "tcloud_evidence": [
+        "self-hosted",
+        "self-hosting",
+        "claude code",
+        "cursor",
+        "windsurf"
+      ],
+      "tcloud_primary_product": "Lighthouse",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**firecrawl** 明确支持自托管部署（firecrawl/firecrawl: Knowledge infrastructure to make your a），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行\n补充关联 CodeBuddy：**firecrawl** 的用户群和 CodeBuddy 高度重合 — 可以写「firecrawl 用户迁移到 CodeBuddy 的体验对比」，突出 CodeBuddy 的多文件编辑和 Agent 模式",
+      "tcloud_official_matches": [
+        "Lighthouse",
+        "CodeBuddy"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "教程拆解",
+        "产品关联（Lighthouse / CodeBuddy）",
+        "竞品对比（Cloud Run）"
+      ],
+      "editorial_angles_text": "教程拆解 + 产品关联（Lighthouse / CodeBuddy） + 竞品对比（Cloud Run）",
+      "publish_priority": "P0 今天发",
+      "recommended_platforms": [
+        "X（快评竞品动态）",
+        "LinkedIn（发深度对比分析文章）"
+      ],
+      "recommended_platforms_text": "X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "editorial_brief": "话题类型：竞品动态\n可用角度：「firecrawl/firecrawl - Knowledge infrastructure to…」（firecrawl/firecrawl: Knowledge infrastructure to make your…），涉及 Agent / MCP / Rust → 可写方向：Cloud Run 的动态对腾讯云意味着什么，以及差异化应对策略\n优先级：P0 今天发（竞品动态时效性强）\n适合平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）",
+      "social_recommendation": "「firecrawl」支持自部署，可写『Lighthouse 一键部署 firecrawl』实操教程。P0 今天发（竞品动态时效性强），推荐平台：X（快评竞品动态） + LinkedIn（发深度对比分析文章）。",
+      "official_product_focus": "Lighthouse",
+      "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 firecrawl」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+      "visual_brief": "主视觉用 firecrawl 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+      "platform_copies": {
+        "primary_product": "Lighthouse",
+        "product_display": "Lighthouse",
+        "relation_type": "应用场景",
+        "official_angle_cn": "以「5 分钟在 Lighthouse 上部署 firecrawl」为主题写一篇实操教程，从创建实例到服务上线，附完整命令和截图，让读者可以直接复制操作。",
+        "official_angle_en": "Use Lighthouse (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 firecrawl 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 Lighthouse。",
+        "x_cn": "firecrawl/firecrawl: Knowledge infrastructure to make your agents s…。如果站在腾讯云国际站官方号来写，这条更适合从 Lighthouse 切入：如果以腾讯云国际站官方号来写，这条建议主推 Light…",
+        "x_en": "firecrawl/firecrawl - Knowledge infrastructure to make your agents smarter. Search, scr…. For Tencent Cloud, this fits Lighthouse (Tencent Cloud): This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday devel…",
+        "discord_cn": "今天看到一条值得开发者关注的热点：firecrawl/firecrawl: Knowledge infrastructure to make your agents s…。如果从腾讯云视角切，这条最适合带到 Lighthouse，重点聊 教程拆解 + 产品关联（Lighthouse / CodeBuddy） + 竞品对比（Cloud Run）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: firecrawl/firecrawl - Knowledge infrastructure to make your agents smarter. Search, scr…. From a Tencent Cloud angle, the best hook is Lighthouse (Tencent Cloud), especially around hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy) + competitor comparison (Cloud Run). What matters more to you: deployment…",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。firecrawl/firecrawl: Knowledge infrastructure to make your agents s…。如果用官方号发，建议主推 Lighthouse，重点讲 教程拆解 + 产品关联（Lighthouse / CodeBuddy） + 竞品对比（Cloud Run），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 Lighthouse：**firecrawl** 明确支持自托管部署（firecrawl/firecrawl: Knowledge infrastructure to make your a），Lighthouse 的 Docker 预装镜像可以省去环境配置，开发者通过控制台一键创建实例后直接 docker compose up 即可运行 补充关联 CodeBuddy：**firecrawl** 的用户群和 C…",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. firecrawl/firecrawl - Knowledge infrastructure to make your agents smarter. Search, scr…. For Tencent Cloud, the better angle is Lighthouse (Tencent Cloud). This project can be deployed on Lighthouse for one-click setup, making it accessible to everyday developers. The content should focus on hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy) + competitor comparison (Cloud Run).",
+        "reddit_title_cn": "这类热点如果从 Lighthouse 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：firecrawl/firecrawl: Knowledge infrastructure to make your agents s…。如果站在腾讯云国际站官方号视角，我会更想把它写成 Lighthouse 相关内容，重点是 教程拆解 + 产品关联（Lighthouse / CodeBuddy） + 竞品对比（Cloud Run）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Lighthouse (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: firecrawl/firecrawl - Knowledge infrastructure to make your agents smarter. Search, scr…. Instead of reposting it as news, I'd frame it through Lighthouse (Tencent Cloud) and focus on hands-on walkthrough + product tie-in (Lighthouse / CodeBuddy) + competitor comparison (Cloud Run). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "firecrawl：知识基础设施让您的座席变得更加聪明。通过一个 API 搜索、抓取和访问 550 多个数据提供商。",
+    "developer_profile": {
+      "github_username": "firecrawl",
+      "profile_url": "https://github.com/firecrawl",
+      "name": "Firecrawl",
+      "bio": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API. 🔥",
+      "company": "",
+      "location": "United States of America",
+      "blog": "firecrawl.dev",
+      "twitter_username": "firecrawl",
+      "email": "hello@firecrawl.dev",
+      "followers": 4037,
+      "following": 0,
+      "public_repos": 124,
+      "avatar_url": "https://avatars.githubusercontent.com/u/135057108?v=4",
+      "social_links": [
+        {
+          "platform": "twitter",
+          "url": "https://x.com/firecrawl"
+        },
+        {
+          "platform": "linkedin",
+          "url": "https://www.linkedin.com/company/firecrawl"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "nginx/nginx - The official NGINX Open Source repository.",
+    "url": "https://github.com/nginx/nginx",
+    "heat": "33,115 stars",
+    "time": "Today",
+    "developer_name": "nginx",
+    "developer_url": "https://github.com/nginx",
+    "developer_email": "",
+    "today_stars": "174 stars today",
+    "language": "C",
+    "summary": "The official NGINX Open Source repository.",
+    "content": " \n   \n   \n   \n \n\n[](https://www.repostatus.org/#active)\n[](https://community.nginx.org)\n[](/LICENSE)\n[](/CODE_OF_CONDUCT.md)\n\nNGINX (pronounced \"engine x\" or \"en-jin-eks\") is the world's most popular Web Server, high performance Load Balancer, Reverse Proxy, API Gateway and Content Cache.\n\nNGINX is free and open source software, distributed under the terms of a simplified 2-clause BSD-like license.\n\nEnterprise distributions, commercial support and training are available from F5, Inc.\n\n> [!IMPORTANT]\n> The goal of this README is to provide a basic, structured introduction to NGINX for novice users. Please refer to the full NGINX documentation for detailed information on installing, building, configuring, debugging, and more. These documentation pages also contain a more detailed Beginners Guide, How-Tos, Development guide, and a complete module and directive reference.\n\n# Table of contents\n- How it works\n  - Modules\n  - Configurations\n  - Runtime\n- Downloading and installing\n  - Stable and Mainline binaries\n  - Linux binary installation process\n  - FreeBSD installation process\n  - Windows executables\n  - Dynamic modules\n- Getting started with NGINX\n  - Installing SSL certificates and enabling TLS encryption\n  - Load Balancing\n  - Rate limiting\n  - Content caching\n- Building from source\n  - Installing dependencies\n  - Cloning the NGINX GitHub repository\n  - Configuring the build\n  - Compiling\n  - Location of binary and installation\n  - Running and testing the installed binary\n- Asking questions and reporting issues\n- Contributing code\n- Additional help and resources\n- Changelog\n- License\n\n# How it works\nNGINX is installed software with binary packages available for all major operating systems and Linux distributions. See Tested OS and Platforms for a full list of compatible systems.\n\n> [!IMPORTANT]\n> While nearly all popular Linux-based operating systems are distributed with a community version of nginx, we highly advise installation and usage of official packages or sources from this repository. Doing so ensures that you're using the most recent release or source code, including the latest feature-set, fixes and security patches.\n\n## Modules\nNGINX is comprised of individual modules, each extending core functionality by providing additional, configurable features. See \"Modules reference\" at the bottom of nginx documentation for a complete list of official modules.\n\nNGINX modules can be built and distributed as static or dynamic modules. Static modules are defined at build-time, compiled, and distributed in the resulting binaries. See Dynamic Modules for more information on how they work, as well as, how to obtain, install, and configure them.\n\n> [!TIP]\n> You can issue the following command to see which static modules your NGINX binaries were built with:\n```bash\nnginx -V\n```\n> See Configuring the build for information on how to include specific Static modules into your nginx build.\n\n## Configurations\nNGINX is highly flexible and configurable. Provis",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": false,
+      "is_anxiety": false,
+      "cloud_score": 1,
+      "ai_score": 0,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "ssl"
+      ],
+      "ai_hits": [],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [],
+      "tone": "中立资讯",
+      "detail_brief": "nginx/nginx: The official NGINX Open Source repository.",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.5,
+      "tcloud_relevance": 5.7,
+      "tcloud_integration": "**nginx** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+      "tcloud_products": [
+        "EdgeOne"
+      ],
+      "tcloud_reasons": [
+        "**nginx** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示"
+      ],
+      "tcloud_evidence": [
+        "security",
+        "tls",
+        "ssl"
+      ],
+      "tcloud_primary_product": "EdgeOne",
+      "tcloud_relation_type": "应用场景",
+      "tcloud_official_storyline": "如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**nginx** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+      "tcloud_official_matches": [
+        "EdgeOne"
+      ],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解",
+        "产品关联（EdgeOne）"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解 + 产品关联（EdgeOne）",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「nginx/nginx - The official NGINX Open Source repo…」（nginx/nginx: The official NGINX Open Source repository.） → 可写方向：**nginx** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「nginx」涉及 Web 安全场景，可写 EdgeOne 的 DDoS 防护 + WAF 实践指南。P1 本周发（讨论还在活跃期），推荐平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "EdgeOne",
+      "official_angle_cn": "从 nginx 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+      "visual_brief": "主视觉用 nginx 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+      "platform_copies": {
+        "primary_product": "EdgeOne",
+        "product_display": "EdgeOne",
+        "relation_type": "应用场景",
+        "official_angle_cn": "从 nginx 的性能/安全需求出发，写一篇「如何用 EdgeOne 给你的项目加速和防护」的实践指南，附真实的延迟对比数据。",
+        "official_angle_en": "Use EdgeOne (Tencent Cloud) as the official hook and turn the trend into a product-led developer story instead of a news repost.",
+        "visual_brief": "主视觉用 nginx 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 EdgeOne。",
+        "x_cn": "nginx/nginx: The official NGINX Open Source repository.。如果站在腾讯云国际站官方号来写，这条更适合从 EdgeOne 切入：如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**nginx** 涉及安…",
+        "x_en": "nginx/nginx - The official NGINX Open Source repository.. For Tencent Cloud, this fits EdgeOne (Tencent Cloud): Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：nginx/nginx: The official NGINX Open Source repository.。如果从腾讯云视角切，这条最适合带到 EdgeOne，重点聊 技术科普 + 教程拆解 + 产品关联（EdgeOne）。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: nginx/nginx - The official NGINX Open Source repository.. From a Tencent Cloud angle, the best hook is EdgeOne (Tencent Cloud), especially around technical explainer + hands-on walkthrough + product tie-in (EdgeOne). What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。nginx/nginx: The official NGINX Open Source repository.。如果用官方号发，建议主推 EdgeOne，重点讲 技术科普 + 教程拆解 + 产品关联（EdgeOne），并把内容拉回 如果以腾讯云国际站官方号来写，这条建议主推 EdgeOne：**nginx** 涉及安全扫描/防护场景，EdgeOne 提供 L3/L4/L7 全链路 DDoS 防护和智能 WAF 规则，可以在安全话题中做能力展示",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. nginx/nginx - The official NGINX Open Source repository.. For Tencent Cloud, the better angle is EdgeOne (Tencent Cloud). Use EdgeOne for global acceleration, security protection, or deploy via Edge Pages. The content should focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne).",
+        "reddit_title_cn": "这类热点如果从 EdgeOne 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：nginx/nginx: The official NGINX Open Source repository.。如果站在腾讯云国际站官方号视角，我会更想把它写成 EdgeOne 相关内容，重点是 技术科普 + 教程拆解 + 产品关联（EdgeOne）。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through EdgeOne (Tencent Cloud)?",
+        "reddit_body_en": "A recent trend caught my eye: nginx/nginx - The official NGINX Open Source repository.. Instead of reposting it as news, I'd frame it through EdgeOne (Tencent Cloud) and focus on technical explainer + hands-on walkthrough + product tie-in (EdgeOne). Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "官方 NGINX 开源存储库。",
+    "developer_profile": {
+      "github_username": "nginx",
+      "profile_url": "https://github.com/nginx",
+      "name": "nginx",
+      "bio": "Home of NGINX and related open source projects",
+      "company": "",
+      "location": "",
+      "blog": "https://nginx.org/",
+      "twitter_username": "nginxorg",
+      "email": "",
+      "followers": 2258,
+      "following": 0,
+      "public_repos": 64,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1412239?v=4",
+      "social_links": [
+        {
+          "platform": "generic",
+          "url": "https://community.nginx.org"
+        },
+        {
+          "platform": "generic",
+          "url": "https://www.f5.com/products/nginx"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://www.twitter.com/nginxorg"
+        }
+      ],
+      "is_org": true
+    }
+  },
+  {
+    "source": "GitHub Trending",
+    "title": "openvinotoolkit/openvino - OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+    "url": "https://github.com/openvinotoolkit/openvino",
+    "heat": "12,362 stars",
+    "time": "Today",
+    "developer_name": "openvinotoolkit",
+    "developer_url": "https://github.com/openvinotoolkit",
+    "developer_email": "",
+    "today_stars": "184 stars today",
+    "language": "C++",
+    "summary": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+    "content": " \n \n\n \nOpen-source software toolkit for optimizing and deploying deep learning models.\n \n\n \n   Documentation   •   Blog   •   Key Features   •   Tutorials   •   Integrations   •   Benchmarks   •   Generative AI  \n \n\n[](https://badge.fury.io/py/openvino)\n[](https://www.npmjs.com/package/openvino-node)\n[](https://anaconda.org/conda-forge/openvino)\n[](https://formulae.brew.sh/formula/openvino)\n\n[](https://pepy.tech/project/openvino)\n[](https://anaconda.org/conda-forge/openvino/files)\n[](https://formulae.brew.sh/formula/openvino)\n  \n\n- **Inference Optimization**: Boost deep learning performance in computer vision, automatic speech recognition, generative AI, natural language processing with large and small language models, and many other common tasks.\n- **Flexible Model Support**: Use models trained with popular frameworks such as PyTorch, TensorFlow, ONNX, Keras, PaddlePaddle, and JAX/Flax. Directly integrate models built with transformers and diffusers from the Hugging Face Hub using Optimum Intel. Convert and deploy models without original frameworks.\n- **Broad Platform Compatibility**: Reduce resource demands and efficiently deploy on a range of platforms from edge to cloud. OpenVINO™ supports inference on CPU (x86, ARM), GPU (Intel integrated & discrete GPU) and AI accelerators (Intel NPU).\n- **Community and Ecosystem**: Join an active community contributing to the enhancement of deep learning performance across various domains.\n\nCheck out the OpenVINO Cheat Sheet and Key Features for a quick reference.\n\n## Installation\n\nGet your preferred distribution of OpenVINO or use this command for quick installation:\n\n```sh\npip install -U openvino\n```\n\n### Verify Installation\n\nAfter installation, you can verify OpenVINO is installed correctly by running:\n\n```python\nimport openvino as ov\nprint(ov.__version__)\n```\n\nCheck system requirements and supported devices for detailed information.\n\n## Tutorials and Examples\n\nOpenVINO Quickstart example will walk you through the basics of deploying your first model.\n\nLearn how to optimize and deploy popular models with the OpenVINO Notebooks 📚:\n- Create an LLM-powered Chatbot using OpenVINO\n- YOLOv11 Optimization\n- Text-to-Image Generation\n- Multimodal assistant with LLaVa and OpenVINO\n- Automatic speech recognition using Whisper and OpenVINO\n\nDiscover more examples in the OpenVINO Samples (Python & C++) and Notebooks (Python).\n\nHere are easy-to-follow code examples demonstrating how to run PyTorch and TensorFlow model inference using OpenVINO:\n\n**PyTorch Model**\n\n```python\nimport openvino as ov\nimport torch\nimport torchvision\n\n# load PyTorch model into memory\nmodel = torch.hub.load(\"pytorch/vision\", \"shufflenet_v2_x1_0\", weights=\"DEFAULT\")\n\n# convert the model into OpenVINO model\nexample = torch.randn(1, 3, 224, 224)\nov_model = ov.convert_model(model, example_input=(example,))\n\n# compile the model for CPU device\ncore = ov.Core()\ncompiled_model = core.compile_model(ov_model, 'CPU')\n\n# infer the model on random data\nou",
+    "analysis": {
+      "is_cloud": true,
+      "is_ai": true,
+      "is_anxiety": false,
+      "cloud_score": 3,
+      "ai_score": 7,
+      "anxiety_score": 0,
+      "cloud_hits": [
+        "cloud",
+        "edge",
+        "gpu"
+      ],
+      "ai_hits": [
+        "ai",
+        "deep learning",
+        "llm",
+        "multimodal",
+        "inference",
+        "speech",
+        "computer vision"
+      ],
+      "anxiety_hits": [],
+      "topic": "技术分享",
+      "topic_type": "开发者话题",
+      "products": [
+        "HuggingFace"
+      ],
+      "competitors": [],
+      "competitor_products": [],
+      "techs": [
+        "LLM",
+        "Python"
+      ],
+      "tone": "中立资讯",
+      "detail_brief": "openvinotoolkit/openvino: OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "heat_score": 9.0,
+      "timeliness_score": 10.0,
+      "composite_score": 6.5,
+      "tcloud_relevance": 0.6,
+      "tcloud_integration": "暂未命中足够强的国际站产品锚点，不建议强贴产品，先作为行业观察保留。",
+      "tcloud_products": [],
+      "tcloud_reasons": [],
+      "tcloud_evidence": [],
+      "tcloud_primary_product": "",
+      "tcloud_relation_type": "待人工判断",
+      "tcloud_official_storyline": "暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+      "tcloud_official_matches": [],
+      "tcloud_priority_matches": [],
+      "editorial_angles": [
+        "技术科普",
+        "教程拆解"
+      ],
+      "editorial_angles_text": "技术科普 + 教程拆解",
+      "publish_priority": "P1 本周发",
+      "recommended_platforms": [
+        "Reddit（直接参与讨论）",
+        "LinkedIn（发教程文章）",
+        "Discord（开发者社区互动）"
+      ],
+      "recommended_platforms_text": "Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "editorial_brief": "话题类型：开发者话题\n可用角度：「openvinotoolkit/openvino - OpenVINO™ is an open s…」（openvinotoolkit/openvino: OpenVINO™ is an open source toolk…），涉及 LLM / Python → 可写方向：技术解读 + 开发者社区讨论参与\n优先级：P1 本周发（讨论还在活跃期）\n适合平台：Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）",
+      "social_recommendation": "「openvinotoolkit/openvino - OpenVINO™ is…」暂未命中明确产品关联。可先作为行业观察素材，人工判断是否适合关联腾讯云产品。推荐 Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）。",
+      "official_product_focus": "",
+      "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+      "visual_brief": "主视觉用 openvino 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+      "writing_pack_summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+      "platform_copies": {
+        "primary_product": "",
+        "product_display": "",
+        "relation_type": "待人工判断",
+        "official_angle_cn": "这条暂不建议硬贴具体产品，可先保留为行业观察，再做人工二次判断。",
+        "official_angle_en": "Do not force a product angle yet. Keep it as an industry signal and review manually.",
+        "visual_brief": "主视觉用 openvino 的 GitHub README 中的效果截图/架构图/Demo GIF，展示项目的核心功能。",
+        "summary": "已生成 X / Discord / LinkedIn / Reddit 的中英文文案，主推 人工判断。",
+        "x_cn": "openvinotoolkit/openvino: OpenVINO™ is an open source toolkit for o…。如果站在腾讯云国际站官方号来写，这条更适合从 人工判断场景 切入：暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "x_en": "openvinotoolkit/openvino - OpenVINO™ is an open source toolkit for optimizing and deplo…. For Tencent Cloud, this fits Tencent Cloud scenario: Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence.",
+        "discord_cn": "今天看到一条值得开发者关注的热点：openvinotoolkit/openvino: OpenVINO™ is an open source toolkit for o…。如果从腾讯云视角切，这条最适合带到 人工判断场景，重点聊 技术科普 + 教程拆解。你更关注部署、性能还是工作流？",
+        "discord_en": "A developer trend worth discussing today: openvinotoolkit/openvino - OpenVINO™ is an open source toolkit for optimizing and deplo…. From a Tencent Cloud angle, the best hook is Tencent Cloud scenario, especially around technical explainer + hands-on walkthrough. What matters more to you: deployment, performance, or workflow?",
+        "linkedin_cn": "这条热点表面上是资讯，真正值得写的是它和腾讯云国际站产品的连接。openvinotoolkit/openvino: OpenVINO™ is an open source toolkit for o…。如果用官方号发，建议主推 人工判断场景，重点讲 技术科普 + 教程拆解，并把内容拉回 暂未匹配到明确的腾讯云产品，可保留为行业观察。",
+        "linkedin_en": "This trend is more useful as a product-led developer story than a news repost. openvinotoolkit/openvino - OpenVINO™ is an open source toolkit for optimizing and deplo…. For Tencent Cloud, the better angle is Tencent Cloud scenario. Keep it as an industry signal and avoid forcing a product pitch before there is stronger evidence. The content should focus on technical explainer + hands-on walkthrough.",
+        "reddit_title_cn": "这类热点如果从 人工判断场景 切，会更值得聊吗？",
+        "reddit_body_cn": "看到这条热点：openvinotoolkit/openvino: OpenVINO™ is an open source toolkit for o…。如果站在腾讯云国际站官方号视角，我会更想把它写成 人工判断场景 相关内容，重点是 技术科普 + 教程拆解。你觉得这种切法会更有信息量吗？",
+        "reddit_title_en": "Would this trend be more useful if framed through Tencent Cloud scenario?",
+        "reddit_body_en": "A recent trend caught my eye: openvinotoolkit/openvino - OpenVINO™ is an open source toolkit for optimizing and deplo…. Instead of reposting it as news, I'd frame it through Tencent Cloud scenario and focus on technical explainer + hands-on walkthrough. Would that make the discussion more useful for developers?"
+      }
+    },
+    "summary_cn": "OpenVINO™ 是一个用于优化和部署 AI 推理的开源工具包",
+    "developer_profile": {
+      "github_username": "openvinotoolkit",
+      "profile_url": "https://github.com/openvinotoolkit",
+      "name": "OpenVINO™ Toolkit",
+      "bio": "",
+      "company": "",
+      "location": "",
+      "blog": "https://docs.openvino.ai/",
+      "twitter_username": "",
+      "email": "",
+      "followers": 1935,
+      "following": 0,
+      "public_repos": 47,
+      "avatar_url": "https://avatars.githubusercontent.com/u/55443902?v=4",
+      "social_links": [],
+      "is_org": true
+    }
+  }
+]

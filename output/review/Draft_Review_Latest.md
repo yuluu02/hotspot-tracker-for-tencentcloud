@@ -1,11 +1,11 @@
-# 📋 产品 Draft 汇总 — 2026-11-22
+# 📋 产品 Draft 汇总 — 2026-11-24
 
 > 共 4 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
 
-# CodeBuddy — 今日内容 (3 条)
+# CodeBuddy — 今日内容 (4 条)
 
 ## 1. P0 今天发 · obra/superpowers
 
@@ -43,6 +43,19 @@
 > 🤖 "cursor/plugins" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
 
 *参考: [cursor/plugins](https://github.com/cursor/plugins)*
+
+---
+
+## 4. P1 本周发 · 2026 年我的常用 Mac 软件分享
+
+**写什么**: 借「年我的常用软件分」的讨论热度写一篇 AI 编程工具选型指南
+
+**发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
+
+**参考文案**:
+> 🤖 "2026 年我的常用 Mac 软件分享" shows the power of AI coding! We built CodeBuddy with similar vision — AI-powered IDE covering requirements→design→code→test. Try the Agent mode: https://www.tencentcloud.com/products/codebuddy #AICoding #DevTools
+
+*参考: [2026 年我的常用 Mac 软件分享](https://www.v2ex.com/t/1259301)*
 
 ---
 
