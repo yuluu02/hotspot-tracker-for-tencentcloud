@@ -1,4 +1,4 @@
-# 📋 产品 Draft 汇总 — 2026-11-26
+# 📋 产品 Draft 汇总 — 2026-11-27
 
 > 共 4 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
@@ -91,16 +91,16 @@
 
 ---
 
-## 2. P1 本周发 · 回帖 + 加群送 $18 额度，Claude Code / Codex 改个地址就能用，GPT 低至官方 1.35 折 
+## 2. P1 本周发 · 其他模型真的好用，我又何必折腾 Claude 呢
 
-**写什么**: 以「回帖加群送额度改」话题为引子
+**写什么**: 以「其他模型」话题为引子
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "回帖 + 加群送 $18 额度，Claude Code / Codex 改个地址" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🧠 "其他模型真的好用，我又何必折腾 Claude 呢" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
 
-*参考: [回帖 + 加群送 $18 额度，Claude Code / Codex 改个地址就能用，GPT 低至](https://www.v2ex.com/t/1259773)*
+*参考: [其他模型真的好用，我又何必折腾 Claude 呢](https://www.v2ex.com/t/1260233)*
 
 ---
 
