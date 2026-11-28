@@ -1,6 +1,6 @@
-# 📋 产品 Draft 汇总 — 2026-11-27
+# 📋 产品 Draft 汇总 — 2026-11-28
 
-> 共 4 个产品的 P0/P1 内容草稿
+> 共 5 个产品的 P0/P1 内容草稿
 > 状态：**待审核** · 审核后可推送至 iWiki 或腾讯文档
 
 ---
@@ -76,6 +76,22 @@
 ---
 
 
+# GPU CVM — 今日内容 (1 条)
+
+## 1. P0 今天发 · 按照 NVIDIA 的迭代速度，是不是现在投入买算力越狠的，后面淘汰的越快
+
+**写什么**: 以「按照的迭代速度是」话题为引子
+
+**发到哪**: X（快评竞品动态） + LinkedIn（发深度对比分析文章）
+
+**参考文案**:
+> 🔥 "按照 NVIDIA 的迭代速度，是不是现在投入买算力越狠的，后面淘汰的越快" — 「按照的迭代速度是」话题与 GPU CVM 存在场景关联，但关联度中等，建议结合具体讨论内容判断是否植入. Check out Tencent Cloud GPU CVM for a production-ready solution. #TencentCloud #CloudComputing
+
+*参考: [按照 NVIDIA 的迭代速度，是不是现在投入买算力越狠的，后面淘汰的越快](https://www.v2ex.com/t/1260493)*
+
+---
+
+
 # Hunyuan — 今日内容 (2 条)
 
 ## 1. P0 今天发 · jingyaogong/minimind
@@ -91,16 +107,16 @@
 
 ---
 
-## 2. P1 本周发 · 其他模型真的好用，我又何必折腾 Claude 呢
+## 2. P1 本周发 · 译哥 Poly：Mac 本机把视频换成另一种语言，并用原片音色配音（v 站用户送 10 个买断码）
 
-**写什么**: 以「其他模型」话题为引子
+**写什么**: 以「译哥本机把视频换」话题为引子
 
 **发到哪**: Reddit（直接参与讨论） + LinkedIn（发教程文章） + Discord（开发者社区互动）
 
 **参考文案**:
-> 🧠 "其他模型真的好用，我又何必折腾 Claude 呢" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
+> 🧠 "译哥 Poly：Mac 本机把视频换成另一种语言，并用原片音色配音（v 站用户送" — great to see AI innovation! Tencent Hunyuan offers enterprise-grade LLM + multimodal capabilities. Explore: https://www.tencentcloud.com/products/hunyuan #AI #LLM
 
-*参考: [其他模型真的好用，我又何必折腾 Claude 呢](https://www.v2ex.com/t/1260233)*
+*参考: [译哥 Poly：Mac 本机把视频换成另一种语言，并用原片音色配音（v 站用户送 10 个买断码）](https://www.v2ex.com/t/1260512)*
 
 ---
 
